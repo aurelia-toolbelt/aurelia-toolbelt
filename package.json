@@ -1,0 +1,62 @@
+{
+  "name": "aurelia-skeleton-plugin-typescript",
+  "version": "0.0.2",
+  "description": "Create typescript plugins for Aurelia",
+  "keywords": [
+    "aurelia",
+    "plugin",
+    "skeleton",
+    "typescript"
+  ],
+  "homepage": "https://github.com/vegarringdal/skeleton-plugin-typescript",
+  "bugs": {
+    "url": "https://github.com/vegarringdal/skeleton-plugin-typescript/issues"
+  },
+  "license": "MIT",
+  "author": "Vegar Ringdal (vegar.ringdal@gmail.com)",
+  "main": "dist/amd/index.js",
+  "typings": "dist/amd/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vegarringdal/skeleton-plugin-typescript"
+  },
+  "scripts": {
+    "prepublish": "./node_modules/.bin/typings install"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.6",
+    "gulp-conventional-changelog": "^1.1.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-bump": "^2.5.1",
+    "gulp-changed": "^1.3.2",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-protractor": "3.0.0",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-tslint": "^7.0.1",
+    "gulp-typescript": "^3.1.4",
+    "gulp-yuidoc": "^0.1.2",
+    "object.assign": "^4.0.4",
+    "require-dir": "^0.3.1",
+    "run-sequence": "^1.2.2",
+    "tslint": "^4.3.1",
+    "typescript": "^2.1.5",
+    "typings": "^2.1.0",
+    "vinyl-paths": "^2.1.0",
+    "yargs": "^6.6.0",
+    "merge2": "^1.0.3"
+  },
+  "jspm": {
+    "registry": "npm",
+    "jspmPackage": true,
+    "main": "index",
+    "format": "amd",
+    "directories": {
+      "dist": "dist/amd"
+    },
+    "devDependencies": {}
+  },
+  "dependencies": {}
+}

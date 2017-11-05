@@ -1,1 +1,1 @@
-# aurelia-toolbelt
+# aurelia-skeleton-plugin-typescript
