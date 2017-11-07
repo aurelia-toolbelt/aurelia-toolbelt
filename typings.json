@@ -1,5 +1,5 @@
 {
-  "name": "aurelia-skeleton-plugin-typescript",
+  "name": "aurelia-v-grid",
   "main": "dist/amd/index.d.ts",
   "dependencies": {
     "aurelia-binding": "github:aurelia/binding",
@@ -30,5 +30,6 @@
     
   },
   "globalDependencies": {
+   
   }
 }

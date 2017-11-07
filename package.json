@@ -1,11 +1,12 @@
 {
   "name": "aurelia-toolbelt",
-  "version": "0.0.2",
+  "version": "0.5.0",
   "description": "Create typescript plugins for Aurelia",
   "keywords": [
     "aurelia",
     "plugin",
-    "typescript"
+    "toolbelt",
+    "aurelia toolbelt"
   ],
   "homepage": "https://github.com/shahabganji/aurelia-toolbelt",
   "bugs": {
@@ -13,8 +14,8 @@
   },
   "license": "MIT",
   "author": "Saeed Ganji (shahabganji@gmail.com)",
-  "main": "dist/amd/aurelia-toolbelt.js",
-  "typings": "dist/amd/aurelia-toolbelt.d.ts",
+  "main": "dist/commonjs/index.js",
+  "typings": "dist/commonjs/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/shahabganji/aurelia-toolbelt"
@@ -23,39 +24,38 @@
     "prepublish": "./node_modules/.bin/typings install"
   },
   "devDependencies": {
-    "browser-sync": "^2.18.13",
-    "gulp-conventional-changelog": "^1.1.6",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-bump": "^2.8.0",
-    "gulp-changed": "^3.1.1",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-protractor": "4.1.0",
+    "gulp-run": "^1.7.1",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-tslint": "^8.1.2",
     "gulp-typescript": "^3.2.3",
-    "gulp-yuidoc": "^0.1.2",
-    "object.assign": "^4.0.4",
+    "merge2": "^1.2.0",
     "require-dir": "^0.3.2",
     "run-sequence": "^2.2.0",
     "tslint": "^5.8.0",
     "typescript": "^2.6.1",
     "typings": "^2.1.1",
-    "vinyl-paths": "^2.1.0",
-    "yargs": "^10.0.3",
-    "merge2": "^1.2.0"
+    "vinyl-paths": "^2.1.0"
   },
   "jspm": {
     "registry": "npm",
-    "jspmPackage": true,
-    "main": "aurelia-toolbelt",
-    "format": "amd",
+    "main": "index",
+    "format": "cjs",
     "directories": {
-      "dist": "dist/amd"
+      "dist": "dist/commonjs"
     },
     "devDependencies": {}
   },
-  "dependencies": {}
+  "dependencies": {},
+  "aurelia": {
+    "usedBy": [],
+    "build": {
+      "resources": [
+        "aurelia-toolbelt",
+        "aurelia-toolbelt/index"
+      ]
+    }
+  }
 }

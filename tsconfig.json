@@ -13,8 +13,9 @@
     "noUnusedParameters": true,
     "suppressImplicitAnyIndexErrors": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
+    "noImplicitThis": false,
+    "noUnusedLocals": false,
+    "allowUnreachableCode":false,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -28,7 +29,9 @@
     "./custom_typings/**/*.d.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "sample",
+    "dist"
   ],
   "atom": {
     "rewriteTsconfig": false

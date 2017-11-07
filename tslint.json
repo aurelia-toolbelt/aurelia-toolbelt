@@ -7,13 +7,20 @@
     "forin": true,
     "indent": [true, "spaces"],
     "label-position": true,
-    "label-undefined": true,
-    "max-line-length": [true, 140],
+    "max-line-length": [true, 160],
     "member-access": true,
-    "member-ordering": [true,
-      "public-before-private",
-      "static-before-instance",
-      "variables-before-functions"
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "static-field",
+          "instance-field",
+          "constructor",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ]
+      }
     ],
     "no-arg": true,
     "no-bitwise": true,
@@ -26,21 +33,18 @@
     ],
     "no-construct": true,
     "no-debugger": true,
-    "no-duplicate-key": true,
     "no-duplicate-variable": true,
     "no-empty": true,
     "no-eval": true,
-    "no-inferrable-types": true,
+    "no-inferrable-types": [true],
     "no-shadowed-variable": true,
-    "no-string-literal": true,
+    "no-string-literal": false,
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
     "no-unused-expression": true,
-    "no-unused-variable": true,
-    "no-unreachable": true,
     "no-use-before-declare": true,
     "no-var-keyword": true,
-    "object-literal-sort-keys": true,
+    "object-literal-sort-keys": false,
     "one-line": [true,
       "check-open-brace",
       "check-catch",
@@ -48,12 +52,12 @@
       "check-finally",
       "check-whitespace"
     ],
-    "quotemark": [true, "double", "avoid-escape"],
+    "quotemark": [true, "single", "avoid-escape"],
     "radix": true,
-    "semicolon": true,
+    "semicolon": [true],
     "trailing-comma": [true, {
       "singleline": "never",
-      "multiline": "always"
+      "multiline": "never"
     }],
     "triple-equals": [true, "allow-null-check"],
     "typedef-whitespace": [true, {
@@ -70,6 +74,7 @@
       "check-operator",
       "check-separator",
       "check-type"
-    ]
+    ],
+    "interface-name": [true, "always-prefix"]
   }
 }

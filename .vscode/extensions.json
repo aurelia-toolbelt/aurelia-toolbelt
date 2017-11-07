@@ -1,7 +1,9 @@
 {
   "recommendations": [
     "eg2.tslint",
-    "HookyQR.beautify",
-    "joelday.docthis"
+    "pflannery.vscode-versionlens",
+    "joelday.docthis",
+    "patrys.vscode-code-outline",
+    "christian-kohler.path-intellisense"
   ]
 }

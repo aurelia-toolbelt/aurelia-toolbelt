@@ -1,0 +1,32 @@
+
+> aurelia-skeleton-plugin-typescript@0.5.0 prepublish /Users/shahab/Documents/Sources/git-projects/skeleton-plugin-typescript
+> typings install
+
+[?25h
+├── aurelia-binding
+├── aurelia-bootstrapper
+├── aurelia-dependency-injection
+├── aurelia-event-aggregator
+├── aurelia-fetch-client
+├── aurelia-framework
+├── aurelia-history
+├── aurelia-history-browser
+├── aurelia-loader
+├── aurelia-logging
+├── aurelia-logging-console
+├─┬ aurelia-metadata
+│ └── aurelia-pal
+├── aurelia-pal
+├─┬ aurelia-pal-browser
+│ └── aurelia-pal
+├── aurelia-path
+├── aurelia-polyfills
+├── aurelia-route-recognizer
+├── aurelia-router
+├── aurelia-task-queue
+├── aurelia-templating
+├── aurelia-templating-binding
+├── aurelia-templating-resources
+└── aurelia-templating-router
+
+aurelia-skeleton-plugin-typescript-0.5.0.tgz

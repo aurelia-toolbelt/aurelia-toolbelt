@@ -1,1 +1,5 @@
-export class HelloWorld {}
+export class HelloWorld {
+
+  private msg = 'Hello Aurelia!';
+
+}

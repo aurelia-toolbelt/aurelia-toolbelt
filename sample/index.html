@@ -1,44 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Aurelia</title>
-    <!--The FontAwesome version is locked at 4.6.3 in the package.json file to keep this from breaking.-->
-    <link rel="stylesheet" href="jspm_packages/npm/font-awesome@4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
+<head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
+    <title>Welcome to Aurelia with FuseBox</title>
+    <link href="./styles/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+</head>
 
   <body aurelia-app="main">
-    <div class="splash">
-      <div class="message">Aurelia Navigation Skeleton</div>
-      <i class="fa fa-spinner fa-spin"></i>
-    </div>
-    
-    <!-- The bluebird version is locked at 4.6.3 in the package.json file to keep this from breaking -->
-    <!-- We include bluebird to bypass Edge's very slow Native Promise implementation. The Edge team -->
-    <!-- has fixed the issues with their implementation with these fixes being distributed with the  -->
-    <!-- Windows 10 Anniversary Update on 2 August 2016. Once that update has pushed out, you may    -->
-    <!-- consider removing bluebird from your project and simply using native promises if you do     -->
-    <!-- not need to support Internet Explorer.                                                      -->
-    <script src="jspm_packages/npm/bluebird@3.4.1/js/browser/bluebird.min.js"></script> 
-    <script src="jspm_packages/system.js"></script>
-    <script src="config.js"></script>
-    <script>
-      System.import('aurelia-bootstrapper');
-      // Load the package.json from the root to get the package name
-      System.import("/root/package.json!text").then(function(m) {
-        var cfg = {
-           packages: {}
-        };
-        
-        
-        var package = JSON.parse(m)
-        // Create a new systemjs package with the package name
-        cfg.packages[package.name] = {
-            "main": "index"
-        };
-        System.config(cfg);
-      });
-    </script>
+    <script type="text/javascript" charset="utf-8" src="./dist/aurelia-skeleton-plugin-typescript.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./dist/vendor.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./dist/app.js"></script>
   </body>
 </html>

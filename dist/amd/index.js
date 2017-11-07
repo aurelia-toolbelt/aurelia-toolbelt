@@ -5,9 +5,7 @@ define(["require", "exports", "./hello-world"], function (require, exports, hell
     Object.defineProperty(exports, "__esModule", { value: true });
     __export(hello_world_1);
     function configure(config) {
-        config.globalResources("./hello-world");
+        config.globalResources('./hello-world');
     }
     exports.configure = configure;
 });
-
-//# sourceMappingURL=index.js.map

@@ -5,7 +5,7 @@
     "outDir": "dist",
     "sourceMap": true,
     "target": "es5",
-    "module": "system",
+    "module": "commonjs",
     "declaration": false,
     "noImplicitAny": false,
     "removeComments": true,
@@ -15,20 +15,19 @@
     "lib": ["es2017", "dom"],
     "baseUrl": "./",
     "paths": {
-      "src/*": ["src/*"],
-      "aurelia-skeleton-plugin-typescript": ["../src"]
+      "aurelia-v-grid": ["../src"]
     }
   },
   "filesGlob": [
     "./src/**/*.ts",
     "./test/**/*.ts",
     "./typings/index.d.ts",
-    "./custom_typings/**/*.d.ts",
-    "./jspm_packages/**/*.d.ts"
+    "./custom_typings/**/*.d.ts"
   ],
   "exclude": [
     "node_modules",
-    "jspm_packages"
+    "jspm_packages",
+    "**/lib.es6.d.ts"
   ],
   "atom": {
     "rewriteTsconfig": false

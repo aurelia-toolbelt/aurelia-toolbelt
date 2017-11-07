@@ -1,7 +1,7 @@
 System.register(["./hello-world"], function (exports_1, context_1) {
     var __moduleName = context_1 && context_1.id;
     function configure(config) {
-        config.globalResources("./hello-world");
+        config.globalResources('./hello-world');
     }
     exports_1("configure", configure);
     var exportedNames_1 = {
@@ -24,5 +24,3 @@ System.register(["./hello-world"], function (exports_1, context_1) {
         }
     };
 });
-
-//# sourceMappingURL=index.js.map
