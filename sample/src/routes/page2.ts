@@ -6,8 +6,12 @@ import { autoinject } from 'aurelia-framework';
 export class Page2 {
     public title: string;
 
+
+    private filter:string;
+    private names:Array<string>;
+
     constructor(public router: Router) {
-        // todo
+        this.names = ["Vegar" , "Saeed" , "Hamed"]
     }
 
     public canActivate(a, b, c) {

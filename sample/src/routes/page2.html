@@ -1,5 +1,18 @@
 <template>
-    <section>
-      ${title}
-    </section>
-  </template>
+  <section>
+    ${title}
+  </section>
+
+  <hr />
+
+  <label>
+    Filter:
+    <input type="text" value.bind="filter" />
+  </label>
+
+  <ul>
+    <li repeat.for="name of names|filterBy:filter">${name}</li>
+  </ul>
+
+
+</template>
