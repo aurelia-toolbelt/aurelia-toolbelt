@@ -7,6 +7,8 @@ build/reports
 typings/
 dev/
 
+**/*.tgz
+
 sample/node_modules
 sample/jspm_packages
 sample/bower_components
