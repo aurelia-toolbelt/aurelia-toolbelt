@@ -156,14 +156,14 @@ gulp.task('fuse-plugin', function() {
             RawPlugin(['.css', '.woff'])
         ],
         package: {
-            name: "aurelia-skeleton-plugin-typescript",
+            name: "aurelia-toolbelt",
             main: "index.ts"
         },
     });
 
 
     // plugin bundle
-    fuse.bundle('aurelia-skeleton-plugin-typescript')
+    fuse.bundle('aurelia-toolbelt')
         .watch().cache(false)
         .instructions(`
             + [**/*.html] 

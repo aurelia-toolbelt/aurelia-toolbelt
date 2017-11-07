@@ -1,9 +1,11 @@
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(require("./hello-world"));
+var aurelia_framework_1 = require("aurelia-framework");
 function configure(config) {
-    config.globalResources('./hello-world');
+    config
+        .feature(aurelia_framework_1.PLATFORM.moduleName('binding-behaviours/index'))
+        .feature(aurelia_framework_1.PLATFORM.moduleName('components/index'))
+        .feature(aurelia_framework_1.PLATFORM.moduleName('custom-attributes/index'))
+        .feature(aurelia_framework_1.PLATFORM.moduleName('services/index'))
+        .feature(aurelia_framework_1.PLATFORM.moduleName('value-converters/index'));
 }
 exports.configure = configure;
