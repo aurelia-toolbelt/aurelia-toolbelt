@@ -2,8 +2,7 @@
 
 export class GroupByValueConverter {
 
-
-    toView(array: Array<any>, property: string): Array<any> {
+    public toView(array: Array<any>, property: string): Array<any> {
 
         const groups = new Map();
 

@@ -2,31 +2,28 @@
 
 export class OrderByValueConverter {
 
-    toView(array: Array<any>, property: string, direction: string = 'desc') {
+    public toView(array: Array<any>, property: string, direction = 'desc') {
 
         array = array.slice(0); //  creates a shallow copy of an array
-                                //  value converters should absolutely not modify their source value.
-                                //  It is not the expected behavior, so such a converter would be surprising,
-                                //  in a really bad way, to developers using it
-                                
+        //  value converters should absolutely not modify their source value.
+        //  It is not the expected behavior, so such a converter would be surprising,
+        //  in a really bad way, to developers using it
+
         const directionFactor = direction === 'desc' ? -1 : 1;
 
-        array.sort( (current,next) =>{
-            const currentValue = current[property] ;
-            const nextValue = next[property] ;
+        array.sort((current, next) => {
+            const currentValue = current[property];
+            const nextValue = next[property];
 
-            if(currentValue > nextValue ){
+            if (currentValue > nextValue) {
                 return directionFactor;
-            }
-            else if(currentValue < nextValue ){
+            } else if (currentValue < nextValue) {
                 return -directionFactor;
             }
 
             return 0;
-        } );
+        });
 
         return array;
-
     }
-
 }

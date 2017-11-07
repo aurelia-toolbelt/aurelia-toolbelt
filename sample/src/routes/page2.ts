@@ -7,11 +7,11 @@ export class Page2 {
     public title: string;
 
 
-    private filter:string;
-    private names:Array<string>;
+    private filter: string;
+    private names: Array<string>;
 
     constructor(public router: Router) {
-        this.names = ["Vegar" , "Saeed" , "Hamed"]
+        this.names = ['Vegar', 'Saeed', 'Hamed'];
     }
 
     public canActivate(a, b, c) {

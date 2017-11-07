@@ -1,0 +1,26 @@
+.au-star {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+
+.au-empty-star:before,
+.au-empty-star~.au-empty-star:before {
+  content: "\2606";
+  /*full star : \2605 = &#9733;  *******  empty star : \2606 = &#9734;   ********  oulined star: \272E = &#10030; */
+  position: absolute;
+}
+
+.au-full-star:before,
+.au-full-star~.au-full-star:before {
+  content: "\2605";
+  /*full star : \2605 = &#9733;  *******  empty star : \2606 = &#9734;   ********  oulined star: \272E = &#10030; */
+  position: absolute;
+}
+
+.au-star-rtl {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}

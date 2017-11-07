@@ -7,33 +7,33 @@ import { StarRateClicked } from './StarRateClicked';
 @inject(EventAggregator)
 export class StarRate {
 
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) rate: number;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public rate: number;
 
-  @bindable maxRate: number;
-  @bindable readOnly: boolean = true;
-  @bindable color: string = '#753B85';
-  @bindable rtl: boolean = false;
-
-
-
-  @bindable fullStar: string = 'au-star au-full-star';
-  @bindable halfStar: string | null = null;
-  @bindable emptyStar: string = 'au-star au-empty-star';
-
-  @bindable clicked:any;
+  @bindable public maxRate: number;
+  @bindable public readOnly = true;
+  @bindable public color = '#753B85';
+  @bindable public rtl = false;
 
 
 
+  @bindable public fullStar = 'au-star au-full-star';
+  @bindable public halfStar: string | null = null;
+  @bindable public emptyStar = 'au-star au-empty-star';
 
-  @children('i') icons: Array<HTMLElement>;
-  private mouseRate: number = -1;
-  private showHalfStar: boolean = false;
+  @bindable public clicked: any;
+
+
+
+
+  @children('i') private icons: Array<HTMLElement>;
+  private mouseRate = -1;
+  private showHalfStar = false;
 
   constructor(private ea: EventAggregator) {
   }
 
 
-  mouseMove(event:any, index:number) {
+  private mouseMove(event: any, index: number) {
 
     if (this.readOnly) {
       return;
@@ -47,10 +47,10 @@ export class StarRate {
     }
 
     this.mouseRate = index + 1 - (this.showHalfStar ? 0.5 : 0);
-  
+
   }
 
-  setRate(index: number) {
+  private setRate(index: number) {
 
     if (this.readOnly) {
       return;
@@ -63,7 +63,7 @@ export class StarRate {
     this.ea.publish(new StarRateClicked(this.rate, oldValue));
   }
 
-  mouseLeft() {
+  private mouseLeft() {
     if (this.readOnly) {
       return;
     }
@@ -73,14 +73,14 @@ export class StarRate {
 
 
   @computedFrom('mouseRate', 'rate')
-  get currentValue() {
-    const x = (this.mouseRate != -1 ? this.mouseRate : this.rate);
+  private get currentValue() {
+    const x = (this.mouseRate !== -1 ? this.mouseRate : this.rate);
 
     return x;
   }
 
   @computedFrom('currentValue')
-  get hasFloatingPoint() {
+  private get hasFloatingPoint() {
     const mode = this.currentValue % 1;
     return mode > 0 && mode < 1;
   }

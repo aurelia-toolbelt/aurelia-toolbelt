@@ -46,6 +46,7 @@
     "directories": {
       "dist": "dist/commonjs"
     },
+    "dependencies": {},
     "devDependencies": {}
   },
   "dependencies": {},
