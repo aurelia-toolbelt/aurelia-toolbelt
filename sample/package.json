@@ -44,7 +44,6 @@
     "stylus": "^0.54.5",
     "tslint": "^5.8.0",
     "typescript": "2.6.1",
-    "typings": "^2.1.1",
     "whatwg-fetch": "^2.0.3"
   },
   "dependencies": {
