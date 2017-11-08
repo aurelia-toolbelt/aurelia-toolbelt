@@ -1,0 +1,5 @@
+language: node_js
+before_script:
+  - node setup
+script: 
+  - gulp build
