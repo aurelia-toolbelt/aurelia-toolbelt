@@ -4,6 +4,7 @@ import { FrameworkConfiguration , PLATFORM } from 'aurelia-framework';
 
 export function configure(config: FrameworkConfiguration) {
 
+  console.log('');
   config
     .feature( PLATFORM.moduleName('aurelia-toolbelt/binding-behaviours/index') )
     .feature( PLATFORM.moduleName('aurelia-toolbelt/components/index') )
