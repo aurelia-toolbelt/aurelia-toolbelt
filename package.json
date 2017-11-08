@@ -21,7 +21,6 @@
     "url": "https://github.com/shahabganji/aurelia-toolbelt"
   },
   "scripts": {
-    "prepublish": "./node_modules/.bin/typings install"
   },
   "devDependencies": {
     "del": "^3.0.0",
@@ -36,7 +35,6 @@
     "run-sequence": "^2.2.0",
     "tslint": "^5.8.0",
     "typescript": "^2.6.1",
-    "typings": "^2.1.1",
     "vinyl-paths": "^2.1.0"
   },
   "jspm": {
@@ -45,11 +43,13 @@
     "format": "cjs",
     "directories": {
       "dist": "dist/commonjs"
-    },
-    "dependencies": {},
+    } ,
     "devDependencies": {}
   },
-  "dependencies": {},
+  "dependencies": {
+    "aurelia-framework" : "1.1.5" , 
+    "aurelia-event-aggregator" : "1.0.1"
+  },
   "aurelia": {
     "usedBy": [],
     "build": {

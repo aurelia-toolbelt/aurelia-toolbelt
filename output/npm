@@ -1,7 +1,4 @@
 
-> aurelia-toolbelt@0.5.0 prepublish E:\Projects\git\aurelia-toolbelt
-> typings install
-
 [?25h
 +-- aurelia-binding
 +-- aurelia-bootstrapper
