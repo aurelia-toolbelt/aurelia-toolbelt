@@ -1,6 +1,7 @@
 System.register(["aurelia-framework"], function (exports_1, context_1) {
     var __moduleName = context_1 && context_1.id;
     function configure(config) {
+        console.log('');
         config
             .feature(aurelia_framework_1.PLATFORM.moduleName('aurelia-toolbelt/binding-behaviours/index'))
             .feature(aurelia_framework_1.PLATFORM.moduleName('aurelia-toolbelt/components/index'))

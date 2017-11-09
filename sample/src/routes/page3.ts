@@ -6,6 +6,7 @@ import { autoinject } from 'aurelia-framework';
 export class Page3 {
     public title: string;
 
+    public num = 0;
 
     constructor(public router: Router) {
 

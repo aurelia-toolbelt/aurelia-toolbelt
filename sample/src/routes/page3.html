@@ -1,6 +1,9 @@
 <template>
-  <section>
-    ${title}
-  </section>
+  <div style="margin:20px">
+    <h5>stringifyfa value converter</h5>
 
+    <label>عدد :</label>
+    <input type="text" value.bind="num"></input>
+    <label style="margin-left: 10px" textcontent.bind="num | stringifyfa"></label>
+  </div>
 </template>
