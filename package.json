@@ -20,9 +20,9 @@
     "type": "git",
     "url": "https://github.com/shahabganji/aurelia-toolbelt"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "devDependencies": {
+    "@types/node": "^8.0.50",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-plumber": "^1.1.0",
@@ -43,12 +43,15 @@
     "format": "cjs",
     "directories": {
       "dist": "dist/commonjs"
-    } ,
+    },
     "devDependencies": {}
   },
   "dependencies": {
-    "aurelia-framework" : "1.1.5" , 
-    "aurelia-event-aggregator" : "1.0.1"
+    "aurelia-event-aggregator": "1.0.1",
+    "aurelia-framework": "1.1.5",
+    "aurelia-router": "^1.4.0",
+    "persianjs": "^0.3.0",
+    "written-number": "^0.8.1"
   },
   "aurelia": {
     "usedBy": [],
