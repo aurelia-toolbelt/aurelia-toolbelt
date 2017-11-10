@@ -6,7 +6,7 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var aurelia_framework_1, wfa, StringifyFaValueConverter;
+    var aurelia_framework_1, r, RialValueConverter;
     return {
         setters: [
             function (aurelia_framework_1_1) {
@@ -14,28 +14,36 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            wfa = require('./scripts/wordifyfa.js');
-            StringifyFaValueConverter = (function () {
-                function StringifyFaValueConverter() {
+            r = require('./scripts/rial.js');
+            RialValueConverter = (function () {
+                function RialValueConverter() {
                 }
-                StringifyFaValueConverter.prototype.toView = function (number) {
+                RialValueConverter.prototype.toView = function (number, config) {
                     var len = number.toString().length;
                     if (len === 0) {
                         return '';
                     }
-                    else if (len <= 15) {
-                        return wfa.wordifyfa(number, 0);
-                    }
                     else {
-                        return 'عدد بسیار بزرگ است و قابل تبدیل نیست';
+                        var rial = void 0;
+                        if (config === undefined || config == null) {
+                            rial = new r.Rial({
+                                decimal: ',',
+                                alphabet: 'fa',
+                                currency: 'ریال'
+                            });
+                        }
+                        else {
+                            rial = new r.Rial(config);
+                        }
+                        return rial.get(number.toString());
                     }
                 };
-                StringifyFaValueConverter = __decorate([
-                    aurelia_framework_1.valueConverter('stringifyfa')
-                ], StringifyFaValueConverter);
-                return StringifyFaValueConverter;
+                RialValueConverter = __decorate([
+                    aurelia_framework_1.valueConverter('rial')
+                ], RialValueConverter);
+                return RialValueConverter;
             }());
-            exports_1("StringifyFaValueConverter", StringifyFaValueConverter);
+            exports_1("RialValueConverter", RialValueConverter);
         }
     };
 });

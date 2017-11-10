@@ -7,24 +7,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
 var wfa = require('./scripts/wordifyfa.js');
-var StringifyFaValueConverter = (function () {
-    function StringifyFaValueConverter() {
+var StringifyRialValueConverter = (function () {
+    function StringifyRialValueConverter() {
     }
-    StringifyFaValueConverter.prototype.toView = function (number) {
+    StringifyRialValueConverter.prototype.toView = function (number) {
         var len = number.toString().length;
         if (len === 0) {
             return '';
         }
         else if (len <= 15) {
-            return wfa.wordifyfa(number, 0);
+            return wfa.wordifyRials(number);
         }
         else {
             return 'عدد بسیار بزرگ است و قابل تبدیل نیست';
         }
     };
-    StringifyFaValueConverter = __decorate([
-        aurelia_framework_1.valueConverter('stringifyfa')
-    ], StringifyFaValueConverter);
-    return StringifyFaValueConverter;
+    StringifyRialValueConverter = __decorate([
+        aurelia_framework_1.valueConverter('stringifyrial')
+    ], StringifyRialValueConverter);
+    return StringifyRialValueConverter;
 }());
-exports.StringifyFaValueConverter = StringifyFaValueConverter;
+exports.StringifyRialValueConverter = StringifyRialValueConverter;

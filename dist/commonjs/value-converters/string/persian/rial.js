@@ -6,25 +6,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
-var wfa = require('./scripts/wordifyfa.js');
-var StringifyFaValueConverter = (function () {
-    function StringifyFaValueConverter() {
+var r = require('./scripts/rial.js');
+var RialValueConverter = (function () {
+    function RialValueConverter() {
     }
-    StringifyFaValueConverter.prototype.toView = function (number) {
+    RialValueConverter.prototype.toView = function (number, config) {
         var len = number.toString().length;
         if (len === 0) {
             return '';
         }
-        else if (len <= 15) {
-            return wfa.wordifyfa(number, 0);
-        }
         else {
-            return 'عدد بسیار بزرگ است و قابل تبدیل نیست';
+            var rial = void 0;
+            if (config === undefined || config == null) {
+                rial = new r.Rial({
+                    decimal: ',',
+                    alphabet: 'fa',
+                    currency: 'ریال'
+                });
+            }
+            else {
+                rial = new r.Rial(config);
+            }
+            return rial.get(number.toString());
         }
     };
-    StringifyFaValueConverter = __decorate([
-        aurelia_framework_1.valueConverter('stringifyfa')
-    ], StringifyFaValueConverter);
-    return StringifyFaValueConverter;
+    RialValueConverter = __decorate([
+        aurelia_framework_1.valueConverter('rial')
+    ], RialValueConverter);
+    return RialValueConverter;
 }());
-exports.StringifyFaValueConverter = StringifyFaValueConverter;
+exports.RialValueConverter = RialValueConverter;

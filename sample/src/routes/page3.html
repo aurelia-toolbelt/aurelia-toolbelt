@@ -6,34 +6,55 @@
       <input type="text" value.bind="num"></input>
       <label style="margin-left: 10px" textcontent.bind="num | stringifyfa"></label>
     </div>
-    <br>
+    <hr>
     <div>
       <h5 style="color:dodgerblue">stringify rial value converter</h5>
       <label>عدد :</label>
       <input type="text" value.bind="strrial"></input>
       <label style="margin-left: 10px" textcontent.bind="strrial | stringifyrial"></label>
     </div>
-    <br>
+    <hr>
     <div>
       <h5 style="color:dodgerblue">stringify toman value converter</h5>
       <label>عدد :</label>
       <input type="text" value.bind="strtoman"></input>
       <label style="margin-left: 10px" textcontent.bind="strtoman | stringifytoman"></label>
     </div>
-    <br>
+    <hr>
     <div>
       <h5 style="color:dodgerblue">rial value converter</h5>
       <label>عدد :</label>
       <input type="text" value.bind="rial"></input>
       <label style="margin-left: 10px" textcontent.bind="rial | rial : { decimal: '`', alphabet: 'fa', currency: 'هزار ریال' }"></label>
     </div>
-    <br>
+    <hr>
     <div>
       <h5 style="color:dodgerblue">toman value converter</h5>
       <label>عدد :</label>
       <input type="text" value.bind="toman"></input>
       <label style="margin-left: 10px" textcontent.bind="toman | toman : { decimal: '`', alphabet: 'fa', currency: 'هزار تومان' , cut: 1 }"></label>
     </div>
-    <br>
+    <hr>
+    <div>
+      <h5 style="color:dodgerblue">persian chars value converter</h5>
+      <label>متن :</label>
+      <input type="text" value.bind="word"></input>
+      <label style="margin-left: 10px" textcontent.bind="word | persianchars"></label>
+    </div>
+    <hr>
+    <div>
+      <h5 style="color:dodgerblue">persian url value converter</h5>
+      <label>آدرس وب :</label>
+      <input type="text" value.bind="url"></input>
+      <label style="margin-left: 10px" textcontent.bind="url | persianurl"></label>
+    </div>
+    <hr>
+    <div>
+      <h5 style="color:dodgerblue">persian keyboard value converter</h5>
+      <label>متن :</label>
+      <input type="text" value.bind="keyboard"></input>
+      <label style="margin-left: 10px" textcontent.bind="keyboard | persiankeyboard"></label>
+    </div>
+    <hr>
   </div>
 </template>

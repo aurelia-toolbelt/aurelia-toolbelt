@@ -51,6 +51,7 @@
     "aurelia-framework": "1.1.5",
     "aurelia-router": "^1.4.0",
     "persianjs": "^0.3.0",
+    "strman": "^2.0.0",
     "written-number": "^0.8.1"
   },
   "aurelia": {
