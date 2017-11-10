@@ -36,7 +36,6 @@ export class ClockCustomElement {
 
       this.timer = setInterval(() => {
         self.value = new Date();
-        console.log(self.value);
       }, 1000);
 
       resolve();
