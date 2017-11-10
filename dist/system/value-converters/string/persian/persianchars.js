@@ -6,7 +6,7 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var aurelia_framework_1, wfa, StringifyFaValueConverter;
+    var aurelia_framework_1, p, PersianCharsValueConverter;
     return {
         setters: [
             function (aurelia_framework_1_1) {
@@ -14,28 +14,25 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            wfa = require('./scripts/wordifyfa.js');
-            StringifyFaValueConverter = (function () {
-                function StringifyFaValueConverter() {
+            p = require('persianjs');
+            PersianCharsValueConverter = (function () {
+                function PersianCharsValueConverter() {
                 }
-                StringifyFaValueConverter.prototype.toView = function (number) {
-                    var len = number.toString().length;
+                PersianCharsValueConverter.prototype.toView = function (text) {
+                    var len = text.toString().length;
                     if (len === 0) {
                         return '';
                     }
-                    else if (len <= 15) {
-                        return wfa.wordifyfa(number, 0);
-                    }
                     else {
-                        return 'عدد بسیار بزرگ است و قابل تبدیل نیست';
+                        return p.persianJs(text).arabicChar().englishNumber().arabicNumber().toString();
                     }
                 };
-                StringifyFaValueConverter = __decorate([
-                    aurelia_framework_1.valueConverter('stringifyfa')
-                ], StringifyFaValueConverter);
-                return StringifyFaValueConverter;
+                PersianCharsValueConverter = __decorate([
+                    aurelia_framework_1.valueConverter('persianchars')
+                ], PersianCharsValueConverter);
+                return PersianCharsValueConverter;
             }());
-            exports_1("StringifyFaValueConverter", StringifyFaValueConverter);
+            exports_1("PersianCharsValueConverter", PersianCharsValueConverter);
         }
     };
 });

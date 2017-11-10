@@ -6,25 +6,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
-var wfa = require('./scripts/wordifyfa.js');
-var StringifyFaValueConverter = (function () {
-    function StringifyFaValueConverter() {
+var p = require('persianjs');
+var PersianUrlValueConverter = (function () {
+    function PersianUrlValueConverter() {
     }
-    StringifyFaValueConverter.prototype.toView = function (number) {
-        var len = number.toString().length;
+    PersianUrlValueConverter.prototype.toView = function (text) {
+        var len = text.toString().length;
         if (len === 0) {
             return '';
         }
-        else if (len <= 15) {
-            return wfa.wordifyfa(number, 0);
-        }
         else {
-            return 'عدد بسیار بزرگ است و قابل تبدیل نیست';
+            return p.persianJs(text).fixURL().toString();
         }
     };
-    StringifyFaValueConverter = __decorate([
-        aurelia_framework_1.valueConverter('stringifyfa')
-    ], StringifyFaValueConverter);
-    return StringifyFaValueConverter;
+    PersianUrlValueConverter = __decorate([
+        aurelia_framework_1.valueConverter('persianurl')
+    ], PersianUrlValueConverter);
+    return PersianUrlValueConverter;
 }());
-exports.StringifyFaValueConverter = StringifyFaValueConverter;
+exports.PersianUrlValueConverter = PersianUrlValueConverter;

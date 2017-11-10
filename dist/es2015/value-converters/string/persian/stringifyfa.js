@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 define(["require", "exports", "aurelia-framework"], function (require, exports, aurelia_framework_1) {
     Object.defineProperty(exports, "__esModule", { value: true });
-    var wfa = require('./wordifyfa.js');
+    var wfa = require('./scripts/wordifyfa.js');
     var StringifyFaValueConverter = (function () {
         function StringifyFaValueConverter() {
         }
