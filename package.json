@@ -20,7 +20,11 @@
     "type": "git",
     "url": "https://github.com/shahabganji/aurelia-toolbelt"
   },
-  "scripts": {},
+  "scripts": {
+    "setup": "node setup",
+    "watch": "gulp watch",
+    "build": "gulp build"
+  },
   "devDependencies": {
     "@types/node": "^8.0.50",
     "del": "^3.0.0",
