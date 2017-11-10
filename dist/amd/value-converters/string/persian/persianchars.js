@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 define(["require", "exports", "aurelia-framework"], function (require, exports, aurelia_framework_1) {
     Object.defineProperty(exports, "__esModule", { value: true });
-    var p = require('persianjs');
+    var persianJs = require('./scripts/persian.js');
     var PersianCharsValueConverter = (function () {
         function PersianCharsValueConverter() {
         }
@@ -16,7 +16,7 @@ define(["require", "exports", "aurelia-framework"], function (require, exports, 
                 return '';
             }
             else {
-                return p.persianJs(text).arabicChar().englishNumber().arabicNumber().toString();
+                return persianJs(text).arabicChar().englishNumber().arabicNumber().toString();
             }
         };
         PersianCharsValueConverter = __decorate([

@@ -6,7 +6,7 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var aurelia_framework_1, p, PersianCharsValueConverter;
+    var aurelia_framework_1, persianJs, PersianCharsValueConverter;
     return {
         setters: [
             function (aurelia_framework_1_1) {
@@ -14,7 +14,7 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            p = require('persianjs');
+            persianJs = require('./scripts/persian.js');
             PersianCharsValueConverter = (function () {
                 function PersianCharsValueConverter() {
                 }
@@ -24,7 +24,7 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
                         return '';
                     }
                     else {
-                        return p.persianJs(text).arabicChar().englishNumber().arabicNumber().toString();
+                        return persianJs(text).arabicChar().englishNumber().arabicNumber().toString();
                     }
                 };
                 PersianCharsValueConverter = __decorate([

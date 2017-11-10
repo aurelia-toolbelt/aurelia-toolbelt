@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
-var p = require('persianjs');
+var persianJs = require('./scripts/persian.js');
 var PersianUrlValueConverter = (function () {
     function PersianUrlValueConverter() {
     }
@@ -16,7 +16,7 @@ var PersianUrlValueConverter = (function () {
             return '';
         }
         else {
-            return p.persianJs(text).fixURL().toString();
+            return persianJs(text).fixURL().toString();
         }
     };
     PersianUrlValueConverter = __decorate([
