@@ -24,7 +24,7 @@
     "setup": "node setup",
     "watch": "gulp watch",
     "build": "gulp build",
-    "push (dev)": "git push origin dev"
+    "push-dev": "git push origin dev"
   },
   "devDependencies": {
     "@types/node": "^8.0.50",
