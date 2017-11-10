@@ -110,12 +110,16 @@ Rial.prototype.clean = function (str) {
 }
 
 Rial.prototype.format = function (str) {
-	str = str.split("").reverse().join("");
-	var n = str.match(/.{1,3}/g);
-	for (var i = 0; i < n.length; i++)
-		n[i] = n[i].split("").reverse().join("");
-	str = n.reverse().join(this.decimal);
-	this.result = str;
+	if (!this.isEmpty(str)) { // Hamed Fathi
+		str = str.split("").reverse().join("");
+		var n = str.match(/.{1,3}/g);
+		for (var i = 0; i < n.length; i++)
+			n[i] = n[i].split("").reverse().join("");
+		str = n.reverse().join(this.decimal);
+		this.result = str;
+	} // Hamed Fathi
+	else // Hamed Fathi
+		this.result = "0"; // Hamed Fathi
 }
 
 Rial.prototype.slice = function (str) {

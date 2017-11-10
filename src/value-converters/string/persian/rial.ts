@@ -4,15 +4,22 @@ let r = require('./scripts/rial.js');
 
 @valueConverter('rial')
 export class RialValueConverter {
-    /*public toView(number: string): string {
-        console.log(r);
-        console.log(r.Rial());
-        const rial = new r.Rial({
-            decimal: ',',
-            alphabet: 'fa',
-            currency: 'هزار ریال',
-            cut: 3
-        });
-        return rial.get(number);
-    }*/
+    public toView(number: string, config: object): string {
+        const len = number.toString().length;
+        if (len === 0) {
+            return '';
+        } else {
+            let rial;
+            if (config === undefined || config == null) {
+                rial = new r.Rial({
+                    decimal: ',',
+                    alphabet: 'fa',
+                    currency: 'ریال'
+                });
+            } else {
+                rial = new r.Rial(config);
+            }
+            return rial.get(number.toString());
+        }
+    }
 }
