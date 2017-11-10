@@ -1,0 +1,29 @@
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.clock {
+  font-family: 'Share Tech Mono', monospace;
+  color: #ffffff;
+  text-align: center;
+  /* position: absolute;
+  left: 50%;
+  top: 50%; */
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.clock .time {
+  letter-spacing: 0.05em;
+}
+
+.clock .date {
+  letter-spacing: 0.1em;
+  padding-bottom: 5px;
+}
+
+.clock .text {
+  letter-spacing: 0.1em;
+  padding: 10px 0 0;
+}

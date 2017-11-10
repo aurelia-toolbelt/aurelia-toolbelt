@@ -49,6 +49,9 @@
   "dependencies": {
     "aurelia-toolbelt": "../aurelia-toolbelt-0.5.0.tgz",
     "fuse-box-aurelia-loader": "^2.0.1",
-    "fuse-box-typechecker": "^2.6.1"
+    "fuse-box-typechecker": "^2.6.1",
+    "humanize-duration": "^3.12.0",
+    "jalali-moment": "^3.0.2",
+    "moment-timezone": "^0.5.14"
   }
 }

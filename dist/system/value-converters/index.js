@@ -3,6 +3,7 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
     function configure(config) {
         config
             .feature(aurelia_framework_1.PLATFORM.moduleName('aurelia-toolbelt/value-converters/array/index'))
+            .feature(aurelia_framework_1.PLATFORM.moduleName('aurelia-toolbelt/value-converters/datetime/index'))
             .feature(aurelia_framework_1.PLATFORM.moduleName('aurelia-toolbelt/value-converters/string/index'));
     }
     exports_1("configure", configure);
