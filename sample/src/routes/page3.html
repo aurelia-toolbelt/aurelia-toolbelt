@@ -25,14 +25,14 @@
       <h5 style="color:dodgerblue">rial value converter</h5>
       <label>عدد :</label>
       <input type="text" value.bind="rial"></input>
-      <label style="margin-left: 10px" textcontent.bind="rial | rial"></label>
+      <label style="margin-left: 10px" textcontent.bind="rial | rial : { decimal: '`', alphabet: 'fa', currency: 'هزار ریال' }"></label>
     </div>
     <br>
     <div>
       <h5 style="color:dodgerblue">toman value converter</h5>
       <label>عدد :</label>
       <input type="text" value.bind="toman"></input>
-      <label style="margin-left: 10px" textcontent.bind="toman | toman"></label>
+      <label style="margin-left: 10px" textcontent.bind="toman | toman : { decimal: '`', alphabet: 'fa', currency: 'هزار تومان' , cut: 1 }"></label>
     </div>
     <br>
   </div>
