@@ -51,8 +51,6 @@ export class TimeConverter {
 
     let format = show24Hours === true || show24Hours === 'true' ? 'HH:mm:ss' : 'hh:mm:ss a';
 
-    console.log(`time format is: ${format}`);
-
     return moment(value).format(format);
   }
 }
