@@ -1,9 +1,39 @@
 <template>
   <div style="margin:20px">
-    <h5>stringifyfa value converter</h5>
-
-    <label>عدد :</label>
-    <input type="text" value.bind="num"></input>
-    <label style="margin-left: 10px" textcontent.bind="num | stringifyfa"></label>
+    <div>
+      <h5 style="color:dodgerblue">stringifyfa value converter</h5>
+      <label>عدد :</label>
+      <input type="text" value.bind="num"></input>
+      <label style="margin-left: 10px" textcontent.bind="num | stringifyfa"></label>
+    </div>
+    <br>
+    <div>
+      <h5 style="color:dodgerblue">stringify rial value converter</h5>
+      <label>عدد :</label>
+      <input type="text" value.bind="strrial"></input>
+      <label style="margin-left: 10px" textcontent.bind="strrial | stringifyrial"></label>
+    </div>
+    <br>
+    <div>
+      <h5 style="color:dodgerblue">stringify toman value converter</h5>
+      <label>عدد :</label>
+      <input type="text" value.bind="strtoman"></input>
+      <label style="margin-left: 10px" textcontent.bind="strtoman | stringifytoman"></label>
+    </div>
+    <br>
+    <div>
+      <h5 style="color:dodgerblue">rial value converter</h5>
+      <label>عدد :</label>
+      <input type="text" value.bind="rial"></input>
+      <label style="margin-left: 10px" textcontent.bind="rial | rial"></label>
+    </div>
+    <br>
+    <div>
+      <h5 style="color:dodgerblue">toman value converter</h5>
+      <label>عدد :</label>
+      <input type="text" value.bind="toman"></input>
+      <label style="margin-left: 10px" textcontent.bind="toman | toman"></label>
+    </div>
+    <br>
   </div>
 </template>

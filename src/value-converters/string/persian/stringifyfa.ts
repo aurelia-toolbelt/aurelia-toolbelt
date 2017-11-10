@@ -1,6 +1,6 @@
 import { valueConverter } from 'aurelia-framework';
 
-let wfa = require('./wordifyfa.js');
+let wfa = require('./scripts/wordifyfa.js');
 
 @valueConverter('stringifyfa')
 export class StringifyFaValueConverter {
