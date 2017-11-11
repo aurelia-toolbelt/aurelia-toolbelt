@@ -1,0 +1,42 @@
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.clock {
+    font-family: 'Share Tech Mono', monospace;
+    color: #ffffff;
+    text-align: center;
+    /* position: absolute;
+  left: 50%;
+  top: 50%; */
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}
+
+.clock .time {
+    letter-spacing: 0.05em;
+}
+
+.clock .date {
+    letter-spacing: 0.1em;
+    padding-bottom: 5px;
+}
+
+.clock .text {
+    letter-spacing: 0.1em;
+    padding: 10px 0 0;
+}

@@ -1,6 +1,8 @@
 import { valueConverter } from 'aurelia-framework';
 
-let persianJs = require('./scripts/persian.js');
+// let persianJs = require('./scripts/persian.js');
+
+const persianjs = require('persianjs');
 
 @valueConverter('persianchars')
 export class PersianCharsValueConverter {
@@ -9,7 +11,7 @@ export class PersianCharsValueConverter {
         if (len === 0) {
             return '';
         } else {
-            return persianJs(text).arabicChar().englishNumber().arabicNumber().toString();
+            return persianjs(text).arabicChar().englishNumber().arabicNumber().toString();
         }
     }
 }

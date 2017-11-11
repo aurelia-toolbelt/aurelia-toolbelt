@@ -1,6 +1,6 @@
 import { valueConverter } from 'aurelia-framework';
 
-let persianJs = require('./scripts/persian.js');
+const persianJs = require('persianjs');
 
 @valueConverter('persianurl')
 export class PersianUrlValueConverter {
