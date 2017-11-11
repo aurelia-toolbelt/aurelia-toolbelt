@@ -117,6 +117,7 @@ gulp.task('fuse-sample', function () {
         + jalali-moment
         + moment-timezone
         + humanize-duration
+        + persianjs
         + fuse-box-aurelia-loader
 `)
 

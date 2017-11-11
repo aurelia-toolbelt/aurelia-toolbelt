@@ -19,6 +19,16 @@
     normalize-path "^2.0.1"
     through2 "^2.0.3"
 
+"@types/moment-timezone@^0.5.2":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@types/moment-timezone/-/moment-timezone-0.5.1.tgz#2e8df25a100d40afc06b9e76ce43c458584ef610"
+  dependencies:
+    moment ">=2.14.0"
+
+"@types/node@^8.0.50":
+  version "8.0.51"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.51.tgz#b31d716fb8d58eeb95c068a039b9b6292817d5fb"
+
 acorn@4.X:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.4.tgz#17a8d6a7a6c4ef538b814ec9abac2779293bf30a"
@@ -97,7 +107,7 @@ aurelia-dependency-injection@^1.0.0:
     aurelia-metadata "^1.0.0"
     aurelia-pal "^1.0.0"
 
-aurelia-event-aggregator@1.0.1:
+aurelia-event-aggregator@1.0.1, aurelia-event-aggregator@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/aurelia-event-aggregator/-/aurelia-event-aggregator-1.0.1.tgz#9d7c7c1e1efe1ef3a78785e76abe80601e2d34c8"
   dependencies:
@@ -116,6 +126,10 @@ aurelia-framework@1.1.5:
     aurelia-path "^1.0.0"
     aurelia-task-queue "^1.0.0"
     aurelia-templating "^1.0.0"
+
+aurelia-history@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/aurelia-history/-/aurelia-history-1.1.0.tgz#779aa386d56803aaa4bdb7d71435a57768505f57"
 
 aurelia-loader@^1.0.0:
   version "1.0.0"
@@ -141,6 +155,23 @@ aurelia-pal@^1.0.0:
 aurelia-path@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/aurelia-path/-/aurelia-path-1.1.1.tgz#caa9d20bc8515a5f9f286d9a3b18d81b2c85b0dd"
+
+aurelia-route-recognizer@^1.0.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/aurelia-route-recognizer/-/aurelia-route-recognizer-1.1.1.tgz#3b89c112d8f1af218bc205ab5a6fe0d3913fffb0"
+  dependencies:
+    aurelia-path "^1.0.0"
+
+aurelia-router@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/aurelia-router/-/aurelia-router-1.4.0.tgz#a6109dba2916065b9e1fa47fe3dce69d2fb5ff1d"
+  dependencies:
+    aurelia-dependency-injection "^1.0.0"
+    aurelia-event-aggregator "^1.0.0"
+    aurelia-history "^1.0.0"
+    aurelia-logging "^1.0.0"
+    aurelia-path "^1.0.0"
+    aurelia-route-recognizer "^1.0.0"
 
 aurelia-task-queue@^1.0.0, aurelia-task-queue@^1.1.0:
   version "1.2.1"
@@ -814,6 +845,10 @@ homedir-polyfill@^1.0.0:
   dependencies:
     parse-passwd "^1.0.0"
 
+humanize-duration@^3.12.0:
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/humanize-duration/-/humanize-duration-3.12.0.tgz#be2fb3062f5d7abc0892e715b5dd2bd152c7055e"
+
 inflight@^1.0.4:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/inflight/-/inflight-1.0.6.tgz#49bd6331d7d02d0c09bc910a1075ba8165b56df9"
@@ -961,6 +996,12 @@ isobject@^2.0.0:
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-2.1.0.tgz#f065561096a3f1da2ef46272f815c840d87e0c89"
   dependencies:
     isarray "1.0.0"
+
+jalali-moment@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/jalali-moment/-/jalali-moment-3.0.2.tgz#516e1cae7383e66587fec4eb1bc129b927f11440"
+  dependencies:
+    moment "^2.18.1"
 
 js-tokens@^3.0.2:
   version "3.0.2"
@@ -1232,6 +1273,16 @@ mkdirp@^0.5.0:
   dependencies:
     minimist "0.0.8"
 
+moment-timezone@^0.5.14:
+  version "0.5.14"
+  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.14.tgz#4eb38ff9538b80108ba467a458f3ed4268ccfcb1"
+  dependencies:
+    moment ">= 2.9.0"
+
+"moment@>= 2.9.0", moment@>=2.14.0, moment@^2.18.1:
+  version "2.19.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.19.1.tgz#56da1a2d1cbf01d38b7e1afc31c10bcfa1929167"
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -1360,6 +1411,10 @@ path-root@^0.1.1:
   resolved "https://registry.yarnpkg.com/path-root/-/path-root-0.1.1.tgz#9a4a6814cac1c0cd73360a95f32083c8ea4745b7"
   dependencies:
     path-root-regex "^0.1.0"
+
+persianjs@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/persianjs/-/persianjs-0.3.0.tgz#fe7fdbf8bd6a41abd54ab4a53c95248f63c82fd4"
 
 pify@^2.0.0:
   version "2.3.0"
@@ -1584,6 +1639,10 @@ strip-bom@^2.0.0:
   dependencies:
     is-utf8 "^0.2.0"
 
+strman@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/strman/-/strman-2.0.0.tgz#7a13d89bb0a0001d6a527ab41ea66d0816061cfd"
+
 supports-color@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
@@ -1782,6 +1841,10 @@ which@^1.2.12:
 wrappy@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
+
+written-number@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/written-number/-/written-number-0.8.1.tgz#6ca4f248e06f929b46ce3ce9bb4779d18fc95426"
 
 "xtend@>=4.0.0 <4.1.0-0", xtend@~4.0.0, xtend@~4.0.1:
   version "4.0.1"

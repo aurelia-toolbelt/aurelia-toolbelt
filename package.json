@@ -1,6 +1,6 @@
 {
   "name": "aurelia-toolbelt",
-  "version": "0.5.0",
+  "version": "0.5.4",
   "description": "Create typescript plugins for Aurelia",
   "keywords": [
     "aurelia",
@@ -27,7 +27,8 @@
     "push-dev": "git push origin dev"
   },
   "devDependencies": {
-    "@types/node": "^8.0.50",
+    "@types/node": "^8.0.51",
+    "@types/moment-timezone": "^0.5.1",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-plumber": "^1.1.0",
@@ -52,7 +53,7 @@
     "devDependencies": {}
   },
   "dependencies": {
-    "@types/moment-timezone": "^0.5.1",
+
     "aurelia-event-aggregator": "1.0.1",
     "aurelia-framework": "1.1.5",
     "aurelia-router": "^1.4.0",
