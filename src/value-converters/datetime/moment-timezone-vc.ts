@@ -8,7 +8,7 @@
 
 //   public toView(value: string, timezone: string) {
 
-//     if (!value || !timezone) { return; }
+//     if (!value || !timezone) { return ''; }
 
 //     return moment(value).tz(timezone).format('ha z');
 
