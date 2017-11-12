@@ -28,8 +28,8 @@ function spawner(cmd, args, dirname) {
   });
 }
 
-this.mainPath = `${__dirname}${process.platform === "win32" ? "\\":"//"}`
-this.samplePath = `${__dirname}${process.platform === "win32" ? "\\sample":"//sample"}`
+this.mainPath = `${__dirname}${process.platform === "win32" ? "\\" : "//"}`
+this.samplePath = `${__dirname}${process.platform === "win32" ? "\\sample" : "//sample"}`
 
 function safeIncreaseVersion(version) {
 
@@ -70,9 +70,9 @@ function updatePluginPackage() {
 
     obj = JSON.stringify(obj, null, 4);
 
-    fs.writeFile(pluginPackageFile, obj);
+    fs.writeFile(pluginPackageFile, obj, function (e) { });
 
-    fs.unlink(fileName, function (error) {});
+    fs.unlink(fileName, function (error) { });
 
     console.log('Plugin package.json updated.');
 
@@ -92,7 +92,7 @@ function updateSamplePackage() {
 
     obj = JSON.stringify(obj, null, 4);
 
-    fs.writeFile(samplePackageFile, obj);
+    fs.writeFile(samplePackageFile, obj, function (e) { });
     console.log('Sample package.json updated.');
 
   });
