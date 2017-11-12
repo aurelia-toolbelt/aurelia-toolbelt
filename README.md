@@ -1,6 +1,6 @@
 # aurelia-toolbelt
 
-## A bunch of tools for creating reach aurelia applications. :wink:
+## A bunch of tools for creating rich aurelia applications. :wink:
 
 
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://opensource.org/licenses/MIT)
