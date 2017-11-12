@@ -6,7 +6,7 @@ var runSequence = require('run-sequence');
 
 
 // so fusebox uses correct path (needed for gulp)
-process.env.PROJECT_ROOT = path.resolve(process.cwd(), './sample/')
+process.env.PROJECT_ROOT = path.resolve(process.cwd(), './sample/');
 
 
 // built in plugins to fusebox
@@ -153,6 +153,7 @@ gulp.task('fuse-plugin', function () {
     output: './dist/$name.js',
     log: false, //-> set to true if you want more data
     debug: false, //-> set to true if you want more data
+    useTypescriptCompiler:true ,
     plugins: [
       HTMLPlugin({
         useDefault: true
