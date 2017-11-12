@@ -29,6 +29,32 @@ this.samplePath = `${__dirname}${process.platform === "win32" ? "\\sample":"//sa
 
 let NpmInstallRoot = spawner(npm, ["install"], this.mainPath).then(() => {
 
+  let pluginPackageFile = './package.json';
+
+  fs.readFile(pluginPackageFile, 'utf8', (err, data) => {
+    if (err) {
+      throw err;
+    }
+
+    let obj = JSON.parse(data);
+
+    let versions = new Array();
+
+    versions = obj.version.split('.');
+
+    if (versions && (versions.length > 0)) {
+
+      versions[versions.length - 1] = parseInt(versions[versions.length - 1]) + 1;
+
+      obj.version = versions.join('.');
+    }
+
+    obj = JSON.stringify(obj, null, 4);
+
+    fs.writeFile(pluginPackageFile, obj);
+
+  });
+
   let NpmPackRoot = spawner(npm, ["pack"], this.mainPath).then(() => {
 
     let NpmInstallSample = spawner(npm, ["install"], this.samplePath);
