@@ -97,7 +97,7 @@ gulp.task('fuse-sample', function () {
 
   // vendor bundle
   fuse.bundle("vendor")
-    .cache(true)
+    .cache(false)
     .instructions(` 
         > extra.ts
         + aurelia-bootstrapper
@@ -173,6 +173,7 @@ gulp.task('fuse-plugin', function () {
     .instructions(`
             + [**/*.html] 
             + [**/*.ts]
+            + [**/*.js]
             + [**/*.css]
         `).sourceMaps(true);
 
