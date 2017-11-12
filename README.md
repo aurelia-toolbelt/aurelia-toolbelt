@@ -3,8 +3,10 @@
 ## A bunch of tools for creating reach aurelia applications. :wink:
 
 [![MIT License][license-image]][license-url]
-[![Build Status][travis-image]][travis-url]
-[![NPM version][npm-version-image]][npm-url] 
+
+[![Build][travis-image]][https://travis-ci.org/shahabganji/aurelia-template]
+
+[![NPM][npm-version-image]][https://www.npmjs.com/package/aurelia-toolbelt] 
 
 ### How to get everything installed after download
 * run `node setup`
