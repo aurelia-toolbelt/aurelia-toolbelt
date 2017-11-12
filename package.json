@@ -1,6 +1,6 @@
 {
     "name": "aurelia-toolbelt",
-    "version": "0.5.14",
+    "version": "0.5.15",
     "description": "Create typescript plugins for Aurelia",
     "keywords": [
         "aurelia",
