@@ -2,11 +2,12 @@
 
 ## A bunch of tools for creating reach aurelia applications. :wink:
 
-[![MIT License][license-image]][license-url]
 
-[![Build][travis-image]][https://travis-ci.org/shahabganji/aurelia-template]
+[![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 
-[![NPM][npm-version-image]][https://www.npmjs.com/package/aurelia-toolbelt] 
+[![Build Status](https://travis-ci.org/shahabganji/aurelia-toolbelt.svg?branch=dev)](https://travis-ci.org/shahabganji/aurelia-toolbelt)
+
+[![npm version](https://badge.fury.io/js/aurelia-toolbelt.svg)](https://badge.fury.io/js/aurelia-toolbelt)
 
 ### How to get everything installed after download
 * run `node setup`
