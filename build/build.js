@@ -144,7 +144,9 @@ gulp.task('build-run', function (callback) {
 gulp.task('check-build', function () {
   // get typechecker
 
-  var TypeHelper = require('../sample/node_modules/fuse-box-typechecker').TypeHelper
+  var pack = process.platform === "win32" ? '..\sample\node_modules\fuse-box-typechecker' : '../sample/node_modules/fuse-box-typechecker';
+
+  var TypeHelper = require(pack).TypeHelper
   var testWatch = TypeHelper({
     tsConfig: './tsconfig.json',
     name: 'Build checking (I throw error and stop build if ts/lint errors is found)',
