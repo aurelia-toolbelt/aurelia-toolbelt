@@ -98,14 +98,13 @@ function updateSamplePackage() {
   });
 }
 
-
 let NpmInstallRoot = spawner(npm, ["install"], this.mainPath).then(() => {
 
   updatePluginPackage();
+
   let NpmPackRoot = spawner(npm, ["pack"], this.mainPath).then(() => {
 
     updateSamplePackage();
-
 
     let NpmInstallSample = spawner(npm, ["install"], this.samplePath);
   });
