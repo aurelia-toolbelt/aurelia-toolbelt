@@ -1,54 +1,54 @@
 {
-  "name": "aurelia-toolbelt-fusebox",
-  "version": "1.0.0",
-  "description": "A starter kit for building a standard navigation-style app with Aurelia and TypeScript and fusebox.",
-  "keywords": [
-    "aurelia",
-    "navigation",
-    "skeleton",
-    "typescript",
-    "vscode"
-  ],
-  "homepage": "http://aurelia.io",
-  "bugs": {
-    "url": "na"
-  },
-  "license": "MIT",
-  "author": "Vegar Ringdal",
-  "main": "dist/main.js",
-  "repository": {
-    "type": "git",
-    "url": "na"
-  },
-  "scripts": {
-    "prepare": "./node_modules/.bin/typings install"
-  },
-  "devDependencies": {
-    "@types/bluebird-global": "^3.5.3",
-    "aurelia-animator-css": "^1.0.4",
-    "aurelia-binding": "^1.5.0",
-    "aurelia-bootstrapper": "^2.1.1",
-    "aurelia-dependency-injection": "^1.3.2",
-    "aurelia-fetch-client": "^1.1.3",
-    "aurelia-framework": "^1.1.5",
-    "aurelia-loader": "^1.0.0",
-    "aurelia-metadata": "^1.0.3",
-    "aurelia-pal": "^1.4.0",
-    "aurelia-path": "^1.1.1",
-    "aurelia-task-queue": "^1.2.1",
-    "aurelia-templating": "^1.6.0",
-    "bluebird": "^3.5.1",
-    "fuse-box": "2.4.0",
-    "less": "^2.7.3",
-    "source-map": "^0.6.1",
-    "stylus": "^0.54.5",
-    "tslint": "^5.8.0",
-    "typescript": "2.6.1",
-    "whatwg-fetch": "^2.0.3"
-  },
-  "dependencies": {
-    "aurelia-toolbelt": "../aurelia-toolbelt-0.5.6.tgz",
-    "fuse-box-aurelia-loader": "^2.0.1",
-    "fuse-box-typechecker": "^2.6.1"
-  }
+    "name": "aurelia-toolbelt-fusebox",
+    "version": "1.0.0",
+    "description": "A starter kit for building a standard navigation-style app with Aurelia and TypeScript and fusebox.",
+    "keywords": [
+        "aurelia",
+        "navigation",
+        "skeleton",
+        "typescript",
+        "vscode"
+    ],
+    "homepage": "http://aurelia.io",
+    "bugs": {
+        "url": "na"
+    },
+    "license": "MIT",
+    "author": "Vegar Ringdal",
+    "main": "dist/main.js",
+    "repository": {
+        "type": "git",
+        "url": "na"
+    },
+    "scripts": {
+        "prepare": "./node_modules/.bin/typings install"
+    },
+    "devDependencies": {
+        "@types/bluebird-global": "^3.5.3",
+        "aurelia-animator-css": "^1.0.4",
+        "aurelia-binding": "^1.5.0",
+        "aurelia-bootstrapper": "^2.1.1",
+        "aurelia-dependency-injection": "^1.3.2",
+        "aurelia-fetch-client": "^1.1.3",
+        "aurelia-framework": "^1.1.5",
+        "aurelia-loader": "^1.0.0",
+        "aurelia-metadata": "^1.0.3",
+        "aurelia-pal": "^1.4.0",
+        "aurelia-path": "^1.1.1",
+        "aurelia-task-queue": "^1.2.1",
+        "aurelia-templating": "^1.6.0",
+        "bluebird": "^3.5.1",
+        "fuse-box": "2.4.0",
+        "less": "^2.7.3",
+        "source-map": "^0.6.1",
+        "stylus": "^0.54.5",
+        "tslint": "^5.8.0",
+        "typescript": "2.6.1",
+        "whatwg-fetch": "^2.0.3"
+    },
+    "dependencies": {
+        "aurelia-toolbelt": "../aurelia-toolbelt-0.5.7.tgz",
+        "fuse-box-aurelia-loader": "^2.0.1",
+        "fuse-box-typechecker": "^2.6.1"
+    }
 }
