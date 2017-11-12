@@ -144,23 +144,26 @@ gulp.task('build-run', function (callback) {
 gulp.task('check-build', function () {
   // get typechecker
 
-  var TypeHelper = require('../sample/node_modules/fuse-box-typechecker').TypeHelper
+  var pack = process.platform === "win32" ? '..\sample\node_modules\fuse-box-typechecker' : '../sample/node_modules/fuse-box-typechecker';
+
+  var TypeHelper = require(pack).TypeHelper
   var testWatch = TypeHelper({
     tsConfig: './tsconfig.json',
-    name: 'Build checking (I trow error and stop build if ts/lint errors is found)',
+    name: 'Build checking (I throw error and stop build if ts/lint errors is found)',
     basePath: './',
     tsLint: './tslint.json',
     shortenFilenames: true,
     yellowOnLint: true,
-    throwOnSyntactic: true, // if you want it to throwe error
-    throwOnSemantic: true, // if you want it to throwe error
-    throwOnGlobal: true, // if you want it to throwe error
-    throwOnOptions: true, // if you want it to throwe error
-    throwOnTsLint: true // trhow on lint errors */
+    throwOnSyntactic: true, // if you want it to throw error
+    throwOnSemantic: true, // if you want it to throw error
+    throwOnGlobal: true, // if you want it to throw error
+    throwOnOptions: true, // if you want it to throw error
+    throwOnTsLint: true // throw on lint errors */
   })
 
   testWatch.runSync('./src')
   return true;
+  
 });
 
 
