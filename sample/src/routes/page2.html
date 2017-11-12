@@ -14,5 +14,22 @@
     <li repeat.for="name of names|filterBy:filter">${name}</li>
   </ul>
 
+  <hr />
+
+  <style>
+    .my-highlight {
+      color:goldenrod;
+    }
+
+  </style>
+
+  <ul>
+    <li repeat.for="book of books | fuse:options:filter | fuseHighlight:'my-highlight'">
+      <span innerhtml.bind="book.item.highlighted.title || book.item.title"></span>
+      <span>-></span>
+      <span>${book.item.author.firstName}</span>
+      <span innerhtml.bind="book.item.highlighted.author.lastName || book.item.author.lastName" </span>
+    </li>
+  </ul>
 
 </template>

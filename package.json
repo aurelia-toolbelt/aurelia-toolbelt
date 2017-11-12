@@ -1,6 +1,6 @@
 {
   "name": "aurelia-toolbelt",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Create typescript plugins for Aurelia",
   "keywords": [
     "aurelia",
@@ -62,7 +62,8 @@
     "moment-timezone": "^0.5.14",
     "persianjs": "^0.3.0",
     "strman": "^2.0.0",
-    "written-number": "^0.8.1"
+    "written-number": "^0.8.1" , 
+    "fuse.js": "3.2.0"
   },
   "aurelia": {
     "usedBy": [],

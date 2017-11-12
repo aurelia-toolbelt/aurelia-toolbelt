@@ -99,6 +99,7 @@ gulp.task('fuse-sample', function () {
   fuse.bundle("vendor")
     .cache(true)
     .instructions(` 
+        > extra.ts
         + aurelia-bootstrapper
         + aurelia-framework
         + aurelia-pal
