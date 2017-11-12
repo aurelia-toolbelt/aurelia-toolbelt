@@ -1,8 +1,10 @@
 # aurelia-toolbelt
 
-Simple starter kit for making plugins for aurelia
-This also contain a sample
+## A bunch of tools for creating reach aurelia applications. :wink:
 
+[![MIT License][license-image]][license-url]
+[![Build Status][travis-image]][travis-url]
+[![NPM version][npm-version-image]][npm-url] 
 
 ### How to get everything installed after download
 * run `node setup`
