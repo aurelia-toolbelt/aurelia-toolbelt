@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'tahoma';
+  font-size: 13px;
 }
 
 .page-host {
@@ -28,4 +29,14 @@ section {
   height: 60px;
   line-height: 60px;
   background-color: #f5f5f5;
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
