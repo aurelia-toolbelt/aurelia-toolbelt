@@ -1,4 +1,4 @@
-# aurelia-toolbelt
+# aurelia-toolbelt ( *NOT yet production ready* )
 
 ## A bunch of tools for creating rich aurelia applications. :wink:
 

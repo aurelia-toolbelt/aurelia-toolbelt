@@ -1,23 +1,32 @@
 <template bindable="router">
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-        <span style="margin:5px">
-            <iframe src="https://ghbtns.com/github-btn.html?user=vegarringdal&repo=skeleton-plugin-typescript&type=star&count=true"
-                frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
-        </span>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">${router.title}</a>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li repeat.for="row of router.navigation" class="nav-item ${row.isActive ? 'active' : ''}">
-                    <a class="nav-link" href.bind="row.href">${row.title}
-                        <span class="sr-only"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <span style="margin:5px">
+            <iframe src="https://ghbtns.com/github-btn.html?user=shahabganji&repo=aurelia-toolbelt&type=star&count=true" frameborder="0"
+              scrolling="0" width="100px" height="20px"></iframe>
+          </span>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="navbar-nav nav">
+          <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+            <a class="nav-link" href.bind="row.href">${row.title}
+              <span class="sr-only"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+  </nav>
+
 </template>
