@@ -15,8 +15,8 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitThis": false,
     "noUnusedLocals": false,
-    "allowUnreachableCode":false,
-    
+    "allowUnreachableCode": false,
+
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -32,8 +32,9 @@
   "exclude": [
     "node_modules",
     "sample",
-    "dist" , 
-    "build"
+    "dist",
+    "build",
+    "test"
   ],
   "atom": {
     "rewriteTsconfig": false
