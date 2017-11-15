@@ -3,7 +3,8 @@ node_js:
   - "8"
 before_script:
   - node setup
-script: gulp test
+script: 
+  - gulp test
   on:
     branch: dev
 script:
