@@ -7,8 +7,3 @@ script:
   - gulp test
   on:
     branch: dev
-script:
-  - gulp test
-  - gulp build
-  on: 
-    branch: master
