@@ -25,8 +25,8 @@
     "run-watch": "gulp watch",
     "build": "gulp build",
     "push-dev": "git push origin dev",
-    "test": "./node_modules/.bin/jest",
-    "test-watch": "./node_modules/.bin/jest --watch",
+    "test": "./node_modules/.bin/jest --config=jest.config.json",
+    "test-watch": "./node_modules/.bin/jest --config=jest.config.json --watch",
     "build-all": "node setup & gulp build & gulp test"
   },
   "devDependencies": {
@@ -72,20 +72,6 @@
     "persianjs": "^0.3.0",
     "strman": "^2.0.0",
     "written-number": "^0.8.1"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.tsx?$": "./node_modules/ts-jest/preprocessor.js"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "testPathIgnorePatterns" : ["build" ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json"
-    ]
   },
   "aurelia": {
     "usedBy": [],
