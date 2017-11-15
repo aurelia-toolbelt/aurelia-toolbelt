@@ -3,7 +3,6 @@ node_js:
   - "8"
 before_script:
   - node setup
-deploy: 
-  script: gulp test
-  on:
-    branch: dev
+script: 
+  - if [ "$TRAVIS_BRANCH" = "dev" ]; then gulp test; fi
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then gulp test && gulp build; fi
