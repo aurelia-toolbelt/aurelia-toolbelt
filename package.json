@@ -22,16 +22,18 @@
   },
   "scripts": {
     "setup": "node setup",
-    "watch": "gulp watch",
+    "run-watch": "gulp watch",
     "build": "gulp build",
     "push-dev": "git push origin dev",
-    "test": "jest",
-    "aio" : "node setup & gulp build & gulp watch"
+    "test": "./node_modules/.bin/jest",
+    "test-watch": "./node_modules/.bin/jest --watch",
+    "build-all": "node setup & gulp build & gulp test"
   },
   "devDependencies": {
     "@types/jest": "^21.1.6",
     "@types/moment-timezone": "^0.5.1",
     "@types/node": "^8.0.51",
+    "chalk": "^2.3.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-plumber": "^1.1.0",
@@ -76,6 +78,7 @@
       "^.+\\.tsx?$": "./node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "testPathIgnorePatterns" : ["build" ],
     "moduleFileExtensions": [
       "ts",
       "tsx",

@@ -9,4 +9,3 @@ test('the persian chars value converter', () => {
     const result = sut.toView('٣٤٥ 789 علي');
     expect(result).toBe('۳۴۵ ۷۸۹ علی');
 });
-
