@@ -16,7 +16,6 @@
     "noImplicitThis": false,
     "noUnusedLocals": false,
     "allowUnreachableCode": false,
-
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
