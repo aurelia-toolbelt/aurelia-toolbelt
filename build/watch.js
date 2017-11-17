@@ -122,6 +122,8 @@ gulp.task('fuse-sample', function () {
         + fuse-box-aurelia-loader
         + moment/locale/fr
         + moment/locale/it
+        + pretty-checkbox/dist/pretty-checkbox.css
+
 `)
 
 
