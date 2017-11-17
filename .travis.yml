@@ -1,8 +1,10 @@
 language: node_js
 node_js:
   - "8"
+sudo: enabled
 before_script:
+  - npm install -g yarn
   - node setup
 script: 
-  - if [ "$TRAVIS_BRANCH" = "dev" ]; then npm test; fi
+  - if [ "$TRAVIS_BRANCH" = "dev" ]; then gulp test; fi
   - if [ "$TRAVIS_BRANCH" = "master" ]; then npm test && gulp build; fi
