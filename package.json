@@ -44,6 +44,7 @@
         "gulp-tslint": "^8.1.2",
         "gulp-typescript": "^3.2.3",
         "jest": "^21.2.1",
+        "jest-cli": "^21.2.1",
         "jsdom": "^11.3.0",
         "merge2": "^1.2.0",
         "require-dir": "^0.3.2",
