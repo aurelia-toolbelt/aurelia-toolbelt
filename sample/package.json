@@ -20,9 +20,7 @@
         "type": "git",
         "url": "na"
     },
-    "scripts": {
-        "prepare": "./node_modules/.bin/typings install"
-    },
+    "scripts": {},
     "devDependencies": {
         "@types/bluebird-global": "^3.5.3",
         "aurelia-animator-css": "^1.0.4",
@@ -49,6 +47,6 @@
         "whatwg-fetch": "^2.0.3"
     },
     "dependencies": {
-        "aurelia-toolbelt": "../aurelia-toolbelt-0.5.19.tgz"
+        "aurelia-toolbelt": "../aurelia-toolbelt-0.5.20.tgz"
     }
 }

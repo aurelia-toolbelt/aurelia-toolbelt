@@ -120,6 +120,8 @@ gulp.task('fuse-sample', function () {
         + humanize-duration
         + persianjs
         + fuse-box-aurelia-loader
+        + moment/locale/fr
+        + moment/locale/it
 `)
 
 
@@ -153,7 +155,7 @@ gulp.task('fuse-plugin', function () {
     output: './dist/$name.js',
     log: false, //-> set to true if you want more data
     debug: false, //-> set to true if you want more data
-    useTypescriptCompiler:true ,
+    useTypescriptCompiler: true,
     plugins: [
       HTMLPlugin({
         useDefault: true
