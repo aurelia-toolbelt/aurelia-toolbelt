@@ -28,12 +28,12 @@ export class DateValueConverter {
 
 @valueConverter('time')
 export class TimeConverter {
-  public toView(value: string, show24Hours: string | boolean = true) {
+  public toView(value: string, show24Hours: string | boolean = true, locale: string = 'en') {
     if (!value) { return null; }
 
-    let format = show24Hours === true || show24Hours === 'true' ? 'HH:mm:ss' : 'hh:mm:ss a';
+    let format = show24Hours === true || show24Hours === 'true' ? 'HH:mm:ss' : 'hh:mm:ss A';
 
-    return moment(value).format(format);
+    return moment(value).locale(locale).format(format);
   }
 }
 
