@@ -1,88 +1,89 @@
 {
-    "name": "aurelia-toolbelt",
-    "version": "0.5.20",
-    "description": "Create typescript plugins for Aurelia",
-    "keywords": [
-        "aurelia",
-        "plugin",
-        "toolbelt",
-        "aurelia toolbelt"
-    ],
-    "homepage": "https://github.com/shahabganji/aurelia-toolbelt",
-    "bugs": {
-        "url": "https://github.com/shahabganji/aurelia-toolbelt/issues"
+  "name": "aurelia-toolbelt",
+  "version": "0.5.20",
+  "description": "Create typescript plugins for Aurelia",
+  "keywords": [
+    "aurelia",
+    "plugin",
+    "toolbelt",
+    "aurelia toolbelt"
+  ],
+  "homepage": "https://github.com/shahabganji/aurelia-toolbelt",
+  "bugs": {
+    "url": "https://github.com/shahabganji/aurelia-toolbelt/issues"
+  },
+  "license": "MIT",
+  "author": "Saeed Ganji (shahabganji@gmail.com)",
+  "main": "dist/commonjs/index.js",
+  "typings": "dist/commonjs/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shahabganji/aurelia-toolbelt"
+  },
+  "scripts": {
+    "setup": "node setup",
+    "run-watch": "gulp watch",
+    "build": "gulp build",
+    "push-dev": "git push origin dev",
+    "test": "./node_modules/.bin/jest --config=jest.config.json",
+    "test-watch": "./node_modules/.bin/jest --config=jest.config.json --watch",
+    "build-all": "node setup & gulp build & gulp test"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/jest": "^21.1.6",
+    "@types/moment-timezone": "^0.5.1",
+    "@types/node": "^8.0.51",
+    "aurelia-loader-nodejs": "^1.0.1",
+    "aurelia-pal-nodejs": "^1.0.0-beta.2.0.0",
+    "aurelia-polyfills": "^1.2.2",
+    "chalk": "^2.3.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-run": "^1.7.1",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-tslint": "^8.1.2",
+    "gulp-typescript": "^3.2.3",
+    "jest": "^21.2.1",
+    "jsdom": "^11.3.0",
+    "merge2": "^1.2.0",
+    "require-dir": "^0.3.2",
+    "run-sequence": "^2.2.0",
+    "ts-jest": "^21.2.2",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1",
+    "vinyl-paths": "^2.1.0"
+  },
+  "jspm": {
+    "registry": "npm",
+    "main": "index",
+    "format": "cjs",
+    "directories": {
+      "dist": "dist/commonjs"
     },
-    "license": "MIT",
-    "author": "Saeed Ganji (shahabganji@gmail.com)",
-    "main": "dist/commonjs/index.js",
-    "typings": "dist/commonjs/index.d.ts",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/shahabganji/aurelia-toolbelt"
-    },
-    "scripts": {
-        "setup": "node setup",
-        "run-watch": "gulp watch",
-        "build": "gulp build",
-        "push-dev": "git push origin dev",
-        "test": "./node_modules/.bin/jest --config=jest.config.json",
-        "test-watch": "./node_modules/.bin/jest --config=jest.config.json --watch",
-        "build-all": "node setup & gulp build & gulp test"
-    },
-    "devDependencies": {
-        "@types/jest": "^21.1.6",
-        "@types/moment-timezone": "^0.5.1",
-        "@types/node": "^8.0.51",
-        "chalk": "^2.3.0",
-        "del": "^3.0.0",
-        "gulp": "^3.9.1",
-        "gulp-plumber": "^1.1.0",
-        "gulp-run": "^1.7.1",
-        "gulp-sourcemaps": "^2.6.1",
-        "gulp-tslint": "^8.1.2",
-        "gulp-typescript": "^3.2.3",
-        "jest": "^21.2.1",
-        "merge2": "^1.2.0",
-        "require-dir": "^0.3.2",
-        "run-sequence": "^2.2.0",
-        "ts-jest": "^21.2.2",
-        "tslint": "^5.8.0",
-        "typescript": "^2.6.1",
-        "vinyl-paths": "^2.1.0",
-        "aurelia-pal-nodejs": "^1.0.0-beta.2.0.0",
-        "aurelia-loader-nodejs": "^1.0.1",
-        "jsdom": "^11.3.0"
-    },
-    "jspm": {
-        "registry": "npm",
-        "main": "index",
-        "format": "cjs",
-        "directories": {
-            "dist": "dist/commonjs"
-        },
-        "devDependencies": {}
-    },
-    "dependencies": {
-        "aurelia-event-aggregator": "1.0.1",
-        "aurelia-framework": "1.1.5",
-        "aurelia-polyfills": "^1.2.2",
-        "aurelia-router": "^1.4.0",
-        "bootstrap": "3.3.7",
-        "fuse.js": "^3.2.0",
-        "humanize-duration": "^3.12.0",
-        "jalali-moment": "^3.0.5",
-        "moment-timezone": "^0.5.14",
-        "persianjs": "^0.3.0",
-        "strman": "^2.0.0",
-        "written-number": "^0.8.1"
-    },
-    "aurelia": {
-        "usedBy": [],
-        "build": {
-            "resources": [
-                "aurelia-toolbelt",
-                "aurelia-toolbelt/index"
-            ]
-        }
+    "devDependencies": {}
+  },
+  "dependencies": {
+    "aurelia-event-aggregator": "1.0.1",
+    "aurelia-framework": "1.1.5",
+    "aurelia-router": "^1.4.0",
+    "bootstrap": "3.3.7",
+    "fuse.js": "^3.2.0",
+    "humanize-duration": "^3.12.0",
+    "jalali-moment": "^3.0.5",
+    "moment-timezone": "^0.5.14",
+    "persianjs": "^0.3.0",
+    "strman": "^2.0.0",
+    "written-number": "^0.8.1"
+  },
+  "aurelia": {
+    "usedBy": [],
+    "build": {
+      "resources": [
+        "aurelia-toolbelt",
+        "aurelia-toolbelt/index"
+      ]
     }
+  }
 }

@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var chalk = require('chalk');
 var run = require('gulp-run');
 
 
