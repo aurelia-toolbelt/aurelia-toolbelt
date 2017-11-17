@@ -1,6 +1,6 @@
 import { customElement, bindable, bindingMode, useShadowDOM } from 'aurelia-framework';
 
-@customElement('au-clock')
+@customElement('aut-clock')
 export class ClockCustomElement {
 
   // Private fields:
