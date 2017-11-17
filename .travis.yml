@@ -4,5 +4,5 @@ node_js:
 before_script:
   - node setup
 script: 
-  - if [ "$TRAVIS_BRANCH" = "dev" ]; then gulp test; fi
-  - if [ "$TRAVIS_BRANCH" = "master" ]; then gulp test && gulp build; fi
+  - if [ "$TRAVIS_BRANCH" = "dev" ]; then npm test; fi
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then npm test && gulp build; fi
