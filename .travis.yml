@@ -4,5 +4,5 @@ node_js:
 before_script:
   - node setup
 script: 
-  - gulp test
+  - yarn test
   - gulp build
