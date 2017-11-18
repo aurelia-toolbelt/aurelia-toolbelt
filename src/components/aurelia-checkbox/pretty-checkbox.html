@@ -11,7 +11,7 @@
                 <slot></slot>
             </label>
         </div>
-        <div if.bind="offColorCss != ''" class="state ${offColorCss} ${ (checked && disabled) ? 'p-off' : (!checked && !disabled) ? 'p-off' : ''}">
+        <div if.bind="offColorCss != ''" class="state ${offColorCss} p-off">
             <label>
                 ${offLabel}
             </label>
