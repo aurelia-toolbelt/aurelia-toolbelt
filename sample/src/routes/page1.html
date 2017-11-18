@@ -20,14 +20,16 @@
       Pretty Checkboxes
     </h1>
 
+    <span textcontent.bind="myDisable"></span>
+
     <hr />
 
     <aut-checkbox color='success' off-label="Subscribe" off-color="danger" curve animation="smooth">
       Subscribed
     </aut-checkbox>
 
-    <aut-checkbox color='success' disabled.bind="myDisable" off-label="Subscribe" off-color="danger" animation="smooth">
-      Subscribed
+    <aut-checkbox color='success' disabled.bind="myDisable" off-label="Good bye" off-color="danger" animation="smooth">
+      Hello
     </aut-checkbox>
 
     <aut-checkbox color="primary-o" disabled outline thick checked plain>
@@ -56,11 +58,11 @@
       Radio Buttons
     </h2>
 
-    <aut-checkbox color="success" radio name="programmer" switch fill>
+    <aut-checkbox color="success" radio name="programmer"  switch round>
       Saeed
     </aut-checkbox>
 
-    <aut-checkbox color="warning" radio name="programmer" animation="smooth" switch slim>
+    <aut-checkbox color="success" radio name="programmer" animation="smooth" switch round>
       Hamed
     </aut-checkbox>
 

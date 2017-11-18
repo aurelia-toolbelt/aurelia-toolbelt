@@ -73,6 +73,14 @@ export class PrettyCheckboxCustomElement {
 
   }
 
+  private disabledChanged(newValue: Boolean | string) {
+    console.log(newValue);
+    this.disabled = newValue === true || newValue === 'true' || newValue === 'disabled';
+  }
 
+  private checkedChanged(newValue: Boolean | string) {
+    console.log(newValue);
+    this.checked = newValue === true || newValue === 'true' || newValue === 'disabled';
+  }
 
 }
