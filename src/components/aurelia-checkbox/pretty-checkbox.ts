@@ -2,7 +2,7 @@ import { customAttribute, autoinject, bindable, customElement, inject, bindingMo
 import 'pretty-checkbox/dist/pretty-checkbox.css';
 
 
-@autoinject(Element)
+@inject(Element)
 @customElement('aut-checkbox')
 export class PrettyCheckboxCustomElement {
 
@@ -28,6 +28,11 @@ export class PrettyCheckboxCustomElement {
   constructor(private element: Element) { }
 
   private attached() {
+
+
+    if (!this.element.hasAttribute) {
+      console.warn(this.element);
+    }
 
     this.switch = this.switch === true || this.switch === 'true' || this.element.hasAttribute('switch');
     this.outlined = this.outlined === true || this.outlined === 'true' || this.element.hasAttribute('outline');
