@@ -8,6 +8,7 @@ export class PrettyCheckboxCustomElement {
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public checked: Boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: Boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public name: string = '';
 
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public switch: Boolean | String = false;
@@ -24,6 +25,7 @@ export class PrettyCheckboxCustomElement {
   private offColorCss: string;
   private appearanceCSS: string;
   private animationCss: string;
+  private isCheckBox: boolean;
 
   constructor(private element: Element) { }
 
@@ -64,6 +66,10 @@ export class PrettyCheckboxCustomElement {
     this.thickCss = this.element.hasAttribute('thick') ? 'p-thick' : '';
     this.thickCss = this.element.hasAttribute('plain') ? 'p-plain' : '';
     this.animationCss = this.animation !== '' ? `p-${this.animation}` : '';
+
+    this.isCheckBox = !this.element.hasAttribute('radio');
+
+    console.log(this.isCheckBox);
 
   }
 
