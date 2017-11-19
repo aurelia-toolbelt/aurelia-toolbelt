@@ -85,12 +85,12 @@ export class PrettyCheckboxCustomElement {
 
   }
 
-  private checkedChanged(newValue: any, oldValue: any) { // public: Array|undefined, Array|undefined
+  private checkedChanged(newValue: any) { // public: Array|undefined, Array|undefined
 
-    console.log('#########   VALUES ###########');
-    console.log(newValue);
-    console.log(oldValue);
-    console.log('##############################');
+    // console.log('#########   VALUES ###########');
+    // console.log(newValue);
+    // console.log(oldValue);
+    // console.log('##############################');
     // unsubscribe from the previous array's mutation (eg push/pop/splice)
     this.disposeSubscription();
     // subscribe to the current array's mutation
@@ -98,11 +98,11 @@ export class PrettyCheckboxCustomElement {
     if (Array.isArray(this.checked)) {
       this.subscription = this.bindingEngine.collectionObserver(this.checked)
         .subscribe(() => {
-          console.log('sync array view');
+          // console.log('sync array view');
           this.synchronizeView(newValue);
         });
     }
-    console.log('sync  view');
+    // console.log('sync  view');
     this.synchronizeView(newValue);
   }
 
@@ -114,7 +114,7 @@ export class PrettyCheckboxCustomElement {
       this.state = index !== -1;
     } else {
       this.state = newValue;
-      console.log(`state is now: ${this.state}`);
+      // console.log(`state is now: ${this.state}`);
       // }
     }
   }
