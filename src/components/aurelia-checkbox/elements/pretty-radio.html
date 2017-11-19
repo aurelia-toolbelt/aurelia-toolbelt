@@ -4,7 +4,7 @@
 
   <div class="pretty p-has-focus ${switch ? 'p-switch':'p-default'} ${appearanceCSS} ${thickCss} ${animationCss}
      ${offColorCss != '' ? 'p-toggle' : ''}">
-    <input type="checkbox" checked.bind="state" change.delegate="changed()" disabled.bind="disabled" />
+    <input ref="radioButton" type="radio" name.bind="name" disabled.bind="disabled" change.delegate="changed()" />
     <i if.bind="icon" class="${icon}"></i>
     <div class="state ${colorCss} ${offColorCss != '' && disabled === false ? 'p-on' : ''}">
       <label>
