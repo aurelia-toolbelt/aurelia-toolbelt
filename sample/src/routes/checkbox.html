@@ -1,0 +1,107 @@
+<template>
+  <div class="container">
+
+    <form>
+      <h4>Booleans</h4>
+
+      <aut-checkbox type="checkbox" checked.bind="motherboard"> Motherboard</aut-checkbox>
+
+      <aut-checkbox type="checkbox" checked.bind="cpu"> CPU</aut-checkbox>
+
+      <aut-checkbox type="checkbox" checked.bind="memory"> Memory</aut-checkbox>
+
+      <br /> motherboard = ${motherboard}
+      <br/> cpu = ${cpu}
+      <br/> memory = ${memory}
+      <br/>
+    </form>
+
+    <hr />
+
+    <form>
+      <h4>Array of Strings</h4>
+
+      <ul>
+        <li repeat.for="product of products">
+
+          <aut-checkbox curve fill color="info" value.bind="product" checked.bind="selectedProducts"> ${product}
+          </aut-checkbox>
+
+        </li>
+      </ul>
+      <br /> Selected products: ${selectedProducts}
+    </form>
+
+
+    <hr />
+
+
+    <form>
+      <h4>Array of Numbers</h4>
+      <ul>
+        <li repeat.for="product of otherProducts">
+          <aut-checkbox curve fill color="info" model.bind="product.id" checked.bind="selectedProductIds">
+            ${product.name}
+          </aut-checkbox>
+        </li>
+      </ul>
+      <br /> Selected product IDs: ${selectedProductIds}
+    </form>
+
+
+    <hr />
+
+
+    <form>
+      <h4>Array Of objects</h4>
+      <ul>
+
+        <li repeat.for="product of productsObject">
+          <aut-checkbox model.bind="product" checked.bind="selectedProductsObject"> ${product.id} - ${product.name}
+          </aut-checkbox>
+        </li>
+      </ul>
+
+      Selected products:
+      <ul>
+        <li repeat.for="product of selectedProductsObject">${product.id} - ${product.name}</li>
+      </ul>
+    </form>
+
+
+    <hr />
+
+
+
+    <form>
+      <h4>Array of objects With Matcher</h4>
+
+
+      <aut-checkbox model.bind="mymotherBoard" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
+        Motherboard
+      </aut-checkbox>
+
+
+      <aut-checkbox model.bind="mycpu" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher"> CPU
+      </aut-checkbox>
+
+
+      <aut-checkbox model.bind="mymemory" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
+        Memory
+      </aut-checkbox>
+
+      Selected products:
+      <ul>
+        <li repeat.for="product of selectedProductsMatcher">${product.id} - ${product.name}</li>
+      </ul>
+    </form>
+
+
+  </div>
+
+  <hr>
+  <br />
+  <br />
+  <br />
+
+</template>

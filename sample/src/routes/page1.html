@@ -24,7 +24,7 @@
 
     <hr />
 
-    <aut-checkbox color='success' off-label="Subscribe" off-color="danger" curve animation="smooth">
+    <aut-checkbox color='success' checked off-label="Subscribe" off-color="danger" curve animation="smooth">
       Subscribed
     </aut-checkbox>
 
@@ -40,7 +40,7 @@
       Curve - Fill
     </aut-checkbox>
 
-    <aut-checkbox color="info" switch outline checked.bind="myDisable">
+    <aut-checkbox color="info" switch outline value.bind="myDisable">
       Switch - outline
     </aut-checkbox>
 
@@ -54,11 +54,11 @@
 
     <hr />
 
-    <h2 >
+    <h2>
       Radio Buttons
     </h2>
 
-    <aut-checkbox color="success" radio name="programmer"  switch round>
+    <aut-checkbox color="success" checked.bind="myDisable" radio name="programmer" switch round>
       Saeed
     </aut-checkbox>
 

@@ -9,6 +9,8 @@ export class Page1 {
 
     public rate = 3;
 
+    public myDisable = true;
+
     constructor(public router: Router) {
         // todo
     }
