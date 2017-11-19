@@ -2,8 +2,8 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
 
-export * from './pretty-checkbox';
+export * from './elements/pretty-checkbox';
 
 export function configure(config: FrameworkConfiguration) {
-  config.globalResources(PLATFORM.moduleName('./pretty-checkbox'));
+  config.globalResources(PLATFORM.moduleName('./elements/pretty-checkbox'));
 }

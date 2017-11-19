@@ -3,7 +3,7 @@ import {
   customElement, inject, bindingMode,
   Disposable, BindingEngine
 } from 'aurelia-framework';
-import 'pretty-checkbox/dist/pretty-checkbox.css';
+// import 'pretty-checkbox/dist/pretty-checkbox.css';
 
 
 @inject(Element, BindingEngine)
