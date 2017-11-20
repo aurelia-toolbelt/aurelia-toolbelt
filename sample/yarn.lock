@@ -376,9 +376,9 @@ aurelia-templating@^1.0.0, aurelia-templating@^1.3.0, aurelia-templating@^1.5.0,
     aurelia-path "^1.0.0"
     aurelia-task-queue "^1.1.0"
 
-aurelia-toolbelt@../aurelia-toolbelt-0.5.23.tgz:
-  version "0.5.23"
-  resolved "../aurelia-toolbelt-0.5.23.tgz#96e35874c3917170567261830e2b6d5715c97521"
+aurelia-toolbelt@../aurelia-toolbelt-0.5.27.tgz:
+  version "0.5.27"
+  resolved "../aurelia-toolbelt-0.5.27.tgz#e903b2ec66e40a181483f16c14b5a267a19c0f54"
   dependencies:
     aurelia-event-aggregator "1.0.1"
     aurelia-framework "1.1.5"
@@ -499,6 +499,12 @@ boom@5.x.x:
   resolved "https://registry.yarnpkg.com/boom/-/boom-5.2.0.tgz#5dd9da6ee3a5f302077436290cb717d3f4a54e02"
   dependencies:
     hoek "4.x.x"
+
+bootstrap-float-label@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/bootstrap-float-label/-/bootstrap-float-label-3.0.1.tgz#aba006715ef9b3b69c9d87081ef76848d3bcb9c4"
+  dependencies:
+    float-label-css "1.0.2"
 
 bootstrap@3.3.7:
   version "3.3.7"
@@ -1014,6 +1020,10 @@ fliplog@^0.3.13:
   resolved "https://registry.yarnpkg.com/fliplog/-/fliplog-0.3.13.tgz#dd0d786e821822aae272e0ddc84012596a96154c"
   dependencies:
     chain-able "^1.0.1"
+
+float-label-css@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/float-label-css/-/float-label-css-1.0.2.tgz#245716e506a9c7755e004117380f1dab5bf1d11e"
 
 for-in@^1.0.1:
   version "1.0.2"

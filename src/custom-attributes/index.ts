@@ -1,7 +1,8 @@
-import { FrameworkConfiguration } from 'aurelia-framework';
+import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
+
 
 
 
 export function configure(config: FrameworkConfiguration) {
-  console.log(config);
+  config.globalResources([PLATFORM.moduleName('./bootstrap-float-label')]);
 }
