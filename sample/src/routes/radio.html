@@ -1,0 +1,86 @@
+<template>
+  <div class="container">
+
+
+    <h4>No Binding</h4>
+    <aut-radio color="success-o" name="programmer" animation="smooth">
+      Saeed
+    </aut-radio>
+
+    <aut-radio color="warning" name="programmer" animation="smooth">
+      Hamed
+    </aut-radio>
+
+
+    <hr />
+
+    <form>
+      <h4>Numbers</h4>
+
+      <aut-radio fill color="primary" repeat.for="product of products" name="group1" model.bind="product.id" checked.bind="selectedProductId">
+        ${product.id} - ${product.name}
+      </aut-radio>
+      <br /> Selected product ID: ${selectedProductId}
+    </form>
+
+
+    <hr />
+
+    <form>
+      <h4>Objects</h4>
+
+      <aut-radio color="danger-o" repeat.for="product of products" name="group2" model.bind="product" checked.bind="selectedProductObject">
+        ${product.id} - ${product.name}
+      </aut-radio>
+
+
+      Selected product: ${selectedProductObject.id} - ${selectedProductObject.name}
+    </form>
+
+    <hr />
+
+
+    <form>
+      <h4>Matcher</h4>
+
+      <aut-radio switch name="group3" color="info" model.bind="products[0]" matcher.bind="productMatcher" checked.bind="selectedProductMatcher">
+        Matcher - Motherboard</aut-radio>
+      <aut-radio switch color="warning" name="group3" model.bind="products[1]" matcher.bind="productMatcher" checked.bind="selectedProductMatcher">
+        Matcher - CPU</aut-radio>
+      <aut-radio switch color="success" name="group3" model.bind="products[2]" matcher.bind="productMatcher" checked.bind="selectedProductMatcher">
+        Matcher - Memory</aut-radio>
+
+      Selected product: ${selectedProductMatcher.id} - ${selectedProductMatcher.name}
+    </form>
+
+
+    <hr />
+
+    <form>
+      <h4>(boolean values )Do you like cake?</h4>
+
+      <aut-radio name="group4" model.bind="null" checked.bind="likesCake"> Don't Know</aut-radio>
+      <aut-radio name="group4" model.bind="true" checked.bind="likesCake" color="success-o"> Yes</aut-radio>
+      <aut-radio name="group4" model.bind="false" checked.bind="likesCake" color="danger-o"> No</aut-radio>
+
+      likesCake = ${likesCake}
+    </form>
+
+    <hr />
+
+    <form>
+      <h4>Strings</h4>
+
+      <aut-radio switch slim color="info" repeat.for="product of productsString" name="group5" value.bind="product" checked.bind="selectedProductstring">
+        String - ${product}
+      </aut-radio>
+      <br /> Selected product: ${selectedProductstring}
+    </form>
+
+    <br />
+    <br />
+    <br />
+
+
+
+</template>
