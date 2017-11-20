@@ -6,25 +6,25 @@ import { noView, customAttribute, inject, bindable, bindingMode } from 'aurelia-
 @inject(Element)
 export class BlockUI {
 
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) private block: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) private block: boolean | string = false;
 
-    private blocker: HTMLDivElement;
+  private blocker: HTMLDivElement;
 
-    constructor(private element: Element) {
-        this.blocker = document.createElement('div');
-    }
+  constructor(private element: Element) {
+    this.blocker = document.createElement('div');
+  }
 
-    private attached() {
-        // this.blocker.innerText = 'I am blocking you';
-        // The calculations must be done before appendChild(this.blocker)
-        const left = this.element.getBoundingClientRect().left;
-        const top = this.element.getBoundingClientRect().top;
-        const width = this.element.getBoundingClientRect().width;
-        const height = this.element.getBoundingClientRect().height;
+  private attached() {
+    // this.blocker.innerText = 'I am blocking you';
+    // The calculations must be done before appendChild(this.blocker)
+    const left = this.element.getBoundingClientRect().left;
+    const top = this.element.getBoundingClientRect().top;
+    const width = this.element.getBoundingClientRect().width;
+    const height = this.element.getBoundingClientRect().height;
+    this.blocker.classList.add('overlay', 'overlay02');
+    this.element.appendChild(this.blocker);
 
-        this.element.appendChild(this.blocker);
-
-        const overlayStyle = `
+    const overlayStyle = `
         .overlay01 {
           position: fixed;
           top: ${top}px;
@@ -44,11 +44,11 @@ export class BlockUI {
 
         .overlay02 {
           position: fixed;
-          top: 0;
-          left: 0;
+          top: ${top}px;
+          left: ${left}px;
           z-index: 999999;
-          width: 100%;
-          height: 100%;
+          width: ${width}px;
+          height: ${height}px;
           background: rgba(0, 0, 0, .7);
           opacity: 0;
           visibility: hidden;
@@ -63,11 +63,11 @@ export class BlockUI {
 
         .overlay03 {
           position: fixed;
-          top: 0;
-          left: 0;
+          top: ${top}px;
+          left: ${left}px;
           z-index: 999999;
-          width: 100%;
-          height: 100%;
+          width: ${width}px;
+          height: ${height}px;
           background: rgba(0, 0, 0, .7);
           opacity: 0;
           visibility: hidden;
@@ -82,11 +82,11 @@ export class BlockUI {
 
         .overlay04 {
           position: fixed;
-          top: 0;
-          left: 0;
+          top: ${top}px;
+          left: ${left}px;
           z-index: 999999;
-          width: 100%;
-          height: 100%;
+          width: ${width}px;
+          height: ${height}px;
           background: rgba(0, 0, 0, .7);
           opacity: 0;
           visibility: hidden;
@@ -101,11 +101,11 @@ export class BlockUI {
 
         .overlay05 {
           position: fixed;
-          top: 0;
-          left: 0;
+          top: ${top}px;
+          left: ${left}px;
           z-index: 999999;
-          width: 100%;
-          height: 100%;
+          width: ${width}px;
+          height: ${height}px;
           background: rgba(0, 0, 0, .7);
           opacity: 0;
           visibility: hidden;
@@ -120,11 +120,11 @@ export class BlockUI {
 
         .overlay06 {
           position: fixed;
-          top: 0;
-          left: 0;
+          top: ${top}px;
+          left: ${left}px;
           z-index: 999999;
-          width: 100%;
-          height: 100%;
+          width: ${width}px;
+          height: ${height}px;
           background: rgba(0, 0, 0, .7);
           opacity: 0;
           visibility: hidden;
@@ -159,11 +159,11 @@ export class BlockUI {
 
         .overlay07 {
           position: fixed;
-          top: 0;
-          left: 0;
+          top: ${top}px;
+          left: ${left}px;
           z-index: 999999;
-          width: 100%;
-          height: 100%;
+          width: ${width}px;
+          height: ${height}px;
           background: rgba(0, 0, 0, .7);
           opacity: 0;
           visibility: hidden;
@@ -200,11 +200,11 @@ export class BlockUI {
         .overlay08::before,
         .overlay08::after {
           position: fixed;
-          top: 0;
-          left: 0;
+          top: ${top}px;
+          left: ${left}px;
           z-index: 999999;
-          width: 100%;
-          height: 100%;
+          width: ${width}px;
+          height: ${height}px;
           transition: .3s linear;
         }
         .overlay08 {
@@ -229,75 +229,37 @@ export class BlockUI {
         .overlay08.is-open::before,
         .overlay08.is-open::after {
           transform: translateY(0);
-        }
-
-        .overlay09,
-        .overlay09::before,
-        .overlay09::after {
-          position: fixed;
-          top: 0;
-          z-index: 999999;
-          height: 100%;
-        }
-        .overlay09 {
-          left: 0;
-          width: 100%;
-          opacity: 0;
-          visibility: hidden;
-          transition: .3s linear;
-        }
-        .overlay09::before,
-        .overlay09::after {
-          left: 50%;
-          content: '';
-          width: 200%;
-          margin-left: -100%;
-          background: rgba(0, 0, 0, .45);
-          transform: skewX(-30deg) translateX(-100%);
-          transition: transform .3s linear .3s;
-        }
-        .overlay09.is-open {
-          opacity: 1;
-          visibility: visible;
-        }
-        .overlay09.is-open::before {
-          transform: skewX(-30deg) translateX(0);
-          transition: transform .3s linear;
-        }
-        .overlay09.is-open::after {
-          transform: skewX(-30deg) translateX(0);
-          transition: transform .3s linear .15s;
         }`;
 
-        const style = document.createElement('style');
-        style.textContent = overlayStyle;
-        document.head.appendChild(style);
+    const style = document.createElement('style');
+    style.textContent = overlayStyle;
+    document.head.appendChild(style);
 
 
 
-        /*this.blocker.style.cssText = `position: fixed;display: none;width: ${width}px;height: ${height}px;top: ${top}px;left: ${left}px;
-        background-color: rgba(0, 0, 0, 0.5);z-index: 9999999;cursor: pointer;`;*/
+    /*this.blocker.style.cssText = `position: fixed;display: none;width: ${width}px;height: ${height}px;top: ${top}px;left: ${left}px;
+    background-color: rgba(0, 0, 0, 0.5);z-index: 9999999;cursor: pointer;`;*/
+  }
+
+
+  private blockChanged(doBlocking: boolean) {
+
+    console.log(`do blocking: ${doBlocking}`);
+
+    if (doBlocking) {
+      /*this.blocker.style.display = 'block';*/
+      this.blocker.classList.add('overlay', 'overlay02', 'is-open');
+      // this.element.appendChild(this.blocker);
+      return;
     }
 
+    if (this.blocker.parentElement === this.element) {
+      this.blocker.classList.remove('is-open');
 
-    private blockChanged(doBlocking: boolean) {
-
-        console.log(`do blocking: ${doBlocking}`);
-
-        if (doBlocking) {
-            /*this.blocker.style.display = 'block';*/
-            this.blocker.classList.add('overlay', 'overlay01', 'is-open');
-            // this.element.appendChild(this.blocker);
-            return;
-        }
-
-        if (this.blocker.parentElement === this.element) {
-            this.blocker.classList.remove('is-open');
-
-            /*this.blocker.style.display = 'none';*/
-            // this.element.removeChild(this.blocker);
-        }
-
+      /*this.blocker.style.display = 'none';*/
+      // this.element.removeChild(this.blocker);
     }
+
+  }
 
 }
