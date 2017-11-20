@@ -16,6 +16,7 @@ export class PrettyCheckboxCustomElement {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public checked: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public matcher: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: Boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public name: string = '';
 
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public switch: Boolean | String = false;
@@ -135,9 +136,7 @@ export class PrettyCheckboxCustomElement {
 
     this.switch = this.switch === true || this.switch === 'true' || this.element.hasAttribute('switch');
     this.outlined = this.outlined === true || this.outlined === 'true' || this.element.hasAttribute('outline');
-
     // this.state = this.checked === true || this.checked === 'true' || this.checked === 'checked'; // || this.element.hasAttribute('checked');
-
     this.disabled = this.disabled === true || this.disabled === 'true' || this.disabled === 'disabled' || this.element.hasAttribute('disabled');
     this.colorCss = `p-${this.color}`; // ${this.outlined ? '-o' : ''}`;
     this.offColorCss = this.offColor !== '' ? `p-${this.offColor}` : ''; // ${this.outlined ? '-o' : ''}`;
@@ -165,6 +164,9 @@ export class PrettyCheckboxCustomElement {
     this.thickCss = this.element.hasAttribute('thick') ? 'p-thick' : '';
     this.thickCss = this.element.hasAttribute('plain') ? 'p-plain' : '';
     this.animationCss = this.animation !== '' ? `p-${this.animation}` : '';
+
+    this.isCheckBox = !this.element.hasAttribute('radio');
+
 
     this.synchronizeView(this.checked);
 

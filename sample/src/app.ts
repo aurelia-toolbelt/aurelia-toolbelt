@@ -37,14 +37,6 @@ export class App {
         nav: true,
         title: 'Pretty Checkbox',
         settings: { auth: false }
-      },
-      {
-        route: 'radio',
-        name: 'radio',
-        moduleId: './routes/radio',
-        nav: true,
-        title: 'Pretty Radio Buttons',
-        settings: { auth: false }
       }
     ]);
     this.router = router;
