@@ -1,5 +1,9 @@
 <template>
-  <section>
+
+  <button click.delegate="toggleBlock()">
+    Toggle Block
+  </button>
+  <section aut-block-ui="block.bind: blockValue">
 
     <select value.bind="selectedLocale">
       <option value="fa">Persian</option>
@@ -17,11 +21,16 @@
     <hr />
 
 
-    <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">@</span>
-      <input type="text" class="form-control" aut-bt-float-label="Please enter your user name" placeholder="Hello" aria-describedby="basic-addon1">
-    </div>
 
+
+    <div aut-block-ui="block.bind: blockValue">
+
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">@</span>
+        <input type="text" class="form-control" aut-bt-float-label="Please enter your user name" placeholder="Hello" aria-describedby="basic-addon1">
+      </div>
+
+    </div>
 
   </section>
 </template>

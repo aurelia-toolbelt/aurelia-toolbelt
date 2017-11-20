@@ -11,11 +11,17 @@ export class Page1 {
 
     public myDisable = true;
 
+
+    private blockValue= false;
+
     constructor(public router: Router) {
         // todo
     }
+    private toggleBlock() {
+        this.blockValue = !this.blockValue;
+    }
 
-    public canActivate(a, b, c) {
+    private canActivate(a, b, c) {
         this.title = b.title;
     }
 
