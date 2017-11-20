@@ -21,7 +21,7 @@ export class BlockUI {
     const top = this.element.getBoundingClientRect().top;
     const width = this.element.getBoundingClientRect().width;
     const height = this.element.getBoundingClientRect().height;
-    this.blocker.classList.add('overlay', 'overlay02');
+    this.blocker.classList.add('overlay', 'overlay03');
     this.element.appendChild(this.blocker);
 
     const overlayStyle = `
@@ -32,7 +32,7 @@ export class BlockUI {
           z-index: 999999;
           width: ${width}px;
           height: ${height}px;
-          background: rgba(0, 0, 0, .7);
+          background: rgba(0, 0, 0, .4);
           opacity: 0;
           visibility: hidden;
           transition: .3s linear;
@@ -49,7 +49,7 @@ export class BlockUI {
           z-index: 999999;
           width: ${width}px;
           height: ${height}px;
-          background: rgba(0, 0, 0, .7);
+          background: rgba(0, 0, 0, .4);
           opacity: 0;
           visibility: hidden;
           transition: .3s linear;
@@ -68,7 +68,7 @@ export class BlockUI {
           z-index: 999999;
           width: ${width}px;
           height: ${height}px;
-          background: rgba(0, 0, 0, .7);
+          background: rgba(0, 0, 0, .4);
           opacity: 0;
           visibility: hidden;
           transition: .3s linear;
@@ -87,7 +87,7 @@ export class BlockUI {
           z-index: 999999;
           width: ${width}px;
           height: ${height}px;
-          background: rgba(0, 0, 0, .7);
+          background: rgba(0, 0, 0, .4);
           opacity: 0;
           visibility: hidden;
           transition: .3s linear;
@@ -106,7 +106,7 @@ export class BlockUI {
           z-index: 999999;
           width: ${width}px;
           height: ${height}px;
-          background: rgba(0, 0, 0, .7);
+          background: rgba(0, 0, 0, .4);
           opacity: 0;
           visibility: hidden;
           transition: .3s linear;
@@ -125,7 +125,7 @@ export class BlockUI {
           z-index: 999999;
           width: ${width}px;
           height: ${height}px;
-          background: rgba(0, 0, 0, .7);
+          background: rgba(0, 0, 0, .4);
           opacity: 0;
           visibility: hidden;
           transition: .3s linear;
@@ -164,7 +164,7 @@ export class BlockUI {
           z-index: 999999;
           width: ${width}px;
           height: ${height}px;
-          background: rgba(0, 0, 0, .7);
+          background: rgba(0, 0, 0, .4);
           opacity: 0;
           visibility: hidden;
           transition: .3s linear;
@@ -248,7 +248,7 @@ export class BlockUI {
 
     if (doBlocking) {
       /*this.blocker.style.display = 'block';*/
-      this.blocker.classList.add('overlay', 'overlay02', 'is-open');
+      this.blocker.classList.add('overlay', 'overlay03', 'is-open');
       // this.element.appendChild(this.blocker);
       return;
     }
