@@ -47,7 +47,8 @@
         "whatwg-fetch": "^2.0.3"
     },
     "dependencies": {
-        "aurelia-toolbelt": "../aurelia-toolbelt-0.5.28.tgz",
-        "bootstrap-float-label": "^3.0.1"
+        "aurelia-toolbelt": "../aurelia-toolbelt-0.5.29.tgz",
+        "bootstrap-float-label": "^3.0.1",
+        "jquery": "^3.2.1"
     }
 }

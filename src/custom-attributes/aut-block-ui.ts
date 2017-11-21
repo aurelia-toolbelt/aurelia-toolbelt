@@ -1,5 +1,7 @@
 
 import { noView, customAttribute, inject, bindable, bindingMode } from 'aurelia-framework';
+import './scripts/jquery.blockUI.js';
+
 
 @noView()
 @customAttribute('aut-block-ui')
