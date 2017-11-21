@@ -3,12 +3,6 @@
   <button click.delegate="toggleBlock1()">
     Toggle Block1
   </button>
-  <button click.delegate="toggleBlock2()">
-    Toggle Block2
-  </button>
-  <button click.delegate="toggleBlock3()">
-    Toggle Block3
-  </button>
   <section>
 
     <select value.bind="selectedLocale">
@@ -25,32 +19,13 @@
     <aut-star-rate max-rate.bind="5" read-only.bind="false"></aut-star-rate>
 
     <hr />
-
-
     
-    <div aut-block-ui="block.bind: blockValue1">
-
+    <div aut-block-ui='block.bind:blockValue1;message:MyTest;css:{"background-color":"red"}'>
       <div class="input-group">
         <span class="input-group-addon" id="basic-addon1">@</span>
         <input type="text" class="form-control" aut-bt-float-label="Please enter your user name" placeholder="Hello" aria-describedby="basic-addon1">
       </div>
-
     </div>
-    <div aut-block-ui="block.bind: blockValue2">
 
-      <div class="input-group">
-        <span class="input-group-addon" id="basic-addon1">@</span>
-        <input type="text" class="form-control" aut-bt-float-label="Please enter your user name" placeholder="Hello" aria-describedby="basic-addon1">
-      </div>
-
-    </div>
-    <div aut-block-ui="block.bind: blockValue3">
-
-      <div class="input-group">
-        <span class="input-group-addon" id="basic-addon1">@</span>
-        <input type="text" class="form-control" aut-bt-float-label="Please enter your user name" placeholder="Hello" aria-describedby="basic-addon1">
-      </div>
-
-    </div>
   </section>
 </template>
