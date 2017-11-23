@@ -1,3 +1,5 @@
+import { BetweenValueConverter } from './../../../../src/value-converters/string/strman/between';
+import { Base64EncodeValueConverter } from './../../../../src/value-converters/string/strman/base64encode';
 import { Base64DecodeValueConverter } from './../../../../src/value-converters/string/strman/base64decode';
 import { AtValueConverter } from './../../../../src/value-converters/string/strman/at';
 import { AppendArrayValueConverter } from './../../../../src/value-converters/string/strman/appendArray';
@@ -22,4 +24,14 @@ test('strman base64decode value converter', () => {
     let vc = new Base64DecodeValueConverter();
     const result = vc.toView('c3RybWFu');
     expect(result).toBe('strman');
+});
+test('strman base64encode value converter', () => {
+    let vc = new Base64EncodeValueConverter();
+    const result = vc.toView('strman');
+    expect(result).toBe('c3RybWFu');
+});
+test('strman between value converter', () => {
+    let vc = new BetweenValueConverter();
+    const result = vc.toView('[abc][def]', '[', ']');
+    expect(result).toEqual(['abc', 'def']);
 });
