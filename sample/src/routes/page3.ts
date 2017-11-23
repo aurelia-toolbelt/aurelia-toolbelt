@@ -5,7 +5,7 @@ import { autoinject } from 'aurelia-framework';
 @autoinject
 export class Page3 {
     public title: string;
-
+    public appended: string[] = ['s', 'tr', 'm', 'an'];
     public num = 0;
     public strrial = 0;
     public strtoman = 0;
