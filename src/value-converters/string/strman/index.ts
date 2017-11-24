@@ -43,5 +43,17 @@ export function configure(config: FrameworkConfiguration): void {
     config.globalResources(PLATFORM.moduleName('./removeleft'));
     config.globalResources(PLATFORM.moduleName('./removenonwords'));
     config.globalResources(PLATFORM.moduleName('./removespaces'));
+    config.globalResources(PLATFORM.moduleName('./repeat'));
+    config.globalResources(PLATFORM.moduleName('./replace'));
+    config.globalResources(PLATFORM.moduleName('./reverse'));
+    config.globalResources(PLATFORM.moduleName('./rightpad'));
+    config.globalResources(PLATFORM.moduleName('./righttrim'));
+    config.globalResources(PLATFORM.moduleName('./safetruncate'));
+    config.globalResources(PLATFORM.moduleName('./shuffle'));
+    config.globalResources(PLATFORM.moduleName('./slice'));
+    config.globalResources(PLATFORM.moduleName('./split'));
+    config.globalResources(PLATFORM.moduleName('./startswith'));
+    config.globalResources(PLATFORM.moduleName('./substr'));
+    config.globalResources(PLATFORM.moduleName('./surround'));
 
 }

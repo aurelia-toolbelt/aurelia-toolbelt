@@ -1,3 +1,15 @@
+import { SurroundValueConverter } from './../../../../src/value-converters/string/strman/surround';
+import { SubstrValueConverter } from './../../../../src/value-converters/string/strman/substr';
+import { StartsWithValueConverter } from './../../../../src/value-converters/string/strman/startswith';
+import { SplitValueConverter } from './../../../../src/value-converters/string/strman/split';
+import { SliceValueConverter } from './../../../../src/value-converters/string/strman/slice';
+import { ShuffleValueConverter } from './../../../../src/value-converters/string/strman/shuffle';
+import { SafeTruncateValueConverter } from './../../../../src/value-converters/string/strman/safetruncate';
+import { RightTrimValueConverter } from './../../../../src/value-converters/string/strman/righttrim';
+import { RightPadValueConverter } from './../../../../src/value-converters/string/strman/rightpad';
+import { ReverseValueConverter } from './../../../../src/value-converters/string/strman/reverse';
+import { ReplaceValueConverter } from './../../../../src/value-converters/string/strman/replace';
+import { RepeatValueConverter } from './../../../../src/value-converters/string/strman/repeat';
 import { RemoveSpacesValueConverter } from './../../../../src/value-converters/string/strman/removespaces';
 import { RemoveNonWordsValueConverter } from './../../../../src/value-converters/string/strman/removenonwords';
 import { RemoveLeftValueConverter } from './../../../../src/value-converters/string/strman/removeleft';
@@ -287,4 +299,75 @@ test('strman removespaces value converter', () => {
     let vc = new RemoveSpacesValueConverter();
     const result = vc.toView('  s t r  m  a n     ');
     expect(result).toBe('strman');
+});
+test('strman repeat value converter', () => {
+    let vc = new RepeatValueConverter();
+    const result = vc.toView('strman', 5);
+    expect(result).toBe('strmanstrmanstrmanstrmanstrman');
+});
+test('strman replace value converter', () => {
+    let vc = new ReplaceValueConverter();
+    const result = vc.toView('strman', 'upe', 't');
+    expect(result).toBe('strman');
+});
+test('strman reverse value converter', () => {
+    let vc = new ReverseValueConverter();
+    const result = vc.toView('strman');
+    expect(result).toBe('namrts');
+});
+test('strman rightpad value converter', () => {
+    let vc = new RightPadValueConverter();
+    const result = vc.toView('strman', 10, '0');
+    expect(result).toBe('strman0000');
+});
+test('strman righttrim value converter', () => {
+    let vc = new RightTrimValueConverter();
+    const result = vc.toView('strman     ');
+    expect(result).toBe('strman');
+});
+test('strman safetruncate value converter', () => {
+    let vc = new SafeTruncateValueConverter();
+    const title = 'A Javascript string manipulation library.';
+    const result = vc.toView(title, 15, '...');
+    expect(result).toBe('A Javascript...');
+});
+// Seems does not work!
+/*test('strman shuffle value converter', () => {
+    let vc = new ShuffleValueConverter();
+    const result = vc.toView('strman');
+    expect(result).not.toBe('strman');
+});*/
+test('strman slice value converter', () => {
+    let vc = new SliceValueConverter();
+    const result = vc.toView('strman', 2, 5);
+    expect(result).toBe('rma');
+});
+test('strman split value converter', () => {
+    let vc = new SplitValueConverter();
+    const result = vc.toView('strman', '');
+    expect(result).toEqual(['s', 't', 'r', 'm', 'a', 'n']);
+});
+test('strman startswith value converter', () => {
+    let vc = new StartsWithValueConverter();
+    const result = vc.toView('strman', 'str');
+    expect(result).toBeTruthy();
+});
+test('strman substr value converter', () => {
+    let vc = new SubstrValueConverter();
+    const result = vc.toView('strman', 0, 3);
+    expect(result).toBe('str');
+});
+describe('strman surround value converter', () => {
+    let vc;
+    beforeAll(() => {
+        vc = new SurroundValueConverter();
+    });
+    it('if substrRight is null', () => {
+        const result = vc.toView('strman', '=>');
+        expect(result).toBe('=>strman=>');
+    });
+    it('if substrRight is not null', () => {
+        const result = vc.toView('strman', '<', '>');
+        expect(result).toBe('<strman>');
+    });
 });

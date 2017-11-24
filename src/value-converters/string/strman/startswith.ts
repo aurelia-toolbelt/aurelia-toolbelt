@@ -1,11 +1,11 @@
 import { valueConverter } from 'aurelia-framework';
 
 // @ts-ignore
-import { endsWith } from 'strman';
+import { startsWith } from 'strman';
 
-@valueConverter('endswith')
-export class EndsWithValueConverter {
+@valueConverter('startswith')
+export class StartsWithValueConverter {
     public toView(value: string, search: string, position?: number, caseSensitive?: boolean): boolean {
-        return endsWith(value, search, position, caseSensitive);
+        return startsWith(value, search, position, caseSensitive);
     }
 }
