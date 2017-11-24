@@ -24,5 +24,10 @@ export function configure(config: FrameworkConfiguration): void {
     config.globalResources(PLATFORM.moduleName('./equal'));
     config.globalResources(PLATFORM.moduleName('./first'));
     config.globalResources(PLATFORM.moduleName('./format'));
+    config.globalResources(PLATFORM.moduleName('./hexdecode'));
+    config.globalResources(PLATFORM.moduleName('./hexencode'));
+    config.globalResources(PLATFORM.moduleName('./htmldecode'));
+    config.globalResources(PLATFORM.moduleName('./htmlencode'));
+    config.globalResources(PLATFORM.moduleName('./inequal'));
 
 }

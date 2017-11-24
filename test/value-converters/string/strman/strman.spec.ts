@@ -1,3 +1,8 @@
+import { InequalValueConverter } from './../../../../src/value-converters/string/strman/inequal';
+import { HtmlEncodeValueConverter } from './../../../../src/value-converters/string/strman/htmlencode';
+import { HtmlDecodeValueConverter } from './../../../../src/value-converters/string/strman/htmldecode';
+import { HexEncodeValueConverter } from './../../../../src/value-converters/string/strman/hexencode';
+import { HexDecodeValueConverter } from './../../../../src/value-converters/string/strman/hexdecode';
 import { FormatValueConverter } from './../../../../src/value-converters/string/strman/format';
 import { FirstValueConverter } from './../../../../src/value-converters/string/strman/first';
 import { EqualValueConverter } from './../../../../src/value-converters/string/strman/equal';
@@ -164,4 +169,29 @@ test('strman format value converter', () => {
     const select = `SELECT * FROM CONTACTS WHERE NAME LIKE '%{0}%' AND EMAIL LIKE '%{1}%'`;
     const result = vc.toView(select, 'DANIEL', 'GMAIL');
     expect(result).toBe(`SELECT * FROM CONTACTS WHERE NAME LIKE '%DANIEL%' AND EMAIL LIKE '%GMAIL%'`);
+});
+test('strman hexdecode value converter', () => {
+    let vc = new HexDecodeValueConverter();
+    const result = vc.toView('007300740072006d0061006e');
+    expect(result).toBe('strman');
+});
+test('strman hexencode value converter', () => {
+    let vc = new HexEncodeValueConverter();
+    const result = vc.toView('strman');
+    expect(result).toBe('007300740072006d0061006e');
+});
+test('strman htmldecode value converter', () => {
+    let vc = new HtmlDecodeValueConverter();
+    const result = vc.toView('&lt;div&gt;').toLowerCase();
+    expect(result).toBe('<div>');
+});
+test('strman htmlencode value converter', () => {
+    let vc = new HtmlEncodeValueConverter();
+    const result = vc.toView('<div>').toLowerCase();
+    expect(result).toBe('&lt;div&gt;');
+});
+test('strman inequal value converter', () => {
+    let vc = new InequalValueConverter();
+    const result = vc.toView('foo', 'foo');
+    expect(result).toBeFalsy();
 });
