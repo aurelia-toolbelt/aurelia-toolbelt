@@ -1,3 +1,8 @@
+import { LastValueConverter } from './../../../../src/value-converters/string/strman/last';
+import { IsUpperCaseValueConverter } from './../../../../src/value-converters/string/strman/isuppercase';
+import { IsStringValueConverter } from './../../../../src/value-converters/string/strman/isstring';
+import { IsLowerCaseValueConverter } from './../../../../src/value-converters/string/strman/islowercase';
+import { InsertValueConverter } from './../../../../src/value-converters/string/strman/insert';
 import { InequalValueConverter } from './../../../../src/value-converters/string/strman/inequal';
 import { HtmlEncodeValueConverter } from './../../../../src/value-converters/string/strman/htmlencode';
 import { HtmlDecodeValueConverter } from './../../../../src/value-converters/string/strman/htmldecode';
@@ -194,4 +199,33 @@ test('strman inequal value converter', () => {
     let vc = new InequalValueConverter();
     const result = vc.toView('foo', 'foo');
     expect(result).toBeFalsy();
+});
+test('strman insert value converter', () => {
+    let vc = new InsertValueConverter();
+    const title = 'trman';
+    const result = vc.toView(title, 's', 0);
+    expect(result).toBe('strman');
+});
+test('strman islowercase value converter', () => {
+    let vc = new IsLowerCaseValueConverter();
+    const title = 'strman';
+    const result = vc.toView(title);
+    expect(result).toBeTruthy();
+});
+test('strman isstring value converter', () => {
+    let vc = new IsStringValueConverter();
+    const title = 'A Javascript string manipulation library.';
+    const result = vc.toView(title);
+    expect(result).toBeTruthy();
+});
+test('strman isuppercase value converter', () => {
+    let vc = new IsUpperCaseValueConverter();
+    const title = 'STRMAN';
+    const result = vc.toView(title);
+    expect(result).toBeTruthy();
+});
+test('strman last value converter', () => {
+    let vc = new LastValueConverter();
+    const result = vc.toView('strman', 3);
+    expect(result).toBe('man');
 });

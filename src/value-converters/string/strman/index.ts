@@ -29,5 +29,10 @@ export function configure(config: FrameworkConfiguration): void {
     config.globalResources(PLATFORM.moduleName('./htmldecode'));
     config.globalResources(PLATFORM.moduleName('./htmlencode'));
     config.globalResources(PLATFORM.moduleName('./inequal'));
+    config.globalResources(PLATFORM.moduleName('./insert'));
+    config.globalResources(PLATFORM.moduleName('./islowercase'));
+    config.globalResources(PLATFORM.moduleName('./isstring'));
+    config.globalResources(PLATFORM.moduleName('./isuppercase'));
+    config.globalResources(PLATFORM.moduleName('./last'));
 
 }
