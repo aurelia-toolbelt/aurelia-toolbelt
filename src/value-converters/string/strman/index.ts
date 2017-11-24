@@ -55,5 +55,16 @@ export function configure(config: FrameworkConfiguration): void {
     config.globalResources(PLATFORM.moduleName('./startswith'));
     config.globalResources(PLATFORM.moduleName('./substr'));
     config.globalResources(PLATFORM.moduleName('./surround'));
-
+    config.globalResources(PLATFORM.moduleName('./tocamelcase'));
+    config.globalResources(PLATFORM.moduleName('./todecamelize'));
+    config.globalResources(PLATFORM.moduleName('./tokebabcase'));
+    config.globalResources(PLATFORM.moduleName('./tolowercase'));
+    config.globalResources(PLATFORM.moduleName('./tosnakecase'));
+    config.globalResources(PLATFORM.moduleName('./tosnakecase'));
+    config.globalResources(PLATFORM.moduleName('./touppercase'));
+    config.globalResources(PLATFORM.moduleName('./transliterate'));
+    config.globalResources(PLATFORM.moduleName('./trim'));
+    config.globalResources(PLATFORM.moduleName('./truncate'));
+    config.globalResources(PLATFORM.moduleName('./urlencode'));
+    config.globalResources(PLATFORM.moduleName('./urldecode'));
 }

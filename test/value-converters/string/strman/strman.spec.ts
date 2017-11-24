@@ -1,3 +1,15 @@
+import { UrlEncodeValueConverter } from './../../../../src/value-converters/string/strman/urlencode';
+import { UrlDecodeValueConverter } from './../../../../src/value-converters/string/strman/urldecode';
+import { TruncateValueConverter } from './../../../../src/value-converters/string/strman/truncate';
+import { TrimValueConverter } from './../../../../src/value-converters/string/strman/trim';
+import { TransLiterateValueConverter } from './../../../../src/value-converters/string/strman/transliterate';
+import { ToUpperCaseValueConverter } from './../../../../src/value-converters/string/strman/touppercase';
+import { ToStudlyCapsValueConverter } from './../../../../src/value-converters/string/strman/tostudlycaps';
+import { ToSnakeCaseValueConverter } from './../../../../src/value-converters/string/strman/tosnakecase';
+import { ToLowerCaseValueConverter } from './../../../../src/value-converters/string/strman/tolowercase';
+import { ToKebabCaseValueConverter } from './../../../../src/value-converters/string/strman/tokebabcase';
+import { ToDecamelizeValueConverter } from './../../../../src/value-converters/string/strman/todecamelize';
+import { ToCamelCaseValueConverter } from './../../../../src/value-converters/string/strman/tocamelcase';
 import { SurroundValueConverter } from './../../../../src/value-converters/string/strman/surround';
 import { SubstrValueConverter } from './../../../../src/value-converters/string/strman/substr';
 import { StartsWithValueConverter } from './../../../../src/value-converters/string/strman/startswith';
@@ -52,6 +64,7 @@ import { AtValueConverter } from './../../../../src/value-converters/string/strm
 import { AppendArrayValueConverter } from './../../../../src/value-converters/string/strman/appendArray';
 import { AppendValueConverter } from './../../../../src/value-converters/string/strman/append';
 import { PrependValueConverter } from './../../../../src/value-converters/string/strman/prepend';
+import { toLowerCase } from 'strman';
 
 test('strman append value converter', () => {
     let vc = new AppendValueConverter();
@@ -370,4 +383,65 @@ describe('strman surround value converter', () => {
         const result = vc.toView('strman', '<', '>');
         expect(result).toBe('<strman>');
     });
+});
+test('strman tocamelcase value converter', () => {
+    let vc = new ToCamelCaseValueConverter();
+    const result = vc.toView('A Javascript string manipulation library.');
+    expect(result).toBe('aJavascriptStringManipulationLibrary.');
+});
+test('strman todecamelize value converter', () => {
+    let vc = new ToDecamelizeValueConverter();
+    const result = vc.toView('A Javascript string manipulation library.');
+    expect(result).toBe('a_javascript_string_manipulation_library.');
+});
+test('strman tokebabcase value converter', () => {
+    let vc = new ToKebabCaseValueConverter();
+    const result = vc.toView('A Javascript string manipulation library.');
+    expect(result).toBe('a-javascript-string-manipulation-library.');
+});
+test('strman tolowercase value converter', () => {
+    let vc = new ToLowerCaseValueConverter();
+    const result = vc.toView('A Javascript string manipulation library.');
+    expect(result).toBe('a javascript string manipulation library.');
+});
+test('strman tosnakecase value converter', () => {
+    let vc = new ToSnakeCaseValueConverter();
+    const result = vc.toView('A Javascript string manipulation library.');
+    expect(result).toBe('a_javascript_string_manipulation_library.');
+});
+test('strman tostudlycaps value converter', () => {
+    let vc = new ToStudlyCapsValueConverter();
+    const result = vc.toView('A Javascript string manipulation library.');
+    expect(result).toBe('AJavascriptStringManipulationLibrary.');
+});
+test('strman touppercase value converter', () => {
+    let vc = new ToUpperCaseValueConverter();
+    const result = vc.toView('A Javascript string manipulation library.');
+    expect(result).toBe('A JAVASCRIPT STRING MANIPULATION LIBRARY.');
+});
+test('strman transliterate value converter', () => {
+    let vc = new TransLiterateValueConverter();
+    const result = vc.toView('strmáñ');
+    expect(result).toBe('strman');
+});
+test('strman trim value converter', () => {
+    let vc = new TrimValueConverter();
+    const result = vc.toView('   strman   ');
+    expect(result).toBe('strman');
+});
+test('strman truncate value converter', () => {
+    let vc = new TruncateValueConverter();
+    const title = 'A Javascript string manipulation library.';
+    const result = vc.toView(title, 16, '...');
+    expect(result).toBe('A Javascript ...');
+});
+test('strman urldecode value converter', () => {
+    let vc = new UrlDecodeValueConverter();
+    const result = vc.toView('https://github.com/dleitee/strman/&name=%C3%A1%C3%A9%C3%AD%C3%B3%C3%BA');
+    expect(result).toBe('https://github.com/dleitee/strman/&name=áéíóú');
+});
+test('strman urlencode value converter', () => {
+    let vc = new UrlEncodeValueConverter();
+    const result = vc.toView('https://github.com/dleitee/strman/&name=áéíóú');
+    expect(result).toBe('https://github.com/dleitee/strman/&name=%C3%A1%C3%A9%C3%AD%C3%B3%C3%BA');
 });
