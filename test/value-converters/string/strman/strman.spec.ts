@@ -1,3 +1,12 @@
+import { EnsureRightValueConverter } from './../../../../src/value-converters/string/strman/ensureright';
+import { EnsureLeftValueConverter } from './../../../../src/value-converters/string/strman/ensureleft';
+import { EndsWithValueConverter } from './../../../../src/value-converters/string/strman/endswith';
+import { DecEncodeValueConverter } from './../../../../src/value-converters/string/strman/decencode';
+import { DecDecodeValueConverter } from './../../../../src/value-converters/string/strman/decdecode';
+import { CountSubstrValueConverter } from './../../../../src/value-converters/string/strman/countsubstr';
+import { ContainsAnyValueConverter } from './../../../../src/value-converters/string/strman/containsany';
+import { ContainsAllValueConverter } from './../../../../src/value-converters/string/strman/containsall';
+import { ContainsValueConverter } from './../../../../src/value-converters/string/strman/contains';
 import { CompareValueConverter } from './../../../../src/value-converters/string/strman/compare';
 import { CollapseWhitespaceValueConverter } from './../../../../src/value-converters/string/strman/collapsewhitespace';
 import { CharsValueConverter } from './../../../../src/value-converters/string/strman/chars';
@@ -60,7 +69,6 @@ test('strman collapsewhitespace value converter', () => {
     const result = vc.toView('  a  b  c  ');
     expect(result).toBe('a b c');
 });
-
 describe('strman compare value converter', () => {
     let vc;
     beforeAll(() => {
@@ -78,4 +86,63 @@ describe('strman compare value converter', () => {
         const result = vc.toView('abc', 'abc');
         expect(result).toEqual(0);
     });
+});
+test('strman contains value converter', () => {
+    let vc = new ContainsValueConverter();
+    const title = 'Daniel Leite';
+    const needle = 'leite';
+    const result = vc.toView(title, needle, false);
+    expect(result).toBeTruthy();
+});
+test('strman containsall value converter', () => {
+    let vc = new ContainsAllValueConverter();
+    const title = 'Daniel Leite';
+    const needles = ['Leite', 'Daniel'];
+    const result = vc.toView(title, needles, false);
+    expect(result).toBeTruthy();
+});
+test('strman containsany value converter', () => {
+    let vc = new ContainsAnyValueConverter();
+    const title = 'Daniel Leite';
+    const needles = ['Leite', 'Oliveira'];
+    const result = vc.toView(title, needles, false);
+    expect(result).toBeTruthy();
+});
+test('strman countsubstr value converter', () => {
+    let vc = new CountSubstrValueConverter();
+    const title = 'Daniel Leite';
+    const substr = 'Leite';
+    const result = vc.toView(title, substr);
+    expect(result).toEqual(1);
+});
+test('strman decdecode value converter', () => {
+    let vc = new DecDecodeValueConverter();
+    const result = vc.toView('001150011600114001090009700110');
+    expect(result).toBe('strman');
+});
+test('strman decencode value converter', () => {
+    let vc = new DecEncodeValueConverter();
+    const result = vc.toView('strman');
+    expect(result).toBe('001150011600114001090009700110');
+});
+test('strman endswith value converter', () => {
+    let vc = new EndsWithValueConverter();
+    const value = 'Daniel Leite';
+    const search = 'Leite';
+    const result = vc.toView(value, search);
+    expect(result).toBeTruthy();
+});
+test('strman ensureleft value converter', () => {
+    let vc = new EnsureLeftValueConverter();
+    const value = 'Leite';
+    const substr = 'Daniel ';
+    const result = vc.toView(value, substr);
+    expect(result).toBe('Daniel Leite');
+});
+test('strman endswith value converter', () => {
+    let vc = new EnsureRightValueConverter();
+    const value = 'Daniel';
+    const substr = ' Leite';
+    const result = vc.toView(value, substr);
+    expect(result).toBe('Daniel Leite');
 });
