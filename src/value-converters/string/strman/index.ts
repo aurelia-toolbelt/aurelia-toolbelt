@@ -34,5 +34,14 @@ export function configure(config: FrameworkConfiguration): void {
     config.globalResources(PLATFORM.moduleName('./isstring'));
     config.globalResources(PLATFORM.moduleName('./isuppercase'));
     config.globalResources(PLATFORM.moduleName('./last'));
+    config.globalResources(PLATFORM.moduleName('./lastindexof'));
+    config.globalResources(PLATFORM.moduleName('./leftpad'));
+    config.globalResources(PLATFORM.moduleName('./lefttrim'));
+    config.globalResources(PLATFORM.moduleName('./prepend'));
+    config.globalResources(PLATFORM.moduleName('./prependarray'));
+    config.globalResources(PLATFORM.moduleName('./removeemptystrings'));
+    config.globalResources(PLATFORM.moduleName('./removeleft'));
+    config.globalResources(PLATFORM.moduleName('./removenonwords'));
+    config.globalResources(PLATFORM.moduleName('./removespaces'));
 
 }

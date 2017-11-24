@@ -1,3 +1,11 @@
+import { RemoveSpacesValueConverter } from './../../../../src/value-converters/string/strman/removespaces';
+import { RemoveNonWordsValueConverter } from './../../../../src/value-converters/string/strman/removenonwords';
+import { RemoveLeftValueConverter } from './../../../../src/value-converters/string/strman/removeleft';
+import { RemoveEmptyStringsValueConverter } from './../../../../src/value-converters/string/strman/removeemptystrings';
+import { PrependArrayValueConverter } from './../../../../src/value-converters/string/strman/prependarray';
+import { LeftTrimValueConverter } from './../../../../src/value-converters/string/strman/lefttrim';
+import { LeftPadValueConverter } from './../../../../src/value-converters/string/strman/leftpad';
+import { LastIndexOfValueConverter } from './../../../../src/value-converters/string/strman/lastindexof';
 import { LastValueConverter } from './../../../../src/value-converters/string/strman/last';
 import { IsUpperCaseValueConverter } from './../../../../src/value-converters/string/strman/isuppercase';
 import { IsStringValueConverter } from './../../../../src/value-converters/string/strman/isstring';
@@ -31,6 +39,7 @@ import { Base64DecodeValueConverter } from './../../../../src/value-converters/s
 import { AtValueConverter } from './../../../../src/value-converters/string/strman/at';
 import { AppendArrayValueConverter } from './../../../../src/value-converters/string/strman/appendArray';
 import { AppendValueConverter } from './../../../../src/value-converters/string/strman/append';
+import { PrependValueConverter } from './../../../../src/value-converters/string/strman/prepend';
 
 test('strman append value converter', () => {
     let vc = new AppendValueConverter();
@@ -228,4 +237,54 @@ test('strman last value converter', () => {
     let vc = new LastValueConverter();
     const result = vc.toView('strman', 3);
     expect(result).toBe('man');
+});
+test('strman lastindexof value converter', () => {
+    let vc = new LastIndexOfValueConverter();
+    const title = 'strman strman';
+    const result = vc.toView(title, 'str');
+    expect(result).toBe(7);
+});
+test('strman leftpad value converter', () => {
+    let vc = new LeftPadValueConverter();
+    const title = 'strman';
+    const result = vc.toView(title, 10, '0');
+    expect(result).toBe('0000strman');
+});
+test('strman lefttrim value converter', () => {
+    let vc = new LeftTrimValueConverter();
+    const result = vc.toView('   strman');
+    expect(result).toBe('strman');
+});
+test('strman prepend value converter', () => {
+    let vc = new PrependValueConverter();
+    const result = vc.toView('strman', '_');
+    expect(result).toBe('_strman');
+});
+test('strman prependarray value converter', () => {
+    let vc = new PrependArrayValueConverter();
+    const result = vc.toView('strman', ['_', '|', '_']);
+    expect(result).toBe('_|_strman');
+});
+// This is different from site!
+test('strman removeemptystrings value converter', () => {
+    let vc = new RemoveEmptyStringsValueConverter();
+    const titles = ['A Javascript string manipulation library.', null, undefined, '', ' '];
+    const result = vc.toView(titles);
+    expect(result).toEqual(['A Javascript string manipulation library.', ' ']);
+});
+test('strman removeleft value converter', () => {
+    let vc = new RemoveLeftValueConverter();
+    const result = vc.toView('strman', 'str');
+    expect(result).toBe('man');
+});
+// This is different from site!
+test('strman removenonwords value converter', () => {
+    let vc = new RemoveNonWordsValueConverter();
+    const result = vc.toView('__strman../');
+    expect(result).toBe('__strman');
+});
+test('strman removespaces value converter', () => {
+    let vc = new RemoveSpacesValueConverter();
+    const result = vc.toView('  s t r  m  a n     ');
+    expect(result).toBe('strman');
 });
