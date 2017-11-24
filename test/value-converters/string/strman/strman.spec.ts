@@ -1,3 +1,6 @@
+import { FormatValueConverter } from './../../../../src/value-converters/string/strman/format';
+import { FirstValueConverter } from './../../../../src/value-converters/string/strman/first';
+import { EqualValueConverter } from './../../../../src/value-converters/string/strman/equal';
 import { EnsureRightValueConverter } from './../../../../src/value-converters/string/strman/ensureright';
 import { EnsureLeftValueConverter } from './../../../../src/value-converters/string/strman/ensureleft';
 import { EndsWithValueConverter } from './../../../../src/value-converters/string/strman/endswith';
@@ -139,10 +142,26 @@ test('strman ensureleft value converter', () => {
     const result = vc.toView(value, substr);
     expect(result).toBe('Daniel Leite');
 });
-test('strman endswith value converter', () => {
+test('strman ensureright value converter', () => {
     let vc = new EnsureRightValueConverter();
     const value = 'Daniel';
     const substr = ' Leite';
     const result = vc.toView(value, substr);
     expect(result).toBe('Daniel Leite');
+});
+test('strman equal value converter', () => {
+    let vc = new EqualValueConverter();
+    const result = vc.toView('foo', 'foo');
+    expect(result).toBeTruthy();
+});
+test('strman first value converter', () => {
+    let vc = new FirstValueConverter();
+    const result = vc.toView('strman', 3);
+    expect(result).toBe('str');
+});
+test('strman format value converter', () => {
+    let vc = new FormatValueConverter();
+    const select = `SELECT * FROM CONTACTS WHERE NAME LIKE '%{0}%' AND EMAIL LIKE '%{1}%'`;
+    const result = vc.toView(select, 'DANIEL', 'GMAIL');
+    expect(result).toBe(`SELECT * FROM CONTACTS WHERE NAME LIKE '%DANIEL%' AND EMAIL LIKE '%GMAIL%'`);
 });

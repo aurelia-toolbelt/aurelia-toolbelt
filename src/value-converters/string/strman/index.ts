@@ -21,4 +21,8 @@ export function configure(config: FrameworkConfiguration): void {
     config.globalResources(PLATFORM.moduleName('./endswith'));
     config.globalResources(PLATFORM.moduleName('./ensureleft'));
     config.globalResources(PLATFORM.moduleName('./ensureright'));
+    config.globalResources(PLATFORM.moduleName('./equal'));
+    config.globalResources(PLATFORM.moduleName('./first'));
+    config.globalResources(PLATFORM.moduleName('./format'));
+
 }
