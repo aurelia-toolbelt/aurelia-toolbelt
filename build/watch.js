@@ -121,6 +121,8 @@ gulp.task('fuse-sample', function () {
         + aurelia-event-aggregator 
         + aurelia-history-browser 
         + aurelia-templating-router
+        + aurelia-fetch-client
+        + aurelia-http-client
         + jalali-moment
         + moment-timezone
         + humanize-duration
@@ -132,6 +134,8 @@ gulp.task('fuse-sample', function () {
         + moment/locale/it
         + pretty-checkbox/dist/pretty-checkbox.css
         + inputmask
+        + markdown-it
+        + highlight.js
 
 `)
 

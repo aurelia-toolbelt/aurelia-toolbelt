@@ -45,6 +45,14 @@ export class App {
         nav: true,
         title: 'Pretty Radio Buttons',
         settings: { auth: false }
+      },
+      {
+        route: 'mark-down',
+        name: 'mark-down',
+        moduleId: './routes/mark-down-page',
+        nav: true,
+        title: 'Mark Down',
+        settings: { auth: false }
       }
     ]);
     this.router = router;
