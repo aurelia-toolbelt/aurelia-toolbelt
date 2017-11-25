@@ -16,17 +16,13 @@ export class MaskedInputCustomAttribute {
 
 
     private maskChanged(newMask: String) {
-
-        console.log(`new mask: ${newMask}`);
         let im = new InputMask(newMask);
         im.mask(this.element);
     }
-
 
     private regexChanged(newRegex: String | RegExp) {
         let im = new InputMask({ regex: newRegex });
         im.mask(this.element);
     }
-
 
 }
