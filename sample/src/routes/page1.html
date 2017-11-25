@@ -19,13 +19,17 @@
     <aut-star-rate max-rate.bind="5" read-only.bind="false"></aut-star-rate>
 
     <hr />
-    
+
     <div aut-block-ui='block.bind:blockValue1;message:MyTest;css:{"background-color":"red"}'>
       <div class="input-group">
         <span class="input-group-addon" id="basic-addon1">@</span>
         <input type="text" class="form-control" aut-bt-float-label="Please enter your user name" placeholder="Hello" aria-describedby="basic-addon1">
       </div>
     </div>
+
+    <hr />
+
+    <input type="text" masked="regex.bind:'\\d*'" />
 
   </section>
 </template>

@@ -49,6 +49,7 @@
   "dependencies": {
     "aurelia-toolbelt": "../aurelia-toolbelt-0.5.30.tgz",
     "bootstrap-float-label": "^3.0.1",
+    "inputmask": "^3.3.11",
     "jquery": "^3.2.1",
     "numeral": "^2.0.6"
   }

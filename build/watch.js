@@ -131,6 +131,7 @@ gulp.task('fuse-sample', function () {
         + moment/locale/fr
         + moment/locale/it
         + pretty-checkbox/dist/pretty-checkbox.css
+        + inputmask
 
 `)
 
