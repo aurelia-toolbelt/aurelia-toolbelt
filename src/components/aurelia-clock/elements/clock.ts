@@ -11,7 +11,7 @@ export class ClockCustomElement {
   /* One Time bindings */
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public text: string = 'Aurelia is awesome';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public color: string = '#753B85';
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public shadowColor: string = '#C8167A';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public shadowColor: string = ''; // = '#C8167A';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public fontSize: string | number = '40';
   /* ************************************************************************* */
 
@@ -23,7 +23,6 @@ export class ClockCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showText: string | boolean = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showDate: string | boolean = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showTime: string | boolean = true;
-
   /* ************************************************************************* */
 
 
