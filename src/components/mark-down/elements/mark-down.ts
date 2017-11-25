@@ -9,52 +9,47 @@ import { HttpClient } from 'aurelia-http-client';
 @customElement('mark-down')
 export class MarkDownItCustomElement {
 
+  private myText = '';
+  private editor: HTMLTextAreaElement;
+  private preview: HTMLDivElement;
 
-    private myText = '';
-
-    private editor: HTMLTextAreaElement;
-
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) public showPreview = true;
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) public showEditor = true;
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) public src: string = '';
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public showPreview: boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public showEditor: boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public src: string = '';
 
 
-    constructor(private http: HttpClient) {
-    }
+  constructor(private http: HttpClient) { }
 
-    private srcChanged(newValue: string) {
-        this.http.get(newValue)
-            .then((data) => {
-                this.myText = data.response;
-            });
-    }
+  private srcChanged(newValue: string) {
+    this.http.get(newValue)
+      .then((data) => {
+        this.myText = data.response;
+      });
+  }
 
-    private addText(text: string) {
+  private addText(text: string) {
 
-        if (!this.editor) { return; }
+    if (!this.editor) { return; }
 
-        const scrollPos = this.editor.scrollTop;
-        let strPos = this.editor.selectionStart;
+    const scrollPos = this.editor.scrollTop;
+    let strPos = this.editor.selectionStart;
 
-        console.log(`Start: ${this.editor.selectionStart}`);
+    console.warn(`START: ${this.editor.selectionStart}`);
+    console.warn(`END: ${this.editor.selectionEnd}`);
 
-        let front = (this.editor.value).substring(0, strPos);
-        let back = (this.editor.value).substring(strPos, this.editor.value.length);
+    let front = (this.myText).substring(0, strPos);
+    let back = (this.myText).substring(strPos, this.editor.value.length);
 
-        console.log(`front: ${front}`);
-        console.log(`text: ${text}`);
-        console.log(`back: ${back}`);
+    this.editor.value = front + text + back;
+    strPos = strPos + text.length;
 
-        this.editor.value = front + text + back;
-        strPos = strPos + text.length;
+    this.editor.focus();
 
-        this.editor.focus();
+    this.editor.selectionStart = strPos;
+    this.editor.selectionEnd = strPos;
+    this.editor.scrollTo({
+      top: scrollPos
+    });
 
-        this.editor.selectionStart = strPos;
-        this.editor.selectionEnd = strPos;
-        this.editor.scrollTo({
-            top: scrollPos
-        });
-
-    }
+  }
 }

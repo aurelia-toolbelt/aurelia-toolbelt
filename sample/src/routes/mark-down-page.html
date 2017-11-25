@@ -1,13 +1,17 @@
 <template>
 
-    <div class="container">
+  <require from="highlight.js/styles/dracula.css"></require>
 
-        
-        <require from="highlight.js/styles/dracula.css"></require>
-        
-        <mark-down src="/test.md">
-            
-        </mark-down>
+  <div class="container">
+
+    <span>Preview: ${showPreview}</span>&nbsp;|&nbsp;
+    <span>Editor: ${showEditor}</span>
+
+    <hr />
+
+    <mark-down show-editor.bind="showEditor" show-preview.one-way="true" src="https://raw.githubusercontent.com/shahabganji/aurelia-star-rate/master/README.md">
+
+    </mark-down>
     </di>
 
 </template>

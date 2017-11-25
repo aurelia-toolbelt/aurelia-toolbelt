@@ -8,7 +8,7 @@
 
     <div class="panel-heading">
 
-      <div class="btn-group" role="group" aria-label="...">
+      <div class="btn-group" role="group">
         <button click.delegate="addText('# ')" type="button" class="btn btn-default">h1</button>
         <button click.delegate="addText('## ')" type="button" class="btn btn-default">h2</button>
         <button click.delegate="addText('### ')" type="button" class="btn btn-default">h3</button>
@@ -16,14 +16,14 @@
         <button click.delegate="addText('#### ')" type="button" class="btn btn-default">h5</button>
       </div>
 
-      <div class="btn-group" role="group" aria-label="...">
+      <div class="btn-group" role="group">
         <button type="button" class="btn btn-default">
           <b>
-            B
+            Bold
           </b>
         </button>
         <button type="button" class="btn btn-default">
-          <em>I</em>
+          <em>Italic</em>
         </button>
       </div>
 
@@ -40,7 +40,7 @@
 
     </div>
 
-    <div if.bind="showEditor" class="panel-body" style="border-left: 3px solid maroon !important;">
+    <div if.bind="showEditor === true" class="panel-body" style="border-left: 3px solid maroon !important;">
       <textarea ref="editor" class="editor" style="
                 width: 98%;
                 border: 0px;
@@ -49,7 +49,7 @@
       </textarea>
     </div>
 
-    <div if.bind="showPreview" class="panel-footer" style="border-left: 3px solid #00aaff !important;min-height:20px;">
+    <div if.bind="showPreview === true" class="panel-footer" style="border-left: 3px solid #00aaff !important;min-height:20px;">
       <div ref="preview" innerhtml.bind="myText | md">
 
       </div>
