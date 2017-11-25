@@ -1,8 +1,5 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
-
-
-
 export function configure(config: FrameworkConfiguration) {
-    console.log(config);
+    config.globalResources([PLATFORM.moduleName('./aurelia-password/aut-password')]);
 }

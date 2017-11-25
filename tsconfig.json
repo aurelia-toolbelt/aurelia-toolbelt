@@ -17,9 +17,10 @@
     "noUnusedLocals": false,
     "allowUnreachableCode": false,
     "removeComments": true,
+    "declaration": false,    
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "node",    
     "lib": [
       "es2017",
       "dom"
