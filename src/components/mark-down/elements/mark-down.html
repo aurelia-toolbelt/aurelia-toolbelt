@@ -2,8 +2,9 @@
 
   <!-- <require from="highlight.js/styles/dracula.css"></require> -->
   <require from="../../../value-converters/mark-down/markdown-vc"></require>
+  <require from="../../aurelia-checkbox/elements/pretty-checkbox"></require>
 
-  <div class="panel panel-primary">
+  <div class="panel panel-info">
 
     <div class="panel-heading">
 
@@ -26,13 +27,20 @@
         </button>
       </div>
 
-      <button type="button" class="btn btn-default pull-right" click.delegate="togglePreview()">
-        <i class="glyphicon ${showPreview?'glyphicon-eye-open' : 'glyphicon-eye-close'}">
-        </i>
-      </button>
+      <div class="pull-right">
+
+        <aut-checkbox color="success" switch slim animation="smooth" checked.bind="showPreview">
+          Preview
+        </aut-checkbox>
+        <aut-checkbox color="success" switch slim animation="smooth" checked.bind="showEditor">
+          Editor
+        </aut-checkbox>
+
+      </div>
+
     </div>
 
-    <div class="panel-body" style="border-left: 3px solid maroon !important;">
+    <div if.bind="showEditor" class="panel-body" style="border-left: 3px solid maroon !important;">
       <textarea ref="editor" class="editor" style="
                 width: 98%;
                 border: 0px;
@@ -41,7 +49,7 @@
       </textarea>
     </div>
 
-    <div if.bind="(myText.length > 0) && showPreview" class="panel-footer" style="border-left: 3px solid #00aaff !important;">
+    <div if.bind="showPreview" class="panel-footer" style="border-left: 3px solid #00aaff !important;min-height:20px;">
       <div ref="preview" innerhtml.bind="myText | md">
 
       </div>

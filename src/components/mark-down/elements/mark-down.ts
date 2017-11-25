@@ -13,8 +13,9 @@ export class MarkDownItCustomElement {
     private myText = '';
 
     private editor: HTMLTextAreaElement;
-    private showPreview = true;
 
+    @bindable({ defaultBindingMode: bindingMode.oneWay }) public showPreview = true;
+    @bindable({ defaultBindingMode: bindingMode.oneWay }) public showEditor = true;
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public src: string = '';
 
 
@@ -26,10 +27,6 @@ export class MarkDownItCustomElement {
             .then((data) => {
                 this.myText = data.response;
             });
-    }
-
-    private togglePreview() {
-        this.showPreview = !this.showPreview;
     }
 
     private addText(text: string) {
