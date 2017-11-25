@@ -283,10 +283,6 @@ aurelia-event-aggregator@1.0.1, aurelia-event-aggregator@^1.0.0:
   dependencies:
     aurelia-logging "^1.0.0"
 
-aurelia-fetch-client@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/aurelia-fetch-client/-/aurelia-fetch-client-1.1.3.tgz#3b6a4b8b9de4809e996bda1299f05838c3907b0a"
-
 aurelia-framework@1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/aurelia-framework/-/aurelia-framework-1.1.5.tgz#fd97d281c02d35bb98032830b0731ec3d2a6c1d7"
