@@ -47,7 +47,7 @@
     },
     "dependencies": {
         "aurelia-http-client": "^1.2.1",
-        "aurelia-toolbelt": "../aurelia-toolbelt-0.5.31.tgz",
+        "aurelia-toolbelt": "../aurelia-toolbelt-0.5.32.tgz",
         "bootstrap-float-label": "^3.0.1",
         "bootstrap-toggle": "^2.2.2",
         "highlight.js": "^9.12.0",

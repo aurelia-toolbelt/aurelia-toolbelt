@@ -12,6 +12,10 @@
   version "3.5.18"
   resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.18.tgz#6a60435d4663e290f3709898a4f75014f279c4d6"
 
+"@types/highlight.js@^9.12.1":
+  version "9.12.1"
+  resolved "https://registry.yarnpkg.com/@types/highlight.js/-/highlight.js-9.12.1.tgz#990f5dc63774852beab55e6173e5851d35da52f2"
+
 "@types/jquery.blockui@^0.0.28":
   version "0.0.28"
   resolved "https://registry.yarnpkg.com/@types/jquery.blockui/-/jquery.blockui-0.0.28.tgz#fd24a6e3330ad8ddd1f8e5b5578f3ef5608a6a92"
@@ -21,6 +25,10 @@
 "@types/jquery@*", "@types/jquery@^3.2.16":
   version "3.2.16"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.2.16.tgz#04419c404a3194350e7d3f339a90e72c88db3111"
+
+"@types/markdown-it@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@types/markdown-it/-/markdown-it-0.0.4.tgz#c5f67365916044b342dae8d702724788ba0b5b74"
 
 "@types/node@*", "@types/node@^8.0.47":
   version "8.0.53"
@@ -395,12 +403,20 @@ aurelia-templating@^1.0.0, aurelia-templating@^1.3.0, aurelia-templating@^1.5.0,
     aurelia-path "^1.0.0"
     aurelia-task-queue "^1.1.0"
 
+<<<<<<< HEAD
 aurelia-toolbelt@../aurelia-toolbelt-0.5.31.tgz:
   version "0.5.31"
   resolved "../aurelia-toolbelt-0.5.31.tgz#f690f634d4bd2ac7c5fd2a1832e24887e3a8f858"
+=======
+aurelia-toolbelt@../aurelia-toolbelt-0.5.32.tgz:
+  version "0.5.32"
+  resolved "../aurelia-toolbelt-0.5.32.tgz#6257077c872521369517bdbc1219c6b8a7dac432"
+>>>>>>> 9bfdbf2fd475088e866954eb55615fcf1f5740c6
   dependencies:
+    "@types/highlight.js" "^9.12.1"
     "@types/jquery" "^3.2.16"
     "@types/jquery.blockui" "^0.0.28"
+    "@types/markdown-it" "0.0.4"
     aurelia-event-aggregator "1.0.1"
     aurelia-framework "1.1.5"
     aurelia-http-client "^1.2.1"
@@ -415,7 +431,10 @@ aurelia-toolbelt@../aurelia-toolbelt-0.5.31.tgz:
     jquery "^3.2.1"
     lodash "^4.17.4"
     markdown-it "^8.4.0"
+<<<<<<< HEAD
     markdown-it-emoji "^1.4.0"
+=======
+>>>>>>> 9bfdbf2fd475088e866954eb55615fcf1f5740c6
     moment-timezone "^0.5.14"
     numeral "^2.0.6"
     persianjs "^0.3.0"

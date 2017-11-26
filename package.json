@@ -1,6 +1,6 @@
 {
     "name": "aurelia-toolbelt",
-    "version": "0.5.31",
+    "version": "0.5.32",
     "description": "Create typescript plugins for Aurelia",
     "keywords": [
         "aurelia",
@@ -89,8 +89,10 @@
         "devDependencies": {}
     },
     "dependencies": {
+        "@types/highlight.js": "^9.12.1",
         "@types/jquery": "^3.2.16",
         "@types/jquery.blockui": "^0.0.28",
+        "@types/markdown-it": "0.0.4",
         "aurelia-event-aggregator": "1.0.1",
         "aurelia-framework": "1.1.5",
         "aurelia-http-client": "^1.2.1",
