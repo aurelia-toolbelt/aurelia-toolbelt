@@ -21,8 +21,10 @@ export class PasswordCustomElement {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public text: string;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public score: number;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public showPassword: boolean = true;
-  private passTitle: string;
+  private passwordTitle: string;
   private groupClass: string;
+  private passwordStyle: string;
+  private textStyle: string;
 
   private element: HTMLInputElement;
   constructor(element: Element) {
@@ -81,12 +83,10 @@ export class PasswordCustomElement {
    */
 
   private showPasswordChanged(value: boolean) {
-
     if (value) {
       this.groupClass = 'input-group';
     } else {
       this.groupClass = '';
-
     }
   }
 
@@ -94,27 +94,21 @@ export class PasswordCustomElement {
 
     if (value.length > 0) {
       this.groupClass = 'input-group';
+      let obj = this.checkPassStrength(value);
+      this.passwordTitle = obj.message;
+      this.passwordStyle = 'color:white;background-color:' + obj.color + ';border-bottom:3px solid ' + obj.color + ';border-right:2px solid ' + obj.color + ';';
+
+      this.textStyle = 'border-bottom:3px solid ' + obj.color;
+
     } else {
+      this.passwordStyle = '';
+      this.textStyle = '';
       if (this.showPassword) {
         this.groupClass = 'input-group';
       } else {
         this.groupClass = '';
       }
     }
-
-    let obj = this.checkPassStrength(value);
-
-
-
-
-
-    console.log(JSON.stringify(obj));
-
-
-    this.passTitle = obj.message;
-
-
-
     return true;
   }
 
