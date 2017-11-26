@@ -3,8 +3,6 @@ import { customElement, bindable, bindingMode, inject } from 'aurelia-framework'
 import { HttpClient } from 'aurelia-http-client';
 
 
-
-
 @inject(HttpClient)
 @customElement('mark-down')
 export class MarkDownItCustomElement {
@@ -12,6 +10,9 @@ export class MarkDownItCustomElement {
   private myText = '';
   private editor: HTMLTextAreaElement;
   private preview: HTMLDivElement;
+
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showSwitches: boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showToolBar: boolean = true;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public showPreview: boolean = false;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public showEditor: boolean = true;
@@ -27,21 +28,22 @@ export class MarkDownItCustomElement {
       });
   }
 
-  private addText(text: string) {
+  private addText(text: string, cursorPosition = 0) {
 
     if (!this.editor) { return; }
 
     const scrollPos = this.editor.scrollTop;
     let strPos = this.editor.selectionStart;
 
-    console.warn(`START: ${this.editor.selectionStart}`);
-    console.warn(`END: ${this.editor.selectionEnd}`);
+    // console.warn(`Scroll Top: ${scrollPos}`);
+    // console.warn(`START: ${this.editor.selectionStart}`);
+    // console.warn(`END: ${this.editor.selectionEnd}`);
 
     let front = (this.myText).substring(0, strPos);
     let back = (this.myText).substring(strPos, this.editor.value.length);
 
     this.editor.value = front + text + back;
-    strPos = strPos + text.length;
+    strPos = cursorPosition === 0 ? strPos + text.length : strPos + cursorPosition;
 
     this.editor.focus();
 

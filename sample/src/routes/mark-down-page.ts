@@ -2,7 +2,7 @@
 
 export class MarkDownPage {
 
-  private showPreview = true;
-  private showEditor = false;
+  private showSwitches = true;
+  private showtoolbar = true;
 
 }

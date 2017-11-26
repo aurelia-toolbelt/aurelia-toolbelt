@@ -11,6 +11,7 @@ export class MarkDownValueConverter {
 
         let md = new MarkdownIt({
             useBR: true,
+            linkify: true,
             highlight: function (str: string, lang: string) {
                 if (lang && hljs.getLanguage(lang)) {
                     try {
@@ -19,7 +20,7 @@ export class MarkDownValueConverter {
                             '</code></pre>';
                     } catch (__) {
                         console.warn(__);
-                     }
+                    }
                 }
 
                 return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
