@@ -23,13 +23,10 @@
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/debug/-/debug-0.0.29.tgz#a1e514adfbd92f03a224ba54d693111dbf1f3754"
 
-<<<<<<< HEAD
-=======
 "@types/highlight.js@^9.12.1":
   version "9.12.1"
   resolved "https://registry.yarnpkg.com/@types/highlight.js/-/highlight.js-9.12.1.tgz#990f5dc63774852beab55e6173e5851d35da52f2"
 
->>>>>>> 9bfdbf2fd475088e866954eb55615fcf1f5740c6
 "@types/jest@^21.1.6":
   version "21.1.8"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-21.1.8.tgz#d497213725684f1e5a37900b17a47c9c018f1a97"
@@ -48,13 +45,10 @@
   version "4.14.85"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.85.tgz#a16fbf942422f6eca5622b6910492c496c35069b"
 
-<<<<<<< HEAD
-=======
 "@types/markdown-it@0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@types/markdown-it/-/markdown-it-0.0.4.tgz#c5f67365916044b342dae8d702724788ba0b5b74"
 
->>>>>>> 9bfdbf2fd475088e866954eb55615fcf1f5740c6
 "@types/moment-timezone@^0.5.1":
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/@types/moment-timezone/-/moment-timezone-0.5.2.tgz#65129d5ee9fd3ce0f5440d10cd68c87540dce859"
@@ -627,13 +621,10 @@ bootstrap-float-label@^3.0.1:
   dependencies:
     float-label-css "1.0.2"
 
-<<<<<<< HEAD
 bootstrap-toggle@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/bootstrap-toggle/-/bootstrap-toggle-2.2.2.tgz#2b88534fc1b998674f877f98ba0d8b5b743e96fe"
 
-=======
->>>>>>> 9bfdbf2fd475088e866954eb55615fcf1f5740c6
 bootstrap@3.3.7:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
@@ -2069,13 +2060,8 @@ istanbul-reports@^1.1.3:
     handlebars "^4.0.3"
 
 jalali-moment@^3.0.6:
-<<<<<<< HEAD
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/jalali-moment/-/jalali-moment-3.0.7.tgz#4499ed12c831e3fc149d63dcc11a5b29fed2052c"
-=======
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/jalali-moment/-/jalali-moment-3.0.6.tgz#cbdc6cdb05ac048ef85a417414afb325e3f95273"
->>>>>>> 9bfdbf2fd475088e866954eb55615fcf1f5740c6
   dependencies:
     moment "^2.18.1"
 

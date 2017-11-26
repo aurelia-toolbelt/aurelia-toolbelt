@@ -1,4 +1,4 @@
-import { customElement } from "aurelia-framework";
+import { customElement } from 'aurelia-framework';
 
 
 
