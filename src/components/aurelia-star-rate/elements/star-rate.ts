@@ -3,7 +3,7 @@ import { bindable, bindingMode, inject, children, computedFrom, customElement } 
 import { EventAggregator } from 'aurelia-event-aggregator';
 import { StarRateClicked } from './StarRateClicked';
 
-@customElement('au-star-rate')
+@customElement('aut-star-rate')
 @inject(EventAggregator)
 export class StarRate {
 

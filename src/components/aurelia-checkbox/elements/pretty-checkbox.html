@@ -1,0 +1,22 @@
+<template>
+
+  <require from='pretty-checkbox/dist/pretty-checkbox.css'></require>
+
+  <div class="pretty p-has-focus ${switch ? 'p-switch':'p-default'} ${appearanceCSS} ${thickCss} ${animationCss}
+     ${offColorCss != '' ? 'p-toggle' : ''}">
+    <input type="${isCheckBox ? 'checkbox' : 'radio'}" name.bind="name" checked.bind="state" change.delegate="changed()" disabled.bind="disabled"
+    />
+    <i if.bind="icon" class="${icon}"></i>
+    <div class="state ${colorCss} ${offColorCss != '' && disabled === false ? 'p-on' : ''}">
+      <label>
+        <slot></slot>
+      </label>
+    </div>
+    <div if.bind="offColorCss != ''" class="state ${offColorCss} p-off">
+      <label>
+        ${offLabel}
+      </label>
+    </div>
+  </div>
+
+</template>

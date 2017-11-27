@@ -1,15 +1,6 @@
-p {
-    margin: 0;
-    padding: 0;
-}
-
 .clock {
     font-family: 'Share Tech Mono', monospace;
-    color: #ffffff;
     text-align: center;
-    /* position: absolute;
-  left: 50%;
-  top: 50%; */
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     -webkit-touch-callout: none;
@@ -23,8 +14,12 @@ p {
     -ms-user-select: none;
     /* Internet Explorer/Edge */
     user-select: none;
-    /* Non-prefixed version, currently
-                                    supported by Chrome and Opera */
+    /* Non-prefixed version, currently */
+}
+
+.clock>p {
+    margin: 0;
+    padding: 0;
 }
 
 .clock .time {

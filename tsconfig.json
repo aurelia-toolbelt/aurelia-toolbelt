@@ -6,7 +6,7 @@
     "sourceMap": true,
     "target": "es5",
     "module": "amd",
-    "declaration": true,
+    "allowJs": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitUseStrict": true,
@@ -16,12 +16,15 @@
     "noImplicitThis": false,
     "noUnusedLocals": false,
     "allowUnreachableCode": false,
-
     "removeComments": true,
+    "declaration": false,    
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
-    "lib": ["es2017", "dom"]
+    "moduleResolution": "node",    
+    "lib": [
+      "es2017",
+      "dom"
+    ]
   },
   "filesGlob": [
     "./src/**/*.ts",
@@ -34,7 +37,9 @@
     "sample",
     "dist",
     "build",
-    "test"
+    "test",
+    "gulpfile.js",
+    "setup.js"
   ],
   "atom": {
     "rewriteTsconfig": false

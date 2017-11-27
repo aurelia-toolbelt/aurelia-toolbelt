@@ -1,9 +1,33 @@
 <template>
+
+  <button click.delegate="toggleBlock1()">
+    Toggle Block1
+  </button>
   <section>
 
-    <au-clock style="position:absolute; left:700px; top:120px;" text="Aurelia-Toolbelt" locale="fa">
+    <select value.bind="selectedLocale">
+      <option value="fa">Persian</option>
+      <option value="en">English</option>
+      <option value="fr">French</option>
+      <option value="it">Italian</option>
+    </select>
 
-    </au-clock>
+
+
+    <aut-star-rate max-rate.bind="5" read-only.bind="false"></aut-star-rate>
+
+    <hr />
+
+    <div aut-block-ui='block.bind:blockValue1;message:MyTest;css:{"background-color":"red"}'>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">@</span>
+        <input type="text" class="form-control" aut-bt-float-label="Please enter your user name" placeholder="Hello" aria-describedby="basic-addon1">
+      </div>
+    </div>
+
+    <hr />
+
+    <input type="text" masked="regex.bind:'\\d*'" />
 
   </section>
 </template>

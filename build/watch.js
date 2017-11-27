@@ -23,8 +23,8 @@ var TypeHelper = require('../sample/node_modules/fuse-box-typechecker').TypeHelp
 
 // code we want injected so aurelia loads
 var injectBoostrapAndLoader = function () {
-  var loader = function () {}
-  loader.prototype.init = function (context) {}
+  var loader = function () { }
+  loader.prototype.init = function (context) { }
   loader.prototype.bundleEnd = function (context) {
     context.source.addContent(`FuseBox.import("fuse-box-aurelia-loader")`);
     context.source.addContent(`FuseBox.import("aurelia-bootstrapper")`);
@@ -98,6 +98,12 @@ gulp.task('fuse-sample', function () {
   // vendor bundle
   fuse.bundle("vendor")
     .cache(false)
+    .shim({
+      jquery: {
+        source: "node_modules/jquery/dist/jquery.js",
+        exports: "$"
+      }
+    })
     .instructions(` 
         > extra.ts
         + aurelia-bootstrapper
@@ -115,11 +121,22 @@ gulp.task('fuse-sample', function () {
         + aurelia-event-aggregator 
         + aurelia-history-browser 
         + aurelia-templating-router
+        + aurelia-fetch-client
+        + aurelia-http-client
         + jalali-moment
         + moment-timezone
         + humanize-duration
         + persianjs
+        + strman
+        + numeral
         + fuse-box-aurelia-loader
+        + moment/locale/fr
+        + moment/locale/it
+        + pretty-checkbox/dist/pretty-checkbox.css
+        + inputmask
+        + markdown-it
+        + highlight.js
+
 `)
 
 
@@ -153,7 +170,7 @@ gulp.task('fuse-plugin', function () {
     output: './dist/$name.js',
     log: false, //-> set to true if you want more data
     debug: false, //-> set to true if you want more data
-    useTypescriptCompiler:true ,
+    useTypescriptCompiler: true,
     plugins: [
       HTMLPlugin({
         useDefault: true

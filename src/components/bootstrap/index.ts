@@ -1,8 +1,8 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
-
-
-
 export function configure(config: FrameworkConfiguration) {
-    console.log(config);
+  config
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/aurelia-password/index'))
+    // .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/toggle/index'))
+    ;
 }
