@@ -14,12 +14,12 @@ export class PrettyRadioButtonCustomElement {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public model: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public checked: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public matcher: any;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: Boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string = false;
 
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public name: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public switch: Boolean | String = false;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public outlined: Boolean | String = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public switch: boolean | String = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public outlined: boolean | String = false;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public color: string;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public offColor: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public offLabel: string = '';
@@ -81,7 +81,7 @@ export class PrettyRadioButtonCustomElement {
     this.switch = this.switch === true || this.switch === 'true' || this.element.hasAttribute('switch');
     this.outlined = this.outlined === true || this.outlined === 'true' || this.element.hasAttribute('outline');
 
-    this.disabled = this.disabled === true || this.disabled === 'true' || this.disabled === 'disabled' || this.element.hasAttribute('disabled');
+    this.disabled = this.disabled === true || this.disabled === 'true' || this.disabled === 'disabled'; // || this.element.hasAttribute('disabled');
     this.colorCss = `p-${this.color}`; // ${this.outlined ? '-o' : ''}`;
     this.offColorCss = this.offColor !== '' ? `p-${this.offColor}` : ''; // ${this.outlined ? '-o' : ''}`;
 
