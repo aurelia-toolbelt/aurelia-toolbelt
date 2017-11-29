@@ -134,6 +134,7 @@ gulp.task('fuse-sample', function () {
         + moment/locale/it
         + pretty-checkbox/dist/pretty-checkbox.css
         + inputmask
+        + password-meter
         + markdown-it
         + highlight.js
         + bootstrap-toggle

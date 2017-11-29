@@ -47,13 +47,14 @@
     },
     "dependencies": {
         "aurelia-http-client": "^1.2.1",
-        "aurelia-toolbelt": "../aurelia-toolbelt-0.5.32.tgz",
+        "aurelia-toolbelt": "../aurelia-toolbelt-0.5.33.tgz",
         "bootstrap-float-label": "^3.0.1",
         "bootstrap-toggle": "^2.2.2",
         "highlight.js": "^9.12.0",
         "inputmask": "^3.3.11",
         "jquery": "^3.2.1",
         "markdown-it": "^8.4.0",
-        "numeral": "^2.0.6"
+        "numeral": "^2.0.6",
+        "password-meter": "^1.0.0"
     }
 }

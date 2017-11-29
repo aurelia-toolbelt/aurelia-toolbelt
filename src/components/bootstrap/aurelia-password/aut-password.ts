@@ -1,3 +1,4 @@
+import { PasswordMeter } from 'password-meter';
 import {
   customAttribute, autoinject, bindable,
   customElement, inject, bindingMode,
@@ -35,6 +36,7 @@ export class PasswordCustomElement {
   }
 
   private scorePassword(pass: any) {
+    // return new PasswordMeter().getScore(pass).score;
     let score = 0;
     if (!pass) {
       return score;
