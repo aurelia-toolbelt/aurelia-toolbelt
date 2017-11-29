@@ -9,5 +9,5 @@ before_script:
   - npm install -g jest-cli
   - node setup
 script: 
-  - yarn test
+  - npm run test
   - gulp build
