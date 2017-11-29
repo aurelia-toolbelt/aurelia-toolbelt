@@ -4,7 +4,9 @@
   },
   "testRegex": ".*(\\.test|\\.spec)\\.(jsx?|tsx?)",
   "testPathIgnorePatterns": [
-    "build"
+    "build",
+    "dist",
+    "sample"
   ],
   "moduleFileExtensions": [
     "ts",
@@ -12,6 +14,9 @@
     "js",
     "jsx",
     "json"
+  ],
+  "roots": [
+    "<rootDir>/test"
   ],
   "testEnvironment": "node",
   "setupFiles": [

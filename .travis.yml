@@ -6,7 +6,6 @@ before_install:
   - export PATH="$HOME/.yarn/bin:$PATH"
 before_script:
   - node setup
-  - npm run test
 script: 
-  - npm run test
+  - yarn test
   - gulp build
