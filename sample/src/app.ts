@@ -53,6 +53,14 @@ export class App {
         nav: true,
         title: 'Mark Down',
         settings: { auth: false }
+      },
+      {
+        route: 'bootstrap-toggle',
+        name: 'bootstrap-toggle',
+        moduleId: './routes/bootstrap-toggle-page',
+        nav: true,
+        title: 'Bootstrap toggle',
+        settings: { auth: false }
       }
     ]);
     this.router = router;

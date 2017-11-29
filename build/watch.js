@@ -136,7 +136,8 @@ gulp.task('fuse-sample', function () {
         + inputmask
         + markdown-it
         + highlight.js
-
+        + bootstrap-toggle
+        + bootstrap-toggle/css/bootstrap-toggle.css
 `)
 
 

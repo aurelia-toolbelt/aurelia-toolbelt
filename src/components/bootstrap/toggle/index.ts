@@ -1,9 +1,9 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
-export * from './BootstrapToggle';
+export * from './elements/bootstrap-toggle';
 
 export function configure(config: FrameworkConfiguration) {
     config.globalResources([
-        PLATFORM.moduleName('./BootstrapToggle')
+        PLATFORM.moduleName('./elements/bootstrap-toggle')
     ]);
 }
