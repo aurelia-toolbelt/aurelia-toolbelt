@@ -5,7 +5,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'pretty-checkbox/dist/pretty-checkbox.css';
 import 'bootstrap-float-label/dist/bootstrap-float-label.css';
-// import 'bootstrap-toggle';
+import 'bootstrap-toggle';
 import 'bootstrap-toggle/css/bootstrap-toggle.css';
 import 'highlight.js/styles/vs.css';
 import 'highlight.js/styles/monokai.css';
