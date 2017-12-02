@@ -1,6 +1,6 @@
 {
     "name": "aurelia-toolbelt-fusebox",
-    "version": "1.0.0",
+    "version": "0.5.35",
     "description": "A starter kit for building a standard navigation-style app with Aurelia and TypeScript and fusebox.",
     "keywords": [
         "aurelia",
@@ -47,7 +47,6 @@
     },
     "dependencies": {
         "aurelia-http-client": "^1.2.1",
-        "aurelia-toolbelt": "../aurelia-toolbelt-0.5.33.tgz",
         "bootstrap-float-label": "^3.0.1",
         "bootstrap-toggle": "^2.2.2",
         "highlight.js": "^9.12.0",
@@ -55,6 +54,23 @@
         "jquery": "^3.2.1",
         "markdown-it": "^8.4.0",
         "numeral": "^2.0.6",
-        "password-meter": "^1.0.0"
+        "password-meter": "^1.0.0",
+        "@types/highlight.js": "^9.12.1",
+        "@types/jquery": "^3.2.16",
+        "@types/jquery.blockui": "^0.0.28",
+        "@types/markdown-it": "0.0.4",
+        "aurelia-event-aggregator": "1.0.1",
+        "aurelia-framework": "1.1.5",
+        "aurelia-router": "^1.4.0",
+        "bootstrap": "3.3.7",
+        "fuse.js": "^3.2.0",
+        "humanize-duration": "^3.12.0",
+        "jalali-moment": "^3.0.6",
+        "lodash": "^4.17.4",
+        "moment-timezone": "^0.5.14",
+        "persianjs": "^0.3.0",
+        "pretty-checkbox": "^3.0.3",
+        "strman": "^2.0.0",
+        "written-number": "^0.8.1"
     }
 }

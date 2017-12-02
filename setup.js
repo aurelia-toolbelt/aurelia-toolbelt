@@ -48,6 +48,11 @@ function safeIncreaseVersion(version) {
 //--------------------------------------------------------------------------------------------
 function updateSampleConfig() {
   console.info('Updating plugin package.json...');
+
+  var param = process.argv[2];
+  console.log(param);
+
+
   let pluginPackageFile = './package.json';
   let samplePackageFile = './sample/package.json';
   fs.readFile(pluginPackageFile, 'utf8', (err, data) => {

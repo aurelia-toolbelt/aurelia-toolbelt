@@ -1,6 +1,6 @@
 {
     "name": "aurelia-toolbelt",
-    "version": "0.5.33",
+    "version": "0.5.35",
     "description": "Create typescript plugins for Aurelia",
     "keywords": [
         "aurelia",
@@ -22,6 +22,7 @@
     },
     "scripts": {
         "setup": "node setup",
+        "setup-version": "node setup -v 1.5.5",
         "run-watch": "gulp watch",
         "build": "gulp build",
         "push-dev": "git push origin dev",
@@ -70,6 +71,7 @@
         "lodash.sortby": "^4.7.0",
         "lodash.template": "^4.4.0",
         "lodash.templatesettings": "^4.1.0",
+        "merge-json": "0.1.0-b.3",
         "merge2": "^1.2.0",
         "natives": "^1.1.0",
         "require-dir": "^0.3.2",
