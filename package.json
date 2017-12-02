@@ -1,6 +1,6 @@
 {
     "name": "aurelia-toolbelt",
-    "version": "0.5.35",
+    "version": "0.5.0",
     "description": "Create typescript plugins for Aurelia",
     "keywords": [
         "aurelia",
@@ -22,7 +22,8 @@
     },
     "scripts": {
         "setup": "node setup",
-        "setup-version": "node setup -v 1.5.5",
+        "setup-version": "node setup -v",
+        "setup-version-0.5.0": "node setup -v 0.5.0",
         "run-watch": "gulp watch",
         "build": "gulp build",
         "push-dev": "git push origin dev",
@@ -31,6 +32,10 @@
         "build-all": "node setup & gulp build & gulp test"
     },
     "devDependencies": {
+        "@types/highlight.js": "^9.12.1",
+        "@types/jquery": "^3.2.16",
+        "@types/jquery.blockui": "^0.0.28",
+        "@types/markdown-it": "0.0.4",
         "@types/jest": "^21.1.6",
         "@types/lodash": "^4.14.85",
         "@types/moment-timezone": "^0.5.1",
@@ -71,7 +76,6 @@
         "lodash.sortby": "^4.7.0",
         "lodash.template": "^4.4.0",
         "lodash.templatesettings": "^4.1.0",
-        "merge-json": "0.1.0-b.3",
         "merge2": "^1.2.0",
         "natives": "^1.1.0",
         "require-dir": "^0.3.2",
@@ -91,10 +95,6 @@
         "devDependencies": {}
     },
     "dependencies": {
-        "@types/highlight.js": "^9.12.1",
-        "@types/jquery": "^3.2.16",
-        "@types/jquery.blockui": "^0.0.28",
-        "@types/markdown-it": "0.0.4",
         "aurelia-event-aggregator": "1.0.1",
         "aurelia-framework": "1.1.5",
         "aurelia-http-client": "^1.2.1",
@@ -112,7 +112,7 @@
         "markdown-it": "^8.4.0",
         "moment-timezone": "^0.5.14",
         "numeral": "^2.0.6",
-        "password-meter": "^1.0.0",
+        "password-meter": "^2.1.0",
         "persianjs": "^0.3.0",
         "pretty-checkbox": "^3.0.3",
         "strman": "^2.0.0",

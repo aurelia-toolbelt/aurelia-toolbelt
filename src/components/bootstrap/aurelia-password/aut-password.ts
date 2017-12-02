@@ -36,32 +36,32 @@ export class PasswordCustomElement {
   }
 
   private scorePassword(pass: any) {
-    // return new PasswordMeter().getScore(pass).score;
-    let score = 0;
-    if (!pass) {
-      return score;
-    }
-    // award every unique letter until 5 repetitions
-    let letters = new Object();
-    for (let i = 0; i < pass.length; i++) {
-      letters[pass[i]] = (letters[pass[i]] || 0) + 1;
-      score += 5.0 / letters[pass[i]];
-    }
-    // bonus points for mixing it up
-    let variations = {
-      digits: /\d/.test(pass),
-      lower: /[a-z]/.test(pass),
-      upper: /[A-Z]/.test(pass),
-      nonWords: /\W/.test(pass)
-    };
-    let variationCount = 0;
-    // tslint:disable-next-line:forin
-    for (let check in variations) {
-      variationCount += (variations[check] === true) ? 1 : 0;
-    }
-    score += (variationCount - 1) * 10;
-    // tslint:disable-next-line:radix
-    return parseInt(score.toString());
+    return new PasswordMeter().getResult(pass).score;
+    /* let score = 0;
+     if (!pass) {
+       return score;
+     }
+     // award every unique letter until 5 repetitions
+     let letters = new Object();
+     for (let i = 0; i < pass.length; i++) {
+       letters[pass[i]] = (letters[pass[i]] || 0) + 1;
+       score += 5.0 / letters[pass[i]];
+     }
+     // bonus points for mixing it up
+     let variations = {
+       digits: /\d/.test(pass),
+       lower: /[a-z]/.test(pass),
+       upper: /[A-Z]/.test(pass),
+       nonWords: /\W/.test(pass)
+     };
+     let variationCount = 0;
+     // tslint:disable-next-line:forin
+     for (let check in variations) {
+       variationCount += (variations[check] === true) ? 1 : 0;
+     }
+     score += (variationCount - 1) * 10;
+     // tslint:disable-next-line:radix
+     return parseInt(score.toString());*/
   }
 
   private checkPassStrength(pass: any): IStrengthRange {

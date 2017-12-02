@@ -1,6 +1,5 @@
 "use strict"
 
-const mergeJSON = require("merge-json");
 const fs = require("fs");
 const exec = require("child_process").exec;
 const spawn = require("child_process").spawn;
@@ -49,8 +48,12 @@ function safeIncreaseVersion(version) {
 function updateSampleConfig() {
   console.info('Updating plugin package.json...');
 
-  var param = process.argv[2];
-  console.log(param);
+  const argVersion = process.argv[2]; // -v
+  const argVersionNumber = process.argv[3]; // eg 1.5.6
+
+
+  console.log(argVersion);
+  console.log(argVersionNumber);
 
 
   let pluginPackageFile = './package.json';
@@ -66,7 +69,12 @@ function updateSampleConfig() {
     PLUGIN_VERSION = obj.version || PLUGIN_VERSION;
 
     if (versions && (versions.length > 0)) {
-      versions[versions.length - 1] = safeIncreaseVersion(versions[versions.length - 1]);
+      if (argVersion != undefined && argVersionNumber == undefined) {
+        versions[versions.length - 1] = safeIncreaseVersion(versions[versions.length - 1]);
+      }
+      if (argVersionNumber != undefined) {
+        versions = argVersionNumber.split('.');
+      }
       console.info(`Version changing ${obj.version} => ${versions.join('.')}`);
       obj.version = versions.join('.');
       PLUGIN_VERSION = versions.join('.');
@@ -80,11 +88,10 @@ function updateSampleConfig() {
 
       sample = JSON.parse(res);
       sampleDep = sample.dependencies;
-      const newObj = mergeJSON.merge(sampleDep, dev);
 
-      sample['dependencies'] = newObj;
-      sample['version'] = PLUGIN_VERSION;
-      sample['name'] = PLUGIN_SAMPLE_NAME;
+      sample.dependencies = dev;
+      sample.version = PLUGIN_VERSION;
+      sample.name = PLUGIN_SAMPLE_NAME;
 
       obj = JSON.stringify(obj, null, 4);
       let smplObj = JSON.stringify(sample, null, 4);
