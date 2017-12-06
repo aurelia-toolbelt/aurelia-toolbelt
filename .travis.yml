@@ -7,5 +7,5 @@ before_install:
 before_script:
   - node setup
 script: 
-  - if [ "$TRAVIS_BRANCH" = "dev" ]; then gulp test; fi
-  - if [ "$TRAVIS_BRANCH" = "master" ]; then gulp test && gulp build; fi
+  - yarn test
+  - gulp build

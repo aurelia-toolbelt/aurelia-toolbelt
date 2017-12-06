@@ -51,11 +51,6 @@ function updateSampleConfig() {
   const argVersion = process.argv[2]; // -v
   const argVersionNumber = process.argv[3]; // eg 1.5.6
 
-
-  console.log(argVersion);
-  console.log(argVersionNumber);
-
-
   let pluginPackageFile = './package.json';
   let samplePackageFile = './sample/package.json';
   fs.readFile(pluginPackageFile, 'utf8', (err, data) => {
