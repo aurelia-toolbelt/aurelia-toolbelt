@@ -11,8 +11,11 @@ install:
   # Get the latest stable version of Node.js or io.js
   - ps: Install-Product node $env:nodejs_version
   # install modules
-  - npm install -g gulp jest jest-cli chalk 
-  - node setup
+  - npm install -g gulp jest jest-cli yarn
+  - yarn install
+  - cd sample
+  - yarn install
+  - cd ..
   - gulp build
 
 # Post-install test scripts.
@@ -21,9 +24,7 @@ test_script:
   - node --version
   - npm --version
   # run tests
-  - npm test
+  - yarn run test
 
 # Don't actually build.
 build: off
-
-

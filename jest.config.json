@@ -26,5 +26,12 @@
   "modulePaths": [
     "<rootDir>/src",
     "<rootDir>/node_modules"
+  ],
+  "coverageReporters": [
+    "json",
+    "html",
+    "text",
+    "lcov",
+    "clover"
   ]
 }

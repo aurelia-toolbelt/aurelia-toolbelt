@@ -3071,9 +3071,9 @@ parse5@^3.0.2:
   dependencies:
     "@types/node" "*"
 
-password-meter@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/password-meter/-/password-meter-2.0.0.tgz#9b1d9a3915591150abef9699ea439686b2c1973c"
+password-meter@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/password-meter/-/password-meter-2.1.0.tgz#6ae118ebd3387c19478ccaddab0a49cb47bd7ae1"
 
 path-dirname@^1.0.0:
   version "1.0.2"

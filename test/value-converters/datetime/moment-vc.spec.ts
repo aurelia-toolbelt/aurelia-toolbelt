@@ -4,9 +4,9 @@ import { DateValueConverter, AgeValueConverter, TimeConverter, RelativeValueConv
 import * as jMoment from 'jalali-moment';
 
 
-describe('age value converter', () => {
+// describe('age value converter', () => {
 
-  it('date of birth', () => {
+  test('date of birth', () => {
 
     let age_convert: AgeValueConverter = new AgeValueConverter();
 
@@ -18,7 +18,7 @@ describe('age value converter', () => {
 
   });
 
-  it('date of birth in persian', () => {
+  test('date of birth in persian', () => {
 
     let age_convert: AgeValueConverter = new AgeValueConverter();
 
@@ -29,11 +29,11 @@ describe('age value converter', () => {
 
   });
 
-});
+// });
 
-describe('time check in different formats', () => {
+// describe('time check in different formats', () => {
 
-  it('twenty four hours in english', () => {
+  test('twenty four hours in english', () => {
     let time_converter: TimeConverter = new TimeConverter();
     let afternoon = time_converter.toView('2017 Mar 01 18:30', false);
     let morning = time_converter.toView('2017 Mar 01 10:01', false);
@@ -42,7 +42,7 @@ describe('time check in different formats', () => {
     expect(morning).toBe('10:01:00 AM');
   });
 
-  it('twenty four hours in english', () => {
+  test('twenty four hours in english', () => {
     let time_converter: TimeConverter = new TimeConverter();
     let afternoon = time_converter.toView('2017 Mar 01 18:30', true);
     let morning = time_converter.toView('2017 Mar 01 10:01', true);
@@ -51,7 +51,7 @@ describe('time check in different formats', () => {
     expect(morning).toBe('10:01:00');
   });
 
-  it('twenty four hours in persian', () => {
+  test('twenty four hours in persian', () => {
     let time_converter: TimeConverter = new TimeConverter();
     let afternoon = time_converter.toView('2017 Mar 01 18:30', false, 'fa');
     let morning = time_converter.toView('2017 Mar 01 10:01', false, 'fa');
@@ -60,7 +60,7 @@ describe('time check in different formats', () => {
     expect(morning).toBe('10:01:00 ق.ظ');
   });
 
-  it('twenty four hours in persian', () => {
+  test('twenty four hours in persian', () => {
     let time_converter: TimeConverter = new TimeConverter();
     let afternoon = time_converter.toView('2017 Mar 01 18:30', true, 'fa');
     let morning = time_converter.toView('2017 Mar 01 10:01', true, 'fa');
@@ -69,4 +69,4 @@ describe('time check in different formats', () => {
     expect(morning).toBe('10:01:00');
   });
 
-});
+// });
