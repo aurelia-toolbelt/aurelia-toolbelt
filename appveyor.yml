@@ -15,6 +15,7 @@ install:
   - yarn install
   - cd sample
   - yarn install
+  - cd ..
   - gulp build
 
 # Post-install test scripts.
