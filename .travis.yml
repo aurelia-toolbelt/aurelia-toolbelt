@@ -10,5 +10,4 @@ before_script:
   - yarn install
   - cd ..
 script: 
-  - yarn test
-  - gulp build
+  - yarn run test
