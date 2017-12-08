@@ -2,6 +2,10 @@
 environment:
   nodejs_version: "8"
   
+branches:
+  only:
+  - dev  
+  
 # Install scripts. (runs after repo cloning)
 install:
   # Get the latest stable version of Node.js or io.js
