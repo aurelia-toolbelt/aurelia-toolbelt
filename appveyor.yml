@@ -12,6 +12,8 @@ install:
   - ps: Install-Product node $env:nodejs_version
   # install modules
   - npm install -g gulp
+  - npm install -g chalk
+  - npm install chalk
   - node setup
   - gulp build
 
