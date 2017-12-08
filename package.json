@@ -27,7 +27,7 @@
     "run-watch": "gulp watch",
     "build": "gulp build",
     "push-dev": "git push origin dev",
-    "test": "./node_modules/.bin/jest --config=jest.config.json",
+    "test": "./node_modules/.bin/jest --coverage --config=jest.config.json",
     "test-watch": "./node_modules/.bin/jest --config=jest.config.json --watch",
     "build-all": "node setup & gulp build & gulp test"
   },
