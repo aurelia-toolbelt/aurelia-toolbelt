@@ -4,7 +4,7 @@ import { DateValueConverter, AgeValueConverter, TimeConverter, RelativeValueConv
 import * as jMoment from 'jalali-moment';
 
 
-describe('age value converter', () => {
+test('age value converter', () => {
 
   it('date of birth', () => {
 
@@ -31,7 +31,7 @@ describe('age value converter', () => {
 
 });
 
-describe('time check in different formats', () => {
+test('time check in different formats', () => {
 
   it('twenty four hours in english', () => {
     let time_converter: TimeConverter = new TimeConverter();
