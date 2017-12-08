@@ -15,11 +15,11 @@ export class Page3 {
   public url = 'https://fa.wikipedia.org/wiki/%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C';
   public word = '٣٤٥ 789 علي';
   public conf = [
-    { 'domain': '0', 'message': 'very weak', 'color': 'red', 'cssClass': '' },
-    { 'domain': '50', 'message': 'weak', 'color': 'orange', 'cssClass': '' },
-    { 'domain': '60', 'message': 'standard', 'color': 'blue', 'cssClass': '' },
-    { 'domain': '80', 'message': 'strong', 'color': 'green', 'cssClass': '' },
-    { 'domain': '100', 'message': 'very strong', 'color': 'green', 'cssClass': '' }
+    { 'domain': '1', 'message': 'very weak', 'color': 'red', 'cssClass': '' },
+    { 'domain': '40', 'message': 'weak', 'color': 'orange', 'cssClass': '' },
+    { 'domain': '80', 'message': 'standard', 'color': 'blue', 'cssClass': '' },
+    { 'domain': '120', 'message': 'strong', 'color': 'green', 'cssClass': '' },
+    { 'domain': '180', 'message': 'very strong', 'color': 'green', 'cssClass': '' }
   ];
 
   constructor(public router: Router) {

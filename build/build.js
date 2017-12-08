@@ -16,7 +16,7 @@ var runSequence = require('run-sequence');
 
 var tsProjectAMD = ts.createProject('./tsconfig.json', {
   typescript: require('typescript'),
-  "declaration": true,
+  /*"declaration": true,*/
   target: 'es5',
   module: 'amd'
 });
@@ -28,7 +28,7 @@ var tsProjectAMD = ts.createProject('./tsconfig.json', {
 
 var tsProjectES6 = ts.createProject('./tsconfig.json', {
   typescript: require('typescript'),
-  "declaration": true
+  /*"declaration": true*/
 });
 
 
@@ -38,7 +38,7 @@ var tsProjectES6 = ts.createProject('./tsconfig.json', {
 
 var tsProjectCJS = ts.createProject('./tsconfig.json', {
   typescript: require('typescript'),
-  "declaration": true,
+  /*"declaration": true,*/
   target: 'es5',
   module: 'commonjs'
 });
@@ -49,7 +49,7 @@ var tsProjectCJS = ts.createProject('./tsconfig.json', {
 
 var tsProjectSystem = ts.createProject('./tsconfig.json', {
   typescript: require('typescript'),
-  "declaration": true,
+  /*"declaration": true,*/
   target: 'es5',
   module: 'system'
 });

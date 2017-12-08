@@ -8,6 +8,7 @@ const npm = process.platform === "win32" ? "npm.cmd" : "npm";
 const mode = "inherit";
 
 let PLUGIN_NAME = "aurelia-toolbelt";
+let PLUGIN_SAMPLE_NAME = "aurelia-toolbelt-fusebox";
 let PLUGIN_VERSION = "0.0.1";
 
 
@@ -43,14 +44,73 @@ function safeIncreaseVersion(version) {
   }
 }
 
-function updatePluginPackage() {
+//--------------------------------------------------------------------------------------------
+function updateSampleConfig() {
+  console.info('Updating plugin package.json...');
+
+  const argVersion = process.argv[2]; // -v
+  const argVersionNumber = process.argv[3]; // eg 1.5.6
+
+  let pluginPackageFile = './package.json';
+  let samplePackageFile = './sample/package.json';
+  fs.readFile(pluginPackageFile, 'utf8', (err, data) => {
+    let obj = JSON.parse(data);
+
+    let versions = new Array();
+
+    versions = obj.version.split('.');
+
+    PLUGIN_NAME = obj.name || PLUGIN_NAME;
+    PLUGIN_VERSION = obj.version || PLUGIN_VERSION;
+
+    if (versions && (versions.length > 0)) {
+      if (argVersion != undefined && argVersionNumber == undefined) {
+        versions[versions.length - 1] = safeIncreaseVersion(versions[versions.length - 1]);
+      }
+      if (argVersionNumber != undefined) {
+        versions = argVersionNumber.split('.');
+      }
+      console.info(`Version changing ${obj.version} => ${versions.join('.')}`);
+      obj.version = versions.join('.');
+      PLUGIN_VERSION = versions.join('.');
+    }
+
+    const dev = obj.dependencies;
+    let sampleDep = {};
+    let sample = {};
+
+    fs.readFile(samplePackageFile, 'utf8', (err, res) => {
+
+      sample = JSON.parse(res);
+      sampleDep = sample.dependencies;
+
+      sample.dependencies = dev;
+      sample.version = PLUGIN_VERSION;
+      sample.name = PLUGIN_SAMPLE_NAME;
+
+      obj = JSON.stringify(obj, null, 4);
+      let smplObj = JSON.stringify(sample, null, 4);
+
+      fs.writeFile(pluginPackageFile, obj, function (e) { });
+      fs.writeFile(samplePackageFile, smplObj, function (e) { });
+
+      console.log('Plugin package.json updated.');
+
+    });
+
+
+  });
+}
+//--------------------------------------------------------------------------------------------
+
+/*function updatePluginPackage() {
   console.info('Updating plugin package.json...');
   let pluginPackageFile = './package.json';
   fs.readFile(pluginPackageFile, 'utf8', (err, data) => {
-    if (err) {
-      throw err;
-    }
+
+
     let obj = JSON.parse(data);
+
 
     let versions = new Array();
 
@@ -78,10 +138,11 @@ function updatePluginPackage() {
 
   });
 
-}
+}*/
 
-function updateSamplePackage() {
+/*function updateSamplePackage() {
   console.info('Updating sample package.json...');
+
   let samplePackageFile = './sample/package.json';
   fs.readFile(samplePackageFile, 'utf8', (err, data) => {
     if (err) {
@@ -96,17 +157,12 @@ function updateSamplePackage() {
     console.log('Sample package.json updated.');
 
   });
-}
+}*/
 
 let NpmInstallRoot = spawner(npm, ["install"], this.mainPath).then(() => {
 
-  updatePluginPackage();
+  updateSampleConfig();
 
-  let NpmPackRoot = spawner(npm, ["pack"], this.mainPath).then(() => {
-
-    updateSamplePackage();
-
-    let NpmInstallSample = spawner(npm, ["install"], this.samplePath);
-  });
+  let NpmInstallSample = spawner(npm, ["install"], this.samplePath);
 
 });

@@ -25,3 +25,6 @@ sample/coverage
 sample/test/e2e/dist
 sample/typings
 sample/export
+
+*.log
+npm-debug.log

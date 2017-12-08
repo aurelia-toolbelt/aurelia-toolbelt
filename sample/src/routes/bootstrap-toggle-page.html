@@ -1,0 +1,119 @@
+<template class="container">
+
+  <style>
+    .slow .toggle-group {
+      transition: left 0.7s;
+      -webkit-transition: left 0.7s;
+    }
+
+    .fast .toggle-group {
+      transition: left 0.1s;
+      -webkit-transition: left 0.1s;
+    }
+
+    .quick .toggle-group {
+      transition: none;
+      -webkit-transition: none;
+    }
+
+  </style>
+
+  <div class="container">
+
+    <form>
+      <h4>Booleans</h4>
+
+      <aut-toggle size="mini" rtl.bind="true" disabled="true" css="slow" checked.bind="motherboard"> Motherboard</aut-toggle>
+
+      <aut-toggle size="small" checked.bind="cpu" css="fast">CPU</aut-toggle>
+
+      <aut-toggle size="normal" checked.bind="memory" css="quick"> Memory</aut-toggle>
+
+      <br /> motherboard = ${motherboard}
+      <br/> cpu = ${cpu}
+      <br/> memory = ${memory}
+      <br/>
+    </form>
+
+    <hr />
+
+    <form>
+      <h4>Array of Strings</h4>
+
+      <ul>
+        <li repeat.for="product of products">
+
+          <aut-toggle on-style="success" off-style="danger" value.bind="product" checked.bind="selectedProducts"> ${product}
+          </aut-toggle>
+
+        </li>
+      </ul>
+      <br /> Selected products: ${selectedProducts}
+    </form>
+
+
+    <hr />
+
+
+    <form>
+      <h4>Array of Numbers</h4>
+      <ul>
+        <li repeat.for="product of otherProducts">
+          <aut-toggle color="info" model.bind="product.id" checked.bind="selectedProductIds">
+            ${product.name}
+          </aut-toggle>
+        </li>
+      </ul>
+      <br /> Selected product IDs: ${selectedProductIds}
+    </form>
+
+
+    <hr />
+
+
+    <form>
+      <h4>Array Of objects</h4>
+      <ul>
+
+        <li repeat.for="product of productsObject">
+          <aut-toggle model.bind="product" checked.bind="selectedProductsObject"> ${product.id} - ${product.name}
+          </aut-toggle>
+        </li>
+      </ul>
+
+      Selected products:
+      <ul>
+        <li repeat.for="product of selectedProductsObject">${product.id} - ${product.name}</li>
+      </ul>
+    </form>
+
+
+    <hr />
+
+
+
+    <form>
+      <h4>Array of objects With Matcher</h4>
+
+
+      <aut-toggle model.bind="mymotherBoard" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
+        Motherboard
+      </aut-toggle>
+
+
+      <aut-toggle model.bind="mycpu" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher"> CPU
+      </aut-toggle>
+
+
+      <aut-toggle model.bind="mymemory" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
+        Memory
+      </aut-toggle>
+
+      Selected products:
+      <ul>
+        <li repeat.for="product of selectedProductsMatcher">${product.id} - ${product.name}</li>
+      </ul>
+    </form>
+  </div>
+
+</template>
