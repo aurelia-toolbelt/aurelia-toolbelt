@@ -123,6 +123,7 @@ export class BootstrapToggleCustomElement {
       // $(this.checkbox).prop('checked', false).change();
 
       this.checkbox.removeAttribute('checked');
+
     }
   }
 
