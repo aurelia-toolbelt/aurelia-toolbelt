@@ -15,7 +15,10 @@ import 'font-awesome/css/font-awesome.css';
 /** ***************************************************** */
 
 import 'pretty-checkbox/dist/pretty-checkbox.css';
+
 import 'bootstrap-float-label/dist/bootstrap-float-label.css';
+
+import 'nprogress/nprogress.css';
 
 import 'highlight.js/styles/dracula.css';
 
