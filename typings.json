@@ -2,6 +2,7 @@
   "name": "aurelia-toolbelt",
   "main": "dist/amd/index.d.ts",
   "globalDependencies": {
-    "highlight.js": "registry:dt/highlight.js#9.1.0+20161227120821"
+    "highlight.js": "registry:dt/highlight.js#9.1.0+20161227120821",
+    "uuid": "registry:dt/uuid#3.3.0+20160728152600"
   }
 }
