@@ -1,6 +1,6 @@
 <template css="cursor:${readOnly === true ? 'auto' : 'pointer'}; color:${color};" mouseleave.trigger="mouseLeft()">
 
-    <require from="./star-rate.css"></require>
+    <require from="./aut-star-rate.css"></require>
 
 
     <i if.bind="!rtl" 
@@ -18,6 +18,5 @@
           mousemove.delegate="mouseMove($event,maxRate-$index-1)"
         click.delegate="setRate(maxRate-$index-1)">
     </i>
-
 
 </template>

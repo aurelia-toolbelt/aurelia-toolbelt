@@ -136,6 +136,8 @@ gulp.task('fuse-sample', function () {
         + inputmask
         + password-meter
         + markdown-it
+        + font-awesome
+        + font-awesome/css/font-awesome.css
         + highlight.js
         + popper.js
         + fast-safe-stringify
