@@ -137,8 +137,9 @@ gulp.task('fuse-sample', function () {
         + password-meter
         + markdown-it
         + highlight.js
-        + bootstrap-toggle
-        + bootstrap-toggle/css/bootstrap-toggle.css
+        + popper.js
+        + bootstrap
+        + bootstrap/dist/css/bootstrap.css
 `)
 
 
