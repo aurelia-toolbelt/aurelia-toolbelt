@@ -7,11 +7,11 @@ import { HttpClient } from 'aurelia-http-client';
 @customElement('aut-mark-down')
 export class MarkDownItCustomElement {
 
+  private isLoading = false;
   private myText = '';
   private editor: HTMLTextAreaElement;
   private preview: HTMLDivElement;
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showSwitches: boolean = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showToolBar: boolean = true;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public showPreview: boolean = false;
@@ -22,9 +22,11 @@ export class MarkDownItCustomElement {
   constructor(private http: HttpClient) { }
 
   private srcChanged(newValue: string) {
+    this.isLoading = true;
     this.http.get(newValue)
       .then((data) => {
         this.myText = data.response;
+        this.isLoading = false;
       });
   }
 
