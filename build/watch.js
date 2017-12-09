@@ -138,6 +138,7 @@ gulp.task('fuse-sample', function () {
         + markdown-it
         + highlight.js
         + popper.js
+        + fast-safe-stringify
         + bootstrap
         + bootstrap/dist/css/bootstrap.css
 `)

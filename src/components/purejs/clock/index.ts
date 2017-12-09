@@ -1,9 +1,12 @@
+
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
-export * from './aut-toggle';
+
 
 export function configure(config: FrameworkConfiguration) {
-    config.globalResources([
-        PLATFORM.moduleName('./aut-toggle')
-    ]);
+  config.globalResources(PLATFORM.moduleName('./aut-clock'));
 }
+
+
+export * from './aut-clock';
+

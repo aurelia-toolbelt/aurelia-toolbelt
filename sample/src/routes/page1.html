@@ -21,13 +21,13 @@
     <div aut-block-ui='block.bind:blockValue1;message:MyTest;css:{"background-color":"red"}'>
       <div class="input-group">
         <span class="input-group-addon" id="basic-addon1">@</span>
-        <input type="text" class="form-control" aut-bt-float-label="Please enter your user name" placeholder="Hello" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" aut-float-label="Please enter your user name" placeholder="Hello" aria-describedby="basic-addon1">
       </div>
     </div>
 
     <hr />
 
-    <input type="text" masked="regex.bind:'\\d*'" />
+    <input type="text" aut-masked="mask.bind:'9999'" />
 
   </section>
 </template>

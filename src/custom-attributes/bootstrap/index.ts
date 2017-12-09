@@ -1,9 +1,8 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
-export * from './aut-toggle';
+
 
 export function configure(config: FrameworkConfiguration) {
-    config.globalResources([
-        PLATFORM.moduleName('./aut-toggle')
-    ]);
+  config.feature(PLATFORM.moduleName('aurelia-toolbelt/custom-attributes/bootstrap/float-label/index'));
+
 }
