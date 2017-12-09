@@ -2,7 +2,7 @@
 import { noView, customAttribute, inject, bindable, bindingMode } from 'aurelia-framework';
 import './scripts/jquery.blockUI.js';
 import * as $ from 'jquery';
-
+import './styles/spinKit.css';
 @noView()
 @customAttribute('aut-block-ui')
 @inject(Element)
@@ -26,7 +26,9 @@ export class BlockUI {
     if (doBlocking) {
       $(this.element).block({
         message: this.message,
-        css: JSON.parse(this.css)
+        css: JSON.parse(this.css),
+        onBlock: () => console.log('blocked'),
+        onUnblock: () => console.log('unblocked')
       });
     } else {
       $(this.element).unblock();
