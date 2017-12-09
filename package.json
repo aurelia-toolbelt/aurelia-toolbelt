@@ -75,7 +75,6 @@
     "dependencies": {
         "@types/bootstrap": "^3.3.36",
         "aurelia-bootstrapper": "2.1.1",
-        "popper.js": "1.12.9",
         "aurelia-event-aggregator": "1.0.1",
         "aurelia-framework": "^1.1.5",
         "aurelia-http-client": "^1.2.1",
@@ -83,6 +82,7 @@
         "bootstrap": "4.0.0-beta.2",
         "bootstrap-float-label": "^3.0.1",
         "bootstrap-toggle": "^2.2.2",
+        "fast-safe-stringify": "^1.2.1",
         "fuse.js": "^3.2.0",
         "highlight.js": "^9.12.0",
         "humanize-duration": "^3.12.0",
@@ -95,6 +95,7 @@
         "numeral": "^2.0.6",
         "password-meter": "^2.1.0",
         "persianjs": "^0.3.0",
+        "popper.js": "1.12.9",
         "pretty-checkbox": "^3.0.3",
         "strman": "^2.0.0",
         "written-number": "^0.8.1"
