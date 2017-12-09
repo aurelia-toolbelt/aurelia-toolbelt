@@ -1,6 +1,7 @@
 import * as fuse from 'fuse.js';
 const hl = require('highlight.js');
 
+import 'popper.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'pretty-checkbox/dist/pretty-checkbox.css';
