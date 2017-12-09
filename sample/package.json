@@ -61,6 +61,7 @@
         "popper.js": "1.12.9",
         "pretty-checkbox": "^3.0.3",
         "strman": "^2.0.0",
+        "uuid": "^3.1.0",
         "written-number": "^0.8.1"
     }
 }
