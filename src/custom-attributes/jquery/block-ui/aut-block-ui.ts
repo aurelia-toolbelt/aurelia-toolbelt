@@ -19,19 +19,13 @@ export class BlockUI {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) private css: any = null;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) private message: string = null;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) private spinnerType: Spinner = Spinner.bounce;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) private spinnerColor: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) private spinnerSize: string;
 
+  private spinnerMsg: string = '';
   private isBound = false;
 
   constructor(private element: Element) {
-
-
-
-
-
-
-
-
-
   }
 
   private bind() {
@@ -44,7 +38,6 @@ export class BlockUI {
         DOM.injectStyles(`.bounce {
   text-align: center;
 }
-
 .bounce > div {
   width: 12px;
   height: 12px;
@@ -72,14 +65,15 @@ export class BlockUI {
 }
 
 @keyframes sk-bouncedelay {
-  0%, 80%, 100% { 
+  0%, 80%, 100% {
     -webkit-transform: scale(0);
     transform: scale(0);
-  } 40% { 
+  } 40% {
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
   }
 }`);
+        this.spinnerMsg = '<div class="bounce"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>';
         break;
       case Spinner.doubleBounce:
 
@@ -107,7 +101,7 @@ export class BlockUI {
             border: 'none',
             backgroundColor: 'transparent'
           },
-          message: '<div class="bounce"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div> </div>',
+          message: this.message || this.spinnerMsg,
           overlayCSS: {
             backgroundColor: '#F7F7F7'
           },
