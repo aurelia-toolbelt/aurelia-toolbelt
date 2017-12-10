@@ -1,0 +1,12 @@
+<template>
+
+  <compose view="${href===null?'./abt-i-span.html':'./abt-i-a.html'}" model.one-time="{isPill:isPill, color:color , href:href}"
+    view-model="./abt-i-badge">
+
+    <div slot="content">
+        <slot></slot>
+    </div>
+
+  </compose>
+
+</template>
