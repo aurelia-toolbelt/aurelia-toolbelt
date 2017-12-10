@@ -2,8 +2,6 @@
 import { noView, customAttribute, inject, bindable, bindingMode, DOM } from 'aurelia-framework';
 import './scripts/jquery.blockUI.js';
 import * as $ from 'jquery';
-import './styles/spinKit.css';
-
 
 type spinnerType = 'bounce' | 'doubleBounce' | 'rectangle' | 'cubeGrid' | 'fadingCircle';
 
