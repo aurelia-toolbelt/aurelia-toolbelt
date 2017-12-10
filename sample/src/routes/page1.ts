@@ -1,5 +1,6 @@
 import { Router } from 'aurelia-router';
 import { autoinject } from 'aurelia-framework';
+import { HttpClient } from 'aurelia-http-client';
 
 
 @autoinject
@@ -17,7 +18,7 @@ export class Page1 {
     private blockValue3 = false;
 
 
-    constructor(public router: Router) {
+    constructor(public router: Router, private http: HttpClient) {
         // todo
     }
     private toggleBlock1() {
@@ -31,6 +32,10 @@ export class Page1 {
     }
     private canActivate(a, b, c) {
         this.title = b.title;
+    }
+
+    private buttonClicked(event: Event, target: HTMLButtonElement) {
+       return  this.http.get('https://github.com');
     }
 
 }

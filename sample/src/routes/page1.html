@@ -33,5 +33,35 @@
     <hr />
 
     <input type="text" aut-masked="mask.bind:'9999'" />
+
+    <hr />
+
+    <h1>
+      Bootstrap controls
+    </h1>
+
+    <aut-button color="success" clicked.call="buttonClicked(event,target)">
+      Test-Success
+    </aut-button>
+
+    <br />
+
+    <aut-button outline block color="danger" size="sm" clicked.call="buttonClicked(event,target)">
+      Test-Danger
+    </aut-button>
+
+    <br />
+
+    <aut-button block color="info" size="lg" clicked.call="buttonClicked(event,target)">
+      <span>
+        <i class="fa fa-link"></i>
+        Test-Info
+      </span>
+      <slot slot="loading">
+        <i class="fa fa-refresh fa-spin" aria-hidden="true">
+        </i>
+      </slot>
+    </aut-button>
+
   </section>
 </template>
