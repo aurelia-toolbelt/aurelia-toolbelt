@@ -7,10 +7,10 @@ import { Disposable } from 'aurelia-binding';
 import * as $ from 'jquery';
 
 import './scripts/bootstrap-toggle';
-import './aut-toggle.css';
+import './abt-toggle.css';
 
 @inject(Element, BindingEngine)
-@customElement('aut-toggle')
+@customElement('abt-toggle')
 export class BootstrapToggleCustomElement {
 
 

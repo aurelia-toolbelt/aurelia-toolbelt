@@ -4,14 +4,14 @@ import { customElement, containerless, bindable, bindingMode } from 'aurelia-fra
 
 
 @inject(Element)
-@customElement('aut-button')
+@customElement('abt-button')
 export class BootstrapButton {
 
     @bindable({ defaultBindingMode: bindingMode.oneTime }) public color: string = 'primary';
     @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: string = 'md';
     @bindable({ defaultBindingMode: bindingMode.oneTime }) public type: string = 'button';
 
-    @bindable({ defaultBindingMode: bindingMode.twoWay }) public clicked: Function;
+    @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
     @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string;
 
     private isOutlined: boolean = false;
@@ -34,7 +34,7 @@ export class BootstrapButton {
 
         console.log('buttonClicked');
 
-        if (!this.clicked || this.disabled) {
+        if (!this.click || this.disabled) {
             return;
         }
 
@@ -45,7 +45,7 @@ export class BootstrapButton {
         this.isBusy = true;
         const target = this.element.children.item(0);
 
-        this.task = Promise.resolve(this.clicked({ event: event, target: target }))
+        this.task = Promise.resolve(this.click({ event: event, target: target }))
             .then(
             () => this.clickCompleted(),
             () => this.clickCompleted()

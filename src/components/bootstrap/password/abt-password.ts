@@ -14,7 +14,7 @@ interface IStrengthRange {
 
 
 @inject(Element)
-@customElement('aut-password')
+@customElement('abt-password')
 export class PasswordCustomElement {
   private showStrength: boolean = false;
 

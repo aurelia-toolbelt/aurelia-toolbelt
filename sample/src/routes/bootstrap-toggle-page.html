@@ -23,11 +23,11 @@
     <form>
       <h4>Booleans</h4>
 
-      <aut-toggle size="mini" disabled="true" css="slow" checked.bind="motherboard"> Motherboard</aut-toggle>
+      <abt-toggle size="mini" disabled="true" css="slow" checked.bind="motherboard"> Motherboard</abt-toggle>
 
-      <aut-toggle size="small" checked.bind="cpu" css="fast">CPU</aut-toggle>
+      <abt-toggle size="small" checked.bind="cpu" css="fast">CPU</abt-toggle>
 
-      <aut-toggle size="normal" checked.bind="memory" css="quick"> Memory</aut-toggle>
+      <abt-toggle size="normal" checked.bind="memory" css="quick"> Memory</abt-toggle>
 
       <br /> motherboard = ${motherboard}
       <br/> cpu = ${cpu}
@@ -43,8 +43,8 @@
       <ul>
         <li repeat.for="product of products">
 
-          <aut-toggle on-style="success" off-style="danger" value.bind="product" checked.bind="selectedProducts"> ${product}
-          </aut-toggle>
+          <abt-toggle on-style="success" off-style="danger" value.bind="product" checked.bind="selectedProducts"> ${product}
+          </abt-toggle>
 
         </li>
       </ul>
@@ -59,9 +59,9 @@
       <h4>Array of Numbers</h4>
       <ul>
         <li repeat.for="product of otherProducts">
-          <aut-toggle color="info" model.bind="product.id" checked.bind="selectedProductIds">
+          <abt-toggle color="info" model.bind="product.id" checked.bind="selectedProductIds">
             ${product.name}
-          </aut-toggle>
+          </abt-toggle>
         </li>
       </ul>
       <br /> Selected product IDs: ${selectedProductIds}
@@ -76,8 +76,8 @@
       <ul>
 
         <li repeat.for="product of productsObject">
-          <aut-toggle model.bind="product" checked.bind="selectedProductsObject"> ${product.id} - ${product.name}
-          </aut-toggle>
+          <abt-toggle model.bind="product" checked.bind="selectedProductsObject"> ${product.id} - ${product.name}
+          </abt-toggle>
         </li>
       </ul>
 
@@ -96,18 +96,18 @@
       <h4>Array of objects With Matcher</h4>
 
 
-      <aut-toggle model.bind="mymotherBoard" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
+      <abt-toggle model.bind="mymotherBoard" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
         Motherboard
-      </aut-toggle>
+      </abt-toggle>
 
 
-      <aut-toggle model.bind="mycpu" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher"> CPU
-      </aut-toggle>
+      <abt-toggle model.bind="mycpu" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher"> CPU
+      </abt-toggle>
 
 
-      <aut-toggle model.bind="mymemory" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
+      <abt-toggle model.bind="mymemory" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
         Memory
-      </aut-toggle>
+      </abt-toggle>
 
       Selected products:
       <ul>

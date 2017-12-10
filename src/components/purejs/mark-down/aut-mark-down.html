@@ -1,8 +1,7 @@
 <template>
 
-  <require from="../../bootstrap/toggle/aut-toggle"></require>
+  <require from="../../bootstrap/toggle/abt-toggle"></require>
   <require from="../../../value-converters/purejs/mark-down/markdown-vc"></require>
-  <require from="../../../custom-attributes/jquery/block-ui/aut-block-ui"></require>
 
   <div class="card">
     <div class="card-header" if.bind="showToolBar">
@@ -39,12 +38,12 @@
 
 
       <div class="pull-right">
-        <aut-toggle size="mini" checked.bind="showPreview">
+        <abt-toggle size="mini" checked.bind="showPreview">
           Preview
-        </aut-toggle>
-        <aut-toggle size="mini" checked.bind="showEditor">
+        </abt-toggle>
+        <abt-toggle size="mini" checked.bind="showEditor">
           Editor
-        </aut-toggle>
+        </abt-toggle>
       </div>
     </div>
     <div class="card-body" if.bind="showEditor === true" style="border-left: 3px solid maroon !important;">

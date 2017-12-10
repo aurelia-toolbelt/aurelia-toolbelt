@@ -3,7 +3,7 @@ import { customAttribute } from 'aurelia-templating';
 import { bindingMode } from 'aurelia-binding';
 import './styles/bootstrap-float-label.css';
 
-@customAttribute('aut-float-label', bindingMode.twoWay)
+@customAttribute('abt-float-label', bindingMode.twoWay)
 @inject(Element)
 @noView()
 export class FloatLabelAttribute {

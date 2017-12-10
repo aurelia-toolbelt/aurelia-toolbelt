@@ -1,12 +1,12 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
 
-export * from './aut-button';
+export * from './abt-button';
 
 export function configure(config: FrameworkConfiguration) {
 
     config.globalResources( [
-            PLATFORM.moduleName('./aut-button')
+            PLATFORM.moduleName('./abt-button')
     ] );
 
 }

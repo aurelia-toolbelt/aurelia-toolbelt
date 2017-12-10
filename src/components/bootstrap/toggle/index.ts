@@ -1,9 +1,9 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
-export * from './aut-toggle';
+export * from './abt-toggle';
 
 export function configure(config: FrameworkConfiguration) {
     config.globalResources([
-        PLATFORM.moduleName('./aut-toggle')
+        PLATFORM.moduleName('./abt-toggle')
     ]);
 }
