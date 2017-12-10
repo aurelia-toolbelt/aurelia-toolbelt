@@ -15,7 +15,7 @@ export class BlockUiResizeService {
       });
     }
   }
-  public remove(elem: Element, option: any): void {
+  public remove(_elem: Element, _option: any): void {
     this.arr = [];
     /*console.log(this.arr.length);
     const index = this.arr.indexOf([elem, option]);
