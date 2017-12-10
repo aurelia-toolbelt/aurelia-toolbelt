@@ -1,14 +1,16 @@
 
-import { noView, customAttribute, inject, bindable, bindingMode, DOM } from 'aurelia-framework';
+import { noView, customAttribute, inject, bindable, bindingMode, DOM, transient } from 'aurelia-framework';
 import './scripts/jquery.blockUI.js';
 import * as $ from 'jquery';
+import { BlockUiResizeService } from './BlockUiResizeService';
 
 type spinnerType = 'bounce' | 'doubleBounce' | 'rectangle' | 'cubeGrid' | 'fadingCircle';
 
 
 @noView()
+@transient()
 @customAttribute('aut-block-ui')
-@inject(Element)
+@inject(Element, BlockUiResizeService)
 export class BlockUI {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) private block: string | boolean = false;
@@ -21,7 +23,7 @@ export class BlockUI {
   private spinnerMsg: string = '';
   private isBound = false;
 
-  constructor(private element: Element) {
+  constructor(private element: Element, private blockUiService: BlockUiResizeService) {
 
   }
 
@@ -381,9 +383,8 @@ export class BlockUI {
   }
 
   private blockChanged(doBlocking: boolean) {
-
+    let e: any;
     console.warn(`blocking: ${doBlocking}`);
-
     if (doBlocking) {
       $(this.element).block(
         {
@@ -395,12 +396,33 @@ export class BlockUI {
           overlayCSS: {
             backgroundColor: '#F7F7F7'
           },
-          onBlock: () => console.log('blocked'),
-          onUnblock: () => console.log('unblocked')
+          onBlock: () => {
+            this.blockUiService.add(this.element, {
+              css: {
+                border: 'none',
+                backgroundColor: 'transparent'
+              },
+              message: this.message || this.spinnerMsg,
+              overlayCSS: {
+                backgroundColor: '#F7F7F7'
+              }
+            });
+            e = this.element;
+          }
         }
       );
     } else {
       $(this.element).unblock();
+      this.blockUiService.remove(e, {
+        css: {
+          border: 'none',
+          backgroundColor: 'transparent'
+        },
+        message: this.message || this.spinnerMsg,
+        overlayCSS: {
+          backgroundColor: '#F7F7F7'
+        }
+      });
     }
   }
 }
