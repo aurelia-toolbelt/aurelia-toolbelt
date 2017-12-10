@@ -10,7 +10,7 @@ export class BlockUI {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) private block: string | boolean = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) private css: any;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) private message: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) private message: string = null;
 
   private isBound = false;
 
@@ -23,10 +23,13 @@ export class BlockUI {
 
 
   private blockChanged(doBlocking: boolean) {
+
+    console.warn(`blocking: ${doBlocking}`);
+
     if (doBlocking) {
       $(this.element).block({
         message: this.message,
-        css: JSON.parse(this.css),
+        css: this.css ? JSON.parse(this.css) : null,
         onBlock: () => console.log('blocked'),
         onUnblock: () => console.log('unblocked')
       });

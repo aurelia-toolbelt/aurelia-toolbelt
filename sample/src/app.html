@@ -9,22 +9,11 @@
 
   </aut-loading-indicator>
 
-
-  <aut-loading-indicator show-spinner="true" speed="2000" loading.bind="router.isNavigating">
-
-  </aut-loading-indicator>
-
-
-  <aut-loading-indicator show-spinner="true" speed="2000" loading.bind="router.isNavigating">
-
-  </aut-loading-indicator>
-
-
   <nav-bar router.bind="router"></nav-bar>
 
   <br />
 
-  <div class="main no-select">
+  <div class="main no-select" aut-block-ui='block.bind:router.isNavigating;message:MyTest;css:{"background-color":"red"}'>
     <router-view></router-view>
   </div>
 
