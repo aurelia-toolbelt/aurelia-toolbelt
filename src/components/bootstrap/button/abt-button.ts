@@ -57,7 +57,7 @@ export class BootstrapButton {
 
   private detached() {
     this.task = null;
-    this.element.children.item(0).removeEventListener('click', this.onClick);
+    // this.element.previousElementSibling.removeEventListener('click', this.onClick);
   }
 
 }
