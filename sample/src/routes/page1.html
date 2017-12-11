@@ -47,7 +47,10 @@
     <br />
 
     <abt-button outline block color="danger" size="sm" click.call="buttonClicked(event,target)">
+      <i class="fa fa-gear fa-spin"></i>
       Test-Danger
+      </span>
+
     </abt-button>
 
     <br />
@@ -117,31 +120,39 @@
     <abt-badge pill color="dark">Dark</abt-badge>
 
     <br />
-
-
-    <h1>
-      Links
-    </h1>
-    <blockquote>
-      the contextual .badge-* classes on an
-      <a> element quickly provide actionable badges with hover and focus states.
-    </blockquote>
-
-
-    <abt-badge href="#" pill color="secondary">
-      <div slot="link">
-        Secondary
-      </div>
-    </abt-badge>
-    <abt-badge href="#" pill color="success">Success</abt-badge>
-    <abt-badge href="#" pill color="danger">Danger</abt-badge>
-    <abt-badge href="#" pill color="warning">Warning</abt-badge>
-    <abt-badge href="#" pill color="info">Info</abt-badge>
-    <abt-badge href="#" pill color="light">Light</abt-badge>
-    <abt-badge href="#" pill color="dark">Dark</abt-badge>
+    <br />
 
   </section>
 
 
-  <br>
+
+  <br />
+  <br />
+
+  <h1>Button Groups</h1>
+
+  <br />
+
+  <abt-button-group label="Basic example">
+    <abt-button type="button" color="secondary">Left</abt-button>
+    <abt-button type="button" color="secondary">Middle</abt-button>
+    <abt-button type="button" color="secondary">Right</abt-button>
+  </abt-button-group>
+
+
+  <abt-button-group label="Basic example" vertical>
+    <abt-button type="button" color="secondary">Left</abt-button>
+    <abt-button type="button" color="secondary">Middle</abt-button>
+    <abt-button type="button" color="secondary">Right</abt-button>
+  </abt-button-group>
+
+
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
 </template>

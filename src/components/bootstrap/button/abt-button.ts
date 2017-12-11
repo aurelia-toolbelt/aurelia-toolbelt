@@ -4,61 +4,60 @@ import { customElement, containerless, bindable, bindingMode } from 'aurelia-fra
 
 
 @inject(Element)
+@containerless()
 @customElement('abt-button')
 export class BootstrapButton {
 
-    @bindable({ defaultBindingMode: bindingMode.oneTime }) public color: string = 'primary';
-    @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: string = 'md';
-    @bindable({ defaultBindingMode: bindingMode.oneTime }) public type: string = 'button';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public color: string = 'primary';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: string = 'md';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public type: string = 'button';
 
-    @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
-    @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string;
 
-    private isOutlined: boolean = false;
-    private isBlockLevel: boolean = false;
+  private isOutlined: boolean = false;
+  private isBlockLevel: boolean = false;
 
-    private isBusy: boolean = false;
-    private task: Promise<void> | null = null;
+  private isBusy: boolean = false;
+  private task: Promise<void> | null = null;
 
-    constructor(private element: Element) {
+  constructor(private element: Element) {
 
+  }
+
+  private bind() {
+    this.isOutlined = this.element.hasAttribute('outline');
+    this.isBlockLevel = this.element.hasAttribute('block');
+  }
+
+  private onClick(event: Event) {
+    event.preventDefault();
+
+    if (!this.click || this.disabled) {
+      return;
     }
 
-    private bind() {
-        this.isOutlined = this.element.hasAttribute('outline');
-        this.isBlockLevel = this.element.hasAttribute('block');
+    if (this.task) {
+      return;
     }
 
-    private buttonClicked(event: Event) {
-        event.preventDefault();
+    this.isBusy = true;
 
-        console.log('buttonClicked');
+    this.task = Promise.resolve(this.click({ event: event, target: this.element.previousElementSibling }))
+      .then(
+      () => this.clickCompleted(),
+      () => this.clickCompleted()
+      );
+  }
 
-        if (!this.click || this.disabled) {
-            return;
-        }
+  private clickCompleted() {
+    this.task = null;
+    this.isBusy = false;
+  }
 
-        if (this.task) {
-            return;
-        }
-
-        this.isBusy = true;
-        const target = this.element.children.item(0);
-
-        this.task = Promise.resolve(this.click({ event: event, target: target }))
-            .then(
-            () => this.clickCompleted(),
-            () => this.clickCompleted()
-            );
-    }
-
-    private clickCompleted() {
-        this.task = null;
-        this.isBusy = false;
-    }
-
-    private detached() {
-        this.element.children.item(0).removeEventListener('click', this.buttonClicked);
-    }
+  private detached() {
+    this.task = null;
+    this.element.children.item(0).removeEventListener('click', this.onClick);
+  }
 
 }

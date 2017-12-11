@@ -23,7 +23,7 @@ export class MarkDownItCustomElement {
 
   private srcChanged(newValue: string) {
     this.isLoading = true;
-    this.http.get(newValue)
+    return this.http.get(newValue || this.src)
       .then((data) => {
         this.myText = data.response;
         this.isLoading = false;

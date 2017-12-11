@@ -2,13 +2,20 @@
 
   <require from="../../bootstrap/toggle/abt-toggle"></require>
   <require from="../../../value-converters/purejs/mark-down/markdown-vc"></require>
+  <require from="../../../custom-attributes/jquery/block-ui/aut-block-ui"></require>
+  <require from="../../bootstrap/button/abt-button"></require>
 
   <div class="card">
     <div class="card-header" if.bind="showToolBar">
 
-      <i class="fa fa-spinner fa-2x" show.bind="isLoading">
+      <abt-button size="sm" color="secondary" click.call="srcChanged()">
+        <span slot="loading">
+          <i class="fa fa-refresh fa-spin"></i>
+        </span>
 
-      </i>
+        Reload
+
+      </abt-button>
 
       <div class="btn-group btn-group-sm" role="group">
         <button click.delegate="addText('# ')" type="button" class="btn btn-outline-primary">h1</button>
@@ -46,16 +53,18 @@
         </abt-toggle>
       </div>
     </div>
-    <div class="card-body" if.bind="showEditor === true" style="border-left: 3px solid maroon !important;">
+    <div aut-block-ui='block.bind:isLoading&&showEditor;spinner-type:bounce' class="card-body" if.bind="showEditor === true"
+      style="border-left: 3px solid maroon !important;">
 
       <textarea ref="editor" class="editor" style="
                   width: 98%;
                   border: 0px;
-                  min-height: 400px;" value.bind="myText" contenteditable="true">
+                  min-height: 400px;" value.bind="myText">
       </textarea>
 
     </div>
-    <div class="card-footer" if.bind="showPreview === true" if.bind="showPreview === true">
+    <div aut-block-ui='block.bind:isLoading&&showPreview;spinner-type:bounce' class="card-footer" if.bind="showPreview === true"
+      style="min-height: 400px;">
       <div ref="preview" innerhtml.bind="myText | md & debounce:1000">
       </div>
     </div>
