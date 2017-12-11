@@ -1,3 +1,7 @@
 abt-button>button {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.abt-button {
+  cursor: pointer;
 }
