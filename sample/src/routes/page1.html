@@ -146,13 +146,105 @@
     <abt-button type="button" color="secondary">Right</abt-button>
   </abt-button-group>
 
+  <br/>
+  <br/>
+
+  <abt-toolbar label="Toolbar with button groups">
+    <abt-button-group label="First group" class="mr-2">
+      <abt-button type="button" color="secondary">1</abt-button>
+      <abt-button type="button" color="secondary">2</abt-button>
+      <abt-button type="button" color="secondary">3</abt-button>
+      <abt-button type="button" color="secondary">4</abt-button>
+    </abt-button-group>
+    <abt-button-group label="Second group" class="mr-2">
+      <abt-button type="button" color="secondary">5</abt-button>
+      <abt-button type="button" color="secondary">6</abt-button>
+      <abt-button type="button" color="secondary">7</abt-button>
+    </abt-button-group>
+    <abt-button-group label="Third group">
+      <abt-button type="button" color="secondary">8</abt-button>
+    </abt-button-group>
+  </abt-toolbar>
+
+  <br />
+  <br />
+  <br />
+
+
+  <abt-toolbar class="mb-3" label="Toolbar with button groups">
+    <abt-button-group label="First group" class="mr-2">
+      <abt-button type="button" color="secondary">1</abt-button>
+      <abt-button type="button" color="secondary">2</abt-button>
+      <abt-button type="button" color="secondary">3</abt-button>
+      <abt-button type="button" color="secondary">4</abt-button>
+    </abt-button-group>
+    <div class="input-group">
+      <span class="input-group-addon" id="btnGroupAddon">@</span>
+      <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
+    </div>
+  </abt-toolbar>
+
+  <abt-toolbar class="justify-content-between" label="Toolbar with button groups">
+    <abt-button-group label="First group" class="mr-2">
+      <abt-button type="button" color="secondary">1</abt-button>
+      <abt-button type="button" color="secondary">2</abt-button>
+      <abt-button type="button" color="secondary">3</abt-button>
+      <abt-button type="button" color="secondary">4</abt-button>
+    </abt-button-group>
+    <div class="input-group">
+      <span class="input-group-addon" id="btnGroupAddon2">@</span>
+      <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon2">
+    </div>
+  </abt-toolbar>
 
 
   <br />
   <br />
+
+  <abt-button-group label="First group" size="lg">
+    <abt-button type="button" color="secondary">left</abt-button>
+    <abt-button type="button" color="secondary">middle</abt-button>
+    <abt-button type="button" color="secondary">right</abt-button>
+  </abt-button-group>
+
+  <abt-button-group label="First group">
+    <abt-button type="button" color="secondary">left</abt-button>
+    <abt-button type="button" color="secondary">middle</abt-button>
+    <abt-button type="button" color="secondary">right</abt-button>
+  </abt-button-group>
+
+  <abt-button-group label="First group" size="sm">
+    <abt-button type="button" color="secondary">left</abt-button>
+    <abt-button type="button" color="secondary">middle</abt-button>
+    <abt-button type="button" color="secondary">right</abt-button>
+  </abt-button-group>
+  <br />
+  <br />
+
+
+
+  <abt-button-group label="Button group with nested dropdown">
+    <abt-button type="button" class="btn btn-secondary">1</abt-button>
+    <abt-button type="button" class="btn btn-secondary">2</abt-button>
+
+    <abt-button-group>
+      <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        Dropdown
+      </button>
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <a class="dropdown-item" href="#">Dropdown link</a>
+        <a class="dropdown-item" href="#">Dropdown link</a>
+      </div>
+    </abt-button-group>
+  </abt-button-group>
+
+
+
   <br />
   <br />
   <br />
   <br />
+
 
 </template>

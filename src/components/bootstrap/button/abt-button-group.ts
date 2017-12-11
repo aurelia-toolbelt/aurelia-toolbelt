@@ -11,6 +11,7 @@ export class BootstrapButtonGroup {
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public label: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: string = 'md';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string = '';
 
   private isVertical: boolean = false;
 
