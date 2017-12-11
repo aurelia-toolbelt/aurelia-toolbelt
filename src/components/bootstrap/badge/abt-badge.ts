@@ -5,17 +5,17 @@ import { inject, customElement, bindable, bindingMode, containerless } from 'aur
 @inject(Element)
 @customElement('abt-badge')
 @containerless()
-export class BootstraBadge {
+export class BootstrapBadge {
 
-    @bindable({ defaultBindingMode: bindingMode.oneTime }) public color: string = 'primary';
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string | null = null;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public color: string = 'primary';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string | null = null;
 
-    private isPill: boolean = false;
+  private isPill: boolean = false;
 
-    constructor(private element: Element) { }
+  constructor(private element: Element) { }
 
-    private bind() {
-        this.isPill = this.element.hasAttribute('pill');
-    }
+  private bind() {
+    this.isPill = this.element.hasAttribute('pill');
+  }
 
 }
