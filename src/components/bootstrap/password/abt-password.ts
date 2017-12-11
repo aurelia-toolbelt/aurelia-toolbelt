@@ -1,88 +1,56 @@
-import { PasswordMeter } from 'password-meter';
+import { PasswordMeter, IResult } from 'password-meter';
 import {
   customAttribute, autoinject, bindable,
   customElement, inject, bindingMode,
   Disposable, BindingEngine
 } from 'aurelia-framework';
+import './scripts/jquery.password123.js';
+import { parse } from 'url';
 
-interface IStrengthRange {
-  domain: string;
-  message: string;
-  color: string;
-  cssClass: string;
-}
-
-
-@inject(Element)
+@inject(Element, PasswordMeter)
 @customElement('abt-password')
 export class PasswordCustomElement {
   private showStrength: boolean = false;
 
-  @bindable() private strengthRange: Array<IStrengthRange>;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public text: string;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public scoreRange: any;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public requirements: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public score: number;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public showPassword: boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public showLastChar: boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public color: string;
+
   private passwordTitle: string;
   private groupClass: string;
   private passwordStyle: string;
   private textStyle: string;
 
   private element: HTMLInputElement;
-  constructor(element: Element) {
+  constructor(element: Element, private passwordMeter: PasswordMeter) {
     this.element = <HTMLInputElement>element;
   }
   private between(x: number, min: number, max: number) {
     return x >= min && x < max;
   }
 
+  private geResult(pass: any): IResult {
+    this.passwordMeter.requirements = this.requirements;
+    let range = Object.keys(this.scoreRange);
+    this.passwordMeter.scoreRange = {
+      veryWeak: parseInt(range[0], 10),
+      weak: parseInt(range[1], 10),
+      medium: parseInt(range[2], 10),
+      strong: parseInt(range[3], 10),
+      veryStrong: parseInt(range[4], 10)
+    };
+    console.log(this.passwordMeter.scoreRange);
+    return this.passwordMeter.getResult(pass);
+  }
+
+
   private scorePassword(pass: any) {
-    return new PasswordMeter().getResult(pass).score;
-    /* let score = 0;
-     if (!pass) {
-       return score;
-     }
-     // award every unique letter until 5 repetitions
-     let letters = new Object();
-     for (let i = 0; i < pass.length; i++) {
-       letters[pass[i]] = (letters[pass[i]] || 0) + 1;
-       score += 5.0 / letters[pass[i]];
-     }
-     // bonus points for mixing it up
-     let variations = {
-       digits: /\d/.test(pass),
-       lower: /[a-z]/.test(pass),
-       upper: /[A-Z]/.test(pass),
-       nonWords: /\W/.test(pass)
-     };
-     let variationCount = 0;
-     // tslint:disable-next-line:forin
-     for (let check in variations) {
-       variationCount += (variations[check] === true) ? 1 : 0;
-     }
-     score += (variationCount - 1) * 10;
-     // tslint:disable-next-line:radix
-     return parseInt(score.toString());*/
+    return this.passwordMeter.getResult(pass).score;
   }
-
-  private checkPassStrength(pass: any): IStrengthRange {
-    let score = this.scorePassword(pass);
-    this.score = score;
-    for (let i = 0; i < this.strengthRange.length; i++) {
-      if (i >= this.strengthRange.length - 1) {
-        return this.strengthRange[i];
-      }
-      // tslint:disable-next-line:radix
-      let status = this.between(score, parseInt(this.strengthRange[i].domain), parseInt(this.strengthRange[i + 1].domain));
-      if (status) {
-        return this.strengthRange[i];
-      }
-    }
-    return null;
-  }
-
-  /**
-   *
-   */
 
   private showPasswordChanged(value: boolean) {
     if (value) {
@@ -95,12 +63,14 @@ export class PasswordCustomElement {
   private textChanged(value: string) {
 
     if (value.length > 0) {
+      console.log(value);
       this.groupClass = 'input-group';
-      let obj = this.checkPassStrength(value);
-      this.passwordTitle = obj.message;
-      this.passwordStyle = 'color:white;background-color:' + obj.color + ';border-bottom:3px solid ' + obj.color + ';border-right:2px solid ' + obj.color + ';';
-
-      this.textStyle = 'border-bottom:3px solid ' + obj.color;
+      let obj = this.geResult(value);
+      this.color = 'blue';
+      this.passwordTitle = obj.status;
+      this.passwordStyle = 'color:white;background-color:' + this.color + ';border-bottom:3px solid '
+        + this.color + ';border-right:2px solid ' + this.color + ';';
+      this.textStyle = 'border-bottom:3px solid ' + this.color;
 
     } else {
       this.passwordStyle = '';
@@ -112,14 +82,6 @@ export class PasswordCustomElement {
       }
     }
     return true;
-  }
-
-  private attached() {
-    this.strengthRange.sort((a: IStrengthRange, b: IStrengthRange) => {
-      // tslint:disable-next-line:radix
-      return (parseInt(a.domain) - parseInt(b.domain));
-    });
-
   }
 
 }

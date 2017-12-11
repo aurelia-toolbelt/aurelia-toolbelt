@@ -26,6 +26,16 @@
   version "8.0.57"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.57.tgz#e5d8b4dc112763e35cfc51988f4f38da3c486d99"
 
+"@types/nprogress@0.0.29":
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/@types/nprogress/-/nprogress-0.0.29.tgz#060bd510022a005f1840234030d3132fb9195471"
+
+"@types/uuid@^3.4.3":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-3.4.3.tgz#121ace265f5569ce40f4f6d0ff78a338c732a754"
+  dependencies:
+    "@types/node" "*"
+
 "@types/watch@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/watch/-/watch-1.0.0.tgz#99269e99c149c9c2da5dd5aef8bee5fc44585648"
@@ -2160,9 +2170,9 @@ parseurl@~1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.2.tgz#fc289d4ed8993119460c156253262cdc8de65bf3"
 
-password-meter@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/password-meter/-/password-meter-2.1.0.tgz#6ae118ebd3387c19478ccaddab0a49cb47bd7ae1"
+password-meter@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/password-meter/-/password-meter-2.5.0.tgz#52f072b11dd224140c700e3f9d2b5782bc09d445"
 
 path-exists@^3.0.0:
   version "3.0.0"
