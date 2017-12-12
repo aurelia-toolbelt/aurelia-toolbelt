@@ -2,24 +2,20 @@
 
   <require from="highlight.js/styles/dracula.css"></require>
 
+
   <div class="container">
 
-    
-    <aut-checkbox checked.bind="showtoolbar" color="primary-o" curve  >
+
+    <aut-checkbox checked.bind="showtoolbar" slim color="success" switch animation="snooth">
       Show Toolbar
     </aut-checkbox>
 
-    <aut-checkbox checked.bind="showSwitches" color="primary-o" curve  >
-      Show Switches
-    </aut-checkbox>
 
     <hr />
 
-    <mark-down show-editor.one-way="true" show-preview.one-way="true"
-      show-tool-bar.bind="showtoolbar" show-switches.bind="showSwitches"
-    src="https://raw.githubusercontent.com/shahabganji/aurelia-star-rate/master/README.md">
-
-    </mark-down>
-    </di>
+    <aut-mark-down show-editor.one-way="false" show-preview.one-way="true" show-tool-bar.bind="showtoolbar" show-switches.bind="showSwitches"
+      src="https://raw.githubusercontent.com/shahabganji/aurelia-star-rate/master/README.md">
+    </aut-mark-down>
+  </div>
 
 </template>

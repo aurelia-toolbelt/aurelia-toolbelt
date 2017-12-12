@@ -1,12 +1,19 @@
-<template >
+<template>
 
   <require from="./components/main-footer.html"></require>
   <require from="./components/nav-bar"></require>
   <require from='bootstrap/dist/css/bootstrap.css'></require>
 
 
+  <aut-loading-indicator show-spinner="true" size="3" speed="2000" color="#007BFF" loading.bind="router.isNavigating">
+
+  </aut-loading-indicator>
+
   <nav-bar router.bind="router"></nav-bar>
-  <div class="main no-select">
+
+  <br />
+
+  <div class="main no-select" aut-block-ui='block.bind:router.isNavigating;message:MyTest;css:{"background-color":"red"}'>
     <router-view></router-view>
   </div>
 

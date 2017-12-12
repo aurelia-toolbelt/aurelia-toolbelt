@@ -38,6 +38,7 @@
     "dist",
     "build",
     "test",
+    "coverage",
     "gulpfile.js",
     "setup.js"
   ],

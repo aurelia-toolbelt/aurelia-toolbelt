@@ -13,21 +13,245 @@
     </select>
 
 
+    <div class="fa-4x">
 
-    <aut-star-rate max-rate.bind="5" read-only.bind="false"></aut-star-rate>
+      <aut-star-rate full-star="fa fa-star" empty-star="fa fa-star-o" half-star="fa fa-star-half-o" max-rate.bind="5" read-only.bind="false"></aut-star-rate>
 
+      <aut-star-rate rtl.bind="true" full-star="fa fa-star" empty-star="fa fa-star-o" half-star="fa fa-star-half-o" max-rate.bind="5"
+        read-only.bind="false"></aut-star-rate>
+
+    </div>
     <hr />
 
-    <div aut-block-ui='block.bind:blockValue1;message:MyTest;css:{"background-color":"red"}'>
+    <div aut-block-ui='block.bind:blockValue1;spinner-type:rectangle'>
       <div class="input-group">
         <span class="input-group-addon" id="basic-addon1">@</span>
-        <input type="text" class="form-control" aut-bt-float-label="Please enter your user name" placeholder="Hello" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" aut-float-label="Please enter your user name" placeholder="Hello" aria-describedby="basic-addon1">
       </div>
     </div>
 
     <hr />
 
-    <input type="text" masked="regex.bind:'\\d*'" />
+    <input type="text" aut-masked="mask.bind:'9999'" />
+
+    <hr />
+
+    <h1>
+      Bootstrap controls
+    </h1>
+
+    <abt-link-button color="warning" href="http://google.com">
+      Link
+    </abt-link-button>
+    <abt-link-button block href="http://google.com">
+      Link
+    </abt-link-button>
+
+    <abt-button color="success" click.call="buttonClicked(event,target)">
+      Test-Success
+    </abt-button>
+
+    <br />
+
+    <abt-button outline block color="danger" size="sm" click.call="buttonClicked(event,target)">
+      <i class="fa fa-gear fa-spin"></i>
+      Test-Danger
+      </span>
+
+    </abt-button>
+
+    <br />
+
+    <abt-button block color="info" size="lg" click.call="buttonClicked(event,target)">
+      <span>
+        <i class="fa fa-link"></i>
+        Test-Info
+      </span>
+      <slot slot="loading">
+        <i class="fa fa-refresh fa-spin" aria-hidden="true">
+        </i>
+      </slot>
+    </abt-button>
+
+
+    <hr>
+
+    <h3>
+      Badges
+    </h3>
+
+    <hr />
+
+    <h1>Example heading
+      <abt-badge color="secondary">New</abt-badge>
+    </h1>
+    <h2>Example heading
+      <abt-badge color="secondary" pill>New</abt-badge>
+    </h2>
+    <br />
+    <abt-button type="button">
+      Notifications
+      <abt-badge color="light" pill>11</abt-badge>
+    </abt-button>
+    <br>
+    <br>
+    <abt-button type="button">
+      Profile
+      <abt-badge color="light">
+        9
+      </abt-badge>
+      <span class="sr-only">unread messages</span>
+    </abt-button>
+
+    <br />
+    <br />
+
+    <abt-badge color="primary">Primary</abt-badge>
+    <abt-badge color="secondary">Secondary</abt-badge>
+    <abt-badge color="success">Success</abt-badge>
+    <abt-badge color="danger">Danger</abt-badge>
+    <abt-badge color="warning">Warning</abt-badge>
+    <abt-badge color="info">Info</abt-badge>
+    <abt-badge color="light">Light</abt-badge>
+    <abt-badge color="dark">Dark</abt-badge>
+
+    <br>
+
+    <abt-badge pill color="primary">Primary</abt-badge>
+    <abt-badge pill color="secondary">Secondary</abt-badge>
+    <abt-badge pill color="success">Success</abt-badge>
+    <abt-badge pill color="danger">Danger</abt-badge>
+    <abt-badge pill color="warning">Warning</abt-badge>
+    <abt-badge pill color="info">Info</abt-badge>
+    <abt-badge pill color="light">Light</abt-badge>
+    <abt-badge pill color="dark">Dark</abt-badge>
+
+    <br />
+    <br />
 
   </section>
+
+
+
+  <br />
+  <br />
+
+  <h1>Button Groups</h1>
+
+  <br />
+
+  <abt-button-group label="Basic example">
+    <abt-button type="button" color="secondary">Left</abt-button>
+    <abt-button type="button" color="secondary">Middle</abt-button>
+    <abt-button type="button" color="secondary">Right</abt-button>
+  </abt-button-group>
+
+
+  <abt-button-group label="Basic example" vertical>
+    <abt-button type="button" color="secondary">Left</abt-button>
+    <abt-button type="button" color="secondary">Middle</abt-button>
+    <abt-button type="button" color="secondary">Right</abt-button>
+  </abt-button-group>
+
+  <br/>
+  <br/>
+
+  <abt-toolbar label="Toolbar with button groups">
+    <abt-button-group label="First group" class="mr-2">
+      <abt-button type="button" color="secondary">1</abt-button>
+      <abt-button type="button" color="secondary">2</abt-button>
+      <abt-button type="button" color="secondary">3</abt-button>
+      <abt-button type="button" color="secondary">4</abt-button>
+    </abt-button-group>
+    <abt-button-group label="Second group" class="mr-2">
+      <abt-button type="button" color="secondary">5</abt-button>
+      <abt-button type="button" color="secondary">6</abt-button>
+      <abt-button type="button" color="secondary">7</abt-button>
+    </abt-button-group>
+    <abt-button-group label="Third group">
+      <abt-button type="button" color="secondary">8</abt-button>
+    </abt-button-group>
+  </abt-toolbar>
+
+  <br />
+  <br />
+  <br />
+
+
+  <abt-toolbar class="mb-3" label="Toolbar with button groups">
+    <abt-button-group label="First group" class="mr-2">
+      <abt-button type="button" color="secondary">1</abt-button>
+      <abt-button type="button" color="secondary">2</abt-button>
+      <abt-button type="button" color="secondary">3</abt-button>
+      <abt-button type="button" color="secondary">4</abt-button>
+    </abt-button-group>
+    <div class="input-group">
+      <span class="input-group-addon" id="btnGroupAddon">@</span>
+      <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
+    </div>
+  </abt-toolbar>
+
+  <abt-toolbar class="justify-content-between" label="Toolbar with button groups">
+    <abt-button-group label="First group" class="mr-2">
+      <abt-button type="button" color="secondary">1</abt-button>
+      <abt-button type="button" color="secondary">2</abt-button>
+      <abt-button type="button" color="secondary">3</abt-button>
+      <abt-button type="button" color="secondary">4</abt-button>
+    </abt-button-group>
+    <div class="input-group">
+      <span class="input-group-addon" id="btnGroupAddon2">@</span>
+      <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon2">
+    </div>
+  </abt-toolbar>
+
+
+  <br />
+  <br />
+
+  <abt-button-group label="First group" size="lg">
+    <abt-button type="button" color="secondary">left</abt-button>
+    <abt-button type="button" color="secondary">middle</abt-button>
+    <abt-button type="button" color="secondary">right</abt-button>
+  </abt-button-group>
+
+  <abt-button-group label="First group">
+    <abt-button type="button" color="secondary">left</abt-button>
+    <abt-button type="button" color="secondary">middle</abt-button>
+    <abt-button type="button" color="secondary">right</abt-button>
+  </abt-button-group>
+
+  <abt-button-group label="First group" size="sm">
+    <abt-button type="button" color="secondary">left</abt-button>
+    <abt-button type="button" color="secondary">middle</abt-button>
+    <abt-button type="button" color="secondary">right</abt-button>
+  </abt-button-group>
+  <br />
+  <br />
+
+
+
+  <abt-button-group label="Button group with nested dropdown">
+    <abt-button type="button" class="btn btn-secondary">1</abt-button>
+    <abt-button type="button" class="btn btn-secondary">2</abt-button>
+
+    <abt-button-group>
+      <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        Dropdown
+      </button>
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <a class="dropdown-item" href="#">Dropdown link</a>
+        <a class="dropdown-item" href="#">Dropdown link</a>
+      </div>
+    </abt-button-group>
+  </abt-button-group>
+
+
+
+  <br />
+  <br />
+  <br />
+  <br />
+
+
 </template>

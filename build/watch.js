@@ -23,8 +23,8 @@ var TypeHelper = require('../sample/node_modules/fuse-box-typechecker').TypeHelp
 
 // code we want injected so aurelia loads
 var injectBoostrapAndLoader = function () {
-  var loader = function () { }
-  loader.prototype.init = function (context) { }
+  var loader = function () {}
+  loader.prototype.init = function (context) {}
   loader.prototype.bundleEnd = function (context) {
     context.source.addContent(`FuseBox.import("fuse-box-aurelia-loader")`);
     context.source.addContent(`FuseBox.import("aurelia-bootstrapper")`);
@@ -136,9 +136,14 @@ gulp.task('fuse-sample', function () {
         + inputmask
         + password-meter
         + markdown-it
+        + font-awesome
+        + font-awesome/css/font-awesome.css
         + highlight.js
-        + bootstrap-toggle
-        + bootstrap-toggle/css/bootstrap-toggle.css
+        + popper.js
+        + fast-safe-stringify
+        + nprogress
+        + bootstrap
+        + bootstrap/dist/css/bootstrap.css
 `)
 
 
