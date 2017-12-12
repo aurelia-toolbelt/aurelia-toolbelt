@@ -15,23 +15,15 @@ export class Page3 {
   public url = 'https://fa.wikipedia.org/wiki/%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C';
   public word = '٣٤٥ 789 علي';
   public requirements = {
-    minLength: { value: 5, message: 'Hey!, check minLength' },
-    maxLength: { value: 10, message: 'Hey!, check maxLength' },
-    uppercaseLettersMinLength: { value: 1, message: 'Hey!, check uppercaseLettersMinLength' },
-    lowercaseLettersMinLength: { value: 2, message: 'Hey!, check lowercaseLettersMinLength' },
-    numbersMinLength: { value: 1, message: 'Hey!, check numbersMinLength' },
-    symbolsMinLength: { value: 1, message: 'Hey!, check symbolsMinLength' },
-    mustBe: { value: ['a', '$'], message: 'Hey!, check mustBe' },
-    mustNotBe: { value: ['1baA$', '0xaZ$'], message: 'Hey!, check mustNotBe' },
-    startsWith: { value: '1', message: 'Hey!, check startsWith' },
-    endsWith: { value: '$', message: 'Hey!, check endsWith' }
+    minLength: { value: 5, message: 'Hey!, check minLength' }
   };
   public scoreRange = {
-    '40': 'red',     // very weak    1>=   , <40
-    '80': 'yellow',  // weak         40>=  , <80
-    '120': 'purple', // medium       80>=  , <120
-    '180': 'blue',   // strong       120>= , <200
-    '200': 'green'   // very strong  200>=
+    '40': 'veryWeak',
+    '80': 'weak',
+    '120': 'medium',
+    '180': 'strong',
+    '200': 'veryStrong',
+    '_': 'perfect'
   };
 
   constructor(public router: Router) {

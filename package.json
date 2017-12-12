@@ -99,7 +99,7 @@
     "moment-timezone": "^0.5.14",
     "nprogress": "^0.2.0",
     "numeral": "^2.0.6",
-    "password-meter": "^2.5.0",
+    "password-meter": "^3.0.1",
     "persianjs": "^0.3.0",
     "popper.js": "1.12.9",
     "pretty-checkbox": "^3.0.3",
