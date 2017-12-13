@@ -19,11 +19,11 @@ export class Page3 {
   };
   public scoreRange = {
     '40': { message: 'veryWeak', color: 'red', class: '' },
-    '80': { message: 'weak', color: 'red', class: '' },
-    '120': { message: 'medium', color: 'red', class: '' },
-    '180': { message: 'strong', color: 'red', class: '' },
-    '200': { message: 'veryStrong', color: 'red', class: '' },
-    '_': { message: 'perfect', color: 'red', class: '' }
+    '80': { message: 'weak', color: 'yellow', class: '' },
+    '120': { message: 'medium', color: 'orange', class: '' },
+    '180': { message: 'strong', color: 'maroon', class: '' },
+    '200': { message: 'veryStrong', color: 'blue', class: '' },
+    '_': { message: 'perfect', color: 'green', class: '' }
   };
 
   constructor(public router: Router) {

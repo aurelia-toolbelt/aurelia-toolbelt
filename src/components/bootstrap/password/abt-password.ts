@@ -31,10 +31,6 @@ export class PasswordCustomElement {
     this.element = <HTMLInputElement>element;
   }
 
-  private scorePassword(pass: any) {
-    return this.passwordMeter.getResult(pass).score;
-  }
-
   private showPasswordChanged(value: boolean) {
     if (value) {
       this.groupClass = 'input-group';
@@ -65,9 +61,9 @@ export class PasswordCustomElement {
   });
   */
 
-  private findOption(message: string, option: any) {
+  private findOption(message: string, option: any): any {
     for (let index = 0; index < option.length; index++) {
-      if (message === option.message) {
+      if (message === option[index].message) {
         return option[index];
       }
 
@@ -76,30 +72,32 @@ export class PasswordCustomElement {
 
   private textChanged(value: string) {
 
-    let scoreOption: any;
+    let option: any = [];
     let scoreSetting: any = {};
     if (this.scoreRange) {
       let scores = Object.keys(this.scoreRange);
       for (let index = 0; index < scores.length; index++) {
         let key = scores[index];
-        scoreOption = this.scoreRange[scores[index]];
+        let scoreOption = this.scoreRange[scores[index]];
+        option.push(scoreOption);
         scoreSetting[key] = scoreOption.message;
       }
     }
 
     if (value.length > 0) {
-      console.log(value);
       this.groupClass = 'input-group';
       this.passwordMeter.requirements = this.requirements;
       this.passwordMeter.scoreRange = scoreSetting;
       let obj = this.passwordMeter.getResult(value);
-      console.log(scoreOption);
-      let setting: any = this.findOption(obj.status, scoreOption);
+      console.log(obj);
+      console.log(option);
+      console.log(obj.status);
+      let setting: any = this.findOption(obj.status, option);
       console.log(setting);
-      if (setting.color !== undefined) {
+      if (setting && setting.color !== undefined) {
         this.color = setting.color;
       } else {
-        this.color = 'red';
+        this.color = option[0].color;
       }
 
       this.passwordTitle = obj.status;
