@@ -4,7 +4,6 @@ import {
   customElement, inject, bindingMode,
   Disposable, BindingEngine
 } from 'aurelia-framework';
-import { parse } from 'url';
 
 @inject(Element, PasswordMeter)
 @customElement('abt-password')
@@ -31,16 +30,6 @@ export class PasswordCustomElement {
   constructor(private element: Element, private passwordMeter: PasswordMeter) {
     this.element = <HTMLInputElement>element;
   }
-  private between(x: number, min: number, max: number) {
-    return x >= min && x < max;
-  }
-
-  private geResult(pass: any): IResult {
-    this.passwordMeter.requirements = this.requirements;
-    this.passwordMeter.scoreRange = this.scoreRange;
-    return this.passwordMeter.getResult(pass);
-  }
-
 
   private scorePassword(pass: any) {
     return this.passwordMeter.getResult(pass).score;
@@ -78,10 +67,23 @@ export class PasswordCustomElement {
 
   private textChanged(value: string) {
 
+    let scoreOption: any;
+    let scoreSetting: any = {};
+    if (this.scoreRange) {
+      let scores = Object.keys(this.scoreRange);
+      for (let index = 0; index < scores.length; index++) {
+        let key = scores[index];
+        scoreOption = this.scoreRange[scores[index]];
+        scoreSetting[key] = scoreOption.message;
+      }
+    }
+
     if (value.length > 0) {
       console.log(value);
       this.groupClass = 'input-group';
-      let obj = this.geResult(value);
+      this.passwordMeter.requirements = this.requirements;
+      this.passwordMeter.scoreRange = scoreSetting;
+      let obj = this.passwordMeter.getResult(value);
       console.log(obj);
       this.color = 'blue';
       this.passwordTitle = obj.status;

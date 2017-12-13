@@ -18,12 +18,12 @@ export class Page3 {
     minLength: { value: 5, message: 'Hey!, check minLength' }
   };
   public scoreRange = {
-    '40': 'veryWeak',
-    '80': 'weak',
-    '120': 'medium',
-    '180': 'strong',
-    '200': 'veryStrong',
-    '_': 'perfect'
+    '40': { message: 'veryWeak', color: 'red', class: '' },
+    '80': { message: 'weak', color: 'red', class: '' },
+    '120': { message: 'medium', color: 'red', class: '' },
+    '180': { message: 'strong', color: 'red', class: '' },
+    '200': { message: 'veryStrong', color: 'red', class: '' },
+    '_': { message: 'perfect', color: 'red', class: '' }
   };
 
   constructor(public router: Router) {
