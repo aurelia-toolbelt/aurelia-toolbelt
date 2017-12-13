@@ -11,6 +11,7 @@ export class BootstrapLinkButton {
     @bindable({ defaultBindingMode: bindingMode.oneTime }) public type: string = 'button';
 
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string = '';
+    @bindable({ defaultBindingMode: bindingMode.oneWay }) public routeHref: any;
 
     @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string;
 
