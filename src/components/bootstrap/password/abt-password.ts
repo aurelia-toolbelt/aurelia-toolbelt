@@ -65,6 +65,15 @@ export class PasswordCustomElement {
   });
   */
 
+  private findOption(message: string, option: any) {
+    for (let index = 0; index < option.length; index++) {
+      if (message === option.message) {
+        return option[index];
+      }
+
+    }
+  }
+
   private textChanged(value: string) {
 
     let scoreOption: any;
@@ -84,8 +93,15 @@ export class PasswordCustomElement {
       this.passwordMeter.requirements = this.requirements;
       this.passwordMeter.scoreRange = scoreSetting;
       let obj = this.passwordMeter.getResult(value);
-      console.log(obj);
-      this.color = 'blue';
+      console.log(scoreOption);
+      let setting: any = this.findOption(obj.status, scoreOption);
+      console.log(setting);
+      if (setting.color !== undefined) {
+        this.color = setting.color;
+      } else {
+        this.color = 'red';
+      }
+
       this.passwordTitle = obj.status;
       this.passwordStyle = 'color:white;background-color:' + this.color + ';border-bottom:3px solid '
         + this.color + ';border-right:2px solid ' + this.color + ';';

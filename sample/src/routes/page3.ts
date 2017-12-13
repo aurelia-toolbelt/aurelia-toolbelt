@@ -15,7 +15,7 @@ export class Page3 {
   public url = 'https://fa.wikipedia.org/wiki/%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C';
   public word = '٣٤٥ 789 علي';
   public requirements = {
-    minLength: { value: 5, message: 'Hey!, check minLength' }
+    minLength: 5
   };
   public scoreRange = {
     '40': { message: 'veryWeak', color: 'red', class: '' },
