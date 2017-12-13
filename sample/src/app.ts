@@ -62,6 +62,15 @@ export class App {
         title: 'Bootstrap toggle',
         settings: { auth: false }
       }
+      ,
+      {
+        route: 'bootstrap-card',
+        name: 'bootstrap-card',
+        moduleId: './routes/bootstrap-card',
+        nav: true,
+        title: 'Bootstrap card',
+        settings: { auth: false }
+      }
     ]);
     this.router = router;
   }
