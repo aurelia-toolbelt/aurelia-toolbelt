@@ -306,7 +306,7 @@ aurelia-metadata@^1.0.0:
   dependencies:
     aurelia-pal "^1.0.0"
 
-aurelia-pal-browser@^1.0.0:
+aurelia-pal-browser@^1.0.0, aurelia-pal-browser@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/aurelia-pal-browser/-/aurelia-pal-browser-1.3.0.tgz#63b5eaf36934dae89952ed16374cf1b029820ee0"
   dependencies:
@@ -2170,9 +2170,9 @@ parseurl@~1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.2.tgz#fc289d4ed8993119460c156253262cdc8de65bf3"
 
-password-meter@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/password-meter/-/password-meter-3.0.1.tgz#7723b67a524545ca8da90c612a449c96c3be2fd6"
+password-meter@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/password-meter/-/password-meter-3.0.2.tgz#b136dee074c3c90d1e3a136713234495d40a6763"
 
 path-exists@^3.0.0:
   version "3.0.0"

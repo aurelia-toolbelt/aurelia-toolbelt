@@ -1,5 +1,5 @@
 import * as nprogress from 'nprogress';
-import { bindable, noView, PLATFORM, customElement, bindingMode, singleton, inject } from 'aurelia-framework';
+import { bindable, noView, PLATFORM, customElement, bindingMode, singleton, inject, DOM } from 'aurelia-framework';
 
 import 'nprogress/nprogress.css';
 
@@ -17,22 +17,34 @@ class NProgressStyleInjector {
 
     this.isAlreadyOverridden = true;
 
-    let style = document.createElement('style');
-    style.setAttribute('type', 'text/css');
-    style.innerHTML = `
-    #nprogress .bar {
-      background: ${color} !important;
-      height: ${size}px !important;
-    }
-    #nprogress .peg {
-      box-shadow: 0 0 10px ${color}, 0 0 5px ${color} !important;
-    }
-    #nprogress .spinner-icon {
-      border-top-color: ${color} !important;
-      border-left-color: ${color} !important;
-    }
-    `;
-    document.head.appendChild(style);
+    DOM.injectStyles(`#nprogress .bar {
+         background: ${color} !important;
+         height: ${size}px !important;
+       }
+       #nprogress .peg {
+         box-shadow: 0 0 10px ${color}, 0 0 5px ${color} !important;
+       }
+       #nprogress .spinner-icon {
+         border-top-color: ${color} !important;
+         border-left-color: ${color} !important;
+       }`);
+
+    // let style = document.createElement('style');
+    // style.setAttribute('type', 'text/css');
+    // style.innerHTML = `
+    // #nprogress .bar {
+    //   background: ${color} !important;
+    //   height: ${size}px !important;
+    // }
+    // #nprogress .peg {
+    //   box-shadow: 0 0 10px ${color}, 0 0 5px ${color} !important;
+    // }
+    // #nprogress .spinner-icon {
+    //   border-top-color: ${color} !important;
+    //   border-left-color: ${color} !important;
+    // }
+    // `;
+    // document.head.appendChild(style);
 
 
   }
