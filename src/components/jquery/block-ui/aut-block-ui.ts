@@ -16,7 +16,7 @@ export class JQueryBlockUI {
     @bindable({ defaultBindingMode: bindingMode.oneWay }) private spinnerColor: string;
     @bindable({ defaultBindingMode: bindingMode.oneWay }) private spinnerSize: string;
 
-    private content: any;
+    private content: HTMLDivElement;
 
     constructor(private element: Element, private option: IAutBlockUIOptions) {
 
@@ -53,8 +53,10 @@ export class JQueryBlockUI {
                 title: this.title,
                 message: this.message
             });
+            this.element.classList.add('block-ui-content');
         } else {
             $(this.content).unblock();
+            this.element.classList.remove('block-ui-content');
         }
     }
 }
