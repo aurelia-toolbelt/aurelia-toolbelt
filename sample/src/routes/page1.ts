@@ -13,7 +13,7 @@ export class Page1 {
   public myDisable = true;
 
 
-  private blockValue1 = true;
+  private blockValue1 = false;
   private blockValue2 = true;
   private blockValue3 = true;
 
@@ -23,6 +23,7 @@ export class Page1 {
   }
   private toggleBlock1() {
     this.blockValue1 = !this.blockValue1;
+    console.log(this.blockValue1);
   }
   private toggleBlock2() {
     this.blockValue2 = !this.blockValue2;

@@ -1,4 +1,4 @@
-import { singleton } from 'aurelia-framework';
+/*import { singleton } from 'aurelia-framework';
 import * as $ from 'jquery';
 
 @singleton()
@@ -17,12 +17,13 @@ export class BlockUiResizeService {
   }
   public remove(_elem: Element, _option: any): void {
     this.arr = [];
-    /*console.log(this.arr.length);
+    console.log(this.arr.length);
     const index = this.arr.indexOf([elem, option]);
 
     if (index > -1) {
       this.arr.splice(index, 1);
     }
-    console.log(this.arr.length);*/
+    console.log(this.arr.length);
   }
 }
+*/

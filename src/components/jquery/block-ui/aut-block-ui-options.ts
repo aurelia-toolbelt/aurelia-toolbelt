@@ -1,13 +1,15 @@
+export type SpinnerType = 'bounce' | 'doubleBounce' | 'rectangle' | 'cubeGrid' | 'fadingCircle';
+
 export interface IAutBlockUIOptions {
-  message?: any;
-  title?: string;
+  /*message?: any;
+  title?: string;*/
   draggable?: boolean;
-  theme?: boolean;
+  /*theme?: boolean;*/
   css?: any;
-  themedCSS?: any;
+  /*themedCSS?: any;*/
   overlayCSS?: any;
   cursorReset?: string;
-  growlCSS?: any;
+  /*growlCSS?: any;*/
   iframeSrc?: string;
   forceIframe?: boolean;
   baseZ?: number;
@@ -26,5 +28,5 @@ export interface IAutBlockUIOptions {
   quirksmodeOffsetHack?: number;
   blockMsgClass?: string;
   ignoreIfBlocked?: boolean;
-  reblockOnResize?: boolean;
+  monitoringOnResize?: boolean;
 }
