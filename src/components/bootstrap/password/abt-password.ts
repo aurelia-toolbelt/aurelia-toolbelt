@@ -15,16 +15,17 @@ export class PasswordCustomElement {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public requirements: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public score: number;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public showPassword: boolean = true;
-  // @bindable({ defaultBindingMode: bindingMode.twoWay }) public showLastChar: boolean = true;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public color: string;
 
+
+  private color: string;
   private passwordTitle: string;
   private groupClass: string;
   private passwordStyle: string;
+  private passwordSpan: string;
+  private passwordClass: string;
   private textStyle: string;
   private txtPassword: HTMLInputElement;
   private icon: Element;
-
   private invisible: boolean = true;
 
   constructor(private element: Element, private passwordMeter: PasswordMeter) {
@@ -71,6 +72,8 @@ export class PasswordCustomElement {
   }
 
   private textChanged(value: string) {
+    let cls = 'input-group-addon visible-md-* visible-lg-* ';
+    this.passwordClass = cls;
 
     let option: any = [];
     let scoreSetting: any = {};
@@ -89,11 +92,17 @@ export class PasswordCustomElement {
       this.passwordMeter.requirements = this.requirements;
       this.passwordMeter.scoreRange = scoreSetting;
       let obj = this.passwordMeter.getResult(value);
-      console.log(obj);
-      console.log(option);
-      console.log(obj.status);
       let setting: any = this.findOption(obj.status, option);
-      console.log(setting);
+
+      /*if (obj.score < 0) {
+        $(this.txtPassword).tooltip({
+          'trigger': 'focus',
+          'title': '<ul><li>Coffee</li><li>Tea</li><li>Milk</li></ul>',
+          'html': true
+        });
+      }*/
+
+
       if (setting && setting.color !== undefined) {
         this.color = setting.color;
       } else {
@@ -101,9 +110,17 @@ export class PasswordCustomElement {
       }
 
       this.passwordTitle = obj.status;
-      this.passwordStyle = 'color:white;background-color:' + this.color + ';border-bottom:3px solid '
-        + this.color + ';border-right:2px solid ' + this.color + ';';
-      this.textStyle = 'border-bottom:3px solid ' + this.color;
+
+      let classNames: any = this.findOption(obj.status, option);
+      if (classNames && classNames.class !== undefined) {
+        cls = cls + classNames.class;
+        this.passwordClass = cls;
+        this.passwordStyle = '';
+      } else {
+        this.passwordStyle = 'color:white;background-color:' + this.color + ';border-bottom:3px solid '
+          + this.color + ';border-right:2px solid ' + this.color + ';';
+        this.textStyle = 'border-bottom:3px solid ' + this.color;
+      }
 
     } else {
       this.passwordStyle = '';

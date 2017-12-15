@@ -1,7 +1,7 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
-
+export * from './abt-float-input';
 
 export function configure(config: FrameworkConfiguration) {
-  console.log(config);
+  config.globalResources([PLATFORM.moduleName('./abt-float-input')]);
 }

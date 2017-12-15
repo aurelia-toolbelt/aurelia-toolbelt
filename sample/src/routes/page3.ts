@@ -18,12 +18,12 @@ export class Page3 {
     minLength: 5
   };
   public scoreRange = {
-    '40': { message: 'veryWeak', color: 'red', class: '' },
-    '80': { message: 'weak', color: 'yellow', class: '' },
-    '120': { message: 'medium', color: 'orange', class: '' },
-    '180': { message: 'strong', color: 'maroon', class: '' },
-    '200': { message: 'veryStrong', color: 'blue', class: '' },
-    '_': { message: 'perfect', color: 'green', class: '' }
+    '40': { message: 'veryWeak', color: 'red' },
+    '80': { message: 'weak', color: 'khaki' },
+    '120': { message: 'medium', color: 'orange' },
+    '180': { message: 'strong', color: 'maroon' },
+    '200': { message: 'veryStrong', color: 'blue' },
+    '_': { message: 'perfect', color: 'green' }
   };
 
   constructor(public router: Router) {
