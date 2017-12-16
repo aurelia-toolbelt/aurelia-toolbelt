@@ -14,7 +14,7 @@ export class JQueryBlockUI {
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public message: string = null;
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public spinnerType: SpinnerType = 'bounce';
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public spinnerColor: string = null;
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) public spinnerSize: string = null;
+    @bindable({ defaultBindingMode: bindingMode.oneWay }) public spinnerSize: number = null;
 
     private content: HTMLDivElement;
     private spinnerMessage: string = null;
@@ -70,10 +70,13 @@ export class JQueryBlockUI {
             DOM.injectStyles(`.bounce {
       text-align: center;
     }
-
+    .blockElement
+    {
+      width: ${this.spinnerSize * 3 || 36}px !important;
+    }
     .bounce > div {
-      width: ${this.spinnerSize || '12px'};
-      height: ${this.spinnerSize || '12px'};
+      width: ${this.spinnerSize || 12}px;
+      height: ${this.spinnerSize || 12}px;
       background-color: ${this.spinnerColor || '#92459B'};
 
       border-radius: 100%;
@@ -110,15 +113,15 @@ export class JQueryBlockUI {
         }
         if (this.spinnerType === 'doubleBounce') {
             DOM.injectStyles(`.double-bounce {
-      width: ${this.spinnerSize || '15px'} !important;
-      height: ${this.spinnerSize || '15px'} !important;
+      width: ${this.spinnerSize || 15}px !important;
+      height: ${this.spinnerSize || 15}px !important;
       text-align: center;
       position: relative;
     }
     .blockElement
     {
-      width: ${this.spinnerSize || '15px'} !important;
-      height: ${this.spinnerSize || '15px'} !important;
+      width: ${this.spinnerSize || 15}px !important;
+      height: ${this.spinnerSize || 15}px !important;
     }
     .double-bounce1, .double-bounce2 {
       width: 100%;
@@ -156,15 +159,15 @@ export class JQueryBlockUI {
         }
         if (this.spinnerType === 'rectangle') {
             DOM.injectStyles(`.rectangle {
-      width: ${this.spinnerSize || '40px'};
-      height: ${this.spinnerSize || '30px'};
+      width: ${this.spinnerSize != null ? (this.spinnerSize + 10) : 40}px;
+      height: ${this.spinnerSize || 30}px;
       text-align: center;
       font-size: 10px;
     }
     .blockElement
     {
-      width: ${this.spinnerSize || '40px'} !important;
-      height: ${this.spinnerSize || '30px'} !important;
+      width: ${this.spinnerSize != null ? (this.spinnerSize + 10) : 40}px !important;
+      height: ${this.spinnerSize || 30}px !important;
     }
     .rectangle > div {
       background-color: ${this.spinnerColor || '#92459B'};
@@ -214,13 +217,13 @@ export class JQueryBlockUI {
         }
         if (this.spinnerType === 'cubeGrid') {
             DOM.injectStyles(`.sk-cube-grid {
-              width: ${this.spinnerSize || '20px'};
-              height: ${this.spinnerSize || '20px'};
+              width: ${this.spinnerSize || 20}px;
+              height: ${this.spinnerSize || 20}px;
             }
             .blockElement
             {
-              width: ${this.spinnerSize || '20px'} !important;
-              height: ${this.spinnerSize || '20px'} !important;
+              width: ${this.spinnerSize || 20}px !important;
+              height: ${this.spinnerSize || 20}px !important;
             }
             .sk-cube-grid .sk-cube {
               width: 33%;
@@ -282,14 +285,14 @@ export class JQueryBlockUI {
         }
         if (this.spinnerType === 'fadingCircle') {
             DOM.injectStyles(`.sk-fading-circle {
-              width: ${this.spinnerSize || '20px'};
-              height: ${this.spinnerSize || '20px'};
+              width: ${this.spinnerSize || 20}px;
+              height: ${this.spinnerSize || 20}px;
               position: relative;
             }
             .blockElement
             {
-              width: ${this.spinnerSize || '20px'} !important;
-              height: ${this.spinnerSize || '20px'} !important;
+              width: ${this.spinnerSize || 20}px !important;
+              height: ${this.spinnerSize || 20}px !important;
             }
             .sk-fading-circle .sk-circle {
               width: 100%;
