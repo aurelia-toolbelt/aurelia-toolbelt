@@ -28,34 +28,15 @@ class NProgressStyleInjector {
          border-top-color: ${color} !important;
          border-left-color: ${color} !important;
        }`);
-
-    // let style = document.createElement('style');
-    // style.setAttribute('type', 'text/css');
-    // style.innerHTML = `
-    // #nprogress .bar {
-    //   background: ${color} !important;
-    //   height: ${size}px !important;
-    // }
-    // #nprogress .peg {
-    //   box-shadow: 0 0 10px ${color}, 0 0 5px ${color} !important;
-    // }
-    // #nprogress .spinner-icon {
-    //   border-top-color: ${color} !important;
-    //   border-left-color: ${color} !important;
-    // }
-    // `;
-    // document.head.appendChild(style);
-
-
   }
 
 }
 
 
 @noView([PLATFORM.moduleName('nprogress/nprogress.css')])
-@customElement('aut-loading-indicator')
+@customElement('aut-nprogress')
 @inject(NProgressStyleInjector)
-export class LoadingIndicator {
+export class NProgressLoadingIndicator {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public loading = false;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public showSpinner: boolean | string = false;

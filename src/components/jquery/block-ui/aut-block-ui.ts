@@ -9,12 +9,12 @@ import { IAutBlockUIOptions, SpinnerType } from './aut-block-ui-options';
 @inject(Element, 'aut-block-ui-option')
 export class JQueryBlockUI {
 
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) private block: string | boolean = false;
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) private title: string = null;
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) private message: string = null;
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) private spinnerType: SpinnerType = 'bounce';
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) private spinnerColor: string;
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) private spinnerSize: string;
+    @bindable({ defaultBindingMode: bindingMode.oneWay }) public block: string | boolean = false;
+    @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string = null;
+    @bindable({ defaultBindingMode: bindingMode.oneWay }) public message: string = null;
+    @bindable({ defaultBindingMode: bindingMode.oneWay }) public spinnerType: SpinnerType = 'bounce';
+    @bindable({ defaultBindingMode: bindingMode.oneWay }) public spinnerColor: string;
+    @bindable({ defaultBindingMode: bindingMode.oneWay }) public spinnerSize: string;
 
     private content: HTMLDivElement;
 
@@ -47,7 +47,11 @@ export class JQueryBlockUI {
     }*/
 
 
-    private blockChanged(isBlocked: boolean) {
+    private attached() {
+        this.blockChanged(this.block);
+    }
+
+    private blockChanged(isBlocked: boolean | string) {
         if (isBlocked) {
             $(this.content).block({
                 title: this.title,

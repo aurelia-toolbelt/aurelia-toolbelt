@@ -3,6 +3,6 @@ import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
 export function configure(config: FrameworkConfiguration) {
 
-  config.globalResources(PLATFORM.moduleName('./loading-indicator'));
+  config.globalResources(PLATFORM.moduleName('./aut-nprogress'));
 
 }

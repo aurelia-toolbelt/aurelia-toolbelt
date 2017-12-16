@@ -13,7 +13,7 @@ export class Page1 {
   public myDisable = true;
 
 
-  private blockValue1 = false;
+  private blockValue1 = true;
   private blockValue2 = true;
   private blockValue3 = true;
 
