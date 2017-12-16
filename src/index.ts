@@ -12,4 +12,5 @@ export function configure(config: FrameworkConfiguration) {
     // .feature(PLATFORM.moduleName('aurelia-toolbelt/utilities/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/value-converters/index'));
 
+
 }
