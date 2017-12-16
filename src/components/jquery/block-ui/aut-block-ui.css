@@ -2,7 +2,7 @@
 
 /* 2 */
 
-.double-bounce {
+/* .double-bounce {
   width: 40px;
   height: 40px;
   position: relative;
@@ -45,11 +45,11 @@
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
   }
-}
+} */
 
 /* 3 */
 
-.rectangle {
+/* .rectangle {
   margin: 100px auto;
   width: 50px;
   height: 40px;
@@ -104,11 +104,11 @@
     transform: scaleY(1.0);
     -webkit-transform: scaleY(1.0);
   }
-}
+} */
 
 /* 7 */
 
-.bounce {
+/* .bounce {
   margin: 100px auto 0;
   width: 70px;
   text-align: center;
@@ -152,11 +152,11 @@
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
   }
-}
+} */
 
 /* 9 */
 
-.sk-cube-grid {
+/* .sk-cube-grid {
   width: 40px;
   height: 40px;
   margin: 100px auto;
@@ -236,11 +236,11 @@
     -webkit-transform: scale3D(0, 0, 1);
     transform: scale3D(0, 0, 1);
   }
-}
+} */
 
 /* 10 */
 
-.sk-fading-circle {
+/* .sk-fading-circle {
   margin: 100px auto;
   width: 40px;
   height: 40px;
@@ -404,4 +404,4 @@
   40% {
     opacity: 1;
   }
-}
+} */
