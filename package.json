@@ -94,6 +94,7 @@
     "inputmask": "^3.3.11",
     "jalali-moment": "^3.0.6",
     "jquery": "^3.2.1",
+    "jquery-lazy": "^1.7.7",
     "lodash": "^4.17.4",
     "markdown-it": "^8.4.0",
     "microlinkjs": "^1.1.3",

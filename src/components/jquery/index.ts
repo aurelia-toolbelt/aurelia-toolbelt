@@ -3,5 +3,8 @@ import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 export function configure(config: FrameworkConfiguration) {
   config
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/jquery/block-ui/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/jquery/news-ticker/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/jquery/img-lazy/index'))
+
     ;
 }
