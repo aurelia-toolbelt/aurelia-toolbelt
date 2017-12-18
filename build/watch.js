@@ -142,6 +142,7 @@ gulp.task('fuse-sample', function () {
         + highlight.js/styles/solarized-light.css
         + popper.js
         + fast-safe-stringify
+        + jquery-lazy
         + nprogress
         + bootstrap
         + bootstrap/dist/css/bootstrap.css

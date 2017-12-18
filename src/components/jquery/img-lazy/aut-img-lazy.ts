@@ -1,5 +1,6 @@
 import { customElement, inject, bindable, bindingMode, observable, DOM, containerless } from 'aurelia-framework';
 import * as $ from 'jquery';
+import 'jquery-lazy';
 
 export type ScrollDirection = 'both' | 'vertical' | 'horizontal';
 
@@ -41,6 +42,21 @@ export class JQueryLazy {
 
   // Attribute
 
-
-
+  private attached() {
+    // @ts-ignore
+    $('.lazy').lazy({
+      beforeLoad: function (element: any) {
+        console.log('beforeLoad ' + element.data('src'));
+      },
+      afterLoad: function (element: any) {
+        console.log('afterLoad ' + element.data('src'));
+      },
+      onError: function (element: any) {
+        console.log('error loading ' + element.data('src'));
+      },
+      onFinishedAll: function () {
+        console.log('onFinishedAll');
+      }
+    });
+  }
 }
