@@ -40,23 +40,40 @@ export class JQueryLazy {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public onError: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public onFinishedAll: Function;
 
+  // Custom Loaders
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public customLoader: Function;
+
   // Attribute
 
   private attached() {
+    if (this.customLoader !== undefined) {
+      $('.lazy').attr('data-loader', 'customLoader');
+    }
+    let config = {
+      customLoader: this.customLoader,
+      name: this.name,
+      chainable: this.chainable,
+      autoDestroy: this.autoDestroy,
+      bind: this.bind,
+      threshold: this.threshold,
+      visibleOnly: this.visibleOnly,
+      appendScroll: this.appendScroll,
+      scrollDirection: this.scrollDirection,
+      imageBase: this.imageBase,
+      defaultImage: this.defaultImage,
+      placeholder: this.placeholder,
+      delay: this.delay,
+      combined: this.combined,
+      effect: this.effect,
+      effectTime: this.effectTime,
+      enableThrottle: this.enableThrottle,
+      throttle: this.throttle,
+      beforeLoad: this.beforeLoad,
+      afterLoad: this.afterLoad,
+      onError: this.onError,
+      onFinishedAll: this.onFinishedAll
+    };
     // @ts-ignore
-    $('.lazy').lazy({
-      beforeLoad: function (element: any) {
-        console.log('beforeLoad ' + element.data('src'));
-      },
-      afterLoad: function (element: any) {
-        console.log('afterLoad ' + element.data('src'));
-      },
-      onError: function (element: any) {
-        console.log('error loading ' + element.data('src'));
-      },
-      onFinishedAll: function () {
-        console.log('onFinishedAll');
-      }
-    });
+    $('.lazy').lazy(config);
   }
 }

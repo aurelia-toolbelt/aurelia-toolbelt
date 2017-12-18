@@ -28,6 +28,14 @@ export class Page3 {
 
   constructor(public router: Router) {
   }
+  /*
+    public asyncLoader(element, response) {
+      setTimeout(function () {
+        element.html('element handled by "asyncLoader"');
+        response(true);
+      }, 1000);
+    }
+  */
 
   public canActivate(a, b, c) {
     this.title = b.title;
