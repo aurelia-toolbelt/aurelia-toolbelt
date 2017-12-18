@@ -1,3 +1,4 @@
 <template>
-  <img class="img-lazy ${lazy}" css="${style}" data-src="${url}" />
+  <img if.bind="${backgroundMode}" class="lazy ${lazy}" css="${style}" data-src="${url}" />
+  <div else class="lazy ${lazy}" css="${style}" data-src="${url}"></div>
 </template>
