@@ -23,8 +23,8 @@ var TypeHelper = require('../sample/node_modules/fuse-box-typechecker').TypeHelp
 
 // code we want injected so aurelia loads
 var injectBoostrapAndLoader = function () {
-  var loader = function () {}
-  loader.prototype.init = function (context) {}
+  var loader = function () { }
+  loader.prototype.init = function (context) { }
   loader.prototype.bundleEnd = function (context) {
     context.source.addContent(`FuseBox.import("fuse-box-aurelia-loader")`);
     context.source.addContent(`FuseBox.import("aurelia-bootstrapper")`);
