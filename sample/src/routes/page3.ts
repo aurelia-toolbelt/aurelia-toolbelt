@@ -44,14 +44,7 @@ export class Page3 {
 
   public x( element: any , response: any ) {
     console.warn('***********************************************************');
-
-    console.log(element);
-    console.log(response);
-
-
     console.warn('***********************************************************');
-
-
   }
 
 }

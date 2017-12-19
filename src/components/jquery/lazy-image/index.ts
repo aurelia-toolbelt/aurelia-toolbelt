@@ -1,6 +1,6 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
-export * from './aut-img-lazy';
+export * from './aut-lazy-image';
 export function configure(config: FrameworkConfiguration) {
-    config.globalResources([PLATFORM.moduleName('./aut-img-lazy')]);
+    config.globalResources([PLATFORM.moduleName('./aut-lazy-image')]);
 }

@@ -1,69 +1,8 @@
 <template>
   <div style="margin:20px">
-    <div style="border:2px solid dodgerblue;padding:3px">
-      <aut-img-lazy url='https://picsum.photos/500/110/?random' custom-loader.bind="x" delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/510/140/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/500/106/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/550/100/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/500/104/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/500/113/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/512/100/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/510/150/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/570/170/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/511/101/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/506/122/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/504/144/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/571/110/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/506/160/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/605/155/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/611/176/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/672/120/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/633/114/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/646/165/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/615/105/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/619/169/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/662/130/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/671/210/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/606/160/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/605/155/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/611/196/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/632/199/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/633/124/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/646/125/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/655/159/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/619/269/?random' delay=5000></aut-img-lazy>
-      <br>
-      <aut-img-lazy url='https://picsum.photos/672/190/?random' delay=5000></aut-img-lazy>
+    <div style="border:2px solid dodgerblue;min-height: 800px;">
+      <aut-lazy-image style="border: 3px red solid;" url='https://picsum.photos/500/200/?random' background-mode.bind='true'></aut-lazy-image>
+      <hr/>
       <br>
     </div>
     <br>
@@ -126,5 +65,8 @@
       <label style="margin-left: 10px" textcontent.bind="keyboard | persiankeyboard"></label>
     </div>
     <hr>
+
+    <aut-lazy-image style="border: 3px red solid;width: 200px;height: 200px" url='https://picsum.photos/510/200/?random' background-mode.bind='false'></aut-lazy-image>
+
   </div>
 </template>

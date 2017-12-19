@@ -6,10 +6,12 @@ export type ScrollDirection = 'both' | 'vertical' | 'horizontal';
 
 @inject(Element)
 @containerless()
-@customElement('aut-img-lazy')
+@customElement('aut-lazy-image')
 export class JQueryLazy {
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public backgroundMode: boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public backgroundMode: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string;
 
   // General
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public url: string;
@@ -38,8 +40,8 @@ export class JQueryLazy {
   // Callbacks
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public beforeLoad: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public afterLoad: Function;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public onError: Function;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public onFinishedAll: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public error: Function;
+  // @bindable({ defaultBindingMode: bindingMode.twoWay }) public onFinishedAll: Function;
 
   // Custom Loaders
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public customLoader: Function;
@@ -49,6 +51,9 @@ export class JQueryLazy {
   constructor(private element: Element) { }
 
   private attached() {
+
+    this.backgroundMode = this.backgroundMode === true || this.backgroundMode === 'true';
+
     if (this.customLoader !== undefined) {
       $(this.element.previousElementSibling).attr('data-loader', 'customLoader');
     }
@@ -73,8 +78,8 @@ export class JQueryLazy {
       throttle: this.throttle,
       beforeLoad: this.beforeLoad,
       afterLoad: this.afterLoad,
-      onError: this.onError,
-      onFinishedAll: this.onFinishedAll
+      onError: this.error
+      // ,onFinishedAll: this.onFinishedAll
     };
     // @ts-ignore
     $(this.element.previousElementSibling).lazy(config);
