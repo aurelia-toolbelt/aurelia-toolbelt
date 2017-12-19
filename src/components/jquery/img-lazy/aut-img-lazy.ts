@@ -4,8 +4,9 @@ import 'jquery-lazy';
 
 export type ScrollDirection = 'both' | 'vertical' | 'horizontal';
 
-@customElement('aut-img-lazy')
+@inject(Element)
 @containerless()
+@customElement('aut-img-lazy')
 export class JQueryLazy {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public backgroundMode: boolean = false;
@@ -45,9 +46,11 @@ export class JQueryLazy {
 
   // Attribute
 
+  constructor(private element: Element) { }
+
   private attached() {
     if (this.customLoader !== undefined) {
-      $('.lazy').attr('data-loader', 'customLoader');
+      $(this.element.previousElementSibling).attr('data-loader', 'customLoader');
     }
     let config = {
       customLoader: this.customLoader,
@@ -74,6 +77,6 @@ export class JQueryLazy {
       onFinishedAll: this.onFinishedAll
     };
     // @ts-ignore
-    $('.lazy').lazy(config);
+    $(this.element.previousElementSibling).lazy(config);
   }
 }

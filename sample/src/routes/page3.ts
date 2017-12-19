@@ -41,4 +41,17 @@ export class Page3 {
     this.title = b.title;
   }
 
+
+  public x( element: any , response: any ) {
+    console.warn('***********************************************************');
+
+    console.log(element);
+    console.log(response);
+
+
+    console.warn('***********************************************************');
+
+
+  }
+
 }
