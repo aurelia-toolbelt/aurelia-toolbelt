@@ -4,8 +4,11 @@
   <require from="../../../value-converters/purejs/mark-down/markdown-vc"></require>
   <require from="../../bootstrap/button/abt-button"></require>
 
-  <div class="card">
-    <div class="card-header" if.bind="showToolBar">
+  <!-- <require from="../../bootstrap/card/abt-card.html"></require>
+  <require from="../../bootstrap/card/abt-card-body.html"></require> -->
+
+  <abt-card>
+    <abt-card-header if.bind="showToolBar">
 
       <abt-button size="sm" color="secondary" click.call="srcChanged()">
         <span slot="loading">
@@ -34,26 +37,25 @@
       </div>
 
       <div class="btn-group btn-group-sm" role="group">
-        <button type="button" class="btn btn-outline-secondary" click.delegate="addText('[]()', 1)">
+        <abt-button outline click.call="addText('[]()', 1)">
           <b>Link</b>
-        </button>
-        <button type="button" class="btn btn-outline-secondary" click.delegate="addText('![]()', 4)">
+        </abt-button>
+        <abt-button outline click.call="addText('![]()', 4)">
           <em>Image</em>
-        </button>
+        </abt-button>
       </div>
 
 
-      <div>
-        <abt-toggle size="small" checked.bind="showPreview">
+      <div class="btn-group btn-group-sm" role="group">
+        <abt-toggle size="mini" checked.bind="showPreview">
           Preview
         </abt-toggle>
-        <abt-toggle size="small" checked.bind="showEditor">
+        <abt-toggle size="mini" checked.bind="showEditor">
           Editor
         </abt-toggle>
       </div>
-    </div>
-    <div class="card-body" if.bind="showEditor === true"
-      style="border-left: 3px solid maroon !important;">
+    </abt-card-header>
+    <abt-card-body if.bind="showEditor === true" style="border-left: 3px solid maroon !important;">
 
       <textarea ref="editor" class="editor" style="
                   width: 98%;
@@ -61,11 +63,10 @@
                   min-height: 400px;" value.bind="myText">
       </textarea>
 
-    </div>
-    <div class="card-footer" if.bind="showPreview === true"
-      style="min-height: 400px;">
+    </abt-card-body>
+    <abt-card-footer if.bind="showPreview === true" style="min-height: 400px;">
       <div ref="preview" innerhtml.bind="myText | md & debounce:1000">
       </div>
-    </div>
-  </div>
+    </abt-card-footer>
+  </abt-card>
 </template>
