@@ -24,7 +24,6 @@ export class MicrolinkCustomElement {
   private attached() {
     let id = this.generateUniqueId();
     this.microlink.setAttribute('id', id);
-    console.log(this.round);
-    microlink('#' + id, { round: this.round });
+    microlink(`#${id}`, { round: this.round });
   }
 }
