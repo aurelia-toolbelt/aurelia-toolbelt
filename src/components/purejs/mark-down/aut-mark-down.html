@@ -2,7 +2,6 @@
 
   <require from="../../bootstrap/toggle/abt-toggle"></require>
   <require from="../../../value-converters/purejs/mark-down/markdown-vc"></require>
-  <require from="../../../custom-attributes/jquery/block-ui/aut-block-ui"></require>
   <require from="../../bootstrap/button/abt-button"></require>
 
   <div class="card">
@@ -53,7 +52,7 @@
         </abt-toggle>
       </div>
     </div>
-    <div aut-block-ui='block.bind:isLoading&&showEditor;spinner-type:bounce' class="card-body" if.bind="showEditor === true"
+    <div class="card-body" if.bind="showEditor === true"
       style="border-left: 3px solid maroon !important;">
 
       <textarea ref="editor" class="editor" style="
@@ -63,7 +62,7 @@
       </textarea>
 
     </div>
-    <div aut-block-ui='block.bind:isLoading&&showPreview;spinner-type:bounce' class="card-footer" if.bind="showPreview === true"
+    <div class="card-footer" if.bind="showPreview === true"
       style="min-height: 400px;">
       <div ref="preview" innerhtml.bind="myText | md & debounce:1000">
       </div>

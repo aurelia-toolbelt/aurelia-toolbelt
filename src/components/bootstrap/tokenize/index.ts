@@ -1,5 +1,9 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
+export * from './abt-tokenize';
+
 export function configure(config: FrameworkConfiguration) {
-  console.log(config);
+    config.globalResources([
+        PLATFORM.moduleName('./abt-tokenize')
+    ]);
 }

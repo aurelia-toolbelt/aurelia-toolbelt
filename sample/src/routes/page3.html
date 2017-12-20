@@ -1,5 +1,15 @@
 <template>
   <div style="margin:20px">
+    <aut-microlink round.bind=false url="https://github.com/HamedFathi/PasswordMeter">PasswordMeter</aut-microlink>
+    <br>
+    <aut-microlink round.bind=true url="https://github.com/shahabganji/aurelia-toolbelt">aurelia-toolbelt</aut-microlink>
+    <br>
+    <div style="border:2px solid dodgerblue;min-height: 800px;">
+      <aut-lazy-image style="border: 3px red solid;" url='https://picsum.photos/500/200/?random' background-mode.bind='true'></aut-lazy-image>
+      <hr/>
+      <br>
+    </div>
+    <br>
 
     <abt-password show-password.bind='true' score-range.bind='scoreRange' requirements.bind="requirements"></abt-password>
 
@@ -59,5 +69,8 @@
       <label style="margin-left: 10px" textcontent.bind="keyboard | persiankeyboard"></label>
     </div>
     <hr>
+
+    <aut-lazy-image style="border: 3px red solid;width: 200px;height: 200px" url='https://picsum.photos/510/200/?random' background-mode.bind='false'></aut-lazy-image>
+
   </div>
 </template>
