@@ -7,7 +7,7 @@ export type ScrollDirection = 'both' | 'vertical' | 'horizontal';
 @inject(Element)
 @containerless()
 @customElement('aut-lazy-image')
-export class JQueryLazy {
+export class JQueryLazyImage {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public backgroundMode: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string;
