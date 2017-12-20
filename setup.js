@@ -4,7 +4,7 @@ const fs = require("fs");
 const exec = require("child_process").exec;
 const spawn = require("child_process").spawn;
 
-const npm = process.platform === "win32" ? "npm.cmd" : "npm";
+const yarn = process.platform === "win32" ? "yarn.cmd" : "yarn";
 const mode = "inherit";
 
 let PLUGIN_NAME = "aurelia-toolbelt";
@@ -101,68 +101,11 @@ function updateSampleConfig() {
 
   });
 }
-//--------------------------------------------------------------------------------------------
 
-/*function updatePluginPackage() {
-  console.info('Updating plugin package.json...');
-  let pluginPackageFile = './package.json';
-  fs.readFile(pluginPackageFile, 'utf8', (err, data) => {
-
-
-    let obj = JSON.parse(data);
-
-
-    let versions = new Array();
-
-    versions = obj.version.split('.');
-
-    PLUGIN_NAME = obj.name || PLUGIN_NAME;
-    PLUGIN_VERSION = obj.version || PLUGIN_VERSION;
-
-    var fileName = PLUGIN_NAME + '-' + PLUGIN_VERSION + '.tgz'; // like aurelia-toolbelt-0.5.6.tgz
-
-    if (versions && (versions.length > 0)) {
-      versions[versions.length - 1] = safeIncreaseVersion(versions[versions.length - 1]);
-      console.info(`Version changing ${obj.version} => ${versions.join('.')}`);
-      obj.version = versions.join('.');
-      PLUGIN_VERSION = versions.join('.');
-    }
-
-    obj = JSON.stringify(obj, null, 4);
-
-    fs.writeFile(pluginPackageFile, obj, function (e) { });
-
-    fs.unlink(fileName, function (error) { });
-
-    console.log('Plugin package.json updated.');
-
-  });
-
-}*/
-
-/*function updateSamplePackage() {
-  console.info('Updating sample package.json...');
-
-  let samplePackageFile = './sample/package.json';
-  fs.readFile(samplePackageFile, 'utf8', (err, data) => {
-    if (err) {
-      throw err;
-    }
-    let obj = JSON.parse(data);
-    obj.dependencies[PLUGIN_NAME] = "../" + PLUGIN_NAME + '-' + PLUGIN_VERSION + '.tgz'; // like ../aurelia-toolbelt-0.5.6.tgz
-
-    obj = JSON.stringify(obj, null, 4);
-
-    fs.writeFile(samplePackageFile, obj, function (e) { });
-    console.log('Sample package.json updated.');
-
-  });
-}*/
-
-let NpmInstallRoot = spawner(npm, ["install"], this.mainPath).then(() => {
+let NpmInstallRoot = spawner(yarn, ["install"], this.mainPath).then(() => {
 
   updateSampleConfig();
 
-  let NpmInstallSample = spawner(npm, ["install"], this.samplePath);
+  let NpmInstallSample = spawner(yarn, ["install"], this.samplePath);
 
 });

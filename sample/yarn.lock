@@ -1935,6 +1935,10 @@ methods@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
 
+metismenu@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/metismenu/-/metismenu-2.7.1.tgz#af3cc1550a95836526bd837b887c53ff29cb8b5a"
+
 microlinkjs@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/microlinkjs/-/microlinkjs-1.2.0.tgz#c697a91539bcff83be6840c7542310cec6487df3"
