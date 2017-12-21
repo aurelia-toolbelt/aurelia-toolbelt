@@ -35,9 +35,6 @@
         "whatwg-fetch": "^2.0.3"
     },
     "dependencies": {
-        "@types/bootstrap": "^3.3.36",
-        "@types/nprogress": "0.0.29",
-        "@types/uuid": "^3.4.3",
         "aurelia-bootstrapper": "2.1.1",
         "aurelia-event-aggregator": "1.0.1",
         "aurelia-framework": "^1.1.5",
