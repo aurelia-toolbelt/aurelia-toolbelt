@@ -146,6 +146,8 @@ gulp.task('fuse-sample', function () {
         + nprogress
         + bootstrap
         + bootstrap/dist/css/bootstrap.css
+        + toastr
+        + toastr/build/toastr.css
         + metismenu
         + metismenu/dist/metismenu.css
 `)

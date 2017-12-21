@@ -33,6 +33,7 @@
         "build-all": "node setup & gulp build & gulp test"
     },
     "devDependencies": {
+        "@types/bootstrap": "^3.3.36",
         "@types/highlight.js": "^9.12.1",
         "@types/jest": "^21.1.6",
         "@types/jquery": "^3.2.16",
@@ -41,10 +42,11 @@
         "@types/markdown-it": "0.0.4",
         "@types/moment-timezone": "^0.5.1",
         "@types/node": "^8.0.53",
-        "@types/numeral": "0.0.22",
-        "@types/bootstrap": "^3.3.36",
         "@types/nprogress": "0.0.29",
+        "@types/numeral": "0.0.22",
+        "@types/toastr": "^2.1.35",
         "@types/uuid": "^3.4.3",
+        "@types/zenscroll": "^4.0.0",
         "aurelia-loader-nodejs": "^1.0.1",
         "aurelia-pal-nodejs": "^1.0.0-beta.2.0.0",
         "aurelia-polyfills": "^1.2.2",
@@ -107,8 +109,10 @@
         "popper.js": "1.12.9",
         "pretty-checkbox": "^3.0.3",
         "strman": "^2.0.0",
+        "toastr": "^2.1.4",
         "uuid": "^3.1.0",
-        "written-number": "^0.8.1"
+        "written-number": "^0.8.1",
+        "zenscroll": "^4.0.0"
     },
     "aurelia": {
         "usedBy": [],

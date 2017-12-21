@@ -14,6 +14,7 @@ export class JQueryMetisMenu {
 
     private created() {
         console.log('parent');
+        // @ts-ignore
         $('#myID').metisMenu();
     }
 

@@ -1,3 +1,4 @@
+import { ToastrService } from './../../../src/services/jquery/toastr/toastr-service';
 import { Router } from 'aurelia-router';
 import { autoinject } from 'aurelia-framework';
 import { HttpClient } from 'aurelia-http-client';
@@ -23,6 +24,11 @@ export class Page1 {
   }
   private toggleBlock1() {
     this.blockValue1 = !this.blockValue1;
+    /*if (this.blockValue1) {
+      this.toastrService.info('Blocked');
+    } else {
+      this.toastrService.info('Unblocked');
+    }*/
     console.log(this.blockValue1);
   }
   private toggleBlock2() {
