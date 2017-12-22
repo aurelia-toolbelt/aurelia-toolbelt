@@ -96,8 +96,7 @@ export class PasswordCustomElement {
       let obj = this.passwordMeter.getResult(value);
       let setting: any = this.findOption(obj.status, option);
 
-      if (obj.score === -1) {
-        console.log(obj.score);
+      if (obj.score < 0) {
         $(this.txtPassword).tooltip({
           'title': this.generateErrorsAsHtml(obj.errors),
           'html': true,

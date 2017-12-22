@@ -9,65 +9,64 @@ import { IAutBlockUIOptions, SpinnerType } from './aut-block-ui-options';
 @inject(Element, 'aut-block-ui-option')
 export class JQueryBlockUI {
 
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) public block: string | boolean = false;
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string = null;
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) public message: string = null;
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) public spinnerType: SpinnerType = 'bounce';
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) public spinnerColor: string = null;
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) public spinnerSize: number = null;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public block: string | boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string = null;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public message: string = null;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public spinnerType: SpinnerType = 'bounce';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public spinnerColor: string = null;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public spinnerSize: number = null;
 
-    private content: HTMLDivElement;
-    private spinnerMessage: string = null;
+  private content: HTMLDivElement;
+  private spinnerMessage: string = null;
 
-    constructor(private element: Element, private option: IAutBlockUIOptions) {
+  constructor(private element: Element, private option: IAutBlockUIOptions) {
 
-    }
-    private attached() {
-        $.blockUI.defaults.allowBodyStretch = this.option.allowBodyStretch || true;
-        $.blockUI.defaults.draggable = this.option.draggable || true;
-        $.blockUI.defaults.css = this.option.css || {
-            padding: 0,
-            margin: 0,
-            width: '30%',
-            top: '40%',
-            left: '35%',
-            textAlign: 'center',
-            color: '#000',
-            border: '3px solid #aaa',
-            backgroundColor: '#fff',
-            cursor: 'wait'
-        };
-        $.blockUI.defaults.overlayCSS = this.option.overlayCSS || {
-            backgroundColor: '#000',
-            opacity: 0.6,
-            cursor: 'wait'
-        };
-        $.blockUI.defaults.cursorReset = this.option.cursorReset || 'default';
-        $.blockUI.defaults.iframeSrc = this.option.iframeSrc || (/^https/i.test(window.location.href || '') ? 'javascript:false' : 'about:blank');
-        $.blockUI.defaults.forceIframe = this.option.forceIframe || false;
-        $.blockUI.defaults.baseZ = this.option.baseZ || 1000;
-        $.blockUI.defaults.centerX = this.option.centerX || true;
-        $.blockUI.defaults.centerY = this.option.centerY || true;
-        $.blockUI.defaults.bindEvents = this.option.bindEvents || true;
-        $.blockUI.defaults.constrainTabKey = this.option.constrainTabKey || true;
-        $.blockUI.defaults.fadeIn = this.option.fadeIn || 200;
-        $.blockUI.defaults.fadeOut = this.option.fadeOut || 400;
-        $.blockUI.defaults.timeout = this.option.timeout || 0;
-        $.blockUI.defaults.showOverlay = this.option.showOverlay || true;
-        $.blockUI.defaults.focusInput = this.option.focusInput || true;
-        $.blockUI.defaults.onBlock = this.option.onBlock || null;
-        $.blockUI.defaults.onUnblock = this.option.onUnblock || null;
-        $.blockUI.defaults.quirksmodeOffsetHack = this.option.quirksmodeOffsetHack || 4;
-        $.blockUI.defaults.blockMsgClass = this.option.blockMsgClass || 'blockMsg';
-        $.blockUI.defaults.ignoreIfBlocked = this.option.ignoreIfBlocked || false;
+  }
+  private attached() {
+    $.blockUI.defaults.allowBodyStretch = this.option.allowBodyStretch || true;
+    $.blockUI.defaults.draggable = this.option.draggable || true;
+    $.blockUI.defaults.css = this.option.css || {
+      padding: 0,
+      margin: 0,
+      width: '30%',
+      top: '40%',
+      left: '35%',
+      textAlign: 'center',
+      color: '#000',
+      border: '3px solid #aaa',
+      backgroundColor: '#fff',
+      cursor: 'wait'
+    };
+    $.blockUI.defaults.overlayCSS = this.option.overlayCSS || {
+      backgroundColor: '#000',
+      opacity: 0.6,
+      cursor: 'wait'
+    };
+    $.blockUI.defaults.cursorReset = this.option.cursorReset || 'default';
+    $.blockUI.defaults.iframeSrc = this.option.iframeSrc || (/^https/i.test(window.location.href || '') ? 'javascript:false' : 'about:blank');
+    $.blockUI.defaults.forceIframe = this.option.forceIframe || false;
+    $.blockUI.defaults.baseZ = this.option.baseZ || 1000;
+    $.blockUI.defaults.centerX = this.option.centerX || true;
+    $.blockUI.defaults.centerY = this.option.centerY || true;
+    $.blockUI.defaults.bindEvents = this.option.bindEvents || true;
+    $.blockUI.defaults.constrainTabKey = this.option.constrainTabKey || true;
+    $.blockUI.defaults.fadeIn = this.option.fadeIn || 200;
+    $.blockUI.defaults.fadeOut = this.option.fadeOut || 400;
+    $.blockUI.defaults.timeout = this.option.timeout || 0;
+    $.blockUI.defaults.showOverlay = this.option.showOverlay || true;
+    $.blockUI.defaults.focusInput = this.option.focusInput || true;
+    $.blockUI.defaults.onBlock = this.option.onBlock || null;
+    $.blockUI.defaults.onUnblock = this.option.onUnblock || null;
+    $.blockUI.defaults.quirksmodeOffsetHack = this.option.quirksmodeOffsetHack || 4;
+    $.blockUI.defaults.blockMsgClass = this.option.blockMsgClass || 'blockMsg';
+    $.blockUI.defaults.ignoreIfBlocked = this.option.ignoreIfBlocked || false;
 
-        this.blockChanged(this.block);
-    }
+    this.blockChanged(this.block);
+  }
 
-    private bind() {
-        console.log(this.spinnerType);
-        if (this.spinnerType === 'bounce') {
-            DOM.injectStyles(` .blockElement
+  private bind() {
+    if (this.spinnerType === 'bounce') {
+      DOM.injectStyles(` .blockElement
             {
               width: ${this.spinnerSize * 3 || 36}px !important;
             }
@@ -76,10 +75,10 @@ export class JQueryBlockUI {
               height: ${this.spinnerSize || 12}px;
               background-color: ${this.spinnerColor || '#92459B'};
             }`);
-            this.spinnerMessage = '<div class="bounce"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>';
-        }
-        if (this.spinnerType === 'doubleBounce') {
-            DOM.injectStyles(`.double-bounce {
+      this.spinnerMessage = '<div class="bounce"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>';
+    }
+    if (this.spinnerType === 'doubleBounce') {
+      DOM.injectStyles(`.double-bounce {
       width: ${this.spinnerSize || 15}px !important;
       height: ${this.spinnerSize || 15}px !important;
       text-align: center;
@@ -122,10 +121,10 @@ export class JQueryBlockUI {
         -webkit-transform: scale(1.0);
       }
     }`);
-            this.spinnerMessage = '<div class="double-bounce"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>';
-        }
-        if (this.spinnerType === 'rectangle') {
-            DOM.injectStyles(`.rectangle {
+      this.spinnerMessage = '<div class="double-bounce"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>';
+    }
+    if (this.spinnerType === 'rectangle') {
+      DOM.injectStyles(`.rectangle {
       width: ${this.spinnerSize != null ? (this.spinnerSize + 10) : 40}px;
       height: ${this.spinnerSize || 30}px;
       text-align: center;
@@ -179,11 +178,11 @@ export class JQueryBlockUI {
         -webkit-transform: scaleY(1.0);
       }
     }`);
-            this.spinnerMessage = `<div class="rectangle"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4">
+      this.spinnerMessage = `<div class="rectangle"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4">
           </div><div class="rect5"></div></div>`;
-        }
-        if (this.spinnerType === 'cubeGrid') {
-            DOM.injectStyles(`.sk-cube-grid {
+    }
+    if (this.spinnerType === 'cubeGrid') {
+      DOM.injectStyles(`.sk-cube-grid {
               width: ${this.spinnerSize || 20}px;
               height: ${this.spinnerSize || 20}px;
             }
@@ -245,13 +244,13 @@ export class JQueryBlockUI {
                         transform: scale3D(0, 0, 1);
               }
             }`);
-            this.spinnerMessage = `<div class="sk-cube-grid"><div class="sk-cube sk-cube1">
+      this.spinnerMessage = `<div class="sk-cube-grid"><div class="sk-cube sk-cube1">
           </div><div class="sk-cube sk-cube2"></div><div class="sk-cube sk-cube3"></div><div class="sk-cube sk-cube4"></div>
           <div class="sk-cube sk-cube5"></div><div class="sk-cube sk-cube6"></div><div class="sk-cube sk-cube7"></div><div class="sk-cube sk-cube8">
           </div><div class="sk-cube sk-cube9"></div></div>`;
-        }
-        if (this.spinnerType === 'fadingCircle') {
-            DOM.injectStyles(`.sk-fading-circle {
+    }
+    if (this.spinnerType === 'fadingCircle') {
+      DOM.injectStyles(`.sk-fading-circle {
               width: ${this.spinnerSize || 20}px;
               height: ${this.spinnerSize || 20}px;
               position: relative;
@@ -386,43 +385,43 @@ export class JQueryBlockUI {
               0%, 39%, 100% { opacity: 0; }
               40% { opacity: 1; }
             }`);
-            this.spinnerMessage = `<div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div>
+      this.spinnerMessage = `<div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div>
           <div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div>
           <div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div>
           <div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle">
           </div><div class="sk-circle12 sk-circle"></div></div>`;
-        }
     }
+  }
 
-    private blockChanged(isBlocked: boolean | string) {
-        let option: any = {};
-        if (this.message == null || this.message.length < 0) {
-            option = {
-                css: {
-                    border: 'none',
-                    backgroundColor: 'transparent'
-                },
-                message: this.spinnerMessage,
-                overlayCSS: {
-                    backgroundColor: '#F7F7F7'
-                }
-            };
-        } else {
-            option = {
-                message: this.message
-            };
+  private blockChanged(isBlocked: boolean | string) {
+    let option: any = {};
+    if (this.message == null || this.message.length < 0) {
+      option = {
+        css: {
+          border: 'none',
+          backgroundColor: 'transparent'
+        },
+        message: this.spinnerMessage,
+        overlayCSS: {
+          backgroundColor: '#F7F7F7'
         }
-        if (isBlocked) {
-            $(this.content).block(option);
-            this.element.classList.add('block-ui-content');
-            $(window).resize(() => {
-                if (this.element.classList.contains('block-ui-content')) {
-                    $(this.content).block(option);
-                }
-            });
-        } else {
-            $(this.content).unblock();
-            this.element.classList.remove('block-ui-content');
-        }
+      };
+    } else {
+      option = {
+        message: this.message
+      };
     }
+    if (isBlocked) {
+      $(this.content).block(option);
+      this.element.classList.add('block-ui-content');
+      $(window).resize(() => {
+        if (this.element.classList.contains('block-ui-content')) {
+          $(this.content).block(option);
+        }
+      });
+    } else {
+      $(this.content).unblock();
+      this.element.classList.remove('block-ui-content');
+    }
+  }
 }
