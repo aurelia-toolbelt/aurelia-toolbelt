@@ -4,6 +4,7 @@ import {
   customElement, inject, bindingMode,
   Disposable, BindingEngine
 } from 'aurelia-framework';
+import { error } from 'util';
 
 @inject(Element, PasswordMeter)
 @customElement('abt-password')
@@ -53,15 +54,6 @@ export class PasswordCustomElement {
       this.icon.classList.add('fa-eye-slash');
     }
   }
-
-  /*
-  $('#password').tooltip({
-    'trigger':'focus',
-    'title': '<ul><li>Coffee</li><li>Tea</li><li>Milk</li></ul>',
-    'html':true
-  });
-  */
-
   private findOption(message: string, option: any): any {
     for (let index = 0; index < option.length; index++) {
       if (message === option[index].message) {
@@ -70,7 +62,17 @@ export class PasswordCustomElement {
 
     }
   }
+  private generateErrorsAsHtml(errors: any): string {
+    let html = '';
 
+    if (errors) {
+      for (let index = 0; index < errors.length; index++) {
+        const element = errors[index];
+        html += `<div><i class="fa fa-times" style="color:red;margin-right:5px" aria-hidden="true"></i>${element}</div>`;
+      }
+    }
+    return html;
+  }
   private textChanged(value: string) {
     let cls = 'input-group-addon visible-md-* visible-lg-* ';
     this.passwordClass = cls;
@@ -94,14 +96,17 @@ export class PasswordCustomElement {
       let obj = this.passwordMeter.getResult(value);
       let setting: any = this.findOption(obj.status, option);
 
-      /*if (obj.score < 0) {
+      if (obj.score === -1) {
+        console.log(obj.score);
         $(this.txtPassword).tooltip({
-          'trigger': 'focus',
-          'title': '<ul><li>Coffee</li><li>Tea</li><li>Milk</li></ul>',
-          'html': true
+          'title': this.generateErrorsAsHtml(obj.errors),
+          'html': true,
+          'animation': false,
+          'placement': 'bottom'
         });
-      }*/
-
+      } else {
+        $(this.txtPassword).tooltip('dispose');
+      }
 
       if (setting && setting.color !== undefined) {
         this.color = setting.color;

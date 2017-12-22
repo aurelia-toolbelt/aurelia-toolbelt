@@ -73,6 +73,12 @@
   version "0.0.22"
   resolved "https://registry.yarnpkg.com/@types/numeral/-/numeral-0.0.22.tgz#86bef1f0a2d743afdc2ef3168d45f2905e1a0b93"
 
+"@types/toastr@^2.1.35":
+  version "2.1.35"
+  resolved "https://registry.yarnpkg.com/@types/toastr/-/toastr-2.1.35.tgz#9b29ee786744994c4f7eafee415b125f835dd854"
+  dependencies:
+    "@types/jquery" "*"
+
 "@types/uuid@^3.4.3":
   version "3.4.3"
   resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-3.4.3.tgz#121ace265f5569ce40f4f6d0ff78a338c732a754"
