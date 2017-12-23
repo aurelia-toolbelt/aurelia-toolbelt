@@ -5,7 +5,7 @@ const popperjs = require('popper.js');
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import 'metismenu/dist/metismenu.css';
+// import 'metismenu/dist/metismenu.css';
 
 import 'nprogress/nprogress.css';
 import 'font-awesome/css/font-awesome.css';

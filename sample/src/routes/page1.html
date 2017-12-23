@@ -1,76 +1,34 @@
 <template>
 
-    <aut-metis-menu>
-
-        <aut-metis-item expanded="true" icon-class="sidebar-nav-item-icon fa fa-github fa-lg" text="metisMenu">
-          <li>
-            <a href="#">
-              <span class="sidebar-nav-item-icon fa fa-code-fork"></span> Fork
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="sidebar-nav-item-icon fa fa-star"></span> Star
-            </a>
-    
-          </li>
-          <li>
-            <a href="#">
-              <span class="sidebar-nav-item-icon fa fa-exclamation-triangle"></span> Issues
-            </a>
-          </li>
-        </aut-metis-item>
-    
-    
-        <aut-metis-item text="metisMenu2" expanded.bind="false">
-          <li>
-            <a href="#">
-              <span class="sidebar-nav-item-icon fa fa-code-fork"></span> Fork
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="sidebar-nav-item-icon fa fa-star"></span> Star
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="sidebar-nav-item-icon fa fa-exclamation-triangle"></span> Issues
-            </a>
-          </li>
-        </aut-metis-item>
-    
-      </aut-metis-menu>
-
-<!-- 
-  <button click.delegate="toggleBlock1()">
-    Toggle Block1
-  </button>
-  <section>
-
-    <select value.bind="selectedLocale">
-      <option value="fa">Persian</option>
-      <option value="en">English</option>
-      <option value="fr">French</option>
-      <option value="it">Italian</option>
-    </select>
-
-
-    <div class="fa-4x">
-
-      <aut-star-rate full-star="fa fa-star" empty-star="fa fa-star-o" half-star="fa fa-star-half-o" max-rate.bind="5" read-only.bind="false"></aut-star-rate>
-
-      <aut-star-rate rtl.bind="true" full-star="fa fa-star" empty-star="fa fa-star-o" half-star="fa fa-star-half-o" max-rate.bind="5"
-        read-only.bind="false"></aut-star-rate>
-
-    </div>
-    <hr />
-
-
-    <aut-block-ui block.bind='blockValue1' spinner-color='goldenrod'>
-      <div class="input-group">
-        <span class="input-group-addon" id="basic-addon1">@</span>
-        <input type="text" class="form-control" placeholder="Hello" aria-describedby="basic-addon1">
+  
+      <button click.delegate="toggleBlock1()">
+        Toggle Block1
+      </button>
+      <section>
+        
+        <select value.bind="selectedLocale">
+          <option value="fa">Persian</option>
+          <option value="en">English</option>
+          <option value="fr">French</option>
+          <option value="it">Italian</option>
+        </select>
+        
+        
+        <div class="fa-4x">
+          
+          <aut-star-rate full-star="fa fa-star" empty-star="fa fa-star-o" half-star="fa fa-star-half-o" max-rate.bind="5" read-only.bind="false"></aut-star-rate>
+          
+          <aut-star-rate rtl.bind="true" full-star="fa fa-star" empty-star="fa fa-star-o" half-star="fa fa-star-half-o" max-rate.bind="5"
+          read-only.bind="false"></aut-star-rate>
+          
+        </div>
+        <hr />
+        
+        
+        <aut-block-ui block.bind='blockValue1' spinner-color='goldenrod'>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">@</span>
+            <input type="text" class="form-control" placeholder="Hello" aria-describedby="basic-addon1">
       </div>
     </aut-block-ui>
 
@@ -292,8 +250,7 @@
         <a class="dropdown-item" href="#">Dropdown link</a>
       </div>
     </abt-button-group>
-  </abt-button-group> -->
-
+  </abt-button-group> 
 
 
   <br />

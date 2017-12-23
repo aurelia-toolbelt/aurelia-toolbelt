@@ -1,4 +1,4 @@
-import { inject, customElement, containerless } from 'aurelia-framework';
+import { inject, customElement, containerless, bindingMode, bindable } from 'aurelia-framework';
 
 
 import * as $ from 'jquery';
@@ -8,6 +8,8 @@ import 'metismenu';
 @containerless()
 @customElement('aut-metis-menu')
 export class JQueryMetisMenu {
+
+    @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string;
 
     private metismenu: any;
 

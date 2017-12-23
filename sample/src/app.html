@@ -1,21 +1,35 @@
 <template>
 
-  <require from="./components/main-footer.html"></require>
+  <require from="./components/main-header.html"></require>
   <require from="./components/nav-bar"></require>
   <require from='bootstrap/dist/css/bootstrap.css'></require>
-  
 
-  <aut-nprogress loading.bind="router.isNavigating">
+  <require from="./app.css"></require>
 
-  </aut-nprogress>
 
-  <nav-bar router.bind="router"></nav-bar>
 
-  <br />
+  <aut-nprogress loading.bind="router.isNavigating"></aut-nprogress>
 
-  <div class="main no-select">
-    <router-view></router-view>
+  <div class="row">
+    <div class="col-sm-12">
+      <main-header router.bind="router"></main-header>
+    </div>
   </div>
 
-  <!-- <main-footer></main-footer> -->
+  <div class="row">
+    <div class="col-sm-3">
+      <nav-bar router.bind="router"></nav-bar>
+    </div>
+
+    <div class="col-sm-9">
+      <div class="container">
+        <div class="main no-select">
+          <router-view></router-view>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
 </template>
