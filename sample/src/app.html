@@ -6,8 +6,6 @@
 
   <require from="./app.css"></require>
 
-
-
   <aut-nprogress loading.bind="router.isNavigating"></aut-nprogress>
 
   <div class="row">
@@ -18,18 +16,17 @@
 
   <div class="row">
     <div class="col-sm-3">
+
       <nav-bar router.bind="router"></nav-bar>
     </div>
-
     <div class="col-sm-9">
-      <div class="container">
-        <div class="main no-select">
-          <router-view></router-view>
-        </div>
-
+      <br />
+      <div class="main no-select container">
+        <router-view></router-view>
       </div>
+
     </div>
+    </divdiv>
 
-  </div>
-
+    <!-- <main-footer></main-footer> -->
 </template>

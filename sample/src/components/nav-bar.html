@@ -4,8 +4,7 @@
 
   <nav class="sidebar-nav">
     <aut-metis-menu>
-
-      <aut-metis-item expanded="true" icon-class="sidebar-nav-item-icon fa fa-github fa-lg" text="metisMenu">
+      <aut-metis-item active expanded.bind="true" icon-class="sidebar-nav-item-icon fa fa-github fa-lg" text="metisMenu">
         <li>
           <a href="#">
             <span class="sidebar-nav-item-icon fa fa-code-fork"></span> Fork
@@ -15,7 +14,6 @@
           <a href="#">
             <span class="sidebar-nav-item-icon fa fa-star"></span> Star
           </a>
-
         </li>
         <li>
           <a href="#">
@@ -25,7 +23,7 @@
       </aut-metis-item>
 
 
-      <aut-metis-item text="metisMenu2" expanded.bind="false">
+      <aut-metis-item text="metisMenu2">
         <li>
           <a href="#">
             <span class="sidebar-nav-item-icon fa fa-code-fork"></span> Fork
@@ -44,6 +42,7 @@
       </aut-metis-item>
 
     </aut-metis-menu>
+
   </nav>
 
 </template>
