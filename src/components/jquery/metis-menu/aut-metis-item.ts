@@ -4,7 +4,7 @@ import { inject, customElement, bindable, bindingMode, containerless } from 'aur
 
 
 @inject(Element)
-// @containerless()
+@containerless()
 @customElement('aut-metis-item')
 
 export class JQueryMetisItem {
