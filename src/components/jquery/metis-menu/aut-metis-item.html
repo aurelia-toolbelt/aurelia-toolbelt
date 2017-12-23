@@ -6,7 +6,7 @@
       <span>${text}</span>
       <span class="${arrowClass}"></span>
     </a>
-    <ul aria-expanded="${expanded}">
+    <ul class="${expanded ? 'in' : ''}" aria-expanded="${expanded}">
       <slot></slot>
     </ul>
   </li>

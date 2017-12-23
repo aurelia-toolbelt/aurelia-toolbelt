@@ -20,10 +20,14 @@ export class JQueryMetisItem {
     private isActive: boolean = false;
 
     constructor(private element: Element) {
+        console.warn( this.element );
     }
 
 
     private attached() {
+
+
+        console.log(`expanded: ${this.element.hasAttribute('expanded')}`);
 
         this.isActive = this.element.hasAttribute('active');
         this.expanded = this.expanded === true
