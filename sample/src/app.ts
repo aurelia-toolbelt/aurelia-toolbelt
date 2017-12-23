@@ -1,74 +1,39 @@
 import { Router, RouterConfiguration } from 'aurelia-router';
+import { PLATFORM } from 'aurelia-framework';
 
 
 export class App {
   public router: Router;
   public configureRouter(config: RouterConfiguration, router: Router) {
-    config.title = 'Plugin Sample';
+
+    // config.title = 'Aut';
+
+    // config.options.pushState = true;
+
+
     config.map([
       {
-        route: ['', 'page1'],
-        name: 'page1',
-        moduleId: './routes/page1',
+        route: ['bootstrap'],
+        name: 'bootstrap',
+        moduleId: PLATFORM.moduleName('./routes/bootstrap-route'),
         nav: true,
-        title: 'page1',
+        title: 'Bootstrap',
         settings: { auth: false }
       },
       {
-        route: 'page2',
-        name: 'page2',
-        moduleId: './routes/page2',
+        route: ['purejs'],
+        name: 'purejs',
+        moduleId: PLATFORM.moduleName('./routes/purejs-route'),
         nav: true,
-        title: 'page2',
+        title: 'JS',
         settings: { auth: false }
       },
       {
-        route: 'page3',
-        name: 'page3',
-        moduleId: './routes/page3',
+        route: ['jquery'],
+        name: 'jquery',
+        moduleId: PLATFORM.moduleName('./routes/jquery-route'),
         nav: true,
-        title: 'page3',
-        settings: { auth: false }
-      },
-      {
-        route: 'checkbox',
-        name: 'checkbox',
-        moduleId: './routes/checkbox',
-        nav: true,
-        title: 'Pretty Checkbox',
-        settings: { auth: false }
-      },
-      {
-        route: 'radio',
-        name: 'radio',
-        moduleId: './routes/radio',
-        nav: true,
-        title: 'Pretty Radio Buttons',
-        settings: { auth: false }
-      },
-      {
-        route: 'mark-down',
-        name: 'mark-down',
-        moduleId: './routes/mark-down-page',
-        nav: true,
-        title: 'Mark Down',
-        settings: { auth: false }
-      },
-      {
-        route: 'bootstrap-toggle',
-        name: 'bootstrap-toggle',
-        moduleId: './routes/bootstrap-toggle-page',
-        nav: true,
-        title: 'Bootstrap toggle',
-        settings: { auth: false }
-      }
-      ,
-      {
-        route: 'bootstrap-card',
-        name: 'bootstrap-card',
-        moduleId: './routes/bootstrap-card',
-        nav: true,
-        title: 'Bootstrap card',
+        title: 'jQuery',
         settings: { auth: false }
       }
     ]);

@@ -1,4 +1,4 @@
-import { ToastrService } from './../../../src/services/jquery/toastr/toastr-service';
+
 import { Router } from 'aurelia-router';
 import { autoinject } from 'aurelia-framework';
 import { HttpClient } from 'aurelia-http-client';

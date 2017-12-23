@@ -4,26 +4,19 @@
 
   <nav class="sidebar-nav">
     <aut-metis-menu>
-      <aut-metis-item active expanded.bind="true" icon-class="sidebar-nav-item-icon fa fa-github fa-lg" text="metisMenu">
-        <li>
-          <a href="#">
-            <span class="sidebar-nav-item-icon fa fa-code-fork"></span> Fork
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span class="sidebar-nav-item-icon fa fa-star"></span> Star
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span class="sidebar-nav-item-icon fa fa-exclamation-triangle"></span> Issues
+      <aut-metis-item active expanded="true" icon-class="sidebar-nav-item-icon fa fa-github fa-lg" text="Components">
+        <li repeat.for="r of router.navigation" if.bind="r.settings.isComponent">
+          <a href="${r.href}">
+            <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+
+            ${r.title}
+
           </a>
         </li>
       </aut-metis-item>
 
 
-      <aut-metis-item text="metisMenu2">
+      <aut-metis-item text="Services">
         <li>
           <a href="#">
             <span class="sidebar-nav-item-icon fa fa-code-fork"></span> Fork

@@ -1,6 +1,6 @@
 
 
-export class BootstrapTogglePage {
+export class BootstrapToggle {
 
     // booleans
 
