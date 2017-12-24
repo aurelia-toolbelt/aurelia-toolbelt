@@ -16,7 +16,7 @@ export class BootstrapRoute {
         name: 'bootstrap-toggle',
 
 
-        moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-toggle') ,
+        moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-toggle'),
 
         // viewPorts: {
         //   // default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
@@ -28,17 +28,39 @@ export class BootstrapRoute {
         settings: { auth: false, isComponent: true }
       },
       {
-        route: ['card'],
-        name: 'bootstra-card',
+        route: ['floatinput'],
+        name: 'bootstrap-floatinput',
 
-        moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-card') ,
-        // viewPorts: {
-        //   default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
-        //   content: { moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-card') }
-        // },
-
+        moduleId: PLATFORM.moduleName('./bootstrap/float-input'),
         nav: true,
-        title: 'Card',
+        title: 'Float Input',
+        settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['password'],
+        name: 'bootstrap-password',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/password'),
+        nav: true,
+        title: 'Password',
+        settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['tokenize'],
+        name: 'bootstrap-tokenize',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/tokenize'),
+        nav: true,
+        title: 'Tokenize',
+        settings: { auth: false, isComponent: true }
+      }
+      {
+        route: ['touchspin'],
+        name: 'bootstrap-touchspin',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/touchspin'),
+        nav: true,
+        title: 'Touch Spin',
         settings: { auth: false, isComponent: true }
       }
     ]);

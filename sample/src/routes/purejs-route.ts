@@ -53,6 +53,14 @@ export class Purejs {
                 nav: true,
                 title: 'Mark Down',
                 settings: { auth: false, isComponent: true }
+            },
+            {
+                route: ['microlink'],
+                name: 'pure-microlink',
+                moduleId: PLATFORM.moduleName('./purejs/microlink'),
+                nav: true,
+                title: 'Microlink',
+                settings: { auth: false, isComponent: true }
             }
         ]);
         this.router = router;
