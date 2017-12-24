@@ -53,7 +53,7 @@ export class BootstrapRoute {
         nav: true,
         title: 'Tokenize',
         settings: { auth: false, isComponent: true }
-      }
+      },
       {
         route: ['touchspin'],
         name: 'bootstrap-touchspin',
