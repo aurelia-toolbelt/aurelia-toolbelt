@@ -59,7 +59,7 @@ export class App {
   }
 
   private selectedThemeChanged(newValue: Theme) {
-    sessionStorage.setItem('selectedTheme', JSON.stringify(newValue));
+    localStorage.setItem('selectedTheme', JSON.stringify(newValue));
   }
 
 }

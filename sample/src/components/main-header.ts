@@ -18,7 +18,7 @@ export class MainHeader {
 
 
   private bind() {
-    let storedTheme = <Theme>JSON.parse(sessionStorage.getItem('selectedTheme'));
+    let storedTheme = <Theme>JSON.parse(localStorage.getItem('selectedTheme'));
     if (!storedTheme) {
       this.theme = this.themes[0];
     }
