@@ -9,32 +9,17 @@ export class JqueryRoute {
     public configureRouter(config: RouterConfiguration, router: Router) {
 
         config.map([
-            {
-                route: ['', 'toggle'],
-                name: 'bootstra-toggle',
+          {
+            route: ['blockui'],
+            name: 'jq-blockui',
 
-                viewPorts: {
-                    default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
-                    content: { moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-toggle') }
-                },
+            moduleId: PLATFORM.moduleName('./jquery/blockui'),
 
-                nav: true,
-                title: 'Toggle',
-                settings: { auth: false }
-            },
-            {
-                route: ['card'],
-                name: 'bootstra-card',
-
-                viewPorts: {
-                    default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
-                    content: { moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-card') }
-                },
-
-                nav: true,
-                title: 'Toggle',
-                settings: { auth: false }
-            }
+        
+            nav: true,
+            title: 'Block UI',
+            settings: { auth: false, isComponent: true }
+        }
         ]);
         this.router = router;
     }

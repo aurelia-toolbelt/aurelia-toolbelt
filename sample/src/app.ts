@@ -8,12 +8,12 @@ export class App {
 
     // config.title = 'Aut';
 
-    // config.options.pushState = true;
+    config.options.pushState = true;
 
 
     config.map([
       {
-        route: ['bootstrap'],
+        route: ['', 'bootstrap'],
         name: 'bootstrap',
         moduleId: PLATFORM.moduleName('./routes/bootstrap-route'),
         nav: true,
