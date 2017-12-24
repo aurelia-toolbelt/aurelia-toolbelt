@@ -21,6 +21,7 @@ export class MainHeader {
     let storedTheme = <Theme>JSON.parse(localStorage.getItem('selectedTheme'));
     if (!storedTheme) {
       this.theme = this.themes[0];
+      return;
     }
     let index = this.themes.findIndex(x => x.path === storedTheme.path);
     this.theme = this.themes[index];
