@@ -1,0 +1,14 @@
+<template>
+
+  <li class="${active ? 'active' : '' } ${groupClass}">
+    <a href="#" aria-expanded="${active}">
+      <span class="${iconClass}"></span>
+      <span>${text}</span>
+      <span class="${showArrow ? arrowClass : ''}"></span>
+    </a>
+    <ul class="${active ? 'in' : ''}" aria-expanded="${active}">
+      <slot></slot>
+    </ul>
+  </li>
+
+</template>

@@ -11,10 +11,13 @@ export class JQueryMetisMenu {
 
     private metismenu: HTMLUListElement;
 
-    @bindable({ defaultBindingMode: bindingMode.twoWay }) public show: Function;
-    @bindable({ defaultBindingMode: bindingMode.twoWay }) public shown: Function;
-    @bindable({ defaultBindingMode: bindingMode.twoWay }) public hide: Function;
-    @bindable({ defaultBindingMode: bindingMode.twoWay }) public hidden: Function;
+    @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string = '';
+    @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string = '';
+
+    @bindable({ defaultBindingMode: bindingMode.twoWay }) public showMenu: Function;
+    @bindable({ defaultBindingMode: bindingMode.twoWay }) public shownMenu: Function;
+    @bindable({ defaultBindingMode: bindingMode.twoWay }) public hideMenu: Function;
+    @bindable({ defaultBindingMode: bindingMode.twoWay }) public hiddenMenu: Function;
 
 
     constructor(private element: Element) {
@@ -25,7 +28,8 @@ export class JQueryMetisMenu {
             .on('show.metismenu', (event) => {
                 console.log(`show menu: ${JSON.stringify(event)}`);
 
-                let localEvent = this.show;
+                console.log(this.showMenu);
+                let localEvent = this.showMenu;
 
                 if (localEvent !== null || localEvent !== undefined) {
                     Promise.resolve(() => {
@@ -47,7 +51,7 @@ export class JQueryMetisMenu {
 
                 console.log(`shown menu: ${JSON.stringify(event)}`);
 
-                let localEvent = this.shown;
+                let localEvent = this.shownMenu;
 
                 if (localEvent !== null || localEvent !== undefined) {
                     Promise.resolve(() => {
@@ -60,7 +64,7 @@ export class JQueryMetisMenu {
 
                 console.log(`hide menu: ${JSON.stringify(event)}`);
 
-                let localEvent = this.hide;
+                let localEvent = this.hideMenu;
 
                 if (localEvent !== null || localEvent !== undefined) {
                     Promise.resolve(() => {
@@ -73,7 +77,7 @@ export class JQueryMetisMenu {
 
                 console.log(`menu hidden: ${JSON.stringify(event)}`);
 
-                let localEvent = this.hidden;
+                let localEvent = this.hiddenMenu;
 
                 if (localEvent !== null || localEvent !== undefined) {
                     Promise.resolve(() => {

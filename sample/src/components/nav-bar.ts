@@ -11,7 +11,10 @@ export class NavBar {
     }
 
     public attached() {
-      // todo
+        // todo
+    }
+    private showMenu() {
+        alert('hi');
     }
 
 }

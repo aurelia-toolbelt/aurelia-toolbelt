@@ -3,36 +3,28 @@
   <require from="./nav-bar.css"></require>
 
   <nav class="sidebar-nav">
-    <aut-metis-menu>
-      <aut-metis-item active expanded="true" icon-class="sidebar-nav-item-icon fa fa-github fa-lg" text="Components">
-        <li repeat.for="r of router.navigation" if.bind="r.settings.isComponent">
-          <a href="${r.href}">
-            <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
 
-            ${r.title}
+    <aut-metis-menu show-menu.call="showMenu()">
 
-          </a>
-        </li>
-      </aut-metis-item>
+      <aut-metis-menu-group active="true" icon-class="sidebar-nav-item-icon fa fa-github fa-lg" text="Components">
+        <aut-metis-menu-item repeat.for="r of router.navigation" if.bind="r.settings.isComponent" href="${r.href}">
+          <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+          ${r.title}
+        </aut-metis-menu-item>
+      </aut-metis-menu-group>
 
 
-      <aut-metis-item text="Services">
-        <li>
-          <a href="#">
-            <span class="sidebar-nav-item-icon fa fa-code-fork"></span> Fork
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span class="sidebar-nav-item-icon fa fa-star"></span> Star
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span class="sidebar-nav-item-icon fa fa-exclamation-triangle"></span> Issues
-          </a>
-        </li>
-      </aut-metis-item>
+      <aut-metis-menu-group text="Services">
+        <aut-metis-menu-item href="#">
+          <span class="sidebar-nav-item-icon fa fa-code-fork"></span> Fork
+        </aut-metis-menu-item>
+        <aut-metis-menu-item href="#">
+          <span class="sidebar-nav-item-icon fa fa-star"></span> Star
+        </aut-metis-menu-item>
+        <aut-metis-menu-item href="#">
+          <span class="sidebar-nav-item-icon fa fa-exclamation-triangle"></span> Issues
+        </aut-metis-menu-item>
+      </aut-metis-menu-group>
 
     </aut-metis-menu>
 
