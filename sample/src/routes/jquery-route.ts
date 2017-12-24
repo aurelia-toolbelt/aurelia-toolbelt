@@ -9,17 +9,17 @@ export class JqueryRoute {
     public configureRouter(config: RouterConfiguration, router: Router) {
 
         config.map([
-          {
-            route: ['blockui'],
-            name: 'jq-blockui',
+            {
+                route: ['', 'blockui'],
+                name: 'jq-blockui',
 
-            moduleId: PLATFORM.moduleName('./jquery/blockui'),
+                moduleId: PLATFORM.moduleName('./jquery/blockui'),
 
-        
-            nav: true,
-            title: 'Block UI',
-            settings: { auth: false, isComponent: true }
-        }
+
+                nav: true,
+                title: 'Block UI',
+                settings: { auth: false, isComponent: true }
+            }
         ]);
         this.router = router;
     }

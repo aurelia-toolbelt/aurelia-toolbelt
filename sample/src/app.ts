@@ -8,7 +8,7 @@ export class App {
 
     // config.title = 'Aut';
 
-    config.options.pushState = true;
+    // config.options.pushState = true;
 
 
     config.map([
