@@ -1,7 +1,6 @@
 import { Router, RouterConfiguration } from 'aurelia-router';
 import { PLATFORM, bindable } from 'aurelia-framework';
 
-
 class Theme {
   public name: string;
   public path: string;
@@ -12,9 +11,9 @@ export class App {
   public router: Router;
 
   private themes: Array<Theme>;
-  @bindable() private selectedTheme: Theme = { name: 'default', path: '/bootswatch/default' };
+  @bindable() private selectedTheme: Theme;
 
-  constructor() {
+  constructor(Logger) {
 
     this.themes = [
       { name: 'default', path: '/bootswatch/default' },
@@ -24,8 +23,8 @@ export class App {
       { name: 'yeti', path: '/bootswatch/yeti' },
       { name: 'cyborg', path: '/bootswatch/cyborg' }
     ];
-
   }
+
 
 
   public configureRouter(config: RouterConfiguration, router: Router) {
@@ -57,6 +56,10 @@ export class App {
       }
     ]);
     this.router = router;
+  }
+
+  private selectedThemeChanged(newValue: Theme) {
+    localStorage.setItem('selectedTheme', JSON.stringify(newValue));
   }
 
 }
