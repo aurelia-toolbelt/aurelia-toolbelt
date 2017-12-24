@@ -1,16 +1,13 @@
-
 <template>
 
-   
-    <button click.delegate="toggleBlock1()">
-      Toggle Block1
-    </button>
-    <br/>
-    <aut-block-ui block.bind='blockValue1' spinner-color='goldenrod'>
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">@</span>
-          <input type="text" class="form-control" placeholder="Hello" aria-describedby="basic-addon1">
-        </div>
-      </aut-block-ui>
+  <button type="button" class="btn btn-primary" click.delegate="toggleBlock1()">Toggle</button>
+  <br/>
+  <br/>
+  <aut-block-ui block.bind='blockValue1' spinner-color='goldenrod'>
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">@</span>
+      <input type="text" class="form-control" placeholder="Hello" aria-describedby="basic-addon1">
+    </div>
+  </aut-block-ui>
 
 </template>
