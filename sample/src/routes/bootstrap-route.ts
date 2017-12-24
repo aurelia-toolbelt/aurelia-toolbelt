@@ -28,6 +28,22 @@ export class BootstrapRoute {
         settings: { auth: false, isComponent: true }
       },
       {
+        route: ['card'],
+        name: 'bootstrap-card',
+
+
+        moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-card'),
+
+        // viewPorts: {
+        //   // default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
+        //   content: { moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-toggle') }
+        // },
+
+        nav: true,
+        title: 'Card',
+        settings: { auth: false, isComponent: true }
+      },
+      {
         route: ['floatinput'],
         name: 'bootstrap-floatinput',
 
