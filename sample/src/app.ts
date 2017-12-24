@@ -1,19 +1,38 @@
 import { Router, RouterConfiguration } from 'aurelia-router';
-import { PLATFORM } from 'aurelia-framework';
+import { PLATFORM, bindable } from 'aurelia-framework';
 
+
+class Theme {
+  public name: string;
+  public path: string;
+}
 
 export class App {
+
   public router: Router;
+
+  private themes: Array<Theme>;
+  @bindable() private selectedTheme: Theme = { name: 'default', path: '/bootswatch/default' };
+
+  constructor() {
+
+    this.themes = [
+      { name: 'default', path: '/bootswatch/default' },
+      { name: 'cosmo', path: '/bootswatch/cosmo' },
+      { name: 'superhero', path: '/bootswatch/superhero' },
+      { name: 'flatly', path: '/bootswatch/flatly' },
+      { name: 'yeti', path: '/bootswatch/yeti' },
+      { name: 'cyborg', path: '/bootswatch/cyborg' }
+    ];
+
+  }
+
+
   public configureRouter(config: RouterConfiguration, router: Router) {
-
-    // config.title = 'Aut';
-
-    // config.options.pushState = true;
-
 
     config.map([
       {
-        route: ['', 'bootstrap'],
+        route: ['bootstrap'],
         name: 'bootstrap',
         moduleId: PLATFORM.moduleName('./routes/bootstrap-route'),
         nav: true,
@@ -39,4 +58,5 @@ export class App {
     ]);
     this.router = router;
   }
+
 }

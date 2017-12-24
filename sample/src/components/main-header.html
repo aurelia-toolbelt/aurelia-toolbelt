@@ -1,4 +1,4 @@
-<template bindable="router">
+<template>
 
 
 
@@ -19,8 +19,24 @@
           </a>
         </li>
       </ul>
-
     </div>
+
+
+    <form class="form-inline right">
+      <!-- <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+         aria-expanded="false">
+          select themeedggsdfgdfgdfgd  dfgd g dfg dg
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <button repeat.for="theme of themes" class="dropdown-item" type="button" data-path="${theme.path}">${theme.name}</button>
+        </div>
+      </div> -->
+
+      <select value.bind="theme" class="form-control mr-sm-2">
+        <option repeat.for="th of themes" model.bind="th">${th.name}</option>
+      </select>
+    </form>
   </nav>
 
 </template>

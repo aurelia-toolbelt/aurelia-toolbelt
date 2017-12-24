@@ -1,19 +1,30 @@
 <template>
 
-  <require from="./components/main-header.html"></require>
+  <require from="./components/main-header"></require>
   <require from="./components/nav-bar"></require>
   <require from='bootstrap/dist/css/bootstrap.css'></require>
 
   <require from="./app.css"></require>
 
+  <link href="${selectedTheme.path}.min.css" rel="stylesheet">
+
   <aut-nprogress loading.bind="router.isNavigating" color="gold"></aut-nprogress>
 
   <div class="row">
     <div class="col-sm-12">
-      <main-header router.bind="router"></main-header>
+      <main-header themes.bind="themes" theme.bind="selectedTheme" router.bind="router"></main-header>
     </div>
   </div>
 
+  <br />
+  <br />
+  <br />
+
+  <span>${selectedTheme.path}.min.css"</span>
+
+  <br />
+  <br />
+  <br />
   <router-view></router-view>
 
   <!-- <main-footer></main-footer> -->
