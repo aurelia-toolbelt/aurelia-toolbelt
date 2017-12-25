@@ -44,7 +44,7 @@
   <br />
 
   <abt-card style="width: 20rem;">
-    <abt-card-image src="http://lorempixel.com/200/200" alt="Card image cap">
+    <abt-card-image top src="http://lorempixel.com/200/200" alt="Card image cap">
     </abt-card-image>
     <abt-card-body>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -54,7 +54,7 @@
   <br />
 
   <abt-card style="width: 20rem;">
-    <abt-card-image src="http://lorempixel.com/200/200" alt="Card image cap">
+    <abt-card-image top src="http://lorempixel.com/200/200" alt="Card image cap">
     </abt-card-image>
     <abt-card-body>
       <h4 class="card-title">Card title</h4>
@@ -138,6 +138,143 @@
     </div>
   </div>
 
+
+  <abt-card class="text-center mt-5">
+    <abt-card-header>
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+    </abt-card-header>
+    <abt-card-body>
+      <h4 class="card-title">Special title treatment</h4>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </abt-card-body>
+  </abt-card>
+
+
+
+  <h1 class="mt-4 md-5">Images</h1>
+  <abt-card class="mb-3">
+    <abt-card-image top src="http://lorempixel.com/200/200" alt="Card image cap"></abt-card-image>
+    <abt-card-body>
+      <abt-card-title>
+        <h4>Card title</h4>
+      </abt-card-title>
+      <abt-card-text>
+        This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit
+        longer.
+      </abt-card-text>
+      <abt-card-text>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </abt-card-text>
+    </abt-card-body>
+  </abt-card>
+  <abt-card>
+    <abt-card-body>
+      <abt-card-title>
+        <h4>Card title</h4>
+      </abt-card-title>
+      <abt-card-text>
+        This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit
+        longer.
+      </abt-card-text>
+      <abt-card-text>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </abt-card-text>
+    </abt-card-body>
+    <abt-card-image bottom src="http://lorempixel.com/200/200" alt="Card image cap"></abt-card-image>
+  </abt-card>
+
+
+
+
+  <h1 class="mt-4 md-5">Image Overlays</h1>
+
+  <abt-card class="bg-dark text-white">
+    <abt-card-image src="http://lorempixel.com/300/300" alt="Card image">
+    </abt-card-image>
+    <abt-card-image-overlay>
+      <abt-card-title>
+        <h4>Card title</h4>
+      </abt-card-title>
+      <abt-card-text>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little
+        bit longer.</abt-card-text>
+      <abt-card-text>Last updated 3 mins ago</abt-card-text>
+    </abt-card-image-overlay>
+  </abt-card>
+
+
+
+
+
+
+  <h1 class="mt-4 md-5">Background and color and Card Layout</h1>
+
+  <abt-card-group>
+    <abt-card class="text-white bg-success mb-3" style="max-width: 20rem;">
+      <abt-card-header class="border-danger">Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>Primary card title</abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</abt-card-text>
+      </abt-card-body>
+      <abt-card-footer>
+        <small class="text-white">Last updated 3 mins ago</small>
+      </abt-card-footer>
+    </abt-card>
+    <abt-card class="text-white border-primary bg-dark mb-3" style="max-width: 20rem; border-width:5px;">
+      <abt-card-header class="border-danger bg-transparent">Header</abt-card-header>
+      <abt-card-body class="text-success">
+        <abt-card-title>Primary card title</abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</abt-card-text>
+      </abt-card-body>
+      <abt-card-footer>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </abt-card-footer>
+    </abt-card>
+  </abt-card-group>
+
+
+  <abt-card-deck>
+      <abt-card class="mb-3">
+          <abt-card-image top src="http://lorempixel.com/200/200" alt="Card image cap"></abt-card-image>
+          <abt-card-body>
+            <abt-card-title>
+              <h4>Card title</h4>
+            </abt-card-title>
+            <abt-card-text>
+              This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit
+              longer.
+            </abt-card-text>
+            <abt-card-text>
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </abt-card-text>
+          </abt-card-body>
+        </abt-card>
+        <abt-card>
+          <abt-card-body>
+            <abt-card-title>
+              <h4>Card title</h4>
+            </abt-card-title>
+            <abt-card-text>
+              This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit
+              longer.
+            </abt-card-text>
+            <abt-card-text>
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </abt-card-text>
+          </abt-card-body>
+          <abt-card-image bottom src="http://lorempixel.com/200/200" alt="Card image cap"></abt-card-image>
+        </abt-card>
+    </abt-card-deck>
 
 
   <br/>
