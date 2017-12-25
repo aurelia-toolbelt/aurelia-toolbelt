@@ -78,6 +78,15 @@ export class BootstrapRoute {
         nav: true,
         title: 'Touch Spin',
         settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['progress'],
+        name: 'bootstrap-progress',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/progress'),
+        nav: true,
+        title: 'Progressbar',
+        settings: { auth: false, isComponent: true }
       }
     ]);
     this.router = router;

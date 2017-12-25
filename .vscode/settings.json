@@ -2,8 +2,11 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "cSpell.words": [
+    "bootstrap",
     "datetime",
     "hljs",
-    "persianjs"
+    "persianjs",
+    "progressbar",
+    "striped"
   ]
 }
