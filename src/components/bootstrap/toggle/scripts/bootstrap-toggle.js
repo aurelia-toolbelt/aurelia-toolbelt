@@ -50,7 +50,7 @@
 		this._offstyle = 'btn-' + this.options.offstyle
 		var size = this.options.size === 'large' ? 'btn-lg'
 			: this.options.size === 'small' ? 'btn-sm'
-			: this.options.size === 'mini' ? 'btn-xs'
+			: this.options.size === 'mini' ? 'btn-sm'
 			: ''
 		var $toggleOn = $('<label class="btn">').html(this.options.on)
 			.addClass(this._onstyle + ' ' + size)

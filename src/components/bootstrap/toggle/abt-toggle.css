@@ -6,16 +6,7 @@
  * Licensed under MIT
  * ======================================================================== */
 
-.btn-xs,
-.btn-group-xs>.btn {
-    padding: 0.12rem 0.44rem;
-    font-size: 0.875rem;
-    line-height: 1.5;
-    border-radius: 0.2rem;
-}
-
-.checkbox label .toggle,
-.checkbox-inline .toggle {
+.checkbox label .toggle, .checkbox-inline .toggle {
     margin-left: 0px;
     margin-right: 3px;
 }
@@ -133,16 +124,10 @@
     padding-left: 12px;
 }
 
-
 /* Toolbelt Styles */
 
-.toggle-on,
-.toggle-off,
-.checkbox-inline,
-.checkbox label .toggle,
-.checkbox-inline .toggle {
+.toggle-on, .toggle-off, .checkbox-inline, .checkbox label .toggle, .checkbox-inline .toggle {
     cursor: pointer
 }
-
 
 /*  **************************************************  */
