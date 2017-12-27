@@ -3,7 +3,6 @@ import { customElement } from 'aurelia-templating';
 
 
 @inject(Element)
-@containerless()
 @customElement('abt-navs')
 export class BootstrapNavs {
 

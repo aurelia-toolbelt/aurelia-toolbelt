@@ -1,8 +1,8 @@
-<template>
+<template class="nav ${bePills?'nav-pills':''} ${class} ${beVertical?'flex-column':''} ${beTab?'nav-tabs':''} ${filled?'nav-fill':''} ${justified?'nav-justified':''} "
+css="${style}">
 
-  <nav class="nav ${bePills?'nav-pills':''} ${class} ${beVertical?'flex-column':''} ${beTab?'nav-tabs':''} ${filled?'nav-fill':''} ${justified?'nav-justified':''} "
-    css="${style}">
+  
     <slot></slot>
-  </nav>
+  
 
 </template>

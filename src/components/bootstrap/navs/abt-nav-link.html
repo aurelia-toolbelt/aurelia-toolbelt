@@ -1,6 +1,6 @@
 <template>
 
-  <a class="nav-link nav-item ${class} ${isActive?'active':''} ${isDisabled? 'disabled':''}" href="${href}" css="${style}">
+  <a ref="item" class="nav-link nav-item ${class} ${isActive || selected ? 'active' : '' } ${isDisabled? 'disabled':''}" href="${href}" css="${style}" >
       <slot></slot>
   </a>
 
