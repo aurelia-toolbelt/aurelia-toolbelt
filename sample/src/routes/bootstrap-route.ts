@@ -44,6 +44,22 @@ export class BootstrapRoute {
         settings: { auth: false, isComponent: true }
       },
       {
+        route: ['navs'],
+        name: 'bootstrap-navs',
+
+
+        moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-navs'),
+
+        // viewPorts: {
+        //   // default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
+        //   content: { moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-toggle') }
+        // },
+
+        nav: true,
+        title: 'Navs',
+        settings: { auth: false, isComponent: true }
+      },
+      {
         route: ['floatinput'],
         name: 'bootstrap-floatinput',
 
