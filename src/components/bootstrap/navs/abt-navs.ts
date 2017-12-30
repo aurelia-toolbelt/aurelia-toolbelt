@@ -92,5 +92,6 @@ export class BootstrapNavs {
     $(children).off('shown.bs.tab');
     $(children).off('hide.bs.tab');
     $(children).off('hidden.bs.tab');
+    $(children).tab('dispose');
   }
 }
