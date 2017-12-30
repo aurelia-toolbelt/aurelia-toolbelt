@@ -3,6 +3,7 @@ import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 export function configure(config: FrameworkConfiguration) {
   config
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/badge/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/breadcrumb/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/button/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/card/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/navs/index'))
