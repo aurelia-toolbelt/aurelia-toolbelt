@@ -16,7 +16,7 @@ export class BootstrapRoute {
         name: 'bootstrap-toggle',
 
 
-        moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-toggle'),
+        moduleId: PLATFORM.moduleName('./bootstrap/toggle'),
 
         // viewPorts: {
         //   // default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
@@ -32,7 +32,7 @@ export class BootstrapRoute {
         name: 'bootstrap-card',
 
 
-        moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-card'),
+        moduleId: PLATFORM.moduleName('./bootstrap/card'),
 
         // viewPorts: {
         //   // default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
@@ -48,7 +48,7 @@ export class BootstrapRoute {
         name: 'bootstrap-navs',
 
 
-        moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-navs'),
+        moduleId: PLATFORM.moduleName('./bootstrap/navs'),
 
         // viewPorts: {
         //   // default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
@@ -57,6 +57,16 @@ export class BootstrapRoute {
 
         nav: true,
         title: 'Navs',
+        settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['breadcrumb'],
+        name: 'bootstrap-breadcrumb',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/breadcrumb'),
+
+        nav: true,
+        title: 'Breadcrumb',
         settings: { auth: false, isComponent: true }
       },
       {
