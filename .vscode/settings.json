@@ -5,6 +5,7 @@
     "bootstrap",
     "datetime",
     "hljs",
+    "navs",
     "persianjs",
     "progressbar",
     "striped"
