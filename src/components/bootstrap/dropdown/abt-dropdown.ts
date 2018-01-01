@@ -68,12 +68,11 @@ export class BootstrapDropDown {
 
     this.isSplit = this.element.hasAttribute('split');
     this.id = this.element.children.item(0).getAttribute('id');
-    // this.children = <NodeListOf<HTMLAnchorElement>>this.element.getElementsByClassName('dropdown-item');
   }
 
   private bind() {
     // bound to nothing
-    if (!this.value) {
+    if (this.value === undefined) {
       return;
     }
 
@@ -85,7 +84,6 @@ export class BootstrapDropDown {
       }
       // bound to a single object
       this.value = changed.selectedItem;
-
       this.title = changed.selectedText;
 
     });

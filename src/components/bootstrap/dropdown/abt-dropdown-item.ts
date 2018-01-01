@@ -22,8 +22,13 @@ export class BootstrapDropdownItem {
   }
 
   private onClick() {
-    if ((this.model !== null && this.model !== undefined) || (this.value !== null && this.value !== undefined)) {
-      this.ea.publish(new BootstrapDropdownSelectedItemChanged(this.dropdownId, this.model || this.value, this.item.innerText));
+    if (this.model !== undefined || this.value !== undefined) {
+      let selectedValue = this.model !== undefined
+        ? this.model
+        : this.value !== undefined
+          ? this.value
+          : undefined;
+      this.ea.publish(new BootstrapDropdownSelectedItemChanged(this.dropdownId, selectedValue, this.item.innerText));
     }
   }
 }
