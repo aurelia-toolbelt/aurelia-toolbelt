@@ -1,5 +1,6 @@
 import { customElement, inject, containerless, bindable, bindingMode } from 'aurelia-framework';
 import { EventAggregator } from 'aurelia-event-aggregator';
+import { BootstrapDropdownSelectedItemChanged } from './abt-dropdown-selected-item-changed';
 
 
 @inject(EventAggregator)
@@ -10,21 +11,20 @@ export class BootstrapDropdownItem {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public model: any;
 
-  private dropdown: Element;
-
-  private dropdown_id: any;
+  private dropdownId: any;
 
   private item: HTMLDivElement;
 
   constructor(private ea: EventAggregator) { }
 
   private attached() {
-    this.dropdown_id = this.item.parentElement.parentElement.parentElement.getAttribute('data-id');
+    this.dropdownId = this.item.parentElement.parentElement.getAttribute('id');
   }
 
   private onClick() {
-    this.ea.publish('Abt-DropDownSelectChanged', { parentId: this.dropdown_id });
-    console.log(this.item);
+    if ((this.model !== null && this.model !== undefined) || (this.value !== null && this.value !== undefined)) {
+      this.ea.publish(new BootstrapDropdownSelectedItemChanged(this.dropdownId, this.model || this.value, this.item.innerText));
+    }
   }
 }
 

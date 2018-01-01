@@ -6,6 +6,8 @@ import { HttpClient } from 'aurelia-http-client';
 export class BootstrapDropdownRoute {
 
 
+  private selectedItemString = 'CPU';
+  private stringObjects = ['Motherboard', 'CPU', 'RAM'];
 
 
   constructor(private http: HttpClient) {

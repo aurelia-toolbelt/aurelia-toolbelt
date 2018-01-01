@@ -1,6 +1,8 @@
 <template>
 
-  <div data-id="${id}" class="btn-group ${class}" css="${style}">
+  <require from="../../../custom-attributes/purejs/uuid/aut-uuid"></require>
+
+  <div aut-uuid class="btn-group ${class}" css="${style}">
     <button if.bind="isSplit" type="button" class="btn btn-${color} btn-${size}" click.delegate="onClicked($event)" disabled.bind="disabled || isBusy">
       <span show.bind="isBusy">
         <slot name="loading">
