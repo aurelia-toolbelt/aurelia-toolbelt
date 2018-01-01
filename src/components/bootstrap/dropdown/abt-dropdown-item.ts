@@ -19,6 +19,18 @@ export class BootstrapDropdownItem {
 
   private attached() {
     this.dropdownId = this.item.parentElement.parentElement.getAttribute('id');
+    this.onClick();
+  }
+
+
+  private valueChanged(newValue: any) {
+    console.log(`value: ${JSON.stringify(newValue)}`);
+    // this.onClick();
+  }
+
+  private modelChanged(newModel: any) {
+    console.log(`model: ${JSON.stringify(newModel)}`);
+    // this.onClick();
   }
 
   private onClick() {

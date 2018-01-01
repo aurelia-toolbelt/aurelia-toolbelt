@@ -12,6 +12,11 @@ export class BootstrapDropdownRoute {
   ];
   private selectedProduct = null;
 
+  // private selectedProductMatcher = { id: 1, name: 'CPU' };
+
+
+
+
 
   private likesTacos = null;
 
@@ -29,5 +34,7 @@ export class BootstrapDropdownRoute {
     console.log(target);
     return this.http.get('https://github.com');
   }
+
+  private productMatcher = (a, b) => a.id === b.id;
 
 }
