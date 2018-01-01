@@ -1,7 +1,7 @@
 <template>
 
-  <div class="btn-group ${class}" css="${style}">
-    <button if.bind="isSplit" type="button" class="btn btn-${color}" click.delegate="onClicked($event)" disabled.bind="disabled || isBusy">
+  <div data-id="${id}" class="btn-group ${class}" css="${style}">
+    <button if.bind="isSplit" type="button" class="btn btn-${color} btn-${size}" click.delegate="onClicked($event)" disabled.bind="disabled || isBusy">
       <span show.bind="isBusy">
         <slot name="loading">
           <i class="fa fa-spinner fa-spin" aria-hidden="true">
@@ -10,7 +10,7 @@
       </span>
       <span>${title}</span>
     </button>
-    <button type="button" class="btn btn-${color} dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
+    <button type="button" class="btn btn-${color} btn-${size} dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
       aria-expanded="false" disabled.bind="disabled || isBusy">
       <span class="${isSplit?'sr-only':''}">${title}</span>
     </button>
