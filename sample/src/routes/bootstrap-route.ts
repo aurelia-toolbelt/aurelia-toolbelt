@@ -113,6 +113,15 @@ export class BootstrapRoute {
         nav: true,
         title: 'Progressbar',
         settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['tooltip'],
+        name: 'bootstrap-tooltip',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/tooltip'),
+        nav: true,
+        title: 'Tooltip',
+        settings: { auth: false, isComponent: true }
       }
     ]);
     this.router = router;
