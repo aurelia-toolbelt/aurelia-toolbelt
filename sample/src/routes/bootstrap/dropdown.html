@@ -1,0 +1,27 @@
+<template>
+
+  <abt-dropdown split title="Action" click.call="buttonClicked(event,target)">
+    <abt-dropdown-item class="dropdown-item">Action</abt-dropdown-item>
+    <abt-dropdown-item class="dropdown-item">Another action</abt-dropdown-item>
+    <abt-dropdown-item class="dropdown-item">Something else here</abt-dropdown-item>
+    <abt-dropdown-divider></abt-dropdown-divider>
+    <abt-dropdown-item class="dropdown-item">Separated link</abt-dropdown-item>
+  </abt-dropdown>
+
+  <abt-dropdown class="mr-5" color="warning" title="Action" disabled.bind="true">
+    <abt-dropdown-item class="dropdown-item">Action</abt-dropdown-item>
+    <abt-dropdown-item class="dropdown-item">Another action</abt-dropdown-item>
+    <abt-dropdown-item class="dropdown-item">Something else here</abt-dropdown-item>
+    <abt-dropdown-divider></abt-dropdown-divider>
+    <abt-dropdown-item class="dropdown-item">Separated link</abt-dropdown-item>
+  </abt-dropdown>
+
+  <abt-dropdown color="danger" title="Action" disabled.bind="false">
+    <abt-dropdown-item class="dropdown-item">Action</abt-dropdown-item>
+    <abt-dropdown-item class="dropdown-item">Another action</abt-dropdown-item>
+    <abt-dropdown-item class="dropdown-item">Something else here</abt-dropdown-item>
+    <abt-dropdown-divider></abt-dropdown-divider>
+    <abt-dropdown-item class="dropdown-item">Separated link</abt-dropdown-item>
+  </abt-dropdown>
+
+</template>

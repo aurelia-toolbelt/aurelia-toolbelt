@@ -1,3 +1,23 @@
 <template>
 
+  <div class="btn-group ${class}" css="${style}">
+    <button if.bind="isSplit" type="button" class="btn btn-${color}" click.delegate="onClicked($event)" disabled.bind="disabled || isBusy">
+      <span show.bind="isBusy">
+        <slot name="loading">
+          <i class="fa fa-spinner fa-spin" aria-hidden="true">
+          </i>
+        </slot>
+      </span>
+      <span>${title}</span>
+    </button>
+    <button type="button" class="btn btn-${color} dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false" disabled.bind="disabled || isBusy">
+      <span class="${isSplit?'sr-only':''}">${title}</span>
+    </button>
+    <div class="dropdown-menu">
+      <slot>
+
+      </slot>
+    </div>
+  </div>
 </template>
