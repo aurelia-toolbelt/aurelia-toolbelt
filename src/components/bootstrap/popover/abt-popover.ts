@@ -7,21 +7,22 @@ import * as $ from 'jquery';
 
 @containerless()
 @inject(Element)
-@customElement('abt-tooltip')
-export class BootstrapTooltipCustomElement {
+@customElement('abt-popover')
+export class BootstrapPopoverCustomElement {
 
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public animation: boolean = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public container: string | boolean = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public delay: number | object;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: PlacementType | Function = 'top';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public selector: string | boolean = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public animation: boolean = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public html: boolean = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public trigger: string = 'hover focus';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: PlacementType | Function = 'right';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public selector: string | boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string | Function;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public trigger: string = 'click';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public offset: string | number = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public fallbackPlacement: string | string[] = 'flip';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: BoundaryType = 'scrollParent';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public template: string =
-    '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>';
+    '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>';
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public show: Function;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public shown: Function;
@@ -29,7 +30,7 @@ export class BootstrapTooltipCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public hidden: Function;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public inserted: Function;
 
-  private tooltip: Element;
+  private popover: Element;
 
   constructor(private element: Element) {
 
@@ -37,10 +38,11 @@ export class BootstrapTooltipCustomElement {
 
   private attached() {
     let elem = this.element.parentElement;
-    let slotContent = this.html ? this.tooltip.innerHTML : this.tooltip.textContent;
+    let slotContent = this.html ? this.popover.innerHTML : this.popover.textContent;
     // @ts-ignore
-    $(elem).tooltip({
-      'title': slotContent,
+    $(elem).popover({
+      'content': slotContent,
+      'title': this.title,
       'html': this.html,
       'template': this.template,
       'animation': this.animation,
@@ -52,25 +54,25 @@ export class BootstrapTooltipCustomElement {
       'fallbackPlacement': this.fallbackPlacement,
       'boundary': this.boundary
     });
-    this.tooltip.remove();
+    this.popover.remove();
     if (this.show) {
-      $(elem).on('show.bs.tooltip', this.show());
+      $(elem).on('show.bs.popover', this.show());
     }
 
     if (this.shown) {
-      $(elem).on('shown.bs.tooltip', this.shown());
+      $(elem).on('shown.bs.popover', this.shown());
     }
 
     if (this.hide) {
-      $(elem).on('hide.bs.tooltip', this.hide());
+      $(elem).on('hide.bs.popover', this.hide());
     }
 
     if (this.hidden) {
-      $(elem).on('hidden.bs.tooltip', this.hidden());
+      $(elem).on('hidden.bs.popover', this.hidden());
     }
 
     if (this.inserted) {
-      $(elem).on('inserted.bs.tooltip', this.inserted());
+      $(elem).on('inserted.bs.popover', this.inserted());
     }
   }
 }
