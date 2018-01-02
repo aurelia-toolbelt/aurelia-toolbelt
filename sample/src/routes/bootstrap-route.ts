@@ -122,6 +122,15 @@ export class BootstrapRoute {
         nav: true,
         title: 'Tooltip',
         settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['popover'],
+        name: 'bootstrap-popover',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/popover'),
+        nav: true,
+        title: 'Popover',
+        settings: { auth: false, isComponent: true }
       }
     ]);
     this.router = router;
