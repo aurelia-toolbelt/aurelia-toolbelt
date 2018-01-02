@@ -15,6 +15,11 @@ export class CarouselCustomElement {
 
   private elementId: string;
   private carousel: Element;
+  private innerCarousel: Element;
+
+  constructor(private element: Element) {
+
+  }
 
   private attached() {
     if (this.indicator > 0) {
@@ -24,6 +29,7 @@ export class CarouselCustomElement {
     }
 
     this.elementId = 'carouselExampleControls';
+
   }
 
 }
