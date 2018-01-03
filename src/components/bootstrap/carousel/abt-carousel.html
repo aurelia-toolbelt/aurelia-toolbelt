@@ -1,7 +1,6 @@
 <template>
   <div ref='carousel' aut-uuid class="carousel slide" data-ride="carousel">
-    <ol if.bind="indicator" class="carousel-indicators">
-      <li style="cursor:pointer" data-target="#${carousel.id}" repeat.for="item of indicator" data-slide-to="${$index}" class="${$first ? 'active' : ''}" ></li>
+    <ol class="carousel-indicators">
     </ol>
     <div class="carousel-inner">
       <slot></slot>
