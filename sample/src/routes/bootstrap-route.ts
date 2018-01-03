@@ -44,6 +44,15 @@ export class BootstrapRoute {
         settings: { auth: false, isComponent: true }
       },
       {
+        route: ['dropdown'],
+        name: 'bootstrap-dropdown',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/dropdown'),
+        nav: true,
+        title: 'Dropdowns',
+        settings: { auth: false, isComponent: true }
+      },
+      {
         route: ['navs'],
         name: 'bootstrap-navs',
 

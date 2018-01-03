@@ -9,6 +9,7 @@ import { customElement, containerless, bindable, bindingMode } from 'aurelia-fra
 export class BootstrapButton {
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public color: string = 'primary';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: string = 'md';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public type: string = 'button';
 

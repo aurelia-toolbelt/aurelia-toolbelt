@@ -2,12 +2,15 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "cSpell.words": [
+    "Dropdowns",
     "bootstrap",
     "datetime",
+    "dropdown",
     "hljs",
     "navs",
     "persianjs",
     "progressbar",
-    "striped"
+    "striped",
+    "touchspin"
   ]
 }

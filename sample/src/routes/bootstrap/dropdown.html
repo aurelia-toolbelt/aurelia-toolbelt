@@ -1,0 +1,111 @@
+<template>
+
+
+  <fieldset>
+    <legend>Dropdown - Simple</legend>
+    <abt-dropdown split title="Action" click.call="buttonClicked(event,target)">
+      <abt-dropdown-item>Action</abt-dropdown-item>
+      <abt-dropdown-item>Another action</abt-dropdown-item>
+      <abt-dropdown-item>Something else here</abt-dropdown-item>
+      <abt-dropdown-divider></abt-dropdown-divider>
+      <abt-dropdown-item>Separated link</abt-dropdown-item>
+    </abt-dropdown>
+
+    <abt-dropdown class="mr-5" color="warning" title="Action" disabled.bind="true">
+      <abt-dropdown-item>Action</abt-dropdown-item>
+      <abt-dropdown-item>Another action</abt-dropdown-item>
+      <abt-dropdown-item>Something else here</abt-dropdown-item>
+      <abt-dropdown-divider></abt-dropdown-divider>
+      <abt-dropdown-item>Separated link</abt-dropdown-item>
+    </abt-dropdown>
+
+    <abt-dropdown color="danger" title="Action" disabled.bind="false" size="md">
+      <abt-dropdown-item>Action</abt-dropdown-item>
+      <abt-dropdown-item>Another action</abt-dropdown-item>
+      <abt-dropdown-item>Something else here</abt-dropdown-item>
+      <abt-dropdown-divider></abt-dropdown-divider>
+      <abt-dropdown-item>Separated link</abt-dropdown-item>
+    </abt-dropdown>
+  </fieldset>
+
+  <fieldset>
+    <legend>Dropdown - Objects</legend>
+
+    <abt-dropdown class="mb-5" value.bind="selectedProduct" color="info" title="choose..." size="sm">
+      <abt-dropdown-item model.bind="null">
+        choose...
+      </abt-dropdown-item>
+      <abt-dropdown-divider></abt-dropdown-divider>
+      <abt-dropdown-item repeat.for="product of products" model.bind="product">
+        ${product.id} - ${product.name}
+      </abt-dropdown-item>
+    </abt-dropdown>
+
+    <span>
+      Selected product: ${selectedProduct.id} : ${selectedProduct.name}
+    </span>
+
+  </fieldset>
+
+  <fieldset>
+    <legend>Dropdown - Matchers</legend>
+
+    <abt-dropdown class="mb-5" value.bind="selectedProduct" matcher.bind="productMatcher" color="info" title="choose..." size="sm">
+      <abt-dropdown-item model.bind="null">
+        choose...
+      </abt-dropdown-item>
+      <abt-dropdown-divider></abt-dropdown-divider>
+      <abt-dropdown-item repeat.for="product of products" model.bind="product">
+        ${product.id} - ${product.name}
+      </abt-dropdown-item>
+    </abt-dropdown>
+
+    <span>
+      Selected product: ${selectedProduct.id}: ${selectedProduct.name}
+    </span>
+
+  </fieldset>
+
+
+  <fieldset>
+    <legend>Dropdown - Booleans</legend>
+
+    <abt-dropdown class="mb-5" value.bind="likesTacos" color="success" title="like your tacos" size="sm">
+      <abt-dropdown-item model.bind="null">
+        Do you like tacos
+      </abt-dropdown-item>
+      <abt-dropdown-divider></abt-dropdown-divider>
+      <abt-dropdown-item model.bind="true">
+        Yes
+      </abt-dropdown-item>
+      <abt-dropdown-item model.bind="false">
+        No
+      </abt-dropdown-item>
+    </abt-dropdown>
+
+    <span>
+      likesTacos: ${likesTacos}
+    </span>
+
+  </fieldset>
+
+
+  <fieldset>
+    <legend>Dropdown - Strings</legend>
+
+    <abt-dropdown class="mb-5" value.bind="selectedItemString" color="success" title="Choose your hardware" size="sm">
+      <abt-dropdown-item value="">
+        Choose your hardware
+      </abt-dropdown-item>
+      <abt-dropdown-divider></abt-dropdown-divider>
+      <abt-dropdown-item repeat.for="str of stringObjects" value.bind="str">
+        ${str}
+      </abt-dropdown-item>
+    </abt-dropdown>
+
+    <span>Your selected items is: </span>
+    <span>${selectedItemString}</span>
+
+  </fieldset>
+
+</template>
