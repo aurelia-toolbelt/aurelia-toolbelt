@@ -31,16 +31,17 @@ export class BootstrapPopoverCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public inserted: Function;
 
   private popover: Element;
+  private parentElement: HTMLElement;
 
   constructor(private element: Element) {
 
   }
 
   private attached() {
-    let elem = this.element.parentElement;
+    this.parentElement = this.element.parentElement;
     let slotContent = this.html ? this.popover.innerHTML : this.popover.textContent;
     // @ts-ignore
-    $(elem).popover({
+    $(this.parentElement).popover({
       'content': slotContent,
       'title': this.title,
       'html': this.html,
@@ -56,23 +57,29 @@ export class BootstrapPopoverCustomElement {
     });
     this.popover.remove();
     if (this.show) {
-      $(elem).on('show.bs.popover', this.show());
+      $(this.parentElement).on('show.bs.popover', this.show());
     }
 
     if (this.shown) {
-      $(elem).on('shown.bs.popover', this.shown());
+      $(this.parentElement).on('shown.bs.popover', this.shown());
     }
 
     if (this.hide) {
-      $(elem).on('hide.bs.popover', this.hide());
+      $(this.parentElement).on('hide.bs.popover', this.hide());
     }
 
     if (this.hidden) {
-      $(elem).on('hidden.bs.popover', this.hidden());
+      $(this.parentElement).on('hidden.bs.popover', this.hidden());
     }
 
     if (this.inserted) {
-      $(elem).on('inserted.bs.popover', this.inserted());
+      $(this.parentElement).on('inserted.bs.popover', this.inserted());
     }
   }
+
+  private detached() {
+    // $(this.parentElement).popover('hide');
+    $(this.parentElement).popover('dispose');
+  }
+
 }

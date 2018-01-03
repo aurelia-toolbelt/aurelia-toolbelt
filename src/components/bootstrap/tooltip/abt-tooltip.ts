@@ -30,16 +30,17 @@ export class BootstrapTooltipCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public inserted: Function;
 
   private tooltip: Element;
+  private parentElement: HTMLElement;
 
   constructor(private element: Element) {
 
   }
 
   private attached() {
-    let elem = this.element.parentElement;
+    this.parentElement = this.element.parentElement;
     let slotContent = this.html ? this.tooltip.innerHTML : this.tooltip.textContent;
     // @ts-ignore
-    $(elem).tooltip({
+    $(this.parentElement).tooltip({
       'title': slotContent,
       'html': this.html,
       'template': this.template,
@@ -54,23 +55,29 @@ export class BootstrapTooltipCustomElement {
     });
     this.tooltip.remove();
     if (this.show) {
-      $(elem).on('show.bs.tooltip', this.show());
+      $(this.parentElement).on('show.bs.tooltip', this.show());
     }
 
     if (this.shown) {
-      $(elem).on('shown.bs.tooltip', this.shown());
+      $(this.parentElement).on('shown.bs.tooltip', this.shown());
     }
 
     if (this.hide) {
-      $(elem).on('hide.bs.tooltip', this.hide());
+      $(this.parentElement).on('hide.bs.tooltip', this.hide());
     }
 
     if (this.hidden) {
-      $(elem).on('hidden.bs.tooltip', this.hidden());
+      $(this.parentElement).on('hidden.bs.tooltip', this.hidden());
     }
 
     if (this.inserted) {
-      $(elem).on('inserted.bs.tooltip', this.inserted());
+      $(this.parentElement).on('inserted.bs.tooltip', this.inserted());
     }
   }
+
+
+  private detached() {
+    $(this.parentElement).tooltip('dispose');
+  }
+
 }
