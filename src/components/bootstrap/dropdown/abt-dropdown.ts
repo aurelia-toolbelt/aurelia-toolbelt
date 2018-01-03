@@ -19,17 +19,22 @@ export class BootstrapDropDown {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public matcher: any;
 
+  private id: any;
   private isSplit: boolean = false;
   private isBusy: boolean = false;
-  private task: Promise<void> | null = null;
 
-  private id: any;
+
+  private itemsValuesOrModels: Array<any> = [];
+
+  private task: Promise<void> | null = null;
   private subscription: Disposable | null = null;
 
   constructor(private element: Element, private ea: EventAggregator) { // , private bindingEngine: BindingEngine) {
   }
 
 
+
+  // #region click for button not dropdown
 
   private onClicked(event: any) {
 
@@ -64,6 +69,8 @@ export class BootstrapDropDown {
     }
   }
 
+  // #endregion
+
   private attached() {
 
     this.isSplit = this.element.hasAttribute('split');
@@ -77,11 +84,16 @@ export class BootstrapDropDown {
     }
 
     this.ea.subscribe(BootstrapDropdownSelectedItemChanged, (changed: BootstrapDropdownSelectedItemChanged) => {
-
       // not me
       if (changed.parentId !== this.id) {
         return;
       }
+
+      // add to the itemsValueOrModel
+      if (!changed.isValueChanged) {
+        this.itemsValuesOrModels.push({ value: changed.selectedItem, text: changed.selectedText });
+      }
+
       // bound to a single object
       this.value = changed.selectedItem;
       this.title = changed.selectedText;
@@ -90,6 +102,8 @@ export class BootstrapDropDown {
   }
 
   private valueChanged(newValue: any) {
+    let found = this.itemsValuesOrModels.find(x => x.value === newValue);
+    this.title = found.text;
     console.log(`value:${newValue}`);
   }
 
@@ -97,7 +111,5 @@ export class BootstrapDropDown {
     this.task = null;
     // this.element.previousElementSibling.removeEventListener('click', this.onClick);
   }
-
-
 
 }

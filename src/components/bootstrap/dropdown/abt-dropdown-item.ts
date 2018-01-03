@@ -18,19 +18,18 @@ export class BootstrapDropdownItem {
   constructor(private ea: EventAggregator) { }
 
   private attached() {
+
     this.dropdownId = this.item.parentElement.parentElement.getAttribute('id');
-    this.onClick();
-  }
 
+    if (this.model !== undefined || this.value !== undefined) {
+      let selectedValue = this.model !== undefined
+        ? this.model
+        : this.value !== undefined
+          ? this.value
+          : undefined;
+      this.ea.publish(new BootstrapDropdownSelectedItemChanged(this.dropdownId, selectedValue, this.item.innerText, false));
+    }
 
-  private valueChanged(newValue: any) {
-    console.log(`value: ${JSON.stringify(newValue)}`);
-    // this.onClick();
-  }
-
-  private modelChanged(newModel: any) {
-    console.log(`model: ${JSON.stringify(newModel)}`);
-    // this.onClick();
   }
 
   private onClick() {
