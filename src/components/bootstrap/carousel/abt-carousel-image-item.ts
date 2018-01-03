@@ -1,4 +1,3 @@
-import { EventAggregator } from 'aurelia-event-aggregator';
 import { inject, customElement, bindingMode, bindable, containerless, singleton } from 'aurelia-framework';
 
 @singleton()
@@ -34,9 +33,11 @@ export class CarouselImageItemCustomElement {
     this.times = this.sharedController.getAndIncrement();
     let isActive = this.element.hasAttribute('active');
     let carousel = this.carouselItem.parentElement.parentElement;
-    let hasIndicator = this.carouselItem.parentElement.parentElement.parentElement.hasAttribute('indicator');
-    let carouselOl = this.carouselItem.parentElement.parentElement.children[0];
-    if (hasIndicator) {
+    console.log(carousel);
+    console.log(carousel.children[0]);
+    let carouselOl = carousel.children[0];
+    let isOl = carouselOl.nodeName.toLowerCase() === 'ol';
+    if (isOl) {
       carouselOl.innerHTML += this.createIndicatorHtml(carousel.id, this.times, isActive);
     }
     if (isActive) {

@@ -1,6 +1,6 @@
 <template>
   <div ref='carousel' aut-uuid class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
+    <ol if.bind="showIndicator" class="carousel-indicators">
     </ol>
     <div class="carousel-inner">
       <slot></slot>
