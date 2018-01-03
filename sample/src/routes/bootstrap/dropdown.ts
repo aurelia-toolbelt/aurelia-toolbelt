@@ -35,6 +35,5 @@ export class BootstrapDropdownRoute {
     return this.http.get('https://github.com');
   }
 
-  private productMatcher = (a, b) => a.id === b.id;
-
+  private productMatcher = (a, b) => a === b || (a.name === b.name);
 }

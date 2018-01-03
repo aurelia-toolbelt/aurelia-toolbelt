@@ -1,6 +1,6 @@
 <template>
 
-
+  <!-- 
   <fieldset>
     <legend>Dropdown - Simple</legend>
     <abt-dropdown split title="Action" click.call="buttonClicked(event,target)">
@@ -26,9 +26,9 @@
       <abt-dropdown-divider></abt-dropdown-divider>
       <abt-dropdown-item>Separated link</abt-dropdown-item>
     </abt-dropdown>
-  </fieldset>
+  </fieldset> -->
 
-  <fieldset>
+  <!-- <fieldset>
     <legend>Dropdown - Objects</legend>
 
     <abt-dropdown class="mb-5" value.bind="selectedProduct" color="info" title="choose..." size="sm">
@@ -45,9 +45,9 @@
       Selected product: ${selectedProduct.id} : ${selectedProduct.name}
     </span>
 
-  </fieldset>
+  </fieldset> -->
 
-  <fieldset>
+  <!-- <fieldset>
     <legend>Dropdown - Matchers</legend>
 
     <abt-dropdown class="mb-5" value.bind="selectedProduct" matcher.bind="productMatcher" color="info" title="choose..." size="sm">
@@ -64,10 +64,10 @@
       Selected product: ${selectedProduct.id}: ${selectedProduct.name}
     </span>
 
-  </fieldset>
+  </fieldset> -->
 
 
-  <fieldset>
+  <!-- <fieldset>
     <legend>Dropdown - Booleans</legend>
 
     <abt-dropdown class="mb-5" value.bind="likesTacos" color="success" title="like your tacos" size="sm">
@@ -87,8 +87,16 @@
       likesTacos: ${likesTacos}
     </span>
 
-  </fieldset>
+  </fieldset> -->
 
+  <select value.bind="selectedItemString">
+    <option value="">
+      Choose your hardware
+    </option>
+    <option repeat.for="str of stringObjects" value.bind="str">
+      ${str}
+    </option>
+  </select>
 
   <fieldset>
     <legend>Dropdown - Strings</legend>
