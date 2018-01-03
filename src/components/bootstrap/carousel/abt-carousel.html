@@ -1,17 +1,17 @@
 <template>
-  <div ref='carousel' id="${elementId}" class="carousel slide" data-ride="carousel">
-    <ol if.bind="hasIndicator" class="carousel-indicators">
-      <li data-target="#${elementId}" repeat.for="item of indicator" data-slide-to="${$index}" class="${$first ? 'active' : ''}"
+  <div ref='carousel' uuid class="carousel slide" data-ride="carousel">
+    <ol if.bind="indicator" class="carousel-indicators">
+      <li data-target="#${id}" repeat.for="item of indicator" data-slide-to="${$index}" class="${$first ? 'active' : ''}"
       />
     </ol>
     <div class="carousel-inner">
       <slot></slot>
     </div>
-    <a if.bind="prevControl" class="carousel-control-prev" href="#${elementId}" role="button" data-slide="prev">
+    <a if.bind="prevControl" class="carousel-control-prev" href="#${id}" role="button" data-slide="prev">
       <span class="${prevControlClass}" aria-hidden="true" />
       <span class="sr-only">${prevControlTitle}</span>
     </a>
-    <a if.bind="nextControl" class="carousel-control-next" href="#${elementId}" role="button" data-slide="next">
+    <a if.bind="nextControl" class="carousel-control-next" href="#${id}" role="button" data-slide="next">
       <span class="${nextControlClass}" aria-hidden="true" />
       <span class="sr-only">${nextControlTitle}</span>
     </a>

@@ -10,10 +10,10 @@ export class CarouselCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public prevControlClass: string = 'carousel-control-prev-icon';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public nextControlClass: string = 'carousel-control-next-icon';
 
-  private hasIndicator: boolean = false;
+  // private hasIndicator: boolean = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public indicator: number = 0;
 
-  private elementId: string;
+  private id: string;
   private carousel: Element;
   private innerCarousel: Element;
 
@@ -22,13 +22,9 @@ export class CarouselCustomElement {
   }
 
   private attached() {
-    if (this.indicator > 0) {
-      this.hasIndicator = true;
-    } else {
-      this.hasIndicator = false;
-    }
+    this.indicator = Number(this.indicator);
 
-    this.elementId = 'carouselExampleControls';
+    this.id = this.carousel.getAttribute('id');
 
   }
 
