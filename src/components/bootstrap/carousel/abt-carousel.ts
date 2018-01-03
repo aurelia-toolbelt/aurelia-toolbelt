@@ -11,6 +11,6 @@ export class CarouselCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public prevControlClass: string = 'carousel-control-prev-icon';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public nextControlClass: string = 'carousel-control-next-icon';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public indicator: number = 0;
-  
+
 
 }
