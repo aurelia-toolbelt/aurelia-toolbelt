@@ -1,25 +1,64 @@
 <template>
 
-  <abt-carousel indicator.bind="5" prev-control="true" next-control="true">
-    <abt-carousel-item src="/images/c1.jpg" alt="First">
+  <!-- <abt-carousel indicator.bind="5" prev-control="true" next-control="true">
+    <abt-carousel-image-item src="/images/c1.jpg" alt="First">
       <h5>First</h5>
       <p>This is a image.</p>
-    </abt-carousel-item>
-    <abt-carousel-item active src="/images/c2.jpg" alt="Second">
+    </abt-carousel-image-item>
+    <abt-carousel-image-item active src="/images/c2.jpg" alt="Second">
       <h5>Second</h5>
       <p>This is a image.</p>
-    </abt-carousel-item>
-    <abt-carousel-item src="/images/c3.jpg" alt="Third">
+    </abt-carousel-image-item>
+    <abt-carousel-image-item src="/images/c3.jpg" alt="Third">
       <h5>Third</h5>
       <p>This is a image.</p>
-    </abt-carousel-item>
-    <abt-carousel-item src="/images/c4.jpg" alt="Forth">
+    </abt-carousel-image-item>
+    <abt-carousel-image-item src="/images/c4.jpg" alt="Forth">
       <h5>Forth</h5>
       <p>This is a image.</p>
-    </abt-carousel-item>
-    <abt-carousel-item src="/images/c5.jpg" alt="Fifth">
+    </abt-carousel-image-item>
+    <abt-carousel-image-item src="/images/c5.jpg" alt="Fifth">
       <h5>Fifth</h5>
       <p>This is a image.</p>
-    </abt-carousel-item>
+    </abt-carousel-image-item>
+  </abt-carousel>
+
+  <br/> -->
+
+  <abt-carousel indicator.bind="5" prev-control="true" next-control="true">
+    <abt-carousel-html-item>
+      <h1>AAAA</h1>
+      <div slot="caption">
+        <h5>First</h5>
+        <p>This is a image.</p>
+      </div>
+    </abt-carousel-html-item>
+    <abt-carousel-html-item active>
+      <h1>BBBB</h1>
+      <div slot="caption">
+        <h5>Second</h5>
+        <p>This is a image.</p>
+    </abt-carousel-html-item>
+    <abt-carousel-html-item>
+      <h1>CCCC</h1>
+      <div slot="caption">
+        <h5>Third</h5>
+        <p>This is a image.</p>
+      </div>
+    </abt-carousel-html-item>
+    <abt-carousel-html-item>
+      <h1>DDDD</h1>
+      <div slot="caption">
+        <h5>Forth</h5>
+        <p>This is a image.</p>
+      </div>
+    </abt-carousel-html-item>
+    <abt-carousel-html-item>
+      <h1>EEEE</h1>
+      <div slot="caption">
+        <h5>Fifth</h5>
+        <p>This is a image.</p>
+      </div>
+    </abt-carousel-html-item>
   </abt-carousel>
 </template>
