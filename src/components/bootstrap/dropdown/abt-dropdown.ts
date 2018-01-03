@@ -83,26 +83,48 @@ export class BootstrapDropDown {
       return;
     }
 
+
     this.ea.subscribe(BootstrapDropdownSelectedItemChanged, (changed: BootstrapDropdownSelectedItemChanged) => {
       // not me
       if (changed.parentId !== this.id) {
         return;
       }
 
-      // add to the itemsValueOrModel
+      // add to the itemsValueOrModel at child's attached time
       if (!changed.isValueChanged) {
         this.itemsValuesOrModels.push({ value: changed.selectedItem, text: changed.selectedText });
+        return;
       }
 
-      // bound to a single object
       this.value = changed.selectedItem;
-      this.title = changed.selectedText;
 
     });
   }
 
+  private afterAttached() {
+    if (this.value !== undefined) {
+      this.valueChanged(this.value);
+    }
+  }
+
   private valueChanged(newValue: any) {
-    let found = this.itemsValuesOrModels.find(x => x.value === newValue);
+
+    let hasMatcher = (this.matcher !== undefined && this.matcher !== null);
+
+    let found = hasMatcher
+      ? this.itemsValuesOrModels.find(x => {
+        if (x.value === null || newValue === null) {
+          return x.value === newValue;
+        }
+
+        return this.matcher(x.value, newValue);
+      })
+      : this.itemsValuesOrModels.find(x => x.value === newValue);
+
+    if (!found) {
+      return;
+    }
+
     this.title = found.text;
     console.log(`value:${newValue}`);
   }

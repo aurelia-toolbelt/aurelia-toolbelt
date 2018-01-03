@@ -79,6 +79,7 @@
         "devDependencies": {}
     },
     "dependencies": {
+        "aurelia-after-attached-plugin": "aurelia-ui-toolkits/aurelia-after-attached-plugin",
         "aurelia-bootstrapper": "2.1.1",
         "aurelia-event-aggregator": "1.0.1",
         "aurelia-framework": "^1.1.5",
