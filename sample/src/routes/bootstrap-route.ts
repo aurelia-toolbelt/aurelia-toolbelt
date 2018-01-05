@@ -16,7 +16,7 @@ export class BootstrapRoute {
         name: 'bootstrap-toggle',
 
 
-        moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-toggle'),
+        moduleId: PLATFORM.moduleName('./bootstrap/toggle'),
 
         // viewPorts: {
         //   // default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
@@ -32,7 +32,7 @@ export class BootstrapRoute {
         name: 'bootstrap-card',
 
 
-        moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-card'),
+        moduleId: PLATFORM.moduleName('./bootstrap/card'),
 
         // viewPorts: {
         //   // default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
@@ -41,6 +41,41 @@ export class BootstrapRoute {
 
         nav: true,
         title: 'Card',
+        settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['dropdown'],
+        name: 'bootstrap-dropdown',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/dropdown'),
+        nav: true,
+        title: 'Dropdowns',
+        settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['navs'],
+        name: 'bootstrap-navs',
+
+
+        moduleId: PLATFORM.moduleName('./bootstrap/navs'),
+
+        // viewPorts: {
+        //   // default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
+        //   content: { moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-toggle') }
+        // },
+
+        nav: true,
+        title: 'Navs',
+        settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['breadcrumb'],
+        name: 'bootstrap-breadcrumb',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/breadcrumb'),
+
+        nav: true,
+        title: 'Breadcrumb',
         settings: { auth: false, isComponent: true }
       },
       {
@@ -86,6 +121,33 @@ export class BootstrapRoute {
         moduleId: PLATFORM.moduleName('./bootstrap/progress'),
         nav: true,
         title: 'Progressbar',
+        settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['tooltip'],
+        name: 'bootstrap-tooltip',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/tooltip'),
+        nav: true,
+        title: 'Tooltip',
+        settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['popover'],
+        name: 'bootstrap-popover',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/popover'),
+        nav: true,
+        title: 'Popover',
+        settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['carousel'],
+        name: 'bootstrap-carousel',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/carousel'),
+        nav: true,
+        title: 'Carousel',
         settings: { auth: false, isComponent: true }
       }
     ]);

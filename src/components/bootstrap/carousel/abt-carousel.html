@@ -1,0 +1,18 @@
+<template>
+  <div ref='carousel' aut-uuid class="carousel slide" data-ride="carousel">
+    <ol if.bind="indicator" class="carousel-indicators">
+      <li style="cursor:pointer" data-target="#${carousel.id}" repeat.for="item of indicator" data-slide-to="${$index}" class="${$first ? 'active' : ''}" ></li>
+    </ol>
+    <div class="carousel-inner">
+      <slot></slot>
+    </div>
+    <a if.bind="prevControl" class="carousel-control-prev" href="#${carousel.id}" role="button" data-slide="prev">
+      <span class="${prevControlClass}" aria-hidden="true" />
+      <span class="sr-only">${prevControlTitle}</span>
+    </a>
+    <a if.bind="nextControl" class="carousel-control-next" href="#${carousel.id}" role="button" data-slide="next">
+      <span class="${nextControlClass}" aria-hidden="true" />
+      <span class="sr-only">${nextControlTitle}</span>
+    </a>
+  </div>
+</template>

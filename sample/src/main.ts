@@ -11,7 +11,7 @@ export async function configure(aurelia: Aurelia) {
     .standardConfiguration()
     .developmentLogging()
     .plugin('aurelia-toolbelt')
-
+    // .plugin('aurelia-after-attached-plugin')
     ;
 
   await aurelia.start();

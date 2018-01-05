@@ -24,8 +24,9 @@ export class JQueryMetisMenu {
     }
 
     private attached() {
+        // @ts-ignore
         $(this.metismenu).metisMenu()
-            .on('show.metismenu', (event) => {
+            .on('show.metismenu', (event: any) => {
                 console.log(`show menu: ${JSON.stringify(event)}`);
 
                 console.log(this.showMenu);
@@ -38,7 +39,7 @@ export class JQueryMetisMenu {
                 }
 
             })
-            .on('shown.metismenu', (event) => {
+            .on('shown.metismenu', (event: any) => {
 
                 /** auto scroll */
 
@@ -60,7 +61,7 @@ export class JQueryMetisMenu {
                 }
 
             })
-            .on('hide.metismenu', (event) => {
+            .on('hide.metismenu', (event: any) => {
 
                 console.log(`hide menu: ${JSON.stringify(event)}`);
 
@@ -73,7 +74,7 @@ export class JQueryMetisMenu {
                 }
 
             })
-            .on('hidden.metismenu', (event) => {
+            .on('hidden.metismenu', (event: any) => {
 
                 console.log(`menu hidden: ${JSON.stringify(event)}`);
 
@@ -90,6 +91,7 @@ export class JQueryMetisMenu {
 
     private detached() {
         // dispose to avoid memory leak
+        // @ts-ignore
         $(this.metismenu).metisMenu('dispose');
     }
 

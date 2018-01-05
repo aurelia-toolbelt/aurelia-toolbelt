@@ -1,0 +1,127 @@
+<template>
+
+
+  <fieldset>
+    <legend>
+      Horizontal Styles
+    </legend>
+
+    <abt-navs pills>
+      <abt-nav-item active href="#" title="Active"></abt-nav-item>
+      <abt-nav-item href="#" title="Link"></abt-nav-item>
+      <abt-nav-item href="#" title="Link"></abt-nav-item>
+      <abt-nav-item disabled title="Disabled" href="#"></abt-nav-item>
+    </abt-navs>
+
+    <abt-navs class="justify-content-center">
+      <abt-nav-item active href="#" title="Active"></abt-nav-item>
+      <abt-nav-item href="#" title="Link"></abt-nav-item>
+      <abt-nav-item href="#" title="Link"></abt-nav-item>
+      <abt-nav-item disabled title="Disabled" href="#"></abt-nav-item>
+    </abt-navs>
+
+    <abt-navs class="justify-content-end">
+      <abt-nav-item active href="#" title="Active"></abt-nav-item>
+      <abt-nav-item href="#" title="Link"></abt-nav-item>
+      <abt-nav-item href="#" title="Link"></abt-nav-item>
+      <abt-nav-item disabled title="Disabled" href="#"></abt-nav-item>
+    </abt-navs>
+
+  </fieldset>
+
+
+
+  <fieldset>
+    <legend>
+      Vertical
+    </legend>
+
+    <div class="col-sm-3">
+      <abt-navs vertical pills>
+        <abt-nav-item active href="#" title="Active"></abt-nav-item>
+        <abt-nav-item href="#" title="Link"></abt-nav-item>
+        <abt-nav-item href="#" title="Link"></abt-nav-item>
+        <abt-nav-item disabled title="Disabled" href="#"></abt-nav-item>
+      </abt-navs>
+    </div>
+  </fieldset>
+
+
+  <fieldset>
+    <legend>
+      Tabs
+    </legend>
+
+    <abt-navs tabs>
+      <abt-nav-item active href="#" title="Active"></abt-nav-item>
+      <abt-nav-item href="#" title="Link"></abt-nav-item>
+      <abt-nav-item href="#" title="Link"></abt-nav-item>
+      <abt-nav-item disabled title="Disabled" href="#"></abt-nav-item>
+    </abt-navs>
+  </fieldset>
+
+  <fieldset>
+    <legend>
+      Fill and justify
+    </legend>
+
+    <abt-navs pills fill>
+      <abt-nav-item active href="#" title="Active"></abt-nav-item>
+      <abt-nav-item href="#" title="Longer nav link"></abt-nav-item>
+      <abt-nav-item href="#" title="Longer nav link"></abt-nav-item>
+      <abt-nav-item disabled title="Disabled" href="#"></abt-nav-item>
+    </abt-navs>
+    <br />
+    <abt-navs pills justified>
+      <abt-nav-item active href="#" title="Active"></abt-nav-item>
+      <abt-nav-item href="#" title="Longer nav link"></abt-nav-item>
+      <abt-nav-item href="#" title="Longer nav link"></abt-nav-item>
+      <abt-nav-item disabled title="Disabled" href="#"></abt-nav-item>
+    </abt-navs>
+  </fieldset>
+
+
+  <fieldset>
+    <legend>
+      Dynamic Tabs
+    </legend>
+
+    <abt-navs pills id="myTab" role="tablist" tab-shown.call="testShown(activeTab,prevTab)">
+
+      <abt-nav-item id="nav-home-tab" title="Home">
+        <div>
+          Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia. Fugiat velit proident
+          aliquip nisi incididunt nostrud exercitation proident est nisi. Irure magna elit commodo anim ex veniam culpa eiusmod
+          id nostrud sit cupidatat in veniam ad. Eiusmod consequat eu adipisicing minim anim aliquip cupidatat culpa excepteur
+          quis. Occaecat sit eu exercitation irure Lorem incididunt nostrud.
+        </div>
+      </abt-nav-item>
+
+      <abt-nav-item id="nav-profile-tab" title="Profile">
+        <div>
+          Ad pariatur nostrud pariatur exercitation ipsum ipsum culpa mollit commodo mollit ex. Aute sunt incididunt amet commodo est
+          sint nisi deserunt pariatur do. Aliquip ex eiusmod voluptate exercitation cillum id incididunt elit sunt. Qui minim
+          sit magna Lorem id et dolore velit Lorem amet exercitation duis deserunt. Anim id labore elit adipisicing ut in
+          id occaecat pariatur ut ullamco ea tempor duis.
+        </div>
+      </abt-nav-item>
+
+      <abt-nav-item id="nav-contact-tab" title="Contact">
+        <div>
+          Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex. Nulla ut duis ipsum
+          nisi elit fugiat commodo sunt reprehenderit laborum veniam eu veniam. Eiusmod minim exercitation fugiat irure ex
+          labore incididunt do fugiat commodo aliquip sit id deserunt reprehenderit aliquip nostrud. Amet ex cupidatat excepteur
+          aute veniam incididunt mollit cupidatat esse irure officia elit do ipsum ullamco Lorem. Ullamco ut ad minim do
+          mollit labore ipsum laboris ipsum commodo sunt tempor enim incididunt. Commodo quis sunt dolore aliquip aute tempor
+          irure magna enim minim reprehenderit. Ullamco consectetur culpa veniam sint cillum aliqua incididunt velit ullamco
+          sunt ullamco quis quis commodo voluptate. Mollit nulla nostrud adipisicing aliqua cupidatat aliqua pariatur mollit
+          voluptate voluptate consequat non.
+        </div>
+      </abt-nav-item>
+
+    </abt-navs>
+
+
+  </fieldset>
+
+</template>
