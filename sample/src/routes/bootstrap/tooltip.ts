@@ -1,9 +1,9 @@
 export class BootstrapTooltip {
 
   private showMgs() {
-    console.log('HELLO BOY!');
+    console.log('Show My Tooltip!');
   }
   private hideMgs() {
-    console.log('BYE BOY!');
+    console.log('Hide My Tooltip!');
   }
 }

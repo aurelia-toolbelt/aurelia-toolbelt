@@ -55,23 +55,24 @@ export class BootstrapTooltipCustomElement {
     });
     this.tooltip.remove();
     if (this.showTooltip) {
-      $(this.parentElement).on('show.bs.tooltip', this.showTooltip());
+      // @ts-ignore
+      $(this.parentElement).on('show.bs.tooltip', this.showTooltip);
     }
-
     if (this.tooltipShown) {
-      $(this.parentElement).on('shown.bs.tooltip', this.tooltipShown());
+      // @ts-ignore
+      $(this.parentElement).on('shown.bs.tooltip', this.tooltipShown);
     }
-
     if (this.hideTooltip) {
-      $(this.parentElement).on('hide.bs.tooltip', this.hideTooltip());
+      // @ts-ignore
+      $(this.parentElement).on('hide.bs.tooltip', this.hideTooltip);
     }
-
     if (this.tooltipHidden) {
-      $(this.parentElement).on('hidden.bs.tooltip', this.tooltipHidden());
+      // @ts-ignore
+      $(this.parentElement).on('hidden.bs.tooltip', this.tooltipHidden);
     }
-
     if (this.tooltipInserted) {
-      $(this.parentElement).on('inserted.bs.tooltip', this.tooltipInserted());
+      // @ts-ignore
+      $(this.parentElement).on('inserted.bs.tooltip', this.tooltipInserted);
     }
   }
 

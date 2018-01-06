@@ -57,23 +57,28 @@ export class BootstrapPopoverCustomElement {
     });
     this.popover.remove();
     if (this.showPopover) {
-      $(this.parentElement).on('show.bs.popover', this.showPopover());
+      // @ts-ignore
+      $(this.parentElement).on('show.bs.popover', this.showPopover);
     }
 
     if (this.popoverShown) {
-      $(this.parentElement).on('shown.bs.popover', this.popoverShown());
+      // @ts-ignore
+      $(this.parentElement).on('shown.bs.popover', this.popoverShown);
     }
 
     if (this.hidePopover) {
-      $(this.parentElement).on('hide.bs.popover', this.hidePopover());
+      // @ts-ignore
+      $(this.parentElement).on('hide.bs.popover', this.hidePopover);
     }
 
     if (this.popoverHidden) {
-      $(this.parentElement).on('hidden.bs.popover', this.popoverHidden());
+      // @ts-ignore
+      $(this.parentElement).on('hidden.bs.popover', this.popoverHidden);
     }
 
     if (this.popoverInserted) {
-      $(this.parentElement).on('inserted.bs.popover', this.popoverInserted());
+      // @ts-ignore
+      $(this.parentElement).on('inserted.bs.popover', this.popoverInserted);
     }
   }
 
