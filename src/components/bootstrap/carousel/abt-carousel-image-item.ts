@@ -33,8 +33,6 @@ export class CarouselImageItemCustomElement {
     this.times = this.sharedController.getAndIncrement();
     let isActive = this.element.hasAttribute('active');
     let carousel = this.carouselItem.parentElement.parentElement;
-    console.log(carousel);
-    console.log(carousel.children[0]);
     let carouselOl = carousel.children[0];
     let isOl = carouselOl.nodeName.toLowerCase() === 'ol';
     if (isOl) {
