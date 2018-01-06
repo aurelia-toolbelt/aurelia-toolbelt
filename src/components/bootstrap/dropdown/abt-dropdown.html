@@ -16,7 +16,7 @@
       aria-expanded="false" disabled.bind="disabled || isBusy">
       <span class="${isSplit?'sr-only':''}">${title}</span>
     </button>
-    <div class="dropdown-menu">
+    <div class="dropdown-menu ${isRightAligned ? 'dropdown-menu-right' : ''}">
       <slot>
 
       </slot>

@@ -3,15 +3,16 @@
 
   <fieldset>
     <legend>Dropdown - Simple</legend>
-    <abt-dropdown split placement="left" size="sm" title="Action" click.call="buttonClicked(event,target)">
+    <abt-dropdown split align-right placement="right" size="sm" title="Action" click.call="buttonClicked(event,target)">
+      <abt-dropdown-header>Important Actions</abt-dropdown-header>
       <abt-dropdown-item>Action</abt-dropdown-item>
-      <abt-dropdown-item>Another action</abt-dropdown-item>
+      <abt-dropdown-item disabled>Another action</abt-dropdown-item>
       <abt-dropdown-item>Something else here</abt-dropdown-item>
       <abt-dropdown-divider></abt-dropdown-divider>
       <abt-dropdown-item>Separated link</abt-dropdown-item>
     </abt-dropdown>
 
-    <abt-dropdown class="mr-5"  placement="left" color="warning" title="Action" disabled.bind="true">
+    <abt-dropdown class="mr-5" placement="left" color="warning" title="Action" disabled.bind="true">
       <abt-dropdown-item>Action</abt-dropdown-item>
       <abt-dropdown-item>Another action</abt-dropdown-item>
       <abt-dropdown-item>Something else here</abt-dropdown-item>
@@ -106,7 +107,7 @@
         Choose your hardware
       </abt-dropdown-item>
       <abt-dropdown-divider></abt-dropdown-divider>
-      <abt-dropdown-item repeat.for="str of stringObjects" value.bind="str">
+      <abt-dropdown-item repeat.for="str of stringObjects" value.bind="str" disabled.bind="$index===1">
         ${str}
       </abt-dropdown-item>
     </abt-dropdown>

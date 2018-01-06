@@ -3,23 +3,29 @@ import { EventAggregator } from 'aurelia-event-aggregator';
 import { BootstrapDropdownSelectedItemChanged } from './abt-dropdown-selected-item-changed';
 
 
-@inject(EventAggregator)
+@inject(EventAggregator, Element)
 @containerless()
 @customElement('abt-dropdown-item')
 export class BootstrapDropdownItem {
 
+
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public model: any;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string = null;
 
   private dropdownId: any;
 
   private item: HTMLDivElement;
 
-  constructor(private ea: EventAggregator) { }
+  constructor(private ea: EventAggregator, private element: Element) { }
 
   private attached() {
 
     this.dropdownId = this.item.parentElement.parentElement.getAttribute('id');
+
+    this.disabled = this.disabled === '' || this.disabled;
 
     if (this.model !== undefined || this.value !== undefined) {
       let selectedValue = this.model !== undefined
@@ -33,6 +39,11 @@ export class BootstrapDropdownItem {
   }
 
   private onClick() {
+
+    if (this.disabled) {
+      return;
+    }
+
     if (this.model !== undefined || this.value !== undefined) {
       let selectedValue = this.model !== undefined
         ? this.model

@@ -24,6 +24,7 @@ export class BootstrapDropDown {
   private isSplit: boolean = false;
   private isBusy: boolean = false;
   private placementClass: string = '';
+  private isRightAligned: boolean = false;
 
   private itemsValuesOrModels: Array<any> = [];
 
@@ -76,6 +77,8 @@ export class BootstrapDropDown {
 
     this.isSplit = this.element.hasAttribute('split');
     this.id = this.element.children.item(0).getAttribute('id');
+
+    this.isRightAligned = this.element.hasAttribute('align-right');
 
     switch (this.placement) {
       case 'top':
@@ -143,12 +146,11 @@ export class BootstrapDropDown {
     }
 
     this.title = found.text;
-    console.log(`value:${newValue}`);
   }
 
   private detached() {
     this.task = null;
-    // this.element.previousElementSibling.removeEventListener('click', this.onClick);
+    $(`#${this.id}`).dropdown('dispose');
   }
 
 }

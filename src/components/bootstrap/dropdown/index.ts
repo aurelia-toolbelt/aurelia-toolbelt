@@ -7,6 +7,7 @@ export function configure(config: FrameworkConfiguration) {
   config.globalResources([
     PLATFORM.moduleName('./abt-dropdown'),
     PLATFORM.moduleName('./abt-dropdown-item'),
-    PLATFORM.moduleName('./abt-dropdown-divider.html')
+    PLATFORM.moduleName('./abt-dropdown-divider.html'),
+    PLATFORM.moduleName('./abt-dropdown-header.html')
   ]);
 }
