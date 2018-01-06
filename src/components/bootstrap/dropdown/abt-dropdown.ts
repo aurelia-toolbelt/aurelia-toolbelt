@@ -12,6 +12,7 @@ export class BootstrapDropDown {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: string = 'md';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public color: string = 'primary';
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string = false;
@@ -22,7 +23,7 @@ export class BootstrapDropDown {
   private id: any;
   private isSplit: boolean = false;
   private isBusy: boolean = false;
-
+  private placementClass: string = '';
 
   private itemsValuesOrModels: Array<any> = [];
 
@@ -75,6 +76,22 @@ export class BootstrapDropDown {
 
     this.isSplit = this.element.hasAttribute('split');
     this.id = this.element.children.item(0).getAttribute('id');
+
+    switch (this.placement) {
+      case 'top':
+        this.placementClass = 'dropup';
+        break;
+      case 'right':
+        this.placementClass = 'dropright';
+        break;
+      case 'left':
+        this.placementClass = 'dropleft';
+        break;
+      default:
+        this.placementClass = '';
+        break;
+    }
+
   }
 
   private bind() {
