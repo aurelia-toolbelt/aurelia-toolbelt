@@ -4,7 +4,6 @@ import {
   customElement, inject, bindingMode,
   Disposable, BindingEngine
 } from 'aurelia-framework';
-import { error } from 'util';
 
 @inject(Element, PasswordMeter)
 @customElement('abt-password')
