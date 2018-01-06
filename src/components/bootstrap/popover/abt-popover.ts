@@ -24,11 +24,11 @@ export class BootstrapPopoverCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public template: string =
     '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>';
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public show: Function;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public shown: Function;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public hide: Function;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public hidden: Function;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public inserted: Function;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showPopover: Function;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public popoverShown: Function;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public hidePopover: Function;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public popoverHidden: Function;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public popoverInserted: Function;
 
   private popover: Element;
   private parentElement: HTMLElement;
@@ -56,24 +56,24 @@ export class BootstrapPopoverCustomElement {
       'boundary': this.boundary
     });
     this.popover.remove();
-    if (this.show) {
-      $(this.parentElement).on('show.bs.popover', this.show());
+    if (this.showPopover) {
+      $(this.parentElement).on('show.bs.popover', this.showPopover());
     }
 
-    if (this.shown) {
-      $(this.parentElement).on('shown.bs.popover', this.shown());
+    if (this.popoverShown) {
+      $(this.parentElement).on('shown.bs.popover', this.popoverShown());
     }
 
-    if (this.hide) {
-      $(this.parentElement).on('hide.bs.popover', this.hide());
+    if (this.hidePopover) {
+      $(this.parentElement).on('hide.bs.popover', this.hidePopover());
     }
 
-    if (this.hidden) {
-      $(this.parentElement).on('hidden.bs.popover', this.hidden());
+    if (this.popoverHidden) {
+      $(this.parentElement).on('hidden.bs.popover', this.popoverHidden());
     }
 
-    if (this.inserted) {
-      $(this.parentElement).on('inserted.bs.popover', this.inserted());
+    if (this.popoverInserted) {
+      $(this.parentElement).on('inserted.bs.popover', this.popoverInserted());
     }
   }
 

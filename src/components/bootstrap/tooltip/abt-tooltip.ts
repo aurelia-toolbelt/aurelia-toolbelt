@@ -23,11 +23,11 @@ export class BootstrapTooltipCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public template: string =
     '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>';
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public show: Function;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public shown: Function;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public hide: Function;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public hidden: Function;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public inserted: Function;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showTooltip: Function;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public tooltipShown: Function;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public hideTooltip: Function;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public tooltipHidden: Function;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public tooltipInserted: Function;
 
   private tooltip: Element;
   private parentElement: HTMLElement;
@@ -54,24 +54,24 @@ export class BootstrapTooltipCustomElement {
       'boundary': this.boundary
     });
     this.tooltip.remove();
-    if (this.show) {
-      $(this.parentElement).on('show.bs.tooltip', this.show());
+    if (this.showTooltip) {
+      $(this.parentElement).on('show.bs.tooltip', this.showTooltip());
     }
 
-    if (this.shown) {
-      $(this.parentElement).on('shown.bs.tooltip', this.shown());
+    if (this.tooltipShown) {
+      $(this.parentElement).on('shown.bs.tooltip', this.tooltipShown());
     }
 
-    if (this.hide) {
-      $(this.parentElement).on('hide.bs.tooltip', this.hide());
+    if (this.hideTooltip) {
+      $(this.parentElement).on('hide.bs.tooltip', this.hideTooltip());
     }
 
-    if (this.hidden) {
-      $(this.parentElement).on('hidden.bs.tooltip', this.hidden());
+    if (this.tooltipHidden) {
+      $(this.parentElement).on('hidden.bs.tooltip', this.tooltipHidden());
     }
 
-    if (this.inserted) {
-      $(this.parentElement).on('inserted.bs.tooltip', this.inserted());
+    if (this.tooltipInserted) {
+      $(this.parentElement).on('inserted.bs.tooltip', this.tooltipInserted());
     }
   }
 
