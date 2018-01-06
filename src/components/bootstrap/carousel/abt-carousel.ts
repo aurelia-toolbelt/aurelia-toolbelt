@@ -16,14 +16,11 @@ export class CarouselCustomElement {
   private carousel: Element;
 
 
-  private attached() {
-
+  private afterAttached() {
     $(this.carousel).carousel('cycle');
   }
 
   private detached() {
-
     $(this.carousel).carousel('dispose');
   }
-
 }
