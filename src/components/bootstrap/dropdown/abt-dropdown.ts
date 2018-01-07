@@ -140,7 +140,7 @@ export class BootstrapDropDown {
 
   private afterAttached() {
 
-   if (this.bsShow) {
+    if (this.bsShow) {
       // $(`#${this.id}`).on('show.bs.dropdown', this.bsShow );
       $(`#${this.id}`).on('show.bs.dropdown', () => {
         if (this.bsShow) {
@@ -204,7 +204,7 @@ export class BootstrapDropDown {
 
     // selected changed item event
     if (this.changed) {
-      this.changed(newValue);
+      this.changed({ selected: newValue });
     }
   }
 

@@ -102,7 +102,9 @@
   <fieldset>
     <legend>Dropdown - Strings</legend>
 
-    <abt-dropdown class="mb-5" value.bind="selectedItemString" color="success" title="Choose your hardware" size="sm">
+    <abt-dropdown class="mb-5" value.bind="selectedItemString" color="success" title="Choose your hardware" size="sm" 
+    changed.call="selectedChanged(selected)"
+      bs-shown.call="dropDownShown()">
       <abt-dropdown-item value="">
         Choose your hardware
       </abt-dropdown-item>

@@ -36,4 +36,16 @@ export class BootstrapDropdownRoute {
   }
 
   private productMatcher = (a, b) => a === b || (a.name === b.name);
+
+
+
+  private dropDownShown() {
+    console.log('dropdown shown');
+  }
+
+  private selectedChanged(selectedItem) {
+    console.log('selected item is:');
+    console.warn(selectedItem);
+  }
+
 }
