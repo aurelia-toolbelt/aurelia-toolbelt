@@ -12,10 +12,10 @@ export class BootstrapNavs {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
 
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public showTab: any;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public hideTab: any;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public tabShown: any;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public tabHidden: any;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public bsShow: any;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public bsHide: any;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public bsShown: any;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public bsHidden: any;
 
 
   private beTab: boolean = false;
@@ -51,35 +51,35 @@ export class BootstrapNavs {
     // all a tags which are going  meant to be tabs/pills
     let children = this.element.children.item(0).getElementsByTagName('a');
 
-    if (this.showTab) {
+    if (this.bsShow) {
       $(children).on('show.bs.tab', (event: any) => {
-        if (this.showTab) {
-          this.showTab({ activeTab: event.target, prevTab: event.relatedTarget });
+        if (this.bsShow) {
+          this.bsShow({ activeTab: event.target, prevTab: event.relatedTarget });
         }
       });
     }
 
-    if (this.tabShown) {
+    if (this.bsShown) {
       $(children).on('shown.bs.tab', (event: any) => {
-        if (this.tabShown) {
-          this.tabShown({ activeTab: event.target, prevTab: event.relatedTarget });
+        if (this.bsShown) {
+          this.bsShown({ activeTab: event.target, prevTab: event.relatedTarget });
         }
       });
     }
 
 
-    if (this.hideTab) {
+    if (this.bsHide) {
       $(children).on('hide.bs.tab', (event: any) => {
-        if (this.hideTab) {
-          this.hideTab({ activeTab: event.target, prevTab: event.relatedTarget });
+        if (this.bsHide) {
+          this.bsHide({ activeTab: event.target, prevTab: event.relatedTarget });
         }
       });
     }
 
-    if (this.tabHidden) {
+    if (this.bsHidden) {
       $(children).on('hidden.bs.tab', (event: any) => {
-        if (this.tabHidden) {
-          this.tabHidden({ activeTab: event.target, prevTab: event.relatedTarget });
+        if (this.bsHidden) {
+          this.bsHidden({ activeTab: event.target, prevTab: event.relatedTarget });
         }
       });
     }

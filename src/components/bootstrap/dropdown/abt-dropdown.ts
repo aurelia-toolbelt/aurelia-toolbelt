@@ -210,6 +210,10 @@ export class BootstrapDropDown {
 
   private detached() {
     this.task = null;
+    $(`#${this.id}`).off('show.bs.tab');
+    $(`#${this.id}`).off('shown.bs.tab');
+    $(`#${this.id}`).off('hide.bs.tab');
+    $(`#${this.id}`).off('hidden.bs.tab');
     $(`#${this.id}`).dropdown('dispose');
   }
 
