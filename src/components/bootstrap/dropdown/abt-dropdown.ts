@@ -3,6 +3,10 @@ import { EventAggregator } from 'aurelia-event-aggregator';
 import { BootstrapDropdownSelectedItemChanged } from './abt-dropdown-selected-item-changed';
 
 
+import * as $ from 'jquery';
+
+export type BoundaryType = 'viewport' | 'window' | 'scrollParent';
+
 @inject(Element, EventAggregator)
 // @containerless()
 @customElement('abt-dropdown')
@@ -14,11 +18,24 @@ export class BootstrapDropDown {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public color: string = 'primary';
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string = false;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public matcher: any;
+
+
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public offset: string | number = 0;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public flip: boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: BoundaryType = 'scrollParent';
+
+
+
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public changed: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsShow: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsShown: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsHide: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsHidden: Function;
 
   private id: any;
   private isSplit: boolean = false;
@@ -122,6 +139,44 @@ export class BootstrapDropDown {
   }
 
   private afterAttached() {
+
+   if (this.bsShow) {
+      // $(`#${this.id}`).on('show.bs.dropdown', this.bsShow );
+      $(`#${this.id}`).on('show.bs.dropdown', () => {
+        if (this.bsShow) {
+          this.bsShow();
+        }
+      });
+    }
+
+    if (this.bsShown) {
+      // $(`#${this.id}`).on('shown.bs.dropdown', this.bsShown );
+      $(`#${this.id}`).on('shown.bs.dropdown', () => {
+        if (this.bsShown) {
+          this.bsShown();
+        }
+      });
+    }
+
+    if (this.bsHide) {
+      // $(`#${this.id}`).on('hide.bs.dropdown', this.bsHide );
+      $(`#${this.id}`).on('hide.bs.dropdown', () => {
+        if (this.bsHide) {
+          this.bsHide();
+        }
+      });
+    }
+
+    if (this.bsHidden) {
+      // $(`#${this.id}`).on('hidden.bs.dropdown', this.bsHidden);
+      $(`#${this.id}`).on('hidden.bs.dropdown', () => {
+        if (this.bsHidden) {
+          this.bsHidden();
+        }
+      });
+    }
+
+
     if (this.value !== undefined) {
       this.valueChanged(this.value);
     }
@@ -146,6 +201,11 @@ export class BootstrapDropDown {
     }
 
     this.title = found.text;
+
+    // selected changed item event
+    if (this.changed) {
+      this.changed(newValue);
+    }
   }
 
   private detached() {
