@@ -41,10 +41,5 @@ export class Page1 {
     this.title = b.title;
   }
 
-  private buttonClicked(event: Event, target: HTMLButtonElement) {
-    console.log('buttonClicked');
-    console.log(target);
-    return this.http.get('https://github.com');
-  }
 
 }

@@ -1,0 +1,37 @@
+<template>
+
+
+  <abt-link-button color="warning" href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/button">
+    Link
+  </abt-link-button>
+  <br /><br />
+  <abt-link-button block href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/button">
+    Link
+  </abt-link-button>
+  <br /><br />
+  <abt-button color="success" click.call="buttonClicked(event,target)">
+    Test-Success
+  </abt-button>
+
+  <br /><br />
+
+  <abt-button outline block color="danger" size="sm" click.call="buttonClicked(event,target)">
+    <i class="fa fa-gear fa-spin"></i>
+    Test-Danger
+    </span>
+  </abt-button>
+
+  <br /><br />
+
+  <abt-button block color="info" size="lg" click.call="buttonClicked(event,target)">
+    <span>
+      <i class="fa fa-link"></i>
+      Test-Info
+    </span>
+    <slot slot="loading">
+      <i class="fa fa-refresh fa-spin" aria-hidden="true">
+      </i>
+    </slot>
+  </abt-button>
+  <br />
+</template>
