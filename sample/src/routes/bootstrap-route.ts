@@ -88,6 +88,15 @@ export class BootstrapRoute {
         settings: { auth: false, isComponent: true }
       },
       {
+        route: ['jumbotron'],
+        name: 'bootstrap-jumbotron',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/jumbotron'),
+        nav: true,
+        title: 'Jumbotron',
+        settings: { auth: false, isComponent: true }
+      },
+      {
         route: ['password'],
         name: 'bootstrap-password',
 

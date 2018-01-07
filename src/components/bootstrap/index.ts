@@ -12,6 +12,7 @@ export function configure(config: FrameworkConfiguration) {
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/progressbar/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/toggle/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/float-input/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/jumbotron/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/tokenize/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/tooltip/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/popover/index'))
