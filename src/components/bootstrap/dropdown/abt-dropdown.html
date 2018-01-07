@@ -2,7 +2,7 @@
 
   <require from="../../../custom-attributes/purejs/uuid/aut-uuid"></require>
 
-  <div aut-uuid class="btn-group ${class}" css="${style}">
+  <div aut-uuid class="btn-group ${class} ${placementClass}" css="${style}">
     <button if.bind="isSplit" type="button" class="btn btn-${color} btn-${size}" click.delegate="onClicked($event)" disabled.bind="disabled || isBusy">
       <span show.bind="isBusy">
         <slot name="loading">
@@ -12,11 +12,11 @@
       </span>
       <span>${title}</span>
     </button>
-    <button type="button" class="btn btn-${color} btn-${size} dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
+    <button type="button" class="btn btn-${color} btn-${size} ${placementClass} dropdown-toggle dropdown-toggle-split"  data-offset="${offset}" data-flip="${flip}" data-boundary="${data-boundary}" data-toggle="dropdown" aria-haspopup="true"
       aria-expanded="false" disabled.bind="disabled || isBusy">
       <span class="${isSplit?'sr-only':''}">${title}</span>
     </button>
-    <div class="dropdown-menu">
+    <div class="dropdown-menu ${isRightAligned ? 'dropdown-menu-right' : ''}">
       <slot>
 
       </slot>
