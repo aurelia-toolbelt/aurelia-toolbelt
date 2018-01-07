@@ -1,15 +1,15 @@
 <template>
   <div ref='carousel' aut-uuid class="carousel slide" data-ride="carousel">
-    <ol if.bind="showIndicator" class="carousel-indicators">
+    <ol show.bind="showIndicator" class="carousel-indicators">
     </ol>
     <div class="carousel-inner">
       <slot></slot>
     </div>
-    <a if.bind="prevControl" class="carousel-control-prev" href="#${carousel.id}" role="button" data-slide="prev">
+    <a show.bind="prevControl" class="carousel-control-prev" href="#${carousel.id}" role="button" data-slide="prev">
       <span class="${prevControlClass}" aria-hidden="true" />
       <span class="sr-only">${prevControlTitle}</span>
     </a>
-    <a if.bind="nextControl" class="carousel-control-next" href="#${carousel.id}" role="button" data-slide="next">
+    <a show.bind="nextControl" class="carousel-control-next" href="#${carousel.id}" role="button" data-slide="next">
       <span class="${nextControlClass}" aria-hidden="true" />
       <span class="sr-only">${nextControlTitle}</span>
     </a>

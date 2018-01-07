@@ -2,7 +2,7 @@
   <div style="margin:5px">
     <button type="button" class="btn btn-primary">
       Submit
-      <abt-tooltip html.bind='true' placement='bottom'>
+      <abt-tooltip html.bind='true' show-tooltip.call="showMgs()" hide-tooltip.bind="hideMgs" placement='bottom'>
         <h1 style='color:red'>Click Me!</h1>
       </abt-tooltip>
     </button>

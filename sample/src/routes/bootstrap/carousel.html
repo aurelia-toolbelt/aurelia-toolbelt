@@ -1,6 +1,6 @@
 <template>
 
-  <abt-carousel show-indicator.bind="true" prev-control="true" next-control="true">
+  <abt-carousel interval.bind="3000" show-indicator.bind="true" prev-control="true" next-control="true">
     <abt-carousel-image-item src="/images/c1.jpg" alt="First">
       <h5>First</h5>
       <p>This is a image.</p>
@@ -28,40 +28,21 @@
   <br/>
 
 
-  <abt-carousel indicator.bind="5" prev-control="true" next-control="true">
+  <abt-carousel  interval.bind="3000" prev-control="true" next-control="true">
     <abt-carousel-html-item>
-      <h1>AAAA</h1>
-      <div slot="caption">
-        <h5>First</h5>
-        <p>This is a image.</p>
-      </div>
+      <h1 style='color:red'>AAAA</h1>
     </abt-carousel-html-item>
     <abt-carousel-html-item active>
-      <h1>BBBB</h1>
-      <div slot="caption">
-        <h5>Second</h5>
-        <p>This is a image.</p>
+      <h1 style='color:greed'>BBBB</h1>
+         </abt-carousel-html-item>
+    <abt-carousel-html-item>
+      <h1 style='color:blue'>CCCC</h1>
     </abt-carousel-html-item>
     <abt-carousel-html-item>
-      <h1>CCCC</h1>
-      <div slot="caption">
-        <h5>Third</h5>
-        <p>This is a image.</p>
-      </div>
+      <h1 style='color:gray'>DDDD</h1>
     </abt-carousel-html-item>
     <abt-carousel-html-item>
-      <h1>DDDD</h1>
-      <div slot="caption">
-        <h5>Forth</h5>
-        <p>This is a image.</p>
-      </div>
-    </abt-carousel-html-item>
-    <abt-carousel-html-item>
-      <h1>EEEE</h1>
-      <div slot="caption">
-        <h5>Fifth</h5>
-        <p>This is a image.</p>
-      </div>
+      <h1 style='color:yellow'>EEEE</h1>
     </abt-carousel-html-item>
   </abt-carousel>
 </template>
