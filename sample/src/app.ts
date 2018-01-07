@@ -16,12 +16,23 @@ export class App {
   constructor(Logger) {
 
     this.themes = [
-      { name: 'default', path: '/bootswatch/default' },
+      { name: 'cerulean', path: '/bootswatch/cerulean' },
       { name: 'cosmo', path: '/bootswatch/cosmo' },
+      { name: 'cyborg', path: '/bootswatch/cyborg' },
+      { name: 'darkly', path: '/bootswatch/darkly' },
+      { name: 'default', path: '/bootswatch/default' },
+      { name: 'litera', path: '/bootswatch/litera' },
+      { name: 'lumen', path: '/bootswatch/lumen' },
+      { name: 'lux', path: '/bootswatch/lux' },
+      { name: 'minty', path: '/bootswatch/minty' },
+      { name: 'sandstone', path: '/bootswatch/sandstone' },
+      { name: 'simplex', path: '/bootswatch/simplex' },
+      { name: 'sketchy', path: '/bootswatch/sketchy' },
+      { name: 'slate', path: '/bootswatch/slate' },
+      { name: 'spacelab', path: '/bootswatch/spacelab' },
       { name: 'superhero', path: '/bootswatch/superhero' },
-      { name: 'flatly', path: '/bootswatch/flatly' },
-      { name: 'yeti', path: '/bootswatch/yeti' },
-      { name: 'cyborg', path: '/bootswatch/cyborg' }
+      { name: 'united', path: '/bootswatch/united' },
+      { name: 'yeti', path: '/bootswatch/yeti' }
     ];
   }
 

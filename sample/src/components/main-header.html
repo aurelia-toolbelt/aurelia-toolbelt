@@ -22,20 +22,14 @@
     </div>
 
 
-    <form class="form-inline right">
-      <!-- <div class="btn-group">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-         aria-expanded="false">
-          select themeedggsdfgdfgdfgd  dfgd g dfg dg
-        </button>
-        <div class="dropdown-menu dropdown-menu-right">
-          <button repeat.for="theme of themes" class="dropdown-item" type="button" data-path="${theme.path}">${theme.name}</button>
-        </div>
-      </div> -->
-
-      <select value.bind="theme" class="form-control mr-sm-2">
-        <option repeat.for="th of themes" model.bind="th">${th.name}</option>
-      </select>
+    <form class="form-inline my-2 my-lg-0">
+      <label>
+        <a href="https://bootswatch.com/" class="text-light">Bootswatch themes</a>
+        &nbsp;&nbsp;
+        <abt-dropdown value.bind="theme" class="mr-2" title="${theme.name}" align-right>
+          <abt-dropdown-item repeat.for="th of themes" model.bind="th">${th.name}</abt-dropdown-item>
+        </abt-dropdown>
+      </label>
     </form>
   </nav>
 
