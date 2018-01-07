@@ -12,6 +12,16 @@ export class BootstrapRoute {
 
     config.map([
       {
+        route: ['' ,'alert'],
+        name: 'bootstrap-alert',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/alert'),
+
+        nav: true,
+        title: 'Alert',
+        settings: { auth: false, isComponent: true }
+      },
+      {
         route: ['badge'],
         name: 'bootstrap-badge',
 
@@ -139,7 +149,7 @@ export class BootstrapRoute {
         settings: { auth: false, isComponent: true }
       },
       {
-        route: ['', 'toggle'],
+        route: ['toggle'],
         name: 'bootstrap-toggle',
 
 

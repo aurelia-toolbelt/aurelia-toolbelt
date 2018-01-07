@@ -1,0 +1,19 @@
+<template>
+
+  <abt-alert>This is a primary alert—check it out!</abt-alert>
+
+  <abt-alert dismissible="true" color="secondary">This is a dismissible secondary alert—check it out!</abt-alert>
+  <abt-alert dismissible color="warning">This is a dismissible warning alert—check it out!</abt-alert>
+  <abt-alert dismissible.bind="true" color="danger">
+      This is a dismissible danger alert with
+      <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/bt/alert/src/components/bootstrap/alert">an example link</abt-alert-link>. Give it a click if you like.
+    </abt-alert>
+
+  <abt-alert color="primary">
+    This is a non-dismissible primary alert with
+    <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/bt/alert/src/components/bootstrap/alert">an example link</abt-alert-link>. Give it a click if you like.
+  </abt-alert>
+  <abt-alert dismissible="false" color="success">This is a non-dismissible success alert—check it out!</abt-alert>
+  <abt-alert dismissible.bind="false" color="info">This is a non-dismissible info alert—check it out!</abt-alert>
+
+</template>
