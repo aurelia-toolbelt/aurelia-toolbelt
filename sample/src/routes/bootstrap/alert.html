@@ -34,7 +34,7 @@
     Toggle Alert
   </abt-button>
 
-  <abt-alert color="primary" show-alert.bind="showOrHideAlert">
+  <abt-alert color="primary" show-alert.bind="showOrHideAlert" bs-show.call="showAlert(target)">
     This is an animated primary alert with
     <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/src/components/bootstrap/alert">an example link</abt-alert-link>. Give it a click if you like.
   </abt-alert>
