@@ -147,6 +147,14 @@ export class BootstrapRoute {
         nav: true,
         title: 'Progressbar',
         settings: { auth: false, isComponent: true }
+      }, {
+        route: ['scrollspy'],
+        name: 'bootstrap-scrollspy',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/scrollspy'),
+        nav: true,
+        title: 'Scrollspy',
+        settings: { auth: false, isComponent: true }
       },
       {
         route: ['toggle'],
