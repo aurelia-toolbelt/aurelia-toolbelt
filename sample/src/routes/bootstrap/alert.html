@@ -1,5 +1,5 @@
 <template>
-
+  
   <abt-alert>This is a primary alert—check it out!</abt-alert>
 
   <abt-alert dismissible="true" color="secondary">This is a dismissible secondary alert—check it out!</abt-alert>
@@ -23,6 +23,25 @@
       you can see how spacing within an alert works with this kind of content.</p>
     <hr>
     <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+  </abt-alert>
+
+  <hr /> 
+
+
+
+
+  <abt-button click.call="toggleAlert()">
+    Toggle Alert
+  </abt-button>
+
+  <abt-alert color="primary" show-alert.bind="showOrHideAlert">
+    This is an animated primary alert with
+    <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/src/components/bootstrap/alert">an example link</abt-alert-link>. Give it a click if you like.
+  </abt-alert>
+  <br />
+  <abt-alert color="primary" animate="false" show-alert.bind="showOrHideAlert">
+    This is a non-animated primary alert with
+    <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/src/components/bootstrap/alert">an example link</abt-alert-link>. Give it a click if you like.
   </abt-alert>
 
 
