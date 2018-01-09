@@ -9,11 +9,10 @@ import * as $ from 'jquery';
 @customElement('abt-scrollspy')
 export class BootstrapScrollSpy {
 
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public target: string;
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
-
-
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsScrollspy: Function;
 
 
@@ -23,7 +22,8 @@ export class BootstrapScrollSpy {
 
 
   private afterAttached() {
-    $(this.spy).scrollspy({ target: '#list-example', offset: 1 });
+
+    $(this.spy).scrollspy({ target: this.target[0] === '#' ? this.target : `#${this.target}`, offset: 1 });
 
     if (this.bsScrollspy) {
       $(this.spy).on('activate.bs.scrollspy', () => {

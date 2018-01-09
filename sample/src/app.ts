@@ -1,11 +1,14 @@
 import { Router, RouterConfiguration } from 'aurelia-router';
-import { PLATFORM, bindable } from 'aurelia-framework';
+import { PLATFORM, bindable, EventManager, inject } from 'aurelia-framework';
+import { EventAggregator } from 'aurelia-event-aggregator';
+import { DOM } from 'aurelia-pal';
 
 class Theme {
   public name: string;
   public path: string;
 }
 
+@inject(EventAggregator)
 export class App {
 
   public router: Router;
@@ -13,7 +16,7 @@ export class App {
   private themes: Array<Theme>;
   @bindable() private selectedTheme: Theme;
 
-  constructor(Logger) {
+  constructor(eventAggregator: EventAggregator) {
 
     this.themes = [
       { name: 'cerulean', path: '/bootswatch/cerulean' },
@@ -34,11 +37,26 @@ export class App {
       { name: 'united', path: '/bootswatch/united' },
       { name: 'yeti', path: '/bootswatch/yeti' }
     ];
+
+
+    eventAggregator.subscribe('router:navigation:complete', () => {
+      if (!window.location.hash) {
+        return;
+      }
+      const doc = DOM.getElementById(window.location.hash.substr(1));
+      if (doc) {
+        doc.scrollIntoView();
+      }
+    });
+
   }
 
 
 
   public configureRouter(config: RouterConfiguration, router: Router) {
+
+
+    // config.options.pushState = true;
 
     config.map([
       {
