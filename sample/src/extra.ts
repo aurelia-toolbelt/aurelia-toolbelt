@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'metismenu/dist/metismenu.css';
 
 import 'nprogress/nprogress.css';
+import 'toastr/build/toastr.css';
 import 'font-awesome/css/font-awesome.css';
 import 'highlight.js/styles/solarized-dark.css';
 import 'pretty-checkbox/dist/pretty-checkbox.css';

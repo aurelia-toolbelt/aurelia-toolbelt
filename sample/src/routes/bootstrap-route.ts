@@ -12,7 +12,7 @@ export class BootstrapRoute {
 
     config.map([
       {
-        route: ['' ,'alert'],
+        route: ['', 'alert'],
         name: 'bootstrap-alert',
 
         moduleId: PLATFORM.moduleName('./bootstrap/alert'),

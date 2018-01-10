@@ -2,6 +2,10 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
 
+export * from './services/jquery/toastr/toastr-service-options';
+export * from './services/jquery/toastr/toastr-service';
+
+
 export function configure(config: FrameworkConfiguration) {
 
   config
