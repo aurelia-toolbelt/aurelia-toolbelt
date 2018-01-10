@@ -1,12 +1,6 @@
 import { inject, customElement, bindingMode, bindable, containerless, singleton } from 'aurelia-framework';
+import { SharedIndex } from './shared-index';
 
-@singleton()
-class SharedIndex {
-  private index = 0;
-  public getAndIncrement() {
-    return this.index++;
-  }
-}
 
 @inject(Element, SharedIndex)
 @containerless()
