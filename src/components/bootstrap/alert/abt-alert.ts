@@ -5,7 +5,7 @@ import { inject } from 'aurelia-dependency-injection';
 import * as $ from 'jquery';
 
 @inject(Element)
-@containerless()
+// @containerless()
 @customElement('abt-alert')
 export class BootstrapAlert {
 
@@ -13,11 +13,18 @@ export class BootstrapAlert {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: string = 'md';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public color: string = 'primary';
-
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public dismissible: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public animate: boolean | string = true;
 
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsClose: any;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsClosed: any;
+
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showAlert: boolean | null = null;
+
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsShow: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsShown: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsHide: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsHidden: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsClose: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsClosed: Function;
 
   private alert: HTMLDivElement;
 
@@ -30,6 +37,7 @@ export class BootstrapAlert {
 
     this.dismissible = onlyAttribute || this.dismissible.toString() === 'true';
 
+    this.animate = this.animate === 'true' || this.animate === true;
 
     if (this.bsClose) {
       $(alert).on('close.bs.alert', () => {
@@ -50,8 +58,65 @@ export class BootstrapAlert {
   }
 
 
+  private async showAlertChanged(newValue: boolean) {
+
+    if (newValue) {
+
+      let continueShow = true;
+
+      if (this.bsShow) {
+        continueShow = (await this.bsShow({ target: this.alert }));
+      }
+
+      continueShow = continueShow === undefined || continueShow === null ? true : continueShow;
+
+      if (!continueShow) {
+        this.showAlert = !newValue;
+        return;
+      }
+
+      if (this.animate) {
+        $(this.alert).fadeIn();
+      } else {
+        $(this.alert).show();
+      }
+
+      if (this.bsShown) {
+        this.bsShown({ target: this.alert });
+      }
+
+    } else {
+
+      let continueHide = true;
+
+      if (this.bsHide) {
+        continueHide = (await this.bsHide({ target: this.alert }));
+      }
+
+      continueHide = continueHide === undefined || continueHide === null ? true : continueHide;
+
+      if (!continueHide) {
+        this.showAlert = !newValue;
+        return;
+      }
+
+      if (this.animate) {
+        $(this.alert).fadeOut();
+      } else {
+        $(this.alert).hide();
+      }
+
+      if (this.bsHidden) {
+        this.bsHidden({ target: this.alert });
+      }
+
+    }
+
+  }
+
   private detached() {
-    $(alert).alert('dispose');
+    $(this.alert).alert('close');
+    $(this.alert).alert('dispose');
   }
 
 }
