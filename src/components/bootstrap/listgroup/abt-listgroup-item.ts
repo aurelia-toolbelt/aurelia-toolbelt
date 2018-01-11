@@ -6,7 +6,6 @@ import * as $ from 'jquery';
 export class ListGroupItemCustomElement {
 
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string;
-
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
 
@@ -34,7 +33,6 @@ export class ListGroupItemCustomElement {
             $(this.listgroupitem).removeClass('abt-listgroup-item-disabled');
         } else {
             $(this.listgroupitem).addClass('abt-listgroup-item-disabled');
-
         }
     }
 }
