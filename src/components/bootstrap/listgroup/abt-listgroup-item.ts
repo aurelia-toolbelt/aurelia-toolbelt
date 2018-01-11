@@ -17,7 +17,6 @@ export class ListGroupItemCustomElement {
         DOM.injectStyles(`
             a.abt-listgroup-item-disabled {
                 pointer-events: none !important;
-                cursor: default !important;
             }
     `);
     }

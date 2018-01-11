@@ -1,7 +1,7 @@
 <template>
 
     <abt-listgroup>
-        <abt-listgroup-item>Cras justo odio</abt-listgroup-item>
+        <abt-listgroup-item class="list-group-item-primary">Cras justo odio</abt-listgroup-item>
         <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
         <abt-listgroup-item>Morbi leo risus</abt-listgroup-item>
         <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
@@ -11,9 +11,13 @@
     <abt-listgroup>
         <abt-listgroup-item active>Cras justo odio</abt-listgroup-item>
         <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
-        <abt-listgroup-item>Morbi leo risus</abt-listgroup-item>
+        <abt-listgroup-item class="d-flex justify-content-between align-items-center">Cras justo odio
+                <abt-badge color="secondary">15</abt-badge>
+            </abt-listgroup-item>
         <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
-        <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+        <abt-listgroup-item class="d-flex justify-content-between align-items-center">Vestibulum at eros
+            <abt-badge color="secondary">New</abt-badge>
+        </abt-listgroup-item>
     </abt-listgroup>
     <br/>
     <abt-listgroup>
@@ -22,5 +26,33 @@
         <abt-listgroup-item>Morbi leo risus</abt-listgroup-item>
         <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
         <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+    </abt-listgroup>
+    <br/>
+    <abt-listgroup>
+        <abt-listgroup-item class="flex-column align-items-start" active>
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">List group item heading</h5>
+                <small>3 days ago</small>
+            </div>
+            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <small>Donec id elit non mi porta.</small>
+        </abt-listgroup-item>
+        <abt-listgroup-item class="flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">List group item heading</h5>
+                <small class="text-muted">3 days ago</small>
+            </div>
+            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <small class="text-muted">Donec id elit non mi porta.</small>
+        </abt-listgroup-item>
+        <abt-listgroup-item class="flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">List group item heading</h5>
+                <small class="text-muted">3 days ago</small>
+            </div>
+            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <small class="text-muted">Donec id elit non mi porta.</small>
+        </abt-listgroup-item>
+
     </abt-listgroup>
 </template>
