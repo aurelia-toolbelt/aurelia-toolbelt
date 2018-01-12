@@ -59,6 +59,7 @@
         "metismenu": "^2.7.1",
         "microlinkjs": "^1.2.0",
         "moment-timezone": "^0.5.14",
+        "normalize.css": "^7.0.0",
         "nprogress": "^0.2.0",
         "numeral": "^2.0.6",
         "password-meter": "^3.0.2",

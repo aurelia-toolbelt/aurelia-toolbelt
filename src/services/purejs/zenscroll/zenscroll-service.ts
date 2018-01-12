@@ -4,7 +4,6 @@ import { transient, customElement, inject, bindable, bindingMode, observable, DO
 import * as zenscroll from 'zenscroll';
 
 @singleton()
-@noView()
 @inject('zenscroll-service-options')
 export class ZenscrollService {
     constructor(private options?: IZenscrollServiceOptions) {
