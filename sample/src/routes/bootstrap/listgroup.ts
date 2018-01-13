@@ -1,1 +1,7 @@
-export class BootstrapListGroup { }
+export class BootstrapListGroup {
+
+  private itemClicked() {
+    alert('Hamed');
+  }
+
+}

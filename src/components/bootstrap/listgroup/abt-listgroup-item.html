@@ -1,5 +1,5 @@
-<template ref="listgroupitemtmpl">
-    <a href="${href}" ref="listgroupitem" click.delegate="${onClick}" css="${style}" class="list-group-item list-group-item-action ${class}">
+<template ref="listGroupItemTmpl">
+    <a href="${href}" ref="listGroupItem" click.delegate="onClick($event)" css="cursor: ${click || href ? 'pointer' :''} ${style}" class="list-group-item list-group-item-action list-group-item-${color} ${class}">
         <slot></slot>
     </a>
 </template>
