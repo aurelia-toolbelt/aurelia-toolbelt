@@ -13,9 +13,9 @@ import 'font-awesome/css/font-awesome.css';
 import 'highlight.js/styles/solarized-dark.css';
 import 'pretty-checkbox/dist/pretty-checkbox.css';
 
-import 'autthirdparties/bootstrap-toggle/bootstrap-toggle.js';
-import 'autthirdparties/jquery.blockUI/jquery.blockUI.js';
-const ml = require('autthirdparties/microlink/microlink.js');
+import 'aureliatoolbelt-thirdparty/bootstrap-toggle/bootstrap-toggle.js';
+import 'aureliatoolbelt-thirdparty/jquery.blockUI/jquery.blockUI.js';
+const ml = require('aureliatoolbelt-thirdparty/microlink/microlink.js');
 
 let x = fuse;
 let hljs = hl;

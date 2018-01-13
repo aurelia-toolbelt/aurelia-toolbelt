@@ -2,7 +2,7 @@ import { transient, customElement, inject, containerless, bindable, bindingMode,
 
 
 import * as $ from 'jquery';
-import 'autthirdparties/jquery.blockUI/jquery.blockUI.js';
+import 'aureliatoolbelt-thirdparty/jquery.blockUI/jquery.blockUI.js';
 import { IAutBlockUIOptions, SpinnerType } from './aut-block-ui-options';
 
 @transient()

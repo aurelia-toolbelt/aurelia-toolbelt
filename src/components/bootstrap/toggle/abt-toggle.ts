@@ -6,7 +6,7 @@ import { Disposable } from 'aurelia-binding';
 
 import * as $ from 'jquery';
 
-import 'autthirdparties/bootstrap-toggle/bootstrap-toggle.js';
+import 'aureliatoolbelt-thirdparty/bootstrap-toggle/bootstrap-toggle.js';
 // import './abt-toggle.css';
 
 @inject(Element, BindingEngine)
