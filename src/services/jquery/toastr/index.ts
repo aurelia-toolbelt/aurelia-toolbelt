@@ -3,8 +3,6 @@ import { IToastrServiceOptions } from './toastr-service-options';
 import { ToastrService } from './toastr-service';
 
 import * as toastr from 'toastr';
-
-
 export function configure(config: FrameworkConfiguration, toastrOption: ToastrOptions) {
 
   let trs: ToastrService = new ToastrService(toastr);

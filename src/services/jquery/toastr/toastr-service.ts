@@ -1,5 +1,4 @@
 
-import { IToastrServiceOptions } from './toastr-service-options';
 import { transient, customElement, inject, containerless, bindable, bindingMode, observable, DOM, singleton, noView } from 'aurelia-framework';
 
 import * as toastr from 'toastr';
@@ -9,32 +8,31 @@ import 'toastr/build/toastr.css';
 export class ToastrService {
   constructor(private tr: Toastr) {
   }
-  public success(message: string, title?: string, overrides?: IToastrServiceOptions) {
-
+  public success(message: string, title?: string, overrides?: ToastrOptions) {
     let settings = null;
     if (overrides) {
-      settings = Object.assign(overrides/*, this.toastrOptions*/);
+      settings = Object.assign(overrides);
     }
     this.tr.success(message, title, settings || overrides);
   }
-  public error(message: string, title?: string, overrides?: IToastrServiceOptions) {
+  public error(message: string, title?: string, overrides?: ToastrOptions) {
     let settings = null;
     if (overrides) {
-      settings = Object.assign(overrides/*, this.toastrOptions*/);
+      settings = Object.assign(overrides);
     }
     this.tr.error(message, title, settings || overrides);
   }
-  public info(message: string, title?: string, overrides?: IToastrServiceOptions) {
+  public info(message: string, title?: string, overrides?: ToastrOptions) {
     let settings = null;
     if (overrides) {
-      settings = Object.assign(overrides/*, this.toastrOptions*/);
+      settings = Object.assign(overrides);
     }
     this.tr.info(message, title, settings || overrides);
   }
-  public warning(message: string, title?: string, overrides?: IToastrServiceOptions) {
+  public warning(message: string, title?: string, overrides?: ToastrOptions) {
     let settings = null;
     if (overrides) {
-      settings = Object.assign(overrides/*, this.toastrOptions*/);
+      settings = Object.assign(overrides);
     }
     this.tr.warning(message, title, settings || overrides);
   }
