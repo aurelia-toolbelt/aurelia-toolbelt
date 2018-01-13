@@ -19,11 +19,12 @@ export class App {
   constructor(eventAggregator: EventAggregator) {
 
     this.themes = [
+      { name: 'aurelia-toolbelt', path: '/bootswatch/aurelia-toolbelt' },
+      { name: 'bootstrap', path: '/bootswatch/bootstrap' },
       { name: 'cerulean', path: '/bootswatch/cerulean' },
       { name: 'cosmo', path: '/bootswatch/cosmo' },
       { name: 'cyborg', path: '/bootswatch/cyborg' },
       { name: 'darkly', path: '/bootswatch/darkly' },
-      { name: 'default', path: '/bootswatch/default' },
       { name: 'litera', path: '/bootswatch/litera' },
       { name: 'lumen', path: '/bootswatch/lumen' },
       { name: 'lux', path: '/bootswatch/lux' },
