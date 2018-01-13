@@ -12,13 +12,13 @@ export * from './services/jquery/toastr/toastr-service';
 // export * from './services/purejs/zenscroll/zenscroll-service-options';
 // export * from './services/purejs/zenscroll/zenscroll-service';
 
-export function configure(config: FrameworkConfiguration, options: any) {
+export function configure(config: FrameworkConfiguration) {
 
   config
     .feature(PLATFORM.moduleName('aurelia-toolbelt/binding-behaviours/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/custom-attributes/index'))
-    .feature(PLATFORM.moduleName('aurelia-toolbelt/services/index'), options)
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/services/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/utilities/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/value-converters/index'))
     ;

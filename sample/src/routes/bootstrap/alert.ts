@@ -20,7 +20,10 @@ export class Alert {
   }
 
   private toggleAlert() {
-    this.ts2.success('Toggling alerts');
+
+    this.ts2.success('Toggling alerts', '' , {
+      progressBar: true, preventDuplicates: true, positionClass: 'toast-bottom-right'
+    });
     this.showOrHideAlert = !this.showOrHideAlert;
   }
 

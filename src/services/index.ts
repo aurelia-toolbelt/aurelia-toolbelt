@@ -1,6 +1,6 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
-export function configure(config: FrameworkConfiguration, options: any) {
+export function configure(config: FrameworkConfiguration) {
   config
-    .feature(PLATFORM.moduleName('aurelia-toolbelt/services/jquery/toastr/index'), options);
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/services/jquery/toastr/index'));
 }
