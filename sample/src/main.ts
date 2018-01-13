@@ -10,9 +10,10 @@ export async function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
     .developmentLogging()
-    .plugin('aurelia-toolbelt')
-    // .plugin('aurelia-after-attached-plugin')
-    ;
+    .plugin('aurelia-toolbelt', {
+      progressBar: false, preventDuplicates: true, positionClass: 'toast-bottom-left'
+    });
+
 
   await aurelia.start();
   await aurelia.setRoot('app');
