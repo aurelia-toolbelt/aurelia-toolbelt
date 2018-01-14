@@ -12,11 +12,11 @@ export class BootstrapPopoverCustomElement {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public animation: boolean = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public container: string | boolean = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public delay: number | object;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public delay: number | object = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public html: boolean = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: PlacementType | Function = 'right';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public selector: string | boolean = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string | Function;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string | Function = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public trigger: string = 'click';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public offset: string | number = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public fallbackPlacement: string | string[] = 'flip';

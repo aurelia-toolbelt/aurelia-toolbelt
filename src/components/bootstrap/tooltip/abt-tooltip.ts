@@ -11,7 +11,7 @@ import * as $ from 'jquery';
 export class BootstrapTooltipCustomElement {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public container: string | boolean = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public delay: number | object;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public delay: number | object = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: PlacementType | Function = 'top';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public selector: string | boolean = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public animation: boolean = true;
