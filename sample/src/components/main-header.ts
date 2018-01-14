@@ -24,6 +24,11 @@ export class MainHeader {
       return;
     }
     let index = this.themes.findIndex(x => x.path === storedTheme.path);
+    if (index === -1) {
+      this.theme = this.themes[0];
+      return;
+    }
     this.theme = this.themes[index];
+
   }
 }
