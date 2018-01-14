@@ -22,8 +22,8 @@ export class App {
   constructor(eventAggregator: EventAggregator, private bsService: BootstrapTypographyService) {
 
     this.themes = [
-      // { name: 'aurelia-toolbelt', path: '/bootswatch/aurelia-toolbelt' },
-      // { name: 'bootstrap', path: '/bootswatch/bootstrap' },
+      { name: 'aurelia-toolbelt', path: '/bootswatch/aurelia-toolbelt' },
+      { name: 'bootstrap', path: '/bootswatch/bootstrap' },
       { name: 'cerulean', path: '/bootswatch/cerulean' },
       { name: 'cosmo', path: '/bootswatch/cosmo' },
       { name: 'cyborg', path: '/bootswatch/cyborg' },

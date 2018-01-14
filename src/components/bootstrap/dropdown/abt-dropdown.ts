@@ -5,7 +5,7 @@ import { BootstrapDropdownSelectedItemChanged } from './abt-dropdown-selected-it
 
 import * as $ from 'jquery';
 
-export type BoundaryType = 'viewport' | 'window' | 'scrollParent';
+// export type BoundaryType = 'viewport' | 'window' | 'scrollParent';
 
 @inject(Element, EventAggregator)
 // @containerless()
@@ -26,7 +26,7 @@ export class BootstrapDropDown {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public offset: string | number = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public flip: boolean = true;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: any; // BoundaryType = 'scrollParent';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: string | Element = 'scrollParent';
 
 
 
