@@ -1,8 +1,8 @@
 import { customElement, inject, bindable, bindingMode, BindingEngine, containerless } from 'aurelia-framework';
 
 import * as $ from 'jquery';
-import './scripts/tokenize2.js';
-import './styles/tokenize2.css';
+// import './scripts/tokenize2.js';
+// import './styles/tokenize2.css';
 
 @containerless()
 @customElement('abt-tokenize')
@@ -29,22 +29,22 @@ export class BootstrapTokenizeCustomElement {
     private tokenize: any;
 
     private attached() {
-        // @ts-ignore
-        $(this.tokenize).tokenize2({
-            dataSource: this.dataSource,
-            debounce: this.debounce,
-            delimiter: this.delimiter,
-            placeholder: this.placeholder,
-            tokensMaxItems: this.tokensMaxItems,
-            tokensAllowCustom: this.tokensAllowCustom,
-            dropdownMaxItems: this.dropdownMaxItems,
-            searchMinLength: this.searchMinLength,
-            searchFromStart: this.searchFromStart,
-            searchHighlight: this.searchHighlight,
-            displayNoResultsMessage: this.displayNoResultsMessage,
-            noResultsMessageText: this.noResultsMessageText,
-            zIndexMargin: this.zIndexMargin,
-            tabIndex: this.tabIndex
-        });
+        // // @ts-ignore
+        // $(this.tokenize).tokenize2({
+        //     dataSource: this.dataSource,
+        //     debounce: this.debounce,
+        //     delimiter: this.delimiter,
+        //     placeholder: this.placeholder,
+        //     tokensMaxItems: this.tokensMaxItems,
+        //     tokensAllowCustom: this.tokensAllowCustom,
+        //     dropdownMaxItems: this.dropdownMaxItems,
+        //     searchMinLength: this.searchMinLength,
+        //     searchFromStart: this.searchFromStart,
+        //     searchHighlight: this.searchHighlight,
+        //     displayNoResultsMessage: this.displayNoResultsMessage,
+        //     noResultsMessageText: this.noResultsMessageText,
+        //     zIndexMargin: this.zIndexMargin,
+        //     tabIndex: this.tabIndex
+        // });
     }
 }

@@ -1,7 +1,8 @@
 import { transient, customElement, inject, containerless, bindable, bindingMode, observable, DOM } from 'aurelia-framework';
-import './scripts/jquery.blockUI.js';
+
 
 import * as $ from 'jquery';
+import 'aureliatoolbelt-thirdparty/jquery.blockUI/jquery.blockUI.js';
 import { IAutBlockUIOptions, SpinnerType } from './aut-block-ui-options';
 
 @transient()

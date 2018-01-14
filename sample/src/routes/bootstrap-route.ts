@@ -12,7 +12,7 @@ export class BootstrapRoute {
 
     config.map([
       {
-        route: ['' ,'alert'],
+        route: ['', 'alert'],
         name: 'bootstrap-alert',
 
         moduleId: PLATFORM.moduleName('./bootstrap/alert'),
@@ -206,6 +206,14 @@ export class BootstrapRoute {
         moduleId: PLATFORM.moduleName('./bootstrap/popover'),
         nav: true,
         title: 'Popover',
+        settings: { auth: false, isComponent: true }
+      }, {
+        route: ['listgroup'],
+        name: 'bootstrap-listgroup',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/listgroup'),
+        nav: true,
+        title: 'Listgroup',
         settings: { auth: false, isComponent: true }
       }
     ]);
