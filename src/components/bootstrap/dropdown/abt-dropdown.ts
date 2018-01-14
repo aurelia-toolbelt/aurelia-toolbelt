@@ -26,7 +26,7 @@ export class BootstrapDropDown {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public offset: string | number = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public flip: boolean = true;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: BoundaryType = 'scrollParent';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: any; // BoundaryType = 'scrollParent';
 
 
 

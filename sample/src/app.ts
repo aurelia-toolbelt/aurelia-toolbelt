@@ -3,12 +3,15 @@ import { PLATFORM, bindable, EventManager, inject } from 'aurelia-framework';
 import { EventAggregator } from 'aurelia-event-aggregator';
 import { DOM } from 'aurelia-pal';
 
+// @ts-ignore
+import { BootstrapTypographyService } from 'aurelia-toolbelt';
+
 class Theme {
   public name: string;
   public path: string;
 }
 
-@inject(EventAggregator)
+@inject(EventAggregator, BootstrapTypographyService)
 export class App {
 
   public router: Router;
@@ -16,11 +19,11 @@ export class App {
   private themes: Array<Theme>;
   @bindable() private selectedTheme: Theme;
 
-  constructor(eventAggregator: EventAggregator) {
+  constructor(eventAggregator: EventAggregator, private bsService: BootstrapTypographyService) {
 
     this.themes = [
-      { name: 'aurelia-toolbelt', path: '/bootswatch/aurelia-toolbelt' },
-      { name: 'bootstrap', path: '/bootswatch/bootstrap' },
+      // { name: 'aurelia-toolbelt', path: '/bootswatch/aurelia-toolbelt' },
+      // { name: 'bootstrap', path: '/bootswatch/bootstrap' },
       { name: 'cerulean', path: '/bootswatch/cerulean' },
       { name: 'cosmo', path: '/bootswatch/cosmo' },
       { name: 'cyborg', path: '/bootswatch/cyborg' },
@@ -90,6 +93,33 @@ export class App {
 
   private selectedThemeChanged(newValue: Theme) {
     localStorage.setItem('selectedTheme', JSON.stringify(newValue));
+
+    this.bsService.update();
+
+    DOM.injectStyles(`
+    .toast {
+      background-color: ${this.bsService.primary} !important;
+    }
+    .toast-success {
+      background-color: ${this.bsService.success} !important;
+    }
+    .toast-error {
+      background-color: ${this.bsService.danger} !important;
+    }
+    .toast-info {
+      background-color: ${this.bsService.info} !important;
+    }
+    .toast-warning {
+      background-color: ${this.bsService.warning} !important;
+    }
+    #toast-container > div {
+      -moz-border-radius: 0px !important;
+      -webkit-border-radius: 0px !important;
+      border-radius: 0px !important;
+    }
+    `);
+
+
   }
 
 }
