@@ -11,8 +11,10 @@ export async function configure(aurelia: Aurelia) {
     .standardConfiguration()
     .developmentLogging()
     .plugin('aurelia-toolbelt')
-    // .plugin('aurelia-after-attached-plugin')
-    ;
+    .plugin('aurelia-toolbelt/services/jquery/toastr', {
+      progressBar: false, preventDuplicates: true, positionClass: 'toast-bottom-left'
+    });
+
 
   await aurelia.start();
   await aurelia.setRoot('app');

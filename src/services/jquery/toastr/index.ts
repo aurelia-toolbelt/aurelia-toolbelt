@@ -1,7 +1,23 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 import { IToastrServiceOptions } from './toastr-service-options';
+import { ToastrService } from './toastr-service';
 
-export function configure(config: FrameworkConfiguration, options?: IToastrServiceOptions) {
-    config.globalResources([PLATFORM.moduleName('./toastr-service')]);
-    config.container.registerInstance('toastr-service-options', options);
+import * as toastr from 'toastr';
+export function configure(config: FrameworkConfiguration, toastrOption: ToastrOptions) {
+
+  let trs: ToastrService = new ToastrService(toastr);
+
+  if (toastrOption) {
+    config.container.registerSingleton(ToastrService, () => {
+
+      toastr.options.closeButton = true;
+      toastr.options.progressBar = toastrOption.progressBar;
+      toastr.options.preventDuplicates = toastrOption.preventDuplicates;
+      toastr.options.positionClass = toastrOption.positionClass;
+
+      return trs;
+
+    });
+  }
+
 }

@@ -151,6 +151,9 @@ gulp.task('fuse-sample', function () {
         + toastr/build/toastr.css
         + metismenu
         + metismenu/dist/metismenu.css
+        + aureliatoolbelt-thirdparty/bootstrap-toggle/bootstrap-toggle.js
+        + aureliatoolbelt-thirdparty/jquery.blockUI/jquery.blockUI.js
+        + aureliatoolbelt-thirdparty/microlink/microlink.js
 `)
 
 

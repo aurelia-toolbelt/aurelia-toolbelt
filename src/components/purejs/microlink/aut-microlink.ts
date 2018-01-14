@@ -1,5 +1,5 @@
 
-const microlink = require('./scripts/microlink');
+const microlink = require('aureliatoolbelt-thirdparty/microlink/microlink.js');
 
 import { customElement, bindable, bindingMode, inject } from 'aurelia-framework';
 

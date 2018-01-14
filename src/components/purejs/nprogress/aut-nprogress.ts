@@ -5,7 +5,7 @@ import 'nprogress/nprogress.css';
 
 
 @singleton()
-class NProgressStyleInjector {
+export class NProgressStyleInjector {
 
   private isAlreadyOverridden = false;
 
