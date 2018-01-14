@@ -13,6 +13,9 @@ import 'font-awesome/css/font-awesome.css';
 import 'highlight.js/styles/solarized-dark.css';
 import 'pretty-checkbox/dist/pretty-checkbox.css';
 
+
+import * as zenscroll from 'zenscroll';
+
 import 'aureliatoolbelt-thirdparty/bootstrap-toggle/bootstrap-toggle.js';
 import 'aureliatoolbelt-thirdparty/jquery.blockUI/jquery.blockUI.js';
 const ml = require('aureliatoolbelt-thirdparty/microlink/microlink.js');
@@ -20,3 +23,4 @@ const ml = require('aureliatoolbelt-thirdparty/microlink/microlink.js');
 let x = fuse;
 let hljs = hl;
 let Popper = popperjs;
+let zen = zenscroll;
