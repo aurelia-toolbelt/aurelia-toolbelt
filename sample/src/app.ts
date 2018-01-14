@@ -39,15 +39,15 @@ export class App {
     ];
 
 
-    eventAggregator.subscribe('router:navigation:complete', () => {
-      if (!window.location.hash) {
-        return;
-      }
-      const doc = DOM.getElementById(window.location.hash.substr(1));
-      if (doc) {
-        doc.scrollIntoView();
-      }
-    });
+    // eventAggregator.subscribe('router:navigation:complete', () => {
+    //   if (!window.location.hash) {
+    //     return;
+    //   }
+    //   const doc = DOM.getElementById(window.location.hash.substr(1));
+    //   if (doc) {
+    //     doc.scrollIntoView();
+    //   }
+    // });
 
   }
 
