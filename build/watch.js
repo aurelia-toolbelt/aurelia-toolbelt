@@ -155,6 +155,8 @@ gulp.task('fuse-sample', function () {
         + aureliatoolbelt-thirdparty/bootstrap-toggle/bootstrap-toggle.js
         + aureliatoolbelt-thirdparty/jquery.blockUI/jquery.blockUI.js
         + aureliatoolbelt-thirdparty/microlink/microlink.js
+        + aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.css
+        + aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.js
 `)
 
 

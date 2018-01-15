@@ -16,6 +16,9 @@ import 'pretty-checkbox/dist/pretty-checkbox.css';
 
 import * as zenscroll from 'zenscroll';
 
+import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.css';
+import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.js';
+
 import 'aureliatoolbelt-thirdparty/bootstrap-toggle/bootstrap-toggle.js';
 import 'aureliatoolbelt-thirdparty/jquery.blockUI/jquery.blockUI.js';
 const ml = require('aureliatoolbelt-thirdparty/microlink/microlink.js');
