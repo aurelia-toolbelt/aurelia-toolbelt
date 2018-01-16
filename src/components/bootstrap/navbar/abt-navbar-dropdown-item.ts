@@ -3,7 +3,7 @@ import { customElement } from 'aurelia-templating';
 
 @inject(Element)
 @containerless()
-@customElement('abt-navbar')
-export class BootstrapNavBar {
+@customElement('abt-navbar-dropdown-item')
+export class BootstrapNavBarDropDownItem {
 
 }
