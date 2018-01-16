@@ -27,7 +27,7 @@ export class BootstrapCollapse {
 
   private setControllerProperties(ctrl: any) {
 
-    let isString = ctrl.nodeName === undefined;
+    let isString = typeof ctrl === 'string';
 
     let controller: HTMLElement;
 
@@ -45,8 +45,17 @@ export class BootstrapCollapse {
 
     let prevAriaControls = (controller.getAttribute('aria-controls') || '').trim();
 
+    if (controller.nodeName.toUpperCase() === 'A') {
+      controller.onclick = (event: Event) => {
+        event.preventDefault();
+        return false;
+      };
+      controller.setAttribute('href', `#${id}`);
+      controller.setAttribute('role', `button`);
+    }
 
     controller.setAttribute('data-target', prevAriaControls ? '.abt-collapse-multiple' : `#${id}`);
+
     if (prevAriaControls) {
       if (prevAriaControls.trim().split(' ').length === 1) {
         document.getElementById(`${prevAriaControls}`).classList.add('abt-collapse-multiple');
@@ -55,11 +64,6 @@ export class BootstrapCollapse {
     }
 
     controller.setAttribute('aria-controls', `${id} ${prevAriaControls}`);
-
-    if (controller.nodeName.toUpperCase() === 'A') {
-      controller.setAttribute('href', `#${id}`);
-      controller.setAttribute('role', `button`);
-    }
 
   }
 
@@ -101,6 +105,10 @@ export class BootstrapCollapse {
   private afterAttached() {
 
     this.setEvents();
+
+    if (this.collapse.parentElement.parentElement.parentElement.classList.contains('abt-accordion')) {
+      this.collapse.setAttribute('data-parent', `#${this.collapse.parentElement.parentElement.parentElement.id}`);
+    }
 
     if (this.controlledBy && !Array.isArray(this.controlledBy)) {
       this.setControllerProperties(this.controlledBy);
