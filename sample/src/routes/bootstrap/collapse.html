@@ -1,6 +1,6 @@
 <template>
   <br />
-<!-- 
+
   <fieldset>
 
     <legend>
@@ -18,14 +18,14 @@
       </button>
     </p>
 
-    <abt-collapse controlled-by.bind="[myBtn,'myBtn2', mylink]">
+    <abt-collapse controlled-by.bind="[myBtn,'myBtn2', mylink]" bs-show.call="showCollapse()" bs-hide.call="hideCollapse()">
       <div class="card card-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
         craft beer labore wes anderson cred nesciunt sapiente ea proident.
       </div>
     </abt-collapse>
 
-  </fieldset> -->
+  </fieldset>
 
   <fieldset>
 
@@ -55,7 +55,15 @@
         </abt-collapse>
       </div>
       <div class="col">
-        <abt-collapse  controlled-by.bind="['btnSecond',btnBoth]">
+        <abt-collapse controlled-by.bind="['btnSecond',btnBoth]">
+          <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
+            craft beer labore wes anderson cred nesciunt sapiente ea proident.
+          </div>
+        </abt-collapse>
+      </div>
+      <div class="col">
+        <abt-collapse controlled-by.bind="btnBoth">
           <div class="card card-body">
             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
             craft beer labore wes anderson cred nesciunt sapiente ea proident.

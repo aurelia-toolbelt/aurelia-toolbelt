@@ -11,6 +11,11 @@ export class BootstrapCollapse {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
 
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsShow: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsShown: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsHide: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsHidden: Function;
+
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public controlledBy: Array<HTMLElement>;
 
 
@@ -38,25 +43,69 @@ export class BootstrapCollapse {
     controller.setAttribute('data-toggle', 'collapse');
     controller.setAttribute('aria-expanded', 'false');
 
-    let prevAriaControls = controller.getAttribute('aria-controls') || '';
+    let prevAriaControls = (controller.getAttribute('aria-controls') || '').trim();
 
 
     controller.setAttribute('data-target', prevAriaControls ? '.abt-collapse-multiple' : `#${id}`);
+    if (prevAriaControls) {
+      if (prevAriaControls.trim().split(' ').length === 1) {
+        document.getElementById(`${prevAriaControls}`).classList.add('abt-collapse-multiple');
+      }
+      this.collapse.classList.add('abt-collapse-multiple');
+    }
 
     controller.setAttribute('aria-controls', `${id} ${prevAriaControls}`);
 
-    if (controller.nodeName === 'A') {
+    if (controller.nodeName.toUpperCase() === 'A') {
       controller.setAttribute('href', `#${id}`);
       controller.setAttribute('role', `button`);
     }
 
   }
 
+  private setEvents() {
+    if (this.bsShow) {
+      $(this.collapse).on('show.bs.collapse', () => {
+        if (this.bsShow) {
+          this.bsShow();
+        }
+      });
+    }
+
+    if (this.bsShown) {
+      $(this.collapse).on('shown.bs.collapse', () => {
+        if (this.bsShown) {
+          this.bsShown();
+        }
+      });
+    }
+
+    if (this.bsHide) {
+      $(this.collapse).on('hide.bs.collapse', () => {
+        if (this.bsHide) {
+          this.bsHide();
+        }
+      });
+    }
+
+    if (this.bsHidden) {
+      $(this.collapse).on('hidden.bs.collapse', () => {
+        if (this.bsHidden) {
+          this.bsHidden();
+        }
+      });
+    }
+
+  }
+
   private afterAttached() {
+
+    this.setEvents();
 
     if (this.controlledBy && !Array.isArray(this.controlledBy)) {
       this.setControllerProperties(this.controlledBy);
       return true;
+
     } else if (Array.isArray(this.controlledBy)) {
 
       let counter = this.controlledBy.length;
@@ -65,10 +114,9 @@ export class BootstrapCollapse {
         let controller = this.controlledBy[counter];
         this.setControllerProperties(controller);
       }
-
-      return true;
-
     }
+
+    return true;
   }
 
 }
