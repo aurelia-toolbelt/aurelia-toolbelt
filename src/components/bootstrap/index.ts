@@ -7,6 +7,7 @@ export function configure(config: FrameworkConfiguration) {
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/breadcrumb/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/button/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/card/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/collapse/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/dropdown/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/navs/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/password/index'))

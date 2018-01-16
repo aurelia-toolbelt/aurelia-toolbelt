@@ -86,6 +86,14 @@ export class BootstrapRoute {
         nav: true,
         title: 'Carousel',
         settings: { auth: false, isComponent: true }
+      }, {
+        route: ['collapse'],
+        name: 'bootstrap-collapse',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/collapse'),
+        nav: true,
+        title: 'Collapse',
+        settings: { auth: false, isComponent: true }
       }
       , {
         route: ['dropdown'],
@@ -112,6 +120,15 @@ export class BootstrapRoute {
         moduleId: PLATFORM.moduleName('./bootstrap/jumbotron'),
         nav: true,
         title: 'Jumbotron',
+        settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['listgroup'],
+        name: 'bootstrap-listgroup',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/listgroup'),
+        nav: true,
+        title: 'Listgroup',
         settings: { auth: false, isComponent: true }
       },
       {
@@ -206,14 +223,6 @@ export class BootstrapRoute {
         moduleId: PLATFORM.moduleName('./bootstrap/popover'),
         nav: true,
         title: 'Popover',
-        settings: { auth: false, isComponent: true }
-      }, {
-        route: ['listgroup'],
-        name: 'bootstrap-listgroup',
-
-        moduleId: PLATFORM.moduleName('./bootstrap/listgroup'),
-        nav: true,
-        title: 'Listgroup',
         settings: { auth: false, isComponent: true }
       }
     ]);

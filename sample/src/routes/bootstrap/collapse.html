@@ -1,0 +1,69 @@
+<template>
+  <br />
+<!-- 
+  <fieldset>
+
+    <legend>
+      Simple Usage
+    </legend>
+    <p>
+      <a class="btn btn-link" type="button" ref="mylink">
+        Link with href
+      </a>
+      <abt-button class="btn btn-primary" type="button" id="myBtn2">
+        abt-button with data-target
+      </abt-button>
+      <button class="btn btn-primary" type="button" ref="myBtn">
+        Button with data-target
+      </button>
+    </p>
+
+    <abt-collapse controlled-by.bind="[myBtn,'myBtn2', mylink]">
+      <div class="card card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
+        craft beer labore wes anderson cred nesciunt sapiente ea proident.
+      </div>
+    </abt-collapse>
+
+  </fieldset> -->
+
+  <fieldset>
+
+    <legend>
+      Multiple targets
+    </legend>
+
+
+    <p>
+      <abt-button id="btnFirst">
+        First element
+      </abt-button>
+      <abt-button id="btnSecond">
+        Toggle second element
+      </abt-button>
+      <button class="btn btn-primary" type="button" ref="btnBoth">
+        Toggle both elements
+      </button>
+    </p>
+    <div class="row">
+      <div class="col">
+        <abt-collapse controlled-by.bind="['btnFirst',btnBoth]">
+          <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
+            craft beer labore wes anderson cred nesciunt sapiente ea proident.
+          </div>
+        </abt-collapse>
+      </div>
+      <div class="col">
+        <abt-collapse  controlled-by.bind="['btnSecond',btnBoth]">
+          <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
+            craft beer labore wes anderson cred nesciunt sapiente ea proident.
+          </div>
+        </abt-collapse>
+      </div>
+    </div>
+
+  </fieldset>
+
+</template>

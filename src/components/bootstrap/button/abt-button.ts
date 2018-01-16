@@ -13,6 +13,8 @@ export class BootstrapButton {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: string = 'md';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public type: string = 'button';
 
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
+
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string;
 
