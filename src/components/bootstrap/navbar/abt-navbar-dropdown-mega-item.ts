@@ -3,29 +3,12 @@ import { customElement } from 'aurelia-templating';
 
 @inject(Element)
 @containerless()
-@customElement('abt-navbar-link')
-export class BootstrapNavBarLink {
+@customElement('abt-navbar-dropdown-mega-item')
+export class BootstrapNavBarDropDownMegaItem {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string = '#';
-
-  private navItem: Element;
-  private navItemList: Element;
-
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
-
-  private afterAttached() {
-    let isActive = this.navItem.hasAttribute('active');
-    let isDisabled = this.navItem.hasAttribute('disabled');
-
-    if (isActive) {
-      this.navItemList.classList.add('active');
-    }
-    if (isDisabled) {
-      this.navItemList.classList.add('disabled');
-    }
-  }
-
 
   private onClick(event: Event) {
 
@@ -36,5 +19,4 @@ export class BootstrapNavBarLink {
     }
 
   }
-
 }

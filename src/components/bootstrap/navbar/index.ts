@@ -6,7 +6,7 @@ export * from './abt-navbar-link';
 export * from './abt-navbar-dropdown';
 export * from './abt-navbar-dropdown-item';
 export * from './abt-navbar-dropdown-divider';
-
+export * from './abt-navbar-dropdown-mega-item';
 
 export function configure(config: FrameworkConfiguration) {
   config.globalResources([PLATFORM.moduleName('./abt-navbar')]);
@@ -15,4 +15,6 @@ export function configure(config: FrameworkConfiguration) {
   config.globalResources([PLATFORM.moduleName('./abt-navbar-dropdown')]);
   config.globalResources([PLATFORM.moduleName('./abt-navbar-dropdown-item')]);
   config.globalResources([PLATFORM.moduleName('./abt-navbar-dropdown-divider')]);
+  config.globalResources([PLATFORM.moduleName('./abt-navbar-dropdown-mega-item')]);
+
 }

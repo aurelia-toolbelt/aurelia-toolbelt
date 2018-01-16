@@ -1,19 +1,18 @@
-import { DOM, containerless, inject } from 'aurelia-framework';
+import { DOM, containerless, inject, bindingMode, bindable } from 'aurelia-framework';
 import { customElement } from 'aurelia-templating';
 
 @inject(Element)
 @containerless()
 @customElement('abt-navbar-dropdown')
 export class BootstrapNavBarDropDown {
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string;
 
-  private navItem: Element;
-  private navItemList: Element;
+  private navDropDown: Element;
   private navListDropDown: Element;
+  private navLinkDropDown: Element;
 
   private attached() {
-    let isMegaMenu = this.navItem.hasAttribute('megamenu');
-    let isMegaMenuFullWidth = this.navItem.hasAttribute('megamenu-fullwidth');
-
+    let isMegaMenuFullWidth = this.navDropDown.hasAttribute('fullwidth');
     if (isMegaMenuFullWidth) {
       this.navListDropDown.classList.add('navbar-megamenu-fullwidth');
     }
