@@ -2164,9 +2164,9 @@ parseurl@~1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.2.tgz#fc289d4ed8993119460c156253262cdc8de65bf3"
 
-password-meter@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/password-meter/-/password-meter-3.0.2.tgz#b136dee074c3c90d1e3a136713234495d40a6763"
+password-meter@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/password-meter/-/password-meter-3.1.0.tgz#797f9108fc68b246d4d29e1b6e1c96caa5365180"
 
 path-exists@^3.0.0:
   version "3.0.0"
