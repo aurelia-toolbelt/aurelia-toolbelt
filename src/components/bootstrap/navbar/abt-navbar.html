@@ -1,3 +1,14 @@
 <template>
-    <require from="./navbar-megamenu"></require>
+  <require from="./navbar-megamenu.css"></require>
+  <nav ref='navbar' class="navbar navbar-megamenu ${class}" css="${style}">
+    <button show.bind="toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#${navbarCollapse.id}"
+      aria-controls="${navbarCollapse.id}" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="${togglerIconClass}"></span>
+    </button>
+    <div ref="navbarCollapse" class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <slot></slot>
+      </ul>
+    </div>
+  </nav>
 </template>
