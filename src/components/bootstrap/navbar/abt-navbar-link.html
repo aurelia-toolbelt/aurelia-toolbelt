@@ -1,6 +1,6 @@
 <template ref="navItem">
   <li ref="navItemList" class="nav-item ${class}" css="${style}">
-    <a class="nav-link" href="${href}">
+    <a class="nav-link" click.delegate="onClick($event)" href="${href}">
       <slot></slot>
     </a>
   </li>
