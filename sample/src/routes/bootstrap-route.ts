@@ -215,6 +215,14 @@ export class BootstrapRoute {
         nav: true,
         title: 'Listgroup',
         settings: { auth: false, isComponent: true }
+      }, {
+        route: ['navbar'],
+        name: 'bootstrap-navbar',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/navbar'),
+        nav: true,
+        title: 'Navbar',
+        settings: { auth: false, isComponent: true }
       }
     ]);
     this.router = router;
