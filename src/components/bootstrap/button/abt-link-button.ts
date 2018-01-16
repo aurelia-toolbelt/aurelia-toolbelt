@@ -12,7 +12,7 @@ export class BootstrapLinkButton {
 
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string = '';
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public routeHref: any;
-
+    @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
     @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string;
 
     private isOutlined: boolean = false;
