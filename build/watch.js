@@ -171,7 +171,7 @@ gulp.task('fuse-sample', function () {
 
   // web server    
   fuse.dev({
-    open :true ,
+    open :false ,
     root: './',
   });
 

@@ -24,6 +24,7 @@ export class App {
     this.themes = [
       { name: 'aurelia-toolbelt', path: '/bootswatch/aurelia-toolbelt' },
       { name: 'bootstrap', path: '/bootswatch/bootstrap' },
+      { name: 'bootstrap-rtl', path: '/bootswatch/bootstrap-rtl' },
       { name: 'cerulean', path: '/bootswatch/cerulean' },
       { name: 'cosmo', path: '/bootswatch/cosmo' },
       { name: 'cyborg', path: '/bootswatch/cyborg' },
