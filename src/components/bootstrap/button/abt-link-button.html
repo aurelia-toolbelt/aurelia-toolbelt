@@ -1,5 +1,5 @@
 <template>
-  <a href="${href}" role="button" tabindex="${disabled===true ? -1 : tabIndex }" disabled.bind="disabled" class="btn btn-${isOutlined? 'outline-' : ''}${color} btn-${size} ${isBlockLevel?'btn-block':''} ">
+  <a id="${id}" href="${href}" role="button" tabindex="${disabled===true ? -1 : tabIndex }" disabled.bind="disabled" class="btn btn-${isOutlined? 'outline-' : ''}${color} btn-${size} ${isBlockLevel?'btn-block':''} ">
     <slot>
     </slot>
   </a>
