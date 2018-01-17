@@ -1,0 +1,18 @@
+<template>
+
+  <require from="../../../custom-attributes/purejs/uuid/aut-uuid"></require>
+  
+    <abt-card>
+      <abt-card-header class="abt-accordion-item" ref="myLink" style="cursor: pointer">
+        <a href="#" click.delegate="onAnchorClick($event)">
+          ${title}
+        </a>
+      </abt-card-header>
+
+      <abt-collapse class="${active ? 'show' : ''}" controlled-by.bind="myLink">
+        <slot></slot>
+      </abt-collapse>
+    </abt-card>
+  
+
+</template>
