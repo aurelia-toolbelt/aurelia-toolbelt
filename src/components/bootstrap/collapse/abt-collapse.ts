@@ -106,8 +106,8 @@ export class BootstrapCollapse {
 
     this.setEvents();
 
-    if (this.collapse.parentElement.parentElement.parentElement.classList.contains('abt-accordion')) {
-      this.collapse.setAttribute('data-parent', `#${this.collapse.parentElement.parentElement.parentElement.id}`);
+    if (this.collapse.parentElement.parentElement.classList.contains('abt-accordion')) {
+      this.collapse.setAttribute('data-parent', `#${this.collapse.parentElement.parentElement.id}`);
     }
 
     if (this.controlledBy && !Array.isArray(this.controlledBy)) {
