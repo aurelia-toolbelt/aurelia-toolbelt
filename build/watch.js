@@ -141,11 +141,10 @@ gulp.task('fuse-sample', function () {
         + font-awesome/css/font-awesome.css
         + highlight.js
         + highlight.js/styles/solarized-light.css
-        + popper.js
         + fast-safe-stringify
         + jquery-lazy
         + nprogress
-        + bootstrap
+        + bootstrap/dist/js/bootstrap.bundle.js
         + bootstrap/dist/css/bootstrap.css
         + toastr
         + toastr/build/toastr.css
