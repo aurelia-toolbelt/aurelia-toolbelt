@@ -22,6 +22,8 @@ export function configure(config: FrameworkConfiguration) {
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/carousel/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/listgroup/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/navbar/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/pagination/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/inputgroup/index'))
 
     ;
 

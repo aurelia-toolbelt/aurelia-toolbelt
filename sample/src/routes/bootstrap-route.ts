@@ -236,6 +236,28 @@ export class BootstrapRoute {
         settings: { auth: false, isComponent: true }
 
       }
+      ,
+      {
+        route: ['pagination'],
+        name: 'bootstrap-pagination',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/pagination'),
+        nav: true,
+        title: 'Pagination',
+        settings: { auth: false, isComponent: true }
+
+      }
+      ,
+      {
+        route: ['inputgroup'],
+        name: 'bootstrap-inputgroup',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/inputgroup'),
+        nav: true,
+        title: 'InputGroup',
+        settings: { auth: false, isComponent: true }
+
+      }
     ]);
     this.router = router;
   }
