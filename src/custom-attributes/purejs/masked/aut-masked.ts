@@ -8,21 +8,22 @@ const InputMask = require('inputmask');
 export class MaskedInputCustomAttribute {
 
 
-    @bindable({ defaultBindingMode: bindingMode.oneTime, primaryProperty: true }) public mask: String;
-    @bindable({ defaultBindingMode: bindingMode.oneTime }) public regex: String | RegExp;
+  @bindable({ defaultBindingMode: bindingMode.oneWay, primaryProperty: true }) public mask: String;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public regex: String | RegExp;
 
-    constructor(private element: Element) {
-    }
+  constructor(private element: Element) {
+  }
 
 
-    private maskChanged(newMask: String) {
-        let im = new InputMask(newMask);
-        im.mask(this.element);
-    }
+  private maskChanged(newMask: String) {
+    // console.log(newMask);
+    let im = new InputMask(newMask);
+    im.mask(this.element);
+  }
 
-    private regexChanged(newRegex: String | RegExp) {
-        let im = new InputMask({ regex: newRegex });
-        im.mask(this.element);
-    }
+  private regexChanged(newRegex: String | RegExp) {
+    let im = new InputMask({ regex: newRegex });
+    im.mask(this.element);
+  }
 
 }

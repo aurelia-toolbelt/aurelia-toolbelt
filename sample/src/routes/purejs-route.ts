@@ -12,14 +12,7 @@ export class Purejs {
             {
                 route: ['', 'checkbox'],
                 name: 'pure-checkbox',
-
                 moduleId: PLATFORM.moduleName('./purejs/checkbox'),
-
-                // viewPorts: {
-                //     default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
-                //     content: { moduleId: PLATFORM.moduleName('./purejs/checkbox') }
-                // },
-
                 nav: true,
                 title: 'Pretty Checkbox',
                 settings: { auth: false, isComponent: true }
@@ -27,14 +20,7 @@ export class Purejs {
             {
                 route: ['radio'],
                 name: 'pure-radio',
-
                 moduleId: PLATFORM.moduleName('./purejs/radio'),
-
-                // viewPorts: {
-                //     default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
-                //     content: { moduleId: PLATFORM.moduleName('./purejs/radio') }
-                // },
-
                 nav: true,
                 title: 'Pretty Radio',
                 settings: { auth: false, isComponent: true }
@@ -45,13 +31,18 @@ export class Purejs {
 
                 moduleId: PLATFORM.moduleName('./purejs/mark-down'),
 
-                // viewPorts: {
-                //     default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
-                //     content: { moduleId: PLATFORM.moduleName('./purejs/mark-down') }
-                // },
-
-                nav: true,
+                               nav: true,
                 title: 'Mark Down',
+                settings: { auth: false, isComponent: true }
+            },
+            {
+                route: ['masked-input'],
+                name: 'pure-masked-input',
+
+                moduleId: PLATFORM.moduleName('./purejs/masked-input'),
+
+                               nav: true,
+                title: 'Masked Input',
                 settings: { auth: false, isComponent: true }
             },
             {
