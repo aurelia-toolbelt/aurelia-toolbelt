@@ -10,6 +10,8 @@ export class BootstrapNavBarDropDownMegaItem {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string = '#';
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
 
+
+
   private onClick(event: Event) {
 
     event.preventDefault();

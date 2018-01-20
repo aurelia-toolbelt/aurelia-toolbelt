@@ -1,22 +1,24 @@
 <template>
   <abt-navbar>
-    <abt-navbar-brand>NavBar</abt-navbar-brand>
-    <abt-navbar-text placement='prepend'>Text Sample</abt-navbar-text>
-    <abt-navbar-text>Text Sample</abt-navbar-text>
+    <span slot="titles">
+      <abt-navbar-brand>NavBar</abt-navbar-brand>
+      <abt-navbar-text>Text Sample</abt-navbar-text>
+      <abt-navbar-toggler></abt-navbar-toggler>
+    </span>
     <abt-navbar-link active>Home</abt-navbar-link>
     <abt-navbar-link>Features</abt-navbar-link>
     <abt-navbar-link>Pricing</abt-navbar-link>
     <abt-navbar-link disabled>Disabled</abt-navbar-link>
-    <abt-dropdown color="secondary" title="DropDown 1">
-      <abt-dropdown-item>A</abt-dropdown-item>
-      <abt-dropdown-item>B</abt-dropdown-item>
-      <abt-dropdown-item>C</abt-dropdown-item>
-      <abt-dropdown-divider></abt-dropdown-divider>
-      <abt-dropdown-item>D</abt-dropdown-item>
-      <abt-dropdown-item>E</abt-dropdown-item>
-    </abt-dropdown>
+    <abt-navbar-dropdown color="secondary" title="DropDown 1">
+      <abt-navbar-dropdown-item>A</abt-navbar-dropdown-item>
+      <abt-navbar-dropdown-item>B</abt-navbar-dropdown-item>
+      <abt-navbar-dropdown-item>C</abt-navbar-dropdown-item>
+      <abt-navbar-dropdown-divider></abt-navbar-dropdown-divider>
+      <abt-navbar-dropdown-item>D</abt-navbar-dropdown-item>
+      <abt-navbar-dropdown-item>E</abt-navbar-dropdown-item>
+    </abt-navbar-dropdown>
     <abt-navbar-dropdown fullwidth title="DropDown 2">
-      <abt-navbar-dropdown-mega-item>
+      <abt-navbar-dropdown-mega-item >
         <ul class="col-sm-2 list-unstyled">
           <li>
             <p>
@@ -170,5 +172,4 @@
       </abt-navbar-dropdown-mega-item>
     </abt-navbar-dropdown>
   </abt-navbar>
-
 </template>
