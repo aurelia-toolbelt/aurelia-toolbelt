@@ -114,7 +114,7 @@ export class BootstrapCollapse {
       this.setControllerProperties(this.controlledBy);
       return true;
 
-    } else if (Array.isArray(this.controlledBy)) {
+    } else if (this.controlledBy && Array.isArray(this.controlledBy)) {
 
       let counter = this.controlledBy.length;
 
