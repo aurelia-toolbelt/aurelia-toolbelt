@@ -12,7 +12,7 @@ export class BootstrapNavBar {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public colorClass: string = 'light';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public backgroundColorClass: string = 'light';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public expandSize: ExpandSize = 'sm';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public expandSize: ExpandSize = 'lg';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: Placement = '';
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public controllBy: string[];
@@ -28,10 +28,11 @@ export class BootstrapNavBar {
       this.navbar.classList.add(`navbar-expand-${this.expandSize}`);
     }
 
-    let navbarToggler = <HTMLButtonElement>this.navbar.querySelector('.navbar-toggler');
-    if (navbarToggler) {
-      navbarToggler.setAttribute('data-target', `#${this.navbarCollapse.id}`);
-      navbarToggler.setAttribute('aria-controls', `${this.navbarCollapse.id}`);
+    let navbarToggler = <HTMLButtonElement>this.navbar.querySelector('.abt-navbar-toggler');
+    let navbarCollapser = <HTMLDivElement>this.navbar.querySelector('.abt-navbar-collapser');
+    if (navbarToggler && navbarCollapser) {
+      navbarToggler.setAttribute('data-target', `#${navbarCollapser.id}`);
+      navbarToggler.setAttribute('aria-controls', `${navbarCollapser.id}`);
     }
   }
 }
