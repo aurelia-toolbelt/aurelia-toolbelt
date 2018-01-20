@@ -2,8 +2,8 @@ import { customElement, inject, bindable, bindingMode, BindingEngine, containerl
 
 @containerless()
 @inject(Element)
-@customElement('abt-inputgroup')
-export class BootstrapInputGroupCustomElement {
+@customElement('abt-inputgroup-text')
+export class BootstrapInputGroupTextCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
 }
