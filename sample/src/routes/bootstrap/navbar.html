@@ -2,7 +2,7 @@
   <abt-navbar>
     <span slot="titles">
       <abt-navbar-brand>NavBar</abt-navbar-brand>
-      <abt-navbar-text>Text Sample</abt-navbar-text>
+      <abt-navbar-text>Start Text</abt-navbar-text>
       <abt-navbar-toggler></abt-navbar-toggler>
     </span>
     <abt-navbar-link active>Home</abt-navbar-link>
@@ -18,7 +18,7 @@
       <abt-navbar-dropdown-item>E</abt-navbar-dropdown-item>
     </abt-navbar-dropdown>
     <abt-navbar-dropdown fullwidth title="DropDown 2">
-      <abt-navbar-dropdown-mega-item >
+      <abt-navbar-dropdown-mega-item>
         <ul class="col-sm-2 list-unstyled">
           <li>
             <p>
@@ -171,5 +171,8 @@
         </ul>
       </abt-navbar-dropdown-mega-item>
     </abt-navbar-dropdown>
+    <div slot="collapse">
+      <abt-navbar-text>End Text</abt-navbar-text>
+    </div>
   </abt-navbar>
 </template>

@@ -1,11 +1,12 @@
 <template>
   <require from="./navbar-megamenu.css"></require>
-  <nav ref='navbar' class="navbar navbar-megamenu ${class}" css="${style}">
+  <nav ref='navbar' class="navbar navbar-megamenu ${class} ${placement}" css="${style}">
     <slot name="titles"></slot>
     <div ref="navbarCollapse" class="collapse navbar-collapse" aut-uuid>
       <ul class="navbar-nav mr-auto">
         <slot></slot>
       </ul>
+      <slot name="collapse"></slot>
     </div>
   </nav>
 </template>

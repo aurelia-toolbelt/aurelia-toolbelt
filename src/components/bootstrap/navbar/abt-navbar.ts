@@ -1,7 +1,8 @@
 import { DOM, containerless, inject, bindingMode, bindable, children } from 'aurelia-framework';
 import { customElement } from 'aurelia-templating';
 
-type ExpandSize = 'none' | 'sm' | 'md' | 'lg';
+type ExpandSize = '' | 'sm' | 'md' | 'lg';
+type Placement = '' | 'fixed-top' | 'fixed-bottom' | 'sticky-top';
 
 @inject(Element)
 @customElement('abt-navbar')
@@ -12,6 +13,7 @@ export class BootstrapNavBar {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public colorClass: string = 'light';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public backgroundColorClass: string = 'light';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public expandSize: ExpandSize = 'sm';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: Placement = '';
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public controllBy: string[];
 
@@ -22,7 +24,7 @@ export class BootstrapNavBar {
     this.navbar.classList.add(`navbar-${this.colorClass}`);
     this.navbar.classList.add(`bg-${this.backgroundColorClass}`);
 
-    if (this.expandSize !== 'none') {
+    if (this.expandSize !== '') {
       this.navbar.classList.add(`navbar-expand-${this.expandSize}`);
     }
 

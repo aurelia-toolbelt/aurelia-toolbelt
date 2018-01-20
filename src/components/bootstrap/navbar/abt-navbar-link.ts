@@ -11,6 +11,7 @@ export class BootstrapNavBarLink {
 
   private navItem: Element;
   private navItemList: Element;
+  private navItemLink: Element;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
 
@@ -19,10 +20,10 @@ export class BootstrapNavBarLink {
     let isDisabled = this.navItem.hasAttribute('disabled');
 
     if (isActive) {
-      this.navItemList.classList.add('active');
+      this.navItemLink.classList.add('active');
     }
     if (isDisabled) {
-      this.navItemList.classList.add('disabled');
+      this.navItemLink.classList.add('disabled');
     }
   }
 
