@@ -15,10 +15,11 @@ export async function configure(aurelia: Aurelia) {
       progressBar: false, preventDuplicates: true, positionClass: 'toast-bottom-left'
     });
 
-  setTimeout(async () => {
-    await aurelia.start();
-    aurelia.setRoot('app');
-  }, 1500);
+
+  // setTimeout(async () => {
+  await aurelia.start();
+  await aurelia.setRoot('app');
+  // }, 100);
 
 
 }

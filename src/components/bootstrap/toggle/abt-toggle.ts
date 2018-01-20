@@ -50,7 +50,7 @@ export class BootstrapToggleCustomElement {
     }
   }
 
-  private changed() {
+  private onChanged() {
 
     if (this.disabled) {
       return;
