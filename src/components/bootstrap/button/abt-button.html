@@ -2,7 +2,7 @@
 
   <require from="./abt-button.css"></require>
 
-  <button role="button" type="${type}" disabled.bind="disabled || isBusy" class="abt-button btn btn-${isOutlined? 'outline-' : ''}${color} btn-${size} ${isBlockLevel?'btn-block':''} "
+  <button id="${id}" role="button" type="${type}" disabled.bind="disabled || isBusy" class="abt-button btn btn-${isOutlined? 'outline-' : ''}${color} btn-${size} ${isBlockLevel?'btn-block':''} "
      css="${style}" click.delegate="onClick($event,$this)">
     <span show.bind="isBusy">
       <slot name="loading">

@@ -1,0 +1,11 @@
+<template ref="navDropDown">
+  <li ref="navListDropDown" class="nav-item dropdown">
+    <a ref="navLinkDropDown" class="nav-link dropdown-toggle" href="${href}" aut-uuid role="button" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
+      ${title}
+    </a>
+    <div class="dropdown-menu" aria-labelledby="${navLinkDropDown.id}">
+      <slot></slot>
+    </div>
+  </li>
+</template>

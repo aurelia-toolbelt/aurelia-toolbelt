@@ -86,6 +86,14 @@ export class BootstrapRoute {
         nav: true,
         title: 'Carousel',
         settings: { auth: false, isComponent: true }
+      }, {
+        route: ['collapse'],
+        name: 'bootstrap-collapse',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/collapse'),
+        nav: true,
+        title: 'Collapse',
+        settings: { auth: false, isComponent: true }
       }
       , {
         route: ['dropdown'],
@@ -113,6 +121,25 @@ export class BootstrapRoute {
         nav: true,
         title: 'Jumbotron',
         settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['listgroup'],
+        name: 'bootstrap-listgroup',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/listgroup'),
+        nav: true,
+        title: 'Listgroup',
+        settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['navbar'],
+        name: 'bootstrap-navbar',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/navbar'),
+        nav: true,
+        title: 'Navbar',
+        settings: { auth: false, isComponent: true }
+
       },
       {
         route: ['navs'],
@@ -207,14 +234,29 @@ export class BootstrapRoute {
         nav: true,
         title: 'Popover',
         settings: { auth: false, isComponent: true }
-      }, {
-        route: ['listgroup'],
-        name: 'bootstrap-listgroup',
 
-        moduleId: PLATFORM.moduleName('./bootstrap/listgroup'),
+      }
+      ,
+      {
+        route: ['pagination'],
+        name: 'bootstrap-pagination',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/pagination'),
         nav: true,
-        title: 'Listgroup',
+        title: 'Pagination',
         settings: { auth: false, isComponent: true }
+
+      }
+      ,
+      {
+        route: ['inputgroup'],
+        name: 'bootstrap-inputgroup',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/inputgroup'),
+        nav: true,
+        title: 'InputGroup',
+        settings: { auth: false, isComponent: true }
+
       }
     ]);
     this.router = router;

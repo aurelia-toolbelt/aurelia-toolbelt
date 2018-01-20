@@ -1,4 +1,3 @@
-// tslint:disable
 
 import { customElement, inject, bindable, bindingMode, BindingEngine, containerless, processContent, children } from 'aurelia-framework';
 
@@ -31,10 +30,11 @@ export class BootstrapTokenizeCustomElement {
 
   private tokenize: HTMLSelectElement;
 
-  @children('option') options: Array<HTMLOptionElement>;
+  @children('option') private options: Array<HTMLOptionElement>;
 
   constructor(private element: Element) {
   }
+
 
   private attached() {
     // @ts-ignore

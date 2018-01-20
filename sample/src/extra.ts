@@ -1,8 +1,8 @@
 import * as fuse from 'fuse.js';
 const hl = require('highlight.js');
-const popperjs = require('popper.js');
+// const popperjs = require('popper.js');
 
-import 'bootstrap';
+import 'bootstrap/dist/js/bootstrap.bundle.js';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import 'metismenu/dist/metismenu.css';
@@ -25,5 +25,5 @@ const ml = require('aureliatoolbelt-thirdparty/microlink/microlink.js');
 
 let x = fuse;
 let hljs = hl;
-let Popper = popperjs;
+// let Popper = popperjs;
 let zen = zenscroll;
