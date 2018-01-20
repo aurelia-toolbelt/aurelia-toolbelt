@@ -450,7 +450,7 @@ aurelia-history-browser@^1.0.0:
     aurelia-history "^1.0.0"
     aurelia-pal "^1.0.0"
 
-aurelia-history@^1.0.0, aurelia-history@^1.1.0:
+aurelia-history@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/aurelia-history/-/aurelia-history-1.1.0.tgz#779aa386d56803aaa4bdb7d71435a57768505f57"
 
@@ -536,24 +536,13 @@ aurelia-route-recognizer@^1.0.0:
   dependencies:
     aurelia-path "^1.0.0"
 
-aurelia-router@^1.0.1:
+aurelia-router@^1.0.1, aurelia-router@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/aurelia-router/-/aurelia-router-1.4.0.tgz#a6109dba2916065b9e1fa47fe3dce69d2fb5ff1d"
   dependencies:
     aurelia-dependency-injection "^1.0.0"
     aurelia-event-aggregator "^1.0.0"
     aurelia-history "^1.0.0"
-    aurelia-logging "^1.0.0"
-    aurelia-path "^1.0.0"
-    aurelia-route-recognizer "^1.0.0"
-
-aurelia-router@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/aurelia-router/-/aurelia-router-1.5.0.tgz#beac6b5820ce470c92f0a18450b24ab431b0a60e"
-  dependencies:
-    aurelia-dependency-injection "^1.0.0"
-    aurelia-event-aggregator "^1.0.0"
-    aurelia-history "^1.1.0"
     aurelia-logging "^1.0.0"
     aurelia-path "^1.0.0"
     aurelia-route-recognizer "^1.0.0"
