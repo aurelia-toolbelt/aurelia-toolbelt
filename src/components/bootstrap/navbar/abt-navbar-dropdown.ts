@@ -13,9 +13,9 @@ export class BootstrapNavBarDropDown {
 
   private attached() {
     let isMegaMenuFullWidth = this.navDropDown.hasAttribute('fullwidth');
+
     if (isMegaMenuFullWidth) {
       this.navListDropDown.classList.add('navbar-megamenu-fullwidth');
     }
-
   }
 }
