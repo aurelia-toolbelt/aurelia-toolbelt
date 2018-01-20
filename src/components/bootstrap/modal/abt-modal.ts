@@ -1,5 +1,6 @@
 import { bindingMode, bindable, containerless, customElement, inject } from 'aurelia-framework';
 
+import 'jquery';
 
 @inject(Element)
 @containerless()
@@ -9,9 +10,18 @@ export class BootstrapModal {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
 
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: string = 'md';
+
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public animate: string | boolean = true;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public dismissible: string | boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public dismissible: string | boolean = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public centered: string | boolean = false;
+
+
+
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public backdrop: string | boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public keyboard: string | boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public focus: string | boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public show: string | boolean = false;
 
 
   // @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsShow: Function;
@@ -87,6 +97,12 @@ export class BootstrapModal {
     this.centered = this.centered === true || this.centered === 'true';
     this.dismissible = this.dismissible === true || this.dismissible === 'true';
 
+
+    this.backdrop = this.backdrop === true || this.backdrop === 'true';
+    this.keyboard = this.keyboard === true || this.keyboard === 'true';
+    this.focus = this.focus === true || this.focus === 'true';
+    this.show = this.show === true || this.show === 'true';
+
     this.setEvents();
 
     if (this.openBy) {
@@ -94,6 +110,14 @@ export class BootstrapModal {
     } else {
       throw Error(`The 'abt-modal' should have an 'open-by' property`);
     }
+
+    // @ts-ignore
+    $(this.modal).modal({
+      backdrop: this.backdrop,
+      keyboard: this.keyboard,
+      focus: this.focus,
+      show: this.show
+    });
 
   }
 }
