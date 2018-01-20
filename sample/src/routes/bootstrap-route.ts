@@ -132,6 +132,16 @@ export class BootstrapRoute {
         settings: { auth: false, isComponent: true }
       },
       {
+        route: ['modal'],
+        name: 'bootstrap-modal',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/modal'),
+        nav: true,
+        title: 'Modals',
+        settings: { auth: false, isComponent: true }
+
+      },
+      {
         route: ['navbar'],
         name: 'bootstrap-navbar',
 
