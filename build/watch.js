@@ -123,6 +123,7 @@ gulp.task('fuse-sample', function () {
         + aurelia-templating-router
         + aurelia-fetch-client
         + aurelia-http-client
+        + aurelia-router
         + aurelia-after-attached-plugin
         + jalali-moment
         + moment-timezone
