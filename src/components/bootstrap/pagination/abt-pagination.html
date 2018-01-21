@@ -1,28 +1,24 @@
-<template>  <input type="number" name="quantity" min="1" max="5">
+<template>
+    <nav>
+        <ul ref="pagination" class="pagination">
+            <li show.bind="boundaryLinks" class="page-item abt-pagination-first">
+                <a class="page-link" href="#">${first}</a>
+            </li>
+            <li show.bind="directionLinks" class="page-item abt-pagination-prev">
+                <a class="page-link" href="#">${prev}</a>
+            </li>
 
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                </a>
+            <li class="page-item abt-pagination-item" repeat.for="page of pages">
+                <a class="page-link" href="#">${page}</a>
             </li>
-            <li class="page-item">
-                <a class="page-link" href="#">1</a>
+
+            <li show.bind="directionLinks" class="page-item abt-pagination-next">
+                <a class="page-link" href="#">${next}</a>
             </li>
-            <li class="page-item">
-                <a class="page-link" href="#">2</a>
+            <li show.bind="boundaryLinks" class="page-item abt-pagination-last">
+                <a class="page-link" href="#">${last}</a>
             </li>
-            <li class="page-item">
-                <a class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </li>
+
         </ul>
     </nav>
 </template>
