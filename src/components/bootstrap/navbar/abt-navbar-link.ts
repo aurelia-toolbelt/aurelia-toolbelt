@@ -9,8 +9,10 @@ export class BootstrapNavBarLink {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string = '#';
 
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public linkClass: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public linkStyle: string = '';
+
   private navItem: Element;
-  private navItemList: Element;
   private navItemLink: Element;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
