@@ -73,7 +73,7 @@ export class PasswordCustomElement {
     return html;
   }
   private textChanged(value: string) {
-    let cls = 'input-group-addon visible-md-* visible-lg-* ';
+    let cls = 'input-group-prepend visible-md-* visible-lg-* ';
     this.passwordClass = cls;
 
     let option: any = [];
@@ -120,7 +120,7 @@ export class PasswordCustomElement {
         this.passwordClass = cls;
         this.passwordStyle = '';
       } else {
-        this.passwordStyle = 'color:white;background-color:' + this.color + ';border-bottom:3px solid '
+        this.passwordStyle = 'padding:0.4rem;color:white;background-color:' + this.color + ';border-bottom:3px solid '
           + this.color + ';border-right:2px solid ' + this.color + ';';
         this.textStyle = 'border-bottom:3px solid ' + this.color;
       }

@@ -1,4 +1,4 @@
-import { Router, RouterConfiguration } from 'aurelia-router';
+import { Router, RouterConfiguration, RouteConfig } from 'aurelia-router';
 import { PLATFORM } from 'aurelia-framework';
 
 
@@ -9,8 +9,7 @@ export class BootstrapRoute {
   public router: Router;
 
   public configureRouter(config: RouterConfiguration, router: Router) {
-
-    config.map([
+    let routes: Array<RouteConfig> = [
       {
         route: ['', 'alert'],
         name: 'bootstrap-alert',
@@ -114,6 +113,16 @@ export class BootstrapRoute {
         settings: { auth: false, isComponent: true }
       },
       {
+        route: ['inputgroup'],
+        name: 'bootstrap-inputgroup',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/inputgroup'),
+        nav: true,
+        title: 'InputGroup',
+        settings: { auth: false, isComponent: true }
+
+      },
+      {
         route: ['jumbotron'],
         name: 'bootstrap-jumbotron',
 
@@ -155,13 +164,7 @@ export class BootstrapRoute {
         route: ['navs'],
         name: 'bootstrap-navs',
 
-
         moduleId: PLATFORM.moduleName('./bootstrap/navs'),
-
-        // viewPorts: {
-        //   // default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
-        //   content: { moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-toggle') }
-        // },
 
         nav: true,
         title: 'Navs',
@@ -218,15 +221,15 @@ export class BootstrapRoute {
         title: 'Tokenize',
         settings: { auth: false, isComponent: true }
       },
-      {
-        route: ['touchspin'],
-        name: 'bootstrap-touchspin',
+      // {
+      //   route: ['touchspin'],
+      //   name: 'bootstrap-touchspin',
 
-        moduleId: PLATFORM.moduleName('./bootstrap/touchspin'),
-        nav: true,
-        title: 'Touch Spin',
-        settings: { auth: false, isComponent: true }
-      },
+      //   moduleId: PLATFORM.moduleName('./bootstrap/touchspin'),
+      //   nav: true,
+      //   title: 'Touch Spin',
+      //   settings: { auth: false, isComponent: true }
+      // },
       {
         route: ['tooltip'],
         name: 'bootstrap-tooltip',
@@ -257,18 +260,23 @@ export class BootstrapRoute {
         settings: { auth: false, isComponent: true }
 
       }
-      ,
-      {
-        route: ['inputgroup'],
-        name: 'bootstrap-inputgroup',
+    ];
 
-        moduleId: PLATFORM.moduleName('./bootstrap/inputgroup'),
-        nav: true,
-        title: 'InputGroup',
-        settings: { auth: false, isComponent: true }
+    let direction = 'asc';
+    const directionFactor = direction === 'desc' ? -1 : 1;
+    routes.sort((current, next) => {
+      const currentValue = current.title;
+      const nextValue = next.title;
 
+      if (currentValue > nextValue) {
+        return directionFactor;
+      } else if (currentValue < nextValue) {
+        return -directionFactor;
       }
-    ]);
+      return 0;
+    });
+
+    config.map(routes);
     this.router = router;
   }
 
