@@ -19,7 +19,11 @@ body {
     /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
-.container-fluid{
+.container-fluid {
     margin-top: 50px !important;
     padding: 50px;
+}
+
+.aurelia-color {
+    color: #753B85;
 }
