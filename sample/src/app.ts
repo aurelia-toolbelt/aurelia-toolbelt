@@ -42,18 +42,6 @@ export class App {
       { name: 'united', path: '/bootswatch/united' },
       { name: 'yeti', path: '/bootswatch/yeti' }
     ];
-
-
-    // eventAggregator.subscribe('router:navigation:complete', () => {
-    //   if (!window.location.hash) {
-    //     return;
-    //   }
-    //   const doc = DOM.getElementById(window.location.hash.substr(1));
-    //   if (doc) {
-    //     doc.scrollIntoView();
-    //   }
-    // });
-
   }
 
 
@@ -61,9 +49,18 @@ export class App {
   public configureRouter(config: RouterConfiguration, router: Router) {
 
 
-    // config.options.pushState = true;
+    config.options.pushState = true;
 
     config.map([
+
+      {
+        route: ['', 'get-started'],
+        name: 'getStarted',
+        moduleId: PLATFORM.moduleName('./routes/get-started'),
+        nav: true,
+        title: 'Get Started',
+        settings: { auth: false }
+      },
       {
         route: ['bootstrap'],
         name: 'bootstrap',
@@ -97,6 +94,7 @@ export class App {
 
     this.bsService.update();
 
+    /* toastr flat theme */
     DOM.injectStyles(`
     .toast {
       background-color: ${this.bsService.primary} !important;
@@ -119,7 +117,7 @@ export class App {
       border-radius: 0px !important;
     }
     `);
-
+    /*************************************************************************** */
 
   }
 

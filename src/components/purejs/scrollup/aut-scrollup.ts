@@ -1,6 +1,5 @@
 
 import { customElement, bindable, bindingMode, inject, containerless, DOM } from 'aurelia-framework';
-import { ZenscrollService } from '../../../services/purejs/zenscroll/zenscroll-service';
 
 @customElement('aut-scrollup')
 export class ScrollUpCustomElement {

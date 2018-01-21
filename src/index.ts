@@ -10,7 +10,7 @@ export * from './services/jquery/toastr/toastr-service';
 
 export * from './services/misc/common-css-service';
 
-export * from './services/purejs/zenscroll/zenscroll-service';
+// export * from './services/purejs/zenscroll/zenscroll-service';
 
 
 export function configure(config: FrameworkConfiguration) {

@@ -38,6 +38,11 @@ export class ListGroupItemCustomElement {
     } else {
       $(this.listGroupItem).addClass('abt-listgroup-item-disabled');
     }
+
+    if (this.color) {
+      this.listGroupItem.classList.add(`list-group-item-${this.color}`);
+    }
+
   }
 
 
@@ -48,6 +53,8 @@ export class ListGroupItemCustomElement {
     if (this.click) {
       this.click({ event: event });
     }
+
+    return false;
 
   }
 

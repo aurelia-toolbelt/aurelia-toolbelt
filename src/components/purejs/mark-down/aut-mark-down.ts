@@ -12,10 +12,10 @@ export class MarkDownItCustomElement {
   private editor: HTMLTextAreaElement;
   private preview: HTMLDivElement;
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showToolBar: boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showToolBar: boolean = false;
 
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public showPreview: boolean = false;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public showEditor: boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public showPreview: boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public showEditor: boolean = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public src: string = '';
 
 

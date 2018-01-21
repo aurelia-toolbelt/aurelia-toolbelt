@@ -13,17 +13,17 @@ export class NavBar {
 
   }
 
-  public attached() {
-    // todo
-    $('.aut-metis-menu-item-link').click(() => {
-      document.documentElement.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
-    });
+  // public attached() {
+  //   // todo
+  //   $('.aut-metis-menu-item-link').click(() => {
+  //     document.documentElement.scroll({
+  //       top: 0,
+  //       left: 0,
+  //       behavior: 'smooth'
+  //     });
+  //   });
 
-  }
+  // }
   private showMenu() {
     alert('hi');
   }

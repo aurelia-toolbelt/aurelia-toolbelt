@@ -14,7 +14,7 @@ import 'highlight.js/styles/solarized-dark.css';
 import 'pretty-checkbox/dist/pretty-checkbox.css';
 
 
-import * as zenscroll from 'zenscroll';
+// import * as zenscroll from 'zenscroll';
 
 import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.css';
 import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.js';
@@ -26,4 +26,4 @@ const ml = require('aureliatoolbelt-thirdparty/microlink/microlink.js');
 let x = fuse;
 let hljs = hl;
 // let Popper = popperjs;
-let zen = zenscroll;
+// let zen = zenscroll;

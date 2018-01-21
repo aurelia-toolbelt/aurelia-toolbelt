@@ -19,14 +19,7 @@ body {
     /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
-.main{
-    margin-top: 50px;
-}
-
-
-
-legend{
-    padding-top: 50px !important;
-    
-    border-bottom: 1px solid #773377;
+.container-fluid{
+    margin-top: 50px !important;
+    padding: 50px;
 }
