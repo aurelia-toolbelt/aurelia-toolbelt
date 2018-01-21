@@ -1,6 +1,6 @@
 <template>
 
-  <a class="navbar-brand ${class}" css="${style}" href="${href}">
+  <a class="navbar-brand ${class}" css="${style}" click.delegate="onClick($event)" href="${href}">
     <slot></slot>
   </a>
   

@@ -1,9 +1,11 @@
 import { DOM, containerless, inject, bindingMode, bindable } from 'aurelia-framework';
 import { customElement } from 'aurelia-templating';
 
+@inject(Element)
 @containerless()
-@customElement('abt-navbar-text')
-export class BootstrapNavBarText {
+@customElement('abt-navbar-nav')
+export class BootstrapNavBarNav {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
+
 }
