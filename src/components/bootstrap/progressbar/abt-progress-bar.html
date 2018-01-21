@@ -1,6 +1,7 @@
-<template bindable="class,style,value,min,max" aria-valuenow="${value}" aria-valuemin="${min}" aria-valuemax="${max}"
-  class="progress-bar ${isAnimated?'progress-bar-animated':''} ${isStriped?'progress-bar-striped':''} bg-${color} ${class}"
-  role="progressbar" css="width:${value}%;${style}">
-  <slot>
+<template>
+  <div  ref="progressbar" class="progress-bar ${animated?'progress-bar-animated':''} ${striped?'progress-bar-striped':''} bg-${colorClass}"
+    aut-uuid role="progressbar" css="width: ${value}%;" aria-valuenow="${value}" aria-valuemin="${min}" aria-valuemax="${max}">
     <slot>
+      <slot>
+  </div>
 </template>
