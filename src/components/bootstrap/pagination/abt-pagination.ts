@@ -19,15 +19,20 @@ export class BootstrapPaginationCustomElement {
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public next: string = 'Next';
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public loop: boolean = false;
 
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) public pageChanged: Function;
+    @bindable({ defaultBindingMode: bindingMode.oneWay }) public click: Function;
 
 
     private pagination: Element;
     private paginationItems: Element;
-    private pages: string[] = ['1', '2', '3'];
+    private pages: string[];
 
+    private onClick(event: Event) {
+        if (this.click) {
+            this.click({ event: event });
+        }
+    }
 
     private afterAttached() {
-        // A
+        this.pages = ['1', '2', '...', '6', '7', '8', '...', '12', '13'];
     }
 }

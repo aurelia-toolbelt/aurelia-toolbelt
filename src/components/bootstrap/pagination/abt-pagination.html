@@ -9,7 +9,7 @@
             </li>
 
             <li class="page-item abt-pagination-item" repeat.for="page of pages">
-                <a class="page-link" href="#">${page}</a>
+                <a class="page-link ${page==='...' ? 'abt-pagination-hide-item':''}" href="#">${page}</a>
             </li>
 
             <li show.bind="directionLinks" class="page-item abt-pagination-next">
