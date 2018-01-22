@@ -127,4 +127,8 @@ export class BootstrapCollapse {
     return true;
   }
 
+  private detached() {
+    $(this.collapse).collapse('dispose');
+  }
+
 }
