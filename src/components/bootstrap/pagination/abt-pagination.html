@@ -1,24 +1,26 @@
 <template>
-    <nav>
-        <ul ref="pagination" class="pagination">
-            <li show.bind="boundaryLinks" class="page-item abt-pagination-first">
-                <a class="page-link" href="#">${first}</a>
-            </li>
-            <li show.bind="directionLinks" class="page-item abt-pagination-prev">
-                <a class="page-link" href="#">${prev}</a>
-            </li>
+  <nav>
+    <ul ref="pagination" class="pagination">
+      <li show.bind="boundaryLinks" class="page-item abt-pagination-first">
+        <a class="page-link" href="#" click.trigger="onClick($event)">${first}</a>
+      </li>
+      <li show.bind="directionLinks" class="page-item abt-pagination-prev">
+        <a class="page-link" href="#" click.trigger="onClick($event)">${prev}</a>
+      </li>
 
-            <li class="page-item abt-pagination-item" repeat.for="page of pages">
-                <a class="page-link ${page==='...' ? 'abt-pagination-hide-item':''}" href="#">${page}</a>
-            </li>
+      <li class="page-item abt-pagination-item" repeat.for="page of pages">
+        <a class="page-link ${page===-1 ? 'abt-pagination-hide-item':''} abt-pagination-item-${$index}" href="#" click.trigger="onClick($event,page)">
+          ${page === -1 ? '...' : page}
+        </a>
+      </li>
 
-            <li show.bind="directionLinks" class="page-item abt-pagination-next">
-                <a class="page-link" href="#">${next}</a>
-            </li>
-            <li show.bind="boundaryLinks" class="page-item abt-pagination-last">
-                <a class="page-link" href="#">${last}</a>
-            </li>
+      <li show.bind="directionLinks" class="page-item abt-pagination-next">
+        <a class="page-link" href="#" click.trigger="onClick($event)">${next}</a>
+      </li>
+      <li show.bind="boundaryLinks" class="page-item abt-pagination-last">
+        <a class="page-link" href="#" click.trigger="onClick($event)">${last}</a>
+      </li>
 
-        </ul>
-    </nav>
+    </ul>
+  </nav>
 </template>
