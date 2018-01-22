@@ -7,7 +7,7 @@
   <!-- <require from="../../bootstrap/card/abt-card.html"></require>
   <require from="../../bootstrap/card/abt-card-body.html"></require> -->
 
-  <abt-card>
+  <abt-card class="mt-3 mb-4">
     <abt-card-header if.bind="showToolBar">
 
       <abt-button size="sm" color="secondary" click.call="srcChanged()">
@@ -64,9 +64,14 @@
       </textarea>
 
     </abt-card-body>
-    <abt-card-footer if.bind="showPreview === true" style="min-height: 400px;">
-      <div ref="preview" innerhtml.bind="myText | md & debounce:1000">
+    <abt-card-footer if.bind="showPreview === true" style="min-height: 100px; border-left:4px solid #753B85;">
+      <div ref="preview" innerhtml.bind="myText | md & debounce:200">
       </div>
     </abt-card-footer>
+
+    <div show.bind="false" ref="slotContainer" style="visibility: hidden">
+      <slot></slot>
+    </div>
+
   </abt-card>
 </template>
