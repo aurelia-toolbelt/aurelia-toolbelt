@@ -26,7 +26,7 @@ export class BootstrapPaginationCustomElement {
 
   private pagination: Element;
   private paginationItems: Element;
-  private pages: number[] = [];
+  private pages: string[] = [];
 
   private onClick(event: Event) {
     if (this.click) {
@@ -36,46 +36,59 @@ export class BootstrapPaginationCustomElement {
     return false;
   }
 
-  /*private leftSideVisibleItems(visibleItem: number, selectedItem: number): string[] {
-    let left = Math.ceil(visibleItem / 2);
-    let leftPages: string[] = [];
-    for (let index = 0; index < left; index++) {
-      leftPages[index] = 'a';
-    }
-    if (selectedItem >= left) {
-      leftPages[left - 1] = selectedItem.toString();
-    } else {
-      leftPages[selectedItem - 1] = selectedItem.toString();
-    }
-    return leftPages;
-
-  }
-  private rightSideVisibleItems(visibleItem: number): string[] {
-    let right = Math.floor(visibleItem / 2);
-    let rightPages: string[] = [];
-    for (let index = 0; index < right; index++) {
-      rightPages[index] = 'a';
-    }
-    return rightPages;
-  }*/
-
-
   private createVisibleItems(visibleItem: number, selectedItem: number, totalPages: number): string[] {
     let items: string[] = [];
     for (let index = 0; index < visibleItem; index++) {
       items[index] = 'a';
     }
-    let leftMetric = Math.ceil(visibleItem / 2);
-    let rightMetric = Math.floor(visibleItem / 2);
+    let leftSide = Math.ceil(visibleItem / 2);
+    let rightSide = Math.floor(visibleItem / 2);
 
-    if (selectedItem < leftMetric) {
+    if (selectedItem < leftSide) {
       items[selectedItem - 1] = selectedItem.toString();
+    } else if (selectedItem > (totalPages - rightSide)) {
+      items[totalPages - selectedItem - 1 + leftSide] = selectedItem.toString();
+    } else {
+      items[leftSide - 1] = selectedItem.toString();
     }
 
-    if (selectedItem > (totalPages - rightMetric)) {
-      items[selectedItem - 1] = selectedItem.toString();
+    let showLeftDots = this.showLeftDots(selectedItem);
+    let showRightDots = this.showRightDots(selectedItem, totalPages);
+
+    if (showLeftDots) {
+      items[0] = '1';
+      items[1] = '2';
+      items[2] = '...';
+    }
+    if (showRightDots) {
+      items[items.length - 3] = '...';
+      items[items.length - 2] = (this.totalPages - 1).toString();
+      items[items.length - 1] = this.totalPages.toString();
     }
 
+    let isBefore: boolean = true;
+    let currentItem = selectedItem;
+    for (let index = 0; index < items.length; index++) {
+      if (items[index] === selectedItem.toString()) {
+        isBefore = false;
+      }
+      if (items[index] === 'a' && !isBefore) {
+        currentItem += 1;
+        items[index] = currentItem.toString();
+      }
+    }
+
+    let isAfter: boolean = true;
+    let currentItemReverse = selectedItem;
+    for (let index = items.length; index--;) {
+      if (items[index] === selectedItem.toString()) {
+        isAfter = false;
+      }
+      if (items[index] === 'a' && !isAfter) {
+        currentItemReverse -= 1;
+        items[index] = currentItemReverse.toString();
+      }
+    }
 
     return items;
   }
@@ -98,75 +111,9 @@ export class BootstrapPaginationCustomElement {
     }
 
 
-    let y = this.createVisibleItems(this.visiblePages, this.selectedPage, this.totalPages);
-
-    // let leftSide = this.leftSideVisibleItems(this.visiblePages, this.selectedPage);
-    // let rightSide = this.rightSideVisibleItems(this.visiblePages);
-
-    if (this.showGoto) {
-      /*if (this.showLeftDots(this.selectedPage)) {
-        leftSide[0] = '1';
-        leftSide[1] = '2';
-        leftSide[2] = '...';
-      }
-      if (this.showRightDots(this.selectedPage, this.totalPages)) {
-        rightSide[rightSide.length - 3] = '...';
-        rightSide[rightSide.length - 2] = (this.totalPages - 1).toString();
-        rightSide[rightSide.length - 1] = this.totalPages.toString();
-      }*/
-    }
-
-    let showLeftDots = this.selectedPage > 5;
-    let showRightDots = this.totalPages - 5 > this.selectedPage;
+    this.pages = this.createVisibleItems(this.visiblePages, this.selectedPage, this.totalPages);
 
 
-    let visiblePagesLeftSide = Math.ceil(((this.visiblePages - (this.showGoto ? 4 : 0)) / 2));
-    let visiblePagesRightSide = Math.floor(((this.visiblePages - (this.showGoto ? 4 : 0)) / 2));
-
-    let minBoundary = 1;
-    let maxBoundary = 0;
-
-    if (this.selectedPage - visiblePagesLeftSide > 0) {
-      minBoundary = this.selectedPage - visiblePagesLeftSide;
-    } else {
-      maxBoundary = Math.abs(this.selectedPage - visiblePagesLeftSide);
-    }
-
-    if (this.selectedPage + visiblePagesRightSide > this.totalPages) {
-      maxBoundary = this.totalPages;
-
-      minBoundary -= this.selectedPage + visiblePagesRightSide - this.totalPages - 1;
-
-    } else {
-      maxBoundary += this.selectedPage + visiblePagesRightSide;
-    }
-
-
-    let counter = minBoundary;
-
-    while (counter <= maxBoundary) {
-      this.pages.push(counter++);
-    }
-
-    if (this.showGoto) {
-      if (showLeftDots === true) {
-        this.pages.unshift(-1);
-      }
-      if (this.selectedPage > 2) {
-        this.pages.unshift(2);
-        this.pages.unshift(1);
-      }
-
-      if (showRightDots === true) {
-        this.pages.push(-1);
-      }
-
-      if (this.selectedPage < this.totalPages - 2) {
-        this.pages.push(this.totalPages - 1);
-        this.pages.push(this.totalPages);
-      }
-
-
-    }
   }
 }
+
