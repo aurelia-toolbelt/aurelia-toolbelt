@@ -1,7 +1,4 @@
 <template>
-
-  <!-- <require from="highlight.js/styles/github.css"></require> -->
-
   <div class="row">
     <div class="col-sm-3">
       <abt-listgroup id="getStartedList" class="sticky-top">
@@ -11,16 +8,34 @@
         <abt-listgroup-item href="#Features">Features</abt-listgroup-item>
         <abt-listgroup-item href="#License">License</abt-listgroup-item>
         <abt-listgroup-item href="#Support">Support</abt-listgroup-item>
-        <abt-listgroup-item href="https://www.freepik.com/free-vector/elegant-banners-set-with-text-space_1189079.htm">
-          <img src="./favicon.ico" width="30" height="30">
-          <span>
-            &nbsp; Designed by Freepik
-          </span>
-        </abt-listgroup-item>
+        <!-- <abt-listgroup-item href="https://www.freepik.com/free-vector/elegant-banners-set-with-text-space_1189079.htm">
+            <img src="./favicon.ico" width="30" height="30">
+            <span>
+              &nbsp; Designed by Freepik
+            </span>
+          </abt-listgroup-item> -->
       </abt-listgroup>
+
+      <div class="row fixed-bottom ml-3 mb-3">
+
+        <abt-card>
+          <abt-card-header class="text-center">
+            Designed by
+            <a href="https://www.freepik.com/free-vector/elegant-banners-set-with-text-space_1189079.htm">
+              Freepik
+            </a>
+
+          </abt-card-header>
+          <!-- <abt-card-image bottom src="./favicon.ico" alt="Card image cap" style="width:100px; height:100px">
+                </abt-card-image> -->
+          <abt-card-body class="text-center">
+            <img src="./favicon.ico" width="100" height="100">
+          </abt-card-body>
+        </abt-card>
+      </div>
+
     </div>
     <div class="col-sm-9">
-
       <fieldset>
         <legend>
           <h2>
@@ -192,15 +207,6 @@
 
             </aut-mark-down>
 
-            <div class="row">
-              <div class="col-sm-6">
-                <aut-microlink round.bind="false" url="https://github.com/HamedFathi/"></aut-microlink>
-              </div>
-              <div class="col-sm-6">
-                <aut-microlink round.bind="false" url="https://github.com/shahabganji/"></aut-microlink>
-              </div>
-
-            </div>
             <br />
 
           </fieldset>
