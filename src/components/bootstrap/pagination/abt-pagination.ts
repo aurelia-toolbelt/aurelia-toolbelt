@@ -94,10 +94,10 @@ export class BootstrapPaginationCustomElement {
   }
 
   private showLeftDots(selectedItem: number): boolean {
-    return selectedItem > 4;
+    return selectedItem > 5;
   }
   private showRightDots(selectedItem: number, totalPages: number): boolean {
-    return totalPages - 4 > selectedItem;
+    return totalPages - 5 > selectedItem;
   }
 
   private afterAttached() {
