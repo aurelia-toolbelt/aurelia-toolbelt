@@ -48,8 +48,8 @@ export class App {
 
   public configureRouter(config: RouterConfiguration, router: Router) {
 
-
-    config.options.pushState = true;
+    // config.options.pushState = true;
+    config.mapUnknownRoutes('getStarted');
 
     config.map([
 
