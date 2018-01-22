@@ -47,7 +47,7 @@ export class BootstrapPaginationCustomElement {
     if (selectedItem < leftSide) {
       items[selectedItem - 1] = selectedItem.toString();
     } else if (selectedItem > (totalPages - rightSide)) {
-      items[totalPages - selectedItem - 1 + leftSide] = selectedItem.toString();
+      items[(selectedItem - totalPages) + (items.length - 1)] = selectedItem.toString();
     } else {
       items[leftSide - 1] = selectedItem.toString();
     }
@@ -55,12 +55,12 @@ export class BootstrapPaginationCustomElement {
     let showLeftDots = this.showLeftDots(selectedItem);
     let showRightDots = this.showRightDots(selectedItem, totalPages);
 
-    if (showLeftDots) {
+    if (showLeftDots && this.showGoto) {
       items[0] = '1';
       items[1] = '2';
       items[2] = '...';
     }
-    if (showRightDots) {
+    if (showRightDots && this.showGoto) {
       items[items.length - 3] = '...';
       items[items.length - 2] = (this.totalPages - 1).toString();
       items[items.length - 1] = this.totalPages.toString();
