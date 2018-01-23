@@ -43,13 +43,21 @@ export class BootstrapPaginationCustomElement {
         pageNumber = this.totalPages;
       } else if (target.className.indexOf('abt-pagination-prev') > -1) {
         if (this.selectedPage === 1) {
-          pageNumber = 1;
+          if (this.loop) {
+            pageNumber = this.totalPages;
+          } else {
+            pageNumber = 1;
+          }
         } else {
           pageNumber = this.getPageNumber(this.selectedPage.toString()) - 1;
         }
       } else if (target.className.indexOf('abt-pagination-next') > -1) {
         if (this.selectedPage === this.totalPages) {
-          pageNumber = this.totalPages;
+          if (this.loop) {
+            pageNumber = 1;
+          } else {
+            pageNumber = this.totalPages;
+          }
         } else {
           pageNumber = this.getPageNumber(this.selectedPage.toString()) + 1;
         }
