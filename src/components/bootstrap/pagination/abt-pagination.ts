@@ -36,14 +36,30 @@ export class BootstrapPaginationCustomElement {
   private showNumbers: boolean = false;
   private pagination: Element;
   private pages: IPagination[] = [];
-  private selectedSide: string = null;
+
+
+  private createInput(value: number, min: number, max: number, height: number): HTMLInputElement {
+    let input = <HTMLInputElement>document.createElement('input');
+    input.id = 'qqq';
+    input.type = 'number';
+    input.classList.add('form-control');
+    input.value = value.toString();
+    input.min = min.toString();
+    input.max = max.toString();
+    input.style.height = height.toString() + 'px';
+    input.focus();
+    return input;
+  }
 
   private onClick(event: Event, selectedPageNumber: number | string, side: string) {
 
     if (!Number(selectedPageNumber)) {
       if (!(selectedPageNumber === 'prev' || selectedPageNumber === 'next')) {
-        this.showNumbers = true;
-        this.selectedSide = side;
+        let currentElement = <HTMLAnchorElement>event.target;
+        let parentElement = currentElement.parentElement;
+        let elementHeight = Number(parentElement.offsetHeight);
+        currentElement.remove();
+        parentElement.appendChild(this.createInput(6, 3, 11, elementHeight));
         return false;
       }
     }
@@ -135,7 +151,7 @@ export class BootstrapPaginationCustomElement {
         page: this.pageTemplate.replace('%s', items[index]),
         selected: items[index] === selectedItem.toString(),
         pageNumber: Number(items[index]),
-        side: index < (this.visiblePages / 2) ? 'L' : 'R'
+        side: index < leftSide ? 'L' : 'R'
       });
 
     }
