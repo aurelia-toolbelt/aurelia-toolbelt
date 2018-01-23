@@ -30,19 +30,51 @@ export class BootstrapPaginationCustomElement {
 
   private onClick(event: Event) {
     if (this.click) {
-
-
-      let page = (<HTMLAnchorElement>event.target).textContent.trim();
-      let pageNumber = this.getPurePageNumber(page);
-      this.pages = this.createVisibleItems(this.visiblePages, pageNumber, this.totalPages);
-
+      this.deactiveItems();
       this.click({ event: event });
+      let target = <HTMLAnchorElement>event.target;
+      let page = target.innerText.trim();
+      let pageNumber = 0;
+      if (target.className.indexOf('abt-pagination-item-NaN') > -1) {
+        return;
+      } else if (target.className.indexOf('abt-pagination-first') > -1) {
+        pageNumber = 1;
+      } else if (target.className.indexOf('abt-pagination-last') > -1) {
+        pageNumber = this.totalPages;
+      } else if (target.className.indexOf('abt-pagination-prev') > -1) {
+        if (this.selectedPage === 1) {
+          pageNumber = 1;
+        } else {
+          pageNumber = this.getPageNumber(this.selectedPage.toString()) - 1;
+        }
+      } else if (target.className.indexOf('abt-pagination-next') > -1) {
+        if (this.selectedPage === this.totalPages) {
+          pageNumber = this.totalPages;
+        } else {
+          pageNumber = this.getPageNumber(this.selectedPage.toString()) + 1;
+        }
+      } else {
+        pageNumber = this.getPageNumber(page);
+      }
+      this.selectedPage = pageNumber;
+      this.pages = this.createVisibleItems(this.visiblePages, pageNumber, this.totalPages);
+      // target.parentElement.classList.add('active');
+
+      $(`#abt-pagination-li-item-${pageNumber}`).addClass('active');
+
       console.log(event.target);
     }
     return false;
   }
 
-  private getPurePageNumber(template: string): number {
+  private deactiveItems() {
+    let controls = this.pagination.children;
+    for (let index = 0; index < controls.length; index++) {
+      controls[index].classList.remove('active');
+    }
+  }
+
+  private getPageNumber(template: string): number {
     let arr = template.split(' ');
     let arrTemplate = this.pageTemplate.split(' ');
     for (let index = 0; index < arrTemplate.length; index++) {
@@ -128,13 +160,14 @@ export class BootstrapPaginationCustomElement {
       throw Error('The visible pages should always be less than or equal to the total pages.');
     }
 
-    if (this.hideOnlyOnePage) {
+    if (this.hideOnlyOnePage && (this.totalPages === 1)) {
       this.boundaryLinks = false;
       this.directionLinks = false;
     }
 
 
     this.pages = this.createVisibleItems(this.visiblePages, this.selectedPage, this.totalPages);
+    $(`#abt-pagination-li-item-${this.selectedPage}`).addClass('active');
 
 
   }
