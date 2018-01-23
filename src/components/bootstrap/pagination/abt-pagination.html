@@ -8,9 +8,9 @@
         <a class="page-link abt-pagination-prev" href="#" click.trigger="onClick($event)">${prev}</a>
       </li>
 
-      <li id="abt-pagination-li-item-${getPageNumber(page)}" class="page-item abt-pagination-item" repeat.for="page of pages">
-        <a class="page-link abt-pagination-item-${getPageNumber(page)}" href="#" click.trigger="onClick($event,page)">
-          ${page === -1 ? '...' : page}
+      <li id="abt-pagination-li-item-${getPageNumber(ip.page)}" class="${ip.selected ? 'active':''} page-item abt-pagination-item" repeat.for="ip of pages">
+        <a class="page-link abt-pagination-item-${getPageNumber(ip.page)}" href="#" click.trigger="onClick($event,ip.page)">
+          ${ip.page === -1 ? '...' : ip.page}
         </a>
       </li>
 

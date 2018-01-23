@@ -1,4 +1,14 @@
-import { customElement, inject, bindable, bindingMode, BindingEngine, containerless } from 'aurelia-framework';
+import { customElement, inject, bindable, bindingMode, BindingEngine, containerless, signalBindings } from 'aurelia-framework';
+
+
+
+interface IPagination {
+
+  pageNumber: number;
+  page: string;
+  selected: boolean;
+
+}
 
 @containerless()
 @inject(Element)
@@ -26,7 +36,7 @@ export class BootstrapPaginationCustomElement {
 
   private pagination: Element;
   private paginationItems: Element;
-  private pages: string[] = [];
+  private pages: IPagination[] = [];
 
   private onClick(event: Event) {
     if (this.click) {
@@ -94,7 +104,7 @@ export class BootstrapPaginationCustomElement {
     throw Error('Check your page template maybe have some problem.');
   }
 
-  private createVisibleItems(visibleItem: number, selectedItem: number, totalPages: number): string[] {
+  private createVisibleItems(visibleItem: number, selectedItem: number, totalPages: number): IPagination[] {
     let items: string[] = [];
     for (let index = 0; index < visibleItem; index++) {
       items[index] = '-1';
@@ -148,7 +158,16 @@ export class BootstrapPaginationCustomElement {
       }
     }
 
-    return items;
+    let pages: IPagination[] = [];
+    for (let index = 0; index < items.length; index++) {
+      pages.push({
+        page: items[index],
+        selected: items[index] === selectedItem.toString()
+      });
+    }
+
+
+    return pages;
   }
 
   private showLeftDots(selectedItem: number): boolean {
@@ -175,9 +194,14 @@ export class BootstrapPaginationCustomElement {
 
 
     this.pages = this.createVisibleItems(this.visiblePages, this.selectedPage, this.totalPages);
-    $(`#abt-pagination-li-item-${this.selectedPage}`).addClass('active');
+
+    // this.pagination.getElementsByClassName(`abt-pagination-li-item-${this.selectedPage}`)[0].classList.add('active');
 
 
   }
+
+
+
 }
+
 
