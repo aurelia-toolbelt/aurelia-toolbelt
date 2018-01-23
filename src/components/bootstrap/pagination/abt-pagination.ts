@@ -31,23 +31,22 @@ export class BootstrapPaginationCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public next: string = 'Next';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public loop: boolean = false;
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public click: Function;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public pageChanged: Function;
 
-
+  private showNumbers: boolean = false;
   private pagination: Element;
-  private paginationItems: Element;
   private pages: IPagination[] = [];
 
+
   private onClick(event: Event, selectedPageNumber: number | string) {
-    this.deactiveItems();
 
-    if (this.click) {
-      this.click({ event: event, selectedPageNumber: selectedPageNumber });
+    if (!Number(selectedPageNumber)) {
+      this.showNumbers = true;
+      return false;
     }
-    /*let target = <HTMLAnchorElement>event.target;
-    let page = target.innerText.trim();
-    let pageNumber = 0;*/
 
+
+    this.showNumbers = false;
 
     if (selectedPageNumber === 'prev') {
       this.selectedPage--;
@@ -62,70 +61,16 @@ export class BootstrapPaginationCustomElement {
     } else {
       this.selectedPage = Number(selectedPageNumber);
     }
-    this.pages = this.createVisibleItems(this.visiblePages, this.selectedPage, this.totalPages);
 
+    this.createVisibleItems(this.visiblePages, this.selectedPage, this.totalPages);
+
+    if (this.pageChanged) {
+      this.pageChanged({ event: event, selectedPageNumber: selectedPageNumber });
+    }
     return false;
-
-
-    // if (target.className.indexOf('abt-pagination-item-NaN') > -1) {
-    //   return;
-    // } else if (target.className.indexOf('abt-pagination-first') > -1) {
-    //   pageNumber = 1;
-    // } else if (target.className.indexOf('abt-pagination-last') > -1) {
-    //   pageNumber = this.totalPages;
-    // } else if (target.className.indexOf('abt-pagination-prev') > -1) {
-    //   if (this.selectedPage === 1) {
-    //     if (this.loop) {
-    //       pageNumber = this.totalPages;
-    //     } else {
-    //       pageNumber = 1;
-    //     }
-    //   } else {
-    //     pageNumber = this.getPageNumber(this.selectedPage.toString()) - 1;
-    //   }
-    // } else if (target.className.indexOf('abt-pagination-next') > -1) {
-    //   if (this.selectedPage === this.totalPages) {
-    //     if (this.loop) {
-    //       pageNumber = 1;
-    //     } else {
-    //       pageNumber = this.totalPages;
-    //     }
-    //   } else {
-    //     pageNumber = this.getPageNumber(this.selectedPage.toString()) + 1;
-    //   }
-    // } else {
-    //   pageNumber = this.getPageNumber(page);
-    // }
-    // this.selectedPage = pageNumber;
-    // // target.parentElement.classList.add('active');
-
-    // $(`#abt-pagination-li-item-${pageNumber}`).addClass('active');
-
-    // console.log(event.target);
-    // }
-    // return false;
   }
 
-  private deactiveItems() {
-    let controls = this.pagination.children;
-    for (let index = 0; index < controls.length; index++) {
-      controls[index].classList.remove('active');
-    }
-  }
-
-  private getPageNumber(template: string): number {
-    let arr = template.split(' ');
-    let arrTemplate = this.pageTemplate.split(' ');
-    for (let index = 0; index < arrTemplate.length; index++) {
-      let value = arrTemplate[index];
-      if (value === '%s') {
-        return parseInt(arr[index].trim(), 10);
-      }
-    }
-    throw Error('Check your page template maybe have some problem.');
-  }
-
-  private createVisibleItems(visibleItem: number, selectedItem: number, totalPages: number): IPagination[] {
+  private createVisibleItems(visibleItem: number, selectedItem: number, totalPages: number): void {
     let items: string[] = [];
     for (let index = 0; index < visibleItem; index++) {
       items[index] = '-1';
@@ -179,17 +124,14 @@ export class BootstrapPaginationCustomElement {
       }
     }
 
-    let pages: IPagination[] = [];
+    this.pages = [];
     for (let index = 0; index < items.length; index++) {
-      pages.push({
+      this.pages.push({
         page: this.pageTemplate.replace('%s', items[index]),
         selected: items[index] === selectedItem.toString(),
         pageNumber: Number(items[index])
       });
     }
-
-
-    return pages;
   }
 
   private showLeftDots(selectedItem: number): boolean {
@@ -215,7 +157,7 @@ export class BootstrapPaginationCustomElement {
     }
 
 
-    this.pages = this.createVisibleItems(this.visiblePages, this.selectedPage, this.totalPages);
+    this.createVisibleItems(this.visiblePages, this.selectedPage, this.totalPages);
 
     // this.pagination.getElementsByClassName(`abt-pagination-li-item-${this.selectedPage}`)[0].classList.add('active');
 

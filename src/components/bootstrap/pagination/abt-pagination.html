@@ -1,25 +1,26 @@
 <template>
   <nav>
     <ul ref="pagination" class="pagination">
-      <li show.bind="boundaryLinks" class="page-item">
-        <a class="page-link abt-pagination-first" href="#" click.trigger="onClick($event,1)">${first}</a>
+      <li show.bind="boundaryLinks" class="page-item abt-pagination-first ${selectedPage === 1  ? 'disabled':''}">
+        <a class="page-link" href="#" click.trigger="onClick($event,1)">${first}</a>
       </li>
-      <li show.bind="directionLinks" class="page-item">
-        <a class="page-link abt-pagination-prev" href="#" click.trigger="onClick($event, 'prev')">${prev}</a>
+      <li show.bind="directionLinks" class="page-item abt-pagination-prev ${selectedPage === 1 && !loop  ? 'disabled':''}">
+        <a class="page-link" href="#" click.trigger="onClick($event, 'prev')">${prev}</a>
       </li>
 
-      <li id="abt-pagination-li-item-${getPageNumber(ip.page)}" class="${ip.selected ? 'active':''} page-item abt-pagination-item"
+      <li class="${ip.selected ? 'active':''} page-item abt-pagination-item"
         repeat.for="ip of pages">
-        <a class="page-link abt-pagination-item-${getPageNumber(ip.page)}" href="#" click.trigger="onClick($event,ip.pageNumber)">
-          ${ip.page === -1 ? '...' : ip.page}
+        <a hide.bind="showNumbers && ip.page === '...'" class="page-link" href="#" click.trigger="onClick($event,ip.pageNumber)">
+          ${ip.page === '-1' ? '...' : ip.page}
         </a>
+        <input ref="x" blur.trigger="onClick($event, x.value)" show.bind="showNumbers && ip.page === '...'" class="" type="number" value="${pages[$index-1].pageNumber +1}" min="${pages[$index-1].pageNumber}" max="${pages[$index+1].pageNumber}">
       </li>
 
-      <li show.bind="directionLinks" class="page-item">
-        <a class="page-link abt-pagination-next" href="#" click.trigger="onClick($event,'next')">${next}</a>
+      <li show.bind="directionLinks" class="page-item abt-pagination-next ${selectedPage === totalPages && !loop  ? 'disabled':''}">
+        <a class="page-link" href="#" click.trigger="onClick($event,'next')">${next}</a>
       </li>
-      <li show.bind="boundaryLinks" class="page-item">
-        <a class="page-link abt-pagination-last" href="#" click.trigger="onClick($event, totalPages)">${last}</a>
+      <li show.bind="boundaryLinks" class="page-item abt-pagination-last ${selectedPage === totalPages  ? 'disabled':''}">
+        <a class="page-link" href="#" click.trigger="onClick($event, totalPages)">${last}</a>
       </li>
 
     </ul>
