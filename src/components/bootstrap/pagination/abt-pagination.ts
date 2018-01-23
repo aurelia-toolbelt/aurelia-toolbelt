@@ -7,7 +7,7 @@ interface IPagination {
   pageNumber: number;
   page: string;
   selected: boolean;
-
+  side: string;
 }
 
 @containerless()
@@ -36,14 +36,18 @@ export class BootstrapPaginationCustomElement {
   private showNumbers: boolean = false;
   private pagination: Element;
   private pages: IPagination[] = [];
+  private selectedSide: string = null;
 
-
-  private onClick(event: Event, selectedPageNumber: number | string) {
+  private onClick(event: Event, selectedPageNumber: number | string, side: string) {
 
     if (!Number(selectedPageNumber)) {
-      this.showNumbers = true;
-      return false;
+      if (!(selectedPageNumber === 'prev' || selectedPageNumber === 'next')) {
+        this.showNumbers = true;
+        this.selectedSide = side;
+        return false;
+      }
     }
+
 
 
     this.showNumbers = false;
@@ -125,12 +129,15 @@ export class BootstrapPaginationCustomElement {
     }
 
     this.pages = [];
+
     for (let index = 0; index < items.length; index++) {
       this.pages.push({
         page: this.pageTemplate.replace('%s', items[index]),
         selected: items[index] === selectedItem.toString(),
-        pageNumber: Number(items[index])
+        pageNumber: Number(items[index]),
+        side: index < (this.visiblePages / 2) ? 'L' : 'R'
       });
+
     }
   }
 

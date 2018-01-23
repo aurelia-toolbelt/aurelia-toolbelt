@@ -8,12 +8,13 @@
         <a class="page-link" href="#" click.trigger="onClick($event, 'prev')">${prev}</a>
       </li>
 
-      <li class="${ip.selected ? 'active':''} page-item abt-pagination-item"
-        repeat.for="ip of pages">
-        <a hide.bind="showNumbers && ip.page === '...'" class="page-link" href="#" click.trigger="onClick($event,ip.pageNumber)">
+      <li class="${ip.selected ? 'active':''} page-item abt-pagination-item" repeat.for="ip of pages">
+        <a hide.bind="showNumbers && ip.page === '...' && ip.side !== selectedSide" class="page-link" href="#" click.trigger="onClick($event,ip.pageNumber, ip.page === '-1'?ip.side : null)">
           ${ip.page === '-1' ? '...' : ip.page}
         </a>
-        <input ref="x" blur.trigger="onClick($event, x.value)" show.bind="showNumbers && ip.page === '...'" class="" type="number" value="${pages[$index-1].pageNumber +1}" min="${pages[$index-1].pageNumber}" max="${pages[$index+1].pageNumber}">
+
+        <input ref="inputbox" focus.bind='true' blur.trigger="onClick($event, inputbox.value)" show.bind="showNumbers && ip.page === '...' && ip.side === selectedSide"
+          class="" type="number" value="${pages[$index-1].pageNumber +1}" min="${pages[$index-1].pageNumber}" max="${pages[$index+1].pageNumber}">
       </li>
 
       <li show.bind="directionLinks" class="page-item abt-pagination-next ${selectedPage === totalPages && !loop  ? 'disabled':''}">
