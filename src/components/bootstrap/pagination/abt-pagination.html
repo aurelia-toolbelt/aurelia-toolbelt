@@ -2,23 +2,24 @@
   <nav>
     <ul ref="pagination" class="pagination">
       <li show.bind="boundaryLinks" class="page-item">
-        <a class="page-link abt-pagination-first" href="#" click.trigger="onClick($event)">${first}</a>
+        <a class="page-link abt-pagination-first" href="#" click.trigger="onClick($event,1)">${first}</a>
       </li>
       <li show.bind="directionLinks" class="page-item">
-        <a class="page-link abt-pagination-prev" href="#" click.trigger="onClick($event)">${prev}</a>
+        <a class="page-link abt-pagination-prev" href="#" click.trigger="onClick($event, 'prev')">${prev}</a>
       </li>
 
-      <li id="abt-pagination-li-item-${getPageNumber(ip.page)}" class="${ip.selected ? 'active':''} page-item abt-pagination-item" repeat.for="ip of pages">
-        <a class="page-link abt-pagination-item-${getPageNumber(ip.page)}" href="#" click.trigger="onClick($event,ip.page)">
+      <li id="abt-pagination-li-item-${getPageNumber(ip.page)}" class="${ip.selected ? 'active':''} page-item abt-pagination-item"
+        repeat.for="ip of pages">
+        <a class="page-link abt-pagination-item-${getPageNumber(ip.page)}" href="#" click.trigger="onClick($event,ip.pageNumber)">
           ${ip.page === -1 ? '...' : ip.page}
         </a>
       </li>
 
       <li show.bind="directionLinks" class="page-item">
-        <a class="page-link abt-pagination-next" href="#" click.trigger="onClick($event)">${next}</a>
+        <a class="page-link abt-pagination-next" href="#" click.trigger="onClick($event,'next')">${next}</a>
       </li>
       <li show.bind="boundaryLinks" class="page-item">
-        <a class="page-link abt-pagination-last" href="#" click.trigger="onClick($event)">${last}</a>
+        <a class="page-link abt-pagination-last" href="#" click.trigger="onClick($event, totalPages)">${last}</a>
       </li>
 
     </ul>
