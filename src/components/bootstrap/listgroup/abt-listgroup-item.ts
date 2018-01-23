@@ -48,14 +48,17 @@ export class ListGroupItemCustomElement {
 
   private onClick(event: Event) {
 
-    event.preventDefault();
+    // event.preventDefault();
 
     if (this.click) {
       this.click({ event: event });
+      return false;
+    } else {
+
+
+      console.log('Works');
+      return true;
     }
-
-    return false;
-
   }
 
 }

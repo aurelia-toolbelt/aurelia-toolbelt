@@ -10,10 +10,12 @@ import * as $ from 'jquery';
 export class BootstrapScrollSpy {
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public target: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public offset: number = 0;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public offset: number = 10;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsScrollspy: Function;
+
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public onBody: boolean | string = false;
 
 
   private spy: HTMLElement;
@@ -23,7 +25,15 @@ export class BootstrapScrollSpy {
 
   private afterAttached() {
 
-    // $(this.spy).scrollspy({ target: this.target[0] === '#' ? this.target : `#${this.target}`, offset: 1 });
+    this.onBody = Boolean(this.onBody);
+    this.offset = Number(this.offset);
+
+    if (!this.onBody) {
+      $(this.spy).scrollspy({ target: this.target[0] === '#' ? this.target : `#${this.target}`, offset: this.offset });
+
+    } else {
+      $('body').scrollspy({ target: this.target[0] === '#' ? this.target : `#${this.target}`, offset: this.offset });
+    }
 
     if (this.bsScrollspy) {
       $(this.spy).on('activate.bs.scrollspy', () => {
