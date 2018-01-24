@@ -25,6 +25,9 @@ export class MarkDownItCustomElement {
 
   private afterAttached() {
     this.myText = this.slotContainer.innerHTML.replace('<!--slot-->' , '').trim();
+
+    this.srcChanged(this.src);
+
   }
 
   private srcChanged(newValue: string) {
