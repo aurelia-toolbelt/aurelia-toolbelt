@@ -12,12 +12,12 @@ export class BootstrapAlert {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: string = 'md';
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public color: string = 'primary';
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public dismissible: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public type: string = 'primary';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public animate: boolean | string = true;
 
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showAlert: boolean | null = null;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public dismissible: boolean | string = false;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsShow: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsShown: Function;
@@ -33,11 +33,12 @@ export class BootstrapAlert {
 
   private attached() {
 
-    let onlyAttribute = (this.dismissible === '' && this.element.hasAttribute('dismissible'));
+    const onlyDismissibleAttribute = (this.dismissible === '' && this.element.hasAttribute('dismissible'));
 
-    this.dismissible = onlyAttribute || this.dismissible.toString() === 'true';
+    this.dismissible = onlyDismissibleAttribute || this.dismissible.toString() === 'true';
 
-    this.animate = this.animate === 'true' || this.animate === true;
+    const onlyAnimateAttribute = (this.animate === '' && this.element.hasAttribute('animate'));
+    this.animate = onlyAnimateAttribute || this.animate === 'true' || this.animate === true;
 
     if (this.bsClose) {
       $(alert).on('close.bs.alert', () => {

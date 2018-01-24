@@ -1,13 +1,15 @@
 import { inject } from 'aurelia-framework';
 
 // @ts-ignore
-import { ToastrService} from 'aurelia-toolbelt';
+import { ToastrService } from 'aurelia-toolbelt';
 import { DOM } from 'aurelia-pal';
 
 
 
 @inject(ToastrService)
 export class Alert {
+
+  private showDismissible = true;
 
   private showOrHideAlert = true;
 
