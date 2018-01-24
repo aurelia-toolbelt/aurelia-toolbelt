@@ -50,7 +50,7 @@ export class BootstrapPaginationCustomElement {
     return input;
   }
 
-  private onClick(event: Event, selectedPageNumber: number | string, prevPageNumber?: number | string, nextPageNumber?: number | string) {
+  private onClick(event: Event, selectedPageNumber: number | string, prevPageNumber: number | string, nextPageNumber: number | string) {
 
     if (!Number(selectedPageNumber)) {
       if (!(selectedPageNumber === 'prev' || selectedPageNumber === 'next')) {
@@ -63,7 +63,7 @@ export class BootstrapPaginationCustomElement {
         $(inputElement).focus();
         $(inputElement).blur(() => {
           inputElement.remove();
-          this.onClick(null, inputElement.value);
+          this.onClick(null, inputElement.value, Number(inputElement.value) - 1, Number(inputElement.value) + 1);
         });
         return false;
       }
@@ -151,7 +151,7 @@ export class BootstrapPaginationCustomElement {
 
     for (let index = 0; index < items.length; index++) {
       this.pages.push({
-        page: this.pageTemplate.replace('%s', items[index]),
+        page: items[index] === '...' ? '...' : this.pageTemplate.replace('%s', items[index]),
         selected: items[index] === selectedItem.toString(),
         pageNumber: Number(items[index]),
         side: index < leftSide ? 'L' : 'R'
