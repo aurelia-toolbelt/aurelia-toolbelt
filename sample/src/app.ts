@@ -48,14 +48,14 @@ export class App {
 
   public configureRouter(config: RouterConfiguration, router: Router) {
 
-    // config.options.pushState = true;
-    config.mapUnknownRoutes('getStarted');
-
     config.map([
 
       {
-        route: ['', 'get-started'],
-        name: 'getStarted',
+        route: '', redirect: 'get-started'
+      },
+      {
+        route: 'get-started',
+        name: 'get-started',
         moduleId: PLATFORM.moduleName('./routes/get-started'),
         nav: true,
         title: 'Get Started',
@@ -86,6 +86,10 @@ export class App {
         settings: { auth: false }
       }
     ]);
+
+    // config.options.pushState = true;
+    // config.mapUnknownRoutes('./routes/not-found.html');
+
     this.router = router;
   }
 
