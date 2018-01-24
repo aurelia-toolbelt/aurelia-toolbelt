@@ -1,31 +1,27 @@
 <template>
 
-  <abt-navbar style="z-index:9999">
-    <abt-navbar-brand href="https://github.com/shahabganji/aurelia-toolbelt" class="bg-light mr-3">
+
+
+  <nav class="navbar navbar-expand-lg bg-light">
+    <a class="navbar-brand" href="https://github.com/shahabganji/aurelia-toolbelt">
       <i class="fa fa-github fa-lg mr-2"></i>
       aurelia-toolbelt
-    </abt-navbar-brand>
-    <abt-navbar-toggler></abt-navbar-toggler>
-    <abt-navbar-collapser>
-      <abt-navbar-nav class="mr-auto">
-        <div repeat.for="row of router.navigation">
-          <abt-navbar-link class="${row.isActive ? 'active' : ''}" href="${row.href}" if.bind="!row.navigation">
-            ${row.title}
-          </abt-navbar-link>
+    </a>
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
 
-          <abt-navbar-dropdown fullwidth title="${row.title}" if.bind="row.navigation">
-            <abt-navbar-dropdown-mega-item>
-              <div class="col-sm-3" repeat.for="r of of row.navigation">
-                <abt-navbar-link href.bind="r.href" class="${row.isActive ? 'active' : ''}">
-                  ${r.title}
-                </abt-navbar-link>
-              </div>
-            </abt-navbar-dropdown-mega-item>
-          </abt-navbar-dropdown>
-        </div>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav  mr-auto">
+        <li repeat.for="row of router.navigation" class="nav-item ${row.isActive ? 'active' : ''}">
+          <a class="nav-link" href.bind="row.href">${row.title}
+            <span class="sr-only"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-      </abt-navbar-nav>
-    </abt-navbar-collapser>
 
     <form class="form-inline my-2 my-lg-0">
       <label>
@@ -36,7 +32,6 @@
         </abt-dropdown>
       </label>
     </form>
-
-  </abt-navbar>
+  </nav>
 
 </template>

@@ -6,14 +6,12 @@ import { DOM } from 'aurelia-pal';
 // @ts-ignore
 import { BootstrapTypographyService } from 'aurelia-toolbelt';
 
-import { NavigationMenu } from 'aurelia-navigation-menu';
-
 class Theme {
   public name: string;
   public path: string;
 }
 
-@inject(EventAggregator, BootstrapTypographyService, NavigationMenu)
+@inject(EventAggregator, BootstrapTypographyService)
 export class App {
 
   public router: Router;
@@ -21,7 +19,7 @@ export class App {
   private themes: Array<Theme>;
   @bindable() private selectedTheme: Theme;
 
-  constructor(eventAggregator: EventAggregator, private bsService: BootstrapTypographyService, private navigationMenu) {
+  constructor(eventAggregator: EventAggregator, private bsService: BootstrapTypographyService) {
 
     this.themes = [
       { name: 'aurelia-toolbelt', path: '/bootswatch/aurelia-toolbelt' },
@@ -49,9 +47,6 @@ export class App {
 
 
   public configureRouter(config: RouterConfiguration, router: Router) {
-
-    config.options.eagerLoadAll = true;
-    config.options.eagerIgnoreNav = true;
 
     // config.options.pushState = true;
     config.mapUnknownRoutes('getStarted');
@@ -93,12 +88,6 @@ export class App {
     ]);
     this.router = router;
   }
-
-
-  private activate() {
-    this.navigationMenu.ensureMenu();
-  }
-
 
   private selectedThemeChanged(newValue: Theme) {
     localStorage.setItem('selectedTheme', JSON.stringify(newValue));

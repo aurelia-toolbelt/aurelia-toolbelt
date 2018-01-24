@@ -124,7 +124,6 @@ gulp.task('fuse-sample', function () {
         + aurelia-fetch-client
         + aurelia-http-client
         + aurelia-after-attached-plugin
-        + aurelia-navigation-menu
         + jalali-moment
         + moment-timezone
         + humanize-duration
