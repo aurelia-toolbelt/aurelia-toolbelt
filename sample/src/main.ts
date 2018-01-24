@@ -21,5 +21,4 @@ export async function configure(aurelia: Aurelia) {
   await aurelia.setRoot('app');
   // }, 2000);
 
-
 }

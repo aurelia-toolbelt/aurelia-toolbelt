@@ -1,4 +1,4 @@
-It is possible ti dismiss any alert inline, just simply add ```dismissible``` attribute to the ```alert``` element. You can disabel animation by turning off the ```animate``` attribute. **e.g.** ```animate=false```. The default values for ```dismissible``` and ```animate``` are ```false``` and ```true``` respectively.
+It is possible ti dismiss any alert inline, just simply add ```dismissible``` attribute to the ```alert``` element. You can disable animation by turning off the ```animate``` attribute. **e.g.** ```animate=false```. The default values for ```dismissible``` and ```animate``` are ```false``` and ```true``` respectively.
 
 ```html
   <abt-alert type="warning" dismissible.bind="showDismissible" animate>
@@ -7,4 +7,4 @@ It is possible ti dismiss any alert inline, just simply add ```dismissible``` at
   <abt-alert type="success" dismissible animate>
     <strong>Awesome!</strong> Your data saved successfully.
   </abt-alert>
-```html
+```

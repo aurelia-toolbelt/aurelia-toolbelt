@@ -40,8 +40,6 @@ export class BootstrapAlert {
     const onlyAnimateAttribute = (this.animate === '' && this.element.hasAttribute('animate'));
     this.animate = onlyAnimateAttribute || this.animate === 'true' || this.animate === true;
 
-    console.log(this.animate);
-
     if (this.bsClose) {
       $(alert).on('close.bs.alert', () => {
         if (this.bsClose) {
