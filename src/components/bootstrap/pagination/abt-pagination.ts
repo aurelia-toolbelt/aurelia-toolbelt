@@ -3,11 +3,9 @@ import { customElement, inject, bindable, bindingMode, BindingEngine, containerl
 
 
 interface IPagination {
-
   pageNumber: number;
   page: string;
   selected: boolean;
-  side: string;
 }
 
 @containerless()
@@ -151,10 +149,8 @@ export class BootstrapPaginationCustomElement {
       this.pages.push({
         page: items[index] === '...' ? '...' : this.pageTemplate.replace('%s', items[index]),
         selected: items[index] === selectedItem.toString(),
-        pageNumber: Number(items[index]),
-        side: index < leftSide ? 'L' : 'R'
+        pageNumber: Number(items[index])
       });
-
     }
   }
 
@@ -162,7 +158,7 @@ export class BootstrapPaginationCustomElement {
     return selectedItem > 5;
   }
   private showRightDots(selectedItem: number, totalPages: number): boolean {
-    return totalPages - 5 > selectedItem;
+    return totalPages - 5 >= selectedItem;
   }
 
   private afterAttached() {
@@ -180,16 +176,9 @@ export class BootstrapPaginationCustomElement {
       this.directionLinks = false;
     }
 
-
     this.createVisibleItems(this.visiblePages, this.selectedPage, this.totalPages);
 
-    // this.pagination.getElementsByClassName(`abt-pagination-li-item-${this.selectedPage}`)[0].classList.add('active');
-
-
   }
-
-
-
 }
 
 
