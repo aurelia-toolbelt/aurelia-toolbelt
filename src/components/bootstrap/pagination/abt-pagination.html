@@ -13,12 +13,8 @@
           href="#" click.trigger="onClick($event,ip.pageNumber,ip.side)">
           ${ip.page === '-1' ? '...' : ip.page}
         </a>
-
-        <input autofocus ref="inputbox" focus.bind='true' blur.trigger="onClick($event, inputbox.value)" show.bind="showNumbers && ip.page === '...'"
-          class="${ip.page === '...' ? 'abt-pagination-goto-input-item-':''}${ip.page === '...' ? ip.side :''}" type="number"
-          value="${pages[$index-1].pageNumber +1}" min="${pages[$index-1].pageNumber}" max="${pages[$index+1].pageNumber}">
       </li>
-
+      
       <li show.bind="directionLinks" class="page-item abt-pagination-next ${selectedPage === totalPages && !loop  ? 'disabled':''}">
         <a data-side='R' class="page-link" href="#" click.trigger="onClick($event,'next',R)">${next}</a>
       </li>

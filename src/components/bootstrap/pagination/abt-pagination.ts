@@ -40,18 +40,17 @@ export class BootstrapPaginationCustomElement {
 
   private createInput(value: number, min: number, max: number, height: number): HTMLInputElement {
     let input = <HTMLInputElement>document.createElement('input');
-    input.id = 'qqq';
+    input.id = 'abt-pagination-goto-item';
     input.type = 'number';
     input.classList.add('form-control');
     input.value = value.toString();
     input.min = min.toString();
     input.max = max.toString();
     input.style.height = height.toString() + 'px';
-    input.focus();
     return input;
   }
 
-  private onClick(event: Event, selectedPageNumber: number | string, side: string) {
+  private onClick(event: Event, selectedPageNumber: number | string) {
 
     if (!Number(selectedPageNumber)) {
       if (!(selectedPageNumber === 'prev' || selectedPageNumber === 'next')) {
@@ -59,12 +58,16 @@ export class BootstrapPaginationCustomElement {
         let parentElement = currentElement.parentElement;
         let elementHeight = Number(parentElement.offsetHeight);
         currentElement.remove();
-        parentElement.appendChild(this.createInput(6, 3, 11, elementHeight));
+        let inputElement = this.createInput(6, 3, 11, elementHeight);
+        parentElement.appendChild(inputElement);
+        $(inputElement).focus();
+        $(inputElement).blur(() => {
+          inputElement.remove();
+          this.onClick(null, inputElement.value);
+        });
         return false;
       }
     }
-
-
 
     this.showNumbers = false;
 
