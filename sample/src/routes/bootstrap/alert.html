@@ -1,34 +1,193 @@
 <template>
-  
-  <abt-alert>This is a primary alert—check it out!</abt-alert>
 
-  <abt-alert dismissible="true" color="secondary">This is a dismissible secondary alert—check it out!</abt-alert>
-  <abt-alert dismissible color="warning">This is a dismissible warning alert—check it out!</abt-alert>
-  <abt-alert dismissible.bind="true" color="danger">
-    This is a dismissible danger alert with
-    <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/src/components/bootstrap/alert">an example link</abt-alert-link>. Give it a click if you like.
-  </abt-alert>
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Alerts
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/alert">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+  </fieldset>
 
-  <abt-alert color="primary">
-    This is a non-dismissible primary alert with
-    <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/src/components/bootstrap/alert">an example link</abt-alert-link>. Give it a click if you like.
-  </abt-alert>
-  <abt-alert dismissible="false" color="success">This is a non-dismissible success alert—check it out!</abt-alert>
-  <abt-alert dismissible.bind="false" color="info">This is a non-dismissible info alert—check it out!</abt-alert>
-  <br />
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
 
-  <abt-alert color="success">
-    <h4 class="alert-heading">Well done!</h4>
-    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that
-      you can see how spacing within an alert works with this kind of content.</p>
-    <hr>
-    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-  </abt-alert>
+    <aut-mark-down src="./docs/components/bootstrap/alert/usage.md">
+    </aut-mark-down>
 
-  <hr /> 
+  </fieldset>
 
 
+  <fieldset class="mt-5">
+    <legend>
+      Examples
+    </legend>
+    <p>
 
+      Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the
+      <b>eight required
+      </b> contextual types (e.g., success)
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <abt-alert>
+          <strong>Hello there!</strong> I am the default alert.
+        </abt-alert>
+
+        <abt-alert type="success">
+          <strong>Well done!</strong> This is a success alert for you.
+        </abt-alert>
+
+        <abt-alert type="secondary">
+          <strong>Take care!</strong> This is a secondary alert which need your attention.
+        </abt-alert>
+
+        <abt-alert type="warning">
+          <strong>Attention!</strong> Wanna show a warning, use this one.
+        </abt-alert>
+
+
+        <abt-alert type="danger">
+          <strong>Oh no!</strong> Something is going wrong.
+        </abt-alert>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/alert/basic.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+
+    </abt-card>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Link color
+    </legend>
+
+    <abt-card>
+      <abt-card-body>
+        <abt-alert>
+          <strong>Hello there!</strong> I am the default alert with a
+          <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/alert">great link</abt-alert-link>to alert repository.
+        </abt-alert>
+
+        <abt-alert type="success">
+          <strong>Well done!</strong> This is a success alert for you with a
+          <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/alert">great link</abt-alert-link>to alert repository..
+        </abt-alert>
+
+        <abt-alert type="secondary">
+          <strong>Take care!</strong> This is a secondary alert which need your attention and with a
+          <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/alert">great link</abt-alert-link>to alert repository.
+        </abt-alert>
+
+        <abt-alert type="warning">
+          <strong>Attention!</strong> Wanna show a warning, use this one with a
+          <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/alert">great link</abt-alert-link>to alert repository.
+        </abt-alert>
+
+        <abt-alert type="danger">
+          <strong>Oh no!</strong> Something is going wrong with a
+          <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/alert">great link</abt-alert-link>to alert repository.
+        </abt-alert>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/alert/link-color.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Additional contents
+    </legend>
+    <p>
+      Alerts can also contain additional HTML elements like headings, paragraphs and dividers.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <abt-alert type="success">
+          <abt-alert-heading>
+            <h4>Well done!</h4>
+          </abt-alert-heading>
+          <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so
+            that you can see how spacing within an alert works with this kind of content.</p>
+          <hr>
+          <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+        </abt-alert>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/alert/additional.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Dissmissing
+    </legend>
+    <p>
+      Alerts can also contain additional HTML elements like headings, paragraphs and dividers.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <abt-alert type="warning" dismissible.bind="showDismissible" animate>
+          <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        </abt-alert>
+        <abt-alert type="success" dismissible animate>
+          <strong>Awesome!</strong> Your data saved successfully.
+        </abt-alert>
+        <hr />
+        <aut-checkbox thick curve color="success" off-color="danger" off-label="Toggle dismissible" checked.bind="showDismissible">
+          Toggle dismissible
+        </aut-checkbox>
+      </abt-card-body>
+      <abt-card-footer>
+
+        <!-- <abt-navs tabs id="navs-dismissing"> -->
+
+        <!-- <abt-nav-item id="tab-template-dismiss" title="Template"> -->
+        <aut-mark-down src="./docs/components/bootstrap/alert/dismissing.md">
+
+        </aut-mark-down>
+        <!-- </abt-nav-item>
+          <abt-nav-item id="tab-viewmodel-dismiss" title="JS/TS"> -->
+        <aut-mark-down src="./docs/components/bootstrap/alert/dismissing-ts.md">
+
+        </aut-mark-down>
+        <!-- </abt-nav-item>
+
+        </abt-navs> -->
+
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+
+
+
+  <hr />
+
+
+  <!-- 
 
   <abt-button click.call="toggleAlert()">
     Toggle Alert
@@ -43,6 +202,6 @@
     This is a non-animated primary alert with
     <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/src/components/bootstrap/alert">an example link</abt-alert-link>. Give it a click if you like.
   </abt-alert>
-
+ -->
 
 </template>

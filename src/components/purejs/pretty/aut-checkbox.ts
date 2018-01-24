@@ -135,7 +135,7 @@ export class PrettyCheckboxCustomElement {
     }
 
     this.switch = this.switch === true || this.switch === 'true' || this.element.hasAttribute('switch');
-    this.outlined = this.outlined === true || this.outlined === 'true' || this.element.hasAttribute('outline');
+    this.outlined = this.outlined === true || this.outlined === 'true' || this.element.hasAttribute('outlined');
     // this.state = this.checked === true || this.checked === 'true' || this.checked === 'checked'; // || this.element.hasAttribute('checked');
     this.disabled = this.disabled === true || this.disabled === 'true' || this.disabled === 'disabled'; // || this.element.hasAttribute('disabled');
     this.colorCss = `p-${this.color}`; // ${this.outlined ? '-o' : ''}`;
@@ -145,7 +145,7 @@ export class PrettyCheckboxCustomElement {
       if (this.element.hasAttribute('slim')) {
         this.appearanceCSS = 'p-slim';
 
-      } else if (this.element.hasAttribute('outline')) {
+      } else if (this.element.hasAttribute('outlined')) {
         this.appearanceCSS = 'p-outline';
       } else {
         this.appearanceCSS = 'p-fill';
