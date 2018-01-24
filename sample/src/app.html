@@ -8,16 +8,14 @@
 
   <link href="${selectedTheme.path}.min.css" rel="stylesheet">
 
-  <aut-nprogress loading.bind="router.isNavigating" color="gold"></aut-nprogress>
+  <aut-nprogress loading.bind="router.isNavigating" color="#753B85"></aut-nprogress>
 
   <div class="row">
     <div class="col-sm-12">
       <main-header themes.bind="themes" theme.bind="selectedTheme" router.bind="router"></main-header>
     </div>
   </div>
-
-<!-- 
-  <br /> -->
+  <!-- <div class="row"> -->
 
   <div class="container-fluid">
     <router-view>
@@ -25,8 +23,10 @@
     </router-view>
   </div>
 
+  <!-- </div> -->
 
-  <aut-scrollup class="btn-info" threshold="1000">
+
+  <aut-scrollup style="background-color: #753B85;" class="btn-info" threshold="1000">
 
   </aut-scrollup>
 

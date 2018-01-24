@@ -140,7 +140,7 @@ gulp.task('fuse-sample', function () {
         + font-awesome
         + font-awesome/css/font-awesome.css
         + highlight.js
-        + highlight.js/styles/solarized-light.css
+        + highlight.js/styles/atom-one-dark.css
         + fast-safe-stringify
         + jquery-lazy
         + nprogress

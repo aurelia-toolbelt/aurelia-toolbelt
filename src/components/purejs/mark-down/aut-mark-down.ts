@@ -18,8 +18,14 @@ export class MarkDownItCustomElement {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public showEditor: boolean = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public src: string = '';
 
+  private slotContainer: HTMLDivElement;
 
   constructor(private http: HttpClient) { }
+
+
+  private afterAttached() {
+    this.myText = this.slotContainer.innerHTML.replace('<!--slot-->' , '').trim();
+  }
 
   private srcChanged(newValue: string) {
     this.isLoading = true;
