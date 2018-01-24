@@ -53,7 +53,7 @@ export class BootstrapPaginationCustomElement {
   private onClick(event: Event, selectedPageNumber: number | string, prevPageNumber: number | string, nextPageNumber: number | string) {
 
     if (!Number(selectedPageNumber)) {
-      if (!(selectedPageNumber === 'prev' || selectedPageNumber === 'next')) {
+      if (!(selectedPageNumber === 'prev' || selectedPageNumber === 'next' || event === null)) {
         let currentElement = <HTMLAnchorElement>event.target;
         let parentElement = currentElement.parentElement;
         let elementHeight = Number(parentElement.offsetHeight);
@@ -68,8 +68,6 @@ export class BootstrapPaginationCustomElement {
         return false;
       }
     }
-
-    this.showNumbers = false;
 
     if (selectedPageNumber === 'prev') {
       this.selectedPage--;
