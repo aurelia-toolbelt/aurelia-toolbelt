@@ -4,10 +4,10 @@ import * as $ from 'jquery';
 @containerless()
 @customElement('abt-carousel')
 export class CarouselCustomElement {
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public prevTitle: string = 'Previous';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public nextTitle: string = 'Next';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public prevClass: string = 'carousel-control-prev-icon';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public nextClass: string = 'carousel-control-next-icon';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public prevTitle: string = 'Previous';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public nextTitle: string = 'Next';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public prevIconClass: string = 'carousel-control-prev-icon';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public nextIconClass: string = 'carousel-control-next-icon';
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showNavigator: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showIndicator: boolean | string = false;
@@ -17,8 +17,8 @@ export class CarouselCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public ride: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public wrap: boolean | string = true;
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public slide: Function;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public slid: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsSlide: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsSlid: Function;
 
 
   private carousel: Element;
@@ -40,12 +40,20 @@ export class CarouselCustomElement {
       ride: this.ride,
       wrap: this.wrap
     });
-    if (this.slide) {
-      $(this.carousel).on('slide.bs.carousel', this.slide());
+    if (this.bsSlide) {
+      $(this.carousel).on('slide.bs.carousel', () => {
+        if (this.bsSlide) {
+          this.bsSlide();
+        }
+      });
     }
 
-    if (this.slid) {
-      $(this.carousel).on('slid.bs.carousel', this.slid());
+    if (this.bsSlid) {
+      $(this.carousel).on('slid.bs.carousel', () => {
+        if (this.bsSlid) {
+          this.bsSlid();
+        }
+      });
     }
   }
 
