@@ -10,11 +10,11 @@
 
       <li class="${ip.selected ? 'active':''} page-item abt-pagination-item" repeat.for="ip of pages">
         <a data-side="${ip.side}" hide.bind="showNumbers && ip.page === '...'" class="page-link ${ip.page === '...' ? 'abt-pagination-goto-link-item-':''}${ip.page === '...' ? ip.side :''}"
-          href="#" click.trigger="onClick($event,ip.pageNumber,ip.side)">
+          href="#" click.trigger="onClick($event,ip.pageNumber,pages[$index-1].pageNumber,pages[$index+1].pageNumber)">
           ${ip.page === '-1' ? '...' : ip.page}
         </a>
       </li>
-      
+
       <li show.bind="directionLinks" class="page-item abt-pagination-next ${selectedPage === totalPages && !loop  ? 'disabled':''}">
         <a data-side='R' class="page-link" href="#" click.trigger="onClick($event,'next',R)">${next}</a>
       </li>

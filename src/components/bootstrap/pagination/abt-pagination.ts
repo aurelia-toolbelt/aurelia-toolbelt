@@ -50,7 +50,7 @@ export class BootstrapPaginationCustomElement {
     return input;
   }
 
-  private onClick(event: Event, selectedPageNumber: number | string) {
+  private onClick(event: Event, selectedPageNumber: number | string, prevPageNumber?: number | string, nextPageNumber?: number | string) {
 
     if (!Number(selectedPageNumber)) {
       if (!(selectedPageNumber === 'prev' || selectedPageNumber === 'next')) {
@@ -58,7 +58,7 @@ export class BootstrapPaginationCustomElement {
         let parentElement = currentElement.parentElement;
         let elementHeight = Number(parentElement.offsetHeight);
         currentElement.remove();
-        let inputElement = this.createInput(6, 3, 11, elementHeight);
+        let inputElement = this.createInput(Number(prevPageNumber) + 1, Number(prevPageNumber) + 1, Number(nextPageNumber) - 1, elementHeight);
         parentElement.appendChild(inputElement);
         $(inputElement).focus();
         $(inputElement).blur(() => {
