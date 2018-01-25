@@ -1,5 +1,5 @@
 ```html
-<abt-carousel interval="15000" navigator="true">
+<abt-carousel interval="15000" navigator="true" indicator="true">
   <abt-carousel-html>
     <div class="container" style="background-color:gray; padding:20px; color:whitesmoke">
       <div class="row">
@@ -27,6 +27,9 @@
           </ul>
         </div>
       </div>
+    </div>
+    <div slot="caption">
+      Biography
     </div>
   </abt-carousel-html>
   <abt-carousel-html active="true">
@@ -60,6 +63,9 @@
         </div>
       </div>
     </div>
+    <div slot="caption">
+      Biography
+    </div>
   </abt-carousel-html>
   <abt-carousel-html>
     <div class="container" style="background-color:gray; padding:20px; color:whitesmoke">
@@ -85,6 +91,9 @@
           </ul>
         </div>
       </div>
+    </div>
+    <div slot="caption">
+      Biography
     </div>
   </abt-carousel-html>
 </abt-carousel>

@@ -101,7 +101,7 @@
     <legend>
       With HTML content
     </legend>
-    <abt-carousel interval="15000" navigator="true">
+    <abt-carousel interval="15000" navigator="true" indicator="true">
       <abt-carousel-html>
         <div class="container" style="background-color:gray; padding:20px; color:whitesmoke">
           <div class="row">
@@ -129,6 +129,9 @@
               </ul>
             </div>
           </div>
+        </div>
+        <div slot="caption">
+          Biography
         </div>
       </abt-carousel-html>
       <abt-carousel-html active="true">
@@ -162,6 +165,9 @@
             </div>
           </div>
         </div>
+        <div slot="caption">
+          Biography
+        </div>
       </abt-carousel-html>
       <abt-carousel-html>
         <div class="container" style="background-color:gray; padding:20px; color:whitesmoke">
@@ -188,8 +194,20 @@
             </div>
           </div>
         </div>
+        <div slot="caption">
+          Biography
+        </div>
       </abt-carousel-html>
     </abt-carousel>
     <aut-mark-down src="./docs/components/bootstrap/carousel/with-html-content.md">
     </aut-mark-down>
+
+    <legend>
+      API Reference
+    </legend>
+
+    <legend>
+      Styling
+    </legend>
+
 </template>
