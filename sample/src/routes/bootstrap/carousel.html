@@ -221,8 +221,8 @@
         <tr>
           <th class="text-nowrap" scope="col">Name</th>
           <th class="text-nowrap" scope="col">Type</th>
-          <th class="text-nowrap" scope="col">Binding Type</th>
-          <th class="text-nowrap" scope="col">Default Value</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
           <th class="text-nowrap" scope="col">Description</th>
         </tr>
       </thead>
@@ -233,6 +233,44 @@
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">5000</td>
           <td>The amount of time to delay between automatically cycling an item. If 0, carousel will not automatically cycle.</td>
+        </tr>
+
+
+
+        <tr>
+          <td class="text-nowrap" scope="row">keyboard</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">true</td>
+          <td>Whether the carousel should react to keyboard events.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">pause</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">true</td>
+          <td><p>If set to true, pauses the cycling of the carousel on mouseenter and resumes the cycling of the carousel on mouseleave.
+            If set to false, hovering over the carousel won't pause it.</p>
+            <p>On touch-enabled devices, when set to true, cycling
+            will pause on touchend (once the user finished interacting with the carousel) for two intervals, before automatically
+            resuming. Note that this is in addition to the above mouse behavior.</p></td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">ride</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Autoplays the carousel after the user manually cycles the first item. If "carousel", autoplays the carousel on load.
+            </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">wrap</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">true</td>
+          <td>Whether the carousel should cycle continuously or have hard stops.
+            </td>
         </tr>
         <tr>
           <td scope="row">navigator</td>
@@ -248,6 +286,51 @@
           <td class="text-nowrap">false</td>
           <td>Adding in the indicators to the carousel.</td>
         </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">prev-title</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">Previous</td>
+          <td>...</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">next-title</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">Next</td>
+          <td>...</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">prev-icon</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">carousel-control-prev-icon</td>
+          <td>...</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">next-icon</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">carousel-control-next-icon</td>
+          <td>...</td>
+        </tr>
+
+
+        <tr>
+            <td class="text-nowrap" scope="row">bsSlide</td>
+            <td class="text-nowrap">Function</td>
+            <td class="text-nowrap">twoWay</td>
+            <td class="text-nowrap"></td>
+            <td>...</td>
+          </tr>
+
+          <tr>
+              <td class="text-nowrap" scope="row">bsSlid</td>
+              <td class="text-nowrap">Function</td>
+              <td class="text-nowrap">twoWay</td>
+              <td class="text-nowrap"></td>
+              <td>...</td>
+            </tr>
       </tbody>
     </table>
     <legend>

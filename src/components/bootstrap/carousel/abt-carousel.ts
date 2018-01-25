@@ -6,8 +6,8 @@ import * as $ from 'jquery';
 export class CarouselCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public prevTitle: string = 'Previous';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public nextTitle: string = 'Next';
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public prevIconClass: string = 'carousel-control-prev-icon';
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public nextIconClass: string = 'carousel-control-next-icon';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public prevIcon: string = 'carousel-control-prev-icon';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public nextIcon: string = 'carousel-control-next-icon';
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public navigator: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public indicator: boolean | string = false;
