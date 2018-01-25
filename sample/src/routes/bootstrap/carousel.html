@@ -201,11 +201,55 @@
     </abt-carousel>
     <aut-mark-down src="./docs/components/bootstrap/carousel/with-html-content.md">
     </aut-mark-down>
-
     <legend>
       API Reference
     </legend>
-
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              Custom element
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-carousel
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding Type</th>
+          <th class="text-nowrap" scope="col">Default Value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row">interval</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">5000</td>
+          <td>The amount of time to delay between automatically cycling an item. If 0, carousel will not automatically cycle.</td>
+        </tr>
+        <tr>
+          <td scope="row">navigator</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Adding in the previous and next controls</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">indicator</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Adding in the indicators to the carousel.</td>
+        </tr>
+      </tbody>
+    </table>
     <legend>
       Styling
     </legend>
