@@ -9,8 +9,8 @@ export class CarouselCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public prevIconClass: string = 'carousel-control-prev-icon';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public nextIconClass: string = 'carousel-control-next-icon';
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showNavigator: boolean | string = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showIndicator: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public navigator: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public indicator: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public interval: number | string = 5000;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public keyboard: boolean | string = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public pause: boolean | string = true;
@@ -21,16 +21,24 @@ export class CarouselCustomElement {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsSlid: Function;
 
 
+  private showNavigator = false;
+  private showIndicator = false;
+
   private carousel: Element;
+  private carouselTemplate: Element;
+
   private afterAttached() {
 
-    this.showNavigator = Boolean(this.showNavigator);
-    this.showIndicator = Boolean(this.showIndicator);
+    this.navigator = Boolean(this.navigator);
+    this.indicator = Boolean(this.indicator);
     this.interval = Number(this.interval);
     this.keyboard = Boolean(this.keyboard);
     this.pause = Boolean(this.pause);
     this.ride = Boolean(this.ride);
     this.wrap = Boolean(this.wrap);
+
+    this.showNavigator = this.navigator || this.carouselTemplate.hasAttribute('navigator');
+    this.showIndicator = this.indicator || this.carouselTemplate.hasAttribute('indicator');
 
     // @ts-ignore
     $(this.carousel).carousel({

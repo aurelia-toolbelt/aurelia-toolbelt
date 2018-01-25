@@ -1,0 +1,8 @@
+<template ref="carouselTemplate">
+  <div ref="carouselItem" class="carousel-item">
+    <img class="${class}" src="${src}" alt="${alt}" />
+    <div css="${captionStyle}" class="carousel-caption ${captionClass}">
+      <slot></slot>
+    </div>
+  </div>
+</template>

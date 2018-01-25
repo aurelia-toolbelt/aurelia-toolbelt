@@ -20,42 +20,36 @@
     <legend>
       Examples
     </legend>
-    <p>
-      Carousels don’t automatically normalize slide dimensions. As such, you may need to use additional utilities or custom styles
-      to appropriately size content. While carousels support previous/next controls and indicators, they’re not explicitly
-      required. Add and customize as you see fit.
-    </p>    
-    <h5>Slides only</h5>
     <br>
     <abt-carousel>
-      <abt-carousel-image-item src="/images/pic1.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image-item>
-      <abt-carousel-image-item src="/images/pic2.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image-item>
-      <abt-carousel-image-item active="true" src="/images/pic3.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image-item>
-      <abt-carousel-image-item src="/images/pic4.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image-item>
-      <abt-carousel-image-item src="/images/pic5.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image-item>
+      <abt-carousel-image src="/images/pic1.jpg" alt="The image cannot be displayed">
+      </abt-carousel-image>
+      <abt-carousel-image src="/images/pic2.jpg" alt="The image cannot be displayed">
+      </abt-carousel-image>
+      <abt-carousel-image active="true" src="/images/pic3.jpg" alt="The image cannot be displayed">
+      </abt-carousel-image>
+      <abt-carousel-image src="/images/pic4.jpg" alt="The image cannot be displayed">
+      </abt-carousel-image>
+      <abt-carousel-image src="/images/pic5.jpg" alt="The image cannot be displayed">
+      </abt-carousel-image>
     </abt-carousel>
     <aut-mark-down src="./docs/components/bootstrap/carousel/side-only.md">
     </aut-mark-down>
-
-    <h5> With controls</h5>
+    <legend>
+      With controls
+    </legend>
     <p>Adding in the previous and next controls:</p>
-
-    <abt-carousel show-navigator="true">
-      <abt-carousel-image-item src="/images/pic1.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image-item>
-      <abt-carousel-image-item src="/images/pic2.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image-item>
-      <abt-carousel-image-item active="true" src="/images/pic3.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image-item>
-      <abt-carousel-image-item src="/images/pic4.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image-item>
-      <abt-carousel-image-item src="/images/pic5.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image-item>
+    <abt-carousel navigator>
+      <abt-carousel-image src="/images/pic1.jpg" alt="The image cannot be displayed">
+      </abt-carousel-image>
+      <abt-carousel-image src="/images/pic2.jpg" alt="The image cannot be displayed">
+      </abt-carousel-image>
+      <abt-carousel-image active src="/images/pic3.jpg" alt="The image cannot be displayed">
+      </abt-carousel-image>
+      <abt-carousel-image src="/images/pic4.jpg" alt="The image cannot be displayed">
+      </abt-carousel-image>
+      <abt-carousel-image src="/images/pic5.jpg" alt="The image cannot be displayed">
+      </abt-carousel-image>
     </abt-carousel>
     <aut-mark-down src="./docs/components/bootstrap/carousel/with-controls.md">
     </aut-mark-down>
@@ -66,20 +60,20 @@
 
 
     <abt-carousel interval.bind="3000" prev-control="true" next-control="true">
-      <abt-carousel-html-item>
+      <abt-carousel-html>
         <h1 style='color:red'>AAAA</h1>
-      </abt-carousel-html-item>
-      <abt-carousel-html-item active>
+      </abt-carousel-html>
+      <abt-carousel-html active>
         <h1 style='color:greed'>BBBB</h1>
-      </abt-carousel-html-item>
-      <abt-carousel-html-item>
+      </abt-carousel-html>
+      <abt-carousel-html>
         <h1 style='color:blue'>CCCC</h1>
-      </abt-carousel-html-item>
-      <abt-carousel-html-item>
+      </abt-carousel-html>
+      <abt-carousel-html>
         <h1 style='color:gray'>DDDD</h1>
-      </abt-carousel-html-item>
-      <abt-carousel-html-item>
+      </abt-carousel-html>
+      <abt-carousel-html>
         <h1 style='color:yellow'>EEEE</h1>
-      </abt-carousel-html-item>
+      </abt-carousel-html>
     </abt-carousel>
 </template>
