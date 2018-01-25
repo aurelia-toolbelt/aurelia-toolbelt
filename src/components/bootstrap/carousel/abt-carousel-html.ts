@@ -26,10 +26,10 @@ export class CarouselHtmlCustomElement {
   private afterAttached() {
 
     this.active = Boolean(this.active);
-
-    this.times = this.sharedController.getAndIncrement();
-    let isActive = this.active || this.carouselTemplate.hasAttribute('active');
     let carousel = this.carouselItem.parentElement.parentElement;
+
+    this.times = this.sharedController.getAndIncrement(carousel.id);
+    let isActive = this.active || this.carouselTemplate.hasAttribute('active');
     let carouselOl = carousel.children[0];
     let isOl = carouselOl.nodeName.toLowerCase() === 'ol';
     if (isOl) {

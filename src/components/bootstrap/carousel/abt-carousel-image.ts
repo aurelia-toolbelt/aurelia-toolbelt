@@ -21,20 +21,18 @@ export class CarouselImageCustomElement {
   private times: number = 0;
 
   constructor(private element: Element, private sharedController: SharedIndex) {
-
   }
 
   private createIndicatorHtml(id: string, index: number, beActive: boolean): any {
     return `<li style="cursor:pointer" data-target="#${id}" data-slide-to="${index}" class="${beActive ? 'active' : ''}" ></li>`;
   }
-
   private afterAttached() {
 
     this.active = Boolean(this.active);
-
-    this.times = this.sharedController.getAndIncrement();
-    let isActive = this.active || this.carouselTemplate.hasAttribute('active');
     let carousel = this.carouselItem.parentElement.parentElement;
+
+    this.times = this.sharedController.getAndIncrement(carousel.id);
+    let isActive = this.active || this.carouselTemplate.hasAttribute('active');
     let carouselOl = carousel.children[0];
     let isOl = carouselOl.nodeName.toLowerCase() === 'ol';
     if (isOl) {
