@@ -8,4 +8,12 @@ export class ListGroupCustomElement {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
+
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public flush: boolean | string = false;
+
+
+  private afterAttached() {
+    this.flush = Boolean(this.flush);
+  }
+
 }
