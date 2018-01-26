@@ -22,16 +22,21 @@
     </legend>
     <br>
     <abt-carousel>
-      <abt-carousel-image src="/images/pic1.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image>
-      <abt-carousel-image src="/images/pic2.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image>
-      <abt-carousel-image active="true" src="/images/pic3.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image>
-      <abt-carousel-image src="/images/pic4.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image>
-      <abt-carousel-image src="/images/pic5.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic1.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic2.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item active="true">
+        <img class="d-block w-100" src="/images/pic3.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic4.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic5.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
     </abt-carousel>
     <aut-mark-down src="./docs/components/bootstrap/carousel/side-only.md">
     </aut-mark-down>
@@ -39,17 +44,22 @@
       With controls
     </legend>
     <p>Adding in the previous and next controls:</p>
-    <abt-carousel navigator>
-      <abt-carousel-image src="/images/pic1.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image>
-      <abt-carousel-image src="/images/pic2.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image>
-      <abt-carousel-image active src="/images/pic3.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image>
-      <abt-carousel-image src="/images/pic4.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image>
-      <abt-carousel-image src="/images/pic5.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image>
+    <abt-carousel navigator="true">
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic1.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic2.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item active="true">
+        <img class="d-block w-100" src="/images/pic3.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic4.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic5.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
     </abt-carousel>
     <aut-mark-down src="./docs/components/bootstrap/carousel/with-controls.md">
     </aut-mark-down>
@@ -58,16 +68,21 @@
     </legend>
     <p>You can also add the indicators to the carousel, alongside the controls, too.</p>
     <abt-carousel navigator="true" indicator="true">
-      <abt-carousel-image src="/images/pic1.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image>
-      <abt-carousel-image src="/images/pic2.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image>
-      <abt-carousel-image active="true" src="/images/pic3.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image>
-      <abt-carousel-image src="/images/pic4.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image>
-      <abt-carousel-image src="/images/pic5.jpg" alt="The image cannot be displayed">
-      </abt-carousel-image>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic1.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic2.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item active="true">
+        <img class="d-block w-100" src="/images/pic3.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic4.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic5.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
     </abt-carousel>
     <aut-mark-down src="./docs/components/bootstrap/carousel/with-indicators.md">
     </aut-mark-down>
@@ -75,26 +90,41 @@
       With captions
     </legend>
     <abt-carousel navigator="true" indicator="true">
-      <abt-carousel-image src="/images/pic1.jpg" alt="The image cannot be displayed">
-        <h5>The Godfather - 1972</h5>
-        <p>Director: Francis Ford Coppola</p>
-      </abt-carousel-image>
-      <abt-carousel-image src="/images/pic2.jpg" alt="The image cannot be displayed">
-        <h5>The Dark Knight - 2008</h5>
-        <p>Director: Christopher Nolan</p>
-      </abt-carousel-image>
-      <abt-carousel-image active="true" src="/images/pic3.jpg" alt="The image cannot be displayed">
-        <h5>Inception - 2010</h5>
-        <p>Director: Christopher Nolan</p>
-      </abt-carousel-image>
-      <abt-carousel-image src="/images/pic4.jpg" alt="The image cannot be displayed">
-        <h5>The Lord of the Rings: The Return of the King - 2003</h5>
-        <p>Director: Peter Jackson</p>
-      </abt-carousel-image>
-      <abt-carousel-image src="/images/pic5.jpg" alt="The image cannot be displayed">
-        <h5>The Matrix - 1999</h5>
-        <p>Directors: Lana Wachowski, Lilly Wachowski</p>
-      </abt-carousel-image>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic1.jpg" alt="The image cannot be displayed" />
+        <div slot="caption">
+          <h5>The Godfather - 1972</h5>
+          <p>Director: Francis Ford Coppola</p>
+        </div>
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic2.jpg" alt="The image cannot be displayed" />
+        <div slot="caption">
+          <h5>The Dark Knight - 2008</h5>
+          <p>Director: Christopher Nolan</p>
+        </div>
+      </abt-carousel-item>
+      <abt-carousel-item active="true">
+        <img class="d-block w-100" src="/images/pic3.jpg" alt="The image cannot be displayed" />
+        <div slot="caption">
+          <h5>Inception - 2010</h5>
+          <p>Director: Christopher Nolan</p>
+        </div>
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic4.jpg" alt="The image cannot be displayed" />
+        <div slot="caption">
+          <h5>The Lord of the Rings: The Return of the King - 2003</h5>
+          <p>Director: Peter Jackson</p>
+        </div>
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic5.jpg" alt="The image cannot be displayed" />
+        <div slot="caption">
+          <h5>The Matrix - 1999</h5>
+          <p>Directors: Lana Wachowski, Lilly Wachowski</p>
+        </div>
+      </abt-carousel-item>
     </abt-carousel>
     <aut-mark-down src="./docs/components/bootstrap/carousel/with-captions.md">
     </aut-mark-down>
@@ -102,7 +132,7 @@
       With HTML content
     </legend>
     <abt-carousel interval="15000" navigator="true" indicator="true">
-      <abt-carousel-html>
+      <abt-carousel-item>
         <div class="container" style="height:445px; background-color:gray; padding:20px; color:whitesmoke">
           <div class="row">
             <div class="col-sm">
@@ -133,8 +163,8 @@
         <div slot="caption">
           Biography
         </div>
-      </abt-carousel-html>
-      <abt-carousel-html active="true">
+      </abt-carousel-item>
+      <abt-carousel-item active="true">
         <div class="container" style="height:445px; background-color:gray; padding:20px; color:whitesmoke">
           <div class="row">
             <div class="col-sm">
@@ -168,8 +198,8 @@
         <div slot="caption">
           Biography
         </div>
-      </abt-carousel-html>
-      <abt-carousel-html>
+      </abt-carousel-item>
+      <abt-carousel-item>
         <div class="container" style="height:445px; background-color:gray; padding:20px; color:whitesmoke">
           <div class="row">
             <div class="col-sm">
@@ -197,7 +227,7 @@
         <div slot="caption">
           Biography
         </div>
-      </abt-carousel-html>
+      </abt-carousel-item>
     </abt-carousel>
     <aut-mark-down src="./docs/components/bootstrap/carousel/with-html-content.md">
     </aut-mark-down>
@@ -250,19 +280,22 @@
           <td class="text-nowrap">boolean | string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">true</td>
-          <td><p>If set to true, pauses the cycling of the carousel on mouseenter and resumes the cycling of the carousel on mouseleave.
-            If set to false, hovering over the carousel won't pause it.</p>
-            <p>On touch-enabled devices, when set to true, cycling
-            will pause on touchend (once the user finished interacting with the carousel) for two intervals, before automatically
-            resuming. Note that this is in addition to the above mouse behavior.</p></td>
+          <td>
+            <p>If set to true, pauses the cycling of the carousel on mouseenter and resumes the cycling of the carousel on mouseleave.
+              If set to false, hovering over the carousel won't pause it.</p>
+            <p>On touch-enabled devices, when set to true, cycling will pause on touchend (once the user finished interacting
+              with the carousel) for two intervals, before automatically resuming. Note that this is in addition to the above
+              mouse behavior.</p>
+          </td>
         </tr>
         <tr>
           <td class="text-nowrap" scope="row">ride</td>
           <td class="text-nowrap">boolean | string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">false</td>
-          <td>Autoplays the carousel after the user manually cycles the first item. If "carousel", autoplays the carousel on load.
-            </td>
+          <td>Autoplays the carousel after the user manually cycles the first item. If "carousel", autoplays the carousel on
+            load.
+          </td>
         </tr>
         <tr>
           <td class="text-nowrap" scope="row">wrap</td>
@@ -270,7 +303,7 @@
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">true</td>
           <td>Whether the carousel should cycle continuously or have hard stops.
-            </td>
+          </td>
         </tr>
         <tr>
           <td scope="row">navigator</td>
@@ -317,20 +350,20 @@
 
 
         <tr>
-            <td class="text-nowrap" scope="row">bsSlide</td>
-            <td class="text-nowrap">Function</td>
-            <td class="text-nowrap">twoWay</td>
-            <td class="text-nowrap"></td>
-            <td>...</td>
-          </tr>
+          <td class="text-nowrap" scope="row">bsSlide</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">twoWay</td>
+          <td class="text-nowrap"></td>
+          <td>...</td>
+        </tr>
 
-          <tr>
-              <td class="text-nowrap" scope="row">bsSlid</td>
-              <td class="text-nowrap">Function</td>
-              <td class="text-nowrap">twoWay</td>
-              <td class="text-nowrap"></td>
-              <td>...</td>
-            </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">bsSlid</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">twoWay</td>
+          <td class="text-nowrap"></td>
+          <td>...</td>
+        </tr>
       </tbody>
     </table>
     <legend>

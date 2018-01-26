@@ -4,8 +4,8 @@ import { SharedIndex } from './shared-index';
 
 @inject(Element, SharedIndex)
 @containerless()
-@customElement('abt-carousel-image')
-export class CarouselImageCustomElement {
+@customElement('abt-carousel-item')
+export class CarouselItemCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public src: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public alt: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = 'd-block w-100';
