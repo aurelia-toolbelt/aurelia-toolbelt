@@ -1,14 +1,12 @@
-import { inject } from 'aurelia-framework';
 
-// @ts-ignore
+```js
+import { inject } from 'aurelia-framework';
 import { ToastrService } from 'aurelia-toolbelt';
 
 
 
 @inject(ToastrService)
-export class Alert {
-
-  private showDismissible = true;
+export class AlertDemo {
 
   private show_hide = true;
 
@@ -22,7 +20,7 @@ export class Alert {
   private onShow(target) {
     console.log(target);
     this.ts2.info('Alert event triggered!', 'Hooray', {
-      progressBar: true, preventDuplicates: true, positionClass: 'toast-bottom-left'
+      progressBar: true, preventDuplicates: true, positionClass: 'toast-bottom-right'
     });
 
     // The following line will prevent alert from being shown after toggle
@@ -30,3 +28,5 @@ export class Alert {
   }
 
 }
+
+```
