@@ -1,17 +1,19 @@
-<template>
+<template ref="carouselTemplate">
+  <require from="../../../custom-attributes/purejs/uuid/aut-uuid"></require>
+
   <div ref='carousel' aut-uuid class="carousel slide" data-ride="carousel">
     <ol show.bind="showIndicator" class="carousel-indicators">
     </ol>
     <div class="carousel-inner">
       <slot></slot>
     </div>
-    <a show.bind="prevControl" class="carousel-control-prev" href="#${carousel.id}" role="button" data-slide="prev">
-      <span class="${prevControlClass}" aria-hidden="true" />
-      <span class="sr-only">${prevControlTitle}</span>
+    <a show.bind="showNavigator" class="carousel-control-prev" href="#${carousel.id}" role="button" data-slide="prev">
+      <span class="${prevIcon}" aria-hidden="true" />
+      <span class="sr-only">${prevTitle}</span>
     </a>
-    <a show.bind="nextControl" class="carousel-control-next" href="#${carousel.id}" role="button" data-slide="next">
-      <span class="${nextControlClass}" aria-hidden="true" />
-      <span class="sr-only">${nextControlTitle}</span>
+    <a show.bind="showNavigator" class="carousel-control-next" href="#${carousel.id}" role="button" data-slide="next">
+      <span class="${nextIcon}" aria-hidden="true" />
+      <span class="sr-only">${nextTitle}</span>
     </a>
   </div>
 </template>
