@@ -1,5 +1,5 @@
 <template>
-    <div id="${id}" css="${style}" class="list-group ${class}">
+    <div id="${id}" css="${style}" class="list-group ${class} ${flush === true ? 'list-group-flush' : ''}">
         <slot></slot>
     </div>
 </template>
