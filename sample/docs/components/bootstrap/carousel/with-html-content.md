@@ -1,6 +1,6 @@
 ```html
 <abt-carousel interval="15000" navigator="true" indicator="true">
-  <abt-carousel-html>
+  <abt-carousel-item>
     <div class="container" style="height:445px; background-color:gray; padding:20px; color:whitesmoke">
       <div class="row">
         <div class="col-sm">
@@ -31,8 +31,8 @@
     <div slot="caption">
       Biography
     </div>
-  </abt-carousel-html>
-  <abt-carousel-html active="true">
+  </abt-carousel-item>
+  <abt-carousel-item active="true">
     <div class="container" style="height:445px; background-color:gray; padding:20px; color:whitesmoke">
       <div class="row">
         <div class="col-sm">
@@ -66,8 +66,8 @@
     <div slot="caption">
       Biography
     </div>
-  </abt-carousel-html>
-  <abt-carousel-html>
+  </abt-carousel-item>
+  <abt-carousel-item>
     <div class="container" style="height:445px; background-color:gray; padding:20px; color:whitesmoke">
       <div class="row">
         <div class="col-sm">
@@ -95,7 +95,7 @@
     <div slot="caption">
       Biography
     </div>
-  </abt-carousel-html>
+  </abt-carousel-item>
 </abt-carousel>
 
 ```

@@ -6,13 +6,8 @@ import { SharedIndex } from './shared-index';
 @containerless()
 @customElement('abt-carousel-item')
 export class CarouselItemCustomElement {
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public src: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public alt: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = 'd-block w-100';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public active: boolean | string = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public captionClass: string = 'd-none d-md-block';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public captionStyle: string;
 
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public active: boolean | string = false;
 
   private isActive: boolean = false;
   private carouselItem: Element;

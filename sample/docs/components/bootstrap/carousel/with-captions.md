@@ -1,3 +1,5 @@
+
+To set up a `caption`, you need to use a html control like `div` and add a `slot="caption"` attribute on it.
 ```html
 <abt-carousel navigator="true" indicator="true">
   <abt-carousel-item>
