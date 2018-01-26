@@ -1,59 +1,96 @@
 <template>
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Input group
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/inputgroup">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and
+    custom file inputs. </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Basic example
+    </legend>
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text>@</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+    </abt-inputgroup>
 
-  <abt-inputgroup class="mb-3">
-    <abt-inputgroup-prepend>
-      <abt-inputgroup-text>@</abt-inputgroup-text>
-    </abt-inputgroup-prepend>
-    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-  </abt-inputgroup>
+    <abt-inputgroup class="mb-3">
+      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <abt-inputgroup-append>
+        <abt-inputgroup-text>@example.com</abt-inputgroup-text>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
 
-  <abt-inputgroup class="mb-3">
-    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-    <abt-inputgroup-append>
-      <abt-inputgroup-text>@example.com</abt-inputgroup-text>
-    </abt-inputgroup-append>
-  </abt-inputgroup>
+    <label for="basic-url">Your vanity URL</label>
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-append>
+        <abt-inputgroup-text>https://example.com/users/</abt-inputgroup-text>
+      </abt-inputgroup-append>
+      <input type="text" class="form-control" id="basic-url">
+    </abt-inputgroup>
 
-  <abt-inputgroup class="mb-3">
-    <abt-inputgroup-prepend>
-      <abt-inputgroup-text>$</abt-inputgroup-text>
-    </abt-inputgroup-prepend>
-    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-    <abt-inputgroup-append>
-      <abt-inputgroup-text>.00</abt-inputgroup-text>
-    </abt-inputgroup-append>
-  </abt-inputgroup>
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text>$</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+      <abt-inputgroup-append>
+        <abt-inputgroup-text>.00</abt-inputgroup-text>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text style="height:62px">With textarea</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <textarea class="form-control" aria-label="With textarea"></textarea>
+    </abt-inputgroup>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/basic-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Sizing
+    </legend>
+
+    <abt-inputgroup size="sm" class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text>Small</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control">
+    </abt-inputgroup>
+
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text>Default</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control">
+    </abt-inputgroup>
+
+    <abt-inputgroup size="lg" class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text>Large</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control">
+    </abt-inputgroup>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/sizing.md">
+    </aut-mark-down>
+  </fieldset>
 
 
-  <abt-inputgroup class="mb-3">
-    <abt-inputgroup-prepend>
-      <abt-inputgroup-text>With textarea</abt-inputgroup-text>
-    </abt-inputgroup-prepend>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
-  </abt-inputgroup>
-
-
-
-  <abt-inputgroup size="sm" class="mb-3">
-    <abt-inputgroup-prepend>
-      <abt-inputgroup-text>Small</abt-inputgroup-text>
-    </abt-inputgroup-prepend>
-    <input type="text" class="form-control">
-  </abt-inputgroup>
-
-  <abt-inputgroup class="mb-3">
-    <abt-inputgroup-prepend>
-      <abt-inputgroup-text>Default</abt-inputgroup-text>
-    </abt-inputgroup-prepend>
-    <input type="text" class="form-control">
-  </abt-inputgroup>
-
-  <abt-inputgroup size="lg" class="mb-3">
-    <abt-inputgroup-prepend>
-      <abt-inputgroup-text>Large</abt-inputgroup-text>
-    </abt-inputgroup-prepend>
-    <input type="text" class="form-control">
-  </abt-inputgroup>
 
 
 
@@ -72,6 +109,4 @@
       <abt-inputgroup-text>0.00</abt-inputgroup-text>
     </abt-inputgroup-append>
   </abt-inputgroup>
-
-
 </template>
