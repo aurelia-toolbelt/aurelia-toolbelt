@@ -9,6 +9,7 @@ export class BootstrapInputGroupCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: Size = 'md';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public id: string;
 
   private inputGroup: Element;
 

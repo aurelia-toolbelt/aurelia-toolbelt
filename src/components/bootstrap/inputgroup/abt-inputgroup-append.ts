@@ -5,5 +5,7 @@ import { customElement, inject, bindable, bindingMode, BindingEngine, containerl
 export class BootstrapInputGroupAppendCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public id: string;
+
 }
 

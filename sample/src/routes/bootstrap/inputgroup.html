@@ -90,23 +90,121 @@
     </aut-mark-down>
   </fieldset>
 
+  <fieldset class="mt-5">
+    <legend>
+      Checkboxes and radios
+    </legend>
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text style="height:38px">
+          <input type="checkbox" aria-label="Checkbox for following text input">
+        </abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control" aria-label="Text input with checkbox">
+    </abt-inputgroup>
 
+    <abt-inputgroup>
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text style="height:38px">
+          <input type="radio" aria-label="Radio button for following text input">
+        </abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control" aria-label="Text input with radio button">
+    </abt-inputgroup>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/checkboxes-radios.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Multiple inputs
+    </legend>
+    <abt-inputgroup>
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text id="">First and last name</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control">
+      <input type="text" class="form-control">
+    </abt-inputgroup>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/multiple-inputs.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Multiple addons
+    </legend>
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text>$</abt-inputgroup-text>
+        <abt-inputgroup-text>0.00</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control">
+    </abt-inputgroup>
 
+    <abt-inputgroup size="sm" class="mb-3">
+      <input type="text" class="form-control">
+      <abt-inputgroup-append>
+        <abt-inputgroup-text>$</abt-inputgroup-text>
+        <abt-inputgroup-text>0.00</abt-inputgroup-text>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/multiple-addons.md">
+    </aut-mark-down>
+  </fieldset>
 
+  <fieldset class="mt-5">
+    <legend>
+      Button addons
+    </legend>
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-button outline color="secondary">
+          Button
+        </abt-button>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control" placeholder="" aria-label="">
+    </abt-inputgroup>
 
-  <abt-inputgroup class="mb-3">
-    <abt-inputgroup-prepend>
-      <abt-inputgroup-text>$</abt-inputgroup-text>
-      <abt-inputgroup-text>0.00</abt-inputgroup-text>
-    </abt-inputgroup-prepend>
-    <input type="text" class="form-control">
-  </abt-inputgroup>
+    <abt-inputgroup class="mb-3">
+      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username">
+      <abt-inputgroup-append>
+        <abt-button outline color="secondary">
+          Button
+        </abt-button>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
 
-  <abt-inputgroup size="sm" class="mb-3">
-    <input type="text" class="form-control">
-    <abt-inputgroup-append>
-      <abt-inputgroup-text>$</abt-inputgroup-text>
-      <abt-inputgroup-text>0.00</abt-inputgroup-text>
-    </abt-inputgroup-append>
-  </abt-inputgroup>
+    <abt-inputgroup class="input-group mb-3">
+      <abt-inputgroup-prepend>
+        <abt-button outline color="secondary">
+          Button
+        </abt-button>
+        <abt-button outline color="secondary">
+          Button
+        </abt-button>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control" placeholder="" aria-label="">
+    </abt-inputgroup>
+
+    <abt-inputgroup>
+      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username">
+      <abt-inputgroup-append>
+        <abt-button outline color="secondary">
+          Button
+        </abt-button>
+        <abt-button outline color="secondary">
+          Button
+        </abt-button>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/button-addons.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+        Buttons with dropdowns        
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/button-dropdowns.md">
+    </aut-mark-down>
+  </fieldset>
 </template>
