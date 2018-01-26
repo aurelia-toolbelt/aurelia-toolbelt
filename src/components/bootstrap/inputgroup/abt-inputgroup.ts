@@ -6,10 +6,10 @@ export type Size = 'sm' | 'md' | 'lg';
 @containerless()
 @customElement('abt-inputgroup')
 export class BootstrapInputGroupCustomElement {
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: Size = 'md';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public id: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: Size = 'md';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
 
   private inputGroup: Element;
 
