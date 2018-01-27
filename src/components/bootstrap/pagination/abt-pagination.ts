@@ -56,7 +56,6 @@ export class BootstrapPaginationCustomElement {
   }
 
   private onClick(event: Event, selectedPageNumber: number | string, prevPageNumber: number | string, nextPageNumber: number | string) {
-
     if (!Number(selectedPageNumber)) {
       if (!(selectedPageNumber === 'prev' || selectedPageNumber === 'next' || event === null)) {
         let currentElement = <HTMLAnchorElement>event.target;
@@ -70,14 +69,6 @@ export class BootstrapPaginationCustomElement {
           if (inputElement) {
             inputElement.remove();
             this.onClick(null, inputElement.value, Number(inputElement.value) - 1, Number(inputElement.value) + 1);
-          }
-        });
-        $(inputElement).keypress((e) => {
-          let key = e.which;
-          if (key === 13) {
-            if (inputElement) {
-              this.onClick(null, inputElement.value, Number(inputElement.value) - 1, Number(inputElement.value) + 1);
-            }
           }
         });
         return false;
@@ -203,9 +194,9 @@ export class BootstrapPaginationCustomElement {
       throw Error('The visible pages should always be less than or equal to the total pages.');
     }
 
-    if (this.size === 'lg') {
+    if (this.size === 'lg' || this.paginationTemplate.hasAttribute('lg')) {
       this.pagination.classList.add('pagination-lg');
-    } else if (this.size === 'sm') {
+    } else if (this.size === 'sm' || this.paginationTemplate.hasAttribute('sm')) {
       this.pagination.classList.add('pagination-sm');
     } else {
       this.pagination.classList.remove('pagination-sm');

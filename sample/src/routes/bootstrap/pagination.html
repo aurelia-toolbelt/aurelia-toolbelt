@@ -19,7 +19,7 @@
     <legend>
       Basic example
     </legend>
-    <abt-pagination total-pages.bind="3" selected-page.bind="1" visible-pages.bind="3" page-changed.call="clicked($event)"></abt-pagination>
+    <abt-pagination total-pages.bind="3" selected-page.bind="1" visible-pages.bind="3"></abt-pagination>
     <aut-mark-down src="./docs/components/bootstrap/pagination/basic-example.md">
     </aut-mark-down>
   </fieldset>
@@ -27,7 +27,7 @@
     <legend>
       With boundary links
     </legend>
-    <abt-pagination total-pages.bind="3" visible-pages.bind="3" boundary-links="true" page-changed.call="clicked($event)"></abt-pagination>
+    <abt-pagination total-pages.bind="3" visible-pages.bind="3" boundary-links="true"></abt-pagination>
     <aut-mark-down src="./docs/components/bootstrap/pagination/basic-example-boundary.md">
     </aut-mark-down>
   </fieldset>
@@ -36,13 +36,13 @@
       Working with icons
     </legend>
     <abt-pagination total-pages.bind="3" selected-page.bind="1" visible-pages.bind="3" prev-text='' next-text='' prev-icon='fa fa-chevron-left'
-      next-icon='fa fa-chevron-right' page-changed.call="clicked($event)">
+      next-icon='fa fa-chevron-right'>
     </abt-pagination>
     <aut-mark-down src="./docs/components/bootstrap/pagination/with-icons.md">
     </aut-mark-down>
     <abt-pagination total-pages.bind="3" selected-page.bind="1" visible-pages.bind="3" boundary-links="true" prev-text='' next-text=''
       first-text='' last-text='' prev-icon='fa fa-chevron-left' next-icon='fa fa-chevron-right' first-icon='fa fa-backward'
-      last-icon='fa fa-forward' page-changed.call="clicked($event)">
+      last-icon='fa fa-forward'>
     </abt-pagination>
     <aut-mark-down src="./docs/components/bootstrap/pagination/with-icons-boundary.md">
     </aut-mark-down>
@@ -51,11 +51,11 @@
     <legend>
       Sizing
     </legend>
-    <abt-pagination total-pages.bind="3" selected-page.bind="1" size="sm" boundary-links="true" visible-pages.bind="3" page-changed.call="clicked($event)">
+    <abt-pagination total-pages.bind="3" selected-page.bind="1" size="sm" boundary-links="true" visible-pages.bind="3">
     </abt-pagination>
-    <abt-pagination total-pages.bind="3" selected-page.bind="1" boundary-links="true" visible-pages.bind="3" page-changed.call="clicked($event)">
+    <abt-pagination total-pages.bind="3" selected-page.bind="1" boundary-links="true" visible-pages.bind="3">
     </abt-pagination>
-    <abt-pagination total-pages.bind="3" selected-page.bind="1" size="lg" boundary-links="true" visible-pages.bind="3" page-changed.call="clicked($event)">
+    <abt-pagination total-pages.bind="3" selected-page.bind="1" size="lg" boundary-links="true" visible-pages.bind="3">
     </abt-pagination>
     <aut-mark-down src="./docs/components/bootstrap/pagination/size.md">
     </aut-mark-down>
@@ -108,9 +108,17 @@
       <h3 id="page" class="text-center" style="color:#6B6B6B;margin-top:55px">Page 1</h3>
     </div>
     <abt-pagination total-pages.bind="20" selected-page.bind="10" show-goto="true" boundary-links="true" visible-pages.bind="9"
-      page-changed.call="clicked($event,selectedPageNumber)">
+      page-changed.call="pageChanged($event,selectedPageNumber)">
     </abt-pagination>
-    <aut-mark-down src="./docs/components/bootstrap/pagination/page-change.md">
-    </aut-mark-down>
+    <abt-navs tabs id="navs-events">
+      <abt-nav-item id="tab-template-ebents" title="View">
+        <aut-mark-down src="./docs/components/bootstrap/pagination/page-change-model.md">
+        </aut-mark-down>
+      </abt-nav-item>
+      <abt-nav-item id="tab-viewmodel-events" title="ViewModel">
+        <aut-mark-down src="./docs/components/bootstrap/pagination/page-change-viewmodel.md">
+        </aut-mark-down>
+      </abt-nav-item>
+    </abt-navs>
   </fieldset>
 </template>
