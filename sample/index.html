@@ -44,29 +44,29 @@
       }
 
       .spinner {
-       margin: 550px auto 0;
+        margin: 550px auto 0;
         width: 120px;
         text-align: center;
       }
-      
-      .spinner > div {
+
+      .spinner>div {
         width: 35px;
         height: 35px;
 
         background-color: #7A5098;
-      
+
         border-radius: 100%;
         display: inline-block;
         -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
         animation: sk-bouncedelay 1.4s infinite ease-in-out both;
       }
-      
+
       .spinner .bounce1 {
         -webkit-animation-delay: -0.32s;
         animation-delay: -0.32s;
         background-color: #EE4894;
       }
-      
+
       .spinner .bounce2 {
         -webkit-animation-delay: -0.16s;
         animation-delay: -0.16s;
@@ -74,15 +74,24 @@
       }
 
       @-webkit-keyframes sk-bouncedelay {
-        0%, 80%, 100% { -webkit-transform: scale(0) }
-        40% { -webkit-transform: scale(1.0) }
+        0%,
+        80%,
+        100% {
+          -webkit-transform: scale(0)
+        }
+        40% {
+          -webkit-transform: scale(1.0)
+        }
       }
-      
+
       @keyframes sk-bouncedelay {
-        0%, 80%, 100% { 
+        0%,
+        80%,
+        100% {
           -webkit-transform: scale(0);
           transform: scale(0);
-        } 40% { 
+        }
+        40% {
           -webkit-transform: scale(1.0);
           transform: scale(1.0);
         }
@@ -92,7 +101,7 @@
 
 
 
-    <img src="./logo.png" >
+    <img src="./logo.png">
 
     <div class="spinner">
       <div class="bounce1"></div>
@@ -102,18 +111,18 @@
 
     <div class="alert alert-danger fixed-bottom text-center">
 
-        <i class="fa fa-wrench"></i>
-        &nbsp;
-        <b>
-          Documentations is under construction; stay tuned, <i class="text-primary">approx. 30 Jan 2018</i>
-        </b>
+      <i class="fa fa-wrench"></i>
+      &nbsp;
+      <b>
+        Documentations is under construction; stay tuned,
+        <i class="text-primary">approx. 30 Jan 2018</i>
+      </b>
 
-      <!-- <span class="float-right">
-        Logo designed by
-        <a class="alert-link" href="https://www.freepik.com/free-vector/elegant-banners-set-with-text-space_1189079.htm">
-          Freepik
-        </a>
-      </span> -->
+      <span class="float-right">
+        <a href="https://twitter.com/AureliaToolbelt?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @AureliaToolbelt</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </span>
+
     </div>
 
   </div>
