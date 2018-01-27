@@ -205,7 +205,7 @@ export class App {
     ]);
 
     // config.options.pushState = true;
-    config.mapUnknownRoutes('./routes/not-found.html');
+    // config.mapUnknownRoutes('./routes/not-found.html');
 
     this.router = router;
   }
