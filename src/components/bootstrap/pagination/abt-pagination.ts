@@ -16,9 +16,9 @@ export class BootstrapPaginationCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public selectedPage: number = 1;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public visiblePages: number = 1;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public hideOnlyOnePage: boolean = true;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundaryLinks: boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundaryLinks: boolean = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public directionLinks: boolean = true;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showGoto: boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showGoto: boolean = false;
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public pageTemplate: string = '%s';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string;

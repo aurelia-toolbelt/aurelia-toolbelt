@@ -19,8 +19,17 @@
     <legend>
       Basic example
     </legend>
-    <abt-pagination total-pages.bind="3" page-template='%s' selected-page.bind="0"
-      visible-pages.bind="3" boundary-links.bind="true" page-changed.call="clicked($event)"></abt-pagination>
-
+    <abt-pagination total-pages.bind="3" selected-page.bind="1" visible-pages.bind="3" page-changed.call="clicked($event)"></abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/basic-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Basic example
+    </legend>
+    <abt-pagination total-pages.bind="3" selected-page.bind="1" visible-pages.bind="3" first="" page-changed.call="clicked($event)">
+    </abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/with-icons.md">
+    </aut-mark-down>
   </fieldset>
 </template>
