@@ -8,15 +8,17 @@ export class ListGroupItemCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
-
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public color: string;
-
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public active: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public disabled: boolean | string = false;
+
 
   private listGroupItemTmpl: Element;
   private listGroupItem: HTMLLinkElement;
 
   constructor() {
+
     DOM.injectStyles(`
             a.abt-listgroup-item-disabled {
                 pointer-events: none !important;
@@ -25,8 +27,12 @@ export class ListGroupItemCustomElement {
   }
 
   private attached() {
-    let isActive = this.listGroupItemTmpl.hasAttribute('active');
-    let isDisabled = this.listGroupItemTmpl.hasAttribute('disabled');
+
+    this.active = Boolean(this.active);
+    this.disabled = Boolean(this.disabled);
+
+    let isActive = this.active || this.listGroupItemTmpl.hasAttribute('active');
+    let isDisabled = this.disabled || this.listGroupItemTmpl.hasAttribute('disabled');
     if (isActive) {
       this.listGroupItem.classList.add('active');
     }
@@ -47,16 +53,10 @@ export class ListGroupItemCustomElement {
 
 
   private onClick(event: Event) {
-
-    // event.preventDefault();
-
     if (this.click) {
       this.click({ event: event });
       return false;
     } else {
-
-
-      console.log('Works');
       return true;
     }
   }

@@ -304,7 +304,7 @@
           <td class="text-nowrap">number | string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">5000</td>
-          <td>The amount of time to delay between automatically cycling an item. If 0, carousel will not automatically cycle.</td>
+          <td>The amount of time to delay between automatically cycling an item. If <code>0</code>, carousel will not automatically cycle.</td>
         </tr>
         <tr>
           <td class="text-nowrap" scope="row">keyboard</td>
@@ -320,9 +320,9 @@
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">true</td>
           <td>
-            <p>If set to true, pauses the cycling of the carousel on mouseenter and resumes the cycling of the carousel on mouseleave.
-              If set to false, hovering over the carousel won't pause it.</p>
-            <p>On touch-enabled devices, when set to true, cycling will pause on touchend (once the user finished interacting
+            <p>If set to <code>true</code>, pauses the cycling of the carousel on mouseenter and resumes the cycling of the carousel on mouseleave.
+              If set to <code>false</code>, hovering over the carousel won't pause it.</p>
+            <p>On touch-enabled devices, when set to <code>true</code>, cycling will pause on touchend (once the user finished interacting
               with the carousel) for two intervals, before automatically resuming. Note that this is in addition to the above
               mouse behavior.</p>
           </td>
@@ -332,7 +332,7 @@
           <td class="text-nowrap">boolean | string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">false</td>
-          <td>Autoplays the carousel after the user manually cycles the first item. If "carousel", autoplays the carousel on
+          <td>Autoplays the carousel after the user manually cycles the first item. If <code>true</code>, autoplays the carousel on
             load.
           </td>
         </tr>
@@ -367,7 +367,7 @@
           </td>
         </tr>
         <tr>
-          <td class="text-nowrap" scope="row">bsSlide</td>
+          <td class="text-nowrap" scope="row">bs-slide</td>
           <td class="text-nowrap">Function</td>
           <td class="text-nowrap">call</td>
           <td class="text-nowrap"></td>
@@ -376,7 +376,7 @@
         </tr>
 
         <tr>
-          <td class="text-nowrap" scope="row">bsSlid</td>
+          <td class="text-nowrap" scope="row">bs-slid</td>
           <td class="text-nowrap">Function</td>
           <td class="text-nowrap">call</td>
           <td class="text-nowrap"></td>
@@ -388,9 +388,14 @@
     <table class="table table-striped table-bordered">
       <thead class="thead-dark">
         <tr>
-          <td class="text-nowrap" colspan="5">
+          <td class="text-nowrap" colspan="4">
             <b>
               abt-carousel-item
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
             </b>
           </td>
         </tr>
@@ -415,7 +420,7 @@
           <td class="text-nowrap">boolean | string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">false</td>
-          <td>The active attribute needs to be added to one of the abt-carousel-items. Otherwise, the carousel will not be visible.
+          <td>The active attribute needs to be added to one of the <code>abt-carousel-items</code>. Otherwise, the carousel will not be visible.
           </td>
         </tr>
       </tbody>

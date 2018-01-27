@@ -1,58 +1,155 @@
 <template>
+  <fieldset class="mb-5">
+    <legend>
+      <h2>List group
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/listgroup">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    List groups are a flexible and powerful component for displaying a series of content. Modify and extend them to support just
+    about any content within.
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Examples
+    </legend>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item>Cras justo odio</abt-listgroup-item>
+      <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+      <abt-listgroup-item>Morbi leo risus</abt-listgroup-item>
+      <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
+      <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/basic-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Active items
+    </legend>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item active="true">Cras justo odio</abt-listgroup-item>
+      <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+      <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
+      <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/active-items.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Disabled items
+    </legend>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item disabled="true">Cras justo odio</abt-listgroup-item>
+      <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+      <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
+      <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/disabled-items.md">
+    </aut-mark-down>
+  </fieldset>
 
-    <abt-listgroup>
-        <abt-listgroup-item color="primary" >Cras justo odio</abt-listgroup-item>
-        <abt-listgroup-item color="warning">Dapibus ac facilisis in</abt-listgroup-item>
-        <abt-listgroup-item color="danger">Morbi leo risus</abt-listgroup-item>
-        <abt-listgroup-item color="info">Porta ac consectetur ac</abt-listgroup-item>
-        <abt-listgroup-item color="success">Vestibulum at eros</abt-listgroup-item>
-    </abt-listgroup>
-    <br/>
-    <abt-listgroup>
-        <abt-listgroup-item active>Cras justo odio</abt-listgroup-item>
-        <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
-        <abt-listgroup-item class="d-flex justify-content-between align-items-center">Cras justo odio
-            <abt-badge color="secondary">15</abt-badge>
-        </abt-listgroup-item>
-        <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
-        <abt-listgroup-item class="d-flex justify-content-between align-items-center">Vestibulum at eros
-            <abt-badge color="secondary">New</abt-badge>
-        </abt-listgroup-item>
-    </abt-listgroup>
-    <br/>
-    <abt-listgroup>
-        <abt-listgroup-item disabled>Cras justo odio</abt-listgroup-item>
-        <abt-listgroup-item color="success" href='http://github.com'>Anchor behaviour</abt-listgroup-item>
-        <abt-listgroup-item color="warning" click.call="itemClicked()">Clickable Item</abt-listgroup-item>
-        <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
-        <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
-    </abt-listgroup>
-    <br/>
-    <abt-listgroup>
-        <abt-listgroup-item class="flex-column align-items-start" active>
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">List group item heading</h5>
-                <small>3 days ago</small>
-            </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-            <small>Donec id elit non mi porta.</small>
-        </abt-listgroup-item>
-        <abt-listgroup-item class="flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">List group item heading</h5>
-                <small class="text-muted">3 days ago</small>
-            </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-            <small class="text-muted">Donec id elit non mi porta.</small>
-        </abt-listgroup-item>
-        <abt-listgroup-item class="flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">List group item heading</h5>
-                <small class="text-muted">3 days ago</small>
-            </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-            <small class="text-muted">Donec id elit non mi porta.</small>
-        </abt-listgroup-item>
 
-    </abt-listgroup>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <abt-listgroup>
+    <abt-listgroup-item color="primary">Cras justo odio</abt-listgroup-item>
+    <abt-listgroup-item color="warning">Dapibus ac facilisis in</abt-listgroup-item>
+    <abt-listgroup-item color="danger">Morbi leo risus</abt-listgroup-item>
+    <abt-listgroup-item color="info">Porta ac consectetur ac</abt-listgroup-item>
+    <abt-listgroup-item color="success">Vestibulum at eros</abt-listgroup-item>
+  </abt-listgroup>
+  <br/>
+  <abt-listgroup>
+    <abt-listgroup-item active>Cras justo odio</abt-listgroup-item>
+    <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+    <abt-listgroup-item class="d-flex justify-content-between align-items-center">Cras justo odio
+      <abt-badge color="secondary">15</abt-badge>
+    </abt-listgroup-item>
+    <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
+    <abt-listgroup-item class="d-flex justify-content-between align-items-center">Vestibulum at eros
+      <abt-badge color="secondary">New</abt-badge>
+    </abt-listgroup-item>
+  </abt-listgroup>
+  <br/>
+  <abt-listgroup>
+    <abt-listgroup-item disabled>Cras justo odio</abt-listgroup-item>
+    <abt-listgroup-item color="success" href='http://github.com'>Anchor behaviour</abt-listgroup-item>
+    <abt-listgroup-item color="warning" click.call="itemClicked()">Clickable Item</abt-listgroup-item>
+    <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
+    <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+  </abt-listgroup>
+  <br/>
+  <abt-listgroup>
+    <abt-listgroup-item class="flex-column align-items-start" active>
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">List group item heading</h5>
+        <small>3 days ago</small>
+      </div>
+      <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+      <small>Donec id elit non mi porta.</small>
+    </abt-listgroup-item>
+    <abt-listgroup-item class="flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">List group item heading</h5>
+        <small class="text-muted">3 days ago</small>
+      </div>
+      <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+      <small class="text-muted">Donec id elit non mi porta.</small>
+    </abt-listgroup-item>
+    <abt-listgroup-item class="flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">List group item heading</h5>
+        <small class="text-muted">3 days ago</small>
+      </div>
+      <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+      <small class="text-muted">Donec id elit non mi porta.</small>
+    </abt-listgroup-item>
+
+  </abt-listgroup>
 </template>

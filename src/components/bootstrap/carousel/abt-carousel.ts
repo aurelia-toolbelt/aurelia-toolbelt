@@ -1,7 +1,6 @@
 import { inject, customElement, bindingMode, bindable, containerless } from 'aurelia-framework';
 import * as $ from 'jquery';
 
-@containerless()
 @customElement('abt-carousel')
 export class CarouselCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public prevTitle: string = 'Previous';

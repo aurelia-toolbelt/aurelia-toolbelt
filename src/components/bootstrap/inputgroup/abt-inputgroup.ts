@@ -3,7 +3,6 @@ import { customElement, inject, bindable, bindingMode, BindingEngine, containerl
 
 export type Size = 'sm' | 'md' | 'lg';
 
-@containerless()
 @customElement('abt-inputgroup')
 export class BootstrapInputGroupCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string = '';
