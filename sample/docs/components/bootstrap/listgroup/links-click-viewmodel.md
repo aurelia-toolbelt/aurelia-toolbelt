@@ -1,3 +1,4 @@
+```ts
 export class BootstrapListGroup {
 
   private itemClicked() {
@@ -5,3 +6,4 @@ export class BootstrapListGroup {
   }
 
 }
+```

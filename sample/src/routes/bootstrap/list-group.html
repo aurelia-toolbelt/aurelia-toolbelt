@@ -60,96 +60,140 @@
     <aut-mark-down src="./docs/components/bootstrap/listgroup/disabled-items.md">
     </aut-mark-down>
   </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Links and buttons
+    </legend>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item active href="#/bootstrap/list-group">Cras justo odio</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/list-group">Dapibus ac facilisis in</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/list-group">Porta ac consectetur ac</abt-listgroup-item>
+      <abt-listgroup-item disabled href="#/bootstrap/list-group" disabled>Vestibulum at eros</abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/links-buttons.md">
+    </aut-mark-down>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item active="true">Cras justo odio</abt-listgroup-item>
+      <abt-listgroup-item click.call="itemClicked()">Anchor behaviour</abt-listgroup-item>
+      <abt-listgroup-item click.call="itemClicked()">Clickable Item</abt-listgroup-item>
+      <abt-listgroup-item click.call="itemClicked()">Porta ac consectetur ac</abt-listgroup-item>
+      <abt-listgroup-item disabled>Vestibulum at eros</abt-listgroup-item>
+    </abt-listgroup>
+    <br>
+    <abt-navs tabs id="navs-events">
+      <abt-nav-item id="tab-template-ebents" title="View">
+        <aut-mark-down src="./docs/components/bootstrap/listgroup/links-click-model.md">
+        </aut-mark-down>
+      </abt-nav-item>
+      <abt-nav-item id="tab-viewmodel-events" title="ViewModel">
+        <aut-mark-down src="./docs/components/bootstrap/listgroup/links-click-viewmodel.md">
+        </aut-mark-down>
+      </abt-nav-item>
+    </abt-navs>
+  </fieldset>
 
+  <fieldset class="mt-5">
+    <legend>
+      Flush
+    </legend>
+    <br>
+    <abt-listgroup flush="true">
+      <abt-listgroup-item>Cras justo odio</abt-listgroup-item>
+      <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+      <abt-listgroup-item>Morbi leo risus</abt-listgroup-item>
+      <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
+      <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/flush.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Contextual classes
+    </legend>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+      <abt-listgroup-item type="primary">This is a primary list group item</abt-listgroup-item>
+      <abt-listgroup-item type="secondary">This is a secondary list group item</abt-listgroup-item>
+      <abt-listgroup-item type="success">This is a success list group item</abt-listgroup-item>
+      <abt-listgroup-item type="danger">This is a danger list group item</abt-listgroup-item>
+      <abt-listgroup-item type="warning">This is a warning list group item</abt-listgroup-item>
+      <abt-listgroup-item type="info">This is a info list group item</abt-listgroup-item>
+      <abt-listgroup-item type="light">This is a light list group item</abt-listgroup-item>
+      <abt-listgroup-item type="dark">This is a dark list group item</abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/contextual-classes.md">
+    </aut-mark-down>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item href="#/bootstrap/listgroup">Dapibus ac facilisis in</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/listgroup" type="primary">This is a primary list group item</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/listgroup" type="secondary">This is a secondary list group item</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/listgroup" type="success">This is a success list group item</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/listgroup" type="danger">This is a danger list group item</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/listgroup" type="warning">This is a warning list group item</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/listgroup" type="info">This is a info list group item</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/listgroup" type="light">This is a light list group item</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/listgroup" type="dark">This is a dark list group item</abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/contextual-classes-links.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      With badges
+    </legend>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item class="d-flex justify-content-between align-items-center">Vestibulum at eros
+        <abt-badge color="primary">14</abt-badge>
+      </abt-listgroup-item>
+      <abt-listgroup-item class="d-flex justify-content-between align-items-center">Cras justo odio
+        <abt-badge pill color="primary">2</abt-badge>
+      </abt-listgroup-item>
+      <abt-listgroup-item class="d-flex justify-content-between align-items-center">Vestibulum at eros
+        <abt-badge color="primary">1</abt-badge>
+      </abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/with-badges.md">
+    </aut-mark-down>
+  </fieldset>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <abt-listgroup>
-    <abt-listgroup-item color="primary">Cras justo odio</abt-listgroup-item>
-    <abt-listgroup-item color="warning">Dapibus ac facilisis in</abt-listgroup-item>
-    <abt-listgroup-item color="danger">Morbi leo risus</abt-listgroup-item>
-    <abt-listgroup-item color="info">Porta ac consectetur ac</abt-listgroup-item>
-    <abt-listgroup-item color="success">Vestibulum at eros</abt-listgroup-item>
-  </abt-listgroup>
-  <br/>
-  <abt-listgroup>
-    <abt-listgroup-item active>Cras justo odio</abt-listgroup-item>
-    <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
-    <abt-listgroup-item class="d-flex justify-content-between align-items-center">Cras justo odio
-      <abt-badge color="secondary">15</abt-badge>
-    </abt-listgroup-item>
-    <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
-    <abt-listgroup-item class="d-flex justify-content-between align-items-center">Vestibulum at eros
-      <abt-badge color="secondary">New</abt-badge>
-    </abt-listgroup-item>
-  </abt-listgroup>
-  <br/>
-  <abt-listgroup>
-    <abt-listgroup-item disabled>Cras justo odio</abt-listgroup-item>
-    <abt-listgroup-item color="success" href='http://github.com'>Anchor behaviour</abt-listgroup-item>
-    <abt-listgroup-item color="warning" click.call="itemClicked()">Clickable Item</abt-listgroup-item>
-    <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
-    <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
-  </abt-listgroup>
-  <br/>
-  <abt-listgroup>
-    <abt-listgroup-item class="flex-column align-items-start" active>
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">List group item heading</h5>
-        <small>3 days ago</small>
-      </div>
-      <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-      <small>Donec id elit non mi porta.</small>
-    </abt-listgroup-item>
-    <abt-listgroup-item class="flex-column align-items-start">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">List group item heading</h5>
-        <small class="text-muted">3 days ago</small>
-      </div>
-      <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-      <small class="text-muted">Donec id elit non mi porta.</small>
-    </abt-listgroup-item>
-    <abt-listgroup-item class="flex-column align-items-start">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">List group item heading</h5>
-        <small class="text-muted">3 days ago</small>
-      </div>
-      <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-      <small class="text-muted">Donec id elit non mi porta.</small>
-    </abt-listgroup-item>
-
-  </abt-listgroup>
+  <fieldset class="mt-5">
+    <legend>
+      Custom content
+    </legend>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item class="flex-column align-items-start" active>
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">List group item heading</h5>
+          <small>3 days ago</small>
+        </div>
+        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+        <small>Donec id elit non mi porta.</small>
+      </abt-listgroup-item>
+      <abt-listgroup-item class="flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">List group item heading</h5>
+          <small class="text-muted">3 days ago</small>
+        </div>
+        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+        <small class="text-muted">Donec id elit non mi porta.</small>
+      </abt-listgroup-item>
+      <abt-listgroup-item class="flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">List group item heading</h5>
+          <small class="text-muted">3 days ago</small>
+        </div>
+        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+        <small class="text-muted">Donec id elit non mi porta.</small>
+      </abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/custom-content.md">
+    </aut-mark-down>
+  </fieldset>
 </template>

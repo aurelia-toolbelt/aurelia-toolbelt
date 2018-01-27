@@ -8,7 +8,7 @@ export class ListGroupItemCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public color: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public type: string;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public active: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public disabled: boolean | string = false;
@@ -39,14 +39,14 @@ export class ListGroupItemCustomElement {
     if (isDisabled) {
       this.listGroupItem.classList.add('disabled');
     }
-    if (this.href || this.click) {
+    if ((this.href || this.click) && !this.listGroupItem.classList.contains('disabled')) {
       $(this.listGroupItem).removeClass('abt-listgroup-item-disabled');
     } else {
       $(this.listGroupItem).addClass('abt-listgroup-item-disabled');
     }
 
-    if (this.color) {
-      this.listGroupItem.classList.add(`list-group-item-${this.color}`);
+    if (this.type) {
+      this.listGroupItem.classList.add(`list-group-item-${this.type}`);
     }
 
   }
