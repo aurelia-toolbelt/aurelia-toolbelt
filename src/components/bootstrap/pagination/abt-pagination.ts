@@ -39,6 +39,7 @@ export class BootstrapPaginationCustomElement {
 
   private showNumbers: boolean = false;
   private pagination: Element;
+  private paginationTemplate: Element;
   private pages: IPagination[] = [];
 
 
@@ -66,14 +67,17 @@ export class BootstrapPaginationCustomElement {
         parentElement.appendChild(inputElement);
         $(inputElement).focus();
         $(inputElement).blur(() => {
-          inputElement.remove();
-          this.onClick(null, inputElement.value, Number(inputElement.value) - 1, Number(inputElement.value) + 1);
+          if (inputElement) {
+            inputElement.remove();
+            this.onClick(null, inputElement.value, Number(inputElement.value) - 1, Number(inputElement.value) + 1);
+          }
         });
         $(inputElement).keypress((e) => {
           let key = e.which;
           if (key === 13) {
-            inputElement.remove();
-            this.onClick(null, inputElement.value, Number(inputElement.value) - 1, Number(inputElement.value) + 1);
+            if (inputElement) {
+              this.onClick(null, inputElement.value, Number(inputElement.value) - 1, Number(inputElement.value) + 1);
+            }
           }
         });
         return false;
@@ -100,7 +104,7 @@ export class BootstrapPaginationCustomElement {
     this.createVisibleItems(this.visiblePages, this.selectedPage, this.totalPages);
 
     if (this.pageChanged) {
-      this.pageChanged({ event: event, selectedPageNumber: selectedPageNumber });
+      this.pageChanged({ event: event, selectedPageNumber: this.selectedPage });
     }
     return false;
   }
@@ -183,11 +187,12 @@ export class BootstrapPaginationCustomElement {
     this.totalPages = Number(this.totalPages);
     this.selectedPage = Number(this.selectedPage);
     this.visiblePages = Number(this.visiblePages);
-    this.hideOnlyOnePage = Boolean(this.hideOnlyOnePage);
-    this.boundaryLinks = Boolean(this.boundaryLinks);
-    this.directionLinks = Boolean(this.directionLinks);
-    this.showGoto = Boolean(this.showGoto);
-    this.loop = Boolean(this.loop);
+
+    this.hideOnlyOnePage = Boolean(this.hideOnlyOnePage) || this.paginationTemplate.hasAttribute('hide-only-one-page');
+    this.boundaryLinks = Boolean(this.boundaryLinks) || this.paginationTemplate.hasAttribute('boundary-links');
+    this.directionLinks = Boolean(this.directionLinks) || this.paginationTemplate.hasAttribute('direction-links');
+    this.showGoto = Boolean(this.showGoto) || this.paginationTemplate.hasAttribute('show-goto');
+    this.loop = Boolean(this.loop) || this.paginationTemplate.hasAttribute('loop');
 
 
     if (this.visiblePages <= 0) {

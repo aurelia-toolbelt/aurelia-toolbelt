@@ -104,8 +104,11 @@
     <legend>
       Page change
     </legend>
-    <div></div>
-    <abt-pagination total-pages.bind="20" selected-page.bind="10" show-goto="true" boundary-links="true" visible-pages.bind="9">
+    <div class="container" style="background-color:#F7F7F7;height:150px;border:solid 1px #D8D8D8;margin-bottom:15px">
+      <h3 id="page" class="text-center" style="color:#6B6B6B;margin-top:55px">Page 1</h3>
+    </div>
+    <abt-pagination total-pages.bind="20" selected-page.bind="10" show-goto="true" boundary-links="true" visible-pages.bind="9"
+      page-changed.call="clicked($event,selectedPageNumber)">
     </abt-pagination>
     <aut-mark-down src="./docs/components/bootstrap/pagination/page-change.md">
     </aut-mark-down>
