@@ -1,5 +1,26 @@
 <template>
-  <abt-pagination id="${id}" css="${style}" class="text-nowrap ${class}" total-pages.bind="20" page-template='Page %s' show-goto.bind="true"
-    selected-page.bind="14" loop.bind="true" visible-pages.bind="5" boundary-links.bind="true" page-changed.call="clicked($event)"></abt-pagination>
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Carousel
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/pagination">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages. </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/carousel/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Basic example
+    </legend>
+    <abt-pagination total-pages.bind="3" page-template='%s' selected-page.bind="0"
+      visible-pages.bind="3" boundary-links.bind="true" page-changed.call="clicked($event)"></abt-pagination>
 
+  </fieldset>
 </template>

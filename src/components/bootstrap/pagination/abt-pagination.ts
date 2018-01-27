@@ -92,6 +92,7 @@ export class BootstrapPaginationCustomElement {
   }
 
   private createVisibleItems(visibleItem: number, selectedItem: number, totalPages: number): void {
+    selectedItem = selectedItem <= 0 ? 1 : selectedItem;
     let items: string[] = [];
     for (let index = 0; index < visibleItem; index++) {
       items[index] = '-1';
