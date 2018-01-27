@@ -1,8 +1,8 @@
 
 
-export class BreadcrumbItem {
+export interface IBreadcrumbItem {
 
-  public title: string;
-  public url?: string;
+  title: string;
+  url?: string;
 
 }

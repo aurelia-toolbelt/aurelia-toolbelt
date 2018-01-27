@@ -1,5 +1,5 @@
 import { customElement, containerless, inject, bindable, bindingMode } from 'aurelia-framework';
-import { BreadcrumbItem } from './breadcrumb-item';
+import { IBreadcrumbItem } from './breadcrumb-item';
 
 
 

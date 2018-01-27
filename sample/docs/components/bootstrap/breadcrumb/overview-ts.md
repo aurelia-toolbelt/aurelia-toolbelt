@@ -1,13 +1,11 @@
-
-
-// @ts-ignore
+```ts
 import { IBreadcrumbItem } from 'aurelia-toolbelt';
+
 export class Breadcrumb {
 
-
+  private new_title = 'Test';
   private items: Array<IBreadcrumbItem> = [];
 
-  private new_title = 'Test';
 
   private push() {
     this.items.push({ title: this.new_title });
@@ -18,7 +16,7 @@ export class Breadcrumb {
   }
 
   private activate() {
-    this.items = [
+     this.items = [
       {
         title: 'Bootstrap',
         url: '#/bootstrap'
@@ -28,8 +26,6 @@ export class Breadcrumb {
         url: '#/bootstrap/breadcrumb'
       }];
     return true;
-
   }
-
-
 }
+```

@@ -78,16 +78,16 @@ export class App {
               title: 'Badge'
             },
             {
+              route: 'breadcrumb',
+              title: 'Breadcrumb'
+            },
+            {
               route: 'buttons',
               title: 'Buttons'
             },
             {
               route: 'button-groups',
               title: 'Button Groups'
-            },
-            {
-              href: 'breadcrumb',
-              title: 'Breadcrumb'
             },
             {
               route: 'card',
