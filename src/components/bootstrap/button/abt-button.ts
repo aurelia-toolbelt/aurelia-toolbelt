@@ -21,7 +21,7 @@ export class BootstrapButton {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string = false;
 
   private isBusy: boolean = false;
   private task: Promise<void> | null = null;
@@ -35,6 +35,9 @@ export class BootstrapButton {
 
     const onlyBlockAttribute = (this.block === '' && this.element.hasAttribute('block'));
     this.block = onlyBlockAttribute || this.block === 'true' || this.block === true;
+
+    const onlyDisabledAttribute = (this.disabled === '' && this.element.hasAttribute('disabled'));
+    this.disabled = onlyDisabledAttribute || this.disabled === 'true' || this.disabled === true;
 
   }
 

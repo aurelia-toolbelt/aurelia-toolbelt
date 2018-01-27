@@ -69,57 +69,107 @@
 
 
   <fieldset class="mt-5">
-      <legend>
-        Outline buttons
-      </legend>
+    <legend>
+      Outline buttons
+    </legend>
 
-      <abt-card>
-        <abt-card-body>
-  
-          <abt-button class="mr-2" outline bs-type="primary">Primary</abt-button>
-          <abt-button class="mr-2" outline bs-type="secondary">Secondary</abt-button>
-          <abt-button class="mr-2" outline bs-type="info">Info</abt-button>
-          <abt-button class="mr-2" outline bs-type="success">Success</abt-button>
-          <abt-button class="mr-2" outline bs-type="warning">Warning</abt-button>
-          <abt-button class="mr-2" outline bs-type="danger">Danger</abt-button>
-          <abt-button class="mr-2 text-dark" outline bs-type="light">Light</abt-button>
-          <abt-button class="mr-2" outline bs-type="dark">Dark</abt-button>
-  
-        </abt-card-body>
-        <abt-card-footer>
-          <aut-mark-down src="./docs/components/bootstrap/button/outline.md">
-  
-          </aut-mark-down>
-        </abt-card-footer>
-      </abt-card>
-  
-    </fieldset>
+    <abt-card>
+      <abt-card-body>
 
-    <fieldset class="mt-5">
-        <legend>
-          Size and block
-        </legend>
-  
-        <abt-card>
-          <abt-card-body>
-    
-            <abt-button class="mr-2" size="sm" >small button</abt-button>
-            <abt-button class="mr-2">Normal button</abt-button>
-            <abt-button class="mr-2" size="lg" >Large Button</abt-button>
+        <abt-button class="mr-2" outline bs-type="primary">Primary</abt-button>
+        <abt-button class="mr-2" outline bs-type="secondary">Secondary</abt-button>
+        <abt-button class="mr-2" outline bs-type="info">Info</abt-button>
+        <abt-button class="mr-2" outline bs-type="success">Success</abt-button>
+        <abt-button class="mr-2" outline bs-type="warning">Warning</abt-button>
+        <abt-button class="mr-2" outline bs-type="danger">Danger</abt-button>
+        <abt-button class="mr-2 text-dark" outline bs-type="light">Light</abt-button>
+        <abt-button class="mr-2" outline bs-type="dark">Dark</abt-button>
 
-            <hr />
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button/outline.md">
 
-            <abt-button class="mr-2" block bs-type="secondary">Block Level</abt-button>
-    
-          </abt-card-body>
-          <abt-card-footer>
-            <aut-mark-down src="./docs/components/bootstrap/button/size-block.md">
-    
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Size, block, and disabled
+    </legend>
+
+    <abt-card>
+      <abt-card-body>
+
+        <abt-button class="mr-2" size="sm">small button</abt-button>
+        <abt-button class="mr-2">Normal button</abt-button>
+        <abt-button class="mr-5" size="lg">Large Button</abt-button>
+
+        <abt-button class="ml-5" disabled>Disabled</abt-button>
+        <abt-button class="ml-2" bs-type="secondary" disabled.bind="true">Another Disabled</abt-button>
+        <abt-button class="ml-2" bs-type="success" disabled="true">Yet Another Disabled</abt-button>
+
+        <hr />
+
+        <abt-button class="mr-2" block bs-type="secondary">Block Level</abt-button>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button/size-block.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      A button meant to be clicked!
+    </legend>
+
+    <p>
+      The
+      <code>click</code> event can be bound to functions with no return value, or those returning a
+      <code>promise</code>, when the latter they will have a busy/loading state, in which you can provide a loading template by
+      simply using slots in aurelia.
+      <code>slot="loading"</code>
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <abt-button class="mr-2" click.call="onClick()">Click me</abt-button>
+
+        <abt-button click.call="onClick()">Click me with loading indicator
+          <span slot="loading">
+            <i class="fa fa-spinner fa-spin" aria-hidden="true">
+            </i>
+          </span>
+        </abt-button>
+
+        <abt-button class="float-right" click.call="onClickWithoutPromise()">Click me, no promise returns</abt-button>
+
+      </abt-card-body>
+      <abt-card-footer>
+
+        <abt-navs tabs id="navs-button">
+          <abt-nav-item id="navs-button-view" title="View">
+            <aut-mark-down src="./docs/components/bootstrap/button/clicked.md">
             </aut-mark-down>
-          </abt-card-footer>
-        </abt-card>
-    
-      </fieldset>
+
+          </abt-nav-item>
+          <abt-nav-item id="navs-button-view-model" title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/button/clicked-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
+
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
 
 
 
