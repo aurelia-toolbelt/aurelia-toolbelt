@@ -2,7 +2,7 @@
 
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li repeat.for="item of items" class="breadcrumb-item ${$last ? 'active':''}" aria-current="${$last? 'page':''}">
+      <li repeat.for="item of items" class="breadcrumb-item ${$last ? 'active':''} abt-breadcrumb" aria-current="${$last? 'page':''}">
         <span if.bind="$last">
           ${item.title}
         </span>

@@ -8,29 +8,34 @@ import { customElement, containerless, bindable, bindingMode } from 'aurelia-fra
 @customElement('abt-button')
 export class BootstrapButton {
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public color: string = 'primary';
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: string = 'md';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public type: string = 'button';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public bsType: string = 'primary';
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
+
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public outline: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public block: boolean | string = false;
+
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string;
 
-  private isOutlined: boolean = false;
-  private isBlockLevel: boolean = false;
-
   private isBusy: boolean = false;
   private task: Promise<void> | null = null;
 
-  constructor(private element: Element) {
+  constructor(private element: Element) { }
 
-  }
+  private afterAttached() {
 
-  private bind() {
-    this.isOutlined = this.element.hasAttribute('outline');
-    this.isBlockLevel = this.element.hasAttribute('block');
+    const onlyOutlineAttribute = (this.outline === '' && this.element.hasAttribute('outline'));
+    this.outline = onlyOutlineAttribute || this.outline === 'true' || this.outline === true;
+
+    const onlyBlockAttribute = (this.block === '' && this.element.hasAttribute('block'));
+    this.block = onlyBlockAttribute || this.block === 'true' || this.block === true;
+
   }
 
   private onClick(event: Event) {
@@ -46,7 +51,7 @@ export class BootstrapButton {
 
     this.isBusy = true;
 
-    this.task = Promise.resolve(this.click({ event: event, target: this.element.previousElementSibling }))
+    this.task = Promise.resolve(this.click({ event: event, target: event.target }))
       .then(
       () => this.clickCompleted(),
       () => this.clickCompleted()
@@ -60,7 +65,6 @@ export class BootstrapButton {
 
   private detached() {
     this.task = null;
-    // this.element.previousElementSibling.removeEventListener('click', this.onClick);
   }
 
 }
