@@ -11,4 +11,8 @@ export class Uuid {
     });
   }
 
+  public Uuidv4ForId() {
+    return '_' + this.uuidv4().replace(new RegExp('-', 'g'), '');
+  }
+
 }
