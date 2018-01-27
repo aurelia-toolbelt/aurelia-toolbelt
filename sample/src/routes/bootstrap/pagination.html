@@ -19,7 +19,7 @@
     <legend>
       Basic example
     </legend>
-    <abt-pagination total-pages.bind="3" selected-page.bind="1" visible-pages.bind="3"></abt-pagination>
+    <abt-pagination total-pages="3" start-page="1" visible-pages="3"></abt-pagination>
     <aut-mark-down src="./docs/components/bootstrap/pagination/basic-example.md">
     </aut-mark-down>
   </fieldset>
@@ -27,7 +27,7 @@
     <legend>
       With boundary links
     </legend>
-    <abt-pagination total-pages.bind="3" visible-pages.bind="3" boundary-links="true"></abt-pagination>
+    <abt-pagination total-pages="3" visible-pages="3" boundary-links="true"></abt-pagination>
     <aut-mark-down src="./docs/components/bootstrap/pagination/basic-example-boundary.md">
     </aut-mark-down>
   </fieldset>
@@ -35,14 +35,13 @@
     <legend>
       Working with icons
     </legend>
-    <abt-pagination total-pages.bind="3" selected-page.bind="1" visible-pages.bind="3" prev-text='' next-text='' prev-icon='fa fa-chevron-left'
+    <abt-pagination total-pages="3" start-page="1" visible-pages="3" prev-text='' next-text='' prev-icon='fa fa-chevron-left'
       next-icon='fa fa-chevron-right'>
     </abt-pagination>
     <aut-mark-down src="./docs/components/bootstrap/pagination/with-icons.md">
     </aut-mark-down>
-    <abt-pagination total-pages.bind="3" selected-page.bind="1" visible-pages.bind="3" boundary-links="true" prev-text='' next-text=''
-      first-text='' last-text='' prev-icon='fa fa-chevron-left' next-icon='fa fa-chevron-right' first-icon='fa fa-backward'
-      last-icon='fa fa-forward'>
+    <abt-pagination total-pages="3" start-page="1" visible-pages="3" boundary-links="true" prev-text='' next-text='' first-text=''
+      last-text='' prev-icon='fa fa-chevron-left' next-icon='fa fa-chevron-right' first-icon='fa fa-backward' last-icon='fa fa-forward'>
     </abt-pagination>
     <aut-mark-down src="./docs/components/bootstrap/pagination/with-icons-boundary.md">
     </aut-mark-down>
@@ -51,11 +50,11 @@
     <legend>
       Sizing
     </legend>
-    <abt-pagination total-pages.bind="3" selected-page.bind="1" size="sm" boundary-links="true" visible-pages.bind="3">
+    <abt-pagination total-pages="3" start-page="1" size="sm" boundary-links="true" visible-pages="3">
     </abt-pagination>
-    <abt-pagination total-pages.bind="3" selected-page.bind="1" boundary-links="true" visible-pages.bind="3">
+    <abt-pagination total-pages="3" start-page="1" boundary-links="true" visible-pages="3">
     </abt-pagination>
-    <abt-pagination total-pages.bind="3" selected-page.bind="1" size="lg" boundary-links="true" visible-pages.bind="3">
+    <abt-pagination total-pages="3" start-page="1" size="lg" boundary-links="true" visible-pages="3">
     </abt-pagination>
     <aut-mark-down src="./docs/components/bootstrap/pagination/size.md">
     </aut-mark-down>
@@ -64,11 +63,11 @@
     <legend>
       Alignment
     </legend>
-    <abt-pagination total-pages.bind="3" selected-page.bind="1" boundary-links="true" visible-pages.bind="3">
+    <abt-pagination total-pages="3" start-page="1" boundary-links="true" visible-pages="3">
     </abt-pagination>
-    <abt-pagination class="justify-content-center" total-pages.bind="3" selected-page.bind="1" boundary-links="true" visible-pages.bind="3">
+    <abt-pagination class="justify-content-center" total-pages="3" start-page="1" boundary-links="true" visible-pages="3">
     </abt-pagination>
-    <abt-pagination class="justify-content-end" total-pages.bind="3" selected-page.bind="1" boundary-links="true" visible-pages.bind="3">
+    <abt-pagination class="justify-content-end" total-pages="3" start-page="1" boundary-links="true" visible-pages="3">
     </abt-pagination>
     <aut-mark-down src="./docs/components/bootstrap/pagination/alignment.md">
     </aut-mark-down>
@@ -80,7 +79,7 @@
     <p>You can define a text as a template. You should use
       <code>template</code> property but make sure to use
       <code>%s</code> as a placehoder for number of pages.</p>
-    <abt-pagination total-pages.bind="3" template="Page %s" selected-page.bind="1" boundary-links="true" visible-pages.bind="3">
+    <abt-pagination total-pages="3" template="Page %s" start-page="1" boundary-links="true" visible-pages="3">
     </abt-pagination>
     <aut-mark-down src="./docs/components/bootstrap/pagination/template.md">
     </aut-mark-down>
@@ -93,7 +92,7 @@
       <code>loop</code> feature is enabled, you can use
       <code>Next</code> and
       <code>Perv</code> to return the first or last pages.</p>
-    <abt-pagination total-pages.bind="6" selected-page.bind="4" boundary-links="true" loop="true" visible-pages.bind="4">
+    <abt-pagination total-pages="6" start-page="4" boundary-links="true" loop="true" visible-pages="4">
     </abt-pagination>
     <aut-mark-down src="./docs/components/bootstrap/pagination/loop.md">
     </aut-mark-down>
@@ -104,7 +103,7 @@
     </legend>
     <p>This feature allows you to jump to a specific page when you have plenty of pages. Click on
       <code>...</code> for this purpose.</p>
-    <abt-pagination total-pages.bind="20" selected-page.bind="10" show-goto="true" boundary-links="true" visible-pages.bind="9">
+    <abt-pagination total-pages="20" start-page="10" show-goto="true" boundary-links="true" visible-pages="9">
     </abt-pagination>
     <aut-mark-down src="./docs/components/bootstrap/pagination/goto.md">
     </aut-mark-down>
@@ -116,8 +115,7 @@
     <div class="container" style="background-color:#F7F7F7;height:150px;border:solid 1px #D8D8D8;margin-bottom:15px">
       <h3 id="page" class="text-center" style="color:#6B6B6B;margin-top:55px">Page 10</h3>
     </div>
-    <abt-pagination total-pages.bind="20" selected-page.bind="10" show-goto="true" boundary-links="true" visible-pages.bind="9"
-      page-changed.call="pageChanged($event,selectedPageNumber)">
+    <abt-pagination total-pages="20" start-page="10" show-goto="true" boundary-links="true" visible-pages="9" page-changed.call="pageChanged($event,selectedPageNumber)">
     </abt-pagination>
     <abt-navs tabs id="navs-events">
       <abt-nav-item id="tab-template-ebents" title="View">
@@ -195,18 +193,18 @@
           <td>Set The number of pages.</td>
         </tr>
         <tr>
-          <td class="text-nowrap" scope="row">selected-page</td>
+          <td class="text-nowrap" scope="row">start-page</td>
           <td class="text-nowrap">number | string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">1</td>
           <td>The current page that show on start.</td>
         </tr>
         <tr>
-          <td class="text-nowrap" scope="row">selected-page</td>
+          <td class="text-nowrap" scope="row">visible-pages</td>
           <td class="text-nowrap">number | string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">1</td>
-          <td>Max visible pages.</td>
+          <td>visible pages.</td>
         </tr>
 
         <tr>
@@ -246,7 +244,10 @@
           <td class="text-nowrap">boolean | string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">false</td>
-          <td>This feature allows you to jump to a specific page when you have plenty of pages.</td>
+          <td>This feature allows you to jump to a specific page when you have plenty of pages. This feature works if the
+            <code>visible-pages</code> is
+            <i>greater than or equal</i> to
+            <code>7</code>.</td>
         </tr>
         <tr>
           <td class="text-nowrap" scope="row">template</td>
@@ -330,7 +331,7 @@
         <tr>
           <td class="text-nowrap" scope="row">page-changed</td>
           <td class="text-nowrap">Function</td>
-          <td class="text-nowrap">call(event, selectedPageNumber)</td>
+          <td class="text-nowrap">call(event, startPageNumber)</td>
           <td class="text-nowrap"></td>
           <td>This event fires when page changed.
           </td>

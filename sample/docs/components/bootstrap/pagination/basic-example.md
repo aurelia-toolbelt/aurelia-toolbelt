@@ -1,5 +1,5 @@
 ```html
-<abt-pagination total-pages.bind="3" visible-pages.bind="3"></abt-pagination>
+<abt-pagination total-pages="3" visible-pages="3"></abt-pagination>
 
 ```
 
