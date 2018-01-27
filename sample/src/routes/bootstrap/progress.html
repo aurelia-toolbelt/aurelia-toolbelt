@@ -1,4 +1,52 @@
 <template>
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Progress
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/progressbar">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Documentation and examples for using Bootstrap custom progress bars featuring support for stacked bars, animated backgrounds,
+    and text labels.
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/progressbar/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Basic example
+    </legend>
+
+    <abt-progress>
+      <abt-progress-bar value="0" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <br>
+    <abt-progress>
+      <abt-progress-bar value="25" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <br>
+    <abt-progress>
+      <abt-progress-bar value="50" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <br>
+    <abt-progress>
+      <abt-progress-bar value="75" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <br>
+    <abt-progress>
+      <abt-progress-bar value="100" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+
+    <aut-mark-down src="./docs/components/bootstrap/progressbar/basic-example.md">
+    </aut-mark-down>
+  </fieldset>
+
+
 
   <abt-progress style="height: 40px;">
     <abt-progress-bar animated.bind="true" color-class="warning" striped.bind="true" value="100" min="0" max="100">
