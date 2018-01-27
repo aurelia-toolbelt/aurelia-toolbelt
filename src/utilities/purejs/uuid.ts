@@ -12,7 +12,7 @@ export class Uuid {
   }
 
   public Uuidv4ForId() {
-    return '_' + this.uuidv4().replace(new RegExp('-', 'g'), '');
+    return 'aut_uuid_' + this.uuidv4().replace(new RegExp('-', 'g'), '');
   }
 
 }
