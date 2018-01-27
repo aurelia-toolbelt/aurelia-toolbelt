@@ -12,25 +12,29 @@ interface IPagination {
 @customElement('abt-pagination')
 export class BootstrapPaginationCustomElement {
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public totalPages: number = 1;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public selectedPage: number = 1;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public visiblePages: number = 1;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public hideOnlyOnePage: boolean = true;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundaryLinks: boolean = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public directionLinks: boolean = true;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showGoto: boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public totalPages: number | string = 1;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public selectedPage: number | string = 1;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public visiblePages: number | string = 1;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public hideOnlyOnePage: boolean | string = true;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundaryLinks: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public directionLinks: boolean | string = true;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showGoto: boolean | string = false;
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public pageTemplate: string = '%s';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public css: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: string = 'md';
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public first: string = 'First';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public last: string = 'Last';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public prev: string = 'Previous';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public next: string = 'Next';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public loop: boolean = false;
-
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public firstText: string = 'First';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public firstIcon: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public lastText: string = 'Last';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public lastIcon: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public prevText: string = 'Previous';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public prevIcon: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public nextText: string = 'Next';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public nextIcon: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public loop: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public pageChanged: Function;
 
   private showNumbers: boolean = false;
@@ -70,18 +74,21 @@ export class BootstrapPaginationCustomElement {
     }
 
     if (selectedPageNumber === 'prev') {
-      this.selectedPage--;
+      this.selectedPage = Number(this.selectedPage) - 1;
       if (this.selectedPage === 0) {
         this.selectedPage = this.totalPages;
       }
     } else if (selectedPageNumber === 'next') {
-      this.selectedPage++;
+      this.selectedPage = Number(this.selectedPage) + 1;
       if (this.selectedPage > this.totalPages) {
         this.selectedPage = 1;
       }
     } else {
       this.selectedPage = Number(selectedPageNumber);
     }
+    this.visiblePages = Number(this.visiblePages);
+    this.selectedPage = Number(this.selectedPage);
+    this.totalPages = Number(this.totalPages);
 
     this.createVisibleItems(this.visiblePages, this.selectedPage, this.totalPages);
 
@@ -110,7 +117,7 @@ export class BootstrapPaginationCustomElement {
 
     let showLeftDots = this.showLeftDots(selectedItem) && this.visiblePages >= 7;
     let showRightDots = this.showRightDots(selectedItem, totalPages) && this.visiblePages >= 7;
-
+    this.totalPages = Number(this.totalPages);
     if (showLeftDots && this.showGoto) {
       items[0] = '1';
       items[1] = '2';
@@ -166,12 +173,31 @@ export class BootstrapPaginationCustomElement {
 
   private afterAttached() {
 
+    this.totalPages = Number(this.totalPages);
+    this.selectedPage = Number(this.selectedPage);
+    this.visiblePages = Number(this.visiblePages);
+    this.hideOnlyOnePage = Boolean(this.hideOnlyOnePage);
+    this.boundaryLinks = Boolean(this.boundaryLinks);
+    this.directionLinks = Boolean(this.directionLinks);
+    this.showGoto = Boolean(this.showGoto);
+    this.loop = Boolean(this.loop);
+
+
     if (this.visiblePages <= 0) {
       throw Error('The visible pages value should be greater than 0.');
     }
 
     if (this.visiblePages > this.totalPages) {
       throw Error('The visible pages should always be less than or equal to the total pages.');
+    }
+
+    if (this.size === 'lg') {
+      this.pagination.classList.add('pagination-lg');
+    } else if (this.size === 'sm') {
+      this.pagination.classList.add('pagination-sm');
+    } else {
+      this.pagination.classList.remove('pagination-sm');
+      this.pagination.classList.remove('pagination-lg');
     }
 
     if (this.hideOnlyOnePage && (this.totalPages === 1)) {

@@ -1,13 +1,15 @@
 <template>
   <nav>
-    <ul ref="pagination" class="pagination">
+    <ul ref="pagination" css="${style}" class="pagination ${class}">
       <li show.bind="boundaryLinks" class="text-nowrap page-item abt-pagination-first ${selectedPage === 1  ? 'disabled':''}">
-        <a class="page-link" href="#" click.trigger="onClick($event,1)">${first}
-          <slot name="first"></slot>
+        <a class="page-link" href="#" click.trigger="onClick($event,1)">
+          <span class="${firstIcon}" aria-hidden="true">${firstText}</span>
         </a>
       </li>
       <li show.bind="directionLinks" class=" text-nowrap page-item abt-pagination-prev ${selectedPage === 1 && !loop  ? 'disabled':''}">
-        <a class="page-link" href="#" click.trigger="onClick($event, 'prev')">${prev}</a>
+        <a class="page-link" href="#" click.trigger="onClick($event, 'prev')">
+          <span class="${prevIcon}" aria-hidden="true">${prevText}</span>
+        </a>
       </li>
 
       <li class="${ip.selected ? 'active':''} text-nowrap page-item abt-pagination-item" repeat.for="ip of pages">
@@ -17,12 +19,14 @@
       </li>
 
       <li show.bind="directionLinks" class="text-nowrap page-item abt-pagination-next ${selectedPage === totalPages && !loop  ? 'disabled':''}">
-        <a class="page-link" href="#" click.trigger="onClick($event,'next')">${next}</a>
+        <a class="page-link" href="#" click.trigger="onClick($event,'next')">
+          <span class="${nextIcon}" aria-hidden="true">${nextText}</span>
+        </a>
       </li>
       <li show.bind="boundaryLinks" class="text-nowrap page-item abt-pagination-last ${selectedPage === totalPages  ? 'disabled':''}">
-        <a class="page-link" href="#" click.trigger="onClick($event, totalPages)">${last}</a>
-      </li>
-
+        <a class="page-link" href="#" click.trigger="onClick($event, totalPages)">
+          <span class="${lastIcon}" aria-hidden="true">${lastText}</span>
+        </a>
     </ul>
   </nav>
 </template>

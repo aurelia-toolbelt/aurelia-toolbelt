@@ -1,7 +1,7 @@
 <template>
   <fieldset class="mb-5">
     <legend>
-      <h2>Carousel
+      <h2>Pagination
         <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/pagination">
           <i class="fa fa-link"></i>
         </a>
@@ -25,11 +25,52 @@
   </fieldset>
   <fieldset class="mt-5">
     <legend>
-      Basic example
+      With boundary links
     </legend>
-    <abt-pagination total-pages.bind="3" selected-page.bind="1" visible-pages.bind="3" first="" page-changed.call="clicked($event)">
+    <abt-pagination total-pages.bind="3" visible-pages.bind="3" boundary-links="true" page-changed.call="clicked($event)"></abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/basic-example-boundary.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Working with icons
+    </legend>
+    <abt-pagination total-pages.bind="3" selected-page.bind="1" visible-pages.bind="3" prev-text='' next-text='' prev-icon='fa fa-chevron-left'
+      next-icon='fa fa-chevron-right' page-changed.call="clicked($event)">
     </abt-pagination>
     <aut-mark-down src="./docs/components/bootstrap/pagination/with-icons.md">
+    </aut-mark-down>
+    <abt-pagination total-pages.bind="3" selected-page.bind="1" visible-pages.bind="3" boundary-links="true" prev-text='' next-text=''
+      first-text='' last-text='' prev-icon='fa fa-chevron-left' next-icon='fa fa-chevron-right' first-icon='fa fa-backward'
+      last-icon='fa fa-forward' page-changed.call="clicked($event)">
+    </abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/with-icons-boundary.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Sizing
+    </legend>
+    <abt-pagination total-pages.bind="3" selected-page.bind="1" size="sm" boundary-links="true" visible-pages.bind="3" page-changed.call="clicked($event)">
+    </abt-pagination>
+    <abt-pagination total-pages.bind="3" selected-page.bind="1" boundary-links="true" visible-pages.bind="3" page-changed.call="clicked($event)">
+    </abt-pagination>
+    <abt-pagination total-pages.bind="3" selected-page.bind="1" size="lg" boundary-links="true" visible-pages.bind="3" page-changed.call="clicked($event)">
+    </abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/size.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Alignment
+    </legend>
+    <abt-pagination total-pages.bind="3" selected-page.bind="1" boundary-links="true" visible-pages.bind="3">
+    </abt-pagination>
+    <abt-pagination class="justify-content-center" total-pages.bind="3" selected-page.bind="1" boundary-links="true" visible-pages.bind="3">
+    </abt-pagination>
+    <abt-pagination class="justify-content-end" total-pages.bind="3" selected-page.bind="1" boundary-links="true" visible-pages.bind="3">
+    </abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/alignment.md">
     </aut-mark-down>
   </fieldset>
 </template>
