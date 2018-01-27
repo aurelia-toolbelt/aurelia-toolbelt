@@ -32,11 +32,13 @@ export class BootstrapNavBarLink {
 
   private onClick(event: Event) {
 
-    event.preventDefault();
+    // event.preventDefault();
 
     if (this.click) {
       this.click({ event: event });
     }
+
+    return true;
 
   }
 

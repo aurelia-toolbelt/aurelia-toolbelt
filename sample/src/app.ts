@@ -48,18 +48,18 @@ export class App {
 
   public configureRouter(config: RouterConfiguration, router: Router) {
 
-    // config.options.pushState = true;
-    config.mapUnknownRoutes('getStarted');
-
     config.map([
 
       {
-        route: ['', 'get-started'],
-        name: 'getStarted',
+        route: '', redirect: 'get-started'
+      },
+      {
+        route: 'get-started',
+        name: 'get-started',
         moduleId: PLATFORM.moduleName('./routes/get-started'),
         nav: true,
         title: 'Get Started',
-        settings: { auth: false }
+        settings: { auth: false, navigation: [] }
       },
       {
         route: ['bootstrap'],
@@ -67,7 +67,98 @@ export class App {
         moduleId: PLATFORM.moduleName('./routes/bootstrap-route'),
         nav: true,
         title: 'Bootstrap',
-        settings: { auth: false }
+        settings: {
+          auth: false, navigation: [
+            {
+              route: 'alert',
+              title: 'Alert'
+            },
+            {
+              route: 'badge',
+              title: 'Badge'
+            },
+            {
+              route: 'buttons',
+              title: 'Buttons'
+            },
+            {
+              route: 'button-groups',
+              title: 'Button Groups'
+            },
+            {
+              href: 'breadcrumb',
+              title: 'Breadcrumb'
+            },
+            {
+              route: 'card',
+              title: 'Card'
+            }
+            ,
+            {
+              route: 'carousel',
+              title: 'Carousel'
+            }, {
+              route: 'collapse',
+              title: 'Collapse'
+            }
+            , {
+              route: 'dropdown',
+              title: 'Dropdowns'
+            },
+            {
+              route: 'float-input',
+              title: 'Float Input'
+            },
+            {
+              route: 'input-group',
+              title: 'Input Group'
+
+            },
+            {
+              route: 'jumbotron', title: 'Jumbotron'
+            },
+            {
+              route: 'list-group', title: 'List Group'
+            },
+            {
+              route: 'modal', title: 'Modals'
+
+            },
+            {
+              route: 'navbar'
+              , title: 'Navbar'
+
+            },
+            {
+              route: 'navs', title: 'Navs'
+            },
+            {
+              route: 'password', title: 'Password'
+            },
+            {
+              route: 'progress', title: 'Progressbar'
+            },
+            {
+              route: 'scrollspy', title: 'Scrollspy'
+            },
+            {
+              route: 'toggle', title: 'Toggle'
+            },
+            {
+              route: 'tokenize', title: 'Tokenize'
+            },
+            {
+              route: 'tooltip', title: 'Tooltip'
+            },
+            {
+              route: 'popover', title: 'Popover'
+            }
+            ,
+            {
+              route: 'pagination', title: 'Pagination'
+            }
+          ]
+        }
       },
       {
         route: ['purejs'],
@@ -75,7 +166,23 @@ export class App {
         moduleId: PLATFORM.moduleName('./routes/purejs-route'),
         nav: true,
         title: 'JS',
-        settings: { auth: false }
+        settings: {
+          auth: false, navigation: [{
+            route: 'checkbox', title: 'Pretty Checkbox'
+          },
+          {
+            route: 'radio', title: 'Pretty Radio'
+          },
+          {
+            route: 'markdown', title: 'Mark Down'
+          },
+          {
+            route: 'masked-input', title: 'Masked Input'
+          },
+          {
+            route: 'microlink', title: 'Microlink'
+          }]
+        }
       },
       {
         route: ['jquery'],
@@ -83,9 +190,23 @@ export class App {
         moduleId: PLATFORM.moduleName('./routes/jquery-route'),
         nav: true,
         title: 'jQuery',
-        settings: { auth: false }
+        settings: {
+          auth: false, navigation: [{
+            route: 'blockui', title: 'Block UI'
+          },
+          {
+            route: 'lazyimage', title: 'Lazy Image'
+          },
+          {
+            route: 'newsticker', title: 'News Ticker'
+          }]
+        }
       }
     ]);
+
+    // config.options.pushState = true;
+    config.mapUnknownRoutes('./routes/not-found.html');
+
     this.router = router;
   }
 

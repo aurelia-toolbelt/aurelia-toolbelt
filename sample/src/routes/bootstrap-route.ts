@@ -104,7 +104,7 @@ export class BootstrapRoute {
         settings: { auth: false, isComponent: true }
       },
       {
-        route: ['floatinput'],
+        route: ['float-input'],
         name: 'bootstrap-floatinput',
 
         moduleId: PLATFORM.moduleName('./bootstrap/float-input'),
@@ -113,12 +113,12 @@ export class BootstrapRoute {
         settings: { auth: false, isComponent: true }
       },
       {
-        route: ['inputgroup'],
-        name: 'bootstrap-inputgroup',
+        route: ['input-group'],
+        name: 'bootstrap-input-group',
 
-        moduleId: PLATFORM.moduleName('./bootstrap/inputgroup'),
+        moduleId: PLATFORM.moduleName('./bootstrap/input-group'),
         nav: true,
-        title: 'InputGroup',
+        title: 'Input Group',
         settings: { auth: false, isComponent: true }
 
       },
@@ -132,12 +132,12 @@ export class BootstrapRoute {
         settings: { auth: false, isComponent: true }
       },
       {
-        route: ['listgroup'],
-        name: 'bootstrap-listgroup',
+        route: ['list-group'],
+        name: 'bootstrap-list-group',
 
-        moduleId: PLATFORM.moduleName('./bootstrap/listgroup'),
+        moduleId: PLATFORM.moduleName('./bootstrap/list-group'),
         nav: true,
-        title: 'Listgroup',
+        title: 'List Group',
         settings: { auth: false, isComponent: true }
       },
       {
@@ -199,15 +199,7 @@ export class BootstrapRoute {
       {
         route: ['toggle'],
         name: 'bootstrap-toggle',
-
-
         moduleId: PLATFORM.moduleName('./bootstrap/toggle'),
-
-        // viewPorts: {
-        //   // default: { moduleId: PLATFORM.moduleName('./../components/nav-bar') },
-        //   content: { moduleId: PLATFORM.moduleName('./bootstrap/bootstrap-toggle') }
-        // },
-
         nav: true,
         title: 'Toggle',
         settings: { auth: false, isComponent: true }
@@ -221,15 +213,6 @@ export class BootstrapRoute {
         title: 'Tokenize',
         settings: { auth: false, isComponent: true }
       },
-      // {
-      //   route: ['touchspin'],
-      //   name: 'bootstrap-touchspin',
-
-      //   moduleId: PLATFORM.moduleName('./bootstrap/touchspin'),
-      //   nav: true,
-      //   title: 'Touch Spin',
-      //   settings: { auth: false, isComponent: true }
-      // },
       {
         route: ['tooltip'],
         name: 'bootstrap-tooltip',
