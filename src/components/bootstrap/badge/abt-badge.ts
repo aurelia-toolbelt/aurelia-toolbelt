@@ -3,19 +3,20 @@ import { inject, customElement, bindable, bindingMode, containerless } from 'aur
 
 
 @inject(Element)
-@customElement('abt-badge')
 @containerless()
+@customElement('abt-badge')
 export class BootstrapBadge {
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public color: string = 'primary';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public type: string = 'primary';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string | null = null;
-
-  private isPill: boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public isPill: boolean | string = false;
 
   constructor(private element: Element) { }
 
   private bind() {
-    this.isPill = this.element.hasAttribute('pill');
+    const onlyIsPillAttribute = (this.isPill === '' && this.element.hasAttribute('is-pill'));
+    this.isPill = onlyIsPillAttribute || this.isPill === 'true' || this.isPill === true;
   }
 
 }

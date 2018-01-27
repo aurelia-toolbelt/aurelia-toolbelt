@@ -1,17 +1,169 @@
 <template>
+
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Badges
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/badge">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Documentation and examples for badges, our small count and labeling component.
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+
+    <aut-mark-down src="./docs/components/bootstrap/badge/usage.md">
+    </aut-mark-down>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Examples
+    </legend>
+    <p>
+      Badges scale to match the size of the immediate parent element by using relative font sizing and em units, and also comes
+      in contextual variants throupgh
+      <code>type</code> attribute.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+
+        <h1>Example heading
+          <abt-badge>New</abt-badge>
+        </h1>
+        <h2>Example heading
+          <abt-badge type="secondary">New</abt-badge>
+        </h2>
+        <h3>Example heading
+          <abt-badge type="info">New</abt-badge>
+        </h3>
+        <h4>Example heading
+          <abt-badge type="success">New</abt-badge>
+        </h4>
+        <h5>Example heading
+          <abt-badge type="warning">New</abt-badge>
+        </h5>
+        <h6>Example heading
+          <abt-badge type="danger">New</abt-badge>
+        </h6>
+        <h6 class="bg-dark text-light">Example heading
+          <abt-badge type="light">New</abt-badge>
+        </h6>
+        <h6>Example heading
+          <abt-badge type="dark">New</abt-badge>
+        </h6>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/badge/basic.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+
+    </abt-card>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Using alongside with buttons
+    </legend>
+    <p>
+
+      Badges can be used as part of links or buttons to provide a counter.
+    </p>
+
+    <p>
+      Note that depending on how they are used, badges may be confusing for users of screen readers and similar assistive technologies.
+      While the styling of badges provides a visual cue as to their purpose, these users will simply be presented with the
+      content of the badge. Depending on the specific situation, these badges may seem like random additional words or numbers
+      at the end of a sentence, link, or button.
+    </p>
+    <p>
+      Unless the context is clear (as with the “Notifications” example, where it is understood that the “4” is the number of notifications),
+      consider including additional context with a visually hidden piece of additional text.
+    </p>
+
+
+    <abt-card>
+      <abt-card-body>
+        <abt-button class="mb-2">
+          Notifications
+          <abt-badge type="light">
+            4
+          </abt-badge>
+        </abt-button>
+        <br />
+        <br />
+        <abt-button>
+          Profile
+          <abt-badge type="light">
+            9
+            <span class="sr-only">unread messages</span>
+          </abt-badge>
+        </abt-button>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/badge/with-buttons.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+
+    </abt-card>
+
+
+
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Pill badges
+    </legend>
+
+    <abt-card>
+      <abt-card-body>
+
+        <abt-badge class="mr-1" type="primary">primary</abt-badge>
+        <abt-badge class="mr-1" type="secondary">secondary</abt-badge>
+        <abt-badge class="mr-1" type="info">info</abt-badge>
+        <abt-badge class="mr-1" type="success">success</abt-badge>
+        <abt-badge class="mr-1" type="warning">warning</abt-badge>
+        <abt-badge class="mr-1" type="danger">danger</abt-badge>
+        <abt-badge class="mr-1" type="light">light</abt-badge>
+        <abt-badge class="mr-1" type="dark">dark</abt-badge>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/badge/pill-badges.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+  </fieldset>
+
+
+
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
   <h3>
     Badges
   </h3>
 
   <hr />
 
-  <h1>Example heading
-    <abt-badge color="secondary">New</abt-badge>
-  </h1>
-  <h2>Example heading
-    <abt-badge color="secondary" pill>New</abt-badge>
-  </h2>
-  <br />
   <abt-button type="button">
     Notifications
     <abt-badge color="light" pill>11</abt-badge>

@@ -1,5 +1,5 @@
 
-Contextual types are: ```primary```, ```secondary```, ```info```, ```success```, ```warning```, ```danger```,  ```light```, ```dark```, use one of them as a value for the ```type``` attribute.
+Contextual variations are: ```primary```, ```secondary```, ```info```, ```success```, ```warning```, ```danger```,  ```light```, ```dark```, use one of them as a value for the ```type``` attribute.
 
 ```html
 <abt-alert>

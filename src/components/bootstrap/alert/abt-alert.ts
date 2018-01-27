@@ -34,7 +34,6 @@ export class BootstrapAlert {
   private attached() {
 
     const onlyDismissibleAttribute = (this.dismissible === '' && this.element.hasAttribute('dismissible'));
-
     this.dismissible = onlyDismissibleAttribute || this.dismissible.toString() === 'true';
 
     const onlyAnimateAttribute = (this.animate === '' && this.element.hasAttribute('animate'));
