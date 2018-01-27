@@ -8,7 +8,6 @@ interface IPagination {
   selected: boolean;
 }
 
-@containerless()
 @inject(Element)
 @customElement('abt-pagination')
 export class BootstrapPaginationCustomElement {
@@ -22,6 +21,9 @@ export class BootstrapPaginationCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showGoto: boolean = true;
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public pageTemplate: string = '%s';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public css: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public first: string = 'First';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public last: string = 'Last';
@@ -105,8 +107,8 @@ export class BootstrapPaginationCustomElement {
       items[leftSide - 1] = selectedItem.toString();
     }
 
-    let showLeftDots = this.showLeftDots(selectedItem);
-    let showRightDots = this.showRightDots(selectedItem, totalPages);
+    let showLeftDots = this.showLeftDots(selectedItem) && this.visiblePages >= 7;
+    let showRightDots = this.showRightDots(selectedItem, totalPages) && this.visiblePages >= 7;
 
     if (showLeftDots && this.showGoto) {
       items[0] = '1';
