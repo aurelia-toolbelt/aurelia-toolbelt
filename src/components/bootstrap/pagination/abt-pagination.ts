@@ -20,7 +20,7 @@ export class BootstrapPaginationCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public directionLinks: boolean | string = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showGoto: boolean | string = false;
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public pageTemplate: string = '%s';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public template: string = '%s';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
@@ -68,6 +68,13 @@ export class BootstrapPaginationCustomElement {
         $(inputElement).blur(() => {
           inputElement.remove();
           this.onClick(null, inputElement.value, Number(inputElement.value) - 1, Number(inputElement.value) + 1);
+        });
+        $(inputElement).keypress((e) => {
+          let key = e.which;
+          if (key === 13) {
+            inputElement.remove();
+            this.onClick(null, inputElement.value, Number(inputElement.value) - 1, Number(inputElement.value) + 1);
+          }
         });
         return false;
       }
@@ -157,7 +164,7 @@ export class BootstrapPaginationCustomElement {
 
     for (let index = 0; index < items.length; index++) {
       this.pages.push({
-        page: items[index] === '...' ? '...' : this.pageTemplate.replace('%s', items[index]),
+        page: items[index] === '...' ? '...' : this.template.replace('%s', items[index]),
         selected: items[index] === selectedItem.toString(),
         pageNumber: Number(items[index])
       });

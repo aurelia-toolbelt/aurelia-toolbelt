@@ -73,4 +73,41 @@
     <aut-mark-down src="./docs/components/bootstrap/pagination/alignment.md">
     </aut-mark-down>
   </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Template
+    </legend>
+    <abt-pagination total-pages.bind="3" template="Page %s" selected-page.bind="1" boundary-links="true" visible-pages.bind="3">
+    </abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/template.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Loop
+    </legend>
+    <abt-pagination total-pages.bind="6" selected-page.bind="4" boundary-links="true" loop="true" visible-pages.bind="4">
+    </abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/loop.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Goto
+    </legend>
+    <abt-pagination total-pages.bind="20" selected-page.bind="10" show-goto="true" boundary-links="true" visible-pages.bind="9">
+    </abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/goto.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Page change
+    </legend>
+    <div></div>
+    <abt-pagination total-pages.bind="20" selected-page.bind="10" show-goto="true" boundary-links="true" visible-pages.bind="9">
+    </abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/page-change.md">
+    </aut-mark-down>
+  </fieldset>
 </template>
