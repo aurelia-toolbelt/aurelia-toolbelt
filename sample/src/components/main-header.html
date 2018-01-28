@@ -10,7 +10,7 @@
         <abt-navbar-link repeat.for="row of router.navigation" href.bind="row.href" class="${row.isActive ? 'active' : ''}" if.bind="row.settings.navigation.length===0">
           ${row.title}
         </abt-navbar-link>
-        <abt-navbar-dropdown fullwidth repeat.for="row of router.navigation" title="${row.title}" if.bind="row.settings.navigation.length> 0">
+        <abt-navbar-dropdown full-width repeat.for="row of router.navigation" title="${row.title}" if.bind="row.settings.navigation.length> 0">
           <abt-navbar-dropdown-mega-item>
             <div class="col-sm-2" repeat.for="subRow of row.settings.navigation">
               <abt-navbar-link href="${row.href}/${subRow.route}">
