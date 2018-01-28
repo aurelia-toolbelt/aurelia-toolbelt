@@ -18,6 +18,7 @@ export class BootstrapNavBarDropDown {
   private navDropDown: Element;
   private navListDropDown: Element;
   private dropDownMenu: Element;
+  private navLinkDropDown: Element;
 
   private afterAttached() {
     let isMegaMenuFullWidth = this.navDropDown.hasAttribute('full-width') || Boolean(this.fulWidth);
@@ -32,15 +33,16 @@ export class BootstrapNavBarDropDown {
 
 
   private onClick(event: Event) {
-    event.preventDefault();
 
+    /*
     // Fix bug #46
-    let top = $(this.dropDownMenu).offset().top - 10;
+    let top = $(this.navListDropDown).offset().top + $(this.navListDropDown).height();
+    console.log(top);
     $(this.dropDownMenu).css('top', `${top}px`);
-
+    */
     if (this.click) {
       this.click({ event: event });
     }
-
+    return true;
   }
 }
