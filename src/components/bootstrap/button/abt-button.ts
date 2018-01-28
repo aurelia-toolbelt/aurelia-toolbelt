@@ -11,11 +11,11 @@ export class BootstrapButton {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: string = 'md';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public type: string = 'button';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public bsType: string = 'primary';
-
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
-
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public outline: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public block: boolean | string = false;
+
+
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';

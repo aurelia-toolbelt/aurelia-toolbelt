@@ -10,12 +10,16 @@ export class Buttons {
   constructor(private http: HttpClient, private ts: ToastrService) { }
 
   private onClick(event: Event, target: HTMLButtonElement) {
-    this.ts.success('Button clicked', 'Hooray');
+    this.ts.success('Button clicked', 'Hooray', {
+      progressBar: false, preventDuplicates: false
+    });
     return this.http.get('https://github.com/aurelia-toolbelt');
   }
 
   private onClickWithoutPromise(event: Event, target: HTMLButtonElement) {
-    this.ts.warning('Button clicked', 'Hooray');
+    this.ts.warning('Button clicked', 'Hooray', {
+      progressBar: false, preventDuplicates: false
+    });
     this.http.get('https://github.com/aurelia-toolbelt');
   }
 
