@@ -187,7 +187,17 @@ export class BootstrapRoute {
         nav: true,
         title: 'Progressbar',
         settings: { auth: false, isComponent: true }
-      }, {
+      },
+      {
+        route: ['star-rate'],
+        name: 'bootstrap-star-rate',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/rate'),
+        nav: true,
+        title: 'Star Rate',
+        settings: { auth: false, isComponent: true }
+      },
+      {
         route: ['scrollspy'],
         name: 'bootstrap-scrollspy',
 
