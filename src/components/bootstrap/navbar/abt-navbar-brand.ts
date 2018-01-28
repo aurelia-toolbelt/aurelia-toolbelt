@@ -9,7 +9,7 @@ export class BootstrapNavBarBrand {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string = '#';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public heading: boolean | string = false;
 
   private navbarBrand: Element;
