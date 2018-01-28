@@ -7,11 +7,12 @@ import { customElement } from 'aurelia-templating';
 export class BootstrapNavBarDropDown {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
-
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public linkClass: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public linkStyle: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public dropdownClass: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public dropdownStyle: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public linkClass: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public linkStyle: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public dropdownClass: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public dropdownStyle: string;
 
   private navDropDown: Element;
   private navListDropDown: Element;
