@@ -10,9 +10,4 @@ export class Uuid {
       return v.toString(16);
     });
   }
-
-  public Uuidv4ForId() {
-    return 'aut_uuid_' + this.uuidv4().replace(new RegExp('-', 'g'), '');
-  }
-
 }

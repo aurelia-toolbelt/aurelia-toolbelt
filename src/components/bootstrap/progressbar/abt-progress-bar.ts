@@ -1,8 +1,6 @@
-import { Uuid } from './../../../utilities/purejs/uuid';
 import { inject, customAttribute, bindingMode, bindable, customElement, DOM, containerless } from 'aurelia-framework';
 export type ColorType = 'primary' | 'secondary' | 'success' | 'danger'
   | 'warning' | 'info' | 'light' | 'dark';
-@inject(Uuid)
 @customElement('abt-progress-bar')
 @containerless()
 export class BootstrapProgressBar {
@@ -22,10 +20,6 @@ export class BootstrapProgressBar {
   private isStriped: boolean = false;
   private progressbar: Element;
   private progressbarTemplate: Element;
-  private id: string;
-
-  constructor(private uuid: Uuid) {
-  }
 
   private afterAttached() {
     this.animated = Boolean(this.animated) || this.progressbarTemplate.hasAttribute('animated');
@@ -34,11 +28,9 @@ export class BootstrapProgressBar {
     this.min = Number(this.min);
     this.max = Number(this.max);
 
-    this.id = this.uuid.Uuidv4ForId();
-
     if (this.color && this.gradientColor) {
       DOM.injectStyles(`
-      #${this.id}
+      #${this.progressbar.id}
       {
         background: -webkit-gradient(linear, left top, right top, from(${this.color}),to(${this.gradientColor})) !important;
         background: -webkit-linear-gradient(left, ${this.color} 0%,${this.gradientColor} 100%) !important;
