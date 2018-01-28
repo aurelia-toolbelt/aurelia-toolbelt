@@ -12,8 +12,8 @@ export class BootstrapAlert {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: string = 'md';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public type: string = 'primary';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public animate: boolean | string = true;
-  
-  
+
+
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showAlert: boolean | null = null;

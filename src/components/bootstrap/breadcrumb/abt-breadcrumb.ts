@@ -7,6 +7,6 @@ import { IBreadcrumbItem } from './breadcrumb-item';
 @customElement('abt-breadcrumb')
 export class BootstrapBreadcrumb {
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public items: Array<BreadcrumbItem>;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public items: Array<IBreadcrumbItem>;
 
 }

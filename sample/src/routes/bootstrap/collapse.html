@@ -1,122 +1,193 @@
 <template>
-  <br />
-  
-  <fieldset>
 
+
+
+  <fieldset class="mb-5">
     <legend>
-      Simple Usage
+      <h2>Collapse &amp; Accordion
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/collapse">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
     </legend>
-    <p>
-      <a class="btn btn-link" type="button" ref="mylink">
-        Link with href
-      </a>
-      <abt-button class="btn btn-primary" type="button" id="myBtn2">
-        abt-button with data-target
-      </abt-button>
-      <button class="btn btn-primary" type="button" ref="myBtn">
-        Button with data-target
-      </button>
-    </p>
 
-    <abt-collapse controlled-by.bind="[myBtn,'myBtn2', mylink]" bs-show.call="showCollapse()" bs-hide.call="hideCollapse()">
-      <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
-        craft beer labore wes anderson cred nesciunt sapiente ea proident.
-      </div>
-    </abt-collapse>
+    <p>
+      Toggle the visibility of content across your project with a few classes and our JavaScript plugins.
+    </p>
 
   </fieldset>
 
-  <fieldset>
-
+  <fieldset class="mt-5">
     <legend>
-      Multiple targets
+      Usage
     </legend>
 
-
-    <p>
-      <abt-button id="btnFirst">
-        First element
-      </abt-button>
-      <abt-button id="btnSecond">
-        Toggle second element
-      </abt-button>
-      <button class="btn btn-primary" type="button" ref="btnBoth">
-        Toggle All elements
-      </button>
-    </p>
-    <div class="row">
-      <div class="col">
-        <abt-collapse controlled-by.bind="['btnFirst',btnBoth]">
-          <div class="card card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
-            craft beer labore wes anderson cred nesciunt sapiente ea proident.
-          </div>
-        </abt-collapse>
-      </div>
-      <div class="col">
-        <abt-collapse controlled-by.bind="['btnSecond',btnBoth]">
-          <div class="card card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
-            craft beer labore wes anderson cred nesciunt sapiente ea proident.
-          </div>
-        </abt-collapse>
-      </div>
-      <div class="col">
-        <abt-collapse controlled-by.bind="btnBoth">
-          <div class="card card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
-            craft beer labore wes anderson cred nesciunt sapiente ea proident.
-          </div>
-        </abt-collapse>
-      </div>
-    </div>
+    <aut-mark-down src="./docs/components/bootstrap/collapse/usage.md">
+    </aut-mark-down>
 
   </fieldset>
 
-  <fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Example
+    </legend>
+
+    <p>
+      Click the buttons below to show and hide another element via class changes: You can use a
+      <code>link</code>,
+      <code>button</code>, or an
+      <code>abt-button</code>.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <p>
+          <a class="btn btn-link" type="button" ref="mylink">
+            Link
+          </a>
+          <abt-button class="btn btn-primary" type="button" id="myBtn2">
+            abt-button
+          </abt-button>
+          <button class="btn btn-primary" type="button" ref="myBtn">
+            Button
+          </button>
+        </p>
+
+        <abt-collapse controlled-by.bind="[myBtn,'myBtn2', mylink]" bs-show.call="showCollapse()" bs-hide.call="hideCollapse()">
+          <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
+            craft beer labore wes anderson cred nesciunt sapiente ea proident.
+          </div>
+        </abt-collapse>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/collapse/basic.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Multiple targest
+    </legend>
+
+    <p>
+      you can hide or show a content from multiple targets.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <p>
+          <abt-button id="btnFirst">
+            First element
+          </abt-button>
+          <abt-button id="btnSecond">
+            Toggle second element
+          </abt-button>
+          <button class="btn btn-primary" type="button" ref="btnBoth">
+            Toggle All elements
+          </button>
+        </p>
+        <div class="row">
+          <div class="col">
+            <abt-collapse controlled-by.bind="['btnFirst',btnBoth]">
+              <div class="card card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
+                craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </abt-collapse>
+          </div>
+          <div class="col">
+            <abt-collapse controlled-by.bind="['btnSecond',btnBoth]">
+              <div class="card card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
+                craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </abt-collapse>
+          </div>
+          <div class="col">
+            <abt-collapse controlled-by.bind="btnBoth">
+              <div class="card card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
+                craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </abt-collapse>
+          </div>
+        </div>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/collapse/multiple-targets.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
 
     <legend>
       Accordion
     </legend>
 
-    <abt-accordion>
-      <abt-accordion-item title="first" >
-        <div class="container">
+    <p>
+      We used
+      <code>abt-card</code> and
+      <code>abt-collapse</code> to buil an accordion,
+      <code>abt-accordion</code> .
+    </p>
 
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-          non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-          aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-          craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-          occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-          labore sustainable VHS.
+    <abt-card>
+      <abt-card-body>
+        <abt-accordion>
+          <abt-accordion-item title="first">
+            <div class="container">
 
-        </div>
-      </abt-accordion-item>
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+              non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+              sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+              helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+              lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+              of them accusamus labore sustainable VHS.
 
-      <abt-accordion-item title="second" active.bind="true"> 
-        <div class="container">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-          non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-          aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-          craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-          occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-          labore sustainable VHS.
-        </div>
-      </abt-accordion-item>
+            </div>
+          </abt-accordion-item>
 
-      <abt-accordion-item title="Third">
-        <div class="container">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-          non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-          aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-          craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-          occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-          labore sustainable VHS.
-        </div>
-      </abt-accordion-item>
+          <abt-accordion-item title="second" active.bind="true">
+            <div class="container">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+              non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+              sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+              helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+              lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+              of them accusamus labore sustainable VHS.
+            </div>
+          </abt-accordion-item>
 
-    </abt-accordion>
+          <abt-accordion-item title="Third">
+            <div class="container">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+              non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+              sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+              helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+              lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+              of them accusamus labore sustainable VHS.
+            </div>
+          </abt-accordion-item>
+
+        </abt-accordion>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/collapse/accordion.md">
+        </aut-mark-down>
+      <abt-card-footer>
+     
+    </abt-card>
 
   </fieldset>
 

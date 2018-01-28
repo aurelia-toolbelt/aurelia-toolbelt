@@ -17,7 +17,7 @@ export class Collapse {
 
 
   private hideCollapse() {
-    this.tr.warning('Collapse ide event called');
+    this.tr.warning('Collapse hide event called');
   }
 
 
