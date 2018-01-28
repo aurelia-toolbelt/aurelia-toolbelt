@@ -1,24 +1,24 @@
-.aut-star {
+.abt-star {
   display: inline-block;
   position: relative;
   width: 1.1em;
 }
 
-.aut-empty-star:before,
-.aut-empty-star~.au-empty-star:before {
+.abt-empty-star:before,
+.abt-empty-star~.abt-empty-star:before {
   content: "\2606";
   /*full star : \2605 = &#9733;  *******  empty star : \2606 = &#9734;   ********  oulined star: \272E = &#10030; */
   position: absolute;
 }
 
-.aut-full-star:before,
-.aut-full-star~.au-full-star:before {
+.abt-full-star:before,
+.abt-full-star~.abt-full-star:before {
   content: "\2605";
   /*full star : \2605 = &#9733;  *******  empty star : \2606 = &#9734;   ********  oulined star: \272E = &#10030; */
   position: absolute;
 }
 
-.aut-star-rtl {
+.abt-star-rtl {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);

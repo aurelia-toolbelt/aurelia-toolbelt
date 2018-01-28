@@ -1,26 +1,25 @@
 
 import { bindable, bindingMode, inject, children, computedFrom, customElement } from 'aurelia-framework';
-import { EventAggregator } from 'aurelia-event-aggregator';
-import { StarRateClicked } from './StarRateClicked';
 
-@customElement('aut-star-rate')
-@inject(EventAggregator)
-export class StarRate {
+@customElement('abt-star-rate')
+export class BootstrapStarRate {
 
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public rate: number;
+  
+  @bindable({defaultBindingMode: bindingMode.oneTime}) public rtl = false;
+  @bindable({defaultBindingMode: bindingMode.oneTime}) public color = '#753B85';
+  @bindable({defaultBindingMode: bindingMode.oneTime}) public type = 'primary';
+  
+  @bindable({defaultBindingMode: bindingMode.oneWay}) public maxRate: number = 5;
+  @bindable({defaultBindingMode: bindingMode.oneWay}) public readOnly = false;
+  
+  
+  @bindable({defaultBindingMode: bindingMode.oneTime}) public fullStar = 'abt-star abt-full-star';
+  @bindable({defaultBindingMode: bindingMode.oneTime}) public halfStar: string | null = null;
+  @bindable({defaultBindingMode: bindingMode.oneTime}) public emptyStar = 'abt-star abt-empty-star';
+  
 
-  @bindable public maxRate: number;
-  @bindable public readOnly = true;
-  @bindable public color = '#753B85';
-  @bindable public rtl = false;
-
-
-
-  @bindable public fullStar = 'aut-star aut-full-star';
-  @bindable public halfStar: string | null = null;
-  @bindable public emptyStar = 'aut-star aut-empty-star';
-
-  @bindable public clicked: any;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public rate: number = 0;
+  @bindable({defaultBindingMode: bindingMode.twoWay}) public rateChanged: Function;
 
 
 
@@ -29,8 +28,6 @@ export class StarRate {
   private mouseRate = -1;
   private showHalfStar = false;
 
-  constructor(private ea: EventAggregator) {
-  }
 
 
   private mouseMove(event: any, index: number) {
@@ -59,8 +56,7 @@ export class StarRate {
     const oldValue = this.rate;
     this.rate = index + 1 - (this.showHalfStar ? 0.5 : 0);
 
-    if (this.clicked) { this.clicked({ newRate: this.rate, oldRate: oldValue }); }
-    this.ea.publish(new StarRateClicked(this.rate, oldValue));
+    if (this.rateChanged) { this.rateChanged({ newRate: this.rate, oldRate: oldValue }); }
   }
 
   private mouseLeft() {

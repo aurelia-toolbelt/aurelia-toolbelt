@@ -15,6 +15,7 @@ class Theme {
 export class App {
 
   public router: Router;
+  private rate = 3;
 
   private themes: Array<Theme>;
   @bindable() private selectedTheme: Theme;
