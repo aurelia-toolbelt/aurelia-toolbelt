@@ -27,7 +27,7 @@ export class BootstrapNavs {
   constructor(private element: Element) {
   }
 
-  private attached() {
+  private afterAttached() {
 
     this.beTab = this.element.hasAttribute('tabs');
     this.filled = this.element.hasAttribute('fill');
@@ -40,7 +40,8 @@ export class BootstrapNavs {
       throw error;
     }
 
-
+    let children = this.element.children.item(0).getElementsByTagName('a');
+    $(children).tab();
     this.handle_events();
 
   }

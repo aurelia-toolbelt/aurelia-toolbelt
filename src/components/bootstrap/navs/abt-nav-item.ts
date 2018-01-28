@@ -1,8 +1,9 @@
 import { containerless, bindable, bindingMode, inject, customElement } from 'aurelia-framework';
+import { Uuid } from '../../../utilities/purejs/uuid';
 
 
 
-@inject(Element)
+@inject(Element, Uuid)
 @containerless()
 @customElement('abt-nav-item')
 export class BootstrapNavLink {
@@ -24,7 +25,7 @@ export class BootstrapNavLink {
 
   private element: HTMLElement;
 
-  constructor(element: Element) {
+  constructor(element: Element, private uuid: Uuid) {
 
     this.element = <HTMLElement>element;
 
@@ -47,9 +48,9 @@ export class BootstrapNavLink {
 
     tab_daddy.removeChild(this.tab_body);
 
-    let id = this.element.hasAttribute('id') ? this.element.getAttribute('id') : -1;
+    let id = this.element.hasAttribute('id') ? this.element.getAttribute('id') : this.uuid.Uuidv4ForId();
     // if the slot part is empty then do not add tab_body to grandPa :wink:
-    if (id !== -1 && this.tab_body.textContent.length > 8) {
+    if (this.tab_body.textContent.length > 8) {
 
       let tab_body_id = `${id}-tab-body`;
 
