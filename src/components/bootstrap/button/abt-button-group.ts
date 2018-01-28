@@ -8,7 +8,7 @@ import { inject, customElement, bindable, bindingMode, containerless } from 'aur
 @customElement('abt-button-group')
 export class BootstrapButtonGroup {
 
-
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public label: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: string = 'md';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';

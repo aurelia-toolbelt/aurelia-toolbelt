@@ -178,71 +178,199 @@
 
 
 
+  <fieldset class="mt-5">
+    <legend>
+      Dropdowns
+    </legend>
 
-  <hr />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
+    <p>
+      Use
+      <code>abt-dropdown</code> alongside with button groups.
+    </p>
 
-  <h1>Button Groups</h1>
+    <abt-card>
+      <abt-card-body>
+        <abt-toolbar label="Toolbar with button groups">
+          
+          <abt-button-group label="Button group with nested dropdown">
 
+            <abt-button type="button" class="btn btn-secondary">1</abt-button>
+            <abt-button type="button" class="btn btn-secondary">2</abt-button>
 
+            <abt-dropdown title="Dropdown" color="info">
+              <abt-dropdown-item>Dropdown link</abt-dropdown-item>
+              <abt-dropdown-item>Dropdown link</abt-dropdown-item>
+            </abt-dropdown>
+            
+          </abt-button-group>
 
-
-  <br/>
-  <br/>
-
-
-
-  <br />
-  <br />
-  <br />
-
-
-
-
-
-  <br />
-  <br />
-
-  <abt-button-group label="First group" size="lg">
-    <abt-button type="button" color="secondary">left</abt-button>
-    <abt-button type="button" color="secondary">middle</abt-button>
-    <abt-button type="button" color="secondary">right</abt-button>
-  </abt-button-group>
-
-  <abt-button-group label="First group">
-    <abt-button type="button" color="secondary">left</abt-button>
-    <abt-button type="button" color="secondary">middle</abt-button>
-    <abt-button type="button" color="secondary">right</abt-button>
-  </abt-button-group>
-
-  <abt-button-group label="First group" size="sm">
-    <abt-button type="button" color="secondary">left</abt-button>
-    <abt-button type="button" color="secondary">middle</abt-button>
-    <abt-button type="button" color="secondary">right</abt-button>
-  </abt-button-group>
-  <br />
-  <br />
-
-  <abt-button-group label="Button group with nested dropdown">
-    <abt-button type="button" class="btn btn-secondary">1</abt-button>
-    <abt-button type="button" class="btn btn-secondary">2</abt-button>
-
-    <abt-dropdown title="Dropdown" color="info">
-      <abt-dropdown-item>Dropdown link</abt-dropdown-item>
-      <abt-dropdown-item>Dropdown link</abt-dropdown-item>
-    </abt-dropdown>
-
-  </abt-button-group>
+        </abt-toolbar>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button-group/dropdowns.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+  </fieldset>
 
 
-  <br />
-  <br />
-  <br />
+
+  <fieldset class="mt-5">
+      <legend>
+        Properties and Events
+      </legend>
+  
+      <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <td class="text-nowrap" colspan="4">
+              <b>
+                abt-button-group
+              </b>
+            </td>
+            <td class="text-nowrap" colspan="1">
+              <b>
+                containerless
+              </b>
+            </td>
+          </tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-nowrap" colspan="5">
+              <b>
+                Properties
+              </b>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">class</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap"></td>
+            <td>Applies the your custom css class on alert</td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">id</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneTime</td>
+            <td class="text-nowrap"></td>
+            <td>Since the
+              <code>abt-button-group</code> is a
+              <code>containerless</code> component, we assign the
+              <code>id</code> to the actual
+              <code>div</code> underneath.
+            </td>
+          </tr>
+          <tr>
+              <td class="text-nowrap" scope="row">label</td>
+              <td class="text-nowrap">string</td>
+              <td class="text-nowrap">oneTime</td>
+              <td class="text-nowrap"></td>
+              <td>Assigns the value to <code>aria-label</code> as bootstrap suggested</td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">size</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneTime</td>
+            <td class="text-nowrap">md</td>
+            <td>Indicates the size for button group, values can be 'sm', 'md', and 'lg'</td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">style</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap"></td>
+            <td>Css style attrinutes that you want to apply on the component.</td>
+          </tr>
+        </tbody>
+      </table>
+  
+  
+      <table class="table table-striped table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <td class="text-nowrap" colspan="4">
+                <b>
+                  abt-toolbar
+                </b>
+              </td>
+              <td class="text-nowrap" colspan="1">
+                <b>
+                  containerless
+                </b>
+              </td>
+            </tr>
+            <tr>
+              <th class="text-nowrap" scope="col">Name</th>
+              <th class="text-nowrap" scope="col">Type</th>
+              <th class="text-nowrap" scope="col">Binding type</th>
+              <th class="text-nowrap" scope="col">Default value</th>
+              <th class="text-nowrap" scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-nowrap" colspan="5">
+                <b>
+                  Properties
+                </b>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-nowrap" scope="row">class</td>
+              <td class="text-nowrap">string</td>
+              <td class="text-nowrap">oneWay</td>
+              <td class="text-nowrap"></td>
+              <td>Applies the your custom css class on alert</td>
+            </tr>
+            <tr>
+              <td class="text-nowrap" scope="row">id</td>
+              <td class="text-nowrap">string</td>
+              <td class="text-nowrap">oneTime</td>
+              <td class="text-nowrap"></td>
+              <td>Since the
+                <code>abt-toolbar</code> is a
+                <code>containerless</code> component, we assign the
+                <code>id</code> to the actual
+                <code>div</code> underneath.
+              </td>
+            </tr>
+            <tr>
+                <td class="text-nowrap" scope="row">label</td>
+                <td class="text-nowrap">string</td>
+                <td class="text-nowrap">oneTime</td>
+                <td class="text-nowrap"></td>
+                <td>Assigns the value to <code>aria-label</code> as bootstrap suggested</td>
+            </tr>
+            <tr>
+              <td class="text-nowrap" scope="row">size</td>
+              <td class="text-nowrap">string</td>
+              <td class="text-nowrap">oneTime</td>
+              <td class="text-nowrap">md</td>
+              <td>Indicates the size for toolbar, values can be 'sm', 'md', and 'lg'</td>
+            </tr>
+            <tr>
+              <td class="text-nowrap" scope="row">style</td>
+              <td class="text-nowrap">string</td>
+              <td class="text-nowrap">oneWay</td>
+              <td class="text-nowrap"></td>
+              <td>Css style attrinutes that you want to apply on the component.</td>
+            </tr>
+          </tbody>
+        </table>
+  
+    </fieldset>
+  
+
+
+
+
 </template>
