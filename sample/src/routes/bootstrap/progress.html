@@ -1,18 +1,317 @@
 <template>
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Progress
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/progressbar">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Documentation and examples for using Bootstrap custom progress bars featuring support for stacked bars, animated backgrounds,
+    and text labels.
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/progressbar/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Basic example
+    </legend>
+    <abt-progress>
+      <abt-progress-bar value="0" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <br>
+    <abt-progress>
+      <abt-progress-bar value="25" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <br>
+    <abt-progress>
+      <abt-progress-bar value="50" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <br>
+    <abt-progress>
+      <abt-progress-bar value="75" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <br>
+    <abt-progress>
+      <abt-progress-bar value="100" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
 
-  <abt-progress style="height: 40px;">
-    <abt-progress-bar animated.bind="true" color-class="warning" striped.bind="true" value="100" min="0" max="100">
-      100%
+    <aut-mark-down src="./docs/components/bootstrap/progressbar/basic-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Labels
+    </legend>
+    <abt-progress>
+      <abt-progress-bar value="25" min="0" max="100">25%</abt-progress-bar>
+    </abt-progress>
+    <aut-mark-down src="./docs/components/bootstrap/progressbar/labels.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Height
+    </legend>
+    <abt-progress style="height: 1px;">
+      <abt-progress-bar value="25" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <br>
+    <abt-progress style="height: 20px;">
+      <abt-progress-bar value="25" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <aut-mark-down src="./docs/components/bootstrap/progressbar/height.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Backgrounds
+    </legend>
+    <abt-progress>
+      <abt-progress-bar color-type="success" value="25" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <br>
+    <abt-progress>
+      <abt-progress-bar color-type="info" value="50" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <br>
+    <abt-progress>
+      <abt-progress-bar color-type="warning" value="75" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <br>
+    <abt-progress>
+      <abt-progress-bar color-type="danger" value="100" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <aut-mark-down src="./docs/components/bootstrap/progressbar/backgrounds.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Multiple bars
+    </legend>
+    <abt-progress>
+      <abt-progress-bar value="15" min="0" max="100"></abt-progress-bar>
+      <abt-progress-bar color-type="success" value="30" min="0" max="100"></abt-progress-bar>
+      <abt-progress-bar color-type="info" value="20" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <aut-mark-down src="./docs/components/bootstrap/progressbar/multiple-bars.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Striped
+    </legend>
+    <abt-progress>
+      <abt-progress-bar striped="true" value="10" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <br>
+    <abt-progress>
+      <abt-progress-bar striped="true" color-type="success" value="25" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <br>
+    <abt-progress>
+      <abt-progress-bar striped="true" color-type="info" value="50" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <br>
+    <abt-progress>
+      <abt-progress-bar striped="true" color-type="warning" value="75" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <br>
+    <abt-progress>
+      <abt-progress-bar striped="true" color-type="danger" value="100" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <aut-mark-down src="./docs/components/bootstrap/progressbar/striped.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Animated stripes
+    </legend>
+    <abt-progress>
+      <abt-progress-bar striped="true" animated="true" value="75" min="0" max="100"></abt-progress-bar>
+    </abt-progress>
+    <aut-mark-down src="./docs/components/bootstrap/progressbar/animated.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Gradient
+    </legend>
+    <p>If you want to use the Gradient feature, you should set both
+      <code>color</code> and
+      <code>gradient-color</code> properties.</p>
+    <abt-progress-bar color="blue" gradient-color="red" value="75" min="0" max="100">
+      75%
     </abt-progress-bar>
-  </abt-progress>
+    <aut-mark-down src="./docs/components/bootstrap/progressbar/gradient.md">
+    </aut-mark-down>
+  </fieldset>
 
-  <br>
-  <br>
-
-  <abt-progress style="height: 10px;">
-    <abt-progress-bar color="blue" secondary-color="red" value="50" min="0" max="100">
-      50%
-    </abt-progress-bar>
-  </abt-progress>
-
+  <fieldset class="mt-5">
+    <legend>
+      API Reference
+    </legend>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              abt-progress
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-progress-bar </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">color</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>progressbar color.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">gradient-color</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>progressbar gradient color. You should set
+            <code>color</code> property for using this too.</td>
+        </tr>
+        <tr>
+          <td scope="row">color-type</td>
+          <td class="text-nowrap">ColorType</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Based on Bootstrap 4 classes and can include the following values: 'primary', 'secondary', 'success', 'danger',
+            'warning', 'info', 'light', 'dark'</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">min</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">0</td>
+          <td>progressbar min value.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">max</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">100</td>
+          <td>progressbar max value.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">animated</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>To animate the stripes right to left via CSS3 animations set this to
+            <code>true</code>.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">striped</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>To apply a stripe via CSS gradient over the progress bar’s background color.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">value</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">twoWay</td>
+          <td class="text-nowrap">0</td>
+          <td>progressbar value.</td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
 </template>

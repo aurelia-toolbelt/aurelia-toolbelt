@@ -1,6 +1,6 @@
 import { customElement, inject, bindable, bindingMode, BindingEngine, containerless } from 'aurelia-framework';
-
 @containerless()
+
 @customElement('abt-inputgroup-prepend')
 export class BootstrapInputGroupPrependCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string = '';

@@ -1,5 +1,4 @@
 import { customElement, inject, bindable, bindingMode, BindingEngine, containerless } from 'aurelia-framework';
-
 @containerless()
 @customElement('abt-inputgroup-append')
 export class BootstrapInputGroupAppendCustomElement {

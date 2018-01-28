@@ -1,5 +1,6 @@
 export class BootstrapPagination {
-  private clicked(event: Event) {
-    console.log('clicked : ' + JSON.stringify(event));
+  private pageChanged(event: Event, selectedPageNumber: number) {
+    let element = document.getElementById('page');
+    element.textContent = `Page ${selectedPageNumber}`;
   }
 }
