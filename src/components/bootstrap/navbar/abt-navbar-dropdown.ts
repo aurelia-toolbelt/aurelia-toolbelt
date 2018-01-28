@@ -17,8 +17,9 @@ export class BootstrapNavBarDropDown {
 
   private navDropDown: Element;
   private navListDropDown: Element;
+  private dropDownMenu: Element;
 
-  private attached() {
+  private afterAttached() {
     let isMegaMenuFullWidth = this.navDropDown.hasAttribute('full-width') || Boolean(this.fulWidth);
 
     if (isMegaMenuFullWidth) {
@@ -26,11 +27,16 @@ export class BootstrapNavBarDropDown {
     } else {
       this.navListDropDown.classList.remove('navbar-megamenu-fullwidth');
     }
+
   }
 
 
   private onClick(event: Event) {
     event.preventDefault();
+
+    // Fix bug #46
+    let top = $(this.dropDownMenu).offset().top - 10;
+    $(this.dropDownMenu).css('top', `${top}px`);
 
     if (this.click) {
       this.click({ event: event });

@@ -15,15 +15,6 @@ export class BootstrapNavBarBrand {
   private navbarBrand: Element;
   private navbarBrandTemplate: Element;
 
-  constructor() {
-
-    DOM.injectStyles(`
-            a.abt-navbar-brand-heading {
-                pointer-events: none !important;
-            }
-    `);
-  }
-
   private onClick(event: Event) {
 
     if (this.click) {

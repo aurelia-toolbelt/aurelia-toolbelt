@@ -12,6 +12,7 @@ export type BackgroundColorType = 'primary' | 'secondary' | 'success' | 'danger'
 export class BootstrapNavBar {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public navbarColorType: NavbarColorType = 'light';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public backgroundColorType: BackgroundColorType = 'light';
@@ -22,9 +23,13 @@ export class BootstrapNavBar {
   private navbarCollapse: Element;
 
   private afterAttached() {
-    this.navbar.classList.add(`navbar-${this.navbarColorType}`);
-    this.navbar.classList.add(`bg-${this.backgroundColorType}`);
 
+    if (this.navbarColorType) {
+      this.navbar.classList.add(`navbar-${this.navbarColorType}`);
+    }
+    if (this.backgroundColorType) {
+      this.navbar.classList.add(`bg-${this.backgroundColorType}`);
+    }
     if (this.expandSize) {
       this.navbar.classList.add(`navbar-expand-${this.expandSize}`);
     } else {

@@ -7,7 +7,7 @@ import { customElement } from 'aurelia-templating';
 export class BootstrapNavBarLink {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string = '#';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string;
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public linkClass: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public linkStyle: string;
@@ -15,20 +15,12 @@ export class BootstrapNavBarLink {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public active: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public disabled: boolean | string = false;
 
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
+
 
   private navItem: Element;
   private navItemLink: Element;
 
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
-
-
-  constructor() {
-    DOM.injectStyles(`
-            .nav-link.disabled {
-                pointer-events: none !important;
-            }
-    `);
-  }
 
   private afterAttached() {
     let isActive = Boolean(this.active) || this.navItem.hasAttribute('active');
@@ -45,13 +37,9 @@ export class BootstrapNavBarLink {
 
 
   private onClick(event: Event) {
-
     if (this.click) {
       this.click({ event: event });
     }
-
     return true;
-
   }
-
 }

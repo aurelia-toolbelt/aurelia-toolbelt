@@ -4,7 +4,7 @@
       href="${href}" aut-uuid role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       ${title}
     </a>
-    <div class="dropdown-menu ${dropdownClass}" css="${dropdownStyle}" aria-labelledby="${navLinkDropDown.id}">
+    <div ref="dropDownMenu" class="dropdown-menu ${dropdownClass}" css="${dropdownStyle}" aria-labelledby="${navLinkDropDown.id}">
       <slot></slot>
     </div>
   </li>

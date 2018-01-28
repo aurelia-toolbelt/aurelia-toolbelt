@@ -21,15 +21,6 @@ export class ListGroupItemCustomElement {
   private listGroupItemTmpl: Element;
   private listGroupItem: HTMLLinkElement;
 
-  constructor() {
-
-    DOM.injectStyles(`
-            a.abt-listgroup-item-disabled {
-                pointer-events: none !important;
-            }
-    `);
-  }
-
   private attached() {
 
     this.active = Boolean(this.active);

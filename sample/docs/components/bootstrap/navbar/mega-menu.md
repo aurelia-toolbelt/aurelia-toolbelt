@@ -8,7 +8,7 @@
       <abt-navbar-link>Features</abt-navbar-link>
       <abt-navbar-link>Pricing</abt-navbar-link>
       <abt-navbar-link disabled>Disabled</abt-navbar-link>
-      <abt-navbar-dropdown color="secondary" title="DropDown">
+      <abt-navbar-dropdown title="DropDown">
         <abt-navbar-dropdown-item>Action</abt-navbar-dropdown-item>
         <abt-navbar-dropdown-item>Another action</abt-navbar-dropdown-item>
         <abt-navbar-dropdown-divider></abt-navbar-dropdown-divider>
