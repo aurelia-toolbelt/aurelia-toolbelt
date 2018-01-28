@@ -8,5 +8,3 @@ or at any further level you are interested down to the ```button``` itself
 ```js
 aurelia.plugin(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/button'));
 ```
-
-**PS:** Button groups do exists in button path.

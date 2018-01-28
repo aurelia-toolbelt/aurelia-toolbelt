@@ -1,73 +1,210 @@
 <template>
 
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Buttons
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/button">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Group a series of
+    <code>buttons</code> together on a single line with the button group.
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+
+    <aut-mark-down src="./docs/components/bootstrap/button-group/usage.md">
+    </aut-mark-down>
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Basic, vertical and sizing
+    </legend>
+
+    <p>Simply group buttons via
+      <code>abt-button-group</code>, change their size, and make them vertical by adding
+      <code>vertical</code> attribute.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+
+        <abt-button-group label="Small Group" class="mr-2" size="sm">
+          <abt-button bs-type="secondary">Top</abt-button>
+          <abt-button bs-type="secondary">Middle</abt-button>
+          <abt-button bs-type="secondary">Bottom</abt-button>
+        </abt-button-group>
+
+        <abt-button-group class="mr-2" label="Normal group">
+          <abt-button bs-type="secondary">Left</abt-button>
+          <abt-button bs-type="secondary">Middle</abt-button>
+          <abt-button bs-type="secondary">Right</abt-button>
+        </abt-button-group>
+
+        <abt-button-group label="Large Group" class="mr-5" size="lg">
+          <abt-button bs-type="secondary">Top</abt-button>
+          <abt-button bs-type="secondary">Middle</abt-button>
+          <abt-button bs-type="secondary">Bottom</abt-button>
+        </abt-button-group>
+
+
+
+        <abt-button-group label="small Vertical" size="sm" class="ml-5 mr-2" vertical>
+          <abt-button bs-type="secondary">Top</abt-button>
+          <abt-button bs-type="secondary">Middle</abt-button>
+          <abt-button bs-type="secondary">Bottom</abt-button>
+        </abt-button-group>
+
+        <abt-button-group label="Normal Vertical" class="mr-2" vertical>
+          <abt-button bs-type="secondary">Top</abt-button>
+          <abt-button bs-type="secondary">Middle</abt-button>
+          <abt-button bs-type="secondary">Bottom</abt-button>
+        </abt-button-group>
+
+        <abt-button-group label="Large Vertical" size="lg" vertical>
+          <abt-button bs-type="secondary">Top</abt-button>
+          <abt-button bs-type="secondary">Middle</abt-button>
+          <abt-button bs-type="secondary">Bottom</abt-button>
+        </abt-button-group>
+
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button-group/basics.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+
+
+  </fieldset>
+
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Button toolbar
+    </legend>
+
+    <p>Use
+      <code>abt-toolbar</code> to combine sets of button groups into button toolbars for more complex components. Use utility classes
+      as needed to space out groups, buttons, and more.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <abt-toolbar label="Toolbar with button groups">
+          <abt-button-group label="First group" class="mr-2">
+            <abt-button>1</abt-button>
+            <abt-button>2</abt-button>
+            <abt-button>3</abt-button>
+            <abt-button>4</abt-button>
+          </abt-button-group>
+          <abt-button-group label="Second group" class="mr-2">
+            <abt-button bs-type="secondary">5</abt-button>
+            <abt-button bs-type="secondary">6</abt-button>
+            <abt-button bs-type="secondary">7</abt-button>
+          </abt-button-group>
+          <abt-button-group label="Third group">
+            <abt-button bs-type="warning">8</abt-button>
+          </abt-button-group>
+        </abt-toolbar>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button-group/toolbar.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+    <hr />
+
+
+    <p>
+      Feel free to mix input groups with button groups in your toolbars. Similar to the example above, you’ll likely need some
+      utilities though to space things properly.
+    </p>
+
+
+    <abt-card>
+      <abt-card-body>
+        <abt-toolbar class="mb-3" label="Toolbar with button groups">
+          <abt-button-group label="First group" class="mr-2">
+            <abt-button>1</abt-button>
+            <abt-button>2</abt-button>
+            <abt-button>3</abt-button>
+            <abt-button>4</abt-button>
+          </abt-button-group>
+
+          <abt-inputgroup>
+            <abt-inputgroup-prepend>
+              <abt-inputgroup-text>@</abt-inputgroup-text>
+            </abt-inputgroup-prepend>
+            <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
+          </abt-inputgroup>
+        </abt-toolbar>
+
+        <abt-toolbar class="justify-content-between" label="Toolbar with button groups">
+          <abt-button-group label="First group" class="mr-2">
+            <abt-button>1</abt-button>
+            <abt-button>2</abt-button>
+            <abt-button>3</abt-button>
+            <abt-button>4</abt-button>
+          </abt-button-group>
+          <abt-inputgroup>
+            <abt-inputgroup-prepend>
+              <abt-inputgroup-text>@</abt-inputgroup-text>
+            </abt-inputgroup-prepend>
+            <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
+          </abt-inputgroup>
+        </abt-toolbar>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button-group/toolbar-mix.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+
+  </fieldset>
+
+
+
+
+  <hr />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
 
   <h1>Button Groups</h1>
 
-  <br />
-
-  <abt-button-group label="Basic example">
-    <abt-button type="button" color="secondary">Left</abt-button>
-    <abt-button type="button" color="secondary">Middle</abt-button>
-    <abt-button type="button" color="secondary">Right</abt-button>
-  </abt-button-group>
 
 
-  <abt-button-group label="Basic example" vertical>
-    <abt-button type="button" color="secondary">Left</abt-button>
-    <abt-button type="button" color="secondary">Middle</abt-button>
-    <abt-button type="button" color="secondary">Right</abt-button>
-  </abt-button-group>
 
   <br/>
   <br/>
 
-  <abt-toolbar label="Toolbar with button groups">
-    <abt-button-group label="First group" class="mr-2">
-      <abt-button type="button" color="secondary">1</abt-button>
-      <abt-button type="button" color="secondary">2</abt-button>
-      <abt-button type="button" color="secondary">3</abt-button>
-      <abt-button type="button" color="secondary">4</abt-button>
-    </abt-button-group>
-    <abt-button-group label="Second group" class="mr-2">
-      <abt-button type="button" color="secondary">5</abt-button>
-      <abt-button type="button" color="secondary">6</abt-button>
-      <abt-button type="button" color="secondary">7</abt-button>
-    </abt-button-group>
-    <abt-button-group label="Third group">
-      <abt-button type="button" color="secondary">8</abt-button>
-    </abt-button-group>
-  </abt-toolbar>
+
 
   <br />
   <br />
   <br />
 
 
-  <abt-toolbar class="mb-3" label="Toolbar with button groups">
-    <abt-button-group label="First group" class="mr-2">
-      <abt-button type="button" color="secondary">1</abt-button>
-      <abt-button type="button" color="secondary">2</abt-button>
-      <abt-button type="button" color="secondary">3</abt-button>
-      <abt-button type="button" color="secondary">4</abt-button>
-    </abt-button-group>
-    <div class="input-group">
-      <span class="input-group-addon" id="btnGroupAddon">@</span>
-      <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
-    </div>
-  </abt-toolbar>
 
-  <abt-toolbar class="justify-content-between" label="Toolbar with button groups">
-    <abt-button-group label="First group" class="mr-2">
-      <abt-button type="button" color="secondary">1</abt-button>
-      <abt-button type="button" color="secondary">2</abt-button>
-      <abt-button type="button" color="secondary">3</abt-button>
-      <abt-button type="button" color="secondary">4</abt-button>
-    </abt-button-group>
-    <div class="input-group">
-      <span class="input-group-addon" id="btnGroupAddon2">@</span>
-      <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon2">
-    </div>
-  </abt-toolbar>
 
 
   <br />

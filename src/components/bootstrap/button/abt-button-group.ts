@@ -11,16 +11,18 @@ export class BootstrapButtonGroup {
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public label: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: string = 'md';
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
 
-  private isVertical: boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public vertical: boolean | string = false;
 
   constructor(private element: Element) {
 
   }
 
-  private attached() {
-    this.isVertical = this.element.hasAttribute('vertical');
+  private afterAttached() {
+    const onlyVerticalAttribute = (this.vertical === '' && this.element.hasAttribute('vertical'));
+    this.vertical = onlyVerticalAttribute || this.vertical === 'true' || this.vertical === true;
   }
 
 }
