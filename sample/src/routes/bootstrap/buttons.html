@@ -1,29 +1,591 @@
 <template>
 
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Buttons
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/button">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Use custom button for actions in forms, dialogs, and more with support for multiple sizes, states, and more. Buttons in
+    <code>aurelia-toolbelt</code> are only buttons, for render
+    <code>a</code> tags as buttons use
+    <a href="http://getbootstrap.com/docs/4.0/components/buttons/#button-tags">bootstrap way</a>
+  </fieldset>
 
-  <abt-link-button color="warning" href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/button">
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+
+    <aut-mark-down src="./docs/components/bootstrap/button/usage.md">
+    </aut-mark-down>
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Examples
+    </legend>
+
+    <p>
+      Contextual variations are
+      <code>primary</code> ,
+      <code>secondary</code> ,
+      <code>info</code> ,
+      <code>success</code> ,
+      <code>warning</code> ,
+      <code>danger</code> ,
+      <code>light</code> ,
+      <code>dark</code> , and
+      <code>link</code>.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+
+        <abt-button class="mr-2" bs-type="primary">Primary</abt-button>
+        <abt-button class="mr-2" bs-type="secondary">Secondary</abt-button>
+        <abt-button class="mr-2" bs-type="info">Info</abt-button>
+        <abt-button class="mr-2" bs-type="success">Success</abt-button>
+        <abt-button class="mr-2" bs-type="warning">Warning</abt-button>
+        <abt-button class="mr-2" bs-type="danger">Danger</abt-button>
+        <abt-button class="mr-2" bs-type="light">Light</abt-button>
+        <abt-button class="mr-2" bs-type="dark">Dark</abt-button>
+
+        <abt-button bs-type="link">Link</abt-button>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button/overview.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Outline buttons
+    </legend>
+
+    <abt-card>
+      <abt-card-body>
+
+        <abt-button class="mr-2" outline bs-type="primary">Primary</abt-button>
+        <abt-button class="mr-2" outline bs-type="secondary">Secondary</abt-button>
+        <abt-button class="mr-2" outline bs-type="info">Info</abt-button>
+        <abt-button class="mr-2" outline bs-type="success">Success</abt-button>
+        <abt-button class="mr-2" outline bs-type="warning">Warning</abt-button>
+        <abt-button class="mr-2" outline bs-type="danger">Danger</abt-button>
+        <abt-button class="mr-2 text-dark" outline bs-type="light">Light</abt-button>
+        <abt-button class="mr-2" outline bs-type="dark">Dark</abt-button>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button/outline.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Size, block, and disabled
+    </legend>
+
+    <abt-card>
+      <abt-card-body>
+
+        <abt-button class="mr-2" size="sm">small button</abt-button>
+        <abt-button class="mr-2">Normal button</abt-button>
+        <abt-button class="mr-5" size="lg">Large Button</abt-button>
+
+        <abt-button class="ml-5" disabled>Disabled</abt-button>
+        <abt-button class="ml-2" bs-type="secondary" disabled.bind="true">Another Disabled</abt-button>
+        <abt-button class="ml-2" bs-type="success" disabled="true">Yet Another Disabled</abt-button>
+
+        <hr />
+
+        <abt-button class="mr-2" block bs-type="secondary">Block Level</abt-button>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button/size-block.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      A button meant to be clicked!
+    </legend>
+
+    <p>
+      The
+      <code>click</code> event can be bound to functions with no return value, or those returning a
+      <code>promise</code>, when the latter they will have a busy/loading state, in which you can provide a loading template by
+      simply using slots in aurelia.
+      <code>slot="loading"</code>
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <abt-button class="mr-2" click.call="onClick()">Click me</abt-button>
+
+        <abt-button click.call="onClick()">Click me with loading indicator
+          <span slot="loading">
+            <i class="fa fa-spinner fa-spin" aria-hidden="true">
+            </i>
+          </span>
+        </abt-button>
+
+        <abt-button class="float-right" click.call="onClickWithoutPromise()">Click me, no promise returns</abt-button>
+
+      </abt-card-body>
+      <abt-card-footer>
+
+        <abt-navs tabs id="navs-button">
+          <abt-nav-item id="navs-button-view" title="View">
+            <aut-mark-down src="./docs/components/bootstrap/button/clicked.md">
+            </aut-mark-down>
+
+          </abt-nav-item>
+          <abt-nav-item id="navs-button-view-model" title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/button/clicked-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
+
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Properties and Events
+    </legend>
+
+    <p>
+      <a href="http://getbootstrap.com/docs/4.0/components/alerts/#events">
+        Alters in bootstrap
+      </a> provide two kinds of events, here we provide an experimental four additional events, in which you can return a
+      boolean or a promise which resolves a boolean, if the boolean is false it will ignore triggering the event.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <abt-button bs-type="secondary" click.call="toggleAlert()">
+          Show/Hide alerts
+        </abt-button>
+        <br />
+        <br />
+        <abt-alert type="secondary" show-alert.bind="show_hide" bs-show.call="onShow(target)">
+          This is an animated secondary alert which resolves its onShow promise to false:
+        </abt-alert>
+
+        <abt-alert type="primary" animate="false" show-alert.bind="show_hide">
+          This is a non-animated primary alert.
+        </abt-alert>
+      </abt-card-body>
+
+      <abt-card-footer>
+
+        <abt-navs tabs id="navs-events">
+          <abt-nav-item id="tab-template-ebents" title="View">
+            <aut-mark-down src="./docs/components/bootstrap/alert/events-properties.md">
+
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item id="tab-viewmodel-events" title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/alert/events-properties-ts.md">
+
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
+
+      </abt-card-footer>
+    </abt-card>
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              abt-alert
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">animate</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">true</td>
+          <td>Alert will be fade in or out.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies the your custom css class on alert</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dismissible</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>A
+            <code>true/false</code> value which indicates whether to show the dismissible cross button or not.</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">show-alert</td>
+          <td class="text-nowrap">boolean</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>
+            Changes in the value of this property will enable you to handle four extra events for alert,
+            <code>bs-show</code>,
+            <code>bs-shown</code>,
+            <code>bs-hide</code>, and
+            <code>bs-hidden</code>. Two of which,
+            <code>bs-show</code> and
+            <code>bs-hide</code> will cancel the process if the method bound to them returns
+            <i>
+              <code>
+                <b>false</b>
+              </code>
+            </i> or resolves a proise that returns so.
+
+            <hr />
+            <b>PS:</b>
+            <i>Bear in mind that such a behaviour does not exist in bootstrap; however, we would be grateful, if you send us
+              your feedback.</i>
+
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">size</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">md</td>
+          <td>Indicates the size of the alert components, values van be 'sm', 'md', and 'lg'</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attrinutes that you want to apply on the component.</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">type</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">primary</td>
+          <td>The type of alert, values are contextual values of bootstrap,
+            <code>primary</code>,
+            <code>secondary</code>,
+            <code>info</code>,
+            <code>success</code>,
+            <code>warning</code>,
+            <code>danger</code>,
+            <code>light</code>, and
+            <code>dark</code>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">bs-show</td>
+          <td class="text-nowrap">Promise</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>This event fires immediately when
+            <code>show-alert</code> changes to
+            <code>true</code>. if this event returns
+            <code>false</code>, or resolve a
+            <b>promise</b> that returns
+            <code>false</code>, the rest of the chain will be escaped.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">bs-shown</td>
+          <td class="text-nowrap">Promise</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>This event fires immediately after
+            <code>bs-show</code> resolved or returned
+            <code>true</code>.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">bs-hide</td>
+          <td class="text-nowrap">Promise</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>
+            <code>show-alert</code> changes to
+            <code>false</code>. if this event returns
+            <code>false</code>, or resolve a
+            <b>promise</b> that returns
+            <code>false</code>, the rest of the chain will be escaped.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">bs-hidden</td>
+          <td class="text-nowrap">Promise</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>This event fires immediately after
+            <code>bs-hide</code> resolved or returned
+            <code>true</code>.
+          </td>
+        </tr>
+
+
+        <tr>
+          <td class="text-nowrap" scope="row">bs-close</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>This event fires immediately when the
+            <code>close</code> instance method is called.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">bs-close</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>This event is fired when the alert has been closed (will wait for CSS transitions to complete).
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-alert-link
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">disabled</td>
+          <td class="text-nowrap">boolean</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Indicates whether the link should be active or not.
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">href</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>A url to link to another part of the page or web.
+            <hr />
+            <b>PS:</b>
+            <i>Bear in mind that you can use
+              <code>router-href</code> on
+              <code>abt-alert-link</code> to benefit from aurelia route engine.</i>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>The id of the element in the DOM.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-alert-heading
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>The id of the element in the DOM.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <abt-link-button bs-type="warning" href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/button">
     Link
   </abt-link-button>
-  <br /><br />
+  <br />
+  <br />
   <abt-link-button block href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/button">
     Link
   </abt-link-button>
-  <br /><br />
-  <abt-button color="success" click.call="buttonClicked(event,target)">
+  <br />
+  <br />
+  <abt-button bs-type="success" click.call="buttonClicked(event,target)">
     Test-Success
   </abt-button>
 
-  <br /><br />
+  <br />
+  <br />
 
-  <abt-button outline block color="danger" size="sm" click.call="buttonClicked(event,target)">
+  <abt-button outline block bs-type="danger" size="sm" click.call="buttonClicked(event,target)">
     <i class="fa fa-gear fa-spin"></i>
     Test-Danger
     </span>
   </abt-button>
 
-  <br /><br />
+  <br />
+  <br />
 
-  <abt-button block color="info" size="lg" click.call="buttonClicked(event,target)">
+  <abt-button block bs-type="info" size="lg" click.call="buttonClicked(event,target)">
     <span>
       <i class="fa fa-link"></i>
       Test-Info

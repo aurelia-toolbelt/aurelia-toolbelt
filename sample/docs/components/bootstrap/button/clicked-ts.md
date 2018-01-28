@@ -1,14 +1,13 @@
+```ts
 import { autoinject } from 'aurelia-framework';
 import { HttpClient } from 'aurelia-http-client';
-// @ts-ignore
+
 import { ToastrService } from 'aurelia-toolbelt';
 
-@autoinject
+@autoinject()
 export class Buttons {
 
-  constructor(private http: HttpClient, private ts: ToastrService) {
-    // todo
-  }
+  constructor(private http: HttpClient, private ts: ToastrService) { }
 
   private onClick(event: Event, target: HTMLButtonElement) {
     this.ts.success('Button clicked', 'Hooray');
@@ -21,3 +20,4 @@ export class Buttons {
   }
 
 }
+```

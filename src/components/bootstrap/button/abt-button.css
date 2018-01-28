@@ -5,3 +5,7 @@ abt-button>button {
 .abt-button {
   cursor: pointer;
 }
+
+.abt-button[disabled] {
+  cursor: auto;
+}
