@@ -4,6 +4,6 @@ import { customElement } from 'aurelia-templating';
 @containerless()
 @customElement('abt-navbar-toggler')
 export class BootstrapNavBarToggler {
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public togglerIconClass: string = 'navbar-toggler-icon';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public togglerIcon: string = 'navbar-toggler-icon';
 
 }

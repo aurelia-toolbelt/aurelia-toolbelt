@@ -10,10 +10,21 @@ export class BootstrapNavBarBrand {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string = '#';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public heading: boolean | string = false;
+
+  private navbarBrand: Element;
+  private navbarBrandTemplate: Element;
+
+  constructor() {
+
+    DOM.injectStyles(`
+            a.abt-navbar-brand-heading {
+                pointer-events: none !important;
+            }
+    `);
+  }
 
   private onClick(event: Event) {
-
-    // event.preventDefault();
 
     if (this.click) {
       this.click({ event: event });
@@ -21,5 +32,14 @@ export class BootstrapNavBarBrand {
 
     return true;
 
+  }
+
+  private afterAttached() {
+    let isHeading = Boolean(this.heading) || this.navbarBrandTemplate.hasAttribute('heading');
+    if (isHeading) {
+      this.navbarBrand.classList.add('abt-navbar-brand-heading');
+    } else {
+      this.navbarBrand.classList.remove('abt-navbar-brand-heading');
+    }
   }
 }

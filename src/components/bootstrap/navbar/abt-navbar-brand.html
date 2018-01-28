@@ -1,6 +1,6 @@
-<template>
+<template ref="navbarBrandTemplate">
 
-  <a class="navbar-brand ${class}" css="${style}" click.trigger="onClick($event)" href="${href}">
+  <a ref="navbarBrand" class="navbar-brand ${class}" css="${style}" click.trigger="onClick($event)" href="${href}">
     <slot></slot>
   </a>
 

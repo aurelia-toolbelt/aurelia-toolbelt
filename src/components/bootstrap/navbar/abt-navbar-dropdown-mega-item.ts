@@ -5,7 +5,7 @@ import { customElement } from 'aurelia-templating';
 @containerless()
 @customElement('abt-navbar-dropdown-mega-item')
 export class BootstrapNavBarDropDownMegaItem {
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
-    @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
 
 }
