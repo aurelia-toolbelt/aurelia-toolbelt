@@ -12,7 +12,7 @@
         </abt-navbar-link>
         <abt-navbar-dropdown fullwidth repeat.for="row of router.navigation" title="${row.title}" if.bind="row.settings.navigation.length> 0">
           <abt-navbar-dropdown-mega-item>
-            <div class="col-sm-3" repeat.for="subRow of row.settings.navigation">
+            <div class="col-sm-2" repeat.for="subRow of row.settings.navigation">
               <abt-navbar-link href="${row.href}/${subRow.route}">
                 ${subRow.title}
               </abt-navbar-link>
