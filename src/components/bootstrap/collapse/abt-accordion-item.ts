@@ -13,7 +13,7 @@ export class BootstrapAccordionItem {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string = '';
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public active: boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public active: boolean = false;
 
   private collapse: HTMLElement;
 

@@ -1,7 +1,8 @@
-.abt-star {
+.abt-star-rate {
   display: inline-block;
   position: relative;
-  width: 1.1em;
+  width: 1.0em;
+  cursor: pointer;
 }
 
 .abt-empty-star:before,

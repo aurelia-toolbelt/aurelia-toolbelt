@@ -7,6 +7,7 @@ import { inject, customElement, containerless, bindable, bindingMode } from 'aur
 @customElement('abt-collapse')
 export class BootstrapCollapse {
 
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public controlledBy: Array<HTMLElement>;
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
@@ -15,9 +16,6 @@ export class BootstrapCollapse {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsShown: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsHide: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsHidden: Function;
-
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public controlledBy: Array<HTMLElement>;
-
 
   private collapse: HTMLDivElement;
 
@@ -128,6 +126,10 @@ export class BootstrapCollapse {
   }
 
   private detached() {
+    $(this.collapse).off('show.bs.collapse');
+    $(this.collapse).off('shown.bs.collapse');
+    $(this.collapse).off('hide.bs.collapse');
+    $(this.collapse).off('hidden.bs.collapse');
     $(this.collapse).collapse('dispose');
   }
 

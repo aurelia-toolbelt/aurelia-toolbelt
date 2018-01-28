@@ -3,16 +3,16 @@
   <require from="./abt-star-rate.css"></require>
 
 
-  <i class="${$index > fixedPoint ? emptyStar : $index < fixedPoint ? fullStar : ( ( showHalfStar || hasFloatingPoint ) && halfStar && fixedPoint == $index ) ? halfStar : emptyStar}"
+  <i class="abt-star-rate ${$index > fixedPoint ? emptyStar : $index < fixedPoint ? fullStar : ( ( showHalfStar || hasFloatingPoint ) && halfStar && fixedPoint == $index ) ? halfStar : emptyStar}"
     repeat.for="$index of maxRate" mousemove.delegate="mouseMove($event,$index)" click.delegate="setRate($index)">
   </i>
 
 
-  <i if.bind="rtl" class="abt-star-rtl ${maxRate-$index-1 > fixedPoint ? emptyStar : maxRate-$index-1 < fixedPoint ? fullStar : ( ( showHalfStar || hasFloatingPoint ) && halfStar && fixedPoint == maxRate-$index-1 ) ? halfStar : emptyStar}"
+  <i if.bind="rtl" class="abt-star-rate abt-star-rtl ${maxRate-$index-1 > fixedPoint ? emptyStar : maxRate-$index-1 < fixedPoint ? fullStar : ( ( showHalfStar || hasFloatingPoint ) && halfStar && fixedPoint == maxRate-$index-1 ) ? halfStar : emptyStar}"
          repeat.for="$index of maxRate"
           
           mousemove.delegate="mouseMove($event,maxRate-$index-1)"
         click.delegate="setRate(maxRate-$index-1)">
-    </i>
+  </i>
 
 </template>
