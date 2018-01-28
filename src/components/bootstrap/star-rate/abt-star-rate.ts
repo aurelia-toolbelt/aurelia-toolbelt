@@ -10,7 +10,7 @@ export class BootstrapStarRate {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string = ''; // = '#753B85';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public type: string = 'primary';
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public maxRate: number | string = 5;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public maxRate: number = 5;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public disabled: boolean | string = false;
 
 
