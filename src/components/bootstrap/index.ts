@@ -17,6 +17,7 @@ export function configure(config: FrameworkConfiguration) {
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/pagination/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/progressbar/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/scrollspy/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/star-rate/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/toggle/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/float-input/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/jumbotron/index'))

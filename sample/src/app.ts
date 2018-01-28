@@ -7,216 +7,219 @@ import { DOM } from 'aurelia-pal';
 import { BootstrapTypographyService } from 'aurelia-toolbelt';
 
 class Theme {
-  public name: string;
-  public path: string;
+    public name: string;
+    public path: string;
 }
 
 @inject(EventAggregator, BootstrapTypographyService)
 export class App {
 
-  public router: Router;
+    public router: Router;
+    private rate = 3;
 
-  private themes: Array<Theme>;
-  @bindable() private selectedTheme: Theme;
+    private themes: Array<Theme>;
+    @bindable() private selectedTheme: Theme;
 
-  constructor(eventAggregator: EventAggregator, private bsService: BootstrapTypographyService) {
+    constructor(eventAggregator: EventAggregator, private bsService: BootstrapTypographyService) {
 
-    this.themes = [
-      { name: 'aurelia-toolbelt', path: '/bootswatch/aurelia-toolbelt' },
-      { name: 'bootstrap', path: '/bootswatch/bootstrap' },
-      { name: 'bootstrap-rtl', path: '/bootswatch/bootstrap-rtl' },
-      { name: 'cerulean', path: '/bootswatch/cerulean' },
-      { name: 'cosmo', path: '/bootswatch/cosmo' },
-      { name: 'cyborg', path: '/bootswatch/cyborg' },
-      { name: 'darkly', path: '/bootswatch/darkly' },
-      { name: 'litera', path: '/bootswatch/litera' },
-      { name: 'lumen', path: '/bootswatch/lumen' },
-      { name: 'lux', path: '/bootswatch/lux' },
-      { name: 'minty', path: '/bootswatch/minty' },
-      { name: 'sandstone', path: '/bootswatch/sandstone' },
-      { name: 'simplex', path: '/bootswatch/simplex' },
-      { name: 'sketchy', path: '/bootswatch/sketchy' },
-      { name: 'slate', path: '/bootswatch/slate' },
-      { name: 'spacelab', path: '/bootswatch/spacelab' },
-      { name: 'superhero', path: '/bootswatch/superhero' },
-      { name: 'united', path: '/bootswatch/united' },
-      { name: 'yeti', path: '/bootswatch/yeti' }
-    ];
-  }
+        this.themes = [
+            { name: 'aurelia-toolbelt', path: '/bootswatch/aurelia-toolbelt' },
+            { name: 'bootstrap', path: '/bootswatch/bootstrap' },
+            { name: 'bootstrap-rtl', path: '/bootswatch/bootstrap-rtl' },
+            { name: 'cerulean', path: '/bootswatch/cerulean' },
+            { name: 'cosmo', path: '/bootswatch/cosmo' },
+            { name: 'cyborg', path: '/bootswatch/cyborg' },
+            { name: 'darkly', path: '/bootswatch/darkly' },
+            { name: 'litera', path: '/bootswatch/litera' },
+            { name: 'lumen', path: '/bootswatch/lumen' },
+            { name: 'lux', path: '/bootswatch/lux' },
+            { name: 'minty', path: '/bootswatch/minty' },
+            { name: 'sandstone', path: '/bootswatch/sandstone' },
+            { name: 'simplex', path: '/bootswatch/simplex' },
+            { name: 'sketchy', path: '/bootswatch/sketchy' },
+            { name: 'slate', path: '/bootswatch/slate' },
+            { name: 'spacelab', path: '/bootswatch/spacelab' },
+            { name: 'superhero', path: '/bootswatch/superhero' },
+            { name: 'united', path: '/bootswatch/united' },
+            { name: 'yeti', path: '/bootswatch/yeti' }
+        ];
+    }
 
 
 
-  public configureRouter(config: RouterConfiguration, router: Router) {
+    public configureRouter(config: RouterConfiguration, router: Router) {
 
-    config.map([
+        config.map([
 
-      {
-        route: '', redirect: 'get-started'
-      },
-      {
-        route: 'get-started',
-        name: 'get-started',
-        moduleId: PLATFORM.moduleName('./routes/get-started'),
-        nav: true,
-        title: 'Get Started',
-        settings: { auth: false, navigation: [] }
-      },
-      {
-        route: ['bootstrap'],
-        name: 'bootstrap',
-        moduleId: PLATFORM.moduleName('./routes/bootstrap-route'),
-        nav: true,
-        title: 'Bootstrap',
-        settings: {
-          auth: false, navigation: [
             {
-              route: 'alert',
-              title: 'Alert'
+                route: '', redirect: 'get-started'
             },
             {
-              route: 'badge',
-              title: 'Badge'
+                route: 'get-started',
+                name: 'get-started',
+                moduleId: PLATFORM.moduleName('./routes/get-started'),
+                nav: true,
+                title: 'Get Started',
+                settings: { auth: false, navigation: [] }
             },
             {
-              route: 'breadcrumb',
-              title: 'Breadcrumb'
+                route: ['bootstrap'],
+                name: 'bootstrap',
+                moduleId: PLATFORM.moduleName('./routes/bootstrap-route'),
+                nav: true,
+                title: 'Bootstrap',
+                settings: {
+                    auth: false, navigation: [
+                        {
+                            route: 'alert',
+                            title: 'Alert'
+                        },
+                        {
+                            route: 'badge',
+                            title: 'Badge'
+                        },
+                        {
+                            route: 'breadcrumb',
+                            title: 'Breadcrumb'
+                        },
+                        {
+                            route: 'buttons',
+                            title: 'Buttons'
+                        },
+                        {
+                            route: 'button-groups',
+                            title: 'Button Groups'
+                        },
+                        {
+                            route: 'card',
+                            title: 'Card'
+                        }
+                        ,
+                        {
+                            route: 'carousel',
+                            title: 'Carousel'
+                        }, {
+                            route: 'collapse',
+                            title: 'Collapse'
+                        }
+                        , {
+                            route: 'dropdown',
+                            title: 'Dropdowns'
+                        },
+                        {
+                            route: 'float-input',
+                            title: 'Float Input'
+                        },
+                        {
+                            route: 'input-group',
+                            title: 'Input Group'
+
+                        },
+                        {
+                            route: 'jumbotron', title: 'Jumbotron'
+                        },
+                        {
+                            route: 'list-group', title: 'List Group'
+                        },
+                        {
+                            route: 'modal', title: 'Modals'
+
+                        },
+                        {
+                            route: 'navbar', title: 'Navbar'
+
+                        },
+                        {
+                            route: 'navs', title: 'Navs'
+                        },
+                        {
+                            route: 'password', title: 'Password'
+                        },
+                        {
+                            route: 'progress', title: 'Progressbar'
+                        },
+                        {
+                            route: 'star-rate', title: 'Star Rate'
+                        },
+                        {
+                            route: 'scrollspy', title: 'Scrollspy'
+                        },
+                        {
+                            route: 'toggle', title: 'Toggle'
+                        },
+                        {
+                            route: 'tokenize', title: 'Tokenize'
+                        },
+                        {
+                            route: 'tooltip', title: 'Tooltip'
+                        },
+                        {
+                            route: 'popover', title: 'Popover'
+                        }
+                        ,
+                        {
+                            route: 'pagination', title: 'Pagination'
+                        }
+                    ]
+                }
             },
             {
-              route: 'buttons',
-              title: 'Buttons'
+                route: ['purejs'],
+                name: 'purejs',
+                moduleId: PLATFORM.moduleName('./routes/purejs-route'),
+                nav: true,
+                title: 'JS',
+                settings: {
+                    auth: false, navigation: [{
+                        route: 'checkbox', title: 'Pretty Checkbox'
+                    },
+                    {
+                        route: 'radio', title: 'Pretty Radio'
+                    },
+                    {
+                        route: 'markdown', title: 'Mark Down'
+                    },
+                    {
+                        route: 'masked-input', title: 'Masked Input'
+                    },
+                    {
+                        route: 'microlink', title: 'Microlink'
+                    }]
+                }
             },
             {
-              route: 'button-groups',
-              title: 'Button Groups'
-            },
-            {
-              route: 'card',
-              title: 'Card'
+                route: ['jquery'],
+                name: 'jquery',
+                moduleId: PLATFORM.moduleName('./routes/jquery-route'),
+                nav: true,
+                title: 'jQuery',
+                settings: {
+                    auth: false, navigation: [{
+                        route: 'blockui', title: 'Block UI'
+                    },
+                    {
+                        route: 'lazyimage', title: 'Lazy Image'
+                    },
+                    {
+                        route: 'newsticker', title: 'News Ticker'
+                    }]
+                }
             }
-            ,
-            {
-              route: 'carousel',
-              title: 'Carousel'
-            }, {
-              route: 'collapse',
-              title: 'Collapse'
-            }
-            , {
-              route: 'dropdown',
-              title: 'Dropdowns'
-            },
-            {
-              route: 'float-input',
-              title: 'Float Input'
-            },
-            {
-              route: 'input-group',
-              title: 'Input Group'
+        ]);
 
-            },
-            {
-              route: 'jumbotron', title: 'Jumbotron'
-            },
-            {
-              route: 'list-group', title: 'List Group'
-            },
-            {
-              route: 'modal', title: 'Modals'
+        // config.options.pushState = true;
+        // config.mapUnknownRoutes('./routes/not-found.html');
 
-            },
-            {
-              route: 'navbar'
-              , title: 'Navbar'
+        this.router = router;
+    }
 
-            },
-            {
-              route: 'navs', title: 'Navs'
-            },
-            {
-              route: 'password', title: 'Password'
-            },
-            {
-              route: 'progress', title: 'Progressbar'
-            },
-            {
-              route: 'scrollspy', title: 'Scrollspy'
-            },
-            {
-              route: 'toggle', title: 'Toggle'
-            },
-            {
-              route: 'tokenize', title: 'Tokenize'
-            },
-            {
-              route: 'tooltip', title: 'Tooltip'
-            },
-            {
-              route: 'popover', title: 'Popover'
-            }
-            ,
-            {
-              route: 'pagination', title: 'Pagination'
-            }
-          ]
-        }
-      },
-      {
-        route: ['purejs'],
-        name: 'purejs',
-        moduleId: PLATFORM.moduleName('./routes/purejs-route'),
-        nav: true,
-        title: 'JS',
-        settings: {
-          auth: false, navigation: [{
-            route: 'checkbox', title: 'Pretty Checkbox'
-          },
-          {
-            route: 'radio', title: 'Pretty Radio'
-          },
-          {
-            route: 'markdown', title: 'Mark Down'
-          },
-          {
-            route: 'masked-input', title: 'Masked Input'
-          },
-          {
-            route: 'microlink', title: 'Microlink'
-          }]
-        }
-      },
-      {
-        route: ['jquery'],
-        name: 'jquery',
-        moduleId: PLATFORM.moduleName('./routes/jquery-route'),
-        nav: true,
-        title: 'jQuery',
-        settings: {
-          auth: false, navigation: [{
-            route: 'blockui', title: 'Block UI'
-          },
-          {
-            route: 'lazyimage', title: 'Lazy Image'
-          },
-          {
-            route: 'newsticker', title: 'News Ticker'
-          }]
-        }
-      }
-    ]);
+    private selectedThemeChanged(newValue: Theme) {
+        localStorage.setItem('selectedTheme', JSON.stringify(newValue));
 
-    // config.options.pushState = true;
-    // config.mapUnknownRoutes('./routes/not-found.html');
+        this.bsService.update();
 
-    this.router = router;
-  }
-
-  private selectedThemeChanged(newValue: Theme) {
-    localStorage.setItem('selectedTheme', JSON.stringify(newValue));
-
-    this.bsService.update();
-
-    /* toastr flat theme */
-    DOM.injectStyles(`
+        /* toastr flat theme */
+        DOM.injectStyles(`
     .toast {
       background-color: ${this.bsService.primary} !important;
     }
@@ -238,8 +241,8 @@ export class App {
       border-radius: 0px !important;
     }
     `);
-    /*************************************************************************** */
+        /*************************************************************************** */
 
-  }
+    }
 
 }
