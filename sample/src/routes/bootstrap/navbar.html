@@ -48,208 +48,312 @@
     </aut-mark-down>
   </fieldset>
   <fieldset class="mt-5">
-      <legend>
-          Brand
-      </legend>
-      <aut-mark-down src="./docs/components/bootstrap/navbar/brand.md">
-      </aut-mark-down>
-    </fieldset>
+    <legend>
+      Brand
+    </legend>
+    <abt-navbar expand-size="lg" navbar-color-type="light" background-color-type="light">
+      <abt-navbar-brand href="#/bootstrap/navbar">NavBar</abt-navbar-brand>
+    </abt-navbar>
+    <abt-navbar expand-size="lg" navbar-color-type="light" background-color-type="light">
+      <abt-navbar-brand class="mb-0 h1" heading="true">NavBar</abt-navbar-brand>
+    </abt-navbar>
+    <aut-mark-down src="./docs/components/bootstrap/navbar/brand.md">
+    </aut-mark-down>
+    <abt-navbar expand-size="lg" navbar-color-type="light" background-color-type="light">
+      <abt-navbar-brand>
+        <a class="navbar-brand" href="#/bootstrap/navbar">
+          <img src="../../../logo-navbar.png" alt="The image cannot be displayed">
+        </a>
+      </abt-navbar-brand>
+    </abt-navbar>
+    <br>
+    <abt-navbar expand-size="lg" navbar-color-type="light" background-color-type="light">
+      <abt-navbar-brand>
+        <a class="navbar-brand" href="#/bootstrap/navbar">
+          <img src="../../../logo-navbar.png" alt="The image cannot be displayed"> aurelia-toolbelt
+        </a>
+      </abt-navbar-brand>
+    </abt-navbar>
+    <aut-mark-down src="./docs/components/bootstrap/navbar/brand-logo.md">
+    </aut-mark-down>
+  </fieldset>
 
+  <fieldset class="mt-5">
+    <legend>
+      Mega menu
+    </legend>
+    <abt-navbar>
+      <abt-navbar-brand heading="true">NavBar</abt-navbar-brand>
+      <abt-navbar-toggler></abt-navbar-toggler>
+      <abt-navbar-collapser>
+        <abt-navbar-nav class="mr-auto">
+          <abt-navbar-link active>Home</abt-navbar-link>
+          <abt-navbar-link>Features</abt-navbar-link>
+          <abt-navbar-link>Pricing</abt-navbar-link>
+          <abt-navbar-link disabled>Disabled</abt-navbar-link>
+          <abt-navbar-dropdown color="secondary" title="DropDown">
+            <abt-navbar-dropdown-item>Action</abt-navbar-dropdown-item>
+            <abt-navbar-dropdown-item>Another action</abt-navbar-dropdown-item>
+            <abt-navbar-dropdown-divider></abt-navbar-dropdown-divider>
+            <abt-navbar-dropdown-item>Something else here</abt-navbar-dropdown-item>
+          </abt-navbar-dropdown>
+          <abt-navbar-dropdown title="Mega menu">
+            <abt-navbar-dropdown-mega-item>
+              <ul class="col-sm-2 list-unstyled">
+                <li>
+                  <p>
+                    <strong>Section Title</strong>
+                  </p>
+                </li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+              </ul>
+              <ul class="col-sm-2 list-unstyled">
+                <li>
+                  <p>
+                    <strong>Links Title</strong>
+                  </p>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+              </ul>
+              <ul class="col-sm-2 list-unstyled">
+                <li>
+                  <p>
+                    <strong>Section Title</strong>
+                  </p>
+                </li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+              </ul>
+              <ul class="col-sm-2 list-unstyled">
+                <li>
+                  <p>
+                    <strong>Section Title</strong>
+                  </p>
+                </li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>
+                  <ul>
+                    <li>
+                      <a href="#"> Link Item </a>
+                    </li>
+                    <li>
+                      <a href="#"> Link Item </a>
+                    </li>
+                    <li>
+                      <a href="#"> Link Item </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </abt-navbar-dropdown-mega-item>
+          </abt-navbar-dropdown>
+          <abt-navbar-dropdown full-width="true" title="Mega menu with full width">
+            <abt-navbar-dropdown-mega-item>
+              <ul class="col-sm-2 list-unstyled">
+                <li>
+                  <p>
+                    <strong>Section Title</strong>
+                  </p>
+                </li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+              </ul>
+              <ul class="col-sm-2 list-unstyled">
+                <li>
+                  <p>
+                    <strong>Links Title</strong>
+                  </p>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+              </ul>
+              <ul class="col-sm-2 list-unstyled">
+                <li>
+                  <p>
+                    <strong>Section Title</strong>
+                  </p>
+                </li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+              </ul>
+              <ul class="col-sm-2 list-unstyled">
+                <li>
+                  <p>
+                    <strong>Section Title</strong>
+                  </p>
+                </li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>
+                  <ul>
+                    <li>
+                      <a href="#"> Link Item </a>
+                    </li>
+                    <li>
+                      <a href="#"> Link Item </a>
+                    </li>
+                    <li>
+                      <a href="#"> Link Item </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </abt-navbar-dropdown-mega-item>
+          </abt-navbar-dropdown>
+        </abt-navbar-nav>
+      </abt-navbar-collapser>
+    </abt-navbar>
+    <aut-mark-down src="./docs/components/bootstrap/navbar/mega-menu.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Text
+    </legend>
+    <abt-navbar expand-size="lg" navbar-color-type="light" background-color-type="light">
+      <abt-navbar-text>Navbar text with an inline element</abt-navbar-text>
+    </abt-navbar>
+    <br>
+    <abt-navbar expand-size="lg" navbar-color-type="light" background-color-type="light">
+      <abt-navbar-brand>Navbar w/ text</abt-navbar-brand>
+      <abt-navbar-toggler></abt-navbar-toggler>
+      <abt-navbar-collapser>
+        <abt-navbar-nav class="mr-auto">
+          <abt-navbar-link active="true" href="#/bootstrap/navbar">Home</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Features</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Pricing</abt-navbar-link>
+        </abt-navbar-nav>
+        <abt-navbar-text>Navbar text with an inline element</abt-navbar-text>
+      </abt-navbar-collapser>
+    </abt-navbar>
+    <aut-mark-down src="./docs/components/bootstrap/navbar/text.md">
+    </aut-mark-down>
+  </fieldset>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <abt-navbar>
-    <abt-navbar-brand>NavBar</abt-navbar-brand>
-    <abt-navbar-text>Start Text</abt-navbar-text>
-    <abt-navbar-toggler></abt-navbar-toggler>
-    <abt-navbar-collapser>
-      <abt-navbar-nav class="mr-auto">
-        <abt-navbar-link active>Home</abt-navbar-link>
-        <abt-navbar-link>Features</abt-navbar-link>
-        <abt-navbar-link>Pricing</abt-navbar-link>
-        <abt-navbar-link disabled>Disabled</abt-navbar-link>
-        <abt-navbar-dropdown color="secondary" title="DropDown 1">
-          <abt-navbar-dropdown-item>A</abt-navbar-dropdown-item>
-          <abt-navbar-dropdown-item>B</abt-navbar-dropdown-item>
-          <abt-navbar-dropdown-item>C</abt-navbar-dropdown-item>
-          <abt-navbar-dropdown-divider></abt-navbar-dropdown-divider>
-          <abt-navbar-dropdown-item>D</abt-navbar-dropdown-item>
-          <abt-navbar-dropdown-item>E</abt-navbar-dropdown-item>
-        </abt-navbar-dropdown>
-        <abt-navbar-dropdown fullwidth title="DropDown 2">
-          <abt-navbar-dropdown-mega-item>
-            <ul class="col-sm-2 list-unstyled">
-              <li>
-                <p>
-                  <strong>Section Title</strong>
-                </p>
-              </li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>List Item</li>
-            </ul>
-            <ul class="col-sm-2 list-unstyled">
-              <li>
-                <p>
-                  <strong>Links Title</strong>
-                </p>
-              </li>
-              <li>
-                <a href="#"> Link Item </a>
-              </li>
-              <li>
-                <a href="#"> Link Item </a>
-              </li>
-              <li>
-                <a href="#"> Link Item </a>
-              </li>
-              <li>
-                <a href="#"> Link Item </a>
-              </li>
-              <li>
-                <a href="#"> Link Item </a>
-              </li>
-              <li>
-                <a href="#"> Link Item </a>
-              </li>
-            </ul>
-            <ul class="col-sm-2 list-unstyled">
-              <li>
-                <p>
-                  <strong>Section Title</strong>
-                </p>
-              </li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>List Item</li>
-            </ul>
-            <ul class="col-sm-2 list-unstyled">
-              <li>
-                <p>
-                  <strong>Section Title</strong>
-                </p>
-              </li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>
-                <ul>
-                  <li>
-                    <a href="#"> Link Item </a>
-                  </li>
-                  <li>
-                    <a href="#"> Link Item </a>
-                  </li>
-                  <li>
-                    <a href="#"> Link Item </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </abt-navbar-dropdown-mega-item>
-        </abt-navbar-dropdown>
-        <abt-navbar-dropdown title="DropDown 3">
-          <abt-navbar-dropdown-mega-item>
-            <ul class="col-sm-2 list-unstyled">
-              <li>
-                <p>
-                  <strong>Section Title</strong>
-                </p>
-              </li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>List Item</li>
-            </ul>
-            <ul class="col-sm-2 list-unstyled">
-              <li>
-                <p>
-                  <strong>Links Title</strong>
-                </p>
-              </li>
-              <li>
-                <a href="#"> Link Item </a>
-              </li>
-              <li>
-                <a href="#"> Link Item </a>
-              </li>
-              <li>
-                <a href="#"> Link Item </a>
-              </li>
-              <li>
-                <a href="#"> Link Item </a>
-              </li>
-              <li>
-                <a href="#"> Link Item </a>
-              </li>
-              <li>
-                <a href="#"> Link Item </a>
-              </li>
-            </ul>
-            <ul class="col-sm-2 list-unstyled">
-              <li>
-                <p>
-                  <strong>Section Title</strong>
-                </p>
-              </li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>List Item</li>
-            </ul>
-            <ul class="col-sm-2 list-unstyled">
-              <li>
-                <p>
-                  <strong>Section Title</strong>
-                </p>
-              </li>
-              <li>List Item</li>
-              <li>List Item</li>
-              <li>
-                <ul>
-                  <li>
-                    <a href="#"> Link Item </a>
-                  </li>
-                  <li>
-                    <a href="#"> Link Item </a>
-                  </li>
-                  <li>
-                    <a href="#"> Link Item </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </abt-navbar-dropdown-mega-item>
-        </abt-navbar-dropdown>
-      </abt-navbar-nav>
-    </abt-navbar-collapser>
-  </abt-navbar>
+  <fieldset class="mt-5">
+    <legend>
+      Color schemes
+    </legend>
+    <abt-navbar expand-size="lg" navbar-color-type="dark" background-color-type="dark">
+      <abt-navbar-brand>NavBar</abt-navbar-brand>
+      <abt-navbar-toggler></abt-navbar-toggler>
+      <abt-navbar-collapser>
+        <abt-navbar-nav class="mr-auto">
+          <abt-navbar-link active="true" href="#/bootstrap/navbar">Home</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Features</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Pricing</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">About</abt-navbar-link>
+        </abt-navbar-nav>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <abt-button outline bs-type="success" type="submit" class="my-2 my-sm-0">
+            Button
+          </abt-button>
+        </form>
+      </abt-navbar-collapser>
+    </abt-navbar>
+    <br>
+    <abt-navbar expand-size="lg" navbar-color-type="dark" background-color-type="primary">
+      <abt-navbar-brand>NavBar</abt-navbar-brand>
+      <abt-navbar-toggler></abt-navbar-toggler>
+      <abt-navbar-collapser>
+        <abt-navbar-nav class="mr-auto">
+          <abt-navbar-link active="true" href="#/bootstrap/navbar">Home</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Features</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Pricing</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">About</abt-navbar-link>
+        </abt-navbar-nav>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <abt-button outline bs-type="success" type="submit" class="my-2 my-sm-0">
+            Button
+          </abt-button>
+        </form>
+      </abt-navbar-collapser>
+    </abt-navbar>
+    <br>
+    <abt-navbar expand-size="lg" navbar-color-type="light" style="background-color: #e3f2fd !important">
+      <abt-navbar-brand>NavBar</abt-navbar-brand>
+      <abt-navbar-toggler></abt-navbar-toggler>
+      <abt-navbar-collapser>
+        <abt-navbar-nav class="mr-auto">
+          <abt-navbar-link active="true" href="#/bootstrap/navbar">Home</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Features</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Pricing</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">About</abt-navbar-link>
+        </abt-navbar-nav>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <abt-button outline bs-type="success" type="submit" class="my-2 my-sm-0">
+            Button
+          </abt-button>
+        </form>
+      </abt-navbar-collapser>
+    </abt-navbar>
+    <aut-mark-down src="./docs/components/bootstrap/navbar/color-schemes.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Containers
+    </legend>
+    <div class="container">
+      <abt-navbar expand-size="lg" navbar-color-type="light" background-color-type="light">
+        <abt-navbar-brand href="#/bootstrap/navbar">NavBar</abt-navbar-brand>
+      </abt-navbar>
+    </div>
+    <aut-mark-down src="./docs/components/bootstrap/navbar/containers.md">
+    </aut-mark-down>
+  </fieldset>
 </template>

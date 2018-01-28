@@ -5,6 +5,7 @@ import { customElement } from 'aurelia-templating';
 @containerless()
 @customElement('abt-navbar-dropdown')
 export class BootstrapNavBarDropDown {
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public fulWidth: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
@@ -18,10 +19,12 @@ export class BootstrapNavBarDropDown {
   private navListDropDown: Element;
 
   private attached() {
-    let isMegaMenuFullWidth = this.navDropDown.hasAttribute('fullwidth');
+    let isMegaMenuFullWidth = this.navDropDown.hasAttribute('full-width') || Boolean(this.fulWidth);
 
     if (isMegaMenuFullWidth) {
       this.navListDropDown.classList.add('navbar-megamenu-fullwidth');
+    } else {
+      this.navListDropDown.classList.remove('navbar-megamenu-fullwidth');
     }
   }
 

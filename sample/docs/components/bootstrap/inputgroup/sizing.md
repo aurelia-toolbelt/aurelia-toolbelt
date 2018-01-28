@@ -19,7 +19,6 @@
 </abt-inputgroup>
 ```
 You can also use `sm` instead of `size="sm"` and use `lg` instead of `size="lg"`.
-
 ```html
 <abt-inputgroup sm class="mb-3">
   <abt-inputgroup-prepend>
