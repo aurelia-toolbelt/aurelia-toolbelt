@@ -308,7 +308,8 @@
 
         <abt-alert type="secondary" class="text-center">
           <span>
-            Selected product:&nbsp; ${selectedProduct.id} - ${selectedProduct.name}
+            Selected product:&nbsp;
+            <b>${selectedProduct.id} - ${selectedProduct.name}</b>
           </span>
         </abt-alert>
       </abt-card-body>
@@ -351,7 +352,8 @@
 
         <abt-alert type="secondary" class="text-center">
           <span>
-            Selected product: &nbsp; ${selected_product_matcher.id} - ${selected_product_matcher.name}
+            Selected product: &nbsp;
+            <b>${selected_product_matcher.id} - ${selected_product_matcher.name}</b>
           </span>
         </abt-alert>
       </abt-card-body>
@@ -370,116 +372,112 @@
     </abt-card>
 
 
-  </fieldset>
+
+    <h4 class="mt-5">
+      <i>Booleans
+      </i>
+    </h4>
+    <hr />
+
+    <abt-card>
+      <abt-card-header>
+        Answer the question
+      </abt-card-header>
+      <abt-card-body>
+
+        <abt-dropdown class="mb-2" value.bind="likesTacos" type="info" title="like your tacos">
+          <abt-dropdown-item model.bind="null">
+            Do you like tacos
+          </abt-dropdown-item>
+          <abt-dropdown-divider></abt-dropdown-divider>
+          <abt-dropdown-item model.bind="true">
+            Yes
+          </abt-dropdown-item>
+          <abt-dropdown-item model.bind="false">
+            No
+          </abt-dropdown-item>
+        </abt-dropdown>
+
+        <abt-alert type="secondary" class="text-center">
+          <span>
+            Likes Tacos: &nbsp;
+            <b>${likesTacos}</b>
+          </span>
+        </abt-alert>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <abt-navs tabs>
+          <abt-nav-item title="View">
+            <aut-mark-down src="./docs/components/bootstrap/dropdown/dynamic-booleans.md">
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/dropdown/dynamic-booleans-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
+      </abt-card-footer>
+    </abt-card>
 
 
+    <h4 class="mt-5">
+      <i>Strings
+      </i>
+    </h4>
+    <hr />
 
+    <abt-card>
+      <abt-card-header>
+        Choose your product
+      </abt-card-header>
+      <abt-card-body>
 
+        <div class="row">
+          <div class="col-sm-3">
+            <abt-dropdown class="mb-2" value.bind="selected_Item_String" type="success" title="Choose your hardware">
+              <abt-dropdown-item value="">
+                Choose your hardware
+              </abt-dropdown-item>
+              <abt-dropdown-divider></abt-dropdown-divider>
+              <abt-dropdown-item repeat.for="str of stringObjects" value.bind="str">
+                ${str}
+              </abt-dropdown-item>
+            </abt-dropdown>
+          </div>
+          <div class="col-sm-3">
+            <select value.bind="selected_Item_String" class="form-control">
+              <option value="">
+                Choose your hardware
+              </option>
+              <option repeat.for="str of stringObjects" value.bind="str">
+                ${str}
+              </option>
+            </select>
+          </div>
+        </div>
 
+        <abt-alert type="secondary" class="text-center">
+          <span>
+            Your selected items is: &nbsp;
+            <b>${selected_Item_String}</b>
+          </span>
+        </abt-alert>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <br />
-
-
-
-  <br />
-
-
-
-
-  <br />
-
-
-
-
-  <br />
-
-
-
-
-  <br />
-
-
-
-
-  <br />
-
-
-
-
-
-
-
-
-
-
-
-
-  <fieldset>
-    <legend>Dropdown - Booleans</legend>
-
-    <abt-dropdown class="mb-5" value.bind="likesTacos" type="success" title="like your tacos" size="sm">
-      <abt-dropdown-item model.bind="null">
-        Do you like tacos
-      </abt-dropdown-item>
-      <abt-dropdown-divider></abt-dropdown-divider>
-      <abt-dropdown-item model.bind="true">
-        Yes
-      </abt-dropdown-item>
-      <abt-dropdown-item model.bind="false">
-        No
-      </abt-dropdown-item>
-    </abt-dropdown>
-
-    <span>
-      likesTacos: ${likesTacos}
-    </span>
-
-  </fieldset>
-
-  <select value.bind="selectedItemString">
-    <option value="">
-      Choose your hardware
-    </option>
-    <option repeat.for="str of stringObjects" value.bind="str">
-      ${str}
-    </option>
-  </select>
-
-  <fieldset>
-    <legend>Dropdown - Strings</legend>
-
-    <abt-dropdown class="mb-5" value.bind="selectedItemString" type="success" title="Choose your hardware" size="sm" changed.call="selectedChanged(selected)"
-      bs-shown.call="dropDownShown()">
-      <abt-dropdown-item value="">
-        Choose your hardware
-      </abt-dropdown-item>
-      <abt-dropdown-divider></abt-dropdown-divider>
-      <abt-dropdown-item repeat.for="str of stringObjects" value.bind="str" disabled.bind="$index===1">
-        ${str}
-      </abt-dropdown-item>
-    </abt-dropdown>
-
-    <span>Your selected items is: </span>
-    <span>${selectedItemString}</span>
+      </abt-card-body>
+      <abt-card-footer>
+        <abt-navs tabs>
+          <abt-nav-item title="View">
+            <aut-mark-down src="./docs/components/bootstrap/dropdown/dynamic-strings.md">
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/dropdown/dynamic-strings-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
+      </abt-card-footer>
+    </abt-card>
 
   </fieldset>
 

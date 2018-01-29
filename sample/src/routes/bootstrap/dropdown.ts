@@ -22,7 +22,7 @@ export class BootstrapDropdownRoute {
   private likesTacos = null;
 
 
-  private selectedItemString = 'CPU';
+  private selected_Item_String = 'RAM';
   private stringObjects = ['Motherboard', 'CPU', 'RAM'];
 
 
