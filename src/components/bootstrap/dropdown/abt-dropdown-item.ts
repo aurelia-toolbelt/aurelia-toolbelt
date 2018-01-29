@@ -11,6 +11,7 @@ export class BootstrapDropdownItem {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
+
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public model: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string = null;
