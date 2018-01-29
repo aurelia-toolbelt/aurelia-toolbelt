@@ -175,6 +175,10 @@ export class BootstrapPaginationCustomElement {
 
   private afterAttached() {
 
+    this.totalPages = Number(this.totalPages);
+    this.startPage = Number(this.startPage);
+    this.visiblePages = Number(this.visiblePages);
+
     if (this.visiblePages <= 0) {
       throw Error('The visible pages value should be greater than 0.');
     }
@@ -183,12 +187,9 @@ export class BootstrapPaginationCustomElement {
       throw Error('The visible pages should always be less than or equal to the total pages.');
     }
 
-    this.totalPages = Number(this.totalPages);
-    this.startPage = Number(this.startPage);
-    this.visiblePages = Number(this.visiblePages);
 
     let hideOnlyOnePage = (this.hideOnlyOnePage === '' && this.paginationTemplate.hasAttribute('hide-only-one-page'))
-                          || this.hideOnlyOnePage.toString() === 'true';
+      || this.hideOnlyOnePage.toString() === 'true';
     let boundaryLinks = (this.boundaryLinks === '' && this.paginationTemplate.hasAttribute('boundary-links')) || this.boundaryLinks.toString() === 'true';
     let directionLinks = (this.directionLinks === '' && this.paginationTemplate.hasAttribute('direction-links')) || this.directionLinks.toString() === 'true';
     let showGoto = (this.showGoto === '' && this.paginationTemplate.hasAttribute('show-goto')) || this.showGoto.toString() === 'true';
