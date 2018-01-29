@@ -40,6 +40,29 @@ export class BootstrapNavBarDropDown {
         break;
     }
 
+    // Fix bug #46
+    $(this.navListDropDown).on('shown.bs.dropdown', () => {
+      if (!this.dropDownMenu.classList.contains('abt-dropdown-menu-position-calculated')) {
+        let top = Number(window.getComputedStyle(this.dropDownMenu, null).getPropertyValue('top').replace('px', ''));
+        let bottom = Number(window.getComputedStyle(this.dropDownMenu, null).getPropertyValue('bottom').replace('px', ''));
+        switch (this.placement) {
+          case 'up':
+            bottom -= 10;
+            top += 10;
+            $(this.dropDownMenu).css('bottom', `${bottom}px`);
+            break;
+          case 'right':
+            break;
+          case 'left':
+            break;
+          case 'down':
+            top -= 10;
+            break;
+        }
+        $(this.dropDownMenu).css('top', `${top}px`);
+        this.dropDownMenu.classList.add('abt-dropdown-menu-position-calculated');
+      }
+    });
 
     let isMegaMenuFullWidth = this.navDropDown.hasAttribute('full-width') || Boolean(this.fulWidth);
 
@@ -53,13 +76,6 @@ export class BootstrapNavBarDropDown {
 
 
   private onClick(event: Event) {
-
-    /*
-    // Fix bug #46
-    let top = $(this.navListDropDown).offset().top + $(this.navListDropDown).height();
-    console.log(top);
-    $(this.dropDownMenu).css('top', `${top}px`);
-    */
     if (this.click) {
       this.click({ event: event });
     }
