@@ -1,5 +1,7 @@
 import { containerless, customElement } from 'aurelia-framework';
 import { inject } from 'aurelia-dependency-injection';
+import { bindable } from 'aurelia-templating';
+import { bindingMode } from 'aurelia-binding';
 
 
 
@@ -9,13 +11,22 @@ import { inject } from 'aurelia-dependency-injection';
 export class BootstrapJumbotron {
 
 
-  private isFluid: boolean = false;
+
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
+
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public fluid: boolean | string = false;
+
+
   constructor(private element: Element) {
   }
 
 
   private attached() {
-    this.isFluid = this.element.hasAttribute('fluid');
+
+    const onlyDismissibleAttribute = (this.fluid === '' && this.element.hasAttribute('fluid'));
+    this.fluid = onlyDismissibleAttribute || this.fluid.toString() === 'true';
+
   }
 
 }
