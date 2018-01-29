@@ -1,10 +1,10 @@
 import { DOM, containerless, inject, bindingMode, bindable, children } from 'aurelia-framework';
 import { customElement } from 'aurelia-templating';
 
-export type ExpandSize = 'sm' | 'md' | 'lg' | 'xl';
-export type NavbarColorType = 'light' | 'dark';
-export type Placement = '' | 'fixed-top' | 'fixed-bottom' | 'sticky-top';
-export type BackgroundColorType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+type ExpandSize = 'sm' | 'md' | 'lg' | 'xl';
+type NavbarColorType = 'light' | 'dark';
+type Placement = '' | 'fixed-top' | 'fixed-bottom' | 'sticky-top';
+type BackgroundColorType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
 
 @inject(Element)
 @customElement('abt-navbar')

@@ -422,119 +422,55 @@
           <td>Set custom styles to the component</td>
         </tr>
         <tr>
-          <td class="text-nowrap" scope="row">prev-title</td>
+          <td class="text-nowrap" scope="row">navbar-color-type</td>
           <td class="text-nowrap">string</td>
-          <td class="text-nowrap">oneTime</td>
-          <td class="text-nowrap">Previous</td>
-          <td>Title of prev button</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">light</td>
+          <td>Use for chaning
+            <code>navbar</code> theme from
+            <code>light</code> or
+            <code>dark</code>.</td>
         </tr>
         <tr>
-          <td class="text-nowrap" scope="row">next-title</td>
+          <td class="text-nowrap" scope="row">background-color-type</td>
           <td class="text-nowrap">string</td>
-          <td class="text-nowrap">oneTime</td>
-          <td class="text-nowrap">Next</td>
-          <td>Title of next button</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">light</td>
+          <td>The type of color, contextual values of bootstrap,
+            <code>primary</code>,
+            <code>secondary</code>,
+            <code>info</code>,
+            <code>success</code>,
+            <code>warning</code>,
+            <code>danger</code>,
+            <code>light</code>, and
+            <code>dark</code>
+          </td>
         </tr>
         <tr>
-          <td class="text-nowrap" scope="row">prev-icon</td>
+          <td class="text-nowrap" scope="row">expand-size</td>
           <td class="text-nowrap">string</td>
-          <td class="text-nowrap">oneTime</td>
-          <td class="text-nowrap">carousel-control-prev-icon</td>
-          <td>Icon class for prev button</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">lg</td>
+          <td>use for automatically collapses at the
+            <code>expand-size</code> breakpoint. The values can be
+            <code>sm</code>,
+            <code>md</code>,
+            <code>lg</code>, and
+            <code>xl</code>
+          </td>
         </tr>
         <tr>
-          <td class="text-nowrap" scope="row">next-icon</td>
+          <td class="text-nowrap" scope="row">placement</td>
           <td class="text-nowrap">string</td>
-          <td class="text-nowrap">oneTime</td>
-          <td class="text-nowrap">carousel-control-next-icon</td>
-          <td>Icon class for next button</td>
-        </tr>
-
-        <tr>
-          <td scope="row">interval</td>
-          <td class="text-nowrap">number | string</td>
           <td class="text-nowrap">oneWay</td>
-          <td class="text-nowrap">5000</td>
-          <td>The amount of time to delay between automatically cycling an item. If
-            <code>0</code>, carousel will not automatically cycle.</td>
-        </tr>
-        <tr>
-          <td class="text-nowrap" scope="row">keyboard</td>
-          <td class="text-nowrap">boolean | string</td>
-          <td class="text-nowrap">oneWay</td>
-          <td class="text-nowrap">true</td>
-          <td>Whether the carousel should react to keyboard events.
+          <td class="text-nowrap">down</td>
+          <td>Position of dropdown menu. You can set one of these values:
+            <code>up</code>,
+            <code>down</code>,
+            <code>left</code>, and
+            <code>right</code>
           </td>
-        </tr>
-        <tr>
-          <td class="text-nowrap" scope="row">pause</td>
-          <td class="text-nowrap">boolean | string</td>
-          <td class="text-nowrap">oneWay</td>
-          <td class="text-nowrap">true</td>
-          <td>
-            <p>If set to
-              <code>true</code>, pauses the cycling of the carousel on mouseenter and resumes the cycling of the carousel on mouseleave. If
-              set to
-              <code>false</code>, hovering over the carousel won't pause it.</p>
-            <p>On touch-enabled devices, when set to
-              <code>true</code>, cycling will pause on touchend (once the user finished interacting with the carousel) for two intervals,
-              before automatically resuming. Note that this is in addition to the above mouse behavior.</p>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-nowrap" scope="row">ride</td>
-          <td class="text-nowrap">boolean | string</td>
-          <td class="text-nowrap">oneWay</td>
-          <td class="text-nowrap">false</td>
-          <td>Autoplays the carousel after the user manually cycles the first item. If
-            <code>true</code>, autoplays the carousel on load.
-          </td>
-        </tr>
-        <tr>
-          <td class="text-nowrap" scope="row">wrap</td>
-          <td class="text-nowrap">boolean | string</td>
-          <td class="text-nowrap">oneWay</td>
-          <td class="text-nowrap">true</td>
-          <td>Whether the carousel should cycle continuously or have hard stops.
-          </td>
-        </tr>
-        <tr>
-          <td scope="row">navigator</td>
-          <td class="text-nowrap">boolean | string</td>
-          <td class="text-nowrap">oneWay</td>
-          <td class="text-nowrap">false</td>
-          <td>Adding in the previous and next controls</td>
-        </tr>
-        <tr>
-          <td class="text-nowrap" scope="row">indicator</td>
-          <td class="text-nowrap">boolean | string</td>
-          <td class="text-nowrap">oneWay</td>
-          <td class="text-nowrap">false</td>
-          <td>Adding in the indicators to the carousel.</td>
-        </tr>
-
-        <tr>
-          <td class="text-nowrap" colspan="5">
-            <b>
-              Events
-            </b>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-nowrap" scope="row">bs-slide</td>
-          <td class="text-nowrap">Function</td>
-          <td class="text-nowrap">call</td>
-          <td class="text-nowrap"></td>
-          <td>This event fires immediately when the slide instance method is invoked.
-          </td>
-        </tr>
-
-        <tr>
-          <td class="text-nowrap" scope="row">bs-slid</td>
-          <td class="text-nowrap">Function</td>
-          <td class="text-nowrap">call</td>
-          <td class="text-nowrap"></td>
-          <td>This event is fired when the carousel has completed its slide transition.</td>
         </tr>
       </tbody>
     </table>
@@ -544,7 +480,7 @@
         <tr>
           <td class="text-nowrap" colspan="4">
             <b>
-              abt-carousel-item
+              abt-navbar-nav
             </b>
           </td>
           <td class="text-nowrap" colspan="1">
@@ -570,13 +506,140 @@
           </td>
         </tr>
         <tr>
-          <td scope="row">active</td>
-          <td class="text-nowrap">boolean | string</td>
-          <td class="text-nowrap">oneWay</td>
-          <td class="text-nowrap">false</td>
-          <td>The active attribute needs to be added to one of the
-            <code>abt-carousel-items</code>. Otherwise, the carousel will not be visible.
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-navbar-toggler
+            </b>
           </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">toggler-icon</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">navbar-toggler-icon</td>
+          <td>Set custom icon to the toggler</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-navbar-text
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
         </tr>
       </tbody>
     </table>
