@@ -17,12 +17,42 @@
     <aut-mark-down src="./docs/components/bootstrap/tooltip/usage.md">
     </aut-mark-down>
   </fieldset>
-  <div style="margin:5px">
-    <button type="button" class="btn btn-primary">
-      Submit
-      <abt-tooltip html.bind='true' show-tooltip.call="showMgs()" hide-tooltip.bind="hideMgs" placement='bottom'>
-        <h1 style='color:red'>Click Me!</h1>
+  <fieldset class="mt-5">
+    <legend>
+      Example
+    </legend>
+    <p>If you want to use
+      <code>tooltip</code>, you must apply
+      <code>abt-tooltip</code> as the child inside the component that you want to enable the
+      <code>tooltip</code>.</p>
+    <abt-button class="mr-2" bs-type="secondary">Tooltip on top
+      <abt-tooltip placement='top'>
+        Tooltip on top
       </abt-tooltip>
-    </button>
-  </div>
+    </abt-button>
+    <abt-button class="mr-2" bs-type="secondary">Tooltip on right
+      <abt-tooltip placement='right'>
+        Tooltip on right
+      </abt-tooltip>
+    </abt-button>
+    <abt-button class="mr-2" bs-type="secondary">Tooltip on bottom
+      <abt-tooltip placement='bottom'>
+        Tooltip on bottom
+      </abt-tooltip>
+    </abt-button>
+    <abt-button class="mr-2" bs-type="secondary">Tooltip on left
+      <abt-tooltip placement='left'>
+        Tooltip on left
+      </abt-tooltip>
+    </abt-button>
+    <abt-button class="mr-2" bs-type="secondary">Tooltip with HTML
+      <abt-tooltip html="true" placement='top'>
+        Tooltip
+        <i>with</i>
+        <b> HTML</b>
+      </abt-tooltip>
+    </abt-button>
+    <aut-mark-down src="./docs/components/bootstrap/tooltip/example.md">
+    </aut-mark-down>
+  </fieldset>
 </template>

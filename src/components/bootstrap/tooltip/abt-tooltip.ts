@@ -1,7 +1,7 @@
 import { customElement, inject, bindable, bindingMode, BindingEngine, containerless } from 'aurelia-framework';
 
-export type PlacementType = 'auto' | 'top' | 'bottom' | 'left' | 'right';
-export type BoundaryType = 'viewport' | 'window' | 'scrollParent';
+type Placement = 'auto' | 'top' | 'bottom' | 'left' | 'right';
+type Boundary = 'viewport' | 'window' | 'scrollParent';
 
 import * as $ from 'jquery';
 
@@ -10,16 +10,16 @@ import * as $ from 'jquery';
 @customElement('abt-tooltip')
 export class BootstrapTooltipCustomElement {
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public container: string | boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public container: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public delay: number | object = 0;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: PlacementType | Function = 'top';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public selector: string | boolean = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public animation: boolean = true;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public html: boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: Placement | Function = 'top';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public selector: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public animation: boolean | string = true;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public html: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public trigger: string = 'hover focus';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public offset: string | number = 0;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public offset: number | string = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public fallbackPlacement: string | string[] = 'flip';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: BoundaryType = 'scrollParent';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: Boundary = 'scrollParent';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public template: string =
     '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>';
 
@@ -32,13 +32,15 @@ export class BootstrapTooltipCustomElement {
   private tooltip: Element;
   private parentElement: HTMLElement;
 
-  constructor(private element: Element) {
-
-  }
-
-  private attached() {
-    this.parentElement = this.element.parentElement;
+  private afterAttached() {
+    this.parentElement = this.tooltip.parentElement;
     let slotContent = this.html ? this.tooltip.innerHTML : this.tooltip.textContent;
+
+    this.animation = (this.animation === '' && this.tooltip.hasAttribute('animation')) || this.animation.toString() === 'true';
+    this.container = (this.container === '' && this.tooltip.hasAttribute('container')) || this.container.toString() === 'true';
+    this.html = (this.html === '' && this.tooltip.hasAttribute('html')) || this.html.toString() === 'true';
+    this.selector = (this.selector === '' && this.tooltip.hasAttribute('selector')) || this.selector.toString() === 'true';
+
     // @ts-ignore
     $(this.parentElement).tooltip({
       'title': slotContent,
@@ -53,7 +55,9 @@ export class BootstrapTooltipCustomElement {
       'fallbackPlacement': this.fallbackPlacement,
       'boundary': this.boundary
     });
+
     this.tooltip.remove();
+
     if (this.showTooltip) {
       // @ts-ignore
       $(this.parentElement).on('show.bs.tooltip', this.showTooltip);
@@ -75,7 +79,6 @@ export class BootstrapTooltipCustomElement {
       $(this.parentElement).on('inserted.bs.tooltip', this.tooltipInserted);
     }
   }
-
 
   private detached() {
     $(this.parentElement).tooltip('dispose');
