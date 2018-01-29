@@ -1,12 +1,11 @@
 import { customElement, inject, bindable, bindingMode, BindingEngine, containerless } from 'aurelia-framework';
 
-export type PlacementType = 'auto' | 'top' | 'bottom' | 'left' | 'right';
-export type BoundaryType = 'viewport' | 'window' | 'scrollParent';
+type Placement = 'auto' | 'top' | 'bottom' | 'left' | 'right';
+type Boundary = 'viewport' | 'window' | 'scrollParent';
 
 import * as $ from 'jquery';
 
 @containerless()
-@inject(Element)
 @customElement('abt-popover')
 export class BootstrapPopoverCustomElement {
 
@@ -14,13 +13,13 @@ export class BootstrapPopoverCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public container: string | boolean = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public delay: number | object = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public html: boolean = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: PlacementType | Function = 'right';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: Placement | Function = 'right';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public selector: string | boolean = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string | Function = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public trigger: string = 'click';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public offset: string | number = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public fallbackPlacement: string | string[] = 'flip';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: BoundaryType = 'scrollParent';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: Boundary = 'scrollParent';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public template: string =
     '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>';
 
@@ -33,12 +32,8 @@ export class BootstrapPopoverCustomElement {
   private popover: Element;
   private parentElement: HTMLElement;
 
-  constructor(private element: Element) {
-
-  }
-
   private attached() {
-    this.parentElement = this.element.parentElement;
+    this.parentElement = this.popover.parentElement;
     let slotContent = this.html ? this.popover.innerHTML : this.popover.textContent;
     // @ts-ignore
     $(this.parentElement).popover({

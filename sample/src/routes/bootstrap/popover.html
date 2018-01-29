@@ -14,16 +14,78 @@
     <legend>
       Usage
     </legend>
+
     <aut-mark-down src="./docs/components/bootstrap/popover/usage.md">
     </aut-mark-down>
   </fieldset>
-
-  <div style="margin:5px">
-    <button type="button" class="btn btn-primary">
-      Submit
-      <abt-popover html.bind='true' placement='bottom'>
-        <h1 style='color:red'>Click Me!</h1>
+  <fieldset class="mt-5">
+    <legend>
+      Basic example
+    </legend>
+    <p>If you want to use
+      <code>popover</code>, you must apply
+      <code>abt-popover</code> as the child inside the component that you want to enable the
+      <code>popover</code>.</p>
+    <abt-button class="mr-2" size="lg" bs-type="danger">Click to toggle popover
+      <abt-popover title="Popover title" placement='right'>
+        And here's some amazing content. It's very engaging. Right?
       </abt-popover>
-    </button>
-  </div>
+    </abt-button>
+    <aut-mark-down src="./docs/components/bootstrap/popover/example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Four directions
+    </legend>
+    <p>Four options are available: top, right, bottom, and left aligned.</p>
+    <abt-button class="mr-2" bs-type="secondary">Popover on top
+      <abt-popover placement='top'>
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
+      </abt-popover>
+    </abt-button>
+    <abt-button class="mr-2" bs-type="secondary">Popover on right
+      <abt-popover placement='right'>
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
+      </abt-popover>
+    </abt-button>
+    <abt-button class="mr-2" bs-type="secondary">Popover on bottom
+      <abt-popover placement='bottom'>
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
+      </abt-popover>
+    </abt-button>
+    <abt-button class="mr-2" bs-type="secondary">Popover on left
+      <abt-popover placement='left'>
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
+      </abt-popover>
+    </abt-button>
+    <aut-mark-down src="./docs/components/bootstrap/popover/four-directions.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Dismiss on next click
+    </legend>
+    <p>Use the
+      <code>focus</code> trigger to dismiss popovers on the user’s next click of a different element than the toggle element.</p>
+    <abt-button class="mr-2" size="lg" bs-type="danger">Dismissible popover
+      <abt-popover trigger="focus" title="Dismissible popover" placement='right'>
+        And here's some amazing content. It's very engaging. Right?
+      </abt-popover>
+    </abt-button>
+    <aut-mark-down src="./docs/components/bootstrap/popover/dismiss.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Disabled elements
+    </legend>
+    <abt-button disabled="true">Disabled button
+      <abt-popover trigger="hover" placement='right'>
+        Disabled popover
+      </abt-popover>
+    </abt-button>
+    <!-- <aut-mark-down src="./docs/components/bootstrap/popover/dismiss.md">
+    </aut-mark-down> -->
+  </fieldset>
 </template>
