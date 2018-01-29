@@ -5,12 +5,14 @@ import { customElement } from 'aurelia-templating';
 @containerless()
 @customElement('abt-navbar-link')
 export class BootstrapNavBarLink {
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
+
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string;
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public linkClass: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public linkStyle: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public linkClass: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public linkStyle: string;
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public active: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public disabled: boolean | string = false;

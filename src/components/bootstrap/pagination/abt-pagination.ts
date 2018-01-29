@@ -185,7 +185,6 @@ export class BootstrapPaginationCustomElement {
     this.showGoto = Boolean(this.showGoto) || this.paginationTemplate.hasAttribute('show-goto');
     this.loop = Boolean(this.loop) || this.paginationTemplate.hasAttribute('loop');
 
-
     if (this.visiblePages <= 0) {
       throw Error('The visible pages value should be greater than 0.');
     }
@@ -194,9 +193,9 @@ export class BootstrapPaginationCustomElement {
       throw Error('The visible pages should always be less than or equal to the total pages.');
     }
 
-    if (this.size === 'lg' || this.paginationTemplate.hasAttribute('lg')) {
+    if (this.size === 'lg') {
       this.pagination.classList.add('pagination-lg');
-    } else if (this.size === 'sm' || this.paginationTemplate.hasAttribute('sm')) {
+    } else if (this.size === 'sm') {
       this.pagination.classList.add('pagination-sm');
     } else {
       this.pagination.classList.remove('pagination-sm');
