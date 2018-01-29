@@ -264,96 +264,173 @@
   </fieldset>
 
 
+  <fieldset class="mt-5">
+    <legend>
+      Dynamic Dropdowns
+    </legend>
+
+    <p>
+      You can bind array of
+      <code>
+        objects
+      </code>,
+      <code>strings</code>,
+      <code>booleans</code>, or even use
+      <i>matcher functions</i> for dropdowns.All the same as
+      <code>select</code>
+      element in
+      <a href="http://aurelia.io/docs/binding/selects">Aurelia</a>
+    </p>
 
 
+    <h4 class="mt-5">
+      <i>
+        Objects
+      </i>
+    </h4>
+    <hr />
+
+    <abt-card>
+      <abt-card-header>
+        Choose your object
+      </abt-card-header>
+      <abt-card-body>
+
+        <abt-dropdown class="mb-2" value.bind="selectedProduct" type="secondary" title="choose...">
+          <abt-dropdown-item model.bind="null">
+            choose...
+          </abt-dropdown-item>
+          <abt-dropdown-divider></abt-dropdown-divider>
+          <abt-dropdown-item repeat.for="product of products" model.bind="product">
+            ${product.id} - ${product.name}
+          </abt-dropdown-item>
+        </abt-dropdown>
+
+        <abt-alert type="secondary" class="text-center">
+          <span>
+            Selected product:&nbsp; ${selectedProduct.id} - ${selectedProduct.name}
+          </span>
+        </abt-alert>
+      </abt-card-body>
+      <abt-card-footer>
+        <abt-navs tabs>
+          <abt-nav-item title="View">
+            <aut-mark-down src="./docs/components/bootstrap/dropdown/dynamic-objects.md">
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/dropdown/dynamic-objects-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
+      </abt-card-footer>
+    </abt-card>
 
 
+    <h4 class="mt-5">
+      <i>Matchers
+      </i>
+    </h4>
+    <hr />
+
+    <abt-card>
+      <abt-card-header>
+        Choose your object
+      </abt-card-header>
+      <abt-card-body>
+
+        <abt-dropdown class="mb-2" value.bind="selected_product_matcher" matcher.bind="productMatcher" type="secondary" title="choose...">
+          <abt-dropdown-item model.bind="null">
+            choose...
+          </abt-dropdown-item>
+          <abt-dropdown-divider></abt-dropdown-divider>
+          <abt-dropdown-item repeat.for="product of products" model.bind="product">
+            ${product.id} - ${product.name}
+          </abt-dropdown-item>
+        </abt-dropdown>
+
+        <abt-alert type="secondary" class="text-center">
+          <span>
+            Selected product: &nbsp; ${selected_product_matcher.id} - ${selected_product_matcher.name}
+          </span>
+        </abt-alert>
+      </abt-card-body>
+      <abt-card-footer>
+        <abt-navs tabs>
+          <abt-nav-item title="View">
+            <aut-mark-down src="./docs/components/bootstrap/dropdown/dynamic-matchers.md">
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/dropdown/dynamic-matchers-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
+      </abt-card-footer>
+    </abt-card>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <fieldset>
-    <legend>Dropdown - Simple</legend>
-
-
-
-    <abt-dropdown type="danger" placement="right" title="Action" disabled.bind="false" size="md">
-      <abt-dropdown-item>Action</abt-dropdown-item>
-      <abt-dropdown-item>Another action</abt-dropdown-item>
-      <abt-dropdown-item>Something else here</abt-dropdown-item>
-      <abt-dropdown-divider></abt-dropdown-divider>
-      <abt-dropdown-item>Separated link</abt-dropdown-item>
-    </abt-dropdown>
   </fieldset>
 
-  <fieldset>
-    <legend>Dropdown - Objects</legend>
 
-    <abt-dropdown class="mb-5" placement="top" value.bind="selectedProduct" type="info" title="choose..." size="sm">
-      <abt-dropdown-item model.bind="null">
-        choose...
-      </abt-dropdown-item>
-      <abt-dropdown-divider></abt-dropdown-divider>
-      <abt-dropdown-item repeat.for="product of products" model.bind="product">
-        ${product.id} - ${product.name}
-      </abt-dropdown-item>
-    </abt-dropdown>
 
-    <span>
-      Selected product: ${selectedProduct.id} : ${selectedProduct.name}
-    </span>
 
-  </fieldset>
 
-  <fieldset>
-    <legend>Dropdown - Matchers</legend>
 
-    <abt-dropdown class="mb-5" value.bind="selectedProduct" matcher.bind="productMatcher" type="info" title="choose..." size="sm">
-      <abt-dropdown-item model.bind="null">
-        choose...
-      </abt-dropdown-item>
-      <abt-dropdown-divider></abt-dropdown-divider>
-      <abt-dropdown-item repeat.for="product of products" model.bind="product">
-        ${product.id} - ${product.name}
-      </abt-dropdown-item>
-    </abt-dropdown>
 
-    <span>
-      Selected product: ${selectedProduct.id}: ${selectedProduct.name}
-    </span>
 
-  </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <br />
+
+
+
+  <br />
+
+
+
+
+  <br />
+
+
+
+
+  <br />
+
+
+
+
+  <br />
+
+
+
+
+  <br />
+
+
+
+
+
+
+
+
+
+
 
 
   <fieldset>

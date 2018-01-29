@@ -12,7 +12,8 @@ export class BootstrapDropdownRoute {
   ];
   private selectedProduct = null;
 
-  // private selectedProductMatcher = { id: 1, name: 'CPU' };
+
+  private selected_product_matcher = { id: 1, name: 'CPU' };
 
 
 
