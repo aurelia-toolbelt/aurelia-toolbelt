@@ -465,11 +465,12 @@
           <td class="text-nowrap">string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">down</td>
-          <td>Position of dropdown menu. You can set one of these values:
-            <code>up</code>,
-            <code>down</code>,
-            <code>left</code>, and
-            <code>right</code>
+          <td>Position of
+            <code>navbar</code>. You can set one of these values:
+            <code>''</code>,
+            <code>fixed-top</code>,
+            <code>fixed-bottom</code>, and
+            <code>sticky-top</code>
           </td>
         </tr>
       </tbody>
@@ -943,16 +944,254 @@
       </tbody>
     </table>
     <br>
-
-
-
-
-
-
-
-
-
-
-
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-navbar-dropdown
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">full-width</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">false</td>
+          <td>Set when ypu need to have full width menu content.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">link-class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the
+            <code>anchor</code> tag inside component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">link-style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the
+            <code>anchor</code> tag inside component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">menu-class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the menu content.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">menu-style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the menu content.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">title</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set title to dropdown.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">placement</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">down</td>
+          <td>Position of dropdown menu. You can set one of these values:
+            <code>up</code>,
+            <code>down</code>,
+            <code>left</code>, and
+            <code>right</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">click</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>You can handle
+            <code>click</code> on specific item.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-navbar-dropdown-item
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">href</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Specifies the linked document, resource, or location
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">click</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>You can handle
+            <code>click</code> on specific item.</td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+  <br>
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <td class="text-nowrap" colspan="4">
+          <b>
+            abt-navbar-dropdown-mega-item
+          </b>
+        </td>
+        <td class="text-nowrap" colspan="1">
+          <b>
+            containerless
+          </b>
+        </td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="col">Name</th>
+        <th class="text-nowrap" scope="col">Type</th>
+        <th class="text-nowrap" scope="col">Binding type</th>
+        <th class="text-nowrap" scope="col">Default value</th>
+        <th class="text-nowrap" scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-nowrap" colspan="5">
+          <b>
+            Properties
+          </b>
+        </td>
+      </tr>
+      <tr>
+        <td class="text-nowrap" scope="row">id</td>
+        <td class="text-nowrap">string</td>
+        <td class="text-nowrap">oneTime</td>
+        <td class="text-nowrap"></td>
+        <td>Set id to the component</td>
+      </tr>
+      <tr>
+        <td class="text-nowrap" scope="row">class</td>
+        <td class="text-nowrap">string</td>
+        <td class="text-nowrap">oneTime</td>
+        <td class="text-nowrap"></td>
+        <td>Set custom classes to the component</td>
+      </tr>
+      <tr>
+        <td class="text-nowrap" scope="row">style</td>
+        <td class="text-nowrap">string</td>
+        <td class="text-nowrap">oneTime</td>
+        <td class="text-nowrap"></td>
+        <td>Set custom styles to the component</td>
+      </tr>
+    </tbody>
+  </table>
   </fieldset>
 </template>

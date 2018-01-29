@@ -10,12 +10,12 @@ export class BootstrapNavBarDropDown {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public fulWidth: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public headerClass: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public headerStyle: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public contentClass: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public contentStyle: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public linkClass: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public linkStyle: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public menuClass: string;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public menuStyle: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: Placement = 'down';
 
   private navDropDown: Element;
@@ -41,6 +41,7 @@ export class BootstrapNavBarDropDown {
     }
 
     // Fix bug #46
+    // Needs more investigation for left and right placement.
     $(this.navListDropDown).on('shown.bs.dropdown', () => {
       if (!this.dropDownMenu.classList.contains('abt-dropdown-menu-position-calculated')) {
         let top = Number(window.getComputedStyle(this.dropDownMenu, null).getPropertyValue('top').replace('px', ''));
