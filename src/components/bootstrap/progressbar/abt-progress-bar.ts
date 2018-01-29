@@ -22,8 +22,9 @@ export class BootstrapProgressBar {
   private progressbarTemplate: Element;
 
   private afterAttached() {
-    this.animated = Boolean(this.animated) || this.progressbarTemplate.hasAttribute('animated');
-    this.striped = Boolean(this.striped) || this.progressbarTemplate.hasAttribute('striped');
+    let animated = (this.animated === '' && this.progressbarTemplate.hasAttribute('animated')) || this.animated.toString() === 'true';
+    let striped = (this.striped === '' && this.progressbarTemplate.hasAttribute('striped')) || this.striped.toString() === 'true';
+
     this.value = Number(this.value);
     this.min = Number(this.min);
     this.max = Number(this.max);

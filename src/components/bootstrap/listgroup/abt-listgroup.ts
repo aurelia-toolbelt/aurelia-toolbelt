@@ -12,10 +12,7 @@ export class ListGroupCustomElement {
   private listGroup: Element;
 
   private afterAttached() {
-    this.flush = Boolean(this.flush);
-
-    let isFlush = this.flush || this.listGroupTemplate.hasAttribute('flush');
-
+    let isFlush = (this.flush === '' && this.listGroupTemplate.hasAttribute('active')) || this.flush.toString() === 'true';
     if (isFlush) {
       this.listGroup.classList.add('list-group-flush');
     }

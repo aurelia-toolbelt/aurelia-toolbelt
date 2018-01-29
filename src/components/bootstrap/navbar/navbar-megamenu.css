@@ -17,3 +17,7 @@
     left: 0;
     right: 0;
 }
+.navbar-megamenu .dropup.navbar-megamenu-fullwidth .dropdown-menu {
+  left: 0;
+  right: 0;
+}

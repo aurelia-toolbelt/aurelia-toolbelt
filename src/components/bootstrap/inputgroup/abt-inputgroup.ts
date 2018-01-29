@@ -14,9 +14,10 @@ export class BootstrapInputGroupCustomElement {
   private inputGroup: Element;
   private inputGroupTemplate: Element;
   private attached() {
-    if (this.size === 'sm' || this.inputGroupTemplate.hasAttribute('sm')) {
+
+    if (this.size === 'sm') {
       this.inputGroup.classList.add('input-group-sm');
-    } else if (this.size === 'lg' || this.inputGroupTemplate.hasAttribute('lg')) {
+    } else if (this.size === 'lg') {
       this.inputGroup.classList.add('input-group-lg');
     } else {
       this.inputGroup.classList.remove('input-group-sm');

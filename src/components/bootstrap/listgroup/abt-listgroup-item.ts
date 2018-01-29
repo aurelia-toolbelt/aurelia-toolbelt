@@ -18,16 +18,14 @@ export class ListGroupItemCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public disabled: boolean | string = false;
 
 
-  private listGroupItemTmpl: Element;
+  private listGroupItemTemplate: Element;
   private listGroupItem: HTMLLinkElement;
 
   private attached() {
 
-    this.active = Boolean(this.active);
-    this.disabled = Boolean(this.disabled);
+    let isActive = (this.active === '' && this.listGroupItemTemplate.hasAttribute('active')) || this.active.toString() === 'true';
+    let isDisabled = (this.disabled === '' && this.listGroupItemTemplate.hasAttribute('disabled')) || this.disabled.toString() === 'true';
 
-    let isActive = this.active || this.listGroupItemTmpl.hasAttribute('active');
-    let isDisabled = this.disabled || this.listGroupItemTmpl.hasAttribute('disabled');
     if (isActive) {
       this.listGroupItem.classList.add('active');
     }

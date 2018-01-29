@@ -28,16 +28,14 @@ export class CarouselCustomElement {
 
   private afterAttached() {
 
-    this.navigator = Boolean(this.navigator);
-    this.indicator = Boolean(this.indicator);
-    this.interval = Number(this.interval);
-    this.keyboard = Boolean(this.keyboard);
-    this.pause = Boolean(this.pause);
-    this.ride = Boolean(this.ride);
-    this.wrap = Boolean(this.wrap);
 
-    this.showNavigator = this.navigator || this.carouselTemplate.hasAttribute('navigator');
-    this.showIndicator = this.indicator || this.carouselTemplate.hasAttribute('indicator');
+    this.showNavigator = (this.navigator === '' && this.carouselTemplate.hasAttribute('navigator')) || this.navigator.toString() === 'true';
+    this.showIndicator = (this.indicator === '' && this.carouselTemplate.hasAttribute('indicator')) || this.navigator.toString() === 'true';
+    this.keyboard = (this.keyboard === '' && this.carouselTemplate.hasAttribute('keyboard')) || this.keyboard.toString() === 'true';
+    this.pause = (this.pause === '' && this.carouselTemplate.hasAttribute('pause')) || this.pause.toString() === 'true';
+    this.ride = (this.ride === '' && this.carouselTemplate.hasAttribute('ride')) || this.ride.toString() === 'true';
+    this.wrap = (this.wrap === '' && this.carouselTemplate.hasAttribute('wrap')) || this.wrap.toString() === 'true';
+
 
     // @ts-ignore
     $(this.carousel).carousel({
