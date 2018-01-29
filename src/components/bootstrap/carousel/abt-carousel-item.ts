@@ -11,7 +11,7 @@ export class CarouselItemCustomElement {
 
   private isActive: boolean = false;
   private carouselItem: Element;
-  private carouselTemplate: Element;
+  private carouselItemTemplate: Element;
 
   private times: number = 0;
 
@@ -23,11 +23,9 @@ export class CarouselItemCustomElement {
   }
   private afterAttached() {
 
-    this.active = Boolean(this.active);
     let carousel = this.carouselItem.parentElement.parentElement;
-
     this.times = this.sharedController.getAndIncrement(carousel.id);
-    let isActive = this.active || this.carouselTemplate.hasAttribute('active');
+    let isActive = (this.active === '' && this.carouselItemTemplate.hasAttribute('active')) || this.active.toString() === 'true';
     let carouselOl = carousel.children[0];
     let isOl = carouselOl.nodeName.toLowerCase() === 'ol';
     if (isOl) {

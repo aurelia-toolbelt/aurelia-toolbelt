@@ -175,17 +175,6 @@ export class BootstrapPaginationCustomElement {
 
   private afterAttached() {
 
-    this.totalPages = Number(this.totalPages);
-    this.startPage = Number(this.startPage);
-    this.visiblePages = Number(this.visiblePages);
-
-    this.hideOnlyOnePage = Boolean(this.hideOnlyOnePage) || this.paginationTemplate.hasAttribute('hide-only-one-page');
-    this.boundaryLinks = Boolean(this.boundaryLinks) || this.paginationTemplate.hasAttribute('boundary-links');
-    this.directionLinks = Boolean(this.directionLinks) || this.paginationTemplate.hasAttribute('direction-links');
-    this.showGoto = Boolean(this.showGoto) || this.paginationTemplate.hasAttribute('show-goto');
-    this.loop = Boolean(this.loop) || this.paginationTemplate.hasAttribute('loop');
-
-
     if (this.visiblePages <= 0) {
       throw Error('The visible pages value should be greater than 0.');
     }
@@ -194,9 +183,20 @@ export class BootstrapPaginationCustomElement {
       throw Error('The visible pages should always be less than or equal to the total pages.');
     }
 
-    if (this.size === 'lg' || this.paginationTemplate.hasAttribute('lg')) {
+    this.totalPages = Number(this.totalPages);
+    this.startPage = Number(this.startPage);
+    this.visiblePages = Number(this.visiblePages);
+
+    let hideOnlyOnePage = (this.hideOnlyOnePage === '' && this.paginationTemplate.hasAttribute('hide-only-one-page'))
+                          || this.hideOnlyOnePage.toString() === 'true';
+    let boundaryLinks = (this.boundaryLinks === '' && this.paginationTemplate.hasAttribute('boundary-links')) || this.boundaryLinks.toString() === 'true';
+    let directionLinks = (this.directionLinks === '' && this.paginationTemplate.hasAttribute('direction-links')) || this.directionLinks.toString() === 'true';
+    let showGoto = (this.showGoto === '' && this.paginationTemplate.hasAttribute('show-goto')) || this.showGoto.toString() === 'true';
+    let loop = (this.loop === '' && this.paginationTemplate.hasAttribute('loop')) || this.loop.toString() === 'true';
+
+    if (this.size === 'lg') {
       this.pagination.classList.add('pagination-lg');
-    } else if (this.size === 'sm' || this.paginationTemplate.hasAttribute('sm')) {
+    } else if (this.size === 'sm') {
       this.pagination.classList.add('pagination-sm');
     } else {
       this.pagination.classList.remove('pagination-sm');
