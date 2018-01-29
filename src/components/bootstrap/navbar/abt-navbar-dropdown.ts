@@ -1,6 +1,8 @@
 import { DOM, containerless, inject, bindingMode, bindable } from 'aurelia-framework';
 import { customElement } from 'aurelia-templating';
 
+
+type Placement = 'up' | 'down' | 'right' | 'left';
 @inject(Element)
 @containerless()
 @customElement('abt-navbar-dropdown')
@@ -10,10 +12,11 @@ export class BootstrapNavBarDropDown {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public linkClass: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public linkStyle: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public dropdownClass: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public dropdownStyle: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public headerClass: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public headerStyle: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public contentClass: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public contentStyle: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: Placement = 'down';
 
   private navDropDown: Element;
   private navListDropDown: Element;
@@ -21,6 +24,23 @@ export class BootstrapNavBarDropDown {
   private navLinkDropDown: Element;
 
   private afterAttached() {
+
+    switch (this.placement) {
+      case 'up':
+        this.navListDropDown.classList.add('dropup');
+        break;
+      case 'right':
+        this.navListDropDown.classList.add('dropright');
+        break;
+      case 'left':
+        this.navListDropDown.classList.add('dropleft');
+        break;
+      case 'down':
+        this.navListDropDown.classList.add('dropdown');
+        break;
+    }
+
+
     let isMegaMenuFullWidth = this.navDropDown.hasAttribute('full-width') || Boolean(this.fulWidth);
 
     if (isMegaMenuFullWidth) {
