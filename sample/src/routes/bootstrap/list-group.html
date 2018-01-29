@@ -312,7 +312,7 @@
         </tr>
         <tr>
           <td scope="row">active</td>
-          <td class="text-nowrap">boolean, string</td>
+          <td class="text-nowrap">boolean | string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">false</td>
           <td>The
@@ -321,7 +321,7 @@
         </tr>
         <tr>
           <td scope="row">disabled</td>
-          <td class="text-nowrap">boolean, string</td>
+          <td class="text-nowrap">boolean | string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">false</td>
           <td>The
@@ -337,11 +337,19 @@
         </tr>
         <tr>
           <td scope="row">type</td>
-          <td class="text-nowrap">ColorType</td>
+          <td class="text-nowrap">string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap"></td>
-          <td>Based on Bootstrap 4 classes and can include the following values: 'primary', 'secondary', 'success', 'danger',
-            'warning', 'info', 'light', 'dark'</td>
+          <td>The type of color, contextual values of bootstrap,
+            <code>primary</code>,
+            <code>secondary</code>,
+            <code>info</code>,
+            <code>success</code>,
+            <code>warning</code>,
+            <code>danger</code>,
+            <code>light</code>, and
+            <code>dark</code>
+          </td>
         </tr>
         <tr>
           <td class="text-nowrap" colspan="5">
@@ -355,7 +363,8 @@
           <td class="text-nowrap">Function</td>
           <td class="text-nowrap">call</td>
           <td class="text-nowrap"></td>
-          <td>You can handle <code>click</code> on specific item.</td>
+          <td>You can handle
+            <code>click</code> on specific item.</td>
         </tr>
       </tbody>
     </table>
