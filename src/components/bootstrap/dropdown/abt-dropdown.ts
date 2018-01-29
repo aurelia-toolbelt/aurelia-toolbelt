@@ -12,16 +12,20 @@ import * as $ from 'jquery';
 @customElement('abt-dropdown')
 export class BootstrapDropDown {
 
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public type: string = 'primary';
+
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
+
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public menuClass: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public menuStyle: string = '';
+
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: string = 'md';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public color: string = 'primary';
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string = false;
 
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: any;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public matcher: any;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public alignRight: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public split: boolean | string = false;
 
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public offset: string | number = 0;
@@ -29,6 +33,9 @@ export class BootstrapDropDown {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: string | Element = 'scrollParent';
 
 
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: any;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public matcher: any;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string = false;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public changed: Function;
@@ -38,15 +45,15 @@ export class BootstrapDropDown {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsHidden: Function;
 
   private id: any;
-  private isSplit: boolean = false;
   private isBusy: boolean = false;
   private placementClass: string = '';
-  private isRightAligned: boolean = false;
 
   private itemsValuesOrModels: Array<any> = [];
 
   private task: Promise<void> | null = null;
   private subscription: Disposable | null = null;
+
+  private dropdown: any;
 
   constructor(private element: Element, private ea: EventAggregator) { // , private bindingEngine: BindingEngine) {
   }
@@ -92,10 +99,13 @@ export class BootstrapDropDown {
 
   private attached() {
 
-    this.isSplit = this.element.hasAttribute('split');
+    // const onlySplitAttribute = (this.split === '' && this.element.hasAttribute('split'));
+    this.split = (this.split === '' && this.element.hasAttribute('split')) || this.split.toString() === 'true';
+    // const onlyAlignRightAttribute = (this.alignRight === '' && this.element.hasAttribute('align-right'));
+    this.alignRight = (this.alignRight === '' && this.element.hasAttribute('align-right')) || this.alignRight.toString() === 'true';
+
     this.id = this.element.children.item(0).getAttribute('id');
 
-    this.isRightAligned = this.element.hasAttribute('align-right');
 
     switch (this.placement) {
       case 'top':
@@ -140,9 +150,11 @@ export class BootstrapDropDown {
 
   private afterAttached() {
 
+    $(this.dropdown).dropdown();
+
     if (this.bsShow) {
       // $(`#${this.id}`).on('show.bs.dropdown', this.bsShow );
-      $(`#${this.id}`).on('show.bs.dropdown', () => {
+      $(this.dropdown).on('show.bs.dropdown', () => {
         if (this.bsShow) {
           this.bsShow();
         }
@@ -151,7 +163,7 @@ export class BootstrapDropDown {
 
     if (this.bsShown) {
       // $(`#${this.id}`).on('shown.bs.dropdown', this.bsShown );
-      $(`#${this.id}`).on('shown.bs.dropdown', () => {
+      $(this.dropdown).on('shown.bs.dropdown', () => {
         if (this.bsShown) {
           this.bsShown();
         }
@@ -160,7 +172,7 @@ export class BootstrapDropDown {
 
     if (this.bsHide) {
       // $(`#${this.id}`).on('hide.bs.dropdown', this.bsHide );
-      $(`#${this.id}`).on('hide.bs.dropdown', () => {
+      $(this.dropdown).on('hide.bs.dropdown', () => {
         if (this.bsHide) {
           this.bsHide();
         }
@@ -169,7 +181,7 @@ export class BootstrapDropDown {
 
     if (this.bsHidden) {
       // $(`#${this.id}`).on('hidden.bs.dropdown', this.bsHidden);
-      $(`#${this.id}`).on('hidden.bs.dropdown', () => {
+      $(this.dropdown).on('hidden.bs.dropdown', () => {
         if (this.bsHidden) {
           this.bsHidden();
         }
@@ -210,11 +222,11 @@ export class BootstrapDropDown {
 
   private detached() {
     this.task = null;
-    $(`#${this.id}`).off('show.bs.tab');
-    $(`#${this.id}`).off('shown.bs.tab');
-    $(`#${this.id}`).off('hide.bs.tab');
-    $(`#${this.id}`).off('hidden.bs.tab');
-    $(`#${this.id}`).dropdown('dispose');
+    $(this.dropdown).off('show.bs.tab');
+    $(this.dropdown).off('shown.bs.tab');
+    $(this.dropdown).off('hide.bs.tab');
+    $(this.dropdown).off('hidden.bs.tab');
+    $(this.dropdown).dropdown('dispose');
   }
 
 }
