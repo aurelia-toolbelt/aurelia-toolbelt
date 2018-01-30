@@ -63,7 +63,7 @@
     <legend>
       Color
     </legend>
-    <abt-float-input type='email' placeholder='email@example.com' label-color='darkviolet' placeholder-color='darkorange'>Email</abt-float-input>
+    <abt-float-input type='email' placeholder='email@example.com' label-color='darkviolet' placeholder-color='darkgreen'>Email</abt-float-input>
     <aut-mark-down src="./docs/components/bootstrap/float-input/color.md">
     </aut-mark-down>
   </fieldset>
@@ -71,8 +71,132 @@
     <legend>
       Styling
     </legend>
-    <abt-float-input size="lg" type='email' label-font-size="125%" placeholder-font-size="200%" placeholder-top=".2em" placeholder-opacity=".8" placeholder='email@example.com'>Email</abt-float-input>
+    <abt-float-input size="lg" type='email' label-font-size="125%" placeholder-font-size="200%" placeholder-top=".2em" placeholder-opacity=".8"
+      placeholder='email@example.com'>Email</abt-float-input>
     <aut-mark-down src="./docs/components/bootstrap/float-input/styling.md">
     </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      API Reference
+    </legend>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-float-input
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">size</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">md</td>
+          <td>Set size to the component. Acceptable values : 'sm', 'md', 'lg'.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">type</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">md</td>
+          <td>The type attribute specifies the type of
+            <code>input</code> element to display.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">placeholder-color</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set the color of placeholder.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">placeholder-font-size</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set the font size of placeholder.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">placeholder-opacity</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set the opacity of placeholder.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">placeholder-top</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set the top of placeholder.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">label-color</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set the color of float label.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">label-font-size</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set the font size of float label.
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </fieldset>
 </template>
