@@ -1,7 +1,7 @@
 import { customElement, inject, bindable, bindingMode, BindingEngine, containerless } from 'aurelia-framework';
 
-type Placement = 'auto' | 'top' | 'bottom' | 'left' | 'right';
-type Boundary = 'viewport' | 'window' | 'scrollParent';
+export type TooltipPlacement = 'auto' | 'top' | 'bottom' | 'left' | 'right';
+export type TooltipBoundary = 'viewport' | 'window' | 'scrollParent';
 
 import * as $ from 'jquery';
 
@@ -12,14 +12,14 @@ export class BootstrapTooltipCustomElement {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public container: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public delay: number | object = 0;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: Placement | Function = 'top';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: TooltipPlacement | Function = 'top';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public selector: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public animation: boolean | string = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public html: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public trigger: string = 'hover focus';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public offset: number | string = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public fallbackPlacement: string | string[] = 'flip';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: Boundary = 'scrollParent';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: TooltipBoundary = 'scrollParent';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public template: string =
     '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>';
 

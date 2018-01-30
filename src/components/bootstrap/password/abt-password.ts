@@ -43,7 +43,7 @@ export class PasswordCustomElement {
     let range = this.getScoreRangeInfo(this.scoreRange);
     this.passwordMeter = new PasswordMeter(req, range);
 
-    if (this.text.length > 0) {
+    if (this.text && this.text.length > 0) {
       this.textChanged(this.text);
     }
   }
