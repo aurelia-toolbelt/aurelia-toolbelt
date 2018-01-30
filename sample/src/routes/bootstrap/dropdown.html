@@ -157,8 +157,7 @@
 
     <abt-card>
       <abt-card-body>
-
-        <abt-dropdown title="Drop Left" type="secondary" placement="left">
+        <abt-dropdown class="ml-5" title="Drop Left" type="secondary" placement="left">
           <abt-dropdown-header>Important Actions</abt-dropdown-header>
           <abt-dropdown-item>Action</abt-dropdown-item>
           <abt-dropdown-item>Something else here</abt-dropdown-item>
@@ -173,6 +172,7 @@
           <abt-dropdown-item>Action</abt-dropdown-item>
           <abt-dropdown-item>Something else here</abt-dropdown-item>
         </abt-dropdown>
+
 
         <abt-dropdown title="Align Right Menu" class="ml-5" align-right>
           <abt-dropdown-header>Important Actions</abt-dropdown-header>
@@ -505,9 +505,14 @@
     <hr />
 
     <abt-card>
-      <abt-card-header>
+      <abt-card-body>
 
-        <abt-dropdown class="mb-2" value.bind="selectedFramework" align-right split title="Choose your framework" click.call="loadFrameworks(event,target)">
+        <abt-alert type="info">
+          Click the button section first in order to load data for the dropdown part.
+        </abt-alert>
+
+        <abt-dropdown class="mb-2" value.bind="selectedFramework" align-right split title="Choose your framework" click.call="loadFrameworks(event,target)"
+          changed.call="selectedChanged(selected)">
           <abt-dropdown-item value="">
             Choose your framework
           </abt-dropdown-item>
@@ -515,15 +520,6 @@
           <abt-dropdown-item repeat.for="framework of frameworks" value.bind="framework">
             ${framework}
           </abt-dropdown-item>
-
-          <div slot="loading">
-            <span class="fa fa-spinner fa-spin">
-            </span>
-            <span>
-              Please wait...
-            </span>
-          </div>
-
         </abt-dropdown>
 
         <abt-alert type="secondary" class="text-center">
@@ -532,18 +528,419 @@
             <b>${selectedFramework}</b>
           </span>
         </abt-alert>
-
-      </abt-card-header>
-
-      <abt-card-body>
-
       </abt-card-body>
 
       <abt-card-footer>
-
+        <abt-navs tabs>
+          <abt-nav-item title="View">
+            <aut-mark-down src="./docs/components/bootstrap/dropdown/events.md">
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/dropdown/events-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
       </abt-card-footer>
 
     </abt-card>
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Properties and Events
+    </legend>
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              abt-dropdown
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">align-right</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">false</td>
+          <td>Aligns dropdown menu items to the right of the dropdown itself. Can be used as single attribut,
+            <code>align-righ</code>, or with binding and values.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">boundary</td>
+          <td class="text-nowrap">string | element</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">scrollParent</td>
+          <td>Overflow constraint boundary of the dropdown menu. Accepts the values of
+            <code>'viewport'</code>,
+            <code>'window'</code>,
+            <code>'scrollParent'</code>, or an HTMLElement reference (JavaScript only). For more information refer to Popper.js's
+            <a href="https://popper.js.org/popper-documentation.html#modifiers..preventOverflow.boundariesElement">preventOverflow docs</a>.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies the your custom css class on dropdown</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">disabled</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Setting this to true will disable the dropdown. You can use it both as a simple attribute (
+            <code>disabled</code> ) or binding aurelia way (
+            <code>disabled="true"</code> or disabled.bind="some_boolean_value" ).
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">flip</td>
+          <td class="text-nowrap">boolean</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">true</td>
+          <td>Allow Dropdown to flip in case of an overlapping on the reference element. For more information refer to Popper.js's
+            <a href="https://popper.js.org/popper-documentation.html#modifiers..flip.enabled">flip docs</a>.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">matcher</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">twoWay</td>
+          <td class="text-nowrap"></td>
+          <td>A matcher function wich selects and matches the items in dropdown to the
+            <code>value</code> property object.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">menu-class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies your custom css class on dropdown menu.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">menu-style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attrinutes that you want to apply on the dropdown menu.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">offset</td>
+          <td class="text-nowrap">number</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">0</td>
+          <td>
+            Offset of the dropdown relative to its target. For more information refer to Popper.js's
+            <a href="https://popper.js.org/popper-documentation.html#modifiers..offset.offset">offset docs</a>.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">placement</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>
+            The position of the dropdown menu to be open, it can be
+            <code>top</code>,
+            <code>right</code>, and
+            <code>left</code>. If not specified dropdown menu will be opened at the bottom.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">split</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>
+            Indictaes whether the dropdown should be split, and have an additional button next to it or not. It can be used as single
+            attribute or with values and binding. When
+            <code>true</code>, then you have an additional button and you can handle the
+            <code>click</code> event. Otherwise, even if you handle the
+            <code>click</code> event it won't be triggered.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">size</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">md</td>
+          <td>Indicates the size for abt-dropdown, and values can be
+            <code>'sm'</code>,
+            <code>'md'</code>, and
+            <code>'lg'</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attrinutes that you want to apply on the component.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">title</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>The value you like to be shown on the dropdown when no item is selected.</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">type</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">primary</td>
+          <td>The type of dropdown, contextual values of bootstrap,
+            <code>primary</code>,
+            <code>secondary</code>,
+            <code>info</code>,
+            <code>success</code>,
+            <code>warning</code>,
+            <code>danger</code>,
+            <code>light</code>, and
+            <code>dark</code>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">value</td>
+          <td class="text-nowrap">any</td>
+          <td class="text-nowrap">twoWay</td>
+          <td class="text-nowrap"></td>
+          <td>The value you want to bound to the dropdown, it will change whenever the selcted item changes in dropdown, and
+            that will trigger the
+            <code>change</code> event.</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">click</td>
+          <td class="text-nowrap">Promise</td>
+          <td class="text-nowrap">call (event, target)</td>
+          <td class="text-nowrap"></td>
+          <td>This event fires immediately when you click the button part of the dropdown when in
+            <code>split</code> mode
+            <hr />
+            <ul>
+              <li>
+                <b>PS:</b>
+                The
+                <code>abt-dropdown</code> has an extra
+                <code>slot</code> named
+                <code>
+                  <em>
+                    <b>
+                      <i>loading</i>
+                    </b>
+                  </em>
+                </code>, if your
+                <code>click</code> event returns a promise, the
+                <code>loading slot</code> you've provided will be rendered until the promise resolves.
+              </li>
+              <li>
+                <b>PS:</b> The button section of
+                <code>abt-dropdown</code> will remain disabled also, until the promise resolves.
+              </li>
+            </ul>
+
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">changed</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call (event, target)</td>
+          <td class="text-nowrap"></td>
+          <td>
+            This event fires when you change the selection item in dropdown
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Extra Slots
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" colspan="2">
+            <b>
+              loading
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="3">
+            You can use this extra slot to show some loading indicator to visualize that some background work is in progress.
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-dropdown-item
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies the your custom css class on dropdown items</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">disabled</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Setting this to true will disable the dropdown item. You can use it both as a simple attribute (
+            <code>disabled</code> ) or binding aurelia way (
+            <code>disabled="true"</code> or disabled.bind="some_boolean_value" ).
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">model</td>
+          <td class="text-nowrap">any</td>
+          <td class="text-nowrap">twoWay</td>
+          <td class="text-nowrap"></td>
+          <td>
+            The model which bounds to dropdown item, that will change the value of
+            <code>dropdown</code> when selcted.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attrinutes that you want to apply on the component.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">value</td>
+          <td class="text-nowrap">any</td>
+          <td class="text-nowrap">twoWay</td>
+          <td class="text-nowrap"></td>
+          <td>
+            The value of the dropdown item, that will change the value of
+            <code>dropdown</code> when selcted.
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              abt-dropdown-divider
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+
+            This component has neither attributes nor events, it just renders a divider between dropdown items.
+
+          </td>
+        </tr>
+
+      </tbody>
+
+      <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <td class="text-nowrap" colspan="5">
+              <b>
+                abt-dropdown-header
+              </b>
+            </td>
+          </tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-nowrap" colspan="5">
+
+              This component has neither attributes nor events, it just renders the content as the header elemnts inside the dropdown,
+              something like
+              <code>optgroup</code>
+
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
 
   </fieldset>
 

@@ -13,30 +13,25 @@ import { Uuid } from '../../../utilities/purejs/uuid';
 @customElement('abt-dropdown')
 export class BootstrapDropDown {
 
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public alignRight: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public boundary: string | Element = 'scrollParent';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public type: string = 'primary';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public offset: string | number = 0;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public flip: boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: string = 'md';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public placement: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public split: boolean | string = false;
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
-
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public disabled: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public menuClass: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public menuStyle: string = '';
-
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: string = 'md';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: string = '';
-
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public alignRight: boolean | string = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public split: boolean | string = false;
-
-
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public offset: string | number = 0;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public flip: boolean = true;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: string | Element = 'scrollParent';
-
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public matcher: any;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string = false;
+
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public changed: Function;
