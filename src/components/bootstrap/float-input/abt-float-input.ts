@@ -8,8 +8,8 @@ export class BootstrapFloatInput {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholder: string;
-
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderFontSize: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public labelFontSize: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderOpacity: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderTop: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: FloatInputPlacement = 'md';
@@ -28,6 +28,12 @@ export class BootstrapFloatInput {
 
     if (!this.floatInput.classList.contains('form-control')) {
       this.floatInput.classList.add('form-control');
+    }
+    if (this.floatInput.classList.contains('form-control-sm')) {
+      this.size = 'sm';
+    }
+    if (this.floatInput.classList.contains('form-control-lg')) {
+      this.size = 'lg';
     }
 
     if (this.size === 'sm') {
@@ -56,7 +62,8 @@ export class BootstrapFloatInput {
               }
               #${id}.has-float-label label, #${id}.has-float-label > span
               {
-                color :  ${this.labelColor || 'black'} !important;
+                color : ${this.labelColor || 'black'} !important;
+                font-size: ${this.labelFontSize || '75%'} !important;
               }`);
     }
   }
