@@ -123,9 +123,9 @@
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">false</td>
           <td>Appends the popover to a specific element. Example: container:
-            <code>'body'</code>. This option is particularly useful in that it allows you to position the popover in the flow of the document
-            near the triggering element - which will prevent the popover from floating away from the triggering element during
-            a window resize.</td>
+            <code>'body'</code>. This option is particularly useful in that it allows you to position the popover in the flow of
+            the document near the triggering element - which will prevent the popover from floating away from the triggering
+            element during a window resize.</td>
         </tr>
         <tr>
           <td class="text-nowrap" scope="row">delay</td>
@@ -152,9 +152,9 @@
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">right</td>
           <td>How to position the popover - auto | top | bottom | left | right. When
-            <code>auto</code> is specified, it will dynamically reorient the popover. When a function is used to determine the placement,
-            it is called with the popover DOM node as its first argument and the triggering element DOM node as its second.
-            The
+            <code>auto</code> is specified, it will dynamically reorient the popover. When a function is used to determine the
+            placement, it is called with the popover DOM node as its first argument and the triggering element DOM node as
+            its second. The
             <code>this</code> context is set to the popover instance.</td>
         </tr>
         <tr>
@@ -169,7 +169,17 @@
           <td class="text-nowrap" scope="row">template</td>
           <td class="text-nowrap">string</td>
           <td class="text-nowrap">oneWay</td>
-          <td> </td>
+          <td>
+            <code>
+              <aut-raw-html>
+                '<div class="popover" role="tooltip">
+                  <div class="arrow"></div>
+                  <h3 class="popover-header"></h3>
+                  <div class="popover-body"></div>
+                </div>'
+              </aut-raw-html>
+            </code>
+          </td>
           <td>Base HTML to use when creating the popover. The popover's
             <code>title</code> will be injected into the
             <code>.popover-header</code>. The popover's
@@ -218,8 +228,8 @@
             <td>Overflow constraint boundary of the popover. Accepts the values of
               <code>'viewport'</code>,
               <code>'window'</code>,
-              <code>'scrollParent'</code>, or an HTMLElement reference (JavaScript only). For more information refer to Popper.js's preventOverflow
-              docs.
+              <code>'scrollParent'</code>, or an HTMLElement reference (JavaScript only). For more information refer to Popper.js's
+              preventOverflow docs.
             </td>
           </tr>
           <tr>

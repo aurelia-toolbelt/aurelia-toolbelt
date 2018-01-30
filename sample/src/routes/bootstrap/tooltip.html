@@ -102,9 +102,9 @@
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">false</td>
           <td>Appends the tooltip to a specific element. Example: container:
-            <code>'body'</code>. This option is particularly useful in that it allows you to position the tooltip in the flow of the document
-            near the triggering element - which will prevent the tooltip from floating away from the triggering element during
-            a window resize.</td>
+            <code>'body'</code>. This option is particularly useful in that it allows you to position the tooltip in the flow of
+            the document near the triggering element - which will prevent the tooltip from floating away from the triggering
+            element during a window resize.</td>
         </tr>
         <tr>
           <td class="text-nowrap" scope="row">delay</td>
@@ -131,9 +131,9 @@
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">right</td>
           <td>How to position the tooltip - auto | top | bottom | left | right. When
-            <code>auto</code> is specified, it will dynamically reorient the tooltip. When a function is used to determine the placement,
-            it is called with the tooltip DOM node as its first argument and the triggering element DOM node as its second.
-            The
+            <code>auto</code> is specified, it will dynamically reorient the tooltip. When a function is used to determine the
+            placement, it is called with the tooltip DOM node as its first argument and the triggering element DOM node as
+            its second. The
             <code>this</code> context is set to the tooltip instance.</td>
         </tr>
         <tr>
@@ -148,7 +148,17 @@
           <td class="text-nowrap" scope="row">template</td>
           <td class="text-nowrap">string</td>
           <td class="text-nowrap">oneWay</td>
-          <td> </td>
+          <td>
+            <code>
+              <aut-raw-html>
+                '
+                <div class="tooltip" role="tooltip">
+                  <div class="arrow"></div>
+                  <div class="tooltip-inner"></div>
+                </div>'
+              </aut-raw-html>
+            </code>
+          </td>
           <td>Base HTML to use when creating the tooltip. The tooltip's
             <code>title</code> will be injected into the
             <code>.tooltip-inner</code>.
@@ -163,8 +173,8 @@
           <td class="text-nowrap">hover focus</td>
           <td>How tooltip is triggered - click | hover | focus | manual. You may pass multiple triggers; separate them with a
             space. this value cannot be combined with any other trigger.
-            <code>'hover'</code> on its own will result in tooltips that cannot be triggered via the keyboard, and should only be used if alternative
-            methods for conveying the same information for keyboard users is present.</tr>
+            <code>'hover'</code> on its own will result in tooltips that cannot be triggered via the keyboard, and should only
+            be used if alternative methods for conveying the same information for keyboard users is present.</tr>
         </tr>
         <tr>
           <td class="text-nowrap" scope="row">offset</td>
@@ -189,8 +199,8 @@
             <td>Overflow constraint boundary of the tooltip. Accepts the values of
               <code>'viewport'</code>,
               <code>'window'</code>,
-              <code>'scrollParent'</code>, or an HTMLElement reference (JavaScript only). For more information refer to Popper.js's preventOverflow
-              docs.
+              <code>'scrollParent'</code>, or an HTMLElement reference (JavaScript only). For more information refer to Popper.js's
+              preventOverflow docs.
             </td>
           </tr>
           <tr>

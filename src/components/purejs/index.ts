@@ -10,9 +10,7 @@ export function configure(config: FrameworkConfiguration) {
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/purejs/mark-down/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/purejs/nprogress/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/purejs/pretty/index'))
-    // .feature(PLATFORM.moduleName('aurelia-toolbelt/components/purejs/star-rate/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/purejs/microlink/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/purejs/scrollup/index'))
-
-    ;
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/purejs/raw-html/index'));
 }
