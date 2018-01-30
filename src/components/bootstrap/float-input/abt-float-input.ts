@@ -1,6 +1,6 @@
-import { inject, customElement, bindable, bindingMode, containerless, PLATFORM, noView, DOM, useShadowDOM } from 'aurelia-framework';
+import { inject, customElement, bindable, bindingMode, containerless, PLATFORM, noView, DOM } from 'aurelia-framework';
 
-@inject(Element)
+export type FloatInputPlacement = 'sm' | 'md' | 'lg';
 @containerless()
 @customElement('abt-float-input')
 export class BootstrapFloatInput {
@@ -8,6 +8,11 @@ export class BootstrapFloatInput {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholder: string;
+
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderFontSize: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderOpacity: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderTop: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: FloatInputPlacement = 'md';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public type: string = 'text';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public labelColor: string = null;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderColor: string = null;
@@ -15,53 +20,44 @@ export class BootstrapFloatInput {
   private floatInput: HTMLInputElement;
   private floatInputLabel: HTMLLabelElement;
 
-  constructor(private element: Element) {
-  }
+  private afterAttached() {
 
-  // tslint:disable-next-line:no-empty
-  private bind() {
+    let id = this.floatInputLabel.id;
+    let fontSize = '';
+    let top = '';
+
     if (!this.floatInput.classList.contains('form-control')) {
       this.floatInput.classList.add('form-control');
     }
 
-    if (this.floatInput.classList.contains('form-control-sm')) {
-      this.floatInputLabel.classList.add('has-float-label-sm');
-      DOM.injectStyles(`
-            .has-float-label-sm .form-control:placeholder-shown:not(:focus) + * {
-                color : ${this.placeholderColor || 'black'} !important;
-              }
+    if (this.size === 'sm') {
+      this.floatInput.classList.add('form-control-sm');
+      fontSize = '90%';
+      top = '.5em';
+    } else if (this.size === 'lg' || this.floatInput.classList.contains('form-control-lg')) {
+      this.floatInput.classList.add('form-control-lg');
+      fontSize = '120%';
+      top = '.7em';
+    } else {
+      this.floatInput.classList.remove('form-control-sm');
+      this.floatInput.classList.remove('form-control-lg');
+      fontSize = '100%';
+      top = '.7em';
+    }
 
-              .has-float-label-sm label, .has-float-label-sm > span
-              {
-                color :  ${this.labelColor || 'black'} !important;
-              }
-            `);
-    }
-    if (this.floatInput.classList.contains('form-control-lg')) {
-      this.floatInputLabel.classList.add('has-float-label-lg');
+    if (this.floatInput.classList.contains('form-control')) {
+      this.floatInputLabel.classList.add('has-float-label');
       DOM.injectStyles(`
-             .has-float-label-lg .form-control:placeholder-shown:not(:focus) + * {
+              #${id}.has-float-label .form-control:placeholder-shown:not(:focus) + * {
                 color : ${this.placeholderColor || 'black'} !important;
+                font-size: ${this.placeholderFontSize || fontSize} !important;
+                opacity: ${this.placeholderOpacity || '.5'} !important;
+                top: ${this.placeholderTop || top} !important;
               }
-              .has-float-label-lg label, .has-float-label-lg > span
+              #${id}.has-float-label label, #${id}.has-float-label > span
               {
                 color :  ${this.labelColor || 'black'} !important;
-              }
-            `);
-    }
-    if (!this.floatInput.classList.contains('form-control-sm') && !this.floatInput.classList.contains('form-control-lg')) {
-      this.floatInputLabel.classList.add('has-float-label-md');
-      DOM.injectStyles(`
-            .has-float-label-md .form-control:placeholder-shown:not(:focus) + * {
-                color : ${this.placeholderColor || 'black'} !important;
-              }
-              .has-float-label-md label, .has-float-label-md > span
-              {
-                color :  ${this.labelColor || 'black'} !important;
-              }
-            `);
+              }`);
     }
   }
-
-
 }
