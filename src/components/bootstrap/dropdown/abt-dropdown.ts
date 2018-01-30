@@ -4,10 +4,11 @@ import { BootstrapDropdownSelectedItemChanged } from './abt-dropdown-selected-it
 
 
 import * as $ from 'jquery';
+import { Uuid } from '../../../utilities/purejs/uuid';
 
 // export type BoundaryType = 'viewport' | 'window' | 'scrollParent';
 
-@inject(Element, EventAggregator)
+@inject(Element, EventAggregator, Uuid)
 // @containerless()
 @customElement('abt-dropdown')
 export class BootstrapDropDown {
@@ -55,7 +56,8 @@ export class BootstrapDropDown {
 
   private dropdown: any;
 
-  constructor(private element: Element, private ea: EventAggregator) { // , private bindingEngine: BindingEngine) {
+  constructor(private element: Element, private ea: EventAggregator, uuid: Uuid) { // , private bindingEngine: BindingEngine) {
+    this.id = uuid.Uuidv4ForId();
   }
 
 
@@ -104,8 +106,7 @@ export class BootstrapDropDown {
     // const onlyAlignRightAttribute = (this.alignRight === '' && this.element.hasAttribute('align-right'));
     this.alignRight = (this.alignRight === '' && this.element.hasAttribute('align-right')) || this.alignRight.toString() === 'true';
 
-    this.id = this.element.children.item(0).getAttribute('id');
-
+    this.element.children.item(0).setAttribute('data-id', this.id);
 
     switch (this.placement) {
       case 'top':
@@ -125,13 +126,16 @@ export class BootstrapDropDown {
   }
 
   private bind() {
-    // bound to nothing
-    if (this.value === undefined) {
-      return;
-    }
 
+    // this.element.children.item(0).setAttribute('data-id', this.id);
+
+    // bound to nothing
+    // if (this.value === undefined) {
+    //   return;
+    // }
 
     this.ea.subscribe(BootstrapDropdownSelectedItemChanged, (changed: BootstrapDropdownSelectedItemChanged) => {
+
       // not me
       if (changed.parentId !== this.id) {
         return;

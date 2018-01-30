@@ -2,7 +2,7 @@
 
   <require from="../../../custom-attributes/purejs/uuid/aut-uuid"></require>
 
-  <div aut-uuid class="btn-group ${class} ${placementClass}" css="${style}">
+  <div id="sample" class="btn-group ${class} ${placementClass}" css="${style}">
     <button if.bind="split" type="button" class="btn btn-${type} btn-${size}" click.delegate="onClicked($event)" disabled.bind="disabled || isBusy">
       <span show.bind="isBusy">
         <slot name="loading">

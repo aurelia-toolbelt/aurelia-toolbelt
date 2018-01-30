@@ -24,7 +24,7 @@ export class BootstrapDropdownItem {
 
   private attached() {
 
-    this.dropdownId = this.item.parentElement.parentElement.getAttribute('id');
+    this.dropdownId = this.item.parentElement.parentElement.getAttribute('data-id');
 
     this.disabled = this.disabled === '' || this.disabled;
 
