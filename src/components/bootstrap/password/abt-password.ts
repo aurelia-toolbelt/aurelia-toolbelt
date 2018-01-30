@@ -27,15 +27,14 @@ export class PasswordCustomElement {
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public passwordChanged: Function;
 
+  private isInvisible: boolean = true;
   private txtPassword: HTMLInputElement;
   private btnPassword: HTMLButtonElement;
   private iconPassword: HTMLElement;
 
-  private isInvisible: boolean = true;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) private progressBarValue = 0;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) private progressBarClass: string;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) private progressBarColor: string;
-
+  private progressBarValue = 0;
+  private progressBarClass: string = null;
+  private progressBarColor: string = null;
 
   private passwordMeter: PasswordMeter;
 
@@ -43,6 +42,10 @@ export class PasswordCustomElement {
     let req = this.requirements;
     let range = this.getScoreRangeInfo(this.scoreRange);
     this.passwordMeter = new PasswordMeter(req, range);
+
+    if (this.text.length > 0) {
+      this.textChanged(this.text);
+    }
   }
 
   private passwordVisibilityToggle() {
