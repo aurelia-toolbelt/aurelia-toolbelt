@@ -1,22 +1,78 @@
 <template>
-
-
-  <h4>Large</h4>
-  <abt-float-input class="form-control-lg" type='email' placeholder-font-size="200%" placeholder-top=".2em" placeholder-opacity="1"
-    placeholder='email@example.com'>Email</abt-float-input>
-  <br>
-  <abt-float-input class="form-control-lg" type='email' label-color='black' placeholder-color='yellow'>Email</abt-float-input>
-  <br>
-  <h4>Default</h4>
-  <abt-float-input type='email' label-color='maroon' placeholder='email@example.com' placeholder-color='green'>Email</abt-float-input>
-  <br>
-  <abt-float-input type='email' label-color='purple' placeholder-color='blue'>Email</abt-float-input>
-  <br>
-  <h4>Small</h4>
-  <abt-float-input class="form-control-sm" type='email' label-color='green' placeholder='email@example.com' placeholder-color='yellow'>Email</abt-float-input>
-  <br>
-  <abt-float-input class="form-control-sm" type='email' label-color='gray' placeholder-color='maroon'>Email</abt-float-input>
-
-
-
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Float Labels
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/float-input">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Implementation of Float Label pattern for Bootstrap 4.
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Third-party library
+    </legend>
+    This component is created based on the following library.
+    <aut-microlink round.bind="false" url="https://github.com/tonystar/bootstrap-float-label"></aut-microlink>
+    <br>
+    <abt-alert type="success">
+      <i class="fa fa-credit-card" aria-hidden="true"></i>
+      <b> License : </b>
+      <a href="https://github.com/tonystar/bootstrap-float-label/blob/master/LICENSE">MIT</a>
+    </abt-alert>
+    <abt-alert type="danger">
+      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+      <b> Currently this component does not support right-to-left.</b>
+    </abt-alert>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/float-input/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Basic example
+    </legend>
+    <abt-float-input type='email' placeholder='email@example.com'>Email</abt-float-input>
+    <aut-mark-down src="./docs/components/bootstrap/float-input/basic-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Without placeholder
+    </legend>
+    <abt-float-input type='email'>Email</abt-float-input>
+    <aut-mark-down src="./docs/components/bootstrap/float-input/placeholder.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Sizing
+    </legend>
+    <abt-float-input type='email' size='sm' placeholder='email@example.com'>Email</abt-float-input>
+    <abt-float-input type='email' placeholder='email@example.com'>Email</abt-float-input>
+    <abt-float-input type='email' size='lg' placeholder='email@example.com'>Email</abt-float-input>
+    <aut-mark-down src="./docs/components/bootstrap/float-input/sizing.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Color
+    </legend>
+    <abt-float-input type='email' placeholder='email@example.com' label-color='darkviolet' placeholder-color='darkorange'>Email</abt-float-input>
+    <aut-mark-down src="./docs/components/bootstrap/float-input/color.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Styling
+    </legend>
+    <abt-float-input size="lg" type='email' label-font-size="125%" placeholder-font-size="200%" placeholder-top=".2em" placeholder-opacity=".8" placeholder='email@example.com'>Email</abt-float-input>
+    <aut-mark-down src="./docs/components/bootstrap/float-input/styling.md">
+    </aut-mark-down>
+  </fieldset>
 </template>

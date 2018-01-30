@@ -7,11 +7,11 @@ export class BootstrapFloatInput {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholder: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderFontSize: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public labelFontSize: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderOpacity: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderTop: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholder: string = null;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderFontSize: string = null;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public labelFontSize: string = null;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderOpacity: string = null;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderTop: string = null;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: FloatInputPlacement = 'md';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public type: string = 'text';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public labelColor: string = null;
