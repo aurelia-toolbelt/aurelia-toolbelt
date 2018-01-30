@@ -1,7 +1,7 @@
 import { customElement, inject, bindable, bindingMode, BindingEngine, containerless } from 'aurelia-framework';
 
-type Placement = 'auto' | 'top' | 'bottom' | 'left' | 'right';
-type Boundary = 'viewport' | 'window' | 'scrollParent';
+export type PopoverPlacement = 'auto' | 'top' | 'bottom' | 'left' | 'right';
+export type PopoverBoundary = 'viewport' | 'window' | 'scrollParent';
 
 import * as $ from 'jquery';
 
@@ -13,13 +13,13 @@ export class BootstrapPopoverCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public container: boolean | string | Element = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public delay: number | object = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public html: boolean | string = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: Placement | Function = 'right';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: PopoverPlacement | Function = 'right';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public selector: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string | Element | Function = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public trigger: string = 'click';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public offset:  number | string = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public fallbackPlacement: string | string[] = 'flip';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: Boundary = 'scrollParent';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: PopoverBoundary = 'scrollParent';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public template: string =
     '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>';
 
