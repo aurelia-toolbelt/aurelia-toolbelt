@@ -14,7 +14,7 @@ export class BootstrapTooltipCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public delay: number | object = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: Placement | Function = 'top';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public selector: boolean | string = false;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public animation: boolean | string = true;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public animation: boolean | string = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public html: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public trigger: string = 'hover focus';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public offset: number | string = 0;

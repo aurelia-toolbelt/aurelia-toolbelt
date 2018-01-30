@@ -21,10 +21,10 @@ export class BootstrapPaginationCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showGoto: boolean | string = false;
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public template: string = '%s';
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: string = 'md';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: string = 'md';
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public firstText: string = 'First';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public firstIcon: string;

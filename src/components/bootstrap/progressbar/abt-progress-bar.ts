@@ -9,7 +9,7 @@ export class BootstrapProgressBar {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public color: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public gradientColor: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: number | string = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public min: number | string = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public max: number | string = 100;
