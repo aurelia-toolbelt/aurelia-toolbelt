@@ -1,12 +1,12 @@
 <template ref="paginationTemplate">
   <require from="./abt-pagination.css"></require>
   <ul ref="pagination" css="${style}" id="${id}" class="pagination abt-pagination ${class}">
-    <li show.bind="boundaryLinks" class="text-nowrap page-item abt-pagination-first ${startPage === 1  ? 'disabled':''}">
+    <li show.bind="boundaryLinks" class="text-nowrap page-item abt-pagination-first ${selectedPage === 1  ? 'disabled':''}">
       <a class="page-link abt-pagination-link-first" href="#" click.trigger="onClick($event,1)">
         <span class="${firstIcon}" aria-hidden="true">${firstText}</span>
       </a>
     </li>
-    <li show.bind="directionLinks" class="text-nowrap page-item abt-pagination-prev ${startPage === 1 && !loop  ? 'disabled':''}">
+    <li show.bind="directionLinks" class="text-nowrap page-item abt-pagination-prev ${selectedPage === 1 && !loop  ? 'disabled':''}">
       <a class="page-link abt-pagination-link-prev" href="#" click.trigger="onClick($event, 'prev')">
         <span class="${prevIcon}" aria-hidden="true">${prevText}</span>
       </a>
@@ -18,12 +18,12 @@
       </a>
     </li>
 
-    <li show.bind="directionLinks" class="text-nowrap page-item abt-pagination-next ${startPage === totalPages && !loop  ? 'disabled':''}">
+    <li show.bind="directionLinks" class="text-nowrap page-item abt-pagination-next ${selectedPage === totalPages && !loop  ? 'disabled':''}">
       <a class="page-link abt-pagination-link-next" href="#" click.trigger="onClick($event,'next')">
         <span class="${nextIcon}" aria-hidden="true">${nextText}</span>
       </a>
     </li>
-    <li show.bind="boundaryLinks" class="text-nowrap page-item abt-pagination-last ${startPage === totalPages  ? 'disabled':''}">
+    <li show.bind="boundaryLinks" class="text-nowrap page-item abt-pagination-last ${selectedPage === totalPages  ? 'disabled':''}">
       <a class="page-link abt-pagination-link-last" href="#" click.trigger="onClick($event, totalPages)">
         <span class="${lastIcon}" aria-hidden="true">${lastText}</span>
       </a>

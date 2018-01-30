@@ -12,7 +12,7 @@
     <legend>
       Usage
     </legend>
-    <aut-mark-down src="./docs/components/bootstrap/carousel/usage.md">
+    <aut-mark-down src="./docs/components/bootstrap/pagination/usage.md">
     </aut-mark-down>
   </fieldset>
   <fieldset class="mt-5">
@@ -115,7 +115,7 @@
     <div class="container" style="background-color:#F7F7F7;height:150px;border:solid 1px #D8D8D8;margin-bottom:15px">
       <h3 id="page" class="text-center" style="color:#6B6B6B;margin-top:55px">Page 10</h3>
     </div>
-    <abt-pagination total-pages="20" start-page="10" show-goto="true" boundary-links="true" visible-pages="9" page-changed.call="pageChanged($event,selectedPageNumber)">
+    <abt-pagination total-pages="20" selected-page="10" show-goto="true" boundary-links="true" visible-pages="9" page-changed.call="pageChanged($event,selectedPageNumber)">
     </abt-pagination>
     <abt-navs tabs id="navs-events">
       <abt-nav-item id="tab-template-ebents" title="View">
@@ -193,7 +193,7 @@
           <td>Set The number of pages.</td>
         </tr>
         <tr>
-          <td class="text-nowrap" scope="row">start-page</td>
+          <td class="text-nowrap" scope="row">selected-page</td>
           <td class="text-nowrap">number | string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">1</td>

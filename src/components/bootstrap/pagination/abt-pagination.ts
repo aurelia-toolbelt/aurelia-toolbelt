@@ -13,7 +13,7 @@ interface IPagination {
 export class BootstrapPaginationCustomElement {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public totalPages: number | string = 1;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public startPage: number | string = 1;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public selectedPage: number | string = 1;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public visiblePages: number | string = 1;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public hideOnlyOnePage: boolean | string = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundaryLinks: boolean | string = false;
@@ -76,26 +76,26 @@ export class BootstrapPaginationCustomElement {
     }
 
     if (selectedPageNumber === 'prev') {
-      this.startPage = Number(this.startPage) - 1;
-      if (this.startPage === 0) {
-        this.startPage = this.totalPages;
+      this.selectedPage = Number(this.selectedPage) - 1;
+      if (this.selectedPage === 0) {
+        this.selectedPage = this.totalPages;
       }
     } else if (selectedPageNumber === 'next') {
-      this.startPage = Number(this.startPage) + 1;
-      if (this.startPage > this.totalPages) {
-        this.startPage = 1;
+      this.selectedPage = Number(this.selectedPage) + 1;
+      if (this.selectedPage > this.totalPages) {
+        this.selectedPage = 1;
       }
     } else {
-      this.startPage = Number(selectedPageNumber);
+      this.selectedPage = Number(selectedPageNumber);
     }
     this.visiblePages = Number(this.visiblePages);
-    this.startPage = Number(this.startPage);
+    this.selectedPage = Number(this.selectedPage);
     this.totalPages = Number(this.totalPages);
 
-    this.createVisibleItems(this.visiblePages, this.startPage, this.totalPages);
+    this.createVisibleItems(this.visiblePages, this.selectedPage, this.totalPages);
 
     if (this.pageChanged) {
-      this.pageChanged({ event: event, selectedPageNumber: this.startPage });
+      this.pageChanged({ event: event, selectedPageNumber: this.selectedPage });
     }
     return false;
   }
@@ -176,7 +176,7 @@ export class BootstrapPaginationCustomElement {
   private afterAttached() {
 
     this.totalPages = Number(this.totalPages);
-    this.startPage = Number(this.startPage);
+    this.selectedPage = Number(this.selectedPage);
     this.visiblePages = Number(this.visiblePages);
 
     if (this.visiblePages <= 0) {
@@ -209,7 +209,7 @@ export class BootstrapPaginationCustomElement {
       this.directionLinks = false;
     }
 
-    this.createVisibleItems(this.visiblePages, this.startPage, this.totalPages);
+    this.createVisibleItems(this.visiblePages, this.selectedPage, this.totalPages);
 
   }
 }
