@@ -10,8 +10,8 @@ export type ColorType = 'primary' | 'secondary' | 'success' | 'danger'
 export class ListGroupItemCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public type: ColorType;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public active: boolean | string = false;

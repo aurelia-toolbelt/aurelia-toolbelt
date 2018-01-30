@@ -9,7 +9,7 @@ import * as $ from 'jquery';
 @customElement('abt-popover')
 export class BootstrapPopoverCustomElement {
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public animation: boolean | string = true;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public animation: boolean | string = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public container: boolean | string | Element = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public delay: number | object = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public html: boolean | string = false;

@@ -10,12 +10,12 @@ export class BootstrapNavBarDropDown {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public fulWidth: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public click: Function;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public linkClass: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public linkStyle: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public menuClass: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public menuStyle: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public linkClass: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public linkStyle: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public menuClass: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public menuStyle: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: Placement = 'down';
 
   private navDropDown: Element;
