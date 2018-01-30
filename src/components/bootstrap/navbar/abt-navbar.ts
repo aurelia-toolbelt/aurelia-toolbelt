@@ -1,10 +1,10 @@
 import { DOM, containerless, inject, bindingMode, bindable, children } from 'aurelia-framework';
 import { customElement } from 'aurelia-templating';
 
-type ExpandSize = 'sm' | 'md' | 'lg' | 'xl';
-type NavbarColorType = 'light' | 'dark';
-type Placement = '' | 'fixed-top' | 'fixed-bottom' | 'sticky-top';
-type BackgroundColorType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+export type ExpandSize = 'sm' | 'md' | 'lg' | 'xl';
+export type NavbarColorType = 'light' | 'dark';
+export type NavPlacement = '' | 'fixed-top' | 'fixed-bottom' | 'sticky-top';
+export type BackgroundColorType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
 
 @inject(Element)
 @customElement('abt-navbar')
@@ -17,7 +17,7 @@ export class BootstrapNavBar {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public navbarColorType: NavbarColorType = 'light';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public backgroundColorType: BackgroundColorType = 'light';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public expandSize: ExpandSize = 'lg';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: Placement = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placement: NavPlacement = '';
 
   private navbar: Element;
   private navbarCollapse: Element;

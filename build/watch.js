@@ -106,6 +106,7 @@ gulp.task('fuse-sample', function () {
     })
     .instructions(` 
         > extra.ts
+        + bluebird
         + aurelia-bootstrapper
         + aurelia-framework
         + aurelia-pal
@@ -128,7 +129,6 @@ gulp.task('fuse-sample', function () {
         + moment-timezone
         + humanize-duration
         + persianjs
-        + strman
         + numeral
         + fuse-box-aurelia-loader
         + moment/locale/fr

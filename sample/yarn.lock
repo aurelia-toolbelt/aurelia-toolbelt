@@ -4200,10 +4200,6 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-strman@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/strman/-/strman-2.0.0.tgz#7a13d89bb0a0001d6a527ab41ea66d0816061cfd"
-
 styled-components@~2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-2.4.0.tgz#086d0fd483d54638837fca3ea546a030b94adf75"

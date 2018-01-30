@@ -2,7 +2,7 @@ import { DOM, containerless, inject, bindingMode, bindable } from 'aurelia-frame
 import { customElement } from 'aurelia-templating';
 
 
-type Placement = 'up' | 'down' | 'right' | 'left';
+export type Placement = 'up' | 'down' | 'right' | 'left';
 @inject(Element)
 @containerless()
 @customElement('abt-navbar-dropdown')

@@ -20,6 +20,10 @@ export class ScrollUpCustomElement {
   }
 
   private goToUp() {
+    if (!document.body.scroll) {
+      window.scrollTo(0, 0);
+      return;
+    }
     document.body.scroll({
       top: 0,
       left: 0,

@@ -17,8 +17,8 @@ export async function configure(aurelia: Aurelia) {
 
 
   // setTimeout(async () => {
-  await aurelia.start();
-  await aurelia.setRoot('app');
+  // await aurelia.start();
+  // await aurelia.setRoot('app');
   // }, 2000);
 
 }
