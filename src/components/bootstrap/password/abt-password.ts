@@ -22,7 +22,7 @@ export class PasswordCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showIcon: string = 'fa fa-eye';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public hideIcon: string = 'fa fa-eye-slash';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public progressBarHeight: string = '5px';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public displayType: ErrorDisplayType = 'none';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public errorDisplayType: ErrorDisplayType = 'none';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showProgressBar: boolean | string = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: string = 'md';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showPercent: boolean | string = false;
@@ -186,7 +186,7 @@ export class PasswordCustomElement {
 
     if (result.score < 0) {
       this.percentValue = '';
-      if (this.displayType === 'tooltip') {
+      if (this.errorDisplayType === 'tooltip') {
         $(this.txtPassword).tooltip({
           'title': this.generateErrorsAsHtml(result.errors),
           'html': true,
@@ -196,7 +196,7 @@ export class PasswordCustomElement {
           'template': '<div class="tooltip" role="tooltip"><div class="arrow"></div><div style="max-width: 350px;" class="tooltip-inner text-left text-nowrap"></div></div>'
         });
         this.errorsList.innerHTML = '';
-      } else if (this.displayType === 'list') {
+      } else if (this.errorDisplayType === 'list') {
         $(this.txtPassword).tooltip('dispose');
         this.errorsList.innerHTML = this.generateErrorsAsHtml(result.errors);
       } else {
