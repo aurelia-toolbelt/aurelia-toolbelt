@@ -66,4 +66,8 @@ export class JsTools {
         return typeof value === 'symbol';
     }
 
+    public jsonFormatter(value: any) {
+       return JSON.stringify(value, null, '\t');
+    }
+
 }
