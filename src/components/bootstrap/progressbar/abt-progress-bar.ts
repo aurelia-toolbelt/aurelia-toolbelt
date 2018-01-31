@@ -30,28 +30,21 @@ export class BootstrapProgressBar {
     this.max = Number(this.max);
 
     if (this.color && this.gradientColor) {
+      this.gradientColorChanged(this.gradientColor);
+    }
+  }
+
+  private gradientColorChanged(newValue: string) {
+    if (this.progressbar) {
       DOM.injectStyles(`
       #${this.progressbar.id}
       {
-        background: -webkit-gradient(linear, left top, right top, from(${this.color}),to(${this.gradientColor})) !important;
-        background: -webkit-linear-gradient(left, ${this.color} 0%,${this.gradientColor} 100%) !important;
-        background: -o-linear-gradient(left, ${this.color} 0%,${this.gradientColor} 100%) !important;
-        background: linear-gradient(left, ${this.color} 0%,${this.gradientColor} 100%) !important;
+        background: -webkit-gradient(linear, left top, right top, from(${this.color}),to(${newValue})) !important;
+        background: -webkit-linear-gradient(left, ${this.color} 0%,${newValue} 100%) !important;
+        background: -o-linear-gradient(left, ${this.color} 0%,${newValue} 100%) !important;
+        background: linear-gradient(left, ${this.color} 0%,${newValue} 100%) !important;
       }
       `);
-    }
-
-    if (this.color && !this.gradientColor) {
-
-    }
-
-  }
-
-
-  private colorChanged(newValue: string, oldValue: string) {
-    if (this.progressbar) {
-      this.progressbar.classList.remove(`bg-${oldValue}`);
-      this.progressbar.classList.add(`bg-${newValue}`);
     }
   }
 

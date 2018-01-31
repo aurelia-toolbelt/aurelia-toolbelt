@@ -15,10 +15,11 @@ export class PasswordCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public errorIcon: string = 'fa fa-times';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showIcon: string = 'fa fa-eye';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public hideIcon: string = 'fa fa-eye-slash';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public progressBarHeight: string = '5px';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public progressBarHeight: string = '5';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showTooltip: boolean = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showProgressBar: boolean = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: string = 'md';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showPercent: boolean = false;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public text: string;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public scoreRange: object = null;
@@ -33,6 +34,8 @@ export class PasswordCustomElement {
   private iconPassword: HTMLElement;
 
   private progressBarValue = 0;
+  private percentValue = '';
+
   private progressBarClass: string = null;
   private progressBarColor: string = null;
 
@@ -127,19 +130,28 @@ export class PasswordCustomElement {
     let result = this.passwordMeter.getResult(value);
     let colorStatus = this.getColorInfo(this.scoreRange, result.status);
 
-    if (result.score >= 0) {
-      this.progressBarValue = result.percent;
-    } else {
-      this.progressBarValue = 100;
-      colorStatus = this.getMinColorInfo(this.scoreRange);
-    }
-
     if (colorStatus) {
       if (colorStatus.isClass) {
-        this.progressBarClass = colorStatus.color;
+        this.progressBarClass = colorStatus.color.replace('.', '');
+        this.progressBarColor = null;
       } else {
+        this.progressBarClass = null;
         this.progressBarColor = colorStatus.color;
       }
+    }
+
+    if (result.score > 0) {
+      this.progressBarValue = result.percent;
+      if (this.showPercent) {
+        this.percentValue = result.percent + '%';
+        this.progressBarHeight = '14';
+      }
+    } else {
+      this.percentValue = '';
+      this.progressBarValue = 100;
+      colorStatus = this.getMinColorInfo(this.scoreRange);
+      this.progressBarClass = null;
+      this.progressBarColor = colorStatus.color;
     }
 
     if (this.passwordChanged) {
