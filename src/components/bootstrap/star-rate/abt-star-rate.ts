@@ -7,7 +7,9 @@ export class BootstrapStarRate {
 
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public rtl: boolean | string = false;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string = '';
+
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public type: string = 'primary';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public color: string | null = null;
 
@@ -41,7 +43,7 @@ export class BootstrapStarRate {
 
     const onlyHalfStarAttribute = (this.halfStar === '' && this.element.hasAttribute('half-star'));
     this.halfStar = onlyHalfStarAttribute || this.halfStar.toString() === 'true';
-    
+
     this.maxRate = Number(this.maxRate);
     this.rate = Number(this.rate);
 

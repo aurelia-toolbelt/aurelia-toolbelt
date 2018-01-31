@@ -1,6 +1,6 @@
 export class RateDemo {
 
-  private beDisable = true;
+  private beDisable = false;
 
   private myRate = 3;
 
