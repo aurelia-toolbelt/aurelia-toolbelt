@@ -1,5 +1,7 @@
 export class BootstrapPassword {
 
+  private mySelectedColor = 'warning';
+
     public requirements = {
         minLength: 5,
         maxLength: 10,

@@ -5,7 +5,7 @@ export type ColorType = 'primary' | 'secondary' | 'success' | 'danger'
 @containerless()
 export class BootstrapProgressBar {
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public colorType: ColorType;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public type: ColorType;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public color: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public gradientColor: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
@@ -41,10 +41,19 @@ export class BootstrapProgressBar {
       `);
     }
 
-    if (this.colorType) {
-      this.progressbar.classList.add(`bg-${this.colorType}`);
+    if (this.color && !this.gradientColor) {
+
     }
 
   }
+
+
+  private colorChanged(newValue: string, oldValue: string) {
+    if (this.progressbar) {
+      this.progressbar.classList.remove(`bg-${oldValue}`);
+      this.progressbar.classList.add(`bg-${newValue}`);
+    }
+  }
+
 
 }

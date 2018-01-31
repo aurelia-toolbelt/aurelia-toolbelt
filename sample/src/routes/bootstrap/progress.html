@@ -74,19 +74,19 @@
       Backgrounds
     </legend>
     <abt-progress>
-      <abt-progress-bar color-type="success" value="25" min="0" max="100"></abt-progress-bar>
+      <abt-progress-bar type="success" value="25" min="0" max="100"></abt-progress-bar>
     </abt-progress>
     <br>
     <abt-progress>
-      <abt-progress-bar color-type="info" value="50" min="0" max="100"></abt-progress-bar>
+      <abt-progress-bar type="info" value="50" min="0" max="100"></abt-progress-bar>
     </abt-progress>
     <br>
     <abt-progress>
-      <abt-progress-bar color-type="warning" value="75" min="0" max="100"></abt-progress-bar>
+      <abt-progress-bar type="warning" value="75" min="0" max="100"></abt-progress-bar>
     </abt-progress>
     <br>
     <abt-progress>
-      <abt-progress-bar color-type="danger" value="100" min="0" max="100"></abt-progress-bar>
+      <abt-progress-bar type="danger" value="100" min="0" max="100"></abt-progress-bar>
     </abt-progress>
     <aut-mark-down src="./docs/components/bootstrap/progressbar/backgrounds.md">
     </aut-mark-down>
@@ -97,8 +97,8 @@
     </legend>
     <abt-progress>
       <abt-progress-bar value="15" min="0" max="100"></abt-progress-bar>
-      <abt-progress-bar color-type="success" value="30" min="0" max="100"></abt-progress-bar>
-      <abt-progress-bar color-type="info" value="20" min="0" max="100"></abt-progress-bar>
+      <abt-progress-bar type="success" value="30" min="0" max="100"></abt-progress-bar>
+      <abt-progress-bar type="info" value="20" min="0" max="100"></abt-progress-bar>
     </abt-progress>
     <aut-mark-down src="./docs/components/bootstrap/progressbar/multiple-bars.md">
     </aut-mark-down>
@@ -113,19 +113,19 @@
     </abt-progress>
     <br>
     <abt-progress>
-      <abt-progress-bar striped="true" color-type="success" value="25" min="0" max="100"></abt-progress-bar>
+      <abt-progress-bar striped="true" type="success" value="25" min="0" max="100"></abt-progress-bar>
     </abt-progress>
     <br>
     <abt-progress>
-      <abt-progress-bar striped="true" color-type="info" value="50" min="0" max="100"></abt-progress-bar>
+      <abt-progress-bar striped="true" type="info" value="50" min="0" max="100"></abt-progress-bar>
     </abt-progress>
     <br>
     <abt-progress>
-      <abt-progress-bar striped="true" color-type="warning" value="75" min="0" max="100"></abt-progress-bar>
+      <abt-progress-bar striped="true" type="warning" value="75" min="0" max="100"></abt-progress-bar>
     </abt-progress>
     <br>
     <abt-progress>
-      <abt-progress-bar striped="true" color-type="danger" value="100" min="0" max="100"></abt-progress-bar>
+      <abt-progress-bar striped="true" type="danger" value="100" min="0" max="100"></abt-progress-bar>
     </abt-progress>
     <aut-mark-down src="./docs/components/bootstrap/progressbar/striped.md">
     </aut-mark-down>
@@ -154,6 +154,16 @@
         75%
       </abt-progress-bar>
     </abt-progress>
+
+    <br />
+
+    <abt-progress>
+      <abt-progress-bar color="maroon" value="75" min="0" max="100">
+        75%
+      </abt-progress-bar>
+    </abt-progress>
+
+
     <aut-mark-down src="./docs/components/bootstrap/progressbar/gradient.md">
     </aut-mark-down>
   </fieldset>
@@ -277,7 +287,7 @@
             <code>color</code> property for using this too.</td>
         </tr>
         <tr>
-          <td scope="row">color-type</td>
+          <td scope="row">type</td>
           <td class="text-nowrap">string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap"></td>

@@ -1,6 +1,6 @@
 <template ref="progressbarTemplate">
-  <div aut-uuid ref="progressbar" class="progress-bar ${animated?'progress-bar-animated':''} ${striped?'progress-bar-striped':''} ${class}"
-    role="progressbar" css="width: ${value}%; ${style}" aria-valuenow="${value}" aria-valuemin="${min}" aria-valuemax="${max}">
+  <div aut-uuid ref="progressbar" class="progress-bar ${type? 'bg-'+type : ''} ${animated?'progress-bar-animated':''} ${striped?'progress-bar-striped':''} ${class}"
+    role="progressbar" css="width: ${value}%; background:${color} ${style}" aria-valuenow="${value}" aria-valuemin="${min}" aria-valuemax="${max}">
     <slot>
       <slot>
   </div>
