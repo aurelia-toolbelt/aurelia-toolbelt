@@ -147,7 +147,6 @@ export class PasswordCustomElement {
       this.progressBarValue = result.percent;
       if (this.showPercent && result.score > 0) {
         this.percentValue = result.percent + '%';
-        this.progressBarHeight = '14px';
       }
     } else {
       this.percentValue = '';
