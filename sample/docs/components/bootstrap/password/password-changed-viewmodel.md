@@ -1,7 +1,7 @@
 ```ts
 export class BootstrapPassword {
 
-  public requirements = {
+  private requirements = {
     minLength: 5,
     maxLength: 10,
     uppercaseLettersMinLength: 1,
@@ -15,7 +15,7 @@ export class BootstrapPassword {
     blackList: ['p@ssw0rd']
   };
 
-  public scoreRange = {
+  private scoreRange = {
     '40': { message: 'veryWeak', color: '.danger' },
     '80': { message: 'weak', color: '.warning' },
     '120': { message: 'medium', color: '#D8B600' },
@@ -24,9 +24,9 @@ export class BootstrapPassword {
     '_': { message: 'perfect', color: 'darkgreen' }
   };
 
-  public passwordChanged(result: any, colorStatus: any) {
-    let resultObj = JSON.stringify(result, null, '\t');
-    let colorStatusObj = JSON.stringify(colorStatus, null, '\t');
+  private passwordChanged(result: any, colorStatus: any) {
+    let resultText = JSON.stringify(result, null, '\t');
+    let colorStatusText = JSON.stringify(colorStatus, null, '\t');
   }
 }
 ```
