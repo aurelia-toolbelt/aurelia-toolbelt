@@ -1,6 +1,6 @@
-import { customAttribute } from 'aurelia-framework';
+import { customAttribute, singleton } from 'aurelia-framework';
 
-
+@singleton()
 export class Uuid {
 
   public uuidv4() {

@@ -93,6 +93,7 @@
         "bootstrap": "^4.0.0",
         "bootstrap-float-label": "^3.0.1",
         "bootstrap-toggle": "^2.2.2",
+        "clean-css": "^4.1.9",
         "fast-safe-stringify": "^2.0.2",
         "font-awesome": "^4.7.0",
         "fuse.js": "^3.2.0",

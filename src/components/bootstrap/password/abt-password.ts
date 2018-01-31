@@ -1,3 +1,4 @@
+import { JsTools } from './../../../utilities/purejs/jsTools';
 import { PasswordMeter, IResult } from 'password-meter';
 import {
   customAttribute, autoinject, bindable,
@@ -8,6 +9,7 @@ import {
 export type ButtonColorType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
 export type ErrorDisplayType = 'none' | 'tooltip' | 'list';
 
+@inject(JsTools)
 @customElement('abt-password')
 export class PasswordCustomElement {
 
@@ -46,6 +48,10 @@ export class PasswordCustomElement {
   private progressBarColor: string = null;
 
   private passwordMeter: PasswordMeter;
+
+  constructor(private jsTools: JsTools) {
+  }
+
 
   private afterAttached() {
 
@@ -141,6 +147,10 @@ export class PasswordCustomElement {
 
     if (!this.scoreRange) {
       throw Error("The 'score-range' property can not be null.");
+    }
+
+    if (!this.jsTools.isObject(this.scoreRange)) {
+      throw Error("The 'score-range' property must be an object.");
     }
 
     let result = this.passwordMeter.getResult(value);

@@ -1,7 +1,9 @@
 import { inject, customElement, bindable, bindingMode, containerless, PLATFORM, noView, DOM } from 'aurelia-framework';
+import { CssMinifier } from '../../../utilities/purejs/cssMinifier';
 
 export type FloatInputPlacement = 'sm' | 'md' | 'lg';
 @containerless()
+@inject(CssMinifier)
 @customElement('abt-float-input')
 export class BootstrapFloatInput {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
@@ -19,6 +21,9 @@ export class BootstrapFloatInput {
 
   private floatInput: HTMLInputElement;
   private floatInputLabel: HTMLLabelElement;
+
+  constructor(private cssMinifier: CssMinifier) {
+  }
 
   private afterAttached() {
 
@@ -53,18 +58,22 @@ export class BootstrapFloatInput {
 
     if (this.floatInput.classList.contains('form-control')) {
       this.floatInputLabel.classList.add('has-float-label');
-      DOM.injectStyles(`
-              #${id}.has-float-label .form-control:placeholder-shown:not(:focus) + * {
-                color : ${this.placeholderColor || 'black'} !important;
-                font-size: ${this.placeholderFontSize || fontSize} !important;
-                opacity: ${this.placeholderOpacity || '.5'} !important;
-                top: ${this.placeholderTop || top} !important;
-              }
-              #${id}.has-float-label label, #${id}.has-float-label > span
-              {
-                color : ${this.labelColor || 'black'} !important;
-                font-size: ${this.labelFontSize || '75%'} !important;
-              }`);
+
+      let style = `
+                  #${id}.has-float-label .form-control:placeholder-shown:not(:focus) + * {
+                    color : ${this.placeholderColor || 'black'} !important;
+                    font-size: ${this.placeholderFontSize || fontSize} !important;
+                    opacity: ${this.placeholderOpacity || '.5'} !important;
+                    top: ${this.placeholderTop || top} !important;
+                  }
+                  #${id}.has-float-label label, #${id}.has-float-label > span
+                  {
+                    color : ${this.labelColor || 'black'} !important;
+                    font-size: ${this.labelFontSize || '75%'} !important;
+                  }`;
+
+      let minify = this.cssMinifier.minify(style);
+      DOM.injectStyles(minify);
     }
   }
 }
