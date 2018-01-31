@@ -5,6 +5,9 @@ import {
   Disposable, BindingEngine
 } from 'aurelia-framework';
 
+export type ButtonColorType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+export type ErrorDisplayType = 'none' | 'tooltip' | 'list';
+
 @customElement('abt-password')
 export class PasswordCustomElement {
 
@@ -12,18 +15,20 @@ export class PasswordCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public inputStyle: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public buttonClass: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public buttonStyle: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public buttonColor: ButtonColorType = 'secondary';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public errorIcon: string = 'fa fa-times';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showIcon: string = 'fa fa-eye';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public hideIcon: string = 'fa fa-eye-slash';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public progressBarHeight: string = '5px';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showTooltip: boolean = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showProgressBar: boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public displayType: ErrorDisplayType = 'none';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showProgressBar: boolean | string = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: string = 'md';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showPercent: boolean | string = false;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public text: string;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public scoreRange: object = null;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public requirements: object = null;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public passwordVisibility: boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public passwordVisibility: boolean | string = true;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public passwordChanged: Function;
 
@@ -31,14 +36,24 @@ export class PasswordCustomElement {
   private txtPassword: HTMLInputElement;
   private btnPassword: HTMLButtonElement;
   private iconPassword: HTMLElement;
+  private errorsList: HTMLDivElement;
+  private passwordTemplate: Element;
 
   private progressBarValue = 0;
+  private percentValue = '';
+
   private progressBarClass: string = null;
   private progressBarColor: string = null;
 
   private passwordMeter: PasswordMeter;
 
   private afterAttached() {
+
+    // tslint:disable-next-line:max-line-length
+    this.showProgressBar = (this.showProgressBar === '' && this.passwordTemplate.hasAttribute('show-progress-bar')) || this.showProgressBar.toString() === 'true';
+    this.showPercent = (this.showPercent === '' && this.passwordTemplate.hasAttribute('show-percent')) || this.showPercent.toString() === 'true';
+    // tslint:disable-next-line:max-line-length
+    this.passwordVisibility = (this.passwordVisibility === '' && this.passwordTemplate.hasAttribute('password-visibility')) || this.passwordVisibility.toString() === 'true';
     let req = this.requirements;
     let range = this.getScoreRangeInfo(this.scoreRange);
     this.passwordMeter = new PasswordMeter(req, range);
@@ -124,27 +139,73 @@ export class PasswordCustomElement {
 
   private textChanged(value: string) {
 
+    if (!this.scoreRange) {
+      throw Error("The 'score-range' property can not be null.");
+    }
+
     let result = this.passwordMeter.getResult(value);
     let colorStatus = this.getColorInfo(this.scoreRange, result.status);
 
-    if (result.score >= 0) {
-      this.progressBarValue = result.percent;
-    } else {
-      this.progressBarValue = 100;
-      colorStatus = this.getMinColorInfo(this.scoreRange);
-    }
-
     if (colorStatus) {
       if (colorStatus.isClass) {
-        this.progressBarClass = colorStatus.color;
+        this.progressBarClass = colorStatus.color.replace('.', '');
+        this.progressBarColor = null;
       } else {
+        this.progressBarClass = null;
         this.progressBarColor = colorStatus.color;
+      }
+    }
+
+    if (result.score >= 0) {
+      this.progressBarValue = result.percent;
+      if (this.showPercent && result.score > 0) {
+        this.percentValue = result.percent + '%';
+      }
+    } else {
+      this.percentValue = '';
+      this.progressBarValue = 100;
+      colorStatus = this.getMinColorInfo(this.scoreRange);
+      if (colorStatus.isClass) {
+        this.progressBarClass = colorStatus.color.replace('.', '');
+        this.progressBarColor = null;
+      } else {
+        this.progressBarClass = null;
+        this.progressBarColor = colorStatus.color;
+      }
+    }
+
+    if (result.score < 0) {
+      this.percentValue = '';
+      if (this.displayType === 'tooltip') {
+        $(this.txtPassword).tooltip({
+          'title': this.generateErrorsAsHtml(result.errors),
+          'html': true,
+          'animation': true,
+          'placement': 'bottom',
+          // tslint:disable-next-line:max-line-length
+          'template': '<div class="tooltip" role="tooltip"><div class="arrow"></div><div style="max-width: 350px;" class="tooltip-inner text-left text-nowrap"></div></div>'
+        });
+        this.errorsList.innerHTML = '';
+      } else if (this.displayType === 'list') {
+        $(this.txtPassword).tooltip('dispose');
+        this.errorsList.innerHTML = this.generateErrorsAsHtml(result.errors);
+      } else {
+        $(this.txtPassword).tooltip('dispose');
+        this.errorsList.innerHTML = '';
+      }
+    }
+    if (result.score === 0 || !result.errors) {
+      $(this.txtPassword).tooltip('dispose');
+      this.errorsList.innerHTML = '';
+      if (result.score === 0) {
+        this.percentValue = '';
       }
     }
 
     if (this.passwordChanged) {
       this.passwordChanged({
-        result: result
+        result: result,
+        colorStatus: colorStatus
       });
     }
   }
