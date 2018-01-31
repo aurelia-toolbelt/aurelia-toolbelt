@@ -1,6 +1,5 @@
+```ts
 export class BootstrapPassword {
-
-  private passwordObj: HTMLDivElement;
 
   public requirements = {
     minLength: 5,
@@ -28,6 +27,6 @@ export class BootstrapPassword {
   public passwordChanged(result: any, colorStatus: any) {
     let resultObj = JSON.stringify(result, null, '\t');
     let colorStatusObj = JSON.stringify(colorStatus, null, '\t');
-    this.passwordObj.innerHTML = '<pre class="prettyprint">' + resultObj + '<br>' + colorStatusObj + '</pre>';
   }
 }
+```
