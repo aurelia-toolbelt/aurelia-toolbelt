@@ -1,3 +1,4 @@
+```ts
 export class BootstrapPassword {
   public requirements = {
     minLength: 5,
@@ -22,3 +23,4 @@ export class BootstrapPassword {
     '_': { message: 'perfect', color: 'darkgreen' }
   };
 }
+```
