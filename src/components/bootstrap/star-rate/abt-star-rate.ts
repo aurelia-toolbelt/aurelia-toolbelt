@@ -7,16 +7,18 @@ export class BootstrapStarRate {
 
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public rtl: boolean | string = false;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string = ''; // = '#753B85';
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public type: string = 'primary';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public type: string = 'primary';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public color: string | null = null;
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public maxRate: number = 5;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public disabled: boolean | string = false;
 
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public fullStar = 'abt-star abt-full-star';
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public halfStar: string | null = null;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public emptyStar = 'abt-star abt-empty-star';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public fullStar = 'fa fa-star';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public emptyStar = 'fa fa-star-o';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public halfStar: boolean | string = false;
+
 
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public rate: number = 0;
@@ -26,6 +28,7 @@ export class BootstrapStarRate {
   @children('i') private icons: Array<HTMLElement>;
   private mouseRate = -1;
   private showHalfStar = false;
+  private halfStarClass: string | null = null; // fa fa-star-half-o
 
   constructor(private element: Element) { }
 
@@ -36,8 +39,16 @@ export class BootstrapStarRate {
     const onlyRTLAttribute = (this.rtl === '' && this.element.hasAttribute('rtl'));
     this.rtl = onlyRTLAttribute || this.rtl.toString() === 'true';
 
+    const onlyHalfStarAttribute = (this.halfStar === '' && this.element.hasAttribute('half-star'));
+    this.halfStar = onlyHalfStarAttribute || this.halfStar.toString() === 'true';
+    
     this.maxRate = Number(this.maxRate);
     this.rate = Number(this.rate);
+
+  }
+
+  private halfStarChanged(newValue: boolean | null) {
+    this.halfStarClass = newValue ? 'fa fa-star-half-o' : null;
   }
 
   private mouseMove(event: any, index: number) {
@@ -46,7 +57,7 @@ export class BootstrapStarRate {
       return;
     }
 
-    if (this.halfStar) {
+    if (this.halfStarClass) {
       const calculatedIndex = this.rtl ? this.maxRate - index - 1 : index;
       const controlLeft = this.rtl ? this.icons[calculatedIndex].getBoundingClientRect().right : this.icons[calculatedIndex].getBoundingClientRect().left;
       const currentMousePosition = this.rtl ? controlLeft - event.clientX : event.clientX - controlLeft;

@@ -1,28 +1,152 @@
 <template>
 
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Star Rate
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/star-rate">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
 
-  <abt-star-rate full-star="fa fa-star" empty-star="fa fa-star-o" half-star="fa fa-star-half-o" class="fa-3x" type="primary"
-    max-rate="6"></abt-star-rate>
-  <br />
-  <abt-star-rate full-star="fa fa-star" empty-star="fa fa-star-o" half-star="fa fa-star-half-o" class="fa-3x" type="secondary"
-    max-rate="6"></abt-star-rate>
-  <br />
-  <abt-star-rate full-star="fa fa-star" empty-star="fa fa-star-o" half-star="fa fa-star-half-o" class="fa-3x" type="info" max-rate="6"></abt-star-rate>
-  <br />
-  <br />
-  <abt-star-rate full-star="fa fa-star" empty-star="fa fa-star-o" half-star="fa fa-star-half-o" class="fa-3x" type="success"
-    max-rate="6"></abt-star-rate>
-  <br />
-  <abt-star-rate full-star="fa fa-star" empty-star="fa fa-star-o" half-star="fa fa-star-half-o" class="fa-3x" type="warning"
-    max-rate="6"></abt-star-rate>
-  <br />
-  <abt-star-rate full-star="fa fa-star" empty-star="fa fa-star-o" half-star="fa fa-star-half-o" class="fa-3x" type="danger"
-    max-rate="6"></abt-star-rate>
-  <br />
-  <abt-star-rate full-star="fa fa-star" empty-star="fa fa-star-o" half-star="fa fa-star-half-o" class="fa-3x bg-dark" type="light"
-    max-rate="6"></abt-star-rate>
-  <br />
-  <abt-star-rate full-star="fa fa-star" empty-star="fa fa-star-o" half-star="fa fa-star-half-o" class="fa-3x" type="dark" max-rate="6"></abt-star-rate>
+    <abt-alert type="info" class="mb-1">
+      Inspired by
+      <abt-alert-link href="https://css-tricks.com/star-ratings/">Css Tricks</abt-alert-link> &amp; used
+      <abt-alert-link href="http://fontawesome.io/icons/">Font-Awesome Stars</abt-alert-link>
+
+      <aut-micro-link class="mt-2" round="false" url="https://css-tricks.com/star-ratings/"></aut-micro-link>
+    </abt-alert>
+
+    <abt-alert type="success">
+      <i class="fa fa-credit-card" aria-hidden="true"></i>
+      &nbsp;
+      <b>License:</b> &nbsp;
+      <abt-alert-link href="https://css-tricks.com/star-ratings/">MIT</abt-alert-link>
+    </abt-alert>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/star-rate/usage.md">
+    </aut-mark-down>
+  </fieldset>
+
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Basic
+    </legend>
+
+    <p>
+      Simply add
+      <code>abt-star-rate</code>. You want to have decimal point values( only
+      <b>0.5</b> ) use
+      <code>half-star</code> attribute, either simple or with value and binding.
+    </p>
+
+    <abt-card>
+      <abt-card-body class="fa-2x">
+        <abt-star-rate class="mr-5"></abt-star-rate>
+        <abt-star-rate half-star></abt-star-rate>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/star-rate/basic.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+
+    <style>
+      .star-aurelia {
+        color: #753B85;
+      }
+
+    </style>
+
+    <legend>
+      Contextual types &amp; custom color
+    </legend>
+
+    <p>
+      You can set
+      <code>type</code> property with bootstrap contextual colors, or have your own by creating a css class
+      <code>star-*</code>,
+      <b>e.g.</b> &nbsp;
+      <code>.star-aurelia{ color: #753B85 }</code>, or just set the
+      <code>color</code> property.
+    </p>
+
+    <abt-card>
+      <abt-card-body class="fa-2x">
+
+        <abt-star-rate></abt-star-rate>
+        <abt-star-rate type="secondary"></abt-star-rate>
+        <abt-star-rate type="info"></abt-star-rate>
+        <abt-star-rate type="success"></abt-star-rate>
+
+        <br />
+
+        <abt-star-rate type="aurelia"></abt-star-rate>
+
+        <br />
+
+        <abt-star-rate color="maroon"></abt-star-rate>
+
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/star-rate/contextual.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+
+    <legend>
+      Dynamic behaviours
+    </legend>
+
+    <p>
+
+      You can set number of maximum stars via
+      <code>max-rate</code>, get or set its current rate via
+      <code>rate</code> and make it
+      <code>disable</code> or
+      <code>readonly</code> via
+      <code>disabled</code> attributes.
+
+    </p>
+
+    <abt-card>
+      <abt-card-body class="fa-2x">
+
+        <abt-star-rate max-rate="7" rtl rate.bind="myRate" disabled.bind="beDisable">
+          <span class="fa fa-remove" style="cursor:pointer" click.trigger="myRate=0"></span>
+        </abt-star-rate>
+
+        <aut-checkbox curve color="danger" class="float-right" checked.bind="beDisable">
+          Disable
+        </aut-checkbox>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/star-rate/dynamic.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
 
 
 </template>

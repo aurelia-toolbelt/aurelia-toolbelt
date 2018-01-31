@@ -4,7 +4,7 @@ const microlink = require('aureliatoolbelt-thirdparty/microlink/microlink.js');
 import { customElement, bindable, bindingMode, inject } from 'aurelia-framework';
 
 @inject(Element)
-@customElement('aut-microlink')
+@customElement('aut-micro-link')
 export class MicrolinkCustomElement {
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string = '';
