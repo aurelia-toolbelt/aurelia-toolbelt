@@ -158,6 +158,7 @@ export class PasswordCustomElement {
     }
 
     if (result.score < 0) {
+      this.percentValue = '';
       if (this.displayType === 'tooltip') {
         $(this.txtPassword).tooltip({
           'title': this.generateErrorsAsHtml(result.errors),
@@ -179,6 +180,9 @@ export class PasswordCustomElement {
     if (result.score === 0 || !result.errors) {
       $(this.txtPassword).tooltip('dispose');
       this.errorsList.innerHTML = '';
+      if (result.score === 0) {
+        this.percentValue = '';
+      }
     }
 
     if (this.passwordChanged) {
