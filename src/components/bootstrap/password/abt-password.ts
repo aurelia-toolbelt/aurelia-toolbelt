@@ -5,6 +5,8 @@ import {
   Disposable, BindingEngine
 } from 'aurelia-framework';
 
+export type ErrorDisplayType = 'none' | 'tooltip' | 'list';
+
 @customElement('abt-password')
 export class PasswordCustomElement {
 
@@ -15,8 +17,8 @@ export class PasswordCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public errorIcon: string = 'fa fa-times';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showIcon: string = 'fa fa-eye';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public hideIcon: string = 'fa fa-eye-slash';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public progressBarHeight: string = '5';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showTooltip: boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public progressBarHeight: string = '5px';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public displayType: ErrorDisplayType = 'none';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showProgressBar: boolean = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: string = 'md';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showPercent: boolean = false;
@@ -32,6 +34,7 @@ export class PasswordCustomElement {
   private txtPassword: HTMLInputElement;
   private btnPassword: HTMLButtonElement;
   private iconPassword: HTMLElement;
+  private errorsList: HTMLDivElement;
 
   private progressBarValue = 0;
   private percentValue = '';
@@ -140,11 +143,11 @@ export class PasswordCustomElement {
       }
     }
 
-    if (result.score > 0) {
+    if (result.score >= 0) {
       this.progressBarValue = result.percent;
-      if (this.showPercent) {
+      if (this.showPercent && result.score > 0) {
         this.percentValue = result.percent + '%';
-        this.progressBarHeight = '14';
+        this.progressBarHeight = '14px';
       }
     } else {
       this.percentValue = '';
@@ -154,9 +157,34 @@ export class PasswordCustomElement {
       this.progressBarColor = colorStatus.color;
     }
 
+    if (result.score < 0) {
+      if (this.displayType === 'tooltip') {
+        $(this.txtPassword).tooltip({
+          'title': this.generateErrorsAsHtml(result.errors),
+          'html': true,
+          'animation': true,
+          'placement': 'bottom',
+          // tslint:disable-next-line:max-line-length
+          'template': '<div class="tooltip" role="tooltip"><div class="arrow"></div><div style="max-width: 350px;" class="tooltip-inner text-left text-nowrap"></div></div>'
+        });
+        this.errorsList.innerHTML = '';
+      } else if (this.displayType === 'list') {
+        $(this.txtPassword).tooltip('dispose');
+        this.errorsList.innerHTML = this.generateErrorsAsHtml(result.errors);
+      } else {
+        $(this.txtPassword).tooltip('dispose');
+        this.errorsList.innerHTML = '';
+      }
+    }
+    if (result.score === 0 || !result.errors) {
+      $(this.txtPassword).tooltip('dispose');
+      this.errorsList.innerHTML = '';
+    }
+
     if (this.passwordChanged) {
       this.passwordChanged({
-        result: result
+        result: result,
+        colorStatus: colorStatus
       });
     }
   }
