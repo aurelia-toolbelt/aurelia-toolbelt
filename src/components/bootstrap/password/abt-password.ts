@@ -17,20 +17,20 @@ export class PasswordCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public inputStyle: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public buttonClass: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public buttonStyle: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public buttonColor: ButtonColorType = 'secondary';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public buttonColorType: ButtonColorType = 'secondary';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public errorIcon: string = 'fa fa-times';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showIcon: string = 'fa fa-eye';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public hideIcon: string = 'fa fa-eye-slash';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showPasswordIcon: string = 'fa fa-eye';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public hidePasswordIcon: string = 'fa fa-eye-slash';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public progressBarHeight: string = '5px';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public errorDisplayType: ErrorDisplayType = 'none';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showProgressBar: boolean | string = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: string = 'md';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public showPercent: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public passwordVisibility: boolean | string = true;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public text: string;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public scoreRange: object = null;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public requirements: object = null;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public passwordVisibility: boolean | string = true;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public passwordChanged: Function;
 
@@ -73,13 +73,9 @@ export class PasswordCustomElement {
     if (this.isInvisible) {
       this.isInvisible = false;
       $(this.txtPassword).attr('type', 'text');
-      this.iconPassword.classList.remove('fa-eye-slash');
-      this.iconPassword.classList.add('fa-eye');
     } else {
       this.isInvisible = true;
       $(this.txtPassword).attr('type', 'password');
-      this.iconPassword.classList.remove('fa-eye');
-      this.iconPassword.classList.add('fa-eye-slash');
     }
   }
 
@@ -88,7 +84,7 @@ export class PasswordCustomElement {
     if (errors) {
       for (let index = 0; index < errors.length; index++) {
         const element = errors[index];
-        html += `<div><i class="abt-password-error ${this.errorIcon}" aria-hidden="true"></i>${element}</div>`;
+        html += `<div class="abt-password-error-item"><i class="abt-password-error-icon ${this.errorIcon}" aria-hidden="true"></i>${element}</div>`;
       }
     }
     return html;
