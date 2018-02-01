@@ -1,6 +1,11 @@
 
 import { customElement, inject, bindable, bindingMode, BindingEngine, containerless, processContent, children } from 'aurelia-framework';
 
+// https://stackoverflow.com/questions/44716366/tokenize2-with-default-added-values
+// https://stackoverflow.com/questions/45037159/how-do-i-get-text-of-multiselect-tokenize2-control
+// https://stackoverflow.com/questions/44452004/is-it-possible-to-show-all-options-in-tokenize2
+// https://stackoverflow.com/questions/44624188/show-all-options-in-tokenize2
+
 import 'jquery';
 import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.css';
 import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.js';
@@ -57,8 +62,6 @@ export class BootstrapTokenizeCustomElement {
   }
 
   private afterAttached() {
-
-
 
     let index = this.options.length;
 
