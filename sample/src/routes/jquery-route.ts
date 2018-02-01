@@ -30,16 +30,17 @@ export class JqueryRoute {
                 nav: true,
                 title: 'Lazy Image',
                 settings: { auth: false, isComponent: true }
-            },
-            {
-                route: ['newsticker'],
-                name: 'jq-newsticker',
-
-                moduleId: PLATFORM.moduleName('./jquery/news-ticker'),
-                nav: true,
-                title: 'News Ticker',
-                settings: { auth: false, isComponent: true }
             }
+            // ,
+            // {
+            //     route: ['newsticker'],
+            //     name: 'jq-newsticker',
+
+            //     moduleId: PLATFORM.moduleName('./jquery/news-ticker'),
+            //     nav: true,
+            //     title: 'News Ticker',
+            //     settings: { auth: false, isComponent: true }
+            // }
         ]);
         this.router = router;
     }

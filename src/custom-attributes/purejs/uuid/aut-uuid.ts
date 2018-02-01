@@ -9,7 +9,7 @@ export class UuidCustomAttribute {
   constructor(private element: Element, private idgeneratorV4: Uuid) {
   }
   private bind() {
-    this.id = 'aut_uuid_' + this.idgeneratorV4.uuidv4().replace(new RegExp('-', 'g'), '');
+    this.id = 'a' + this.idgeneratorV4.uuidv4().replace(new RegExp('-', 'g'), '');
     // @ts-ignore
     if (this.value) {
       // @ts-ignore

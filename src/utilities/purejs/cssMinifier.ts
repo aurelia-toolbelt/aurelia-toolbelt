@@ -3,9 +3,9 @@ const CleanCSS = require('clean-css');
 
 @singleton()
 export class CssMinifier {
-    public minify(text: string): string {
+    public minify(content: string): string {
         let options = { /* options */ };
-        let output = new CleanCSS(options).minify(text).styles;
+        let output = new CleanCSS(options).minify(content).styles;
         return output;
     }
 }

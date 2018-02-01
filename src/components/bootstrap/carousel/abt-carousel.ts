@@ -28,7 +28,7 @@ export class CarouselCustomElement {
 
   private afterAttached() {
 
-
+    this.interval = Number(this.interval);
     this.showNavigator = (this.navigator === '' && this.carouselTemplate.hasAttribute('navigator')) || this.navigator.toString() === 'true';
     this.showIndicator = (this.indicator === '' && this.carouselTemplate.hasAttribute('indicator')) || this.navigator.toString() === 'true';
     this.keyboard = (this.keyboard === '' && this.carouselTemplate.hasAttribute('keyboard')) || this.keyboard.toString() === 'true';

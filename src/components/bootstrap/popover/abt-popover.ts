@@ -17,7 +17,7 @@ export class BootstrapPopoverCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public selector: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string | Element | Function = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public trigger: string = 'click';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public offset:  number | string = 0;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public offset: number | string = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public fallbackPlacement: string | string[] = 'flip';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public boundary: PopoverBoundary = 'scrollParent';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public template: string =
@@ -37,6 +37,7 @@ export class BootstrapPopoverCustomElement {
     this.parentElement = this.popover.parentElement;
     let slotContent = this.html ? this.popover.innerHTML : this.popover.textContent;
 
+    this.offset = Number(this.offset);
     this.animation = (this.animation === '' && this.popoverTemplate.hasAttribute('animation')) || this.animation.toString() === 'true';
     this.container = (this.container === '' && this.popoverTemplate.hasAttribute('container')) || this.container.toString() === 'true';
     this.html = (this.html === '' && this.popoverTemplate.hasAttribute('html')) || this.html.toString() === 'true';

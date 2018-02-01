@@ -36,6 +36,7 @@ export class BootstrapTooltipCustomElement {
     this.parentElement = this.tooltip.parentElement;
     let slotContent = this.html ? this.tooltip.innerHTML : this.tooltip.textContent;
 
+    this.offset = Number(this.offset);
     this.animation = (this.animation === '' && this.tooltip.hasAttribute('animation')) || this.animation.toString() === 'true';
     this.container = (this.container === '' && this.tooltip.hasAttribute('container')) || this.container.toString() === 'true';
     this.html = (this.html === '' && this.tooltip.hasAttribute('html')) || this.html.toString() === 'true';
