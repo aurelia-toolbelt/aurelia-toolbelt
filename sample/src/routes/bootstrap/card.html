@@ -221,7 +221,6 @@
     <aut-mark-down src="./docs/components/bootstrap/card/text-center-example.md">
     </aut-mark-down>
   </fieldset>
-
   <fieldset class="mt-5">
     <legend>
       Sizing
@@ -292,15 +291,339 @@
     <aut-mark-down src="./docs/components/bootstrap/card/sizing-custom-css-example.md">
     </aut-mark-down>
   </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Text alignment
+    </legend>
+    <abt-card width="18rem;">
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Special title treatment</h5>
+        </abt-card-title>
+        <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <br>
+    <abt-card class="text-center" width="18rem;">
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Special title treatment</h5>
+        </abt-card-title>
+        <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <br>
+    <abt-card class="text-right" width="18rem;">
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Special title treatment</h5>
+        </abt-card-title>
+        <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/text-alignment-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Navigation
+    </legend>
+    <abt-card class="text-center">
+      <abt-card-header>
+        <abt-navs tabs>
+          <abt-nav-item active href="#/bootstrap/card" title="Active"></abt-nav-item>
+          <abt-nav-item href="#/bootstrap/card" title="Link"></abt-nav-item>
+          <abt-nav-item disabled title="Disabled" href="#/bootstrap/card"></abt-nav-item>
+        </abt-navs>
+      </abt-card-header>
+      <abt-card-body class="text-center">
+        <abt-card-title>
+          <h5>Special title treatment</h5>
+        </abt-card-title>
+        <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/navigation-tab-example.md">
+    </aut-mark-down>
+    <br>
+    <abt-card class="text-center">
+      <abt-card-header>
+        <abt-navs pills>
+          <abt-nav-item active href="#/bootstrap/card" title="Active"></abt-nav-item>
+          <abt-nav-item href="#/bootstrap/card" title="Link"></abt-nav-item>
+          <abt-nav-item disabled title="Disabled" href="#/bootstrap/card"></abt-nav-item>
+        </abt-navs>
+      </abt-card-header>
+      <abt-card-body class="text-center">
+        <abt-card-title>
+          <h5>Special title treatment</h5>
+        </abt-card-title>
+        <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/navigation-pill-example.md">
+    </aut-mark-down>
+  </fieldset>
 
+  <fieldset class="mt-5">
+    <legend>
+      Images
+    </legend>
+    <p>Cards include a few options for working with images. Choose from appending “image caps” at either end of a card, overlaying
+      images with card content, or simply embedding the image in a card. </p>
+    <h5 class="mt-3">Image caps </h5>
+    <p>Similar to headers and footers, cards can include top and bottom “image caps”—images at the top or bottom of a card.</p>
+    <abt-card class="mb-3">
+      <abt-card-image top src="/images/card-pic4.jpg" alt="Card image cap"></abt-card-image>
+      <abt-card-body>
+        <abt-card-title>
+          <h4>Card title</h4>
+        </abt-card-title>
+        <abt-card-text>
+          This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit
+          longer.
+        </abt-card-text>
+        <abt-card-text>
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <br>
+    <abt-card>
+      <abt-card-body>
+        <abt-card-title>
+          <h4>Card title</h4>
+        </abt-card-title>
+        <abt-card-text>
+          This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit
+          longer.
+        </abt-card-text>
+        <abt-card-text>
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </abt-card-text>
+      </abt-card-body>
+      <abt-card-image bottom src="/images/card-pic4.jpg" alt="Card image cap"></abt-card-image>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/image-caps-example.md">
+    </aut-mark-down>
+    <h5 class="mt-3">Image overlays</h5>
+    <p>Turn an image into a card background and overlay your card’s text. Depending on the image, you may or may not need additional
+      styles or utilities.</p>
+    <abt-card class="bg-dark text-white">
+      <abt-card-image src="/images/card-pic5.jpg" alt="Card image">
+      </abt-card-image>
+      <abt-card-image-overlay>
+        <abt-card-title>
+          <h4>Card title</h4>
+        </abt-card-title>
+        <abt-card-text>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little
+          bit longer.
+        </abt-card-text>
+        <abt-card-text>Last updated 3 mins ago</abt-card-text>
+      </abt-card-image-overlay>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/image-overlays-example.md">
+    </aut-mark-down>
+  </fieldset>
 
+  <fieldset class="mt-5">
+    <legend>
+      Card styles
+    </legend>
+    <p>Cards include various options for customizing their backgrounds, borders, and color. </p>
+    <h5 class="mt-3">Background and color </h5>
+    <p>Use
+      <a href="http://getbootstrap.com/docs/4.0/utilities/colors/"> text and background utilities</a> to change the appearance of a card.</p>
+    <abt-card class="text-white bg-primary mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Primary card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="text-white bg-secondary mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Secondary card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="text-white bg-success mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Success card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="text-white bg-danger mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Danger card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="text-white bg-warning mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Warning card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="text-white bg-info mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Info card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="bg-light mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Light card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="text-white bg-dark mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Dark card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/card-styles-background-example.md">
+    </aut-mark-down>
+  </fieldset>
 
-
-
-
-
-
-
+  <fieldset class="mt-5">
+    <legend>
+      Border
+    </legend>
+    <abt-card class="border-primary mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body class="text-primary">
+        <abt-card-title>
+          <h5>Primary card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="border-secondary mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body class="text-secondary">
+        <abt-card-title>
+          <h5>Secondary card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="border-success mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body class="text-success">
+        <abt-card-title>
+          <h5>Success card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="border-danger mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body class="text-danger">
+        <abt-card-title>
+          <h5>Danger card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="border-warning mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body class="text-warning">
+        <abt-card-title>
+          <h5>Warning card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="border-info mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body class="text-info">
+        <abt-card-title>
+          <h5>Info card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="border-light mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Light card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="border-dark mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body class="text-dark">
+        <abt-card-title>
+          <h5>Dark card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/card-styles-border-example.md">
+    </aut-mark-down>
+  </fieldset>
 
 
 
@@ -326,90 +649,6 @@
   <br/>
   <br/>
   <br/>
-  <br/>
-  <br/>
-  <br/>
-
-
-
-
-
-  <abt-card class="text-center mt-5">
-    <abt-card-header>
-      <ul class="nav nav-tabs card-header-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-    </abt-card-header>
-    <abt-card-body>
-      <h4 class="card-title">Special title treatment</h4>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </abt-card-body>
-  </abt-card>
-
-
-
-  <h1 class="mt-4 md-5">Images</h1>
-  <abt-card class="mb-3">
-    <abt-card-image top src="/images/test.jpg" alt="Card image cap"></abt-card-image>
-    <abt-card-body>
-      <abt-card-title>
-        <h4>Card title</h4>
-      </abt-card-title>
-      <abt-card-text>
-        This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit
-        longer.
-      </abt-card-text>
-      <abt-card-text>
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </abt-card-text>
-    </abt-card-body>
-  </abt-card>
-  <abt-card>
-    <abt-card-body>
-      <abt-card-title>
-        <h4>Card title</h4>
-      </abt-card-title>
-      <abt-card-text>
-        This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit
-        longer.
-      </abt-card-text>
-      <abt-card-text>
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </abt-card-text>
-    </abt-card-body>
-    <abt-card-image bottom src="/images/test.jpg" alt="Card image cap"></abt-card-image>
-  </abt-card>
-
-
-
-
-  <h1 class="mt-4 md-5">Image Overlays</h1>
-
-  <abt-card class="bg-dark text-white">
-    <abt-card-image src="/images/test.jpg" alt="Card image">
-    </abt-card-image>
-    <abt-card-image-overlay>
-      <abt-card-title>
-        <h4>Card title</h4>
-      </abt-card-title>
-      <abt-card-text>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little
-        bit longer.</abt-card-text>
-      <abt-card-text>Last updated 3 mins ago</abt-card-text>
-    </abt-card-image-overlay>
-  </abt-card>
-
-
-
-
 
 
   <h1 class="mt-4 md-5">Background and color and Card Layout</h1>
