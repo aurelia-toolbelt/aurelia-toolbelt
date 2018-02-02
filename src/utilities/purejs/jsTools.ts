@@ -67,7 +67,23 @@ export class JsTools {
     }
 
     public jsonFormatter(value: any) {
-       return JSON.stringify(value, null, '\t');
+        return JSON.stringify(value, null, '\t');
     }
 
+    public isUrl(value: any) {
+        if (!this.isString(value)) {
+            return false;
+        }
+        let pattern = new RegExp('^((https?:)?\\/\\/)?' + // protocol
+            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+            '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+            '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+            '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locater
+        if (!pattern.test(value)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
