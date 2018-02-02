@@ -1,0 +1,4 @@
+.card-columns {
+    display: inline-block !important;
+    column-break-inside: avoid !important;
+  }

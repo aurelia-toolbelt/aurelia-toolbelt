@@ -860,98 +860,30 @@
     </aut-mark-down>
   </fieldset>
 
-
-
-
-
-
-
-
-
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-
-
-  <h1 class="mt-4 md-5">Background and color and Card Layout</h1>
-
-  <abt-card-group>
-    <abt-card class="text-white bg-success mb-3" style="max-width: 20rem;">
-      <abt-card-header class="border-danger">Header</abt-card-header>
-      <abt-card-body>
-        <abt-card-title>Primary card title</abt-card-title>
-        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</abt-card-text>
-      </abt-card-body>
-      <abt-card-footer>
-        <small class="text-white">Last updated 3 mins ago</small>
-      </abt-card-footer>
-    </abt-card>
-    <abt-card class="text-white border-primary bg-dark mb-3" style="max-width: 20rem; border-width:5px;">
-      <abt-card-header class="border-danger bg-transparent">Header</abt-card-header>
-      <abt-card-body class="text-success">
-        <abt-card-title>Primary card title</abt-card-title>
-        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</abt-card-text>
-      </abt-card-body>
-      <abt-card-footer>
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </abt-card-footer>
-    </abt-card>
-  </abt-card-group>
-
-
-  <abt-card-deck>
-    <abt-card class="mb-3">
-      <abt-card-image top src="/images/test.jpg" alt="Card image cap"></abt-card-image>
-      <abt-card-body>
-        <abt-card-title>
-          <h4>Card title</h4>
-        </abt-card-title>
-        <abt-card-text>
-          This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit
-          longer.
-        </abt-card-text>
-        <abt-card-text>
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </abt-card-text>
-      </abt-card-body>
-    </abt-card>
-    <abt-card>
-      <abt-card-body>
-        <abt-card-title>
-          <h4>Card title</h4>
-        </abt-card-title>
-        <abt-card-text>
-          This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit
-          longer.
-        </abt-card-text>
-        <abt-card-text>
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </abt-card-text>
-      </abt-card-body>
-      <abt-card-image bottom src="/images/test.jpg" alt="Card image cap"></abt-card-image>
-    </abt-card>
-  </abt-card-deck>
-
-
-
-  <h1>Card Columns</h1>
-
-  <abt-card-columns>
-    <abt-card-columns class="card">
-      <abt-card-image top src="/images/test.jpg" alt="Card image cap"></abt-card-image>
-      <abt-body>
-        <abt-card-title>Card title that wraps to a new line</abt-card-title>
-        <abt-card-text>This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little
-          bit longer.</abt-card-text>
-      </abt-body>
-      </abt-card-image>
-      <abt-card class="p-3">
+  <fieldset class="mt-5">
+    <legend>
+      Card columns
+    </legend>
+    <p>Cards can be organized into
+      <a href="https://masonry.desandro.com/">Masonry</a>-like columns with just CSS by wrapping them in
+      <code>abt-card-columns</code>. Cards are built with CSS
+      <code>column</code> properties instead of flexbox for easier alignment. Cards are ordered from top to bottom and left to right.
+    </p>
+    <p>
+      <b>Heads up!</b> Your mileage with card columns may vary. To prevent cards breaking across columns, we must set them to
+      <code>display:
+      inline-block</code> as
+      <code>column-break-inside: avoid</code> isn’t a bulletproof solution yet.</p>
+    <abt-card-columns>
+      <div class="card">
+        <img class="card-img-top" src="/images/card-pic8.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title that wraps to a new line</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a
+            little bit longer.</p>
+        </div>
+      </div>
+      <div class="card p-3">
         <blockquote class="blockquote mb-0 card-body">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
           <footer class="blockquote-footer">
@@ -961,18 +893,18 @@
             </small>
           </footer>
         </blockquote>
-      </abt-card>
-      <abt-card>
-        <abt-card-image top src="/images/test.jpg" alt="Card image cap"></abt-card-image>
-        <abt-card-body>
-          <abt-card-title>Card title</abt-card-title>
-          <abt-card-text>This card has supporting text below as a natural lead-in to additional content.</abt-card-text>
-          <abt-card-text>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="/images/card-pic9.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text">
             <small class="text-muted">Last updated 3 mins ago</small>
-          </abt-card-text>
-        </abt-card-body>
-      </abt-card>
-      <abt-card class="bg-primary text-white text-center p-3">
+          </p>
+        </div>
+      </div>
+      <div class="card bg-primary text-white text-center p-3">
         <blockquote class="blockquote mb-0">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
           <footer class="blockquote-footer">
@@ -982,44 +914,42 @@
             </small>
           </footer>
         </blockquote>
-      </abt-card>
-      <abt-card class="text-center">
-        <abt-card-body>
-          <abt-card-title>Card title</abt-card-title>
-          <abt-card-text>This card has supporting text below as a natural lead-in to additional content.</abt-card-text>
-          <abt-card-text>
+      </div>
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text">
             <small class="text-muted">Last updated 3 mins ago</small>
-          </abt-card-text>
-        </abt-card-body>
-      </abt-card>
-      <abt-card>
-        <abt-card-image src="/images/test.jpg" alt="Card image"></abt-card-image>
-        </abt-card-image>
-        <abt-card class="p-3 text-right">
-          <blockquote class="blockquote mb-0">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">
-              <small class="text-muted">
-                Someone famous in
-                <cite title="Source Title">Source Title</cite>
-              </small>
-            </footer>
-          </blockquote>
-        </abt-card>
-        <abt-card>
-          <abt-card-body>
-            <abt-card-title>Card title</abt-card-title>
-            <abt-card-text>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even
-              longer content than the first to show that equal height action.</abt-card-text>
-            <abt-card-text class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </abt-card-text>
-          </abt-card-body>
-        </abt-card>
-      </abt-card>
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="/images/card-pic10.jpg" alt="Card image">
+      </div>
+      <div class="card p-3 text-right">
+        <blockquote class="blockquote mb-0">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <footer class="blockquote-footer">
+            <small class="text-muted">
+              Someone famous in
+              <cite title="Source Title">Source Title</cite>
+            </small>
+          </footer>
+        </blockquote>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even
+            longer content than the first to show that equal height action.</p>
+          <p class="card-text">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </p>
+        </div>
+      </div>
     </abt-card-columns>
-
-
-    <br/>
-
+    <aut-mark-down src="./docs/components/bootstrap/card/card-columns-example.md">
+    </aut-mark-down>
+  </fieldset>
 </template>
