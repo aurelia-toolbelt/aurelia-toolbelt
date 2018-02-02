@@ -16,116 +16,225 @@
     <aut-mark-down src="./docs/components/bootstrap/card/usage.md">
     </aut-mark-down>
   </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Basic example
+    </legend>
+    <abt-card width='18rem'>
+      <abt-card-image top src="/images/card-pic1.jpg" alt="Card image cap">
+      </abt-card-image>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>
+            Card title
+          </h5>
+        </abt-card-title>
+        <abt-card-text>
+          Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/basic-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Content types
+    </legend>
+    <h5 class="mt-3">Body</h5>
+    <p>The building block of a card is the
+      <code>abt-card-body</code>. Use it whenever you need a padded section within a card.</p>
+    <abt-card>
+      <abt-card-body>This is some text within a card body.</abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/body-example.md">
+    </aut-mark-down>
+    <h5 class="mt-3">Titles, text, and links</h5>
+    <abt-card width='18rem'>
+      <abt-card-body>
+        <abt-card-title>
+          <h4>
+            Card Title
+          </h4>
+        </abt-card-title>
+        <abt-card-subtitle class="mb-2 text-muted">
+          <h6>Card subtitle</h6>
+        </abt-card-subtitle>
+        <abt-card-text>
+          Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+        <abt-card-link href="#/bootstrap/card">Card link</abt-card-link>
+        <abt-card-link href="#/bootstrap/card">Another link</abt-card-link>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/link-example.md">
+    </aut-mark-down>
+    <h5 class="mt-3">Images</h5>
+    <abt-card width='18rem'>
+      <abt-card-image top src="/images/card-pic2.jpg" alt="Card image cap">
+      </abt-card-image>
+      <abt-card-body>
+        <abt-card-text>
+          Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/images-example.md">
+    </aut-mark-down>
+    <h5 class="mt-3">List groups</h5>
+    <abt-card width='18rem'>
+      <abt-listgroup flush="true">
+        <abt-listgroup-item>Cras justo odio</abt-listgroup-item>
+        <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+        <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+      </abt-listgroup>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/list-groups-example.md">
+    </aut-mark-down>
+    <br>
+    <abt-card width='18rem'>
+      <abt-card-header>
+        Featured
+      </abt-card-header>
+      <abt-listgroup flush="true">
+        <abt-listgroup-item>Cras justo odio</abt-listgroup-item>
+        <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+        <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+      </abt-listgroup>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/list-groups-header-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Kitchen sink
+    </legend>
+    <abt-card width='18rem'>
+      <abt-card-image top src="/images/card-pic3.jpg" alt="Card image cap">
+      </abt-card-image>
+      <abt-card-body>
+        <abt-card-title>
+          <h4>
+            Card title
+          </h4>
+        </abt-card-title>
+        <abt-card-text>
+          Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+      <abt-listgroup flush="true">
+        <abt-listgroup-item>Cras justo odio</abt-listgroup-item>
+        <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+        <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+      </abt-listgroup>
+      <abt-card-body>
+        <abt-card-link href="#/bootstrap/card">Card link</abt-card-link>
+        <abt-card-link href="#/bootstrap/card">Another link</abt-card-link>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/kitchen-sink-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Header and footer
+    </legend>
+    <abt-card>
+      <abt-card-header>
+        Featured
+      </abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>
+            Special title treatment
+          </h5>
+        </abt-card-title>
+        <abt-card-text>
+          With supporting text below as a natural lead-in to additional content. </abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/header-example.md">
+    </aut-mark-down>
+    <p class="mt-5">Card headers can be styled by adding
+      <code>h*</code> elements to
+      <code>abt-card-header</code>.
+    </p>
+    <abt-card>
+      <abt-card-header>
+        <h5>Featured</h5>
+      </abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>
+            Special title treatment
+          </h5>
+        </abt-card-title>
+        <abt-card-text>
+          With supporting text below as a natural lead-in to additional content. </abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/styled-header-example.md">
+    </aut-mark-down>
+    <br>
+    <abt-card>
+      <abt-card-header>
+        Quote
+      </abt-card-header>
+      <abt-card-body>
+        <blockquote class="blockquote mb-0">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <footer class="blockquote-footer">Someone famous in
+            <cite title="Source Title">Source Title</cite>
+          </footer>
+        </blockquote>
+      </abt-card-body>
+      <abt-card-footer>
+        Something in footer
+      </abt-card-footer>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/quote-example.md">
+    </aut-mark-down>
+  </fieldset>
 
-  <abt-card>
-    <abt-card-body>
-      <abt-card-title>
-        <h4>
-          Card Title
-        </h4>
-      </abt-card-title>
-      <abt-card-subtitle class="mb-2 text-muted">
-        <h6>Card subtitle</h6>
-      </abt-card-subtitle>
-      <abt-card-text>
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-      </abt-card-text>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </abt-card-body>
-  </abt-card>
 
-  <br />
 
-  <abt-card style="width: 20rem;">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
-  </abt-card>
 
-  <br />
 
-  <abt-card style="width: 20rem;">
-    <abt-card-header>
-      Featured
-    </abt-card-header>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
-  </abt-card>
 
-  <br />
 
-  <abt-card style="width: 20rem;">
-    <abt-card-image top src="/images/test.jpg" alt="Card image cap">
-    </abt-card-image>
-    <abt-card-body>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </abt-card-body>
-  </abt-card>
 
-  <br />
 
-  <abt-card style="width: 20rem;">
-    <abt-card-image top src="/images/test.jpg" alt="Card image cap">
-    </abt-card-image>
-    <abt-card-body>
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </abt-card-body>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
-    <abt-card-body class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </abt-card-body>
-  </abt-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <br/>
-
-  <abt-card class="text-right">
-    <abt-card-header>
-      Featured
-    </abt-card-header>
-    <abt-card-body>
-      <abt-card-title>
-        <h4>
-          Card Title
-        </h4>
-      </abt-card-title>
-      <abt-card-text> class="card-text">With supporting text below as a natural lead-in to additional content.</abt-card-text>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </abt-card-body>
-  </abt-card>
-
-  <br />
-
-  <abt-card class="text-center">
-    <abt-card-header>
-      Quote
-    </abt-card-header>
-    <abt-card-body>
-      <blockquote class="blockquote mb-0">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        <footer class="blockquote-footer">Someone famous in
-          <cite title="Source Title">Source Title</cite>
-        </footer>
-      </blockquote>
-    </abt-card-body>
-    <abt-card-footer>
-      Something in footer
-    </abt-card-footer>
-  </abt-card>
-
-
-
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
   <br/>
   <br/>
 
