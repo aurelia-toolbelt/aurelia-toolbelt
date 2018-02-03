@@ -13,7 +13,7 @@ export class BootstrapCardImage {
 
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public src: string;
 
-    private cssClass: string = 'card-image';
+    private cssClass: string = 'card-img';
 
     constructor(private element: Element) { }
 
@@ -27,7 +27,7 @@ export class BootstrapCardImage {
             throw error;
         }
 
-        this.cssClass = beOnBottom ? '-bottom' : beOnTop ? '-top' : '';
+        this.cssClass += beOnBottom ? '-bottom' : beOnTop ? '-top' : '';
 
     }
 

@@ -1,4 +1,9 @@
-<template bindable="class, style" class="card-columns ${class}" css="${style}">
+<template>
+  
   <require from="./abt-card-columns.css"></require>
-  <slot></slot>
+  
+  <div class="card-columns ${class}" css="${style}">
+
+    <slot></slot>
+  </div>
 </template>

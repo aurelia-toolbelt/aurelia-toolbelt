@@ -1,7 +1,8 @@
+<template>
 
-<template bindable="class,style,width" class="card ${class}" css="${width ? 'width:' + width : ''} ${style}">
+  <div class="card ${class}" css="${width ? 'width:' + width : ''} ${style}">
+    <slot>
+    </slot>
+  </div>
 
-  <slot>
-  </slot>
-  
 </template>
