@@ -64,8 +64,8 @@
         <abt-card-text>
           Some quick example text to build on the card title and make up the bulk of the card's content.
         </abt-card-text>
-        <abt-card-link href="#/bootstrap/card">Card link</abt-card-link>
-        <abt-card-link href="#/bootstrap/card">Another link</abt-card-link>
+        <abt-card-link>Card link</abt-card-link>
+        <abt-card-link>Another link</abt-card-link>
       </abt-card-body>
     </abt-card>
     <aut-mark-down src="./docs/components/bootstrap/card/link-example.md">
@@ -129,8 +129,8 @@
         <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
       </abt-listgroup>
       <abt-card-body>
-        <abt-card-link href="#/bootstrap/card">Card link</abt-card-link>
-        <abt-card-link href="#/bootstrap/card">Another link</abt-card-link>
+        <abt-card-link>Card link</abt-card-link>
+        <abt-card-link>Another link</abt-card-link>
       </abt-card-body>
     </abt-card>
     <aut-mark-down src="./docs/components/bootstrap/card/kitchen-sink-example.md">
@@ -334,18 +334,27 @@
     <abt-card class="text-center">
       <abt-card-header>
         <abt-navs tabs>
-          <abt-nav-item active href="#/bootstrap/card" title="Active"></abt-nav-item>
-          <abt-nav-item href="#/bootstrap/card" title="Link"></abt-nav-item>
-          <abt-nav-item disabled title="Disabled" href="#/bootstrap/card"></abt-nav-item>
+          <abt-nav-item active title="Active">
+            <abt-card-body class="text-center">
+              <abt-card-title>
+                <h5>Special title treatment (Active)</h5>
+              </abt-card-title>
+              <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+              <abt-button bs-type="primary">Go somewhere</abt-button>
+            </abt-card-body>
+          </abt-nav-item>
+          <abt-nav-item title="Link">
+            <abt-card-body class="text-center">
+              <abt-card-title>
+                <h5>Special title treatment (Link)</h5>
+              </abt-card-title>
+              <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+              <abt-button bs-type="primary">Go somewhere</abt-button>
+            </abt-card-body>
+          </abt-nav-item>
+          <abt-nav-item disabled title="Disabled"></abt-nav-item>
         </abt-navs>
       </abt-card-header>
-      <abt-card-body class="text-center">
-        <abt-card-title>
-          <h5>Special title treatment</h5>
-        </abt-card-title>
-        <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
-        <abt-button bs-type="primary">Go somewhere</abt-button>
-      </abt-card-body>
     </abt-card>
     <aut-mark-down src="./docs/components/bootstrap/card/navigation-tab-example.md">
     </aut-mark-down>
@@ -353,18 +362,28 @@
     <abt-card class="text-center">
       <abt-card-header>
         <abt-navs pills>
-          <abt-nav-item active href="#/bootstrap/card" title="Active"></abt-nav-item>
-          <abt-nav-item href="#/bootstrap/card" title="Link"></abt-nav-item>
-          <abt-nav-item disabled title="Disabled" href="#/bootstrap/card"></abt-nav-item>
+          <abt-nav-item active title="Active">
+            <abt-card-body class="text-center">
+              <abt-card-title>
+                <h5>Special title treatment (Active)</h5>
+              </abt-card-title>
+              <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+              <abt-button bs-type="primary">Go somewhere</abt-button>
+            </abt-card-body>
+          </abt-nav-item>
+          <abt-nav-item title="Link">
+            <abt-card-body class="text-center">
+              <abt-card-title>
+                <h5>Special title treatment (Link)</h5>
+              </abt-card-title>
+              <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+              <abt-button bs-type="primary">Go somewhere</abt-button>
+            </abt-card-body>
+          </abt-nav-item>
+          <abt-nav-item disabled title="Disabled">
+          </abt-nav-item>
         </abt-navs>
       </abt-card-header>
-      <abt-card-body class="text-center">
-        <abt-card-title>
-          <h5>Special title treatment</h5>
-        </abt-card-title>
-        <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
-        <abt-button bs-type="primary">Go somewhere</abt-button>
-      </abt-card-body>
     </abt-card>
     <aut-mark-down src="./docs/components/bootstrap/card/navigation-pill-example.md">
     </aut-mark-down>
@@ -867,42 +886,49 @@
     <p>Cards can be organized into
       <a href="https://masonry.desandro.com/">Masonry</a>-like columns with just CSS by wrapping them in
       <code>abt-card-columns</code>. Cards are built with CSS
-      <code>column</code> properties instead of flexbox for easier alignment. Cards are ordered from top to bottom and left to right.
+      <code>column</code> properties instead of flexbox for easier alignment. Cards are ordered from top to bottom and left to
+      right.
     </p>
     <p>
       <b>Heads up!</b> Your mileage with card columns may vary. To prevent cards breaking across columns, we must set them to
-      <code>display:
-      inline-block</code> as
+      <code>display: inline-block
+      </code> as
       <code>column-break-inside: avoid</code> isn’t a bulletproof solution yet.</p>
     <abt-card-columns>
       <abt-card>
-        <img class="card-img-top" src="/images/card-pic8.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title that wraps to a new line</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a
-            little bit longer.</p>
-        </div>
+        <abt-card-image top src="/images/card-pic8.jpg" alt="Card image cap"></abt-card-image>
+        <abt-card-body>
+          <abt-card-title>
+            <h5>Card title that wraps to a new line</h5>
+          </abt-card-title>
+          <abt-card-text>This is a longer card with supporting text below as a natural lead-in to additional content. This content is a
+            little bit longer.</abt-card-text>
+        </abt-card-body>
       </abt-card>
       <abt-card class="p-3">
-        <blockquote class="blockquote mb-0 card-body">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          <footer class="blockquote-footer">
-            <small class="text-muted">
-              Someone famous in
-              <cite title="Source Title">Source Title</cite>
-            </small>
-          </footer>
-        </blockquote>
+        <abt-card-body>
+          <blockquote class="blockquote mb-0">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">
+              <small class="text-muted">
+                Someone famous in
+                <cite title="Source Title">Source Title</cite>
+              </small>
+            </footer>
+          </blockquote>
+        </abt-card-body>
       </abt-card>
       <abt-card>
-        <img class="card-img-top" src="/images/card-pic9.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text">
+        <abt-card-image top src="/images/card-pic9.jpg" alt="Card image cap"></abt-card-image>
+        <abt-card-body class="card-body">
+          <abt-card-title>
+            <h5>Card title</h5>
+          </abt-card-title>
+          <abt-card-text>This card has supporting text below as a natural lead-in to additional content.</abt-card-text>
+          <abt-card-text>
             <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-        </div>
+          </abt-card-text>
+        </abt-card-body>
       </abt-card>
       <abt-card class="bg-primary text-white text-center p-3">
         <blockquote class="blockquote mb-0">
@@ -916,16 +942,18 @@
         </blockquote>
       </abt-card>
       <abt-card class="text-center">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text">
+        <abt-card-body class="card-body">
+          <abt-card-title>
+            <h5>Card title</h5>
+          </abt-card-title>
+          <abt-card-text>This card has supporting text below as a natural lead-in to additional content.</abt-card-text>
+          <abt-card-text>
             <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-        </div>
+          </abt-card-text>
+        </abt-card-body>
       </abt-card>
       <abt-card>
-        <img class="card-img" src="/images/card-pic10.jpg" alt="Card image">
+        <abt-card-image src="/images/card-pic10.jpg" alt="Card image"></abt-card-image>
       </abt-card>
       <abt-card class="p-3 text-right">
         <blockquote class="blockquote mb-0">
@@ -939,14 +967,16 @@
         </blockquote>
       </abt-card>
       <abt-card>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even
-            longer content than the first to show that equal height action.</p>
-          <p class="card-text">
+        <abt-card-body class="card-body">
+          <abt-card-title>
+            <h5>Card title</h5>
+          </abt-card-title>
+          <abt-card-text>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even
+            longer content than the first to show that equal height action.</abt-card-text>
+          <abt-card-text>
             <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-        </div>
+          </abt-card-text>
+        </abt-card-body>
       </abt-card>
     </abt-card-columns>
     <aut-mark-down src="./docs/components/bootstrap/card/card-columns-example.md">

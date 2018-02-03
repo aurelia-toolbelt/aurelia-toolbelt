@@ -8,9 +8,9 @@ import { Uuid } from '../../../utilities/purejs/uuid';
 @customElement('abt-nav-item')
 export class BootstrapNavLink {
 
-
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
+
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string;
 
@@ -18,6 +18,7 @@ export class BootstrapNavLink {
 
   private isActive: boolean = false;
   private isDisabled: boolean = false;
+  private isFade: boolean = false;
 
   private tab_header: HTMLAnchorElement;
   private tab_body: HTMLDivElement;
@@ -56,9 +57,35 @@ export class BootstrapNavLink {
 
       this.selected = isTheFirstChild;
 
-      let data_toggle = tab_daddy.parentElement.hasAttribute('tabs')
+      this.isFade =
+        tab_daddy.parentElement.hasAttribute('fade') &&
+        (
+          tab_daddy.parentElement.getAttribute('fade') === ''
+          ||
+          tab_daddy.parentElement.getAttribute('fade') === 'true'
+        );
+
+      const isPill =
+        tab_daddy.parentElement.hasAttribute('pills') &&
+        (
+          tab_daddy.parentElement.getAttribute('pills') === ''
+          ||
+          tab_daddy.parentElement.getAttribute('pills') === 'true'
+        );
+
+      const isTabs =
+        tab_daddy.parentElement.hasAttribute('tabs') &&
+        (
+          tab_daddy.parentElement.getAttribute('tabs') === ''
+          ||
+          tab_daddy.parentElement.getAttribute('tabs') === 'true'
+        );
+
+
+
+      let data_toggle = isTabs
         ? 'tab'
-        : tab_daddy.parentElement.hasAttribute('pills')
+        : isPill
           ? 'pill'
           : '';
 

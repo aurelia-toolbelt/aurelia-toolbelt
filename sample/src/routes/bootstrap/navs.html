@@ -1,125 +1,242 @@
 <template>
 
 
-  <fieldset>
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Navs
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/navs">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    <p>
+      A mechanism to enable your site with navigation.
+    </p>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+
+    <aut-mark-down src="./docs/components/bootstrap/navs/usage.md">
+    </aut-mark-down>
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
     <legend>
       Horizontal Styles
     </legend>
+    <p>
+      Change the style of
+      <code>abt-navs</code> component with modifiers and utilities. Mix and match as needed.
+      <code>abt-navs</code> default style do not have tabs or pills unless you say so by adding,
+      <code>tabs</code> or
+      <code>pills</code> attribute to the
+      <code>abt-navs</code>, if
+      <b>both</b> specified it will give
+      <b>priority</b> to
+      <code>tabs</code>. You can change the alignment by using bootstrap
+      <code>justify-content-*</code> utilities. Also by adding
+      <code>active</code> and
+      <code>disabled</code> attributes you can select your active or disabled tabs respectively.
+    </p>
 
-    <abt-navs pills>
-      <abt-nav-item active href="#" title="Active"></abt-nav-item>
-      <abt-nav-item href="#" title="Link"></abt-nav-item>
-      <abt-nav-item href="#" title="Link"></abt-nav-item>
-      <abt-nav-item disabled title="Disabled" href="#"></abt-nav-item>
-    </abt-navs>
+    <abt-card>
+      <abt-card-body>
 
-    <abt-navs class="justify-content-center">
-      <abt-nav-item active href="#" title="Active"></abt-nav-item>
-      <abt-nav-item href="#" title="Link"></abt-nav-item>
-      <abt-nav-item href="#" title="Link"></abt-nav-item>
-      <abt-nav-item disabled title="Disabled" href="#"></abt-nav-item>
-    </abt-navs>
+        <abt-navs class="mb-2">
+          <abt-nav-item href="#" title="Active" active></abt-nav-item>
+          <abt-nav-item href="#" title="Link"></abt-nav-item>
+          <abt-nav-item href="#" title="Link"></abt-nav-item>
+          <abt-nav-item href="#" title="Disabled" disabled></abt-nav-item>
+        </abt-navs>
 
-    <abt-navs class="justify-content-end">
-      <abt-nav-item active href="#" title="Active"></abt-nav-item>
-      <abt-nav-item href="#" title="Link"></abt-nav-item>
-      <abt-nav-item href="#" title="Link"></abt-nav-item>
-      <abt-nav-item disabled title="Disabled" href="#"></abt-nav-item>
-    </abt-navs>
+        <abt-navs class="mb-2 justify-content-center" tabs>
+          <abt-nav-item href="#" active title="Active"></abt-nav-item>
+          <abt-nav-item href="#" title="Link"></abt-nav-item>
+          <abt-nav-item href="#" title="Link"></abt-nav-item>
+          <abt-nav-item href="#" disabled title="Disabled"></abt-nav-item>
+        </abt-navs>
 
+        <abt-navs class="mb-2 justify-content-end" pills>
+          <abt-nav-item href="#" active title="Active"></abt-nav-item>
+          <abt-nav-item href="#" title="Link"></abt-nav-item>
+          <abt-nav-item href="#" title="Link"></abt-nav-item>
+          <abt-nav-item href="#" disabled title="Disabled"></abt-nav-item>
+        </abt-navs>
+
+      </abt-card-body>
+
+      <abt-card-footer>
+
+        <aut-mark-down src="./docs/components/bootstrap/navs/horizontal.md">
+        </aut-mark-down>
+
+      </abt-card-footer>
+
+    </abt-card>
   </fieldset>
 
 
 
-  <fieldset>
+  <fieldset class="mt-5">
     <legend>
       Vertical
     </legend>
+    <p>
+      Just simply add the
+      <code>vertical</code> attribute to the
+      <code>abt-navs</code> to change the appearance to vertical.
+    </p>
 
-    <div class="col-sm-3">
-      <abt-navs vertical pills>
-        <abt-nav-item active href="#" title="Active"></abt-nav-item>
-        <abt-nav-item href="#" title="Link"></abt-nav-item>
-        <abt-nav-item href="#" title="Link"></abt-nav-item>
-        <abt-nav-item disabled title="Disabled" href="#"></abt-nav-item>
-      </abt-navs>
-    </div>
+    <abt-card>
+      <abt-card-body>
+        <abt-navs class="flex-column" vertical>
+          <abt-nav-item title="Active" active></abt-nav-item>
+          <abt-nav-item title="Link"></abt-nav-item>
+          <abt-nav-item title="Link"></abt-nav-item>
+          <abt-nav-item title="Disabled" disabled></abt-nav-item>
+        </abt-navs>
+      </abt-card-body>
+
+      <abt-card-footer>
+
+        <aut-mark-down src="./docs/components/bootstrap/navs/vertical.md">
+        </aut-mark-down>
+
+      </abt-card-footer>
+    </abt-card>
+
   </fieldset>
 
-
-  <fieldset>
-    <legend>
-      Tabs
-    </legend>
-
-    <abt-navs tabs>
-      <abt-nav-item active href="#" title="Active"></abt-nav-item>
-      <abt-nav-item href="#" title="Link"></abt-nav-item>
-      <abt-nav-item href="#" title="Link"></abt-nav-item>
-      <abt-nav-item disabled title="Disabled" href="#"></abt-nav-item>
-    </abt-navs>
-  </fieldset>
-
-  <fieldset>
+  <fieldset class="mt-5">
     <legend>
       Fill and justify
     </legend>
 
+    <p class="mb-3">
+      Use
+      <code>fill</code> and
+      <code>justify</code> attributes to fill the whole space available.
+
+      <ul>
+        <li>
+          <b>PS:</b> Bear in mind they
+          <b>cannot</b> be used simultaneously.
+        </li>
+      </ul>
+    </p>
+
     <abt-navs pills fill>
-      <abt-nav-item active href="#" title="Active"></abt-nav-item>
-      <abt-nav-item href="#" title="Longer nav link"></abt-nav-item>
-      <abt-nav-item href="#" title="Longer nav link"></abt-nav-item>
-      <abt-nav-item disabled title="Disabled" href="#"></abt-nav-item>
+      <abt-nav-item active title="Active"></abt-nav-item>
+      <abt-nav-item title="Longer nav link"></abt-nav-item>
+      <abt-nav-item title="Longer nav link"></abt-nav-item>
+      <abt-nav-item disabled title="Disabled"></abt-nav-item>
     </abt-navs>
     <br />
-    <abt-navs pills justified>
-      <abt-nav-item active href="#" title="Active"></abt-nav-item>
-      <abt-nav-item href="#" title="Longer nav link"></abt-nav-item>
-      <abt-nav-item href="#" title="Longer nav link"></abt-nav-item>
-      <abt-nav-item disabled title="Disabled" href="#"></abt-nav-item>
+    <abt-navs pills justify>
+      <abt-nav-item active title="Active"></abt-nav-item>
+      <abt-nav-item title="Longer nav link"></abt-nav-item>
+      <abt-nav-item title="Longer nav link"></abt-nav-item>
+      <abt-nav-item disabled title="Disabled"></abt-nav-item>
     </abt-navs>
   </fieldset>
 
 
-  <fieldset>
+  <fieldset class="mt-5">
     <legend>
       Dynamic Tabs
     </legend>
 
-    <abt-navs tabs bs-shown.call="testShown(activeTab,prevTab)">
+    <p>
+      To achieve this you must specify contents for
+      <code>abt-nav-item</code> component.
+    </p>
 
-      <abt-nav-item  title="Home">
-        <div>
-          Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia. Fugiat velit proident
-          aliquip nisi incididunt nostrud exercitation proident est nisi. Irure magna elit commodo anim ex veniam culpa eiusmod
-          id nostrud sit cupidatat in veniam ad. Eiusmod consequat eu adipisicing minim anim aliquip cupidatat culpa excepteur
-          quis. Occaecat sit eu exercitation irure Lorem incididunt nostrud.
-        </div>
-      </abt-nav-item>
+    <abt-card>
 
-      <abt-nav-item  title="Profile">
-        <div>
-          Ad pariatur nostrud pariatur exercitation ipsum ipsum culpa mollit commodo mollit ex. Aute sunt incididunt amet commodo est
-          sint nisi deserunt pariatur do. Aliquip ex eiusmod voluptate exercitation cillum id incididunt elit sunt. Qui minim
-          sit magna Lorem id et dolore velit Lorem amet exercitation duis deserunt. Anim id labore elit adipisicing ut in
-          id occaecat pariatur ut ullamco ea tempor duis.
-        </div>
-      </abt-nav-item>
+      <abt-card-body>
 
-      <abt-nav-item  title="Contact">
-        <div>
-          Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex. Nulla ut duis ipsum
-          nisi elit fugiat commodo sunt reprehenderit laborum veniam eu veniam. Eiusmod minim exercitation fugiat irure ex
-          labore incididunt do fugiat commodo aliquip sit id deserunt reprehenderit aliquip nostrud. Amet ex cupidatat excepteur
-          aute veniam incididunt mollit cupidatat esse irure officia elit do ipsum ullamco Lorem. Ullamco ut ad minim do
-          mollit labore ipsum laboris ipsum commodo sunt tempor enim incididunt. Commodo quis sunt dolore aliquip aute tempor
-          irure magna enim minim reprehenderit. Ullamco consectetur culpa veniam sint cillum aliqua incididunt velit ullamco
-          sunt ullamco quis quis commodo voluptate. Mollit nulla nostrud adipisicing aliqua cupidatat aliqua pariatur mollit
-          voluptate voluptate consequat non.
-        </div>
-      </abt-nav-item>
+        <abt-navs bs-shown.call="testShown(activeTab,prevTab)" content-class="mt-3" fade tabs>
+          <abt-nav-item title="Home">
+            <div class="container">
+              Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia. Fugiat velit proident
+              aliquip nisi incididunt nostrud exercitation proident est nisi. Irure magna elit commodo anim ex veniam culpa
+              eiusmod id nostrud sit cupidatat in veniam ad. Eiusmod consequat eu adipisicing minim anim aliquip cupidatat
+              culpa excepteur quis. Occaecat sit eu exercitation irure Lorem incididunt nostrud.
+            </div>
+          </abt-nav-item>
 
-    </abt-navs>
+          <abt-nav-item title="Profile">
+            <div class="container">
+              Ad pariatur nostrud pariatur exercitation ipsum ipsum culpa mollit commodo mollit ex. Aute sunt incididunt amet commodo est
+              sint nisi deserunt pariatur do. Aliquip ex eiusmod voluptate exercitation cillum id incididunt elit sunt. Qui
+              minim sit magna Lorem id et dolore velit Lorem amet exercitation duis deserunt. Anim id labore elit adipisicing
+              ut in id occaecat pariatur ut ullamco ea tempor duis.
+            </div>
+          </abt-nav-item>
+
+          <abt-nav-item title="Contact">
+            <div class="container">
+              Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex. Nulla ut duis ipsum
+              nisi elit fugiat commodo sunt reprehenderit laborum veniam eu veniam. Eiusmod minim exercitation fugiat irure
+              ex labore incididunt do fugiat commodo aliquip sit id deserunt reprehenderit aliquip nostrud. Amet ex cupidatat
+              excepteur aute veniam incididunt mollit cupidatat esse irure officia elit do ipsum ullamco Lorem. Ullamco ut
+              ad minim do mollit labore ipsum laboris ipsum commodo sunt tempor enim incididunt. Commodo quis sunt dolore
+              aliquip aute tempor irure magna enim minim reprehenderit. Ullamco consectetur culpa veniam sint cillum aliqua
+              incididunt velit ullamco sunt ullamco quis quis commodo voluptate. Mollit nulla nostrud adipisicing aliqua
+              cupidatat aliqua pariatur mollit voluptate voluptate consequat non.
+            </div>
+          </abt-nav-item>
+
+        </abt-navs>
+
+
+        <abt-navs tabs vertical class="flex-column">
+            <abt-nav-item title="Home">
+              <div class="container">
+                Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia. Fugiat velit proident
+                aliquip nisi incididunt nostrud exercitation proident est nisi. Irure magna elit commodo anim ex veniam culpa
+                eiusmod id nostrud sit cupidatat in veniam ad. Eiusmod consequat eu adipisicing minim anim aliquip cupidatat
+                culpa excepteur quis. Occaecat sit eu exercitation irure Lorem incididunt nostrud.
+              </div>
+            </abt-nav-item>
+  
+            <abt-nav-item title="Profile">
+              <div class="container">
+                Ad pariatur nostrud pariatur exercitation ipsum ipsum culpa mollit commodo mollit ex. Aute sunt incididunt amet commodo est
+                sint nisi deserunt pariatur do. Aliquip ex eiusmod voluptate exercitation cillum id incididunt elit sunt. Qui
+                minim sit magna Lorem id et dolore velit Lorem amet exercitation duis deserunt. Anim id labore elit adipisicing
+                ut in id occaecat pariatur ut ullamco ea tempor duis.
+              </div>
+            </abt-nav-item>
+  
+            <abt-nav-item title="Contact">
+              <div class="container">
+                Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex. Nulla ut duis ipsum
+                nisi elit fugiat commodo sunt reprehenderit laborum veniam eu veniam. Eiusmod minim exercitation fugiat irure
+                ex labore incididunt do fugiat commodo aliquip sit id deserunt reprehenderit aliquip nostrud. Amet ex cupidatat
+                excepteur aute veniam incididunt mollit cupidatat esse irure officia elit do ipsum ullamco Lorem. Ullamco ut
+                ad minim do mollit labore ipsum laboris ipsum commodo sunt tempor enim incididunt. Commodo quis sunt dolore
+                aliquip aute tempor irure magna enim minim reprehenderit. Ullamco consectetur culpa veniam sint cillum aliqua
+                incididunt velit ullamco sunt ullamco quis quis commodo voluptate. Mollit nulla nostrud adipisicing aliqua
+                cupidatat aliqua pariatur mollit voluptate voluptate consequat non.
+              </div>
+            </abt-nav-item>
+  
+          </abt-navs>
+
+
+      </abt-card-body>
+
+      <abt-card-footer>
+
+      </abt-card-footer>
+
+    </abt-card>
 
 
   </fieldset>

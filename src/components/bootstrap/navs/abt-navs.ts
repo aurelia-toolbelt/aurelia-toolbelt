@@ -7,36 +7,54 @@ import * as $ from 'jquery';
 @customElement('abt-navs')
 export class BootstrapNavs {
 
-
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
 
-
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public bsShow: any;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public bsHide: any;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public bsShown: any;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public bsHidden: any;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public contentClass: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public contentStyle: string;
 
 
-  private beTab: boolean = false;
-  private filled: boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public bsShow: Function;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public bsHide: Function;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public bsShown: Function;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public bsHidden: Function;
+
+
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public tabs: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public pills: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public vertical: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public justify: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public fill: boolean | string = false;
+
+  private beTab: boolean = true;
   private bePills: boolean = false;
-  private justified: boolean = false;
-  private beVertical: boolean = false;
 
-  constructor(private element: Element) {
-  }
+  constructor(private element: Element) { }
 
   private afterAttached() {
 
-    this.beTab = this.element.hasAttribute('tabs');
-    this.filled = this.element.hasAttribute('fill');
-    this.bePills = this.element.hasAttribute('pills');
-    this.justified = this.element.hasAttribute('justified');
-    this.beVertical = this.element.hasAttribute('vertical');
+    const onlyPillsAttribute = (this.pills === '' && this.element.hasAttribute('pills'));
+    this.pills = onlyPillsAttribute || this.pills.toString() === 'true';
 
-    if (this.justified && this.filled) {
-      let error = new Error(`The [abt-navs] should have either 'fill' or 'justified' attributes, and not both of them simultaneously.`);
+    const onlyTabsAttribute = (this.tabs === '' && this.element.hasAttribute('tabs'));
+    this.tabs = onlyTabsAttribute || this.tabs.toString() === 'true';
+
+    const onlyVerticalAttribute = (this.vertical === '' && this.element.hasAttribute('vertical'));
+    this.vertical = onlyVerticalAttribute || this.vertical.toString() === 'true';
+
+    const onlyJustifiedAttribute = (this.justify === '' && this.element.hasAttribute('justify'));
+    this.justify = onlyJustifiedAttribute || this.justify.toString() === 'true';
+
+    const onlyFillAttribute = (this.fill === '' && this.element.hasAttribute('fill'));
+    this.fill = onlyFillAttribute || this.fill.toString() === 'true';
+
+
+    this.beTab = this.tabs;
+    this.bePills = this.pills;
+
+
+    if (this.justify && this.fill) {
+      let error = new Error(`The [abt-navs] should have either 'fill' or 'justify' attributes, and not both of them simultaneously.`);
       throw error;
     }
 
@@ -47,9 +65,8 @@ export class BootstrapNavs {
   }
 
 
-
   private handle_events() {
-    // all a tags which are going  meant to be tabs/pills
+    // all a tags which are going to be tabs/pills
     let children = this.element.children.item(0).getElementsByTagName('a');
 
     if (this.bsShow) {

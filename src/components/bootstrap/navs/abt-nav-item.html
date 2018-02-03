@@ -1,12 +1,12 @@
 <template>
 
   <a ref="tab_header" class="nav-link nav-item ${class} ${isActive || selected ? 'active' : '' } ${isDisabled? 'disabled':''}"
-    href="${href}" css="${style}">
+    href="${href ? href : '#'}" css="${style}">
     ${title}
   </a>
 
 
-  <div ref="tab_body" class="tab-pane ${selected ? 'active' : ''}" role="tab-panel">
+  <div ref="tab_body" class="tab-pane ${selected ? 'active show' : ''} ${isFade ? 'fade' : ''}" role="tab-panel">
     <slot></slot>
   </div>
 
