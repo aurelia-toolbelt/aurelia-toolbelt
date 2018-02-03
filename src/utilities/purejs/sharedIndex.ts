@@ -26,7 +26,7 @@ export class SharedIndex {
   }
 
   private getId(id: string) {
-    return '_' + id.replace(new RegExp('-', 'g'), '');
+    return 'a' + id.replace(new RegExp('-', 'g'), '');
   }
 
 
