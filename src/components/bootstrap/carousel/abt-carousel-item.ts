@@ -1,6 +1,5 @@
+import { SharedIndex } from './../../../utilities/purejs/sharedIndex';
 import { inject, customElement, bindingMode, bindable, containerless, singleton } from 'aurelia-framework';
-import { SharedIndex } from './shared-index';
-
 
 @inject(Element, SharedIndex)
 @containerless()
