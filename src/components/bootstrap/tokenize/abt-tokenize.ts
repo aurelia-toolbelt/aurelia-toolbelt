@@ -34,6 +34,26 @@ export class BootstrapTokenizeCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public tabIndex: number | string = 0;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public dataSource: string | Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public load: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public clear: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public remap: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public select: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public deselect: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public search: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public paste: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public dropdownUp: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public dropdownDown: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public dropdownClear: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public dropdownShow: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public dropdownHide: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public dropdownFill: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public dropdownItemAdd: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public keypress: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public keydown: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public keyup: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public reorder: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public add: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public remove: Function;
 
   private tokenize: HTMLSelectElement;
   private tokenizeTemplate: Element;
@@ -62,6 +82,17 @@ export class BootstrapTokenizeCustomElement {
       || this.displayNoResultsMessage.toString() === 'true';
     this.zIndexMargin = Number(this.zIndexMargin);
     this.tabIndex = Number(this.tabIndex);
+
+    $(this.tokenize).on('tokenize:load', () => {
+      if (this.load) {
+        this.load();
+      }
+    });
+    $(this.tokenize).on('tokenize:clear', () => {
+      if (this.clear) {
+        this.clear();
+      }
+    });
 
     let ds = null;
     // dataSource = 'select'
