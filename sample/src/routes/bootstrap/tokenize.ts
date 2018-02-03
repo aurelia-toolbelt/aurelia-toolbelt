@@ -1,11 +1,19 @@
 export class BootstrapTokenize {
 
   private countries: any[];
-
-  private search(term: string) {
+  private token: Element;
+  private find(term: string) {
     return [{ text: 'Argentina', value: 'AR' }, { text: 'Iran', value: 'IR' }];
   }
-
+  private clear() {
+    console.log('clear');
+  }
+  private onClick() {
+    console.log('clicked');
+  }
+  private search(e: any, v: any) {
+    console.log(v);
+  }
   private attached() {
     this.countries = [
       { text: 'Argentina', value: 'AR' },

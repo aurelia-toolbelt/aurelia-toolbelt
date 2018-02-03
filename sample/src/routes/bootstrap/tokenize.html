@@ -39,12 +39,13 @@
     <aut-mark-down src="./docs/components/bootstrap/tokenize/usage.md">
     </aut-mark-down>
   </fieldset>
+  <abt-button class="mr-2" click.call="onClick()">Click me</abt-button>
 
   <fieldset class="mt-5">
     <legend>
       Basic example
     </legend>
-    <abt-tokenize data-source.call='search(term)'>
+    <abt-tokenize ref='token' data-source.call='find(term)'>
     </abt-tokenize>
     <aut-mark-down src="./docs/components/bootstrap/tokenize/basic-example.md">
     </aut-mark-down>

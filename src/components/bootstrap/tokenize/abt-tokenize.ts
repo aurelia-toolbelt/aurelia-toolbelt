@@ -4,6 +4,10 @@ import { customElement, inject, bindable, bindingMode, BindingEngine, containerl
 // https://stackoverflow.com/questions/44716366/tokenize2-with-default-added-values
 // https://stackoverflow.com/questions/45037159/how-do-i-get-text-of-multiselect-tokenize2-control
 // https://stackoverflow.com/questions/44452004/is-it-possible-to-show-all-options-in-tokenize2
+// https://api.myjson.com/bins/1h4qe9
+// http://www.mocky.io/v2/5a75819e2e00006c006ab1a1
+
+// $(this.tokenize).trigger('tokenize:tokens:add', ['token value', 'token display text', true]);
 
 import 'jquery';
 import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.css';
@@ -93,6 +97,100 @@ export class BootstrapTokenizeCustomElement {
         this.clear();
       }
     });
+    $(this.tokenize).on('tokenize:remap', () => {
+      if (this.remap) {
+        this.remap();
+      }
+    });
+    $(this.tokenize).on('tokenize:select', () => {
+      if (this.select) {
+        this.select();
+      }
+    });
+
+    $(this.tokenize).on('tokenize:deselect', () => {
+      if (this.deselect) {
+        this.deselect();
+      }
+    });
+    $(this.tokenize).on('tokenize:search', (e, value) => {
+      if (this.search) {
+        this.search({ e: e, value: value });
+      }
+    });
+    $(this.tokenize).on('tokenize:paste', () => {
+      if (this.paste) {
+        this.paste();
+      }
+    });
+    $(this.tokenize).on('tokenize:dropdown:up', () => {
+      if (this.dropdownUp) {
+        this.dropdownUp();
+      }
+    });
+    $(this.tokenize).on('tokenize:dropdown:down', () => {
+      if (this.dropdownDown) {
+        this.dropdownDown();
+      }
+    });
+    $(this.tokenize).on('tokenize:dropdown:clear', () => {
+      if (this.dropdownClear) {
+        this.dropdownClear();
+      }
+    });
+    $(this.tokenize).on('tokenize:dropdown:show', () => {
+      if (this.dropdownShow) {
+        this.dropdownShow();
+      }
+    });
+    $(this.tokenize).on('tokenize:dropdown:hide', () => {
+      if (this.dropdownHide) {
+        this.dropdownHide();
+      }
+    });
+    $(this.tokenize).on('tokenize:dropdown:fill', (e, items) => {
+      if (this.dropdownFill) {
+        this.dropdownFill({ e: e, items: items });
+      }
+    });
+    $(this.tokenize).on('tokenize:dropdown:itemAdd', (e, item) => {
+      if (this.dropdownItemAdd) {
+        this.dropdownItemAdd({ e: e, item: item });
+      }
+    });
+    $(this.tokenize).on('tokenize:keypress', (e, routedEvent) => {
+      if (this.keypress) {
+        this.keypress({ e: e, routedEvent: routedEvent });
+      }
+    });
+    $(this.tokenize).on('tokenize:keydown', (e, routedEvent) => {
+      if (this.keydown) {
+        this.keydown({ e: e, routedEvent: routedEvent });
+      }
+    });
+    $(this.tokenize).on('tokenize:keyup', (e, routedEvent) => {
+      if (this.keyup) {
+        this.keyup({ e: e, routedEvent: routedEvent });
+      }
+    });
+    $(this.tokenize).on('tokenize:tokens:reorder', () => {
+      if (this.reorder) {
+        this.reorder();
+      }
+    });
+
+    // ====================================================================
+    $(this.tokenize).on('tokenize:tokens:add', (e, value, text, force) => {
+      if (this.add) {
+        this.add({ e: e, value: value, text: text, force: force });
+      }
+    });
+    $(this.tokenize).on('tokenize:keypress', (e, value) => {
+      if (this.remove) {
+        this.remove({ e: e, value: value });
+      }
+    });
+    // ====================================================================
 
     let ds = null;
     // dataSource = 'select'
@@ -112,8 +210,6 @@ export class BootstrapTokenizeCustomElement {
     if (this.jsTools.isFunction(this.dataSource)) {
       ds = null;
     }
-    // https://api.myjson.com/bins/1h4qe9
-    // http://www.mocky.io/v2/5a75819e2e00006c006ab1a1
 
     // @ts-ignore
     $(this.tokenize).tokenize2({
@@ -142,13 +238,11 @@ export class BootstrapTokenizeCustomElement {
       tabIndex: this.tabIndex
     });
 
-
-    if (this.showItemsOnClick) {
+    if (this.showItemsOnClick !== 'false') {
       // @ts-ignore
-      $(this.tokenize).on('tokenize:select', () => (e: Event, routedEvent: boolean) => {
+      $(this.tokenize).on('tokenize:select', (e: Event, routedEvent: boolean) => {
         $(this.tokenize).trigger('tokenize:search', '');
       });
     }
-
   }
 }
