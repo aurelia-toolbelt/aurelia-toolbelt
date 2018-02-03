@@ -1,5 +1,5 @@
 <template>
-    <!-- <style>
+  <!-- <style>
         .tokenize>.tokens-container>.token {
             border-radius: 0px !important;
             background-color: #1A6DCA !important;
@@ -11,47 +11,46 @@
         }
     </style> -->
 
-    <fieldset class="mb-5">
-        <legend>
-            <h2>Tokenize
-                <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/tokenize">
-                    <i class="fa fa-link"></i>
-                </a>
-            </h2>
-        </legend>
-        <abt-alert type="info">
-            Created on top of
-            <abt-alert-link href="https://github.com/zellerda/Tokenize2">Tokenize2</abt-alert-link>
-            <aut-micro-link class="mt-2" round="false" url="https://github.com/zellerda/Tokenize2"></aut-micro-link>
-        </abt-alert>
-        <abt-alert type="success">
-            <i class="fa fa-credit-card" aria-hidden="true"></i>
-            &nbsp;
-            <b>License:</b> &nbsp;
-            <abt-alert-link href="https://github.com/zellerda/Tokenize2/blob/master/LICENSE">BSD 3</abt-alert-link>
-        </abt-alert>
-    </fieldset>
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Tokenize
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/tokenize">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    <abt-alert type="info">
+      Created on top of
+      <abt-alert-link href="https://github.com/zellerda/Tokenize2">Tokenize2</abt-alert-link>
+      <aut-micro-link class="mt-2" round="false" url="https://github.com/zellerda/Tokenize2"></aut-micro-link>
+    </abt-alert>
+    <abt-alert type="success">
+      <i class="fa fa-credit-card" aria-hidden="true"></i>
+      &nbsp;
+      <b>License:</b> &nbsp;
+      <abt-alert-link href="https://github.com/zellerda/Tokenize2/blob/master/LICENSE">BSD 3</abt-alert-link>
+    </abt-alert>
+  </fieldset>
 
-    <fieldset class="mt-5">
-        <legend>
-            Usage
-        </legend>
-        <aut-mark-down src="./docs/components/bootstrap/tokenize/usage.md">
-        </aut-mark-down>
-    </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/usage.md">
+    </aut-mark-down>
+  </fieldset>
 
-    <fieldset class="mt-5">
-        <legend>
-            Basic example
-        </legend>
-        <abt-tokenize jsondatasource.bind="countries">
+  <fieldset class="mt-5">
+    <legend>
+      Basic example
+    </legend>
+    <abt-tokenize data-source.call='search(term)'>
+    </abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/basic-example.md">
+    </aut-mark-down>
+  </fieldset>
 
-        </abt-tokenize>
-        <aut-mark-down src="./docs/components/bootstrap/tokenize/basic-example.md">
-        </aut-mark-down>
-    </fieldset>
-
-    <!-- <fieldset class="mt-5">
+  <!-- <fieldset class="mt-5">
         <legend>
             Data Source
         </legend>

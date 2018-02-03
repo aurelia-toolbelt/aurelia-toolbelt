@@ -2,6 +2,9 @@ export class BootstrapTokenize {
 
   private countries: any[];
 
+  private search(term: string) {
+    return [{ text: 'Argentina', value: 'AR' }, { text: 'Iran', value: 'IR' }];
+  }
 
   private attached() {
     this.countries = [
