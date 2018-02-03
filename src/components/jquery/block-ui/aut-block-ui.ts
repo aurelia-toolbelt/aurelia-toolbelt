@@ -10,7 +10,8 @@ import { IAutBlockUIOptions, SpinnerType } from './aut-block-ui-options';
 @inject(Element, 'aut-block-ui-option')
 export class JQueryBlockUI {
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public block: string | boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public block: string | boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public blockPage: string | boolean = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string = null;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public message: string = null;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public spinnerType: SpinnerType = 'bounce';
@@ -23,7 +24,7 @@ export class JQueryBlockUI {
   constructor(private element: Element, private option: IAutBlockUIOptions) {
 
   }
-  private attached() {
+  private afterAttached() {
     $.blockUI.defaults.allowBodyStretch = this.option.allowBodyStretch || true;
     $.blockUI.defaults.draggable = this.option.draggable || true;
     $.blockUI.defaults.css = this.option.css || {
@@ -63,6 +64,8 @@ export class JQueryBlockUI {
     $.blockUI.defaults.ignoreIfBlocked = this.option.ignoreIfBlocked || false;
 
     this.blockChanged(this.block);
+    this.blockPageChanged(this.blockPage);
+
   }
 
   private bind() {
@@ -423,6 +426,38 @@ export class JQueryBlockUI {
     } else {
       $(this.content).unblock();
       this.element.classList.remove('block-ui-content');
+    }
+  }
+
+  private blockPageChanged(isBlocked: boolean | string) {
+    let option: any = {};
+    if (this.message == null || this.message.length < 0) {
+      option = {
+        css: {
+          border: 'none',
+          backgroundColor: 'transparent'
+        },
+        message: this.spinnerMessage,
+        overlayCSS: {
+          backgroundColor: '#F7F7F7'
+        }
+      };
+    } else {
+      option = {
+        message: this.message
+      };
+    }
+    if (isBlocked) {
+      $.blockUI(option);
+      // this.element.classList.add('block-ui-content');
+      // $(window).resize(() => {
+      //   if (this.element.classList.contains('block-ui-content')) {
+      //     $(this.content).block(option);
+      //   }
+      // });
+    } else {
+      $.unblockUI();
+      // this.element.classList.remove('block-ui-content');
     }
   }
 }
