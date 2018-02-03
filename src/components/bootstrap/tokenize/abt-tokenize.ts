@@ -4,20 +4,21 @@ import { customElement, inject, bindable, bindingMode, BindingEngine, containerl
 // https://stackoverflow.com/questions/44716366/tokenize2-with-default-added-values
 // https://stackoverflow.com/questions/45037159/how-do-i-get-text-of-multiselect-tokenize2-control
 // https://stackoverflow.com/questions/44452004/is-it-possible-to-show-all-options-in-tokenize2
-// https://stackoverflow.com/questions/44624188/show-all-options-in-tokenize2
 
 import 'jquery';
 import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.css';
 import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.js';
+import { JsTools } from '../../../utilities/purejs/jsTools';
 
-@inject(Element)
+@inject(Element, JsTools)
 @customElement('abt-tokenize')
 export class BootstrapTokenizeCustomElement {
 
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public dataSource: string = 'select';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public dataSource: string | object = 'select';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public debounce: number = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public delimiter: string[] = [','];
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholder: boolean = false;
@@ -27,6 +28,7 @@ export class BootstrapTokenizeCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public searchMinLength: number = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public searchFromStart: boolean = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public searchHighlight: boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showItemsOnClick: boolean = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public displayNoResultsMessage: boolean = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public noResultsMessageText: string = 'No results matched "%s"';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public zIndexMargin: number = 500;
@@ -37,11 +39,32 @@ export class BootstrapTokenizeCustomElement {
 
   @children('option') private options: Array<HTMLOptionElement>;
 
-  constructor(private element: Element) {
+  constructor(private element: Element, private jsTools: JsTools) {
+  }
+
+  private createOptions() {
+    // A
   }
 
 
-  private attached() {
+  private afterAttached() {
+
+    if (this.jsTools.isObject(this.dataSource)) {
+      // A
+    } else if (this.jsTools.isString(this.dataSource)) {
+      if (this.dataSource === 'select') {
+        let index = this.options.length;
+        while (index--) {
+          this.options[index].innerHTML = this.options[index].innerHTML.trim();
+          this.tokenize.appendChild(this.options[index]);
+        }
+      } else {
+        throw Error();
+      }
+    } else {
+      throw Error();
+    }
+
     // @ts-ignore
     $(this.tokenize).tokenize2({
       dataSource: this.dataSource,
@@ -59,16 +82,5 @@ export class BootstrapTokenizeCustomElement {
       zIndexMargin: this.zIndexMargin,
       tabIndex: this.tabIndex
     });
-  }
-
-  private afterAttached() {
-
-    let index = this.options.length;
-
-    while (index--) {
-      this.options[index].innerHTML = this.options[index].innerHTML.trim();
-      this.tokenize.appendChild(this.options[index]);
-    }
-
   }
 }
