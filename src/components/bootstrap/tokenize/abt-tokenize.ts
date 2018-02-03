@@ -12,6 +12,7 @@ import { JsTools } from '../../../utilities/purejs/jsTools';
 
 @inject(Element, JsTools)
 @customElement('abt-tokenize')
+@containerless()
 export class BootstrapTokenizeCustomElement {
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
@@ -34,10 +35,13 @@ export class BootstrapTokenizeCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public zIndexMargin: number = 500;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public tabIndex: number = 0;
 
+  @bindable() public jsondatasource: any;
 
   private tokenize: HTMLSelectElement;
 
   @children('option') private options: Array<HTMLOptionElement>;
+
+
 
   constructor(private element: Element, private jsTools: JsTools) {
   }
@@ -49,7 +53,8 @@ export class BootstrapTokenizeCustomElement {
 
   private afterAttached() {
 
-    if (this.jsTools.isObject(this.dataSource)) {
+    /*if (this.jsTools.isObject(this.dataSource)) {
+      let a = 1;
       // A
     } else if (this.jsTools.isString(this.dataSource)) {
       if (this.dataSource === 'select') {
@@ -63,11 +68,21 @@ export class BootstrapTokenizeCustomElement {
       }
     } else {
       throw Error();
-    }
+    }*/
 
+    // https://api.myjson.com/bins/1h4qe9
+    // http://www.mocky.io/v2/5a75819e2e00006c006ab1a1
+
+    let s = this.jsondatasource;
     // @ts-ignore
     $(this.tokenize).tokenize2({
-      dataSource: this.dataSource,
+      dataSource: (term: any, object: any) => {
+        let items: Array<any> = [];
+        $.each(this.jsondatasource, function (k, v) {
+          items.push(v);
+        });
+        object.trigger('tokenize:dropdown:fill', [items]);
+      },
       debounce: this.debounce,
       delimiter: this.delimiter,
       placeholder: this.placeholder,
@@ -82,5 +97,6 @@ export class BootstrapTokenizeCustomElement {
       zIndexMargin: this.zIndexMargin,
       tabIndex: this.tabIndex
     });
+
   }
 }

@@ -22,7 +22,7 @@
         <abt-alert type="info">
             Created on top of
             <abt-alert-link href="https://github.com/zellerda/Tokenize2">Tokenize2</abt-alert-link>
-            <aut-micro-link class="mt-2" round="false" url="Tokenize2"></aut-micro-link>
+            <aut-micro-link class="mt-2" round="false" url="https://github.com/zellerda/Tokenize2"></aut-micro-link>
         </abt-alert>
         <abt-alert type="success">
             <i class="fa fa-credit-card" aria-hidden="true"></i>
@@ -44,12 +44,8 @@
         <legend>
             Basic example
         </legend>
-        <abt-tokenize>
-            <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
-            <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
-            <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
-            <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
-            <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
+        <abt-tokenize jsondatasource.bind="countries">
+
         </abt-tokenize>
         <aut-mark-down src="./docs/components/bootstrap/tokenize/basic-example.md">
         </aut-mark-down>
