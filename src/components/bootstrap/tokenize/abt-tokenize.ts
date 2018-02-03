@@ -15,37 +15,54 @@ import { JsTools } from '../../../utilities/purejs/jsTools';
 export class BootstrapTokenizeCustomElement {
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
+
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public dataSource: string | Function;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public debounce: number = 0;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public debounce: number | string = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public delimiter: string[] = [','];
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholder: boolean = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public tokensMaxItems: number = 0;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public tokensAllowCustom: boolean = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public dropdownMaxItems: number = 10;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public searchMinLength: number = 0;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public searchFromStart: boolean = true;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public searchHighlight: boolean = true;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showItemsOnClick: boolean = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public displayNoResultsMessage: boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholder: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public tokensMaxItems: number | string = 0;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public tokensAllowCustom: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public dropdownMaxItems: number | string = 10;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public searchMinLength: number | string = 0;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public searchFromStart: boolean | string = true;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public searchHighlight: boolean | string = true;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showItemsOnClick: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public displayNoResultsMessage: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public noResultsMessageText: string = 'No results matched "%s"';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public zIndexMargin: number = 500;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public tabIndex: number = 0;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public zIndexMargin: number | string = 500;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public tabIndex: number | string = 0;
+
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public dataSource: string | Function;
 
   private tokenize: HTMLSelectElement;
+  private tokenizeTemplate: Element;
 
   @children('option') private options: Array<HTMLOptionElement>;
 
   constructor(private element: Element, private jsTools: JsTools) {
   }
 
-  private createOptions() {
-    // A
-  }
-
-
   private afterAttached() {
+
+    this.debounce = Number(this.debounce);
+    let placeholder = (this.placeholder === '' && this.tokenizeTemplate.hasAttribute('placeholder')) || this.placeholder.toString() === 'true';
+    this.tokensMaxItems = Number(this.tokensMaxItems);
+    let tokensAllowCustom = (this.tokensAllowCustom === '' && this.tokenizeTemplate.hasAttribute('tokens-allow-custom'))
+      || this.tokensAllowCustom.toString() === 'true';
+    this.dropdownMaxItems = Number(this.dropdownMaxItems);
+    this.searchMinLength = Number(this.searchMinLength);
+    let searchFromStart = (this.searchFromStart === '' && this.tokenizeTemplate.hasAttribute('search-from-start'))
+      || this.searchFromStart.toString() === 'true';
+    let searchHighlight = (this.searchHighlight === '' && this.tokenizeTemplate.hasAttribute('search-highlight'))
+      || this.searchHighlight.toString() === 'true';
+    let showItemsOnClick = (this.showItemsOnClick === '' && this.tokenizeTemplate.hasAttribute('show-items-on-click'))
+      || this.showItemsOnClick.toString() === 'true';
+    let displayNoResultsMessage = (this.displayNoResultsMessage === '' && this.tokenizeTemplate.hasAttribute('display-no-results-message'))
+      || this.displayNoResultsMessage.toString() === 'true';
+    this.zIndexMargin = Number(this.zIndexMargin);
+    this.tabIndex = Number(this.tabIndex);
+
     let ds = null;
     // dataSource = 'select'
     if (this.options) {
@@ -56,9 +73,11 @@ export class BootstrapTokenizeCustomElement {
       }
       ds = 'select';
     }
+    // dataSource = url
     if (!this.options && this.jsTools.isString(this.dataSource)) {
       ds = this.dataSource;
     }
+    // dataSource = function
     if (this.jsTools.isFunction(this.dataSource)) {
       ds = null;
     }
@@ -71,7 +90,7 @@ export class BootstrapTokenizeCustomElement {
         let items: any[] = [];
         // @ts-ignore
         let filterd = this.dataSource({ term: term });
-        $.each(filterd, function (k, v) {
+        $.each(filterd, function (_k, v) {
           items.push(v);
         });
         let data = [items];
@@ -79,18 +98,26 @@ export class BootstrapTokenizeCustomElement {
       },
       debounce: this.debounce,
       delimiter: this.delimiter,
-      placeholder: this.placeholder,
+      placeholder: placeholder,
       tokensMaxItems: this.tokensMaxItems,
-      tokensAllowCustom: this.tokensAllowCustom,
+      tokensAllowCustom: tokensAllowCustom,
       dropdownMaxItems: this.dropdownMaxItems,
       searchMinLength: this.searchMinLength,
-      searchFromStart: this.searchFromStart,
-      searchHighlight: this.searchHighlight,
-      displayNoResultsMessage: this.displayNoResultsMessage,
+      searchFromStart: searchFromStart,
+      searchHighlight: searchHighlight,
+      displayNoResultsMessage: displayNoResultsMessage,
       noResultsMessageText: this.noResultsMessageText,
       zIndexMargin: this.zIndexMargin,
       tabIndex: this.tabIndex
     });
+
+
+    if (this.showItemsOnClick) {
+      // @ts-ignore
+      $(this.tokenize).on('tokenize:select', () => (e: Event, routedEvent: boolean) => {
+        $(this.tokenize).trigger('tokenize:search', '');
+      });
+    }
 
   }
 }
