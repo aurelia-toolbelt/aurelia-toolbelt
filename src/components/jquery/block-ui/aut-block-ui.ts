@@ -20,11 +20,21 @@ export class JQueryBlockUI {
 
   private content: HTMLDivElement;
   private spinnerMessage: string = null;
-
+  private elementId: string;
   constructor(private element: Element, private option: IAutBlockUIOptions) {
 
   }
+
+  private hasContent() {
+    let slot = this.content.innerHTML.replace('<!--slot-->', '').trim();
+    if (slot.length > 0) {
+      return true;
+    }
+    return false;
+  }
+
   private afterAttached() {
+    this.elementId = '#' + this.content.id;
     $.blockUI.defaults.allowBodyStretch = this.option.allowBodyStretch || true;
     $.blockUI.defaults.draggable = this.option.draggable || true;
     $.blockUI.defaults.css = this.option.css || {
@@ -62,6 +72,10 @@ export class JQueryBlockUI {
     $.blockUI.defaults.quirksmodeOffsetHack = this.option.quirksmodeOffsetHack || 4;
     $.blockUI.defaults.blockMsgClass = this.option.blockMsgClass || 'blockMsg';
     $.blockUI.defaults.ignoreIfBlocked = this.option.ignoreIfBlocked || false;
+
+    if (this.blockPage && this.hasContent()) {
+      throw Error('You can not use the [aut-block-ui] with [block-page] property, while you have defined a content inside it.');
+    }
 
     this.blockChanged(this.block);
     this.blockPageChanged(this.blockPage);
@@ -416,20 +430,23 @@ export class JQueryBlockUI {
       };
     }
     if (isBlocked) {
-      $(this.content).block(option);
+      $(this.elementId).block(option);
       this.element.classList.add('block-ui-content');
       $(window).resize(() => {
         if (this.element.classList.contains('block-ui-content')) {
-          $(this.content).block(option);
+          $(this.elementId).block(option);
         }
       });
     } else {
-      $(this.content).unblock();
+      $(this.elementId).unblock();
       this.element.classList.remove('block-ui-content');
     }
   }
 
   private blockPageChanged(isBlocked: boolean | string) {
+    if (this.blockPage && this.hasContent()) {
+      throw Error('You can not use the [aut-block-ui] with [block-page] property, while you have defined a content inside it.');
+    }
     let option: any = {};
     if (this.message == null || this.message.length < 0) {
       option = {
