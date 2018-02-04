@@ -14,10 +14,12 @@ export class BootstrapNavLink {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string;
 
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public selected: boolean | string | null = null;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public active: boolean | string = false;
+
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public disabled: boolean | string = false;
 
   private isActive: boolean = false;
-  private isDisabled: boolean = false;
+
   private isFade: boolean = false;
 
   private tab_header: HTMLAnchorElement;
@@ -41,13 +43,11 @@ export class BootstrapNavLink {
     navs = this.tab_header.parentElement;
     tab_content = <HTMLElement>navs.parentElement.parentElement.children.item(1).children.item(0);
 
-    let isTheFirstChild: boolean = navs.children.item(0) === this.tab_header;
+    const onlyActiveAttribute = (this.active === '' && this.element.hasAttribute('active'));
+    this.active = onlyActiveAttribute || this.active === 'true' || this.active === true;
 
-    this.selected = this.selected !== null ? Boolean(this.selected) : null;
-
-    this.isActive = this.selected !== null ? this.selected : this.element.hasAttribute('active');
-    this.isDisabled = this.element.hasAttribute('disabled');
-
+    const onlyDisabledAttribute = (this.disabled === '' && this.element.hasAttribute('disabled'));
+    this.disabled = onlyDisabledAttribute || this.disabled === 'true' || this.disabled === true;
 
     navs.removeChild(this.tab_body);
 
@@ -58,8 +58,6 @@ export class BootstrapNavLink {
       navComponent = navs.parentElement.parentElement.parentElement;
 
       let tab_body_id = `${id}-tab-body`;
-
-      this.selected = isTheFirstChild;
 
       this.isFade =
         navComponent.hasAttribute('fade') &&
@@ -97,7 +95,7 @@ export class BootstrapNavLink {
 
       this.tab_header.setAttribute('role', 'tab');
       this.tab_header.setAttribute('aria-controls', `${tab_body_id}`);
-      this.tab_header.setAttribute('aria-selected', `${this.selected || isTheFirstChild}`);
+      this.tab_header.setAttribute('aria-selected', `${this.active}`);
 
       this.tab_header.setAttribute('href', `#${tab_body_id}`);
 
