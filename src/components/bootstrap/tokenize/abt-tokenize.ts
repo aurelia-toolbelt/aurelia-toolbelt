@@ -74,15 +74,17 @@ export class BootstrapTokenizeCustomElement {
     if (this.selectedTokens) {
       this.subscription = this.bindingEngine.collectionObserver(this.selectedTokens)
         .subscribe(x => {
-          let y = x[0];
-          if (y.removed.length) {
-            let removed = <Array<ITokenizeItem>>y.removed;
-            for (let index = 0; index < removed.length; index++) {
-              $(this.tokenize).trigger('tokenize:tokens:remove', removed[index].value);
+          let item = x[0];
+          if (item) {
+            if (item.removed.length) {
+              let removed = <Array<ITokenizeItem>>item.removed;
+              for (let index = 0; index < removed.length; index++) {
+                $(this.tokenize).trigger('tokenize:tokens:remove', removed[index].value);
+              }
+            } else {
+              $(this.tokenize).trigger('tokenize:tokens:add', [this.selectedTokens[item.index].value,
+              this.selectedTokens[item.index].text, this.selectedTokens[item.index].force || true]);
             }
-          } else {
-            $(this.tokenize).trigger('tokenize:tokens:add', [this.selectedTokens[y.index].value,
-            this.selectedTokens[y.index].text, this.selectedTokens[y.index].force || true]);
           }
         });
     }
@@ -117,119 +119,92 @@ export class BootstrapTokenizeCustomElement {
     this.tabIndex = Number(this.tabIndex);
 
     $(this.tokenize).on('tokenize:load', () => {
-      console.log('load ');
       if (this.load) {
         this.load();
       }
     });
     $(this.tokenize).on('tokenize:clear', () => {
-      console.log('clear ');
       if (this.clear) {
         this.clear();
       }
     });
     $(this.tokenize).on('tokenize:remap', () => {
-      console.log('remap ');
       if (this.remap) {
         this.remap();
       }
     });
     $(this.tokenize).on('tokenize:select', () => {
-      console.log('select ');
       if (this.select) {
         this.select();
       }
     });
 
     $(this.tokenize).on('tokenize:deselect', () => {
-      console.log('deselect ');
       if (this.deselect) {
         this.deselect();
       }
     });
     $(this.tokenize).on('tokenize:search', (e, value) => {
-      console.log('search :' + value);
       if (this.search) {
         this.search({ e: e, value: value });
       }
     });
     $(this.tokenize).on('tokenize:paste', () => {
-      console.log('paste ');
       if (this.paste) {
         this.paste();
       }
     });
     $(this.tokenize).on('tokenize:dropdown:up', () => {
-      console.log('dropdown:up ');
       if (this.dropdownUp) {
         this.dropdownUp();
       }
     });
     $(this.tokenize).on('tokenize:dropdown:down', () => {
-      console.log('dropdown:down ');
       if (this.dropdownDown) {
         this.dropdownDown();
       }
     });
     $(this.tokenize).on('tokenize:dropdown:clear', () => {
-      console.log('dropdown:clear ');
-
       if (this.dropdownClear) {
         this.dropdownClear();
       }
     });
     $(this.tokenize).on('tokenize:dropdown:show', () => {
-      console.log('dropdown:show ');
-
       if (this.dropdownShow) {
         this.dropdownShow();
       }
     });
     $(this.tokenize).on('tokenize:dropdown:hide', () => {
-      console.log('dropdown:hide ');
-
       if (this.dropdownHide) {
         this.dropdownHide();
       }
     });
     $(this.tokenize).on('tokenize:dropdown:fill', (e, items) => {
-      console.log('dropdown:fill :' + JSON.stringify(items));
-
       if (this.dropdownFill) {
         this.dropdownFill({ e: e, items: items });
       }
     });
     $(this.tokenize).on('tokenize:dropdown:itemAdd', (e, item) => {
-      console.log('dropdown:itemAdd :' + JSON.stringify(item));
-
       if (this.dropdownItemAdd) {
         this.dropdownItemAdd({ e: e, item: item });
       }
     });
     $(this.tokenize).on('tokenize:keypress', (e, routedEvent) => {
-      console.log('dropdown:keypress :' + JSON.stringify(routedEvent));
-
       if (this.keypress) {
         this.keypress({ e: e, routedEvent: routedEvent });
       }
     });
     $(this.tokenize).on('tokenize:keydown', (e, routedEvent) => {
-      console.log('dropdown:keydown :' + JSON.stringify(routedEvent));
-
       if (this.keydown) {
         this.keydown({ e: e, routedEvent: routedEvent });
       }
     });
     $(this.tokenize).on('tokenize:keyup', (e, routedEvent) => {
-      console.log('dropdown:keyup :' + JSON.stringify(routedEvent));
-
       if (this.keyup) {
         this.keyup({ e: e, routedEvent: routedEvent });
       }
     });
     $(this.tokenize).on('tokenize:tokens:reorder', () => {
-      console.log('tokens:reorder ');
-
       if (this.reorder) {
         this.reorder();
       }
@@ -247,7 +222,6 @@ export class BootstrapTokenizeCustomElement {
       }
     });
     $(this.tokenize).on('tokenize:tokens:remove', (e, value) => {
-      console.log('tokens:remove : ' + value);
       let index = this.selectedTokens.findIndex(x => x.value === value);
       if (index > -1) {
         this.selectedTokens.splice(index, 1);
