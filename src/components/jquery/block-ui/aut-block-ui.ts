@@ -460,4 +460,9 @@ export class JQueryBlockUI {
       // this.element.classList.remove('block-ui-content');
     }
   }
+
+  private detached() {
+    $.unblockUI();
+    $(this.content).unblock();
+  }
 }

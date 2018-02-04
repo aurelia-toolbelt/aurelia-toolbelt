@@ -1,14 +1,6 @@
 
 import { customElement, inject, bindable, bindingMode, BindingEngine, containerless, processContent, children } from 'aurelia-framework';
 
-// https://stackoverflow.com/questions/44716366/tokenize2-with-default-added-values
-// https://stackoverflow.com/questions/45037159/how-do-i-get-text-of-multiselect-tokenize2-control
-// https://stackoverflow.com/questions/44452004/is-it-possible-to-show-all-options-in-tokenize2
-// https://api.myjson.com/bins/1h4qe9
-// http://www.mocky.io/v2/5a75819e2e00006c006ab1a1
-
-// $(this.tokenize).trigger('tokenize:tokens:add', ['token value', 'token display text', true]);
-
 import 'jquery';
 import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.css';
 import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.js';
@@ -102,20 +94,24 @@ export class BootstrapTokenizeCustomElement {
 
   private afterAttached() {
 
+    if (this.id.length > 0) {
+      this.tokenizeTemplate.setAttribute('id', `abt-tokenize-${this.id}`);
+    }
+
     this.debounce = Number(this.debounce);
-    let placeholder = (this.placeholder === '' && this.tokenizeTemplate.hasAttribute('placeholder')) || this.placeholder.toString() === 'true';
+    this.placeholder = (this.placeholder === '' && this.tokenizeTemplate.hasAttribute('placeholder')) || this.placeholder.toString() === 'true';
     this.tokensMaxItems = Number(this.tokensMaxItems);
-    let tokensAllowCustom = (this.tokensAllowCustom === '' && this.tokenizeTemplate.hasAttribute('tokens-allow-custom'))
+    this.tokensAllowCustom = (this.tokensAllowCustom === '' && this.tokenizeTemplate.hasAttribute('tokens-allow-custom'))
       || this.tokensAllowCustom.toString() === 'true';
     this.dropdownMaxItems = Number(this.dropdownMaxItems);
     this.searchMinLength = Number(this.searchMinLength);
-    let searchFromStart = (this.searchFromStart === '' && this.tokenizeTemplate.hasAttribute('search-from-start'))
+    this.searchFromStart = (this.searchFromStart === '' && this.tokenizeTemplate.hasAttribute('search-from-start'))
       || this.searchFromStart.toString() === 'true';
-    let searchHighlight = (this.searchHighlight === '' && this.tokenizeTemplate.hasAttribute('search-highlight'))
+    this.searchHighlight = (this.searchHighlight === '' && this.tokenizeTemplate.hasAttribute('search-highlight'))
       || this.searchHighlight.toString() === 'true';
     this.showItemsOnClick = (this.showItemsOnClick === '' && this.tokenizeTemplate.hasAttribute('show-items-on-click'))
       || this.showItemsOnClick.toString() === 'true';
-    let displayNoResultsMessage = (this.displayNoResultsMessage === '' && this.tokenizeTemplate.hasAttribute('display-no-results-message'))
+    this.displayNoResultsMessage = (this.displayNoResultsMessage === '' && this.tokenizeTemplate.hasAttribute('display-no-results-message'))
       || this.displayNoResultsMessage.toString() === 'true';
     this.zIndexMargin = Number(this.zIndexMargin);
     this.tabIndex = Number(this.tabIndex);
@@ -239,7 +235,6 @@ export class BootstrapTokenizeCustomElement {
       }
     });
 
-    // ====================================================================
     $(this.tokenize).on('tokenize:tokens:add', (e, value, text, force) => {
       if (this.selectedTokens) {
         let found = this.selectedTokens.findIndex(x => x.value === value) > -1;
@@ -261,7 +256,6 @@ export class BootstrapTokenizeCustomElement {
         this.remove({ e: e, value: value });
       }
     });
-    // ====================================================================
 
     let ds = null;
     // dataSource = 'select'
@@ -296,14 +290,14 @@ export class BootstrapTokenizeCustomElement {
       },
       debounce: this.debounce,
       delimiter: this.delimiter,
-      placeholder: placeholder,
+      placeholder: this.placeholder,
       tokensMaxItems: this.tokensMaxItems,
-      tokensAllowCustom: tokensAllowCustom,
+      tokensAllowCustom: this.tokensAllowCustom,
       dropdownMaxItems: this.dropdownMaxItems,
       searchMinLength: this.searchMinLength,
-      searchFromStart: searchFromStart,
-      searchHighlight: searchHighlight,
-      displayNoResultsMessage: displayNoResultsMessage,
+      searchFromStart: this.searchFromStart,
+      searchHighlight: this.searchHighlight,
+      displayNoResultsMessage: this.displayNoResultsMessage,
       noResultsMessageText: this.noResultsMessageText,
       zIndexMargin: this.zIndexMargin,
       tabIndex: this.tabIndex
