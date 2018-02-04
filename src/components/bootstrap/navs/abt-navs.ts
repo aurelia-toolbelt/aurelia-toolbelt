@@ -7,6 +7,10 @@ import * as $ from 'jquery';
 @customElement('abt-navs')
 export class BootstrapNavs {
 
+
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public xClass: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public yClass: string;
+
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
 
@@ -58,7 +62,7 @@ export class BootstrapNavs {
       throw error;
     }
 
-    let children = this.element.children.item(0).getElementsByTagName('a');
+    let children = this.element.children.item(0).children.item(0).getElementsByTagName('a');
     $(children).tab();
     this.handle_events();
 
@@ -67,7 +71,7 @@ export class BootstrapNavs {
 
   private handle_events() {
     // all a tags which are going to be tabs/pills
-    let children = this.element.children.item(0).getElementsByTagName('a');
+    let children = this.element.children.item(0).children.item(0).getElementsByTagName('a');
 
     if (this.bsShow) {
       $(children).on('show.bs.tab', (event: any) => {
@@ -105,7 +109,7 @@ export class BootstrapNavs {
   }
 
   private detached() {
-    let children = this.element.children.item(0).getElementsByTagName('a');
+    let children = this.element.children.item(0).children.item(0).getElementsByTagName('a');
     $(children).off('show.bs.tab');
     $(children).off('shown.bs.tab');
     $(children).off('hide.bs.tab');
