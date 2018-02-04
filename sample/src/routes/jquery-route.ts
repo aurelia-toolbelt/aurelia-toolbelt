@@ -19,8 +19,8 @@ export class JqueryRoute {
                 nav: true,
                 title: 'Block UI',
                 settings: { auth: false, isComponent: true }
-            },
-            {
+            }
+            /*,{
                 route: ['lazyimage'],
                 name: 'jq-lazyimage',
 
@@ -30,7 +30,7 @@ export class JqueryRoute {
                 nav: true,
                 title: 'Lazy Image',
                 settings: { auth: false, isComponent: true }
-            }
+            }*/
             // ,
             // {
             //     route: ['newsticker'],

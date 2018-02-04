@@ -196,10 +196,11 @@ export class App {
         settings: {
           auth: false, navigation: [{
             route: 'blockui', title: 'Block UI'
-          },
-          {
-            route: 'lazyimage', title: 'Lazy Image'
-          }]
+          }
+            /*,{
+              route: 'lazyimage', title: 'Lazy Image'
+            }*/
+          ]
         }
       }
     ]);
