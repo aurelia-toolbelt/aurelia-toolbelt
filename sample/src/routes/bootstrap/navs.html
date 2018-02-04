@@ -47,21 +47,21 @@
     <abt-card>
       <abt-card-body>
 
-        <abt-navs class="mb-2">
+        <abt-navs navs-class="mb-2">
           <abt-nav-item href="#" title="Active" active></abt-nav-item>
           <abt-nav-item href="#" title="Link"></abt-nav-item>
           <abt-nav-item href="#" title="Link"></abt-nav-item>
           <abt-nav-item href="#" title="Disabled" disabled></abt-nav-item>
         </abt-navs>
 
-        <abt-navs class="mb-2 justify-content-center" tabs>
+        <abt-navs navs-class="mb-2 justify-content-center" tabs>
           <abt-nav-item href="#" active title="Active"></abt-nav-item>
           <abt-nav-item href="#" title="Link"></abt-nav-item>
           <abt-nav-item href="#" title="Link"></abt-nav-item>
           <abt-nav-item href="#" disabled title="Disabled"></abt-nav-item>
         </abt-navs>
 
-        <abt-navs class="mb-2 justify-content-end" pills>
+        <abt-navs navs-class="mb-2 justify-content-end" pills>
           <abt-nav-item href="#" active title="Active"></abt-nav-item>
           <abt-nav-item href="#" title="Link"></abt-nav-item>
           <abt-nav-item href="#" title="Link"></abt-nav-item>
@@ -94,7 +94,7 @@
 
     <abt-card>
       <abt-card-body>
-        <abt-navs class="flex-column" vertical>
+        <abt-navs navs-class="flex-column" vertical>
           <abt-nav-item title="Active" active></abt-nav-item>
           <abt-nav-item title="Link"></abt-nav-item>
           <abt-nav-item title="Link"></abt-nav-item>
@@ -130,19 +130,32 @@
       </ul>
     </p>
 
-    <abt-navs pills fill>
-      <abt-nav-item active title="Active"></abt-nav-item>
-      <abt-nav-item title="Longer nav link"></abt-nav-item>
-      <abt-nav-item title="Longer nav link"></abt-nav-item>
-      <abt-nav-item disabled title="Disabled"></abt-nav-item>
-    </abt-navs>
-    <br />
-    <abt-navs pills justify>
-      <abt-nav-item active title="Active"></abt-nav-item>
-      <abt-nav-item title="Longer nav link"></abt-nav-item>
-      <abt-nav-item title="Longer nav link"></abt-nav-item>
-      <abt-nav-item disabled title="Disabled"></abt-nav-item>
-    </abt-navs>
+    <abt-card>
+
+      <abt-card-body>
+          <abt-navs pills fill>
+              <abt-nav-item active title="Active"></abt-nav-item>
+              <abt-nav-item title="Longer nav link"></abt-nav-item>
+              <abt-nav-item title="Longer nav link"></abt-nav-item>
+              <abt-nav-item disabled title="Disabled"></abt-nav-item>
+            </abt-navs>
+            <br />
+            <abt-navs pills justify>
+              <abt-nav-item active title="Active"></abt-nav-item>
+              <abt-nav-item title="Longer nav link"></abt-nav-item>
+              <abt-nav-item title="Longer nav link"></abt-nav-item>
+              <abt-nav-item disabled title="Disabled"></abt-nav-item>
+            </abt-navs>
+      </abt-card-body>
+
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/navs/fills-justify.md">
+        </aut-mark-down>
+      </abt-card-footer>
+
+    </abt-card>
+
+    
   </fieldset>
 
 
@@ -153,7 +166,7 @@
 
     <p>
       To achieve this you must specify contents for
-      <code>abt-nav-item</code> component.
+      <code>abt-nav-item</code> component. 
     </p>
 
     <abt-card>
@@ -198,7 +211,7 @@
         <hr />
         <br />
 
-        <abt-navs pills vertical class="flex-column" x-class="col-sm-3" y-class="col-sm-8">
+        <abt-navs pills vertical navs-class="flex-column" navs-style="font-size: large" content-style="color: #753B85">
           <abt-nav-item title="Home">
             <div class="container">
               Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia. Fugiat velit proident
@@ -236,7 +249,8 @@
       </abt-card-body>
 
       <abt-card-footer>
-
+        <aut-mark-down src="./docs/components/bootstrap/navs/dynamics.md">
+        </aut-mark-down>
       </abt-card-footer>
 
     </abt-card>

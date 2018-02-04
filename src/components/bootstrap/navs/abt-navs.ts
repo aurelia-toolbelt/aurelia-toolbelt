@@ -8,11 +8,11 @@ import * as $ from 'jquery';
 export class BootstrapNavs {
 
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public xClass: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public yClass: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public navsVerticalClass: string = 'col-sm-3';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public contentVerticalClass: string = 'col-sm-9';
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public navsClass: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public navsStyle: string;
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public contentClass: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public contentStyle: string;
