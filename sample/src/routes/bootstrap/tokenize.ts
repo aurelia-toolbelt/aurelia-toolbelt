@@ -1,16 +1,42 @@
+import 'jquery';
+import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.css';
+import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.js';
 export class BootstrapTokenize {
 
+
+  private myArray: Array<any>;
+
   private countries: any[];
-  private token: Element;
+
+
+  constructor() {
+    this.myArray = [];
+  }
+
   private find(term: string) {
-    return [{ text: 'Argentina', value: 'AR' }, { text: 'Iran', value: 'IR' }];
+    return this.countries;
   }
   private clear() {
     console.log('clear');
   }
   private onClick() {
-    console.log('clicked');
+    // let elem = <Element>document.getElementById('token-test');
+    // $(elem).trigger('tokenize:tokens:add', ['token value', 'token display text', true]);
+    // console.log('clicked');
+    console.log('Push');
+    this.myArray.push({ value: Math.random(), text: 'Test - ' + Math.random() });
+
   }
+
+  private onRemove() {
+    // let elem = <Element>document.getElementById('token-test');
+    // $(elem).trigger('tokenize:tokens:add', ['token value', 'token display text', true]);
+    // console.log('clicked');
+    console.log('Push');
+    this.myArray.splice(3, 1);
+
+  }
+
   private search(e: any, v: any) {
     console.log(v);
   }

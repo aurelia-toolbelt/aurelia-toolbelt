@@ -39,13 +39,14 @@
     <aut-mark-down src="./docs/components/bootstrap/tokenize/usage.md">
     </aut-mark-down>
   </fieldset>
-  <abt-button class="mr-2" click.call="onClick()">Click me</abt-button>
+  <abt-button class="mr-2" click.call="onClick()">Add</abt-button>
+  <abt-button class="mr-2" click.call="onRemove()">Remove</abt-button>
 
   <fieldset class="mt-5">
     <legend>
       Basic example
     </legend>
-    <abt-tokenize ref='token' data-source.call='find(term)'>
+    <abt-tokenize id='token' selected.bind="myArray" data-source.call='find(term)'>
     </abt-tokenize>
     <aut-mark-down src="./docs/components/bootstrap/tokenize/basic-example.md">
     </aut-mark-down>

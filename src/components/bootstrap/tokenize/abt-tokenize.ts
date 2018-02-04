@@ -14,7 +14,13 @@ import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.css';
 import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.js';
 import { JsTools } from '../../../utilities/purejs/jsTools';
 
-@inject(Element, JsTools)
+interface ITokenizeItem {
+  text: string;
+  value: string;
+  force?: boolean;
+}
+
+@inject(Element, JsTools, BindingEngine)
 @customElement('abt-tokenize')
 export class BootstrapTokenizeCustomElement {
 
@@ -38,6 +44,9 @@ export class BootstrapTokenizeCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public tabIndex: number | string = 0;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public dataSource: string | Function;
+
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public selectedTokens: Array<ITokenizeItem>;
+
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public load: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public clear: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public remap: Function;
@@ -64,7 +73,31 @@ export class BootstrapTokenizeCustomElement {
 
   @children('option') private options: Array<HTMLOptionElement>;
 
-  constructor(private element: Element, private jsTools: JsTools) {
+  private subscription: any;
+
+  constructor(private element: Element, private jsTools: JsTools, private bindingEngine: BindingEngine) {
+  }
+
+  private bind() {
+    if (this.selectedTokens) {
+      this.subscription = this.bindingEngine.collectionObserver(this.selectedTokens)
+        .subscribe(x => {
+          let y = x[0];
+          if (y.removed.length) {
+            let removed = <Array<ITokenizeItem>>y.removed;
+            for (let index = 0; index < removed.length; index++) {
+              $(this.tokenize).trigger('tokenize:tokens:remove', removed[index].value);
+            }
+          } else {
+            $(this.tokenize).trigger('tokenize:tokens:add', [this.selectedTokens[y.index].value,
+            this.selectedTokens[y.index].text, this.selectedTokens[y.index].force || true]);
+          }
+        });
+    }
+  }
+
+  private detached() {
+    this.subscription = null;
   }
 
   private afterAttached() {
@@ -80,7 +113,7 @@ export class BootstrapTokenizeCustomElement {
       || this.searchFromStart.toString() === 'true';
     let searchHighlight = (this.searchHighlight === '' && this.tokenizeTemplate.hasAttribute('search-highlight'))
       || this.searchHighlight.toString() === 'true';
-    let showItemsOnClick = (this.showItemsOnClick === '' && this.tokenizeTemplate.hasAttribute('show-items-on-click'))
+    this.showItemsOnClick = (this.showItemsOnClick === '' && this.tokenizeTemplate.hasAttribute('show-items-on-click'))
       || this.showItemsOnClick.toString() === 'true';
     let displayNoResultsMessage = (this.displayNoResultsMessage === '' && this.tokenizeTemplate.hasAttribute('display-no-results-message'))
       || this.displayNoResultsMessage.toString() === 'true';
@@ -88,92 +121,119 @@ export class BootstrapTokenizeCustomElement {
     this.tabIndex = Number(this.tabIndex);
 
     $(this.tokenize).on('tokenize:load', () => {
+      console.log('load ');
       if (this.load) {
         this.load();
       }
     });
     $(this.tokenize).on('tokenize:clear', () => {
+      console.log('clear ');
       if (this.clear) {
         this.clear();
       }
     });
     $(this.tokenize).on('tokenize:remap', () => {
+      console.log('remap ');
       if (this.remap) {
         this.remap();
       }
     });
     $(this.tokenize).on('tokenize:select', () => {
+      console.log('select ');
       if (this.select) {
         this.select();
       }
     });
 
     $(this.tokenize).on('tokenize:deselect', () => {
+      console.log('deselect ');
       if (this.deselect) {
         this.deselect();
       }
     });
     $(this.tokenize).on('tokenize:search', (e, value) => {
+      console.log('search :' + value);
       if (this.search) {
         this.search({ e: e, value: value });
       }
     });
     $(this.tokenize).on('tokenize:paste', () => {
+      console.log('paste ');
       if (this.paste) {
         this.paste();
       }
     });
     $(this.tokenize).on('tokenize:dropdown:up', () => {
+      console.log('dropdown:up ');
       if (this.dropdownUp) {
         this.dropdownUp();
       }
     });
     $(this.tokenize).on('tokenize:dropdown:down', () => {
+      console.log('dropdown:down ');
       if (this.dropdownDown) {
         this.dropdownDown();
       }
     });
     $(this.tokenize).on('tokenize:dropdown:clear', () => {
+      console.log('dropdown:clear ');
+
       if (this.dropdownClear) {
         this.dropdownClear();
       }
     });
     $(this.tokenize).on('tokenize:dropdown:show', () => {
+      console.log('dropdown:show ');
+
       if (this.dropdownShow) {
         this.dropdownShow();
       }
     });
     $(this.tokenize).on('tokenize:dropdown:hide', () => {
+      console.log('dropdown:hide ');
+
       if (this.dropdownHide) {
         this.dropdownHide();
       }
     });
     $(this.tokenize).on('tokenize:dropdown:fill', (e, items) => {
+      console.log('dropdown:fill :' + JSON.stringify(items));
+
       if (this.dropdownFill) {
         this.dropdownFill({ e: e, items: items });
       }
     });
     $(this.tokenize).on('tokenize:dropdown:itemAdd', (e, item) => {
+      console.log('dropdown:itemAdd :' + JSON.stringify(item));
+
       if (this.dropdownItemAdd) {
         this.dropdownItemAdd({ e: e, item: item });
       }
     });
     $(this.tokenize).on('tokenize:keypress', (e, routedEvent) => {
+      console.log('dropdown:keypress :' + JSON.stringify(routedEvent));
+
       if (this.keypress) {
         this.keypress({ e: e, routedEvent: routedEvent });
       }
     });
     $(this.tokenize).on('tokenize:keydown', (e, routedEvent) => {
+      console.log('dropdown:keydown :' + JSON.stringify(routedEvent));
+
       if (this.keydown) {
         this.keydown({ e: e, routedEvent: routedEvent });
       }
     });
     $(this.tokenize).on('tokenize:keyup', (e, routedEvent) => {
+      console.log('dropdown:keyup :' + JSON.stringify(routedEvent));
+
       if (this.keyup) {
         this.keyup({ e: e, routedEvent: routedEvent });
       }
     });
     $(this.tokenize).on('tokenize:tokens:reorder', () => {
+      console.log('tokens:reorder ');
+
       if (this.reorder) {
         this.reorder();
       }
@@ -181,11 +241,22 @@ export class BootstrapTokenizeCustomElement {
 
     // ====================================================================
     $(this.tokenize).on('tokenize:tokens:add', (e, value, text, force) => {
+      if (this.selectedTokens) {
+        let found = this.selectedTokens.findIndex(x => x.value === value) > -1;
+        if (!found) {
+          this.selectedTokens.push({ text: text, value: value });
+        }
+      }
       if (this.add) {
         this.add({ e: e, value: value, text: text, force: force });
       }
     });
-    $(this.tokenize).on('tokenize:keypress', (e, value) => {
+    $(this.tokenize).on('tokenize:tokens:remove', (e, value) => {
+      console.log('tokens:remove : ' + value);
+      let index = this.selectedTokens.findIndex(x => x.value === value);
+      if (index > -1) {
+        this.selectedTokens.splice(index, 1);
+      }
       if (this.remove) {
         this.remove({ e: e, value: value });
       }
@@ -238,7 +309,7 @@ export class BootstrapTokenizeCustomElement {
       tabIndex: this.tabIndex
     });
 
-    if (this.showItemsOnClick !== 'false') {
+    if (this.showItemsOnClick) {
       // @ts-ignore
       $(this.tokenize).on('tokenize:select', (e: Event, routedEvent: boolean) => {
         $(this.tokenize).trigger('tokenize:search', '');
