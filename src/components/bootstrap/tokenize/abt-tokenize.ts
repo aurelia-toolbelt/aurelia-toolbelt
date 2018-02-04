@@ -6,7 +6,7 @@ import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.css';
 import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.js';
 import { JsTools } from '../../../utilities/purejs/jsTools';
 
-interface ITokenizeItem {
+export interface ITokenizeItem {
   text: string;
   value: string;
   force?: boolean;

@@ -6,7 +6,7 @@ import { Uuid } from '../../../utilities/purejs/uuid';
 @inject(Element, Uuid)
 @containerless()
 @customElement('abt-nav-item')
-export class BootstrapNavLink {
+export class BootstrapNavItem {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
@@ -16,8 +16,6 @@ export class BootstrapNavLink {
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public active: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public disabled: boolean | string = false;
-
-  private isActive: boolean = false;
 
   private isFade: boolean = false;
 
@@ -32,6 +30,8 @@ export class BootstrapNavLink {
     this.element = <HTMLElement>element;
 
   }
+
+
 
   private attached() {
 
