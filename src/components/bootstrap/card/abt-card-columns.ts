@@ -9,7 +9,7 @@ import { bindingMode } from 'aurelia-binding';
 @customElement('abt-card-columns')
 export class BootstrapCardColumn {
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
 
 }

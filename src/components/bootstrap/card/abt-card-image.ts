@@ -8,8 +8,8 @@ import { throws } from 'assert';
 export class BootstrapCardImage {
 
     @bindable({ defaultBindingMode: bindingMode.oneTime }) public alt: string;
-    @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string;
-    @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string;
+    @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
+    @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
 
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public src: string;
 

@@ -8,8 +8,8 @@ import { bindingMode } from 'aurelia-binding';
 export class BootstrapCard {
 
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public width: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public width: string;
 
 }
