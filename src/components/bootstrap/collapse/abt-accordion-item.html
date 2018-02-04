@@ -3,11 +3,11 @@
   <require from="../../../custom-attributes/purejs/uuid/aut-uuid"></require>
 
   <abt-card>
-    <abt-card-header class="abt-accordion-item-header" ref="myLink" style="cursor: pointer">
+    <div class="abt-accordion-item-header card-header" ref="myLink" style="cursor: pointer">
       <a href="#" click.delegate="onAnchorClick($event)">
         ${title}
       </a>
-    </abt-card-header>
+    </div>
 
     <abt-collapse class="${active ? 'show' : ''} abt-accordion-item-content" controlled-by.bind="myLink">
       <slot></slot>
