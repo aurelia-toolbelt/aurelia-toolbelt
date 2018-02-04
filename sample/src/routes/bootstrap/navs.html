@@ -487,12 +487,34 @@
           </td>
         </tr>
         <tr>
+          <td class="text-nowrap" scope="row">active</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>
+            At least one
+            <code>abt-nav-item</code> for each
+            <code>abt-navs</code>
+            <b>must</b> have this attributes. It indicates the initial active tab.
+          </td>
+        </tr>
+        <tr>
           <td class="text-nowrap" scope="row">class</td>
           <td class="text-nowrap">string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap"></td>
           <td>Applies the your custom css class on each
             <b>individual</b> nav item menu</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">disabled</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Setting this to true will disable the navigation menu item. You can use it both as a simple attribute (
+            <code>disabled</code> ) or binding aurelia way (
+            <code>disabled="true"</code> or disabled.bind="some_boolean_value" ).
+          </td>
         </tr>
         <tr>
           <td scope="row">href</td>
@@ -510,15 +532,31 @@
           <td>Css style attributes that you want to apply on the component.</td>
         </tr>
         <tr>
-            <td class="text-nowrap" scope="row">title</td>
-            <td class="text-nowrap">string</td>
-            <td class="text-nowrap">oneWay</td>
-            <td class="text-nowrap"></td>
-            <td>Css style attributes that you want to apply on the component.</td>
-          </tr>
+          <td class="text-nowrap" scope="row">title</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>The text/title of navigation menu item.</td>
+        </tr>
 
       </tbody>
     </table>
+
+    <hr />
+
+    <ul>
+      <li>
+        <b>PS 1:</b> We guess it's far better to have a
+        <code>tab-changed</code> event instead of four bootstrap events above, what do you think?
+      </li>
+      <li>
+        <b>PS 2:</b> The
+        <code>active</code> attribute for
+        <code>abt-nav-item</code> is currently using
+        <code>one-time</code> binding, We are trying for a way to make it dynamic so that you can change the active tab programmatically.
+      </li>
+    </ul>
+
 
   </fieldset>
 

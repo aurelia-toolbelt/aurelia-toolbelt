@@ -14,8 +14,7 @@ export class BootstrapNavLink {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string;
 
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public active: boolean | string = false;
-
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public active: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public disabled: boolean | string = false;
 
   private isActive: boolean = false;
