@@ -8,10 +8,10 @@ import { bindingMode } from 'aurelia-binding';
 @customElement('abt-card-link')
 export class BootstrapCardLink {
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public href: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public target: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public href: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public target: string;
 
 }

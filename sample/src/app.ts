@@ -181,10 +181,10 @@ export class App {
           },
           {
             route: 'masked-input', title: 'Masked Input'
-          },
-          {
+          }
+          /*,{
             route: 'microlink', title: 'Microlink'
-          }]
+          }*/]
         }
       },
       {
