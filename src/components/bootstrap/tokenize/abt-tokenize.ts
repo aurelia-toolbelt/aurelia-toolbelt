@@ -28,16 +28,14 @@ export class BootstrapTokenizeCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public searchMinLength: number | string = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public searchFromStart: boolean | string = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public searchHighlight: boolean | string = true;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showItemsOnClick: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showOnClick: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public displayNoResultsMessage: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public noResultsMessageText: string = 'No results matched "%s"';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public zIndexMargin: number | string = 500;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public tabIndex: number | string = 0;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public dataSource: string | Function;
-
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public selectedTokens: Array<ITokenizeItem>;
-
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public load: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public clear: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public remap: Function;
@@ -110,8 +108,8 @@ export class BootstrapTokenizeCustomElement {
       || this.searchFromStart.toString() === 'true';
     this.searchHighlight = (this.searchHighlight === '' && this.tokenizeTemplate.hasAttribute('search-highlight'))
       || this.searchHighlight.toString() === 'true';
-    this.showItemsOnClick = (this.showItemsOnClick === '' && this.tokenizeTemplate.hasAttribute('show-items-on-click'))
-      || this.showItemsOnClick.toString() === 'true';
+    this.showOnClick = (this.showOnClick === '' && this.tokenizeTemplate.hasAttribute('show-on-click'))
+      || this.showOnClick.toString() === 'true';
     this.displayNoResultsMessage = (this.displayNoResultsMessage === '' && this.tokenizeTemplate.hasAttribute('display-no-results-message'))
       || this.displayNoResultsMessage.toString() === 'true';
     this.zIndexMargin = Number(this.zIndexMargin);
@@ -278,7 +276,7 @@ export class BootstrapTokenizeCustomElement {
       tabIndex: this.tabIndex
     });
 
-    if (this.showItemsOnClick) {
+    if (this.showOnClick) {
       // @ts-ignore
       $(this.tokenize).on('tokenize:select', (e: Event, routedEvent: boolean) => {
         $(this.tokenize).trigger('tokenize:search', '');
