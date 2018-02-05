@@ -7,6 +7,9 @@ export class BootstrapModalHeader {
 
   private dismissible: boolean = false;
 
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
+
 
   private header: HTMLDivElement;
 

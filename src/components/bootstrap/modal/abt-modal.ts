@@ -1,6 +1,6 @@
 import { bindingMode, bindable, containerless, customElement, inject } from 'aurelia-framework';
 
-import 'jquery';
+import * as $ from 'jquery';
 
 @inject(Element)
 @containerless()
@@ -128,7 +128,7 @@ export class BootstrapModal {
         this.visible = false;
       });
     } else {
-      throw Error(`The 'abt-modal' should have either 'open-by' or 'visible'  attribute`);
+      throw Error(`The 'abt-modal' should have either 'open-by' or 'visible' attribute`);
     }
 
     // @ts-ignore
@@ -146,7 +146,9 @@ export class BootstrapModal {
     $(this.modal).off('shown.bs.modal');
     $(this.modal).off('hide.bs.modal');
     $(this.modal).off('hidden.bs.modal');
+    $(this.modal).modal('hide');
     $(this.modal).modal('dispose');
+    $(this.modal).remove();
   }
 
 }

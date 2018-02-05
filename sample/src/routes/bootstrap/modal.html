@@ -1,286 +1,520 @@
 <template>
 
+  <style>
+    .modal-title-aurelia {
+      color: #753B85;
+    }
 
-  <h1>Live demo</h1>
+  </style>
 
-  <abt-button id="showModal">
-    Launch demo modal
-  </abt-button>
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Modals
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/modal">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Add dialogs to your site for lightboxes, user notifications, or completely custom content.
+  </fieldset>
 
-  <abt-modal open-by="showModal" centered="false" dismissible="false">
-    <abt-modal-header>
-      <abt-modal-title>
-        <h5 style="color:maroon">Aureia Toolbelt Dialog</h5>
-      </abt-modal-title>
-    </abt-modal-header>
-    <abt-modal-body>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
 
-      <div>
-        Hooray, you see a message in a dialog.
-      </div>
+    <aut-mark-down src="./docs/components/bootstrap/modal/usage.md">
+    </aut-mark-down>
 
-    </abt-modal-body>
-    <abt-modal-footer>
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary">Save changes</button>
-    </abt-modal-footer>
-  </abt-modal>
+  </fieldset>
 
-  <hr />
+  <fieldset class="mt-5">
+    <legend>
+      Live demo
+    </legend>
+    <p>
+      Toggle a working modal demo by clicking the button below. It will slide down and fade in from the top of the page.
+    </p>
 
+    <abt-card>
+      <abt-card-body>
 
-  <h1>Scrolling long contet</h1>
+        <abt-button id="showModal">
+          Launch demo modal
+        </abt-button>
 
-  <abt-button id="showModalLarg">
-    Launch Scrolling Modal
-  </abt-button>
+        <abt-modal open-by="showModal">
+          <abt-modal-header>
+            <abt-modal-title class="modal-title-aurelia">
+              <h5>Aurelia Toolbelt Dialog</h5>
+            </abt-modal-title>
+          </abt-modal-header>
+          <abt-modal-body>
+            <div>
+              Hooray, you see a message in a dialog.
+            </div>
+          </abt-modal-body>
+          <abt-modal-footer>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </abt-modal-footer>
+        </abt-modal>
 
-  <abt-modal open-by="showModalLarg" centered="false" dismissible="false">
-    <abt-modal-header>
-      <abt-modal-title>
-        <h5 style="color:maroon">Aureia Toolbelt Dialog</h5>
-      </abt-modal-title>
-    </abt-modal-header>
-    <abt-modal-body>
-      <div>
-        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
-        risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur
-        et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.
-        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non
-        metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
-        egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel
-        scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia
-        bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-        dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo
-        odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent
-        commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus
-        dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl
-        consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus
-        sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur
-        ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
-        vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
-        magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
-        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi
-        leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur
-        et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.
-        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non
-        metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
-        egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel
-        scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia
-        bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-        dui. Donec ullamcorper nulla non metus auctor fringilla.
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/modal/simple.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
 
-      </div>
-    </abt-modal-body>
-    <abt-modal-footer>
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary">Save changes</button>
-    </abt-modal-footer>
-  </abt-modal>
+  </fieldset>
 
+  <fieldset class="mt-5">
+    <legend>
+      Scrolling long content
+    </legend>
+    <p>
+      When modals become too long for the user’s viewport or device, they scroll independent of the page itself. Try the demo below
+      to see what we mean.
+    </p>
 
-  <hr />
+    <abt-card>
+      <abt-card-body>
 
-  <h1>Vertically centered</h1>
+        <abt-button id="showModalLarge">
+          Launch Scrolling Modal
+        </abt-button>
 
-  <abt-button id="showModalCentered">
-    Launch demo Modal
-  </abt-button>
+        <abt-modal open-by="showModalLarge" dismissible="false">
+          <abt-modal-header>
+            <abt-modal-title class="modal-title-aurelia">
+              <h5>Aurelia Toolbelt Dialog</h5>
+            </abt-modal-title>
+          </abt-modal-header>
+          <abt-modal-body>
+            <div>
+              Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
+              risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur
+              et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed
+              consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
+              ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo
+              odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet
+              rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna,
+              vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+              Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+              Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque
+              nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia
+              bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed
+              odio dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum.
+              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum
+              at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
+              laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
+              magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+              Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+              Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque
+              nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia
+              bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed
+              odio dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum.
+              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum
+              at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
+              laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
+              magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
 
-  <abt-modal open-by="showModalCentered" centered="true" dismissible="false">
-    <abt-modal-header>
-      <abt-modal-title>
-        <h5 style="color:maroon">Aureia Toolbelt Dialog</h5>
-      </abt-modal-title>
-    </abt-modal-header>
-    <abt-modal-body>
-      <div>
-        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
-        risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur
-        et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.
-        Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+            </div>
+          </abt-modal-body>
+          <abt-modal-footer>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </abt-modal-footer>
+        </abt-modal>
 
-      </div>
-    </abt-modal-body>
-    <abt-modal-footer>
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary">Save changes</button>
-    </abt-modal-footer>
-  </abt-modal>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/modal/scrolling.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
 
-  <hr />
+  </fieldset>
 
-  <h1>Tooltips and popovers</h1>
+  <fieldset class="mt-5">
+    <legend>
+      Vertically centered
+    </legend>
+    <p>
+      Add
+      <code>centered</code> attribute or set its value to true.
+    </p>
 
-  <abt-button id="showModaltooltip">
-    Launch demo Modal
-  </abt-button>
+    <abt-card>
+      <abt-card-body>
 
-  <abt-modal open-by="showModaltooltip" centered="true" dismissible="false">
-    <abt-modal-header>
-      <abt-modal-title>
-        <h5 style="color:maroon">Aureia Toolbelt Dialog</h5>
-      </abt-modal-title>
-    </abt-modal-header>
-    <abt-modal-body>
-      <h5>Popover in a modal</h5>
-      <p>This
-        <a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
-      <hr>
-      <h5>Tooltips in a modal</h5>
-      <p>
-        <a href="#" class="tooltip-test" title="Tooltip">This link</a> and
-        <a href="#" class="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
-      </div>
-    </abt-modal-body>
-    <abt-modal-footer>
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary">Save changes</button>
-    </abt-modal-footer>
-  </abt-modal>
+        <abt-button id="showModalCentered">
+          Launch demo Modal
+        </abt-button>
 
-  <hr />
+        <abt-modal open-by="showModalCentered" centered="true">
+          <abt-modal-header>
+            <abt-modal-title class="modal-title-aurelia">
+              <h5>Aurelia Toolbelt Dialog</h5>
+            </abt-modal-title>
+          </abt-modal-header>
+          <abt-modal-body>
+            <div>
+              Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
+              risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur
+              et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed
+              consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
 
-  <h1>Using the grid</h1>
+            </div>
+          </abt-modal-body>
+          <abt-modal-footer>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </abt-modal-footer>
+        </abt-modal>
 
-  <abt-button id="showModalGrid">
-    Launch demo Modal
-  </abt-button>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/modal/simple.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
 
-  <abt-modal open-by="showModalGrid" centered="true" dismissible="true">
-    <abt-modal-header>
-      <abt-modal-title>
-        <h5 style="color:maroon">Aureia Toolbelt Dialog</h5>
-      </abt-modal-title>
-    </abt-modal-header>
-    <abt-modal-body>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-4 bg-info">.col-md-4</div>
-          <div class="col-md-4 ml-auto bg-info">.col-md-4 .ml-auto</div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 ml-auto bg-info">.col-md-3 .ml-auto</div>
-          <div class="col-md-2 ml-auto bg-info">.col-md-2 .ml-auto</div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 ml-auto bg-info">.col-md-6 .ml-auto</div>
-        </div>
-        <div class="row">
-          <div class="col-sm-9 bg-info">
-            Level 1: .col-sm-9
-            <div class="row">
-              <div class="col-8 col-sm-6 bg-info">
-                Level 2: .col-8 .col-sm-6
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Tooltips and popovers
+    </legend>
+    <p>
+      Use
+      <a route-href="route: bootstrap-tooltip">
+        <code>abt-tooltip</code>
+      </a> and
+      <a route-href="route: bootstrap-popover">
+        <code>abt-popover</code>
+      </a> to enable tooltip and popover in modals
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+
+        <abt-button id="showModalTooltip">
+          Launch demo Modal
+        </abt-button>
+
+        <abt-modal open-by="showModalTooltip">
+          <abt-modal-header>
+            <abt-modal-title class="modal-title-aurelia">
+              <h5>Aurelia Toolbelt Dialog</h5>
+            </abt-modal-title>
+          </abt-modal-header>
+          <abt-modal-body>
+            <h5>Popover in a modal</h5>
+            <p>This
+              <a href="#/bootstrap/modal" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button
+                <abt-popover title="Popover title" placement='right'>
+                  And here's some amazing content. It's very engaging. Right?
+                </abt-popover>
+              </a> triggers a popover on click.</p>
+            <hr>
+            <h5>Tooltips in a modal</h5>
+            <p>
+              <a href="#/bootstrap/modal" class="tooltip-test" title="Tooltip">This link
+                <abt-tooltip placement='bottom'>
+                  Tooltip on right
+                </abt-tooltip>
+              </a> and
+              <a href="#/bootstrap/modal" class="tooltip-test" title="Tooltip">that link
+                <abt-tooltip placement='top'>
+                  Tooltip on right
+                </abt-tooltip>
+              </a> have tooltips on hover.</p>
+            </div>
+          </abt-modal-body>
+          <abt-modal-footer>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </abt-modal-footer>
+        </abt-modal>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/modal/tooltip-popover.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Using the grid
+    </legend>
+    <abt-card>
+      <abt-card-body>
+        <abt-button id="showModalGrid">
+          Launch demo Modal
+        </abt-button>
+
+        <abt-modal open-by="showModalGrid" centered="true" dismissible="true">
+          <abt-modal-header>
+            <abt-modal-title class="modal-title-aurelia">
+              <h5>Aurelia Toolbelt Dialog</h5>
+            </abt-modal-title>
+          </abt-modal-header>
+          <abt-modal-body>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-4 bg-info">.col-md-4</div>
+                <div class="col-md-4 ml-auto bg-info">.col-md-4 .ml-auto</div>
               </div>
-              <div class="col-4 col-sm-6 bg-info">
-                Level 2: .col-4 .col-sm-6
+              <div class="row">
+                <div class="col-md-3 ml-auto bg-info">.col-md-3 .ml-auto</div>
+                <div class="col-md-2 ml-auto bg-info">.col-md-2 .ml-auto</div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 ml-auto bg-info">.col-md-6 .ml-auto</div>
+              </div>
+              <div class="row">
+                <div class="col-sm-9 bg-info">
+                  Level 1: .col-sm-9
+                  <div class="row">
+                    <div class="col-8 col-sm-6 bg-info">
+                      Level 2: .col-8 .col-sm-6
+                    </div>
+                    <div class="col-4 col-sm-6 bg-info">
+                      Level 2: .col-4 .col-sm-6
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </abt-modal-body>
-  </abt-modal>
+          </abt-modal-body>
+        </abt-modal>
 
-  <hr />
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/modal/tooltip-popover.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
 
-  <h1>Remove animation</h1>
+  </fieldset>
 
-  <abt-button id="showModalAnimated">
-    Launch demo modal
-  </abt-button>
+  <fieldset class="mt-5">
+    <legend>
+      Remove animation
+    </legend>
+    <abt-card>
+      <abt-card-body>
+        <abt-button id="showModalAnimated">
+          Launch demo modal
+        </abt-button>
 
-  <abt-modal open-by="showModalAnimated" backdrop="false" keyboard="true" centered="true" animate="false" dismissible="true">
-    <abt-modal-header>
-      <abt-modal-title>
-        <h5 style="color:maroon">Aureia Toolbelt Dialog</h5>
-      </abt-modal-title>
-    </abt-modal-header>
-    <abt-modal-body>
+        <abt-modal open-by="showModalAnimated" centered="true" animate="false">
+          <abt-modal-header>
+            <abt-modal-title class="modal-title-aurelia">
+              <h5>Aurelia Toolbelt Dialog</h5>
+            </abt-modal-title>
+          </abt-modal-header>
+          <abt-modal-body>
 
-      <div>
-        No animation dialog, using ESC keyboard button to close
-      </div>
+            <div>
+              No animation dialog.
+            </div>
 
-    </abt-modal-body>
-    <abt-modal-footer>
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    </abt-modal-footer>
-  </abt-modal>
+          </abt-modal-body>
+          <abt-modal-footer>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </abt-modal-footer>
+        </abt-modal>
 
-  <hr />
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/modal/remove-animation.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
 
-  <h1>Size</h1>
+  </fieldset>
 
-  <abt-button id="showLarge">
-    Large modal
-  </abt-button>
-  <abt-button id="showsmall">
-    Small modal
-  </abt-button>
+  <fieldset class="mt-5">
+    <legend>
+      Sizing
+    </legend>
 
-  <abt-modal open-by="showLarge" centered="true" size="lg">
-    <abt-modal-header>
-      <abt-modal-title>
-        <h5 style="color:maroon">Aureia Toolbelt Dialog</h5>
-      </abt-modal-title>
-    </abt-modal-header>
-    <abt-modal-body>
+    <p>
+      Simply add
+      <code>size</code> attribute, with one of the following values:
+      <code>sm</code>,
+      <code>md</code>, or
+      <code>lg</code>
+    </p>
 
-      <div>
-        Large Modal
-      </div>
+    <abt-card>
+      <abt-card-body>
+        <abt-button id="showLargeModal">
+          Large modal
+        </abt-button>
+        <abt-button id="showSmallModal" class="ml-2">
+          Small modal
+        </abt-button>
 
-    </abt-modal-body>
-    <abt-modal-footer>
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    </abt-modal-footer>
-  </abt-modal>
+        <abt-modal open-by="showLargeModal" size="lg">
+          <abt-modal-header>
+            <abt-modal-title class="modal-title-aurelia">
+              <h5>Aurelia Toolbelt Dialog</h5>
+            </abt-modal-title>
+          </abt-modal-header>
+          <abt-modal-body>
 
-  <abt-modal open-by="showsmall" centered="true" size="sm">
-    <abt-modal-header>
-      <abt-modal-title>
-        <h5 style="color:maroon">Aureia Toolbelt Dialog</h5>
-      </abt-modal-title>
-    </abt-modal-header>
-    <abt-modal-body>
+            <div>
+              Large Modal
+            </div>
 
-      <div>
-        Small Modal
-      </div>
+          </abt-modal-body>
+          <abt-modal-footer>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </abt-modal-footer>
+        </abt-modal>
 
-    </abt-modal-body>
-    <abt-modal-footer>
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    </abt-modal-footer>
-  </abt-modal>
+        <abt-modal open-by="showSmallModal" size="sm">
+          <abt-modal-header>
+            <abt-modal-title class="modal-title-aurelia">
+              <h5>Aurelia Toolbelt Dialog</h5>
+            </abt-modal-title>
+          </abt-modal-header>
+          <abt-modal-body>
+
+            <div>
+              Small Modal
+            </div>
+
+          </abt-modal-body>
+          <abt-modal-footer>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </abt-modal-footer>
+        </abt-modal>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/modal/sizing.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
 
 
-  <hr />
+  <fieldset class="mt-5">
+    <legend>
+      Binding to boolean values
+    </legend>
+
+    <p>
+      You can bind the
+      <code>visible</code> attribute of the
+      <code>abt-modal</code> component to a
+      <code>boolean variable.</code>
+      <hr />
+      <b>PS:</b> Just bear in mind that
+      <code>visible</code> and
+      <code>open-by</code> attributes
+      <b>cannot</b> coexist.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+
+        <aut-checkbox curve fill animation="smooth" color="success" checked.bind="showModal"> Show Modal
+        </aut-checkbox>
+
+        <abt-modal visible.bind="showModal">
+          <abt-modal-header>
+            <abt-modal-title class="modal-title-aurelia">
+              <h5>Aurelia Toolbelt Dialog</h5>
+            </abt-modal-title>
+          </abt-modal-header>
+          <abt-modal-body>
+            <div class="container">
+              Modal shown by a checkbox value changed
+              <br />
+              <aut-checkbox curve fill animation="smooth" color="success" checked.bind="showModal"> Show Modal
+              </aut-checkbox>
+            </div>
+          </abt-modal-body>
+        </abt-modal>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/modal/binding.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
 
 
-  <h1>Show with checkbox binding</h1>
+  <fieldset class="mt-5">
+    <legend>
+      Events
+    </legend>
+
+    <p>
+      Modals come with four events,
+      <code>bs-show</code>,
+      <code>bs-shown</code>,
+      <code>bs-hide</code>, and
+      <code>bs-hidden</code>
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+
+        <abt-button id="eventsModal">
+          Launch demo modal
+        </abt-button>
+
+        <abt-modal open-by="eventsModal" bs-show.call="showEvent()" bs-hide.call="hideEvent()">
+          <abt-modal-header>
+            <abt-modal-title class="modal-title-aurelia">
+              <h5>Aurelia Toolbelt Dialog</h5>
+            </abt-modal-title>
+          </abt-modal-header>
+          <abt-modal-body>
+            <div class="container">
+              Check Browser
+              <b>console</b>
+            </div>
+          </abt-modal-body>
+        </abt-modal>
+
+      </abt-card-body>
+      <abt-card-footer>
+
+        <abt-navs tabs>
+          <abt-nav-item title="View" active>
+            <aut-mark-down src="./docs/components/bootstrap/modal/events.md">
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/modal/events-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
 
 
-  <aut-checkbox curve fill outlined animation="smooth" color="success" checked.bind="showModal"> Show Modal
-  </aut-checkbox>
+      </abt-card-footer>
+    </abt-card>
 
-  <abt-modal bs-show.call="showEvent()" bs-hide.call="hideEvent()" visible.bind="showModal" centered="true" size="lg">
-    <abt-modal-header>
-      <abt-modal-title>
-        <h5 style="color:maroon">Aureia Toolbelt Dialog</h5>
-      </abt-modal-title>
-    </abt-modal-header>
-    <abt-modal-body>
-      <div class="container">
-        Modal shown by a checkbox value changed
-        <br />
-        <aut-checkbox curve fill outlined animation="smooth" color="danger" checked.bind="showModal"> Show Modal
-          </aut-checkbox>
-      </div>
-    </abt-modal-body>
-  </abt-modal>
+  </fieldset>
+
+
+
+
 
 
 </template>

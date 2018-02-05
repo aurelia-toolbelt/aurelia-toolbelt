@@ -1,8 +1,5 @@
+```ts
 export class BootstrapListGroup {
-
-
-  private showModal = false;
-
 
   private showEvent() {
     console.log('Modal show');
@@ -13,3 +10,4 @@ export class BootstrapListGroup {
   }
 
 }
+```
