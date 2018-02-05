@@ -16,8 +16,7 @@ export interface ITokenizeItem {
 @customElement('abt-tokenize')
 export class BootstrapTokenizeCustomElement {
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
-
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string = null;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public debounce: number | string = 0;
@@ -96,7 +95,7 @@ export class BootstrapTokenizeCustomElement {
 
   private afterAttached() {
 
-    if (this.id.length > 0) {
+    if (this.id) {
       this.tokenizeTemplate.setAttribute('id', `abt-tokenize-${this.id}`);
     }
 
@@ -222,9 +221,11 @@ export class BootstrapTokenizeCustomElement {
       }
     });
     $(this.tokenize).on('tokenize:tokens:remove', (e, value) => {
-      let index = this.selectedTokens.findIndex(x => x.value === value);
-      if (index > -1) {
-        this.selectedTokens.splice(index, 1);
+      if (this.selectedTokens) {
+        let index = this.selectedTokens.findIndex(x => x.value === value);
+        if (index > -1) {
+          this.selectedTokens.splice(index, 1);
+        }
       }
       if (this.remove) {
         this.remove({ e: e, value: value });

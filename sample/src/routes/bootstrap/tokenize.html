@@ -31,7 +31,6 @@
       <abt-alert-link href="https://github.com/zellerda/Tokenize2/blob/master/LICENSE">BSD 3</abt-alert-link>
     </abt-alert>
   </fieldset>
-
   <fieldset class="mt-5">
     <legend>
       Usage
@@ -39,35 +38,84 @@
     <aut-mark-down src="./docs/components/bootstrap/tokenize/usage.md">
     </aut-mark-down>
   </fieldset>
-  <abt-button class="mr-2" click.call="onClick()">Add</abt-button>
-  <abt-button class="mr-2" click.call="onRemove()">Remove</abt-button>
-
   <fieldset class="mt-5">
     <legend>
-      Basic example
+      Data Source
     </legend>
-    <abt-tokenize id='token' selected-tokens.bind="myArray" data-source.call='find(term)'>
+    <p class="mt-2">3 types of value are allowed for this option,
+      <code>select</code> for local datas, an URL for
+      <code>remote</code> datas and a
+      <code>callable</code> if you want to make your own function. The default value is select.
+    </p>
+    <b>Usage with select
+    </b>
+    <abt-tokenize>
+      <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
+      <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
+      <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
+      <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
+      <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
     </abt-tokenize>
+    <p>When you have
+      <code>abt-tokenize-item</code>(s) inside
+      <code>abt-tokenize</code> means you are using
+      <code>select</code> mode.</p>
     <aut-mark-down src="./docs/components/bootstrap/tokenize/basic-example.md">
     </aut-mark-down>
+    <br>
+    <b>Usage with remote datas
+    </b>
+    <abt-tokenize data-source='https://api.myjson.com/bins/10kint'>
+    </abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/remote-example.md">
+    </aut-mark-down>
+    <p>I used the following object on the server side to fill the data source.If you want to filter the data, you must limit
+      your data source on the server side based on the following structure:
+      <code>url?search=iran</code>.
+    </p>
+    <p>So search value is passed with
+      <code>search</code> post value in the request.</p>
+    <i>It is noteworthy that the above sample without any filter will only show all the values everytime.</i>
+    <br>
+    <br>
+    <b>Usage with callable datas
+    </b>
+    <abt-tokenize id='token' data-source.call='fill(term)'>
+    </abt-tokenize>
+    <p>Callable option allow you to create your own search function. Every letter/word you type is sent to the function in the
+      <code>term</code> variable.</p>
+    <abt-navs tabs id="tokenize-callable">
+      <abt-nav-item id="tokenize-callable-view" title="View" active>
+        <aut-mark-down src="./docs/components/bootstrap/tokenize/callable-view-example.md">
+        </aut-mark-down>
+      </abt-nav-item>
+      <abt-nav-item id="tokenize-callable-viewmodel" title="ViewModel">
+        <aut-mark-down src="./docs/components/bootstrap/tokenize/callable-viewmodel-example.md">
+        </aut-mark-down>
+      </abt-nav-item>
+    </abt-navs>
   </fieldset>
 
-  <!-- <fieldset class="mt-5">
-        <legend>
-            Data Source
-        </legend>
-        <br>
-        <b>Usage with remote datas
-        </b>
-        <abt-tokenize>
-            <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
-            <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
-            <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
-            <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
-            <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
-        </abt-tokenize>
-        <aut-mark-down src="./docs/components/bootstrap/tokenize/basic-example.md">
-        </aut-mark-down>
-    </fieldset> -->
+
+
+
+
+
+
+
+
+
+
+  <!-- <abt-button class="mr-2" click.call="onClick()">Add</abt-button>
+    <abt-button class="mr-2" click.call="onRemove()">Remove</abt-button> -->
+  <!-- <abt-tokenize id='token' selected-tokens.bind="myArray" data-source.call='find(term)'>
+  </abt-tokenize> -->
+
+
+
+
+
+
+
 
 </template>

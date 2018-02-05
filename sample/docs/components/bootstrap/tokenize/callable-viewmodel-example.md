@@ -1,11 +1,9 @@
-
+```ts
 export class BootstrapTokenize {
 
-  private selectedData: Array<any>;
   private countries: any[];
 
   constructor() {
-    this.selectedData = [];
     this.countries = [
       { text: 'Argentina', value: 'AR' },
       { text: 'Brazil', value: 'BR' },
@@ -34,17 +32,5 @@ export class BootstrapTokenize {
     }
     return result;
   }
-  private clear() {
-    console.log('clear');
-  }
-  private onClick() {
-    this.selectedData.push({ value: Math.random(), text: 'Test - ' + Math.random() });
-  }
-  private onRemove() {
-    this.selectedData.splice(3, 1);
-  }
-
-  private search(e: any, v: any) {
-    console.log(v);
-  }
 }
+```
