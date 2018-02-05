@@ -57,7 +57,7 @@ export class JQueryBlockUI {
     $.blockUI.defaults.cursorReset = this.option.cursorReset || 'default';
     $.blockUI.defaults.iframeSrc = this.option.iframeSrc || (/^https/i.test(window.location.href || '') ? 'javascript:false' : 'about:blank');
     $.blockUI.defaults.forceIframe = this.option.forceIframe || false;
-    $.blockUI.defaults.baseZ = this.option.baseZ || 999999999;
+    $.blockUI.defaults.baseZ = this.option.baseZ || 1020;
     $.blockUI.defaults.centerX = this.option.centerX || true;
     $.blockUI.defaults.centerY = this.option.centerY || true;
     $.blockUI.defaults.bindEvents = this.option.bindEvents || true;
