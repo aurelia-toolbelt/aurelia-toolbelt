@@ -97,9 +97,59 @@
       </abt-nav-item>
     </abt-navs>
   </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Selected Tokens
+    </legend>
+    <p>Sometimes you want to add and remove tokens dynamically.so you should bind your object array to
+      <code>selected-tokens</code>.
+    </p>
+    <abt-inputgroup class="mb-2">
+      <input ref='addInput' type="text" class="form-control" placeholder="Add token" aria-label="Add token">
+      <abt-inputgroup-append>
+        <abt-button outline color="secondary" click.call="onAdd(addInput.value)">
+          Add
+        </abt-button>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+    <abt-inputgroup class="mb-2">
+      <input ref='removeInput' type="text" class="form-control" placeholder="Remove specific token" aria-label="Remove specific token">
+      <abt-inputgroup-append>
+        <abt-button outline color="secondary" click.call="onRemove(removeInput.value)">
+          Remove
+        </abt-button>
+        <abt-button outline color="secondary" click.call="onRemoveAll()">
+          Remove All
+        </abt-button>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+    <br>
+    <abt-tokenize selected-tokens.bind="tokens" data-source.call='fill(term)'>
+    </abt-tokenize>
+    <p>Specifically, you
+      <code>can not</code> enter a
+      <code>duplicate</code> value.</p>
+    <abt-navs tabs id="tokenize-selected-tokens">
+      <abt-nav-item id="tokenize-selected-tokens-view" title="View" active>
+        <aut-mark-down src="./docs/components/bootstrap/tokenize/selected-tokens-view-example.md">
+        </aut-mark-down>
+      </abt-nav-item>
+      <abt-nav-item id="tokenize-selected-tokens-viewmodel" title="ViewModel">
+        <aut-mark-down src="./docs/components/bootstrap/tokenize/selected-tokens-viewmodel-example.md">
+        </aut-mark-down>
+      </abt-nav-item>
+    </abt-navs>
+  </fieldset>
 
-
-
+  <fieldset class="mt-5">
+    <legend>
+      debounce
+    </legend>
+    <p>The debounce option allow you to set a waiting time between each search.This option in
+      <code>only available</code> in you use dataSource with an URL.</p>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/usage.md">
+    </aut-mark-down>
+  </fieldset>
 
 
 
