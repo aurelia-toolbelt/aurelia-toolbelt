@@ -460,7 +460,7 @@
 
   <fieldset class="mt-5">
     <legend>
-      Events
+      Properties and Events
     </legend>
 
     <p>
@@ -509,6 +509,398 @@
 
       </abt-card-footer>
     </abt-card>
+
+
+    <br />
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-modal
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">animate</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">true</td>
+          <td>Alert will be fade in or out.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">backdrop</td>
+          <td class="text-nowrap">boolean or the string
+            <code>'static'</code>
+          </td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">true</td>
+          <td>Includes a modal-backdrop element. Alternatively, specify static for a backdrop which doesn't close the modal on
+            click.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">centered</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">false</td>
+          <td>Vertically aligns the modal</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies the your custom css class on modal</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dismissible</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">true</td>
+          <td>A
+            <code>true/false</code> value which indicates whether to show the dismissible cross button or not.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">focus</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">true</td>
+          <td>Puts the focus on the modal when initialized.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">keyboard</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">true</td>
+          <td>Closes the modal when escape key is pressed.</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">open-by</td>
+          <td class="text-nowrap">HTMLElement by
+            <code>ref</code> |
+            <code>id</code> as string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>
+            Attached the
+            <code>abt-modal</code> to a HTML element on the screen which can pop up the modal. This cannot be used in conjuction
+            with
+            <code>visible</code> attribute.
+          </td>
+        </tr>
+
+
+        <tr>
+          <td class="text-nowrap" scope="row">size</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">md</td>
+          <td>Indicates the size for alert, values can be
+            <code>'sm'</code>,
+            <code>'md'</code>, and
+            <code>'lg'</code>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attrinutes that you want to apply on the component.</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">visible</td>
+          <td class="text-nowrap">boolean</td>
+          <td class="text-nowrap">twoWay</td>
+          <td class="text-nowrap"></td>
+          <td>
+            This value cannot be used in conjuction with
+            <code>open-by</code> attribute.
+            <code>True</code> value shows the modal and
+            <code>false</code> will hide it.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">bs-show</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call ( relatedTarget )</td>
+          <td class="text-nowrap"></td>
+          <td>
+            Fires immediately after
+            <code>visible</code> set to
+            <code>true</code>, or
+            <code>open-by</code> element clicked.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">bs-shown</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call ( relatedTarget )</td>
+          <td class="text-nowrap"></td>
+          <td>This event is fired when the modal has been made visible to the user (will wait for CSS transitions to complete).
+            If caused by a click, the clicked element is available as the
+            <code>relatedTarget</code> property of the event.
+
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">bs-hide</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>
+            Fires immediately after
+            <code>visible</code> set to
+            <code>false</code>, or you hide the modal in other ways.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">bs-hidden</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>This event is fired when the modal has finished being hidden from the user (will wait for CSS transitions to complete).
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <br />
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-modal-header
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies the your custom css class on
+            <code>abt-modal-body</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attrinutes that you want to apply on the component.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-modal-title
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies the your custom css class on
+            <code>abt-modal-body</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attrinutes that you want to apply on the component.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-modal-body
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies the your custom css class on
+            <code>abt-modal-body</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attrinutes that you want to apply on the component.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-modal-footer
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies the your custom css class on
+            <code>abt-modal-body</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attrinutes that you want to apply on the component.</td>
+        </tr>
+      </tbody>
+    </table>
 
   </fieldset>
 
