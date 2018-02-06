@@ -16,8 +16,7 @@ export interface ITokenizeItem {
 @customElement('abt-tokenize')
 export class BootstrapTokenizeCustomElement {
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
-
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string = null;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public debounce: number | string = 0;
@@ -29,16 +28,14 @@ export class BootstrapTokenizeCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public searchMinLength: number | string = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public searchFromStart: boolean | string = true;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public searchHighlight: boolean | string = true;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showItemsOnClick: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showOnClick: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public displayNoResultsMessage: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public noResultsMessageText: string = 'No results matched "%s"';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public zIndexMargin: number | string = 500;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public tabIndex: number | string = 0;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public dataSource: string | Function;
-
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public selectedTokens: Array<ITokenizeItem>;
-
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public load: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public clear: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public remap: Function;
@@ -96,7 +93,7 @@ export class BootstrapTokenizeCustomElement {
 
   private afterAttached() {
 
-    if (this.id.length > 0) {
+    if (this.id) {
       this.tokenizeTemplate.setAttribute('id', `abt-tokenize-${this.id}`);
     }
 
@@ -111,8 +108,8 @@ export class BootstrapTokenizeCustomElement {
       || this.searchFromStart.toString() === 'true';
     this.searchHighlight = (this.searchHighlight === '' && this.tokenizeTemplate.hasAttribute('search-highlight'))
       || this.searchHighlight.toString() === 'true';
-    this.showItemsOnClick = (this.showItemsOnClick === '' && this.tokenizeTemplate.hasAttribute('show-items-on-click'))
-      || this.showItemsOnClick.toString() === 'true';
+    this.showOnClick = (this.showOnClick === '' && this.tokenizeTemplate.hasAttribute('show-on-click'))
+      || this.showOnClick.toString() === 'true';
     this.displayNoResultsMessage = (this.displayNoResultsMessage === '' && this.tokenizeTemplate.hasAttribute('display-no-results-message'))
       || this.displayNoResultsMessage.toString() === 'true';
     this.zIndexMargin = Number(this.zIndexMargin);
@@ -222,9 +219,11 @@ export class BootstrapTokenizeCustomElement {
       }
     });
     $(this.tokenize).on('tokenize:tokens:remove', (e, value) => {
-      let index = this.selectedTokens.findIndex(x => x.value === value);
-      if (index > -1) {
-        this.selectedTokens.splice(index, 1);
+      if (this.selectedTokens) {
+        let index = this.selectedTokens.findIndex(x => x.value === value);
+        if (index > -1) {
+          this.selectedTokens.splice(index, 1);
+        }
       }
       if (this.remove) {
         this.remove({ e: e, value: value });
@@ -277,7 +276,7 @@ export class BootstrapTokenizeCustomElement {
       tabIndex: this.tabIndex
     });
 
-    if (this.showItemsOnClick) {
+    if (this.showOnClick) {
       // @ts-ignore
       $(this.tokenize).on('tokenize:select', (e: Event, routedEvent: boolean) => {
         $(this.tokenize).trigger('tokenize:search', '');
