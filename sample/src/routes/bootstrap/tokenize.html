@@ -126,7 +126,7 @@
     <br>
     <abt-tokenize selected-tokens.bind="tokens" data-source.call='fill(term)'>
     </abt-tokenize>
-    <p>Specifically, you
+    <p>Clearly, you
       <code>can not</code> enter a
       <code>duplicate</code> value.</p>
     <abt-navs tabs id="tokenize-selected-tokens">
@@ -140,34 +140,162 @@
       </abt-nav-item>
     </abt-navs>
   </fieldset>
-
   <fieldset class="mt-5">
     <legend>
-      debounce
+      Debounce
     </legend>
     <p>The debounce option allow you to set a waiting time between each search.This option in
       <code>only available</code> in you use dataSource with an URL.</p>
-    <aut-mark-down src="./docs/components/bootstrap/tokenize/usage.md">
+    <abt-tokenize data-source='https://api.myjson.com/bins/10kint' debounce='5000'></abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/debounce.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Delimiter
+    </legend>
+    <p>Delimiter option allow you to define which character will validate a token. You can define a single character or an array
+      of chars. The default value is the comma
+      <code>,</code>.</p>
+    <p>Note that the
+      <code>tab</code> and
+      <code>return</code> key validate the token too.</p>
+    <p> In the example below we will set both
+      <code>,</code> and
+      <code>-</code> for delimiter. For the purposes of demonstration we set
+      <code>tokens-allow-custom</code> to
+      <code>true</code>.</p>
+    <p>Type something in the box below an validate it with one of the delimiters.</p>
+    <abt-tokenize data-source='https://api.myjson.com/bins/10kint' tokens-allow-custom="true" delimiter.bind="[ ',', '-']"></abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/delimiter.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Placeholder
+    </legend>
+    <p>This placeholder option add a placeholder to the control. By default there is no placeholder.</p>
+    <abt-tokenize data-source='https://api.myjson.com/bins/10kint' placeholder='Type something to start...'></abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/placeholder.md">
     </aut-mark-down>
   </fieldset>
 
+  <fieldset class="mt-5">
+    <legend>
+      Tokens Max Items
+    </legend>
+    <p>This option allow you to restrict the maximum number of tokens.</p>
+    <p>In the example below we have limited the number of tokens to
+      <code>3</code>.</p>
+    <abt-tokenize tokens-max-items='3'>
+      <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
+      <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
+      <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
+      <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
+      <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
+    </abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/tokens-max-items.md">
+    </aut-mark-down>
+  </fieldset>
 
+  <fieldset class="mt-5">
+    <legend>
+      Tokens Allow Custom
+    </legend>
+    <p>The tokensAllowCustom option allow you to create custom tokens, type a text that is not in the search result and validate
+      it with the delimiter
+      <code>,</code>,
+      <code>return</code> or
+      <code>tab</code> key.</p>
+    <abt-tokenize tokens-allow-custom='true'>
+      <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
+      <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
+      <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
+      <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
+      <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
+    </abt-tokenize>
+    <p>In case of you type for example
+      <code>afri</code>, the default behavior in when you type a validation key (
+      <code>return</code> or
+      <code>tab</code>) the token
+      <code>Africa</code> will be added. If you really want to add
+      <code>afri</code>, just hold the
+      <code>control</code> key when pressing validation key.</p>
+    <p>Note that this behavior dosen't work with delimiters.</p>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/allow-custom-tokens.md">
+    </aut-mark-down>
+  </fieldset>
 
+  <fieldset class="mt-5">
+    <legend>
+      Dropdown Max Items
+    </legend>
+    <p>This options allow you to change the maximum number of search result displayed in the dropdown. The default value is
+      <code>10</code>.
+    </p>
+    <abt-tokenize dropdown-max-items='2'>
+      <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
+      <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
+      <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
+      <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
+      <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
+    </abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/dropdown-max-items.md">
+    </aut-mark-down>
+  </fieldset>
 
-
-
-
-
-  <!-- <abt-button class="mr-2" click.call="onClick()">Add</abt-button>
-    <abt-button class="mr-2" click.call="onRemove()">Remove</abt-button> -->
-  <!-- <abt-tokenize id='token' selected-tokens.bind="myArray" data-source.call='find(term)'>
-  </abt-tokenize> -->
-
-
-
-
-
-
-
-
+  <fieldset class="mt-5">
+    <legend>
+      Search Min Length
+    </legend>
+    <p>The
+      <code>search-min-length</code> option allow you to specify the minimum of characters required to start searching.
+    </p>
+    <abt-tokenize search-min-length='3'>
+      <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
+      <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
+      <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
+      <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
+      <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
+    </abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/search-min-length.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Search From Start
+    </legend>
+    <p>This options allow you to specify if
+      <code>abt-tokenize</code> will search from the begining of a string, but default this option is set to
+      <code>true</code>.</p>
+    <p>If the example below we have set the option to
+      <code>false</code>.</p>
+    <abt-tokenize search-from-start='false'>
+      <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
+      <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
+      <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
+      <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
+      <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
+    </abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/search-from-start.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Search Highlight
+    </legend>
+    <p>The searchHighlight options allow you to choose if you want your search highlighted in the result dropdown. By default
+      this option is set to
+      <code>true</code>. If the example below we have set the option to
+      <code>false</code>.</p>
+    <abt-tokenize search-highlight='false'>
+      <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
+      <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
+      <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
+      <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
+      <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
+    </abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/search-highlight.md">
+    </aut-mark-down>
+  </fieldset>
 </template>

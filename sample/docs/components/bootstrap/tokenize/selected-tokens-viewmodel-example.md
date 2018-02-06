@@ -3,6 +3,7 @@ export class BootstrapTokenize {
 
   private tokens: Array<any>;
   private countries: any[];
+  private addInput: HTMLInputElement;
 
   constructor() {
     this.tokens = [];
@@ -38,6 +39,7 @@ export class BootstrapTokenize {
   private onAdd(value: string) {
     if (!value) { return; }
     this.tokens.push({ value: value, text: value });
+    this.addInput.value = '';
   }
 
   private onRemove(value: string) {

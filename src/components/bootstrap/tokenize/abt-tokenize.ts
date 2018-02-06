@@ -21,7 +21,7 @@ export class BootstrapTokenizeCustomElement {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public debounce: number | string = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public delimiter: string[] = [','];
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholder: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholder: string = null;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public tokensMaxItems: number | string = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public tokensAllowCustom: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public dropdownMaxItems: number | string = 10;
@@ -98,11 +98,12 @@ export class BootstrapTokenizeCustomElement {
     }
 
     this.debounce = Number(this.debounce);
-    this.placeholder = (this.placeholder === '' && this.tokenizeTemplate.hasAttribute('placeholder')) || this.placeholder.toString() === 'true';
-    this.tokensMaxItems = Number(this.tokensMaxItems);
     this.tokensAllowCustom = (this.tokensAllowCustom === '' && this.tokenizeTemplate.hasAttribute('tokens-allow-custom'))
       || this.tokensAllowCustom.toString() === 'true';
-    this.dropdownMaxItems = Number(this.dropdownMaxItems);
+
+    // Maybe Tokenize2 has bug for this. It calculate one item more.
+    this.dropdownMaxItems = Number(this.dropdownMaxItems) <= 0 ? 0 : (Number(this.dropdownMaxItems) - 1);
+
     this.searchMinLength = Number(this.searchMinLength);
     this.searchFromStart = (this.searchFromStart === '' && this.tokenizeTemplate.hasAttribute('search-from-start'))
       || this.searchFromStart.toString() === 'true';
@@ -114,6 +115,7 @@ export class BootstrapTokenizeCustomElement {
       || this.displayNoResultsMessage.toString() === 'true';
     this.zIndexMargin = Number(this.zIndexMargin);
     this.tabIndex = Number(this.tabIndex);
+    this.tokensMaxItems = Number(this.tokensMaxItems) || 0;
 
     $(this.tokenize).on('tokenize:load', () => {
       if (this.load) {
