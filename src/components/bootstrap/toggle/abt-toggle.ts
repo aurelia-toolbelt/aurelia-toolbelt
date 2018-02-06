@@ -115,14 +115,14 @@ export class BootstrapToggleCustomElement {
 
     if (state) {
       // @ts-ignore
-      // $(this.checkbox).prop('checked', true).change();
+       $(this.checkbox).prop('checked', true).change();
 
-      this.checkbox.setAttribute('checked', true);
+      // this.checkbox.setAttribute('checked', true);
     } else {
       // @ts-ignore
-      // $(this.checkbox).prop('checked', false).change();
+      $(this.checkbox).prop('checked', false).change();
 
-      this.checkbox.removeAttribute('checked');
+      // this.checkbox.removeAttribute('checked');
 
     }
   }
