@@ -73,7 +73,7 @@ export class BootstrapFloatInput {
                   }`;
 
       let minify = this.cssMinifier.minify(style);
-      DOM.injectStyles(minify);
+      DOM.injectStyles(minify, null, null, 's' + id);
     }
   }
 }
