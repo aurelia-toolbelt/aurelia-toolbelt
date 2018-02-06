@@ -9,20 +9,18 @@ export class BootstrapModal {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
-
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: string = 'md';
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public animate: string | boolean = true;
+
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public animate: string | boolean = true;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public dismissible: string | boolean = true;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public centered: string | boolean = false;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public visible: string | boolean = false;
-
-
-
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public centered: string | boolean = false;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public backdrop: string | boolean = true;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public keyboard: string | boolean = true;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public focus: string | boolean = true;
-  // @bindable({ defaultBindingMode: bindingMode.oneTime }) public show: string | boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public openBy: HTMLElement;
+
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public visible: string | boolean = false;
 
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsShow: Function;
@@ -31,7 +29,6 @@ export class BootstrapModal {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsHidden: Function;
 
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public openBy: HTMLElement;
 
 
   private modal: HTMLDivElement;
@@ -68,9 +65,9 @@ export class BootstrapModal {
     }
 
     if (this.bsShown) {
-      $(this.modal).on('shown.bs.modal', () => {
+      $(this.modal).on('shown.bs.modal', (e) => {
         if (this.bsShown) {
-          this.bsShown();
+          this.bsShown({ relatedTarget: e.relatedTarget });
         }
       });
     }
