@@ -107,7 +107,7 @@
     <abt-inputgroup class="mb-2">
       <input ref='addInput' type="text" class="form-control" placeholder="Add token" aria-label="Add token">
       <abt-inputgroup-append>
-        <abt-button outline color="secondary" click.call="onAdd(addInput.value)">
+        <abt-button color="secondary" click.call="onAdd(addInput.value)">
           Add
         </abt-button>
       </abt-inputgroup-append>
@@ -115,10 +115,10 @@
     <abt-inputgroup class="mb-2">
       <input ref='removeInput' type="text" class="form-control" placeholder="Remove specific token" aria-label="Remove specific token">
       <abt-inputgroup-append>
-        <abt-button outline color="secondary" click.call="onRemove(removeInput.value)">
+        <abt-button color="secondary" click.call="onRemove(removeInput.value)">
           Remove
         </abt-button>
-        <abt-button outline color="secondary" click.call="onRemoveAll()">
+        <abt-button color="secondary" click.call="onRemoveAll()">
           Remove All
         </abt-button>
       </abt-inputgroup-append>
@@ -297,5 +297,437 @@
     </abt-tokenize>
     <aut-mark-down src="./docs/components/bootstrap/tokenize/search-highlight.md">
     </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Show all items on click
+    </legend>
+    <abt-tokenize show-on-click='true'>
+      <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
+      <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
+      <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
+      <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
+      <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
+    </abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/show-on-click.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      API Reference
+    </legend>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              abt-tokenize
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td></td>
+          <td>Set class to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td></td>
+          <td>Set style to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">debounce</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>0</td>
+          <td>Define the waiting time in
+            <code>milliseconds</code> between remote searches. Available only if dataSource is an
+            <code>URL</code>.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">delimiter</td>
+          <td class="text-nowrap">string[]</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>[',']</td>
+          <td>Define the tokens delimiter, you can use a string or an array of string if you want use multiple delimiters.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">placeholder</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td></td>
+          <td>Define the form control placeholder.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">tokens-max-items</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>0</td>
+          <td>Define the maximum number of tokens allowed in the control, unlimited if it's
+            <code>0</code>.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">tokens-allow-custom</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>false</td>
+          <td>Define if custom tokens are allowed.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dropdown-max-items</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>10</td>
+          <td>Define the maximum number of items displayed in the search dropdown.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">search-min-length</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>0</td>
+          <td>Define the minimum number of characters required to start searching.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">search-from-start</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>true</td>
+          <td>Define if search will find result from the begining of string. This option is only available for
+            <code>select</code> value in
+            <code>dataSource</code> option.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">search-highlight</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>true</td>
+          <td>Define if search will be highlighted in result items.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">show-on-click</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>false</td>
+          <td>Show all dropdown items on click.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">display-no-results-message</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>false</td>
+          <td>Define if no result message have to be display.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">no-results-message-text</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>No results matched "%s"</td>
+          <td>Define no results label.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">z-index-margin</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>500</td>
+          <td>Define the z-index positive margin from the parent z-index.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">tab-index</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>0</td>
+          <td>Define tab-index.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">data-source</td>
+          <td class="text-nowrap">string | Function</td>
+          <td class="text-nowrap">twoWay</td>
+          <td class="text-nowrap"></td>
+          <td>Define where the component will get values. You can use
+            <code>select</code>, an URL for
+            <code>remote data</code> or a
+            <code>callable</code>.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">selected-tokens</td>
+          <td class="text-nowrap">[ { text, value } ]
+          </td>
+          <td class="text-nowrap">twoWay</td>
+          <td></td>
+          <td>Define your selected tokens. The type is arrary of
+            <code>text</code> and
+            <code>value</code> objects.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">load</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired on initialization
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">clear</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when clear tokens
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">remap</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when match the select with tokens
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">select</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when focus
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">deselect</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when blur
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">search</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(e,value)</td>
+          <td></td>
+          <td>Fired when search
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">paste</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when paste a text in search input
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dropdown-up</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when type
+            <code>up</code> in dropdown
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dropdown-down</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when type
+            <code>down</code> in dropdown
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dropdown-clear</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when dropdown items are cleared
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dropdown-show</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when dropdown show
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dropdown-hide</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when dropdown hide
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dropdown-fill</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(e,items)</td>
+          <td></td>
+          <td>Fired when dropdown items are added
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dropdown-item-add</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(e,item)</td>
+          <td></td>
+          <td>Fired when dropdown item is added
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">keypress</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(e, routedEvent)</td>
+          <td></td>
+          <td>Fired when keypress
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">keydown</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(e, routedEvent)</td>
+          <td></td>
+          <td>Fired when keydown
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">keyup</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(e, routedEvent)</td>
+          <td></td>
+          <td>Fired when keyup
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">reorder</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when tokens are reordered
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">add</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(e, value, text, force)</td>
+          <td></td>
+          <td>Fired when token is added
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">remove</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(e,value)</td>
+          <td></td>
+          <td>Fired when token is removed
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-tokenize-item
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set class to the component
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set style to the component
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">value</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set value to the component
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </fieldset>
 </template>

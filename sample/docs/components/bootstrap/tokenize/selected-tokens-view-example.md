@@ -2,7 +2,7 @@
 <abt-inputgroup class="mb-2">
   <input ref='addInput' type="text" class="form-control" placeholder="Add token" aria-label="Add token">
   <abt-inputgroup-append>
-    <abt-button outline color="secondary" click.call="onAdd(addInput.value)">
+    <abt-button color="secondary" click.call="onAdd(addInput.value)">
       Add
     </abt-button>
   </abt-inputgroup-append>
@@ -11,10 +11,10 @@
   <input ref='removeInput' type="text" class="form-control" 
       placeholder="Remove specific token" aria-label="Remove specific token">
   <abt-inputgroup-append>
-    <abt-button outline color="secondary" click.call="onRemove(removeInput.value)">
+    <abt-button color="secondary" click.call="onRemove(removeInput.value)">
       Remove
     </abt-button>
-    <abt-button outline color="secondary" click.call="onRemoveAll()">
+    <abt-button color="secondary" click.call="onRemoveAll()">
       Remove All
     </abt-button>
   </abt-inputgroup-append>

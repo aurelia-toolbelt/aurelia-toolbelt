@@ -6,6 +6,5 @@ export class BootstrapTokenizeItemCustomElement {
 
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
-
     @bindable({ defaultBindingMode: bindingMode.oneWay }) public value: string;
 }
