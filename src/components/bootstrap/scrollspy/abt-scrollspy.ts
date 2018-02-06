@@ -11,6 +11,7 @@ export class BootstrapScrollSpy {
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public target: string;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public offset: number = 10;
+
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsScrollspy: Function;
