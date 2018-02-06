@@ -1,4 +1,4 @@
-
+```ts
 export class BootstrapTokenize {
 
   private tokens: Array<any>;
@@ -39,6 +39,7 @@ export class BootstrapTokenize {
     if (!value) { return; }
     this.tokens.push({ value: value, text: value });
   }
+
   private onRemove(value: string) {
     if (!value) {
       this.tokens.splice(this.tokens.length - 1, 1);
@@ -51,7 +52,9 @@ export class BootstrapTokenize {
       }
     }
   }
+
   private onRemoveAll() {
     this.tokens.splice(0);
   }
 }
+```
