@@ -45,6 +45,9 @@ export class JQueryBlockUI {
     $.blockUI.defaults.css = this.option.css || {
       padding: 0,
       margin: 0,
+      width: '30%',
+      top: '45%',
+      left: '35%',
       textAlign: 'center',
       color: '#000',
       border: '3px solid #aaa',
