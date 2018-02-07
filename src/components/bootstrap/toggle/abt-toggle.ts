@@ -17,13 +17,17 @@ export class BootstrapToggleCustomElement {
   /*  One-Time bindable properties */
   @bindable({ defaultBindingMode: bindingMode.oneTime }) private on: string = 'On';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) private off: string = 'Off';
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) private onStyle: string = 'primary';
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) private offStyle: string = 'secondary';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) private onType: string = 'primary';
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) private offType: string = 'secondary';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) private css: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) private size: string = 'normal';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) private width: number | null = null;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) private height: number | null = null;
   /*  ************************************** */
+
+
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) private class: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) private style: string = '';
 
   /*  Two-Way bindable properties */
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: any;
@@ -115,7 +119,7 @@ export class BootstrapToggleCustomElement {
 
     if (state) {
       // @ts-ignore
-       $(this.checkbox).prop('checked', true).change();
+      $(this.checkbox).prop('checked', true).change();
 
       // this.checkbox.setAttribute('checked', true);
     } else {
@@ -133,15 +137,20 @@ export class BootstrapToggleCustomElement {
       on: this.on,
       off: this.off,
       size: this.size,
-      onstyle: this.onStyle,
-      offstyle: this.offStyle,
+      onstyle: this.onType,
+      offstyle: this.offType,
       width: this.width,
       height: this.height
     });
   }
 
   private bind() {
-    this.disabled = this.disabled === true || this.disabled === 'true' || this.disabled === 'disabled'; // || this.element.hasAttribute('disabled');
+
+    // const onlyDisabledAttribute = (this.disabled === '' && this.element.hasAttribute('disabled'));
+    this.disabled = (this.disabled === '' && this.element.hasAttribute('disabled')) || (this.disabled && this.disabled.toString() === 'true');
+    // const onlyCheckedAttribute = (this.checked === '' && this.element.hasAttribute('checked'));
+    this.checked = (this.checked === '' && this.element.hasAttribute('checked')) || (this.checked && this.checked.toString() === 'true');
+
 
     this.disabledChanged(this.disabled);
     this.synchronizeView(this.checked);
