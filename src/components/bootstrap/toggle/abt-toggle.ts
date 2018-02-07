@@ -33,7 +33,7 @@ export class BootstrapToggleCustomElement {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public model: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public checked: any;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public matcher: any;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public matcher: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public disabled: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public rtl: boolean | string = false;
   /*  ************************************** */

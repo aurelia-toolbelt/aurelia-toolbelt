@@ -1,5 +1,6 @@
 export class BootstrapToggleDemo {
 
+  private cpu = true;
 
     // array of strings
     private products = ['Motherboard', 'CPU', 'Memory'];
