@@ -34,8 +34,6 @@
     </aut-mark-down>
   </fieldset>
 
-
-
   <fieldset class="mt-5">
     <legend>
       Basic &amp; Sizes
@@ -177,8 +175,6 @@
 
   </fieldset>
 
-
-
   <fieldset class="mt-5">
     <legend>
       Templates
@@ -211,14 +207,14 @@
 
   </fieldset>
 
-
   <fieldset class="mt-5">
     <legend>
       Animation Speeds
     </legend>
 
     <p>
-      Use <code>css</code> attribute to assign your animation css classes.
+      Use
+      <code>css</code> attribute to assign your animation css classes.
     </p>
 
     <abt-card>
@@ -228,14 +224,17 @@
             transition: left 0.8s;
             -webkit-transition: left 0.8s;
           }
+
           .fast .toggle-group {
             transition: left 0.3s;
             -webkit-transition: left 0.3s;
           }
+
           .quick .toggle-group {
             transition: none;
             -webkit-transition: none;
           }
+
         </style>
 
         <abt-toggle checked css="slow" size="small" class="mr-3">
@@ -259,6 +258,101 @@
 
 
 
+  <fieldset class="mt-5">
+    <legend>
+      Dynamic Toggles
+    </legend>
+
+    <p>
+      You can bind to
+      <code>boolean</code> fields or array of
+      <code>
+        objects
+      </code>,
+      <code>strings</code>, and even use
+      <i>matcher functions</i> for toggles. All the same as
+      <code>Checkboxes</code>
+      in
+      <a href="http://aurelia.io/docs/binding/checkboxes">Aurelia</a>
+    </p>
+
+
+    <h4 class="mt-5">
+      <i>
+        Booleans
+      </i>
+    </h4>
+    <hr />
+
+    <abt-card>
+      <abt-card-header>
+        Toggle your selection
+      </abt-card-header>
+      <abt-card-body>
+        <div>
+          <abt-toggle size="small" checked.bind="motherboard">
+            Motherboard
+          </abt-toggle>
+        </div>
+        <div>
+          <abt-toggle size="small" checked.bind="cpu" css="fast">
+            CPU
+          </abt-toggle>
+        </div>
+        <div>
+          <abt-toggle size="small" checked.bind="memory" css="quick">
+            Memory
+          </abt-toggle>
+        </div>
+        <abt-alert type="secondary" class="mt-3">
+          <div class="row">
+            <div class="col-sm-4">
+              <ul>
+                <li>Motherboard = ${motherboard}</li>
+                <li>CPU = ${cpu}</li>
+                <li>Memory = ${memory}</li>
+              </ul>
+            </div>
+            <div class="col-sm-4">
+              <div>
+                <label>
+                  <input type="checkbox" checked.bind="motherboard" />&nbsp;Motherboard
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="checkbox" checked.bind="cpu" />&nbsp;CPU
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="checkbox" checked.bind="memory" />&nbsp;Memory
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </abt-alert>
+
+      </abt-card-body>
+      <abt-card-footer>
+
+
+        <aut-mark-down src="./docs/components/bootstrap/toggle/dynamic-booleans.md">
+        </aut-mark-down>
+
+      </abt-card-footer>
+    </abt-card>
+
+
+    <h4 class="mt-5">
+      <i>Matchers
+      </i>
+    </h4>
+    <hr />
+
+
+  </fieldset>
 
 
 
@@ -292,23 +386,7 @@
   <div class="container">
 
     <form>
-      <h4>Booleans</h4>
 
-      <label>
-
-        <input type="checkbox" checked.bind="cpu" /> CPU
-      </label>
-
-      <abt-toggle size="mini" disabled="true" css="slow" checked.bind="motherboard"> Motherboard</abt-toggle>
-
-      <abt-toggle size="small" checked.bind="cpu" css="fast">CPU</abt-toggle>
-
-      <abt-toggle size="normal" checked.bind="memory" css="quick"> Memory</abt-toggle>
-
-      <br /> motherboard = ${motherboard}
-      <br/> cpu = ${cpu}
-      <br/> memory = ${memory}
-      <br/>
     </form>
 
     <hr />
