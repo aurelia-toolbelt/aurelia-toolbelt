@@ -1,13 +1,6 @@
+export class BootstrapToggleDemo {
 
-
-export class BootstrapToggle {
-
-    // booleans
-
-    private motherboard = false;
-    private cpu = true;
-    private memory = false;
-
+  private cpu = true;
 
     // array of strings
     private products = ['Motherboard', 'CPU', 'Memory'];
@@ -24,7 +17,6 @@ export class BootstrapToggle {
 
 
     // array of objects
-
     private productsObject = [
         { id: 0, name: 'Motherboard' },
         { id: 1, name: 'CPU' },
@@ -37,9 +29,9 @@ export class BootstrapToggle {
     // array of objects with matcher
 
 
-    private mymotherBoard: any = { id: 0, name: 'Motherboard' };
-    private mycpu = { id: 1, name: 'CPU' };
-    private mymemory: any = { id: 2, name: 'Memory' };
+    private another_motherboard: any = { id: 0, name: 'Motherboard' };
+    private another_cpu = { id: 1, name: 'CPU' };
+    private another_memory: any = { id: 2, name: 'Memory' };
 
     private selectedProductsMatcher = [
         { id: 1, name: 'CPU' },
