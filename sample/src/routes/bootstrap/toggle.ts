@@ -2,12 +2,6 @@
 
 export class BootstrapToggle {
 
-    // booleans
-
-    private motherboard = false;
-    private cpu = true;
-    private memory = false;
-
 
     // array of strings
     private products = ['Motherboard', 'CPU', 'Memory'];

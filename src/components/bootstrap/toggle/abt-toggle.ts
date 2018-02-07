@@ -149,7 +149,12 @@ export class BootstrapToggleCustomElement {
     // const onlyDisabledAttribute = (this.disabled === '' && this.element.hasAttribute('disabled'));
     this.disabled = (this.disabled === '' && this.element.hasAttribute('disabled')) || (this.disabled && this.disabled.toString() === 'true');
     // const onlyCheckedAttribute = (this.checked === '' && this.element.hasAttribute('checked'));
-    this.checked = (this.checked === '' && this.element.hasAttribute('checked')) || (this.checked && this.checked.toString() === 'true');
+
+
+    if (!Array.isArray(this.checked)) {
+
+      this.checked = (this.checked === '' && this.element.hasAttribute('checked')) || (this.checked && this.checked.toString() === 'true');
+    }
 
 
     this.disabledChanged(this.disabled);

@@ -346,11 +346,42 @@
 
 
     <h4 class="mt-5">
-      <i>Matchers
+      <i>Strings
       </i>
     </h4>
     <hr />
+    <abt-card>
+      <abt-card-header>
+        Toggle your selection
+      </abt-card-header>
+      <abt-card-body>
+        <div repeat.for="product of products">
+          <abt-toggle on-type="success" off-type="danger" size="small" value.bind="product" checked.bind="selectedProducts"> ${product}
+          </abt-toggle>
+        </div>
 
+        <abt-alert type="secondary" class="mt-3 text-center">
+          Selected products:
+          <b>${selectedProducts}</b>
+        </abt-alert>
+
+      </abt-card-body>
+      <abt-card-footer>
+
+        <abt-navs tabs>
+          <abt-nav-item title="View" active>
+            <aut-mark-down src="./docs/components/bootstrap/toggle/dynamic-strings.md">
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/toggle/dynamic-strings-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
+
+
+      </abt-card-footer>
+    </abt-card>
 
   </fieldset>
 
@@ -384,30 +415,6 @@
 
 
   <div class="container">
-
-    <form>
-
-    </form>
-
-    <hr />
-
-    <form>
-      <h4>Array of Strings</h4>
-
-      <ul>
-        <li repeat.for="product of products">
-
-          <abt-toggle on-type="success" off-type="danger" size="small" value.bind="product" checked.bind="selectedProducts"> ${product}
-          </abt-toggle>
-
-        </li>
-      </ul>
-      <br /> Selected products: ${selectedProducts}
-    </form>
-
-
-    <hr />
-
 
     <form>
       <h4>Array of Numbers</h4>
