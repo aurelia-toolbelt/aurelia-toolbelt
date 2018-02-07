@@ -1,8 +1,6 @@
-export type SpinnerType = 'bounce' | 'doubleBounce' | 'rectangle' | 'cubeGrid' | 'fadingCircle';
-
 export interface IAutBlockUIOptions {
-  /*message?: any;
-  title?: string;*/
+  /*message?: any;*/
+  /*title?: string;*/
   draggable?: boolean;
   /*theme?: boolean;*/
   css?: any;
