@@ -1,7 +1,9 @@
 ```ts
-export class BootstrapToggle {
-    // array of strings
-    private products = ['Motherboard', 'CPU', 'Memory'];
-    private selectedProducts = ['CPU'];
+export class BootstrapToggleDemo {
+
+  private products = ['Motherboard', 'CPU', 'Memory'];
+  
+  // array of strings
+  private selectedProducts = ['CPU'];
 }
 ```

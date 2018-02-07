@@ -1,6 +1,6 @@
 ```html
 <div repeat.for="product of products">
-  <abt-toggle on-type="success" off-type="danger" size="small" value.bind="product" checked.bind="selectedProducts"> ${product}
+  <abt-toggle value.bind="product" checked.bind="selectedProducts"> ${product}
   </abt-toggle>
 </div>
 

@@ -352,11 +352,11 @@
     <hr />
     <abt-card>
       <abt-card-header>
-        Toggle your selection
+        Toggle items:
       </abt-card-header>
       <abt-card-body>
         <div repeat.for="product of products">
-          <abt-toggle on-type="success" off-type="danger" size="small" value.bind="product" checked.bind="selectedProducts"> ${product}
+          <abt-toggle size="small" value.bind="product" checked.bind="selectedProducts"> ${product}
           </abt-toggle>
         </div>
 
@@ -383,98 +383,147 @@
       </abt-card-footer>
     </abt-card>
 
-  </fieldset>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="container">
-
-    <form>
-      <h4>Array of Numbers</h4>
-      <ul>
-        <li repeat.for="product of otherProducts">
-          <abt-toggle color="info" model.bind="product.id" checked.bind="selectedProductIds">
+    <h4 class="mt-5">
+      <i>Numbers
+      </i>
+    </h4>
+    <hr />
+    <abt-card>
+      <abt-card-header>
+        Toggle items:
+      </abt-card-header>
+      <abt-card-body>
+        <div repeat.for="product of otherProducts">
+          <abt-toggle size="small" model.bind="product.id" checked.bind="selectedProductIds">
             ${product.name}
           </abt-toggle>
-        </li>
-      </ul>
-      <br /> Selected product IDs: ${selectedProductIds}
-    </form>
+        </div>
+
+        <abt-alert type="secondary" class="mt-3 text-center">
+          Selected product IDs:
+
+          <b>${selectedProductIds}</b>
+        </abt-alert>
+
+      </abt-card-body>
+      <abt-card-footer>
+
+        <abt-navs tabs>
+          <abt-nav-item title="View" active>
+            <aut-mark-down src="./docs/components/bootstrap/toggle/dynamic-numbers.md">
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/toggle/dynamic-numbers-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
+      </abt-card-footer>
+    </abt-card>
 
 
+    <h4 class="mt-5">
+      <i>Objects
+      </i>
+    </h4>
     <hr />
-
-
-    <form>
-      <h4>Array Of objects</h4>
-      <ul>
-
-        <li repeat.for="product of productsObject">
-          <abt-toggle model.bind="product" checked.bind="selectedProductsObject"> ${product.id} - ${product.name}
+    <abt-card>
+      <abt-card-header>
+        Toggle items:
+      </abt-card-header>
+      <abt-card-body>
+        <div repeat.for="product of productsObject">
+          <abt-toggle size="small" model.bind="product" checked.bind="selectedProductsObject"> ${product.id} - ${product.name}
           </abt-toggle>
-        </li>
-      </ul>
+        </div>
 
-      Selected products:
-      <ul>
-        <li repeat.for="product of selectedProductsObject">${product.id} - ${product.name}</li>
-      </ul>
-    </form>
+        <abt-alert type="secondary" class="mt-3 text-center">
+          <b>
+            Selected Products:
+          </b>
+          <hr />
+          <div repeat.for="product of selectedProductsObject">
+            ${product.id} - ${product.name}
+          </div>
+        </abt-alert>
+
+      </abt-card-body>
+      <abt-card-footer>
+
+        <abt-navs tabs>
+          <abt-nav-item title="View" active>
+            <aut-mark-down src="./docs/components/bootstrap/toggle/dynamic-objects.md">
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/toggle/dynamic-objects-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
 
 
+      </abt-card-footer>
+    </abt-card>
+
+
+    <h4 class="mt-5">
+      <i>Matcher Function
+      </i>
+    </h4>
     <hr />
+    <abt-card>
+      <abt-card-header>
+        Toggle items:
+      </abt-card-header>
+      <abt-card-body>
+
+        <div>
+          <abt-toggle size="small" model.bind="another_motherboard" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
+            Motherboard
+          </abt-toggle>
+        </div>
+
+        <div>
+          <abt-toggle size="small" model.bind="another_cpu" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
+            CPU
+          </abt-toggle>
+        </div>
+
+        <div>
+          <abt-toggle size="small" model.bind="another_memory" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
+            Memory
+          </abt-toggle>
+        </div>
+
+        <abt-alert type="secondary" class="mt-3 text-center">
+          <b>
+            Selected Products:
+          </b>
+          <hr />
+          <div repeat.for="product of selectedProductsMatcher">
+            ${product.id} - ${product.name}
+          </div>
+        </abt-alert>
+
+      </abt-card-body>
+      <abt-card-footer>
+
+        <abt-navs tabs>
+          <abt-nav-item title="View" active>
+            <aut-mark-down src="./docs/components/bootstrap/toggle/dynamic-matcher.md">
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/toggle/dynamic-matcher-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
 
 
-
-    <form>
-      <h4>Array of objects With Matcher</h4>
-
-
-      <abt-toggle model.bind="mymotherBoard" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
-        Motherboard
-      </abt-toggle>
+      </abt-card-footer>
+    </abt-card>
 
 
-      <abt-toggle model.bind="mycpu" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher"> CPU
-      </abt-toggle>
-
-
-      <abt-toggle model.bind="mymemory" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
-        Memory
-      </abt-toggle>
-
-      Selected products:
-      <ul>
-        <li repeat.for="product of selectedProductsMatcher">${product.id} - ${product.name}</li>
-      </ul>
-    </form>
-  </div>
+  </fieldset>
 
 </template>
