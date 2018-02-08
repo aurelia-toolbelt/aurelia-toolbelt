@@ -6,10 +6,10 @@
   <br/>
   <br/>
 
-  <aut-block-ui block-page.bind="blockValue1" spinner-size='30' spinner-color='red'>
+  <aut-block-ui block-page.bind="blockValue1" settings.bind="blockPageOption">
   </aut-block-ui>
-  
-  <aut-block-ui block.bind="blockValue2" spinner-size='12' spinner-color='goldenrod'>
+
+  <aut-block-ui block.bind="blockValue2" settings.bind="blockOption">
     <abt-inputgroup class="mb-3">
       <abt-inputgroup-prepend>
         <abt-inputgroup-text>@</abt-inputgroup-text>
@@ -17,5 +17,5 @@
       <input type="text" class="form-control" placeholder="Username" aria-label="Username">
     </abt-inputgroup>
   </aut-block-ui>
-  
+
 </template>

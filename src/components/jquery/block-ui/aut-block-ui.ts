@@ -1,27 +1,23 @@
 import { CssMinifier } from './../../../utilities/purejs/cssMinifier';
 import { transient, customElement, inject, containerless, bindable, bindingMode, observable, DOM } from 'aurelia-framework';
 
-
 import * as $ from 'jquery';
 import 'aureliatoolbelt-thirdparty/jquery.blockUI/jquery.blockUI.js';
-import { IAutBlockUIOptions } from './aut-block-ui-options';
+import { IAutBlockUIOption } from './aut-block-ui-option';
 
-@transient()
 @customElement('aut-block-ui')
 @inject(Element, 'aut-block-ui-option', CssMinifier)
 export class JQueryBlockUI {
 
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public settings: IAutBlockUIOption = null;
+
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public block: string | boolean = false;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public blockPage: string | boolean = false;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public title: string = null;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public message: string = null;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public spinnerColor: string = null;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public spinnerSize: string = '12px';
 
   private content: HTMLDivElement;
   private spinnerMessage: string = null;
   private elementId: string;
-  constructor(private element: Element, private option: IAutBlockUIOptions, private cssMinifier: CssMinifier) {
+  constructor(private element: Element, private option: IAutBlockUIOption, private cssMinifier: CssMinifier) {
 
   }
 
@@ -34,12 +30,25 @@ export class JQueryBlockUI {
   }
 
   private afterAttached() {
+    if (this.blockPage && this.hasContent()) {
+      throw Error('You can not use the [aut-block-ui] with [block-page] property, while you have defined a content inside it.');
+    }
+
+    if (this.settings) {
+      this.option = Object.assign(this.option, this.settings);
+    }
+
     let id = this.content.id;
-    this.elementId = '#' + id;
+    this.elementId = `#${id}`;
+    this.setDefaultOption(id);
+    this.setSpinnerStyle(id);
 
-    let unit: string = this.getSizeUnit(this.spinnerSize);
-    let size: number = this.getSize(this.spinnerSize);
+    this.blockChanged(this.block);
+    this.blockPageChanged(this.blockPage);
 
+  }
+
+  private setDefaultOption(id: string) {
     $.blockUI.defaults.allowBodyStretch = this.option.allowBodyStretch || true;
     $.blockUI.defaults.draggable = this.option.draggable || true;
     $.blockUI.defaults.css = this.option.css || {
@@ -72,43 +81,35 @@ export class JQueryBlockUI {
     $.blockUI.defaults.timeout = this.option.timeout || 0;
     $.blockUI.defaults.showOverlay = this.option.showOverlay || true;
     $.blockUI.defaults.focusInput = this.option.focusInput || true;
-    $.blockUI.defaults.onBlock = this.option.onBlock || null;
-    $.blockUI.defaults.onUnblock = this.option.onUnblock || null;
     $.blockUI.defaults.quirksmodeOffsetHack = this.option.quirksmodeOffsetHack || 4;
-    $.blockUI.defaults.blockMsgClass = this.option.blockMsgClass || 'blockMsg';
+    $.blockUI.defaults.blockMsgClass = (this.option.blockMsgClass || 'blockMsg') + ` m${id}`;
     $.blockUI.defaults.ignoreIfBlocked = this.option.ignoreIfBlocked || false;
+    $.blockUI.defaults.message = this.option.message || '<h1>Please wait...</h1>';
+  }
 
-    if (this.blockPage && this.hasContent()) {
-      throw Error('You can not use the [aut-block-ui] with [block-page] property, while you have defined a content inside it.');
-    }
+  private setSpinnerStyle(id: string) {
+    let unit: string = this.getSizeUnit(this.option.spinnerSize);
+    let size: number = this.getSize(this.option.spinnerSize);
     let minify = `
-            .${'b' + id} {
-              width: ${size}${unit} !important;
-              height: ${size}${unit} !important;
-              background-color: ${this.spinnerColor || '#92459B'} !important;
-            }`;
+    .blockElement.${'m' + id}{
+      z-index: ${$.blockUI.defaults.baseZ} !important;
+    }
+    .blockPage.${'m' + id}{
+      z-index: ${$.blockUI.defaults.baseZ} !important;
+    }
+    .${'b' + id} {
+      width: ${size}${unit} !important;
+      height: ${size}${unit} !important;
+      background-color: ${this.option.spinnerColor || '#92459B'} !important;
+    }`;
     DOM.injectStyles(this.cssMinifier.minify(minify), null, null, 's' + id);
     // tslint:disable-next-line:max-line-length
     this.spinnerMessage = `<div class="bounce"><div class="bounce1 ${'b' + id}"></div><div class="bounce2 ${'b' + id}"></div><div class="bounce3 ${'b' + id}"></div></div>`;
-
-
-
-    let contents = this.content.children;
-    let blockElement = null;
-    for (let index = 0; index < contents.length; index++) {
-      if (contents[index].classList.contains('blockElement')) {
-        blockElement = contents[index];
-      }
-    }
-
-    this.blockChanged(this.block);
-    this.blockPageChanged(this.blockPage);
-
   }
 
   private blockChanged(isBlocked: boolean | string) {
     let option: any = {};
-    if (this.message == null || this.message.length < 0) {
+    if (!this.option.message) {
       option = {
         css: {
           border: 'none',
@@ -120,9 +121,7 @@ export class JQueryBlockUI {
         }
       };
     } else {
-      option = {
-        message: this.message
-      };
+      option = this.option;
     }
     if (isBlocked) {
       $(this.elementId).block(option);
@@ -143,7 +142,7 @@ export class JQueryBlockUI {
       throw Error('You can not use the [aut-block-ui] with [block-page] property, while you have defined a content inside it.');
     }
     let option: any = {};
-    if (this.message == null || this.message.length < 0) {
+    if (!this.option.message) {
       option = {
         css: {
           border: 'none',
@@ -155,25 +154,19 @@ export class JQueryBlockUI {
         }
       };
     } else {
-      option = {
-        message: this.message
-      };
+      option = this.option.message;
     }
     if (isBlocked) {
       $.blockUI(option);
-      // this.element.classList.add('block-ui-content');
-      // $(window).resize(() => {
-      //   if (this.element.classList.contains('block-ui-content')) {
-      //     $(this.content).block(option);
-      //   }
-      // });
     } else {
       $.unblockUI();
-      // this.element.classList.remove('block-ui-content');
     }
   }
 
   private getSizeUnit(text: string): string {
+    if (!text) {
+      return 'px';
+    }
     let unit = text.replace(/[0-9]/g, '').replace('.', '');
     if (unit === '') {
       unit = 'px';
@@ -182,6 +175,9 @@ export class JQueryBlockUI {
   }
 
   private getSize(text: string) {
+    if (!text) {
+      return 12;
+    }
     let unit = this.getSizeUnit(text);
     let size = Number(text.replace(unit, '').trim());
     return size;

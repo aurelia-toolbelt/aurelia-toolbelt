@@ -1,13 +1,5 @@
 /* http://tobiasahlin.com/spinkit/ */
 
-.blockElement{
-  z-index: 1020 !important;
-}
-
-.blockPage{
-  z-index: 999999 !important;  
-}
-
 .bounce {
     text-align: center;    
 }
