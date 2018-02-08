@@ -100,6 +100,9 @@ export class JQueryBlockUI {
       } else {
         spinnerBgColor = `background-color: ${this.option.spinnerColor || '#92459B'} !important`;
       }
+    } else {
+      spinnerBgColor = 'bg-primary';
+      isClass = true;
     }
 
     let minify = `
@@ -116,9 +119,8 @@ export class JQueryBlockUI {
     }`;
     DOM.injectStyles(this.cssMinifier.minify(minify), null, null, 's' + id);
 
-    this.spinnerMessage = `<div class="bounce"><div class="bounce1 ${isClass ? spinnerBgColor : ''} ${'b' + id}"></div>
-    <div class="bounce2  ${isClass ? spinnerBgColor : ''}  ${'b' + id}">
-    </div><div class="bounce3  ${isClass ? spinnerBgColor : ''}  ${'b' + id}"></div></div>`;
+    // tslint:disable-next-line:max-line-length
+    this.spinnerMessage = `<div class="bounce"><div class="bounce1 ${isClass ? spinnerBgColor : ''} ${'b' + id}"></div><div class="bounce2 ${isClass ? spinnerBgColor : ''} ${'b' + id}"></div><div class="bounce3 ${isClass ? spinnerBgColor : ''} ${'b' + id}"></div></div>`;
   }
 
   private blockChanged(isBlocked: boolean | string) {
@@ -131,7 +133,7 @@ export class JQueryBlockUI {
         },
         message: this.spinnerMessage,
         overlayCSS: {
-          backgroundColor: '#F7F7F7'
+          backgroundColor: '#A0A0A0'
         }
       };
     } else {
@@ -164,7 +166,7 @@ export class JQueryBlockUI {
         },
         message: this.spinnerMessage,
         overlayCSS: {
-          backgroundColor: '#F7F7F7'
+          backgroundColor: '#A0A0A0'
         }
       };
     } else {
