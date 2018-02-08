@@ -9,8 +9,10 @@ export class Blockui {
     private blockOption: IAutBlockUIOption = {};
 
     private attached() {
-        this.blockPageOption.spinnerSize = '30px';
-        this.blockPageOption.spinnerColor = '.danger';
+        this.blockOption.spinnerSize = '14px';
+        this.blockOption.spinnerColor = '.danger';
+
+        this.blockPageOption.useSpinner = false;
     }
 
     private toggleBlock1() {

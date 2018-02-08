@@ -20,7 +20,7 @@ export interface IAutBlockUIOption {
   quirksmodeOffsetHack?: number;
   blockMsgClass?: string;
   ignoreIfBlocked?: boolean;
-  useSpinner?: true;
+  useSpinner?: boolean;
   spinnerColor?: string;
   spinnerSize?: string;
 }
