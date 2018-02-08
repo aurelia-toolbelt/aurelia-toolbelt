@@ -12,7 +12,9 @@ export class Blockui {
         this.blockOption.spinnerSize = '13px';
         this.blockOption.spinnerColor = '.info';
 
-        this.blockPageOption.useSpinner = false;
+        this.blockPageOption.useSpinner = true;
+        this.blockPageOption.spinnerSize = '25px';
+
     }
 
     private toggleBlock1() {

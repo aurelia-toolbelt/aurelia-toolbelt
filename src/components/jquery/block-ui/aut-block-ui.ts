@@ -7,6 +7,8 @@ import 'aureliatoolbelt-thirdparty/jquery.blockUI/jquery.blockUI.js';
 import { IAutBlockUIOption } from './aut-block-ui-option';
 import { stringify } from 'querystring';
 
+
+// We save all options per conponent. [id, settings from component, option from plugin, default options]
 @singleton()
 export class SharedOptions {
   private allOptions: any = {};
@@ -23,14 +25,17 @@ export class SharedOptions {
       default: obj.default
     };
   }
+
+  public dispose() {
+    this.allOptions = {};
+  }
 }
 
-@transient()
 @customElement('aut-block-ui')
 @inject(Element, 'aut-block-ui-option', CssMinifier, JsTools, SharedOptions)
 export class JQueryBlockUI {
 
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public settings: IAutBlockUIOption = null;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public settings: IAutBlockUIOption = null;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public block: string | boolean = false;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public blockPage: string | boolean = false;
@@ -46,6 +51,7 @@ export class JQueryBlockUI {
   constructor(private element: Element, private option: IAutBlockUIOption, private cssMinifier: CssMinifier, private jsTools: JsTools, private sharedOptions: SharedOptions) {
   }
 
+  // The component has content or not.
   private hasContent() {
     let slot = this.content.innerHTML.replace('<!--slot-->', '').trim();
     if (slot.length > 0) {
@@ -63,7 +69,9 @@ export class JQueryBlockUI {
     }
 
     this.setDefaultOption();
+    // We add a unique class name per component.
     this.defaultOption.blockMsgClass += ` m${this.id}`;
+    // We save all options per component in a singleton class.
     this.sharedOptions.setOption(this.id, {
       id: this.id,
       settings: this.settings || {},
@@ -77,6 +85,7 @@ export class JQueryBlockUI {
 
   }
 
+  // Default options comes from http://malsup.com/jquery/block/#options
   private setDefaultOption() {
     this.defaultOption.allowBodyStretch = true;
     this.defaultOption.draggable = true;
@@ -118,6 +127,7 @@ export class JQueryBlockUI {
 
   }
 
+  // We set a style for spinner based on color/class, size, z-index
   private setSpinnerStyle(id: string, option: any) {
     let unit: string = this.getSizeUnit(option.spinnerSize);
     let size: number = this.getSize(option.spinnerSize);
@@ -158,9 +168,11 @@ export class JQueryBlockUI {
     let option: any;
     let merged = this.sharedOptions.getOption(this.id);
     if (merged) {
+      // We merged all options here.
       option = Object.assign({}, merged.default, merged.option, merged.settings);
     }
     if (!this.jsTools.isEmpty(option) && option.useSpinner) {
+      // Set spinner style when useSpinner is true.
       this.setSpinnerStyle(this.id, option);
       option.css = {
         border: 'none',
@@ -168,12 +180,13 @@ export class JQueryBlockUI {
       };
       option.message = this.spinnerMessage;
       option.overlayCSS = {
-        backgroundColor: '#A0A0A0'
+        backgroundColor: '#CCCCCC'
       };
     }
     if (isBlocked) {
       $(this.elementId).block(option);
       this.element.classList.add('block-ui-content');
+      // Set options when browser windows resize.
       $(window).resize(() => {
         if (this.element.classList.contains('block-ui-content')) {
           $(this.elementId).block(option);
@@ -202,7 +215,7 @@ export class JQueryBlockUI {
       };
       option.message = this.spinnerMessage;
       option.overlayCSS = {
-        backgroundColor: '#A0A0A0'
+        backgroundColor: '#CCCCCC'
       };
     }
     if (isBlocked) {
@@ -235,5 +248,6 @@ export class JQueryBlockUI {
   private detached() {
     $.unblockUI();
     $(this.content).unblock();
+    this.sharedOptions.dispose();
   }
 }
