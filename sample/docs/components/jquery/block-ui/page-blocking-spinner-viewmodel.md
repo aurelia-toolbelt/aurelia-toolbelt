@@ -1,25 +1,9 @@
-import { IAutBlockUIOption } from './../../../../src/components/jquery/block-ui/aut-block-ui-option';
+```ts
 import { bindingMode, bindable } from 'aurelia-framework';
 
-
 export class Blockui {
-
     private blockPageSpinnerText = 'Block page';
     private blockPageSpinner = false;
-    private blockValue2 = true;
-
-    private blockPageOption: IAutBlockUIOption = {};
-    private blockOption: IAutBlockUIOption = {};
-
-    private attached() {
-        this.blockOption.spinnerSize = '13px';
-        this.blockOption.spinnerColor = '.info';
-
-        // this.blockPageOption.useSpinner = true;
-        // this.blockPageOption.spinnerSize = '25px';
-
-
-    }
 
     private timer(time: number, onRunning: Function, onStop: Function) {
         let timeleft = time;
@@ -41,7 +25,5 @@ export class Blockui {
         });
 
     }
-    private toggleBlock2() {
-        this.blockValue2 = !this.blockValue2;
-    }
 }
+```

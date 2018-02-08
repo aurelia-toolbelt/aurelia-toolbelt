@@ -180,7 +180,7 @@ export class JQueryBlockUI {
       };
       option.message = this.spinnerMessage;
       option.overlayCSS = {
-        backgroundColor: '#CCCCCC'
+        backgroundColor: '#EEEEEE'
       };
     }
     if (isBlocked) {
@@ -215,7 +215,7 @@ export class JQueryBlockUI {
       };
       option.message = this.spinnerMessage;
       option.overlayCSS = {
-        backgroundColor: '#CCCCCC'
+        backgroundColor: '#EEEEEE'
       };
     }
     if (isBlocked) {

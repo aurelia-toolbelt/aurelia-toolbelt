@@ -1,14 +1,63 @@
 <template>
+  <fieldset class="mb-3">
+    <legend>
+      <h2>Block UI
+        <a href="https://github.com/aurelia-toolbelt/aurelia-toolbelt/tree/master/src/components/jquery/block-ui">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+      </p>
+    </legend>
+    <abt-alert type="info">
+      Created on top of
+      <abt-alert-link href="http://malsup.com/jquery/block/">jQuery BlockUI</abt-alert-link>
+      <aut-micro-link class="mt-2" round="false" url="http://malsup.com/jquery/block/"></aut-micro-link>
+    </abt-alert>
+    <abt-alert type="success">
+      <i class="fa fa-credit-card" aria-hidden="true"></i>
+      &nbsp;
+      <b>License:</b> &nbsp;
+      <abt-alert-link href="http://malsup.github.io/mit-license.txt">MIT</abt-alert-link>
+    </abt-alert>
+  </fieldset>
 
-  <button type="button" class="btn btn-primary" click.delegate="toggleBlock1()">Toggle</button>
+  <fieldset class="mt-3">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/jquery/block-ui/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-3">
+    <legend>
+      Page blocking
+    </legend>
+    <br>
+    <b>With default spinner</b>
+    <div class="mt-2"></div>
+    <button type="button" class="btn btn-primary" click.delegate="blockThePageSpinner()">${blockPageSpinnerText}</button>
+    <aut-block-ui block-page.bind="blockPageSpinner">
+    </aut-block-ui>
+    <div class="mt-2"></div>
+    <abt-navs tabs>
+      <abt-nav-item title="View" active>
+        <aut-mark-down src="./docs/components/jquery/block-ui/page-blocking-spinner-view.md">
+        </aut-mark-down>
+      </abt-nav-item>
+      <abt-nav-item title="ViewModel">
+        <aut-mark-down src="./docs/components/jquery/block-ui/page-blocking-spinner-viewmodel.md">
+        </aut-mark-down>
+      </abt-nav-item>
+    </abt-navs>
+  </fieldset>
+
+
+
+  <br/>
+  <br/>
+
+
   <button type="button" class="btn btn-primary" click.delegate="toggleBlock2()">Toggle2</button>
-
-  <br/>
-  <br/>
-
-  <aut-block-ui block-page.bind="blockValue1" settings.bind="blockPageOption">
-  </aut-block-ui>
-
   <aut-block-ui block.bind="blockValue2" settings.bind="blockOption">
     <abt-inputgroup class="mb-3">
       <abt-inputgroup-prepend>
