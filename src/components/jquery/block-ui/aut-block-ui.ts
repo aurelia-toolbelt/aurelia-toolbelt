@@ -90,6 +90,18 @@ export class JQueryBlockUI {
   private setSpinnerStyle(id: string) {
     let unit: string = this.getSizeUnit(this.option.spinnerSize);
     let size: number = this.getSize(this.option.spinnerSize);
+
+    let isClass = false;
+    let spinnerBgColor = '';
+    if (this.option.spinnerColor) {
+      isClass = this.option.spinnerColor.indexOf('.') > -1;
+      if (isClass) {
+        spinnerBgColor = 'bg-' + this.option.spinnerColor.replace('.', '');
+      } else {
+        spinnerBgColor = `background-color: ${this.option.spinnerColor || '#92459B'} !important`;
+      }
+    }
+
     let minify = `
     .blockElement.${'m' + id}{
       z-index: ${$.blockUI.defaults.baseZ} !important;
@@ -100,11 +112,13 @@ export class JQueryBlockUI {
     .${'b' + id} {
       width: ${size}${unit} !important;
       height: ${size}${unit} !important;
-      background-color: ${this.option.spinnerColor || '#92459B'} !important;
+      ${!isClass ? spinnerBgColor : ''}
     }`;
     DOM.injectStyles(this.cssMinifier.minify(minify), null, null, 's' + id);
-    // tslint:disable-next-line:max-line-length
-    this.spinnerMessage = `<div class="bounce"><div class="bounce1 ${'b' + id}"></div><div class="bounce2 ${'b' + id}"></div><div class="bounce3 ${'b' + id}"></div></div>`;
+
+    this.spinnerMessage = `<div class="bounce"><div class="bounce1 ${isClass ? spinnerBgColor : ''} ${'b' + id}"></div>
+    <div class="bounce2  ${isClass ? spinnerBgColor : ''}  ${'b' + id}">
+    </div><div class="bounce3  ${isClass ? spinnerBgColor : ''}  ${'b' + id}"></div></div>`;
   }
 
   private blockChanged(isBlocked: boolean | string) {
