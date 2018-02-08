@@ -1,12 +1,33 @@
+import { JsTools } from './../../../utilities/purejs/jsTools';
 import { CssMinifier } from './../../../utilities/purejs/cssMinifier';
-import { transient, customElement, inject, containerless, bindable, bindingMode, observable, DOM } from 'aurelia-framework';
+import { transient, customElement, inject, containerless, bindable, bindingMode, observable, DOM, singleton } from 'aurelia-framework';
 
 import * as $ from 'jquery';
 import 'aureliatoolbelt-thirdparty/jquery.blockUI/jquery.blockUI.js';
 import { IAutBlockUIOption } from './aut-block-ui-option';
+import { stringify } from 'querystring';
 
+@singleton()
+export class SharedOptions {
+  private allOptions: any = {};
+
+  public getOption(id: string): any {
+    return this.allOptions[id];
+  }
+
+  public setOption(id: string, obj: any) {
+    this.allOptions[id] = {
+      id: id,
+      settings: obj.settings,
+      option: obj.option,
+      default: obj.default
+    };
+  }
+}
+
+@transient()
 @customElement('aut-block-ui')
-@inject(Element, 'aut-block-ui-option', CssMinifier)
+@inject(Element, 'aut-block-ui-option', CssMinifier, JsTools, SharedOptions)
 export class JQueryBlockUI {
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public settings: IAutBlockUIOption = null;
@@ -17,8 +38,12 @@ export class JQueryBlockUI {
   private content: HTMLDivElement;
   private spinnerMessage: string = null;
   private elementId: string;
-  constructor(private element: Element, private option: IAutBlockUIOption, private cssMinifier: CssMinifier) {
+  private defaultOption: IAutBlockUIOption = {};
+  private allOptions = {};
+  private id: string = '';
 
+  // tslint:disable-next-line:max-line-length
+  constructor(private element: Element, private option: IAutBlockUIOption, private cssMinifier: CssMinifier, private jsTools: JsTools, private sharedOptions: SharedOptions) {
   }
 
   private hasContent() {
@@ -30,30 +55,34 @@ export class JQueryBlockUI {
   }
 
   private afterAttached() {
+    this.id = this.content.id;
+    this.elementId = `#${this.id}`;
+
     if (this.blockPage && this.hasContent()) {
       throw Error('You can not use the [aut-block-ui] with [block-page] property, while you have defined a content inside it.');
     }
 
-    if (this.settings) {
-      this.option = Object.assign(this.option, this.settings);
-    }
+    this.setDefaultOption();
+    this.defaultOption.blockMsgClass += ` m${this.id}`;
+    this.sharedOptions.setOption(this.id, {
+      id: this.id,
+      settings: this.settings,
+      option: this.option,
+      default: this.defaultOption
+    });
 
-    let id = this.content.id;
-    this.elementId = `#${id}`;
-    this.setDefaultOption(id);
-    this.setSpinnerStyle(id);
 
     this.blockChanged(this.block);
     this.blockPageChanged(this.blockPage);
 
   }
 
-  private setDefaultOption(id: string) {
-    $.blockUI.defaults.allowBodyStretch = this.option.allowBodyStretch || true;
-    $.blockUI.defaults.draggable = this.option.draggable || true;
-    $.blockUI.defaults.css = this.option.css || {
-      padding: 0,
-      margin: 0,
+  private setDefaultOption() {
+    this.defaultOption.allowBodyStretch = true;
+    this.defaultOption.draggable = true;
+    this.defaultOption.css = {
+      padding: '0',
+      margin: '0',
       width: '30%',
       top: '45%',
       left: '35%',
@@ -63,42 +92,44 @@ export class JQueryBlockUI {
       backgroundColor: '#fff',
       cursor: 'wait'
     };
-    $.blockUI.defaults.overlayCSS = this.option.overlayCSS || {
+    this.defaultOption.overlayCSS = {
       backgroundColor: '#000',
       opacity: 0.6,
       cursor: 'wait'
     };
-    $.blockUI.defaults.cursorReset = this.option.cursorReset || 'default';
-    $.blockUI.defaults.iframeSrc = this.option.iframeSrc || (/^https/i.test(window.location.href || '') ? 'javascript:false' : 'about:blank');
-    $.blockUI.defaults.forceIframe = this.option.forceIframe || false;
-    $.blockUI.defaults.baseZ = this.option.baseZ || 1020;
-    $.blockUI.defaults.centerX = this.option.centerX || true;
-    $.blockUI.defaults.centerY = this.option.centerY || true;
-    $.blockUI.defaults.bindEvents = this.option.bindEvents || true;
-    $.blockUI.defaults.constrainTabKey = this.option.constrainTabKey || true;
-    $.blockUI.defaults.fadeIn = this.option.fadeIn || 200;
-    $.blockUI.defaults.fadeOut = this.option.fadeOut || 400;
-    $.blockUI.defaults.timeout = this.option.timeout || 0;
-    $.blockUI.defaults.showOverlay = this.option.showOverlay || true;
-    $.blockUI.defaults.focusInput = this.option.focusInput || true;
-    $.blockUI.defaults.quirksmodeOffsetHack = this.option.quirksmodeOffsetHack || 4;
-    $.blockUI.defaults.blockMsgClass = (this.option.blockMsgClass || 'blockMsg') + ` m${id}`;
-    $.blockUI.defaults.ignoreIfBlocked = this.option.ignoreIfBlocked || false;
-    $.blockUI.defaults.message = this.option.message || '<h1>Please wait...</h1>';
+    this.defaultOption.cursorReset = 'default';
+    this.defaultOption.iframeSrc = (/^https/i.test(window.location.href || '') ? 'javascript:false' : 'about:blank');
+    this.defaultOption.forceIframe = false;
+    this.defaultOption.baseZ = 1020;
+    this.defaultOption.centerX = true;
+    this.defaultOption.centerY = true;
+    this.defaultOption.bindEvents = true;
+    this.defaultOption.constrainTabKey = true;
+    this.defaultOption.fadeIn = 200;
+    this.defaultOption.fadeOut = 400;
+    this.defaultOption.timeout = 0;
+    this.defaultOption.showOverlay = true;
+    this.defaultOption.focusInput = true;
+    this.defaultOption.quirksmodeOffsetHack = 4;
+    this.defaultOption.blockMsgClass = 'blockMsg';
+    this.defaultOption.ignoreIfBlocked = false;
+    this.defaultOption.message = '<h1>Please wait...</h1>';
+    this.defaultOption.useSpinner = true;
+
   }
 
-  private setSpinnerStyle(id: string) {
-    let unit: string = this.getSizeUnit(this.option.spinnerSize);
-    let size: number = this.getSize(this.option.spinnerSize);
+  private setSpinnerStyle(id: string, option: any) {
+    let unit: string = this.getSizeUnit(option.spinnerSize);
+    let size: number = this.getSize(option.spinnerSize);
 
     let isClass = false;
     let spinnerBgColor = '';
-    if (this.option.spinnerColor) {
-      isClass = this.option.spinnerColor.indexOf('.') > -1;
+    if (option.spinnerColor) {
+      isClass = option.spinnerColor.indexOf('.') > -1;
       if (isClass) {
-        spinnerBgColor = 'bg-' + this.option.spinnerColor.replace('.', '');
+        spinnerBgColor = 'bg-' + option.spinnerColor.replace('.', '');
       } else {
-        spinnerBgColor = `background-color: ${this.option.spinnerColor || '#92459B'} !important`;
+        spinnerBgColor = `background-color: ${option.spinnerColor || '#92459B'} !important`;
       }
     } else {
       spinnerBgColor = 'bg-primary';
@@ -107,10 +138,10 @@ export class JQueryBlockUI {
 
     let minify = `
     .blockElement.${'m' + id}{
-      z-index: ${$.blockUI.defaults.baseZ} !important;
+      z-index: ${option.baseZ} !important;
     }
     .blockPage.${'m' + id}{
-      z-index: ${$.blockUI.defaults.baseZ} !important;
+      z-index: ${option.baseZ} !important;
     }
     .${'b' + id} {
       width: ${size}${unit} !important;
@@ -124,20 +155,21 @@ export class JQueryBlockUI {
   }
 
   private blockChanged(isBlocked: boolean | string) {
-    let option: any = {};
-    if (!this.option.message) {
-      option = {
-        css: {
-          border: 'none',
-          backgroundColor: 'transparent'
-        },
-        message: this.spinnerMessage,
-        overlayCSS: {
-          backgroundColor: '#A0A0A0'
-        }
+    let option: any;
+    let merged = this.sharedOptions.getOption(this.id);
+    if (merged) {
+      option = Object.assign({}, merged.default, merged.option, merged.settings);
+    }
+    if (!this.jsTools.isEmpty(option) && option.useSpinner) {
+      this.setSpinnerStyle(this.id, option);
+      option.css = {
+        border: 'none',
+        backgroundColor: 'transparent'
       };
-    } else {
-      option = this.option;
+      option.message = this.spinnerMessage;
+      option.overlayCSS = {
+        backgroundColor: '#A0A0A0'
+      };
     }
     if (isBlocked) {
       $(this.elementId).block(option);
@@ -157,20 +189,21 @@ export class JQueryBlockUI {
     if (this.blockPage && this.hasContent()) {
       throw Error('You can not use the [aut-block-ui] with [block-page] property, while you have defined a content inside it.');
     }
-    let option: any = {};
-    if (!this.option.message) {
-      option = {
-        css: {
-          border: 'none',
-          backgroundColor: 'transparent'
-        },
-        message: this.spinnerMessage,
-        overlayCSS: {
-          backgroundColor: '#A0A0A0'
-        }
+    let option: any;
+    let merged = this.sharedOptions.getOption(this.id);
+    if (merged) {
+      option = Object.assign({}, merged.default, merged.option, merged.settings);
+    }
+    if (!this.jsTools.isEmpty(option) && option.useSpinner) {
+      this.setSpinnerStyle(this.id, option);
+      option.css = {
+        border: 'none',
+        backgroundColor: 'transparent'
       };
-    } else {
-      option = this.option.message;
+      option.message = this.spinnerMessage;
+      option.overlayCSS = {
+        backgroundColor: '#A0A0A0'
+      };
     }
     if (isBlocked) {
       $.blockUI(option);

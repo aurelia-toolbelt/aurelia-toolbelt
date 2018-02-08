@@ -20,6 +20,7 @@ export interface IAutBlockUIOption {
   quirksmodeOffsetHack?: number;
   blockMsgClass?: string;
   ignoreIfBlocked?: boolean;
+  useSpinner?: true;
   spinnerColor?: string;
   spinnerSize?: string;
 }
@@ -36,7 +37,7 @@ export interface IAutBlockUICssOption {
   cursor?: string;
 }
 export interface IAutBlockUIOverlayCssOption {
-  opacity?: string;
+  opacity?: number;
   backgroundColor?: string;
   cursor?: string;
 }

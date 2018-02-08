@@ -8,8 +8,12 @@ export class Blockui {
     private blockPageOption: IAutBlockUIOption = {};
     private blockOption: IAutBlockUIOption = {};
 
-    private toggleBlock1() {
+    private attached() {
         this.blockPageOption.spinnerSize = '30px';
+        this.blockPageOption.spinnerColor = '.danger';
+    }
+
+    private toggleBlock1() {
         // setInterval(() => { this.blockValue1 = !this.blockValue1; }, 50000);
         this.blockValue1 = !this.blockValue1;
     }
