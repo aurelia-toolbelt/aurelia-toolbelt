@@ -66,8 +66,8 @@ export class JQueryBlockUI {
     this.defaultOption.blockMsgClass += ` m${this.id}`;
     this.sharedOptions.setOption(this.id, {
       id: this.id,
-      settings: this.settings,
-      option: this.option,
+      settings: this.settings || {},
+      option: this.option || {},
       default: this.defaultOption
     });
 
