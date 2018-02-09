@@ -131,13 +131,17 @@ export class JQueryBlockUI {
   private setSpinnerStyle(id: string, option: any) {
     let unit: string = this.getSizeUnit(option.spinnerSize);
     let size: number = this.getSize(option.spinnerSize);
-
+    let bsVariant: string[] = ['.primary', '.secondary', '.success', '.danger', '.warning', '.info', '.light', '.dark'];
     let isClass = false;
     let spinnerBgColor = '';
     if (option.spinnerColor) {
       isClass = option.spinnerColor.indexOf('.') > -1;
       if (isClass) {
-        spinnerBgColor = 'bg-' + option.spinnerColor.replace('.', '');
+        if (bsVariant.indexOf(option.spinnerColor) > -1) {
+          spinnerBgColor = 'bg-' + option.spinnerColor.replace('.', '');
+        } else {
+          spinnerBgColor = option.spinnerColor.replace('.', '');
+        }
       } else {
         spinnerBgColor = `background-color: ${option.spinnerColor || '#92459B'} !important`;
       }

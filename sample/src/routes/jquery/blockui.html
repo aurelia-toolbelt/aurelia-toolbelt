@@ -49,6 +49,59 @@
         </aut-mark-down>
       </abt-nav-item>
     </abt-navs>
+    <br>
+    <b>With styled spinner</b>
+    <div class="mt-2"></div>
+    <button type="button" class="btn btn-primary" click.delegate="blockThePageStyledSpinner()">${blockPageStyledSpinnerText}</button>
+    <aut-block-ui block-page.bind="blockPageStyledSpinner" settings.bind="blockPageStyledSpinnerOption"></aut-block-ui>
+    <div class="mt-2"></div>
+    <abt-navs tabs>
+      <abt-nav-item title="View" active>
+        <aut-mark-down src="./docs/components/jquery/block-ui/page-blocking-styled-spinner-view.md">
+        </aut-mark-down>
+      </abt-nav-item>
+      <abt-nav-item title="ViewModel">
+        <aut-mark-down src="./docs/components/jquery/block-ui/page-blocking-styled-spinner-viewmodel.md">
+        </aut-mark-down>
+      </abt-nav-item>
+    </abt-navs>
+    <p>If you want to set
+      <code>class</code> instead of color for
+      <code>spinnerColor</code> you should name it with a
+      <code>. (dot)</code>.
+    </p>
+    <br>
+    <b>With default message</b>
+    <div class="mt-2"></div>
+    <button type="button" class="btn btn-primary" click.delegate="blockThePageDefaultMsg()">${blockPageDefaultMsgText}</button>
+    <aut-block-ui block-page.bind="blockPageDefaultMsg" settings.bind="blockPageDefaultMsgOption"></aut-block-ui>
+    <div class="mt-2"></div>
+    <abt-navs tabs>
+      <abt-nav-item title="View" active>
+        <aut-mark-down src="./docs/components/jquery/block-ui/page-blocking-default-msg-view.md">
+        </aut-mark-down>
+      </abt-nav-item>
+      <abt-nav-item title="ViewModel">
+        <aut-mark-down src="./docs/components/jquery/block-ui/page-blocking-default-msg-viewmodel.md">
+        </aut-mark-down>
+      </abt-nav-item>
+    </abt-navs>
+    <br>
+    <b>With custom message</b>
+    <div class="mt-2"></div>
+    <button type="button" class="btn btn-primary" click.delegate="blockThePageCustomMsg()">${blockPageCustomMsgText}</button>
+    <aut-block-ui block-page.bind="blockPageCustomMsg" settings.bind="blockPageCustomMsgOption"></aut-block-ui>
+    <div class="mt-2"></div>
+    <abt-navs tabs>
+      <abt-nav-item title="View" active>
+        <aut-mark-down src="./docs/components/jquery/block-ui/page-blocking-custom-msg-view.md">
+        </aut-mark-down>
+      </abt-nav-item>
+      <abt-nav-item title="ViewModel">
+        <aut-mark-down src="./docs/components/jquery/block-ui/page-blocking-custom-msg-viewmodel.md">
+        </aut-mark-down>
+      </abt-nav-item>
+    </abt-navs>
   </fieldset>
 
 
