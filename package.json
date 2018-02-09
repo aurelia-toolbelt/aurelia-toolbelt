@@ -1,24 +1,24 @@
 {
   "name": "aurelia-toolbelt",
   "version": "0.8.0-alpha",
-  "description": "Create typescript plugins for Aurelia",
+  "description": "A bunch of components, value converters, services and so on, to have rich client applications.",
   "keywords": [
+    "aurelia-toolbelt",
     "aurelia",
-    "plugin",
-    "toolbelt",
-    "aurelia toolbelt"
+    "bootstrap",
+    "toolbelt", "aurelia toolbelt", "aurelia bootstrap"
   ],
-  "homepage": "https://github.com/shahabganji/aurelia-toolbelt",
+  "homepage": "https://aurelia-toolbelt.github.io",
   "bugs": {
-    "url": "https://github.com/shahabganji/aurelia-toolbelt/issues"
+    "url": "https://github.com/aurelia-toolbelt/aurelia-toolbelt/issues"
   },
   "license": "MIT",
-  "author": "Saeed Ganji (shahabganji@gmail.com)",
+  "author": "Saeed Ganji (shahabganji@gmail.com), Hamed Fathi()",
   "main": "dist/commonjs/index.js",
   "typings": "dist/commonjs/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shahabganji/aurelia-toolbelt"
+    "url": "https://github.com/aurelia-toolbelt/aurelia-toolbelt"
   },
   "scripts": {
     "setup": "node setup",
