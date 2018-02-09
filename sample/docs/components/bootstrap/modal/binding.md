@@ -1,7 +1,6 @@
 ```html
-<aut-checkbox curve fill animation="smooth" color="success" checked.bind="showModal"> 
-  Show Modal
-</aut-checkbox>
+<abt-toggle on="Shown" off="Hidden" on-type="success" checked.bind="showModal">
+</abt-toggle>
 
 <!-- Modal -->
 <abt-modal bs-show.call="showEvent()" bs-hide.call="hideEvent()" visible.bind="showModal">
@@ -14,8 +13,8 @@
     <div class="container">
       Modal shown by a checkbox value changed
       <br />
-      <aut-checkbox curve fill animation="smooth" color="success" checked.bind="showModal"> Show Modal
-      </aut-checkbox>
+        <abt-toggle on="Shown" off="Hidden" on-type="success" checked.bind="showModal">
+        </abt-toggle>
     </div>
   </abt-modal-body>
 </abt-modal>

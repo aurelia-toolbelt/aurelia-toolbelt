@@ -2,6 +2,8 @@ body {
   margin: 0;
   font-family: 'tahoma';
   font-size: 13px;
+  overflow-x: hidden !important;
+
 }
 
 .container-fluid {

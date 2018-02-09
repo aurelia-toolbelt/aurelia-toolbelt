@@ -181,6 +181,9 @@ export class App {
           },
           {
             route: 'masked-input', title: 'Masked Input'
+          },
+          {
+            route: 'scrollup', title: 'ScrollUp'
           }
           /*,{
             route: 'microlink', title: 'Microlink'
