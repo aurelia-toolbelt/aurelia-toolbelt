@@ -5,9 +5,12 @@ import { customElement, bindable, bindingMode, inject, containerless, DOM } from
 export class ScrollUpCustomElement {
 
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public style: string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public threshold: number = 150;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public threshold: number = 150;
+
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public beforeScrollUp: Function;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public afterScrollUp: Function;
 
   private checkScrollTop() {
     let elem = document.getElementById('aut-scrollup-button');
@@ -20,8 +23,10 @@ export class ScrollUpCustomElement {
   }
 
   private goToUp() {
+    this.beforeScrollUp();
     if (!document.body.scroll) {
       window.scrollTo(0, 0);
+      this.afterScrollUp();
       return;
     }
     document.body.scroll({
@@ -34,6 +39,7 @@ export class ScrollUpCustomElement {
       left: 0,
       behavior: 'smooth'
     });
+    this.afterScrollUp();
   }
 
   private attached() {

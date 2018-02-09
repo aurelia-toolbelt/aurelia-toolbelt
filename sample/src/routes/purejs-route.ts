@@ -44,6 +44,14 @@ export class Purejs {
         nav: true,
         title: 'Masked Input',
         settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['scrollup'],
+        name: 'pure-scrollup',
+        moduleId: PLATFORM.moduleName('./purejs/scrollup'),
+        nav: true,
+        title: 'ScrollUp',
+        settings: { auth: false, isComponent: true }
       }
       /*,{
           route: ['microlink'],
