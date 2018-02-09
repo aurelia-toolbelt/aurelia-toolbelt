@@ -170,21 +170,22 @@ export class App {
         nav: true,
         title: 'JS',
         settings: {
-          auth: false, navigation: [{
-            route: 'checkbox', title: 'Pretty Checkbox'
-          },
-          {
-            route: 'radio', title: 'Pretty Radio'
-          },
-          {
-            route: 'markdown', title: 'Mark Down'
-          },
-          {
-            route: 'masked-input', title: 'Masked Input'
-          },
-          {
-            route: 'scrollup', title: 'ScrollUp'
-          }
+          auth: false, navigation: [
+            // {
+            //   route: 'checkbox', title: 'Pretty Checkbox'
+            // },
+            // {
+            //   route: 'radio', title: 'Pretty Radio'
+            // },
+            // {
+            //   route: 'markdown', title: 'Mark Down'
+            // },
+            // {
+            //   route: 'masked-input', title: 'Masked Input'
+            // },
+            {
+              route: 'scrollup', title: 'ScrollUp'
+            }
           /*,{
             route: 'microlink', title: 'Microlink'
           }*/]
