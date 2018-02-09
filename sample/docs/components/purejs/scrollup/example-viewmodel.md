@@ -1,3 +1,4 @@
+```ts
 import { bindingMode } from 'aurelia-binding';
 import { bindable } from 'aurelia-templating';
 import { autoinject } from 'aurelia-dependency-injection';
@@ -23,3 +24,4 @@ export class ScrollUp {
         });
     }
 }
+```

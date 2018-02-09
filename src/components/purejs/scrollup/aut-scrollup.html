@@ -1,15 +1,7 @@
 <template>
-  
     <require from="./aut-scrollup.css"></require>
-    
-
-    <button id="aut-scrollup-button" click.delegate="goToUp()" css="${style}" class="aut-scrollup ${class}">
-      <slot>
-          <i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
-      </slot>
+    <button ref='scrollupButton' aut-uuid click.delegate="goToUp()" css="${style}" class="aut-scrollup ${class}">
+        <slot>
+        </slot>
     </button>
-
-
-
-
 </template>
