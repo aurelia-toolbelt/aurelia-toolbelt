@@ -102,6 +102,41 @@
         </aut-mark-down>
       </abt-nav-item>
     </abt-navs>
+    <br>
+    <b>With custom style</b>
+    <div class="mt-2"></div>
+    <button type="button" class="btn btn-primary" click.delegate="blockThePageCustomStyle()">${blockPageCustomStyleText}</button>
+    <aut-block-ui block-page.bind="blockPageCustomStyle" settings.bind="blockPageCustomStyleOption"></aut-block-ui>
+    <div class="mt-2"></div>
+    <abt-navs tabs>
+      <abt-nav-item title="View" active>
+        <aut-mark-down src="./docs/components/jquery/block-ui/page-blocking-custom-style-view.md">
+        </aut-mark-down>
+      </abt-nav-item>
+      <abt-nav-item title="ViewModel">
+        <aut-mark-down src="./docs/components/jquery/block-ui/page-blocking-custom-style-viewmodel.md">
+        </aut-mark-down>
+      </abt-nav-item>
+    </abt-navs>
+    <br>
+    <b>DOM element as message</b>
+    <div class="mt-2"></div>
+    <div id="domMessage" style="display:none;background-color: black">
+      <h1 style="color:white;font-size: 15px;padding:0;margin:0">We are processing your request. Please be patient.</h1>
+    </div>
+    <button type="button" class="btn btn-primary" click.delegate="blockThePageDomMsg()">${blockPageDomMsgText}</button>
+    <aut-block-ui block-page.bind="blockPageDomMsg" settings.bind="blockPageDomMsgOption"></aut-block-ui>
+    <div class="mt-2"></div>
+    <abt-navs tabs>
+      <abt-nav-item title="View" active>
+        <aut-mark-down src="./docs/components/jquery/block-ui/page-blocking-dom-msg-view.md">
+        </aut-mark-down>
+      </abt-nav-item>
+      <abt-nav-item title="ViewModel">
+        <aut-mark-down src="./docs/components/jquery/block-ui/page-blocking-dom-msg-viewmodel.md">
+        </aut-mark-down>
+      </abt-nav-item>
+    </abt-navs>
   </fieldset>
 
 

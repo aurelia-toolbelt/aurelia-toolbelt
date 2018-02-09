@@ -1,5 +1,5 @@
 export interface IAutBlockUIOption {
-  message?: string;
+  message?: string | Element;
   draggable?: boolean;
   css?: IAutBlockUICssOption;
   overlayCSS?: IAutBlockUIOverlayCssOption;

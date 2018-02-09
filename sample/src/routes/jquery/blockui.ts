@@ -8,16 +8,21 @@ export class Blockui {
     private blockPageStyledSpinnerText = 'Block page';
     private blockPageDefaultMsgText = 'Block page';
     private blockPageCustomMsgText = 'Block page';
+    private blockPageCustomStyleText = 'Block page';
+    private blockPageDomMsgText = 'Block page';
 
     private blockPageSpinner = false;
     private blockPageStyledSpinner = false;
     private blockPageDefaultMsg = false;
     private blockPageCustomMsg = false;
+    private blockPageCustomStyle = false;
+    private blockPageDomMsg = false;
 
     private blockPageStyledSpinnerOption: IAutBlockUIOption = {};
     private blockPageDefaultMsgOption: IAutBlockUIOption = {};
     private blockPageCustomMsgOption: IAutBlockUIOption = {};
-
+    private blockPageCustomStyleOption: IAutBlockUIOption = {};
+    private blockPageDomMsgOption: IAutBlockUIOption = {};
 
     private blockValue2 = true;
     private blockOption: IAutBlockUIOption = {};
@@ -31,6 +36,14 @@ export class Blockui {
         this.blockPageCustomMsgOption.useSpinner = false;
         this.blockPageCustomMsgOption.message = '<h1><img src="/images/spinner.gif" /> Just a moment...</h1>';
 
+        this.blockPageCustomStyleOption.useSpinner = false;
+
+        this.blockPageCustomStyleOption.css = {};
+        this.blockPageCustomStyleOption.css.backgroundColor = '#f00';
+        this.blockPageCustomStyleOption.css.color = '#fff';
+
+        this.blockPageDomMsgOption.useSpinner = false;
+        this.blockPageDomMsgOption.message = document.getElementById('domMessage');
     }
 
     private timer(time: number, onRunning: Function, onStop: Function) {
@@ -77,6 +90,24 @@ export class Blockui {
         this.timer(5, (t) => { this.blockPageCustomMsgText = `Unblock page in ${t} second(s)`; }, () => {
             this.blockPageCustomMsgText = 'Block page';
             this.blockPageCustomMsg = !this.blockPageCustomMsg;
+        });
+
+    }
+
+    private blockThePageCustomStyle() {
+        this.blockPageCustomStyle = !this.blockPageCustomStyle;
+        this.timer(5, (t) => { this.blockPageCustomStyleText = `Unblock page in ${t} second(s)`; }, () => {
+            this.blockPageCustomStyleText = 'Block page';
+            this.blockPageCustomStyle = !this.blockPageCustomStyle;
+        });
+
+    }
+
+    private blockThePageDomMsg() {
+        this.blockPageDomMsg = !this.blockPageDomMsg;
+        this.timer(5, (t) => { this.blockPageDomMsgText = `Unblock page in ${t} second(s)`; }, () => {
+            this.blockPageDomMsgText = 'Block page';
+            this.blockPageDomMsg = !this.blockPageDomMsg;
         });
 
     }
