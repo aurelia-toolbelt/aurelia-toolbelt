@@ -1,8 +1,7 @@
 export interface IAutBlockUIOption {
   message?: string | Element;
-  draggable?: boolean;
   css?: IAutBlockUICssOption;
-  overlayCSS?: IAutBlockUIOverlayCssOption;
+  overlayCss?: IAutBlockUIOverlayCssOption;
   cursorReset?: string;
   iframeSrc?: string;
   forceIframe?: boolean;

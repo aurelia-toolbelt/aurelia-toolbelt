@@ -1,3 +1,4 @@
+import { SharedOptions } from './SharedOptions';
 import { JsTools } from './../../../utilities/purejs/jsTools';
 import { CssMinifier } from './../../../utilities/purejs/cssMinifier';
 import { transient, customElement, inject, containerless, bindable, bindingMode, observable, DOM, singleton } from 'aurelia-framework';
@@ -7,38 +8,14 @@ import 'aureliatoolbelt-thirdparty/jquery.blockUI/jquery.blockUI.js';
 import { IAutBlockUIOption } from './aut-block-ui-option';
 import { stringify } from 'querystring';
 
-
-// We save all options per conponent. [id, settings from component, option from plugin, default options]
-@singleton()
-export class SharedOptions {
-  private allOptions: any = {};
-
-  public getOption(id: string): any {
-    return this.allOptions[id];
-  }
-
-  public setOption(id: string, obj: any) {
-    this.allOptions[id] = {
-      id: id,
-      settings: obj.settings,
-      option: obj.option,
-      default: obj.default
-    };
-  }
-
-  public dispose() {
-    this.allOptions = {};
-  }
-}
-
 @customElement('aut-block-ui')
 @inject(Element, 'aut-block-ui-option', CssMinifier, JsTools, SharedOptions)
 export class JQueryBlockUI {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public settings: IAutBlockUIOption = null;
 
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public block: string | boolean = false;
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public blockPage: string | boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public block: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public blockPage: boolean | string = false;
 
   private content: HTMLDivElement;
   private spinnerMessage: string = null;
@@ -88,7 +65,6 @@ export class JQueryBlockUI {
   // Default options comes from http://malsup.com/jquery/block/#options
   private setDefaultOption() {
     this.defaultOption.allowBodyStretch = true;
-    this.defaultOption.draggable = true;
     this.defaultOption.css = {
       padding: '0',
       margin: '0',
@@ -101,7 +77,7 @@ export class JQueryBlockUI {
       backgroundColor: '#fff',
       cursor: 'wait'
     };
-    this.defaultOption.overlayCSS = {
+    this.defaultOption.overlayCss = {
       backgroundColor: '#000',
       opacity: 0.6,
       cursor: 'wait'
@@ -189,16 +165,16 @@ export class JQueryBlockUI {
     }
     if (isBlocked) {
       $(this.elementId).block(option);
-      this.element.classList.add('block-ui-content');
+      this.element.classList.add('aut-block-ui-content');
       // Set options when browser windows resize.
       $(window).resize(() => {
-        if (this.element.classList.contains('block-ui-content')) {
+        if (this.element.classList.contains('aut-block-ui-content')) {
           $(this.elementId).block(option);
         }
       });
     } else {
       $(this.elementId).unblock();
-      this.element.classList.remove('block-ui-content');
+      this.element.classList.remove('aut-block-ui-content');
     }
   }
 

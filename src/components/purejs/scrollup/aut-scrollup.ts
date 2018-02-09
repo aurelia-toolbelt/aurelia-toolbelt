@@ -23,10 +23,14 @@ export class ScrollUpCustomElement {
   }
 
   private goToUp() {
-    this.beforeScrollUp();
+    if (this.beforeScrollUp) {
+      this.beforeScrollUp();
+    }
     if (!document.body.scroll) {
       window.scrollTo(0, 0);
-      this.afterScrollUp();
+      if (this.afterScrollUp) {
+        this.afterScrollUp();
+      }
       return;
     }
     document.body.scroll({
@@ -39,7 +43,9 @@ export class ScrollUpCustomElement {
       left: 0,
       behavior: 'smooth'
     });
-    this.afterScrollUp();
+    if (this.afterScrollUp) {
+      this.afterScrollUp();
+    }
   }
 
   private attached() {
