@@ -4,6 +4,7 @@ import { bindingMode, bindable } from 'aurelia-framework';
 
 export class Blockui {
 
+
     private blockPageSpinnerText = 'Block page';
     private blockPageStyledSpinnerText = 'Block page';
     private blockPageDefaultMsgText = 'Block page';
@@ -24,8 +25,8 @@ export class Blockui {
     private blockPageCustomStyleOption: IAutBlockUIOption = {};
     private blockPageDomMsgOption: IAutBlockUIOption = {};
 
-    private blockValue2 = true;
-    private blockOption: IAutBlockUIOption = {};
+    private blockElementText = 'Block';
+    private blockElement = false;
 
     private attached() {
         this.blockPageStyledSpinnerOption.spinnerSize = '25px';
@@ -112,7 +113,12 @@ export class Blockui {
 
     }
 
-    private toggleBlock2() {
-        this.blockValue2 = !this.blockValue2;
+    private onBlockElement() {
+        this.blockElement = !this.blockElement;
+        if (this.blockElement) {
+            this.blockElementText = 'Unblock';
+        } else {
+            this.blockElementText = 'Block';
+        }
     }
 }
