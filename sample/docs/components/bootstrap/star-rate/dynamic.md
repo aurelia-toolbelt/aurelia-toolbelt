@@ -3,7 +3,6 @@
   <span class="fa fa-minus-circle" style="cursor:pointer; color:maroon" click.trigger="myRate=0"></span>
 </abt-star-rate>
 
-<aut-checkbox curve color="danger" class="float-right" checked.bind="beDisable">
-  Disable
-</aut-checkbox>
+<abt-toggle size="small" class="float-right" on="Disable" off="Enable" on-type="secondary" off-type="success" checked.bind="beDisable">
+</abt-toggle>
 ```
