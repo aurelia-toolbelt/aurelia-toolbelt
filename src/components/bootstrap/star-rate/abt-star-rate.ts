@@ -1,5 +1,8 @@
 
 import { bindable, bindingMode, inject, children, computedFrom, customElement } from 'aurelia-framework';
+import 'font-awesome/css/font-awesome.css';
+
+
 
 @inject(Element)
 @customElement('abt-star-rate')

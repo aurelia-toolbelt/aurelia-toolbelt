@@ -1,6 +1,5 @@
 import { SharedOptions } from './SharedOptions';
 import { JsTools } from './../../../utilities/purejs/jsTools';
-import { CssMinifier } from './../../../utilities/purejs/cssMinifier';
 import { transient, customElement, inject, containerless, bindable, bindingMode, observable, DOM, singleton } from 'aurelia-framework';
 
 import * as $ from 'jquery';
@@ -9,7 +8,7 @@ import { IAutBlockUIOption } from './aut-block-ui-option';
 import { stringify } from 'querystring';
 
 @customElement('aut-block-ui')
-@inject(Element, 'aut-block-ui-option', CssMinifier, JsTools, SharedOptions)
+@inject(Element, 'aut-block-ui-option', JsTools, SharedOptions)
 export class JQueryBlockUI {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public settings: IAutBlockUIOption = null;
@@ -25,7 +24,7 @@ export class JQueryBlockUI {
   private id: string = '';
 
   // tslint:disable-next-line:max-line-length
-  constructor(private element: Element, private option: IAutBlockUIOption, private cssMinifier: CssMinifier, private jsTools: JsTools, private sharedOptions: SharedOptions) {
+  constructor(private element: Element, private option: IAutBlockUIOption, private jsTools: JsTools, private sharedOptions: SharedOptions) {
   }
 
   // The component has content or not.
@@ -126,7 +125,7 @@ export class JQueryBlockUI {
       isClass = true;
     }
 
-    let minify = `
+    let style = `
     .blockElement.${'m' + id}{
       z-index: ${option.baseZ} !important;
     }
@@ -138,7 +137,7 @@ export class JQueryBlockUI {
       height: ${size}${unit} !important;
       ${!isClass ? spinnerBgColor : ''}
     }`;
-    DOM.injectStyles(this.cssMinifier.minify(minify), null, null, 's' + id);
+    DOM.injectStyles(style, null, null, 's' + id);
 
     // tslint:disable-next-line:max-line-length
     this.spinnerMessage = `<div class="bounce"><div class="bounce1 ${isClass ? spinnerBgColor : ''} ${'b' + id}"></div><div class="bounce2 ${isClass ? spinnerBgColor : ''} ${'b' + id}"></div><div class="bounce3 ${isClass ? spinnerBgColor : ''} ${'b' + id}"></div></div>`;

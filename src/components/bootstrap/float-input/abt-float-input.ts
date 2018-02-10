@@ -1,9 +1,7 @@
 import { inject, customElement, bindable, bindingMode, containerless, PLATFORM, noView, DOM } from 'aurelia-framework';
-import { CssMinifier } from '../../../utilities/purejs/cssMinifier';
 
 export type FloatInputPlacement = 'sm' | 'md' | 'lg';
 @containerless()
-@inject(CssMinifier)
 @customElement('abt-float-input')
 export class BootstrapFloatInput {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
@@ -21,9 +19,6 @@ export class BootstrapFloatInput {
 
   private floatInput: HTMLInputElement;
   private floatInputLabel: HTMLLabelElement;
-
-  constructor(private cssMinifier: CssMinifier) {
-  }
 
   private afterAttached() {
 
@@ -72,8 +67,7 @@ export class BootstrapFloatInput {
                     font-size: ${this.labelFontSize || '75%'} !important;
                   }`;
 
-      let minify = this.cssMinifier.minify(style);
-      DOM.injectStyles(minify, null, null, 's' + id);
+      DOM.injectStyles(style, null, null, 's' + id);
     }
   }
 }

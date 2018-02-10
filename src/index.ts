@@ -1,8 +1,6 @@
 
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
-
-
 export * from './services/bootstrap/bootstrap-typography-service';
 
 export * from './services/jquery/toastr/toastr-service-options';
