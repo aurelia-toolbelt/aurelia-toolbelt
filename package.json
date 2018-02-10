@@ -13,7 +13,7 @@
     "url": "https://github.com/aurelia-toolbelt/aurelia-toolbelt/issues"
   },
   "license": "MIT",
-  "author": "Saeed Ganji (shahabganji@gmail.com), Hamed Fathi()",
+  "author": "Saeed Ganji (shahabganji@gmail.com), Hamed Fathi(hamedfathi@outlook.com)",
   "main": "dist/commonjs/index.js",
   "typings": "dist/commonjs/index.d.ts",
   "repository": {
