@@ -1,8 +1,10 @@
 
-import { transient, customElement, inject, containerless, bindable, bindingMode, observable, DOM, singleton, noView } from 'aurelia-framework';
-
 import * as toastr from 'toastr';
-import 'toastr/build/toastr.css';
+import { viewResources } from 'aurelia-templating';
+import { singleton, inject } from 'aurelia-dependency-injection';
+// import 'toastr/build/toastr.css';
+
+@viewResources('toastr/build/toastr.css')
 @singleton()
 @inject(toastr)
 export class ToastrService {
