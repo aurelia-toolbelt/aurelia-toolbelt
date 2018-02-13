@@ -5,13 +5,13 @@
   <!-- text-shadow: 0 0 20px ${shadowColor}, 0 0 20px rgba(10, 175, 230, 0); -->
 
   <div class="clock" css="color: ${color};">
-    <slot if.bind="showDate" name="date">
+    <slot name="date">
       <p if.bind="showDate" class="date" css="font-size: ${fontSize/2}px;">${value|date:dateFormat:locale}</p>
     </slot>
-    <slot if.bind="showTime" name="time">
+    <slot name="time">
       <p if.bind="showTime" class="time" css="font-size: ${fontSize}px;">${value|time:be24Hours}</p>
     </slot>
-    <slot if.bind="showText" name="text">
+    <slot name="text">
       <p if.bind="showText" class="text" css="font-size: ${fontSize/3}px;">${text}</p>
     </slot>
   </div>

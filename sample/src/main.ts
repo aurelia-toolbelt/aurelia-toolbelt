@@ -10,6 +10,7 @@ export async function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
     .developmentLogging()
+    .plugin('aurelia-dialog')
     .plugin('aurelia-toolbelt')
     .plugin('aurelia-toolbelt/services/jquery/toastr', {
       progressBar: false, preventDuplicates: true, positionClass: 'toast-bottom-left'
