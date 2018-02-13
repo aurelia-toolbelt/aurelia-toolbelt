@@ -1,12 +1,14 @@
 
 import * as toastr from 'toastr';
-import { viewResources } from 'aurelia-templating';
+import { viewResources, noView } from 'aurelia-templating';
 import { singleton, inject } from 'aurelia-dependency-injection';
+import { PLATFORM } from 'aurelia-pal';
 // import 'toastr/build/toastr.css';
 
-@viewResources('toastr/build/toastr.css')
 @singleton()
 @inject(toastr)
+@noView([PLATFORM.moduleName('toastr/build/toastr.css')])
+@viewResources('toastr/build/toastr.css')
 export class ToastrService {
   constructor(private tr: Toastr) {
   }

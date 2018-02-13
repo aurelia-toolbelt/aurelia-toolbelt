@@ -1,6 +1,4 @@
 import { containerless, customElement, bindable, bindingMode, inject } from 'aurelia-framework';
-import { throws } from 'assert';
-
 
 @inject(Element)
 @containerless()

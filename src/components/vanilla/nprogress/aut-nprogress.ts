@@ -1,10 +1,12 @@
 import * as nprogress from 'nprogress';
-import { bindable, noView, PLATFORM, customElement, bindingMode, singleton, inject, DOM } from 'aurelia-framework';
+import { bindable, noView, PLATFORM, customElement, bindingMode, singleton, inject, DOM, viewResources } from 'aurelia-framework';
 
-import 'nprogress/nprogress.css';
+// import 'nprogress/nprogress.css';
 
 
 @singleton()
+@noView([PLATFORM.moduleName('nprogress/nprogress.css')])
+@viewResources('nprogress/nprogress.css')
 export class NProgressStyleInjector {
 
   private isAlreadyOverridden = false;

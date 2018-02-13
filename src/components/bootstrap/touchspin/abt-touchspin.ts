@@ -2,7 +2,7 @@ import { customElement, inject, bindable, bindingMode, BindingEngine } from 'aur
 
 import * as $ from 'jquery';
 import './scripts/jquery.bootstrap-touchspin';
-import './styles/jquery.bootstrap-touchspin.css';
+// import './styles/jquery.bootstrap-touchspin.css';
 
 @inject(Element)
 @customElement('abt-touchspin')

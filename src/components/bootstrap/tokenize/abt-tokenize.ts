@@ -2,7 +2,7 @@
 import { customElement, inject, bindable, bindingMode, BindingEngine, containerless, processContent, children } from 'aurelia-framework';
 
 import 'jquery';
-import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.css';
+// import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.css';
 import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.js';
 import { JsTools } from '../../../utilities/vanilla/jsTools';
 
