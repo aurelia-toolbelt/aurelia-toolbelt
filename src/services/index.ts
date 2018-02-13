@@ -7,7 +7,7 @@ export function configure(config: FrameworkConfiguration) {
     .feature(PLATFORM.moduleName('aurelia-toolbelt/services/bootstrap/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/services/jquery/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/services/misc/index'))
-    .feature(PLATFORM.moduleName('aurelia-toolbelt/services/purejs/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/services/vanilla/index'))
     ;
 
 }

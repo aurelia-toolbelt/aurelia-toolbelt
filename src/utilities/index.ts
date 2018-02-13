@@ -1,5 +1,5 @@
 import { FrameworkConfiguration } from 'aurelia-framework';
-import './purejs/fastSafeStringify';
+import './vanilla/fastSafeStringify';
 
 
 export function configure(config: FrameworkConfiguration) {

@@ -1,5 +1,5 @@
 import { containerless, bindable, bindingMode, inject, customElement } from 'aurelia-framework';
-import { Uuid } from '../../../utilities/purejs/uuid';
+import { Uuid } from '../../../utilities/vanilla/uuid';
 
 
 

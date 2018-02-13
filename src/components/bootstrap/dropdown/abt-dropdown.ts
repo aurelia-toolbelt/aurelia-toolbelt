@@ -4,7 +4,7 @@ import { BootstrapDropdownSelectedItemChanged } from './abt-dropdown-selected-it
 
 
 import * as $ from 'jquery';
-import { Uuid } from '../../../utilities/purejs/uuid';
+import { Uuid } from '../../../utilities/vanilla/uuid';
 
 // export type BoundaryType = 'viewport' | 'window' | 'scrollParent';
 
