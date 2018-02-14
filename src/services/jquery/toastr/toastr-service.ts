@@ -1,17 +1,19 @@
 
-import * as toastr from 'toastr';
-import { viewResources, noView } from 'aurelia-templating';
-import { singleton, inject } from 'aurelia-dependency-injection';
-import { PLATFORM } from 'aurelia-pal';
-// import 'toastr/build/toastr.css';
+import 'jquery';
+
+// import * as toastr from 'toastr';
+
+import { singleton } from 'aurelia-dependency-injection';
+import { injectCss } from '../../../decorators/inject-css';
+
 
 @singleton()
-@inject(toastr)
-@noView([PLATFORM.moduleName('toastr/build/toastr.css')])
-@viewResources('toastr/build/toastr.css')
+@injectCss('toastr/build/toastr.css')
 export class ToastrService {
+
   constructor(private tr: Toastr) {
   }
+
   public success(message: string, title?: string, overrides?: ToastrOptions) {
     let settings = null;
     if (overrides) {
