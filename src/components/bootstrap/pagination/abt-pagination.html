@@ -1,5 +1,6 @@
 <template ref="paginationTemplate">
   <require from="./abt-pagination.css"></require>
+  
   <ul ref="pagination" css="${style}" id="${id}" class="pagination abt-pagination ${class}">
     <li show.bind="boundaryLinks" class="text-nowrap page-item abt-pagination-first ${selectedPage === 1  ? 'disabled':''}">
       <a class="page-link abt-pagination-link-first" href="#" click.trigger="onClick($event,1)">

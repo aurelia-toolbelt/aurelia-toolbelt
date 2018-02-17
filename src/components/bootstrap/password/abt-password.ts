@@ -1,4 +1,4 @@
-import { JsTools } from './../../../utilities/purejs/jsTools';
+import { JsTools } from './../../../utilities/vanilla/jsTools';
 import { PasswordMeter, IResult } from 'password-meter';
 import {
   customAttribute, autoinject, bindable,

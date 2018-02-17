@@ -1,14 +1,19 @@
 <template>
   <div class="row">
     <div class="col-sm-3">
-      <abt-listgroup id="getStartedList" class="sticky-top">
+
+      <abt-listgroup id="getStartedList" class="sticky-top" style="border-bottom-style: none !important;">
         <abt-listgroup-item href="#General">General</abt-listgroup-item>
         <abt-listgroup-item href="#Installation">Installation</abt-listgroup-item>
         <abt-listgroup-item href="#Categories">Categories</abt-listgroup-item>
         <!-- <abt-listgroup-item href="#Features">Features</abt-listgroup-item> -->
         <abt-listgroup-item href="#License">License</abt-listgroup-item>
         <abt-listgroup-item href="#Support">Support</abt-listgroup-item>
-
+        <abt-listgroup-item style="border-bottom-style: none !important; border-left-style:none !important;border-right-style:none !important">
+          <aut-clock font-size="40" show-text.bind="false" show-date.bind="false" be24-hours="true" date-format="YYYY MMMM DD" locale="fa"
+            style="left: 300px; top:200px; position: absolute">
+          </aut-clock>
+        </abt-listgroup-item>
       </abt-listgroup>
 
     </div>
@@ -20,6 +25,7 @@
             <span class="aurelia-color" style="font-weight: bold">Not started yet!</span>
           </h2>
         </legend>
+
         <aut-mark-down src="./docs/introduction.md">
         </aut-mark-down>
       </fieldset>

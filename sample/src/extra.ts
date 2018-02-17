@@ -20,6 +20,7 @@ import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.css';
 import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.js';
 
 import 'aureliatoolbelt-thirdparty/bootstrap-toggle/bootstrap-toggle.js';
+import 'aureliatoolbelt-thirdparty/bootstrap-toggle/bootstrap-toggle.css';
 import 'aureliatoolbelt-thirdparty/jquery.blockUI/jquery.blockUI.js';
 const ml = require('aureliatoolbelt-thirdparty/microlink/microlink.js');
 

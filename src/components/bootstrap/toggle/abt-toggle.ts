@@ -1,13 +1,10 @@
 import { customElement, inject, bindable, bindingMode, BindingEngine } from 'aurelia-framework';
 import { Disposable } from 'aurelia-binding';
 
-// import 'bootstrap-toggle';
-// import 'bootstrap-toggle/css/bootstrap-toggle.css';
 
 import * as $ from 'jquery';
 
 import 'aureliatoolbelt-thirdparty/bootstrap-toggle/bootstrap-toggle.js';
-// import './abt-toggle.css';
 
 @inject(Element, BindingEngine)
 @customElement('abt-toggle')

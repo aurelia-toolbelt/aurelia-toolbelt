@@ -9,6 +9,7 @@
   <script src="./scripts/polyfills.min.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.1/bluebird.min.js"></script> -->
   <link href="./styles/styles.css" rel="stylesheet">
+  <link href="./fonts/digital-7/digital7.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css" />
 
 </head>
@@ -19,22 +20,43 @@
   <div aurelia-app="main">
 
     <style>
+      @media screen and (max-width:576px) {
+        img.responsive {
+          width: 150px;
+        }
+      }
+
+      @media screen and (max-width:768px) {
+        img.responsive {
+          width: 250px;
+        }
+      }
+
+      @media screen and (max-width:992px) {
+        img.responsive {
+          width: 350px;
+        }
+      }
+
+      @media screen and (min-width:1200px) {
+        img.responsive {
+          width: 400px;
+
+        }
+      }
+
       img {
-        position: absolute;
-        top: 35%;
-        left: 50%;
-        width: 400px;
-        height: 400px;
-        margin-top: -200px;
-        /* Half the height */
-        margin-left: -200px;
-        /* Half the width */
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 9%;
       }
 
       .spinner {
-        margin: 550px auto 0;
         width: 120px;
         text-align: center;
+        display: block;
+        margin: 0 auto;
       }
 
       .spinner>div {
@@ -87,14 +109,18 @@
     </style>
 
 
+    <div>
 
-    <img src="./logo.png">
 
-    <div class="spinner">
-      <div class="bounce1"></div>
-      <div class="bounce2"></div>
-      <div class="bounce3"></div>
+      <img src="./logo 400 low.png" class="responsive" align="middle">
+      <br>
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
     </div>
+
 
     <div class="alert alert-danger fixed-bottom text-center">
 

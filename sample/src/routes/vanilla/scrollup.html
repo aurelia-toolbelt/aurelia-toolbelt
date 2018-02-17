@@ -1,0 +1,175 @@
+<template>
+    <style>
+        .aut-scrollup {
+            background: url('/images/top.png') no-repeat;
+            cursor: pointer;
+            border: none;
+            border-radius: 0;
+            width: 64px;
+            height: 64px;
+        }
+    </style>
+    <fieldset class="mb-5">
+        <legend>
+            <h2>ScrollUp
+                <a href="https://github.com/aurelia-toolbelt/aurelia-toolbelt/tree/master/src/components/vanilla/scrollup">
+                    <i class="fa fa-link"></i>
+                </a>
+            </h2>
+        </legend>
+        A component to create a customisable
+        <code>Scroll to top</code> feature that will work with ease.
+        <fieldset class="mt-5">
+            <legend>
+                Usage
+            </legend>
+            <aut-mark-down src="./docs/components/vanilla/scrollup/usage.md">
+            </aut-mark-down>
+        </fieldset>
+        <fieldset class="mt-5">
+            <legend>
+                Example
+            </legend>
+            <p>Enter your desired <code>threshold</code>. This sets the <i>distance</i> from the <i>top</i> of the page to display the component.</p>
+            <abt-inputgroup class="mb-3">
+                <abt-inputgroup-prepend>
+                    <abt-inputgroup-text>Threshold</abt-inputgroup-text>
+                </abt-inputgroup-prepend>
+                <input type="number" value.bind="thresholdValue" min='0' max='1800' class="form-control" placeholder="Threshold" aria-label="Threshold">
+            </abt-inputgroup>
+            <aut-scrollup threshold.bind="thresholdValue" before-scroll-up.call="onBeforeScrollUp()" after-scroll-up.call="onAfterScrollup()">
+            </aut-scrollup>
+            <abt-navs tabs>
+                <abt-nav-item title="View" active>
+                    <aut-mark-down src="./docs/components/vanilla/scrollup/example-view.md">
+                    </aut-mark-down>
+                </abt-nav-item>
+                <abt-nav-item title="ViewModel">
+                    <aut-mark-down src="./docs/components/vanilla/scrollup/example-viewmodel.md">
+                    </aut-mark-down>
+                </abt-nav-item>
+            </abt-navs>
+        </fieldset>
+        <fieldset class="mt-5">
+            <legend>
+                Use Font Awesome
+            </legend>
+            <p>We have used these settings on other pages of the site.</p>
+            <aut-mark-down src="./docs/components/vanilla/scrollup/font-awesome.md">
+            </aut-mark-down>
+        </fieldset>
+        <fieldset class="mt-5">
+            <legend>
+                API Reference
+            </legend>
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <td class="text-nowrap" colspan="5">
+                            <b>
+                                aut-scrollup
+                            </b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-nowrap" scope="col">Name</th>
+                        <th class="text-nowrap" scope="col">Type</th>
+                        <th class="text-nowrap" scope="col">Binding type</th>
+                        <th class="text-nowrap" scope="col">Default value</th>
+                        <th class="text-nowrap" scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-nowrap" colspan="5">
+                            <b>
+                                Properties
+                            </b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-nowrap" scope="row">class</td>
+                        <td class="text-nowrap">string</td>
+                        <td class="text-nowrap">oneWay</td>
+                        <td class="text-nowrap"></td>
+                        <td>Set class to the password input</td>
+                    </tr>
+                    <tr>
+                        <td class="text-nowrap" scope="row">style</td>
+                        <td class="text-nowrap">string</td>
+                        <td class="text-nowrap">oneWay</td>
+                        <td class="text-nowrap"></td>
+                        <td>Set style to the password input</td>
+                    </tr>
+                    <tr>
+                        <td class="text-nowrap" scope="row">threshold</td>
+                        <td class="text-nowrap">number | string</td>
+                        <td class="text-nowrap">oneWay</td>
+                        <td class="text-nowrap">150</td>
+                        <td>Distance from top before showing scrollup element.</td>
+                    </tr>
+                    <tr>
+                        <td class="text-nowrap" scope="row">before-scroll-up</td>
+                        <td class="text-nowrap">call</td>
+                        <td class="text-nowrap">twoWay</td>
+                        <td class="text-nowrap"></td>
+                        <td>A function that runs before
+                            <code>scrollUp</code>.</td>
+                    </tr>
+                    <tr>
+                        <td class="text-nowrap" scope="row">after-scroll-up</td>
+                        <td class="text-nowrap">call</td>
+                        <td class="text-nowrap">twoWay</td>
+                        <td class="text-nowrap"></td>
+                        <td>A function that runs after
+                            <code>scrollUp</code>.</td>
+                    </tr>
+                    <tr>
+                        <td class="text-nowrap" scope="row">shown-scroll-up</td>
+                        <td class="text-nowrap">call</td>
+                        <td class="text-nowrap">twoWay</td>
+                        <td class="text-nowrap"></td>
+                        <td>A function that runs when
+                            <code>scrollUp</code> element shown.</td>
+                    </tr>
+                    <tr>
+                        <td class="text-nowrap" scope="row">hide-scroll-up</td>
+                        <td class="text-nowrap">call</td>
+                        <td class="text-nowrap">twoWay</td>
+                        <td class="text-nowrap"></td>
+                        <td>A function that runs when
+                            <code>scrollUp</code> element hide.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+        <fieldset class="mt-5">
+            <legend>
+                Styling
+            </legend>
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <td class="text-nowrap" colspan="5">
+                            <b>
+                                aut-scrollup
+                            </b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-nowrap" scope="col">Class name</th>
+                        <th class="text-nowrap" scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-nowrap" scope="row">aut-scrollup</td>
+                        <td>CSS class for the component.</td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+        <div style="height:500px"></div>
+</template>

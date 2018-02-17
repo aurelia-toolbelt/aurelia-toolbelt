@@ -1,5 +1,5 @@
 import { SharedOptions } from './SharedOptions';
-import { JsTools } from './../../../utilities/purejs/jsTools';
+import { JsTools } from './../../../utilities/vanilla/jsTools';
 import { transient, customElement, inject, containerless, bindable, bindingMode, observable, DOM, singleton } from 'aurelia-framework';
 
 import * as $ from 'jquery';

@@ -164,9 +164,9 @@ export class App {
         }
       },
       {
-        route: ['purejs'],
-        name: 'purejs',
-        moduleId: PLATFORM.moduleName('./routes/purejs-route'),
+        route: ['vanilla'],
+        name: 'vanilla',
+        moduleId: PLATFORM.moduleName('./routes/vanilla-route'),
         nav: true,
         title: 'JS',
         settings: {
