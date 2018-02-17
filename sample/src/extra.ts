@@ -27,6 +27,3 @@ let x = fuse;
 let hljs = hl;
 // let Popper = popperjs;
 // let zen = zenscroll;
-
-
-import { TestDialog } from './routes/bootstrap/test-dialog';
