@@ -1,13 +1,19 @@
 
-import { transient, customElement, inject, containerless, bindable, bindingMode, observable, DOM, singleton, noView } from 'aurelia-framework';
+import 'jquery';
 
-import * as toastr from 'toastr';
-import 'toastr/build/toastr.css';
+// import * as toastr from 'toastr';
+
+import { singleton } from 'aurelia-dependency-injection';
+import { injectCss } from '../../../decorators/inject-css';
+
+
 @singleton()
-@inject(toastr)
+@injectCss('toastr/build/toastr.css')
 export class ToastrService {
+
   constructor(private tr: Toastr) {
   }
+
   public success(message: string, title?: string, overrides?: ToastrOptions) {
     let settings = null;
     if (overrides) {

@@ -1,0 +1,77 @@
+<template>
+
+  <require from="../../bootstrap/toggle/abt-toggle"></require>
+  <require from="../../../value-converters/vanilla/mark-down/markdown-vc"></require>
+  <require from="../../bootstrap/button/abt-button"></require>
+
+  <!-- <require from="../../bootstrap/card/abt-card.html"></require>
+  <require from="../../bootstrap/card/abt-card-body.html"></require> -->
+
+  <abt-card class="mt-3 mb-4">
+    <abt-card-header if.bind="showToolBar">
+
+      <abt-button size="sm" color="secondary" click.call="srcChanged()">
+        <span slot="loading">
+          <i class="fa fa-refresh fa-spin"></i>
+        </span>
+
+        Reload
+
+      </abt-button>
+
+      <div class="btn-group btn-group-sm" role="group">
+        <button click.delegate="addText('# ')" type="button" class="btn btn-outline-primary">h1</button>
+        <button click.delegate="addText('## ')" type="button" class="btn btn-outline-primary">h2</button>
+        <button click.delegate="addText('### ')" type="button" class="btn btn-outline-primary">h3</button>
+        <button click.delegate="addText('#### ')" type="button" class="btn btn-outline-primary">h4</button>
+        <button click.delegate="addText('##### ')" type="button" class="btn btn-outline-primary">h5</button>
+      </div>
+
+      <div class="btn-group btn-group-sm" role="group">
+        <button type="button" class="btn btn-outline-dark" click.delegate="addText('****', 2)">
+          <b>Bold</b>
+        </button>
+        <button type="button" class="btn btn-outline-dark" click.delegate="addText('__', 1)">
+          <em>Italic</em>
+        </button>
+      </div>
+
+      <div class="btn-group btn-group-sm" role="group">
+        <abt-button outline click.call="addText('[]()', 1)">
+          <b>Link</b>
+        </abt-button>
+        <abt-button outline click.call="addText('![]()', 4)">
+          <em>Image</em>
+        </abt-button>
+      </div>
+
+
+      <div class="btn-group btn-group-sm" role="group">
+        <abt-toggle size="mini" checked.bind="showPreview">
+          Preview
+        </abt-toggle>
+        <abt-toggle size="mini" checked.bind="showEditor">
+          Editor
+        </abt-toggle>
+      </div>
+    </abt-card-header>
+    <abt-card-body if.bind="showEditor === true" style="border-left: 3px solid maroon !important;">
+
+      <textarea ref="editor" class="editor" style="
+                  width: 98%;
+                  border: 0px;
+                  min-height: 400px;" value.bind="myText">
+      </textarea>
+
+    </abt-card-body>
+    <abt-card-footer if.bind="showPreview === true" style="min-height: 100px; border-left:4px solid #753B85;">
+      <div ref="preview" innerhtml.bind="myText | md & debounce:200">
+      </div>
+    </abt-card-footer>
+
+    <div show.bind="false" ref="slotContainer" style="visibility: hidden">
+      <slot></slot>
+    </div>
+
+  </abt-card>
+</template>
