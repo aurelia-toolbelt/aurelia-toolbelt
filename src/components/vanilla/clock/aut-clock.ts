@@ -1,5 +1,7 @@
 import { customElement, bindable, bindingMode, useShadowDOM } from 'aurelia-framework';
+import { containerless } from 'aurelia-templating';
 
+@containerless()
 @customElement('aut-clock')
 export class ClockCustomElement {
 

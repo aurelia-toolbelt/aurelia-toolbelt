@@ -1,8 +1,16 @@
+@font-face {
+    font-family: 'Digital-7';
+    src: url('./digital-7/Digital-7.eot');
+    src: url('./digital-7/Digital-7.eot?#iefix') format('embedded-opentype'), url('./digital-7/Digital-7.woff2') format('woff2'), url('./digital-7/Digital-7.woff') format('woff'), url('./digital-7/Digital-7.ttf') format('truetype'), url('./digital-7/Digital-7.svg#Digital-7') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .clock {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Digital-7', Tahoma, monospace;
     text-align: center;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    /* -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
     -webkit-touch-callout: none;
     /* iOS Safari */
     -webkit-user-select: none;
@@ -28,10 +36,10 @@
 
 .clock .date {
     letter-spacing: 0.1em;
-    padding-bottom: 5px;
+    padding-bottom: 3px;
 }
 
 .clock .text {
     letter-spacing: 0.1em;
-    padding: 10px 0 0;
+    padding: 5px 0 0;
 }

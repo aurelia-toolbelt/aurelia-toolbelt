@@ -3,7 +3,7 @@ import { bindingMode, bindable, containerless, customElement, inject } from 'aur
 import * as $ from 'jquery';
 
 @inject(Element)
-@containerless()
+// @containerless()
 @customElement('abt-modal')
 export class BootstrapModal {
 

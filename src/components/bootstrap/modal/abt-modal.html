@@ -1,4 +1,5 @@
-<template>
+<template ref="modal" class="modal ${animate ? 'fade' : ''} ${class}" data-abt-dismissible="${dismissible}" aut-uuid css="${style}" tabindex="-1" role="dialog" aria-labelledby="fill-later"
+aria-hidden="true">
 
   <require from="../../../custom-attributes/vanilla/uuid/aut-uuid"></require>
   <div ref="modal" class="modal ${animate ? 'fade' : ''} ${class}" data-abt-dismissible="${dismissible}" aut-uuid css="${style}" tabindex="-1" role="dialog" aria-labelledby="fill-later"
@@ -9,6 +10,6 @@
           </slot>
         </div>
       </div>
-  </div>
+  
 
 </template>
