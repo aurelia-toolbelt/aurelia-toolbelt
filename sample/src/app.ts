@@ -185,6 +185,9 @@ export class App {
             // },
             {
               route: 'scrollup', title: 'ScrollUp'
+            },
+            {
+              route: 'divider', title: 'Divider'
             }
           /*,{
             route: 'microlink', title: 'Microlink'

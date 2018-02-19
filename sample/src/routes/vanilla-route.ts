@@ -52,6 +52,14 @@ export class Purejs {
         nav: true,
         title: 'ScrollUp',
         settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['divider'],
+        name: 'pure-divider',
+        moduleId: PLATFORM.moduleName('./vanilla/divider'),
+        nav: true,
+        title: 'Divider',
+        settings: { auth: false, isComponent: true }
       }
       /*,{
           route: ['microlink'],
