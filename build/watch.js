@@ -137,7 +137,6 @@ gulp.task('fuse-sample', function () {
         + inputmask
         + password-meter
         + markdown-it
-        + font-awesome
         + font-awesome/css/font-awesome.css
         + highlight.js
         + highlight.js/styles/atom-one-dark.css
@@ -147,7 +146,6 @@ gulp.task('fuse-sample', function () {
         + bootstrap/dist/js/bootstrap.bundle.js
         + bootstrap/dist/css/bootstrap.css
         + toastr
-        + toastr/build/toastr.css
         + metismenu
         + metismenu/dist/metismenu.css
         + aureliatoolbelt-thirdparty/bootstrap-toggle/bootstrap-toggle.js

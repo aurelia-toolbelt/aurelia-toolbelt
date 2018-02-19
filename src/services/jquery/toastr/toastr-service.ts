@@ -5,10 +5,12 @@ import 'jquery';
 
 import { singleton } from 'aurelia-dependency-injection';
 import { injectCss } from '../../../decorators/inject-css';
+import { viewResources } from 'aurelia-framework';
 
 
 @singleton()
-@injectCss('toastr/build/toastr.css')
+// @injectCss('aurelia-toolbelt/external-resources/css/toastr.css')
+// @injectCss('../../../external-resources/css/toastr.css')
 export class ToastrService {
 
   constructor(private tr: Toastr) {
