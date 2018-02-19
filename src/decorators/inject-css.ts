@@ -6,7 +6,26 @@ import { relativeToFile } from 'aurelia-path';
 
 
 export function injectCss(address: string): any {
-  return function (target: any) {
+  return function (target: Function) {
+
+    let container = Container.instance;
+
+    let loader: Loader = <Loader>container.get(Loader);
+
+    let css_id = 'inject_css_' + target.name.toLowerCase();
+
+    loader.loadText(address).then(css => {
+      DOM.injectStyles(css, null, null, css_id);
+    });
+
+    target.prototype.injectedCssId = css_id;
+
+    return target;
+
+  };
+}
+
+// #region commented out codes :
 
     // let ctor = target.constructor;
 
@@ -18,26 +37,6 @@ export function injectCss(address: string): any {
     // const myModuleId = Origin.get(ctor).moduleId;
     // const absolutePath = relativeToFile(address, myModuleId);
 
-    let address2 = PLATFORM.moduleName(address);
-    console.log(address);
-    console.log(address2);
-
-    let container = Container.instance;
-
-    let loader: Loader = <Loader>container.get(Loader);
-
-    let css_id = 'inject_css_' + (<string>target.name).toLocaleLowerCase();
-
-    loader.loadText(address2).then(css => {
-      DOM.injectStyles(css, null, null, css_id);
-    });
-
-    target.prototype.injectedCssId = css_id;
-
-    return target;
-
-  };
-}
 
 
 // export function injectCss2<T extends { new(...args: any[]): {} }>(constructor: T) {
@@ -49,3 +48,4 @@ export function injectCss(address: string): any {
 
 // }
 
+ //#endregion

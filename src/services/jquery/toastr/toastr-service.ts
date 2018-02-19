@@ -4,8 +4,9 @@ import 'jquery';
 // import * as toastr from 'toastr';
 
 import { singleton } from 'aurelia-dependency-injection';
-import { injectCss } from '../../../decorators/inject-css';
 import { viewResources } from 'aurelia-framework';
+
+import { injectCss } from '../../../decorators/inject-css';
 
 
 @singleton()
