@@ -7,6 +7,7 @@ import { customElement, bindable, bindingMode, inject, containerless, DOM } from
 @containerless()
 export class DividerCustomElement {
 
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public vertical: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public color: string = '#b5b5b5';
