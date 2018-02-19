@@ -1,4 +1,4 @@
-# aurelia-toolbelt ( v0.9.1-alpha )
+# aurelia-toolbelt ( v0.9.2-alpha )
 
 * You can find documentation and demo [here](https://aurelia-toolbelt.github.io/)
 
@@ -17,11 +17,11 @@
 
 1. run 
 
-```npm install aurelia-toolbelt@0.9.1-alpha``` 
+```npm install aurelia-toolbelt@0.9.2-alpha``` 
 
 or
 
-```yarn add aurelia-toolbelt@0.9.1-alpha```
+```yarn add aurelia-toolbelt@0.9.2-alpha```
 
 2. use the plugin:
 
