@@ -1,6 +1,6 @@
 {
   "name": "aurelia-toolbelt",
-  "version": "0.8.19-alpha",
+  "version": "0.9.1-alpha",
   "description": "A bunch of components, value converters, services and so, to have rich client applications.",
   "keywords": [
     "aurelia-toolbelt",
@@ -139,7 +139,7 @@
       "font-awesome/css/font-awesome.css",
       "toastr",
       "toastr/build/toastr.css",
-      "jquery", 
+      "jquery",
       "nprogress",
       "nprogress/nprogress.css"
     ]

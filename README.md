@@ -1,9 +1,9 @@
 # aurelia-toolbelt ( v0.8.1-alpha )
 
-* You can find documentation and demo [here](https://shahabganji.github.io/aurelia-toolbelt/#/bootstrap) and npm packahe in [here](https://www.npmjs.com/package/aurelia-toolbelt)
+* You can find documentation and demo [here](https://aurelia-toolbelt.github.io/)
 
 * We tried not to invent the wheel, but to utilise the existing libraries out there in js world, for [Aurelia](http://aurelia.io). What ever we used or inspired from will definitely have a reference to the original repository or website.
-* [Bootstrap](http://getbootstrap.com/docs/4.0/getting-started/introduction/) **v 4.0.0** components,are almost ready for production, however we are still reviewing all of them and there are an alpha npm package [here]().
+* [Bootstrap](http://getbootstrap.com/docs/4.0/getting-started/introduction/) **v 4.0.0** components,are almost ready for production, however we are still reviewing all of them and there are an alpha npm package [here](https://www.npmjs.com/package/aurelia-toolbelt).
 
 ## A bunch of tools for creating rich aurelia applications. :wink:
 
@@ -11,17 +11,17 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/01bgrcnljgephg80?svg=true)](https://ci.appveyor.com/project/shahabganji/aurelia-toolbelt)
 [![npm version](https://badge.fury.io/js/aurelia-toolbelt.svg)](https://badge.fury.io/js/aurelia-toolbelt)
 
-* It is worthy to note that this plugin is written with the skeleton provided [here](https://github.com/vegarringdal/skeleton-plugin-typescript), which is highly recommended, thanks to [@vegarringdal](https://github.com/vegarringdal).
+* It is worthy to note that this plugin is written with the skeleton provided [here](https://github.com/vegarringdal/skeleton-plugin-typescript), which is highly recommended, thanks to [Vegar Ringdal](https://github.com/vegarringdal).
 
 ### How to use the plugin
 
 1. run 
 
-```npm install aurelia-toolbelt@0.8.1-alpha``` 
+```npm install aurelia-toolbelt@0.9.1-alpha``` 
 
 or
 
-```yarn add aurelia-toolbelt@0.8.1-alpha```
+```yarn add aurelia-toolbelt@0.9.1-alpha```
 
 2. use the plugin:
 
