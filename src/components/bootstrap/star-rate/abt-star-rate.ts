@@ -79,7 +79,7 @@ export class BootstrapStarRate {
     const oldValue = this.rate;
     this.rate = index + 1 - (this.showHalfStar ? 0.5 : 0);
 
-    if (this.rateChanged) { this.rateChanged({ newRate: this.rate, oldRate: oldValue }); }
+    if (oldValue !== this.rate && this.rateChanged) { this.rateChanged({ newRate: this.rate, oldRate: oldValue }); }
   }
 
   private mouseLeft() {

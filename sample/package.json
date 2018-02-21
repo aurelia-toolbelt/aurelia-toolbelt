@@ -1,6 +1,6 @@
 {
     "name": "aurelia-toolbelt-fusebox",
-    "version": "0.8.7-alpha",
+    "version": "0.9.2-alpha",
     "description": "A starter kit for building a standard navigation-style app with Aurelia and TypeScript and fusebox.",
     "keywords": [
         "aurelia",
