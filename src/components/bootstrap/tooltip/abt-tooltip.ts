@@ -32,7 +32,7 @@ export class BootstrapTooltipCustomElement {
   private tooltip: Element;
   private parentElement: HTMLElement;
 
-  private afterAttached() {
+  private attached() {
     this.parentElement = this.tooltip.parentElement;
     let slotContent = this.html ? this.tooltip.innerHTML : this.tooltip.textContent;
 

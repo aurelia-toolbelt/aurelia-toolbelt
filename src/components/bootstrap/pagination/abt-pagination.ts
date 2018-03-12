@@ -173,7 +173,7 @@ export class BootstrapPaginationCustomElement {
     return totalPages - 5 >= selectedItem;
   }
 
-  private afterAttached() {
+  private attached() {
 
     this.totalPages = Number(this.totalPages);
     this.selectedPage = Number(this.selectedPage);

@@ -21,7 +21,7 @@ export class BootstrapProgressBar {
   private progressbar: Element;
   private progressbarTemplate: Element;
 
-  private afterAttached() {
+  private attached() {
     let animated = (this.animated === '' && this.progressbarTemplate.hasAttribute('animated')) || this.animated.toString() === 'true';
     let striped = (this.striped === '' && this.progressbarTemplate.hasAttribute('striped')) || this.striped.toString() === 'true';
 

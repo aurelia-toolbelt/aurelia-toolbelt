@@ -20,7 +20,7 @@ export class CarouselItemCustomElement {
   private createIndicatorHtml(id: string, index: number, beActive: boolean): any {
     return `<li style="cursor:pointer" data-target="#${id}" data-slide-to="${index}" class="${beActive ? 'active' : ''}" ></li>`;
   }
-  private afterAttached() {
+  private attached() {
 
     let carousel = this.carouselItem.parentElement.parentElement;
     this.times = this.sharedController.getAndIncrement(carousel.id);

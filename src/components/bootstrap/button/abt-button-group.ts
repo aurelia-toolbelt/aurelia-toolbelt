@@ -20,7 +20,7 @@ export class BootstrapButtonGroup {
 
   }
 
-  private afterAttached() {
+  private attached() {
     const onlyVerticalAttribute = (this.vertical === '' && this.element.hasAttribute('vertical'));
     this.vertical = onlyVerticalAttribute || this.vertical === 'true' || this.vertical === true;
   }

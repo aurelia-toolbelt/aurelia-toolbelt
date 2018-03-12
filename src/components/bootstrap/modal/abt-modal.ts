@@ -103,7 +103,7 @@ export class BootstrapModal {
   }
 
 
-  private afterAttached() {
+  private attached() {
 
     this.animate = this.animate === true || this.animate === 'true';
     this.centered = this.centered === true || this.centered === 'true';

@@ -20,7 +20,7 @@ export class BootstrapFloatInput {
   private floatInput: HTMLInputElement;
   private floatInputLabel: HTMLLabelElement;
 
-  private afterAttached() {
+  private attached() {
 
     let id = this.floatInputLabel.id;
     let fontSize = '';

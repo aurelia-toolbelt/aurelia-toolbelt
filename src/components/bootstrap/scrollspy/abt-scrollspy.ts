@@ -24,7 +24,7 @@ export class BootstrapScrollSpy {
   constructor(private element: Element) { }
 
 
-  private afterAttached() {
+  private attached() {
 
     this.onBody = Boolean(this.onBody);
     this.offset = Number(this.offset);

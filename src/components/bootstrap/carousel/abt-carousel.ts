@@ -26,7 +26,7 @@ export class CarouselCustomElement {
   private carousel: Element;
   private carouselTemplate: Element;
 
-  private afterAttached() {
+  private attached() {
 
     this.interval = Number(this.interval);
     this.showNavigator = (this.navigator === '' && this.carouselTemplate.hasAttribute('navigator')) || this.navigator.toString() === 'true';

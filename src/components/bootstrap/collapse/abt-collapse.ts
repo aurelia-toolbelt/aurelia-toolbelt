@@ -100,7 +100,7 @@ export class BootstrapCollapse {
 
   }
 
-  private afterAttached() {
+  private attached() {
 
     this.setEvents();
 

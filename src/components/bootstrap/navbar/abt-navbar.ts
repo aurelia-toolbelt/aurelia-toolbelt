@@ -22,7 +22,7 @@ export class BootstrapNavBar {
   private navbar: Element;
   private navbarCollapse: Element;
 
-  private afterAttached() {
+  private attached() {
 
     if (this.navbarColorType) {
       this.navbar.classList.add(`navbar-${this.navbarColorType}`);

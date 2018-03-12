@@ -13,7 +13,7 @@ export class BootstrapModalHeader {
 
   private header: HTMLDivElement;
 
-  private afterAttached() {
+  private attached() {
     let x = this.header.parentElement.parentElement.parentElement.getAttribute('data-abt-dismissible');
     this.dismissible = x === 'true';
   }

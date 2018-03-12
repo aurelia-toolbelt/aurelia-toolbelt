@@ -26,7 +26,7 @@ export class BootstrapLinkButton {
 
   constructor(private element: Element) { }
 
-  private afterAttached() {
+  private attached() {
 
     const onlyOutlineAttribute = (this.outline === '' && this.element.hasAttribute('outline'));
     this.outline = onlyOutlineAttribute || this.outline === 'true' || this.outline === true;

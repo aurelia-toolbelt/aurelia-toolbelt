@@ -53,7 +53,7 @@ export class PasswordCustomElement {
   }
 
 
-  private afterAttached() {
+  private attached() {
 
     // tslint:disable-next-line:max-line-length
     this.showProgressBar = (this.showProgressBar === '' && this.passwordTemplate.hasAttribute('show-progress-bar')) || this.showProgressBar.toString() === 'true';

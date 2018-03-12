@@ -24,8 +24,6 @@ export function configure(config: FrameworkConfiguration) {
     .feature(PLATFORM.moduleName('aurelia-toolbelt/value-converters/index'))
     ;
 
-  config.plugin(PLATFORM.moduleName('aurelia-after-attached-plugin'));
-
   // let taskQueue = config.aurelia.container.get(TaskQueue);
 
   // // intercept attached() calls of the View so we can call afterAttached() afterwards

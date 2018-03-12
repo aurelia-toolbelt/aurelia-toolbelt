@@ -26,7 +26,7 @@ export class BootstrapNavBarBrand {
 
   }
 
-  private afterAttached() {
+  private attached() {
     let isHeading = Boolean(this.heading) || this.navbarBrandTemplate.hasAttribute('heading');
     if (isHeading) {
       this.navbarBrand.classList.add('abt-navbar-brand-heading');

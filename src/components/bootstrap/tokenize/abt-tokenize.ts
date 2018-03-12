@@ -91,7 +91,7 @@ export class BootstrapTokenizeCustomElement {
     this.subscription = null;
   }
 
-  private afterAttached() {
+  private attached() {
 
     if (this.id) {
       this.tokenizeTemplate.setAttribute('id', `abt-tokenize-${this.id}`);

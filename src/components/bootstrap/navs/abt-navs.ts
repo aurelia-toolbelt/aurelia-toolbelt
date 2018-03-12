@@ -35,7 +35,7 @@ export class BootstrapNavs {
 
   constructor(private element: Element) { }
 
-  private afterAttached() {
+  private attached() {
 
     const onlyPillsAttribute = (this.pills === '' && this.element.hasAttribute('pills'));
     this.pills = onlyPillsAttribute || this.pills.toString() === 'true';

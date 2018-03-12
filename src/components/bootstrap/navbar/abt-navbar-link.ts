@@ -24,7 +24,7 @@ export class BootstrapNavBarLink {
   private navItemLink: Element;
 
 
-  private afterAttached() {
+  private attached() {
     let isActive = Boolean(this.active) || this.navItem.hasAttribute('active');
     let isDisabled = Boolean(this.disabled) || this.navItem.hasAttribute('disabled');
     if (isActive) {

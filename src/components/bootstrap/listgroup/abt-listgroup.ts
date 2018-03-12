@@ -11,7 +11,7 @@ export class ListGroupCustomElement {
   private listGroupTemplate: Element;
   private listGroup: Element;
 
-  private afterAttached() {
+  private attached() {
     let isFlush = (this.flush === '' && this.listGroupTemplate.hasAttribute('active')) || this.flush.toString() === 'true';
     if (isFlush) {
       this.listGroup.classList.add('list-group-flush');

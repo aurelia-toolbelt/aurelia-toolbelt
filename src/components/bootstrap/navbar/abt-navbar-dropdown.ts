@@ -23,7 +23,7 @@ export class BootstrapNavBarDropDown {
   private dropDownMenu: Element;
   private navLinkDropDown: Element;
 
-  private afterAttached() {
+  private attached() {
 
     switch (this.placement) {
       case 'up':
