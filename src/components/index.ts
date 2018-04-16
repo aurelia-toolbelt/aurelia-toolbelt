@@ -10,7 +10,7 @@ export function configure(config: FrameworkConfiguration) {
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/jquery/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/vanilla/index'));
 
-  config.plugin(PLATFORM.moduleName('aurelia-after-attached-plugin'));
+  // config.plugin(PLATFORM.moduleName('aurelia-after-attached-plugin'));
 
 }
 

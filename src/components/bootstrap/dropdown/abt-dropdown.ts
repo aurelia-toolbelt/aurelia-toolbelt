@@ -1,4 +1,4 @@
-import { customElement, inject, containerless, bindable, bindingMode, children, Disposable, BindingEngine } from 'aurelia-framework';
+import { customElement, inject, containerless, bindable, bindingMode, children, Disposable, BindingEngine, TaskQueue } from 'aurelia-framework';
 import { EventAggregator } from 'aurelia-event-aggregator';
 import { BootstrapDropdownSelectedItemChanged } from './abt-dropdown-selected-item-changed';
 
@@ -8,7 +8,7 @@ import { Uuid } from '../../../utilities/vanilla/uuid';
 
 // export type BoundaryType = 'viewport' | 'window' | 'scrollParent';
 
-@inject(Element, EventAggregator, Uuid)
+@inject(Element, EventAggregator, Uuid, TaskQueue)
 // @containerless()
 @customElement('abt-dropdown')
 export class BootstrapDropDown {
@@ -51,7 +51,7 @@ export class BootstrapDropDown {
 
   private dropdown: any;
 
-  constructor(private element: Element, private ea: EventAggregator, uuid: Uuid) { // , private bindingEngine: BindingEngine) {
+  constructor(private element: Element, private ea: EventAggregator, uuid: Uuid, private taskQueue: TaskQueue) { // , private bindingEngine: BindingEngine) {
     this.id = uuid.Uuidv4ForId();
   }
 
@@ -75,8 +75,8 @@ export class BootstrapDropDown {
 
     this.task = Promise.resolve(this.click({ event: event, target: this.element }))
       .then(
-      () => this.clickCompleted(),
-      () => this.clickCompleted()
+        () => this.clickCompleted(),
+        () => this.clickCompleted()
       );
   }
 
@@ -117,6 +117,8 @@ export class BootstrapDropDown {
         this.placementClass = '';
         break;
     }
+
+    this.taskQueue.queueTask(() => this.afterAttached());
 
   }
 
