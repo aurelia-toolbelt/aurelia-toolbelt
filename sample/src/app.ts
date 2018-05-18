@@ -180,9 +180,9 @@ export class App {
             // {
             //   route: 'markdown', title: 'Mark Down'
             // },
-            // {
-            //   route: 'masked-input', title: 'Masked Input'
-            // },
+            {
+              route: 'masked-input', title: 'Masked Input'
+            },
             {
               route: 'scrollup', title: 'ScrollUp'
             },

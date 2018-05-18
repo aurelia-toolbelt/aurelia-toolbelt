@@ -36,7 +36,7 @@ export class JQueryBlockUI {
     return false;
   }
 
-  private afterAttached() {
+  private attached() {
     this.id = this.content.id;
     this.elementId = `#${this.id}`;
 
