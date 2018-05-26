@@ -30,3 +30,7 @@ sample/export
 
 *.log
 npm-debug.log
+
+
+.DS_STORE
+._.DS_Store
