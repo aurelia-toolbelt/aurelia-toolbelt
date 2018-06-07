@@ -1,4 +1,4 @@
-import { SharedOptions } from './SharedOptions';
+import { SharedOptions } from './sharedOptions';
 import { JsTools } from './../../../utilities/vanilla/jsTools';
 import { transient, customElement, inject, containerless, bindable, bindingMode, observable, DOM, singleton } from 'aurelia-framework';
 
