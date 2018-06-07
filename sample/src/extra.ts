@@ -5,7 +5,7 @@ const hl = require('highlight.js');
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import 'metismenu/dist/metismenu.css';
+import 'metismenu/dist/metisMenu.css';
 
 import 'nprogress/nprogress.css';
 // import 'toastr/build/toastr.css';

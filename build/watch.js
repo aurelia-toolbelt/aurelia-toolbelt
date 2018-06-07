@@ -147,7 +147,7 @@ gulp.task('fuse-sample', function () {
         + bootstrap/dist/css/bootstrap.css
         + toastr
         + metismenu
-        + metismenu/dist/metismenu.css
+        + metismenu/dist/metisMenu.css
         + aureliatoolbelt-thirdparty/bootstrap-toggle/bootstrap-toggle.js
         + aureliatoolbelt-thirdparty/bootstrap-toggle/bootstrap-toggle.css
         + aureliatoolbelt-thirdparty/jquery.blockUI/jquery.blockUI.js
