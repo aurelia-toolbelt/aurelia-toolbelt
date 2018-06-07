@@ -2,10 +2,10 @@
 Install ```aurelia-toolbelt``` via ```npm```
 
 ```shell
-npm install aurelia-toolbelt
+npm install aurelia-toolbelt@1.0.0-beta.1
 ```
 ```shell
-yarn add aurelia-toolbelt
+yarn add aurelia-toolbelt@1.0.0-beta.1
 ```
 
 then use it in your ```main.ts``` or ```boot.ts``` like the following:
