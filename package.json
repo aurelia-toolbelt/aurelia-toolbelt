@@ -65,7 +65,7 @@
         "jest-cli": "^21.2.1",
         "jsdom": "^11.3.0",
         "merge2": "^1.2.0",
-        "natives": "^1.1.0",
+		"natives": "^1.1.4",
         "require-dir": "^0.3.2",
         "run-sequence": "^2.2.0",
         "ts-jest": "^21.2.3",
