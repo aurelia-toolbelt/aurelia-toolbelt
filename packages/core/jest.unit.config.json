@@ -1,7 +1,7 @@
 {
   "verbose": true,
   "transform": {
-    "^.+\\.tsx?$": "./node_modules/ts-jest/preprocessor.js"
+    "^.+\\.tsx?$": "../../node_modules/ts-jest/preprocessor.js"
   },
   "testRegex": ".*(.test|.spec)(.jsx?|.tsx?)",
   "testPathIgnorePatterns": [

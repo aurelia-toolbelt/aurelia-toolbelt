@@ -2,7 +2,7 @@
   "verbose": true,
   "preset": "jest-puppeteer",
   "transform": {
-    "^.+\\.tsx?$": "./node_modules/ts-jest/preprocessor.js"
+    "^.+\\.tsx?$": "../../node_modules/ts-jest/preprocessor.js"
   },
   "testRegex": ".*(.po|.e2e)(.jsx?|.tsx?)",
   "testPathIgnorePatterns": [
