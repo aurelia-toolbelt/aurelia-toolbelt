@@ -6,7 +6,6 @@ bower_components
 build/reports
 typings/
 dev/
-dist/
 distTS/
 
 desktop.ini
