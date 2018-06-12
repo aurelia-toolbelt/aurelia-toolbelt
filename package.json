@@ -1,10 +1,13 @@
 {
-	"private": true,
-	"scripts": {
-		"test:unit": "lerna exec --bail false --concurrency 1  -- yarn run test:unit"
-	},
+  "private": true,
+  "scripts": {
+    "build": "lerna exec --bail false --concurrency 1  -- yarn run build",
+    "watch:core": "lerna exec --bail false --concurrency 1 --package core -- yarn run watch",
+    "test:unit": "lerna exec --bail false --concurrency 1  -- yarn run test:unit",
+    "test:e2e": "lerna exec --bail false --concurrency 1  -- yarn run test:e2e"
+  },
 
-	"workspaces": [
-		"packages/*"
-	]
+  "workspaces": [
+    "packages/*"
+  ]
 }
