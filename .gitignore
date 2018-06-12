@@ -6,6 +6,7 @@ bower_components
 build/reports
 typings/
 dev/
+dist/
 distTS/
 
 desktop.ini
@@ -30,7 +31,7 @@ sample/typings
 sample/export
 
 *.log
-npm-debug.log
+*-debug.log
 
 
 .DS_STORE
