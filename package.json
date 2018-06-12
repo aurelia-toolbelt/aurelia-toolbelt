@@ -1,0 +1,10 @@
+{
+	"private": true,
+	"scripts": {
+		"test:unit": "lerna exec --bail false --concurrency 1  -- yarn run test:unit"
+	},
+
+	"workspaces": [
+		"packages/*"
+	]
+}
