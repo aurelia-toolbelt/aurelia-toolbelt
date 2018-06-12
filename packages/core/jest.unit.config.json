@@ -1,0 +1,36 @@
+{
+  "verbose": true,
+  "transform": {
+    "^.+\\.tsx?$": "./node_modules/ts-jest/preprocessor.js"
+  },
+  "testRegex": ".*(.test|.spec)(.jsx?|.tsx?)",
+  "testPathIgnorePatterns": [
+    "build",
+    "dist"
+  ],
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "json"
+  ],
+  "roots": [
+    "<rootDir>/test/unit"
+  ],
+  "testEnvironment": "node",
+  "setupFiles": [
+    "<rootDir>/test/jest.setup.ts"
+  ],
+  "modulePaths": [
+    "<rootDir>/src",
+    "<rootDir>/node_modules"
+  ],
+  "coverageReporters": [
+    "json",
+    "html",
+    "text",
+    "lcov",
+    "clover"
+  ]
+}
