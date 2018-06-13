@@ -9,10 +9,13 @@ const {
   WebIndexPlugin,
   Sparky,
   HTMLPlugin,
-  CSSPlugin
+  CSSPlugin,
+  RawPlugin
 } = require('fuse-box');
 // @ts-ignore
 const FOLDER_NAME = require('../package.json').folder_name;
+// @ts-ignore
+const PACKAGE_NAME = require('../package.json').name;
 const {
   runTypeChecker
 } = require('./typechecker');
@@ -21,9 +24,10 @@ const {
 } = require('./bootstrapLoader');
 let fuse_sample, fuse_plugin, target = 'browser@es6';
 
+
+// add your vendor packages in here
 let instructions = `
-    > main.ts
-    + **/*.{ts,html,css}
+    > extra.ts
     + fuse-box-css
     + aurelia-bootstrapper
     + aurelia-binding
@@ -63,12 +67,15 @@ let webIndexTemplate =
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     </head>
     <body aurelia-app="main"></body>
+    <script type="text/javascript" charset="utf-8" src="./vendor.js"></script>
     <script type="text/javascript" charset="utf-8" src="./app.js"></script>
-    <script type="text/javascript" charset="utf-8" src="./core.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./${FOLDER_NAME}.js"></script>
     </html>`;
 
 
 Sparky.task('config', () => {
+
+
   fuse_sample = FuseBox.init({
     homeDir: '../src/sample',
     globals: {
@@ -78,6 +85,7 @@ Sparky.task('config', () => {
     output: '../dev/$name.js',
     cache: false,
     log: false,
+    debug: false,
     alias: {
       [FOLDER_NAME]: `~/${FOLDER_NAME}`
     },
@@ -86,29 +94,41 @@ Sparky.task('config', () => {
       bootstrapLoader(),
       CSSPlugin(),
       HTMLPlugin(),
+      RawPlugin(['.css', '.woff']),
       WebIndexPlugin({
         templateString: webIndexTemplate
       })
     ]
-    // , package: {
-    //   name: "default",
-    //   main: "main.js"
-    // }
   });
 
+  fuse_sample.bundle(`vendor`)
+    .cache(false)
+    // .shim({
+    //   jquery: {
+    //     source: "node_modules/jquery/dist/jquery.js",
+    //     exports: "$"
+    //   }
+    // })
+    .instructions(instructions);
+
+
   fuse_sample.bundle('app')
-    .instructions(instructions)
+    .instructions(`
+        > [main.ts]
+        + [**/*.{ts,html,css}]
+    `)
     .sourceMaps(true)
     .watch()
     .completed(proc => {
       runTypeChecker();
     });
 
+
   fuse_plugin = FuseBox.init({
-    homeDir: '../src/core',
-    globals: {
-      '@aurelia-toolbelt/core': '*'
-    },
+    homeDir: `../src/${FOLDER_NAME}`,
+    // globals: {
+    //   '@aut/shahab': '*'
+    // },
     target: target,
     output: '../dev/$name.js',
     cache: false,
@@ -123,13 +143,13 @@ Sparky.task('config', () => {
       HTMLPlugin()
     ],
     package: {
-      name: "@aurelia-toolbelt/core",
-      main: "index.ts"
+      name: `${PACKAGE_NAME}`,
+      main: "index.ts" // if your package start point file is different change it here
     }
   });
 
   // the name of the output file as specified $name in output part of init method 
-  fuse_plugin.bundle('core')
+  fuse_plugin.bundle(`${FOLDER_NAME}`)
     .watch().cache(false)
     .instructions(`
             + [**/*.html]
@@ -147,7 +167,6 @@ Sparky.task('clean', () => {
 
 
 Sparky.task('default', ['clean', 'config'], () => {
-
 
   fuse_plugin.run();
 

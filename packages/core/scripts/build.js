@@ -6,6 +6,8 @@
  */
 const { task, src } = require('fuse-box/sparky');
 const { transpileTo } = require('./transpile');
+
+// @ts-ignore
 const FOLDER_NAME = require('../package.json').folder_name;
 
 

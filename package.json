@@ -7,7 +7,6 @@
     "test:unit": "lerna exec --bail false --concurrency 1  -- yarn run test:unit",
     "test:e2e": "lerna exec --bail false --concurrency 1  -- yarn run test:e2e"
   },
-
   "workspaces": [
     "packages/*"
   ]

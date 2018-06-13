@@ -23,12 +23,9 @@ module.exports.transpileTo = function (outDir, moduleType) {
         outDir: outDir,
         module: moduleType
       },
-      paths : {}
+      paths: {}
     }
   });
 
-
-
   return transpile.runSync();
 };
-
