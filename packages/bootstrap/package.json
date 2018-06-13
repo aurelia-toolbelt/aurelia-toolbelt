@@ -1,16 +1,16 @@
 {
-    "folder_name": "core",
-    "name": "@aurelia-toolbelt/core",
+    "folder_name": "bootstrap",
+    "name": "@aurelia-toolbelt/bootstrap",
     "version": "1.0.0-beta.1",
-    "description": "aurelia-toolbelt/core",
+    "description": "aurelia-toolbelt/bootstrap",
     "keywords": [
         "aurelia",
         "aurelia-toolbelt",
-        "aurelia toolbelt core"
+        "aurelia toolbelt bootstrap"
     ],
-    "homepage": "https://github.com/aurelia-toolbelt/core",
+    "homepage": "https://github.com/aurelia-toolbelt/bootstrap",
     "bugs": {
-        "url": "https://github.com/aurelia-toolbelt/core/issues"
+        "url": "https://github.com/aurelia-toolbelt/bootstrap/issues"
     },
     "license": "MIT",
     "author": "Saeed Ganji (shahabganji@gmail.com), Hamed Fathi (hamedfathi@outlook.com)",
@@ -20,7 +20,7 @@
     "types": "dist/commonjs/index.d.ts",
     "repository": {
         "type": "git",
-        "url": "https://github.com/aurelia-toolbelt/core"
+        "url": "https://github.com/aurelia-toolbelt/bootstrap"
     },
     "scripts": {
         "build": "node ./scripts/build.js",
@@ -93,10 +93,10 @@
         "usedBy": [],
         "build": {
             "resources": [
-                "@aurelia-toolbelt/core",
-                "@aurelia-toolbelt/core/index",
-                "@aurelia-toolbelt/core/hello-world.css",
-                "@aurelia-toolbelt/core/hello-world.html"
+                "@aurelia-toolbelt/bootstrap",
+                "@aurelia-toolbelt/bootstrap/index",
+                "@aurelia-toolbelt/bootstrap/hello-world.css",
+                "@aurelia-toolbelt/bootstrap/hello-world.html"
             ]
         }
     }

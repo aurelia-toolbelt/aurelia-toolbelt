@@ -2,8 +2,8 @@
   "private": true,
   "scripts": {
     "build": "lerna exec --bail false --concurrency 1  -- yarn run build",
-    "watch:core": "lerna exec --bail false --concurrency 1 --package core -- yarn run watch",
-    "watch:bootstrap": "lerna exec --bail false --concurrency 1 --package bootstrap -- yarn run watch",
+    "watch:core": "yarn workspace @aurelia-toolbelt/core run watch",
+    "watch:bootstrap": "yarn workspace @aurelia-toolbelt/bootstrap run watch",
     "test:unit": "lerna exec --bail false --concurrency 1  -- yarn run test:unit",
     "test:e2e": "lerna exec --bail false --concurrency 1  -- yarn run test:e2e"
   },
