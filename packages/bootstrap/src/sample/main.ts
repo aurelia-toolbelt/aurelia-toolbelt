@@ -5,7 +5,7 @@ export async function configure(aurelia: Aurelia) {
     .standardConfiguration()
     .developmentLogging()
     .plugin('@aurelia-toolbelt/bootstrap')
-    // .plugin('@aurelia-toolbelt/core' )
+    .plugin('@aurelia-toolbelt/core' )
     ;
 
   await aurelia.start();

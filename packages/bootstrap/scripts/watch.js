@@ -47,6 +47,12 @@ let instructions = `
     + aurelia-templating-router
     + fuse-box-aurelia-loader
     + @aurelia-toolbelt/core
+    + fast-safe-stringify
+    + inputmask
+    + markdown-it
+    + jalali-moment
+    + humanize-duration
+    + numeral
     `;
 
 let webIndexTemplate =
@@ -94,6 +100,12 @@ Sparky.task('config', () => {
         templateString: webIndexTemplate
       })
     ]
+  });
+
+  fuse_sample.register('@aurelia-toolbelt/core', {
+    homeDir: '../../../node_modules/@aurelia-toolbelt/core/dist/commonjs',
+    main: 'index.js',
+    instructions: '**/*.{html,css,js}',
   });
 
   fuse_sample.bundle(`vendor`)
