@@ -8,9 +8,9 @@
         "aurelia-toolbelt",
         "aurelia toolbelt core"
     ],
-    "homepage": "https://github.com/aurelia-toolbelt/core",
+    "homepage": "https://github.com/aurelia-toolbelt/packages/core",
     "bugs": {
-        "url": "https://github.com/aurelia-toolbelt/core/issues"
+        "url": "https://github.com/aurelia-toolbelt/issues"
     },
     "license": "MIT",
     "author": "Saeed Ganji (shahabganji@gmail.com), Hamed Fathi (hamedfathi@outlook.com)",
@@ -20,7 +20,7 @@
     "types": "dist/commonjs/index.d.ts",
     "repository": {
         "type": "git",
-        "url": "https://github.com/aurelia-toolbelt/core"
+        "url": "https://github.com/aurelia-toolbelt/packages/core"
     },
     "scripts": {
         "build": "node ./scripts/build.js",

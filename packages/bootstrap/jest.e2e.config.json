@@ -1,0 +1,37 @@
+{
+  "verbose": true,
+  "preset": "jest-puppeteer",
+  "transform": {
+    "^.+\\.tsx?$": "./node_modules/ts-jest/preprocessor.js"
+  },
+  "testRegex": ".*(.po|.e2e)(.jsx?|.tsx?)",
+  "testPathIgnorePatterns": [
+    "build",
+    "dist"
+  ],
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "json"
+  ],
+  "roots": [
+    "<rootDir>/test/e2e"
+  ],
+  "testEnvironment": "node",
+  "setupFiles": [
+    "<rootDir>/test/jest.setup.ts"
+  ],
+  "modulePaths": [
+    "<rootDir>/src",
+    "<rootDir>/node_modules"
+  ],
+  "coverageReporters": [
+    "json",
+    "html",
+    "text",
+    "lcov",
+    "clover"
+  ]
+}
