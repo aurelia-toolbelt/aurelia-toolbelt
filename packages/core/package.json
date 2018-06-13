@@ -1,7 +1,7 @@
 {
     "folder_name": "core",
     "name": "@aurelia-toolbelt/core",
-    "version": "1.0.0-beta.2",
+    "version": "1.0.1-beta.2",
     "description": "aurelia-toolbelt/core",
     "keywords": [
         "aurelia",
@@ -16,7 +16,6 @@
     "author": "Saeed Ganji (shahabganji@gmail.com), Hamed Fathi (hamedfathi@outlook.com)",
     "main": "dist/commonjs/index.js",
     "typings": "dist/commonjs/index.d.ts",
-    "ts:main": "distTS/index.ts",
     "types": "dist/commonjs/index.d.ts",
     "repository": {
         "type": "git",

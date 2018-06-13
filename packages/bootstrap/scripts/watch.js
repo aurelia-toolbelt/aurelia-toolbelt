@@ -46,6 +46,7 @@ let instructions = `
     + aurelia-history-browser
     + aurelia-templating-router
     + fuse-box-aurelia-loader
+    + @aurelia-toolbelt/core
     `;
 
 let webIndexTemplate =
