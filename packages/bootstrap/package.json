@@ -83,10 +83,10 @@
     "usedBy": [],
     "build": {
       "resources": [
-        "@aut/@aurelia-toolbelt/@aurelia-toolbelt/@aurelia-toolbelt/bootstrap",
-        "@aut/@aurelia-toolbelt/@aurelia-toolbelt/@aurelia-toolbelt/bootstrap/index",
-        "@aut/@aurelia-toolbelt/@aurelia-toolbelt/@aurelia-toolbelt/bootstrap/hello-world.css",
-        "@aut/@aurelia-toolbelt/@aurelia-toolbelt/@aurelia-toolbelt/bootstrap/hello-world.html"
+        "@aurelia-toolbelt/bootstrap",
+        "@aurelia-toolbelt/bootstrap/index",
+        "@aurelia-toolbelt/bootstrap/hello-world.css",
+        "@aurelia-toolbelt/bootstrap/hello-world.html"
       ]
     }
   }

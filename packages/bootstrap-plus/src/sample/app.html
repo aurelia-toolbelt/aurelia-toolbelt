@@ -1,0 +1,14 @@
+<template >
+
+  <require from="./components/main-footer.html"></require>
+  <require from="./components/nav-bar"></require>
+
+
+  <nav-bar router.bind="router"></nav-bar>
+  <div class="main" style="font-size: 0.8rem">
+    <router-view></router-view>
+  </div>
+
+  <main-footer></main-footer>
+
+</template>
