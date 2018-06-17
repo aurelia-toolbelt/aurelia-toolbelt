@@ -1,12 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "build": "lerna exec --bail false --concurrency 1  -- yarn run build",
-    "watch:core": "yarn workspace @aurelia-toolbelt/core run watch",
-    "watch:bootstrap": "yarn workspace @aurelia-toolbelt/bootstrap run watch",
+    "build-all": "lerna exec --bail false --concurrency 1  -- yarn run build",
+
     "watch:admin-tmpl": "yarn workspace admin-template run watch",
-    "test:unit": "lerna exec --bail false --concurrency 1  -- yarn run test:unit",
-    "test:e2e": "lerna exec --bail false --concurrency 1  -- yarn run test:e2e"
+    "watch:bootstrap": "yarn workspace @aurelia-toolbelt/bootstrap run watch",
+    "watch:bootstrap+": "yarn workspace @aurelia-toolbelt/bootstrap-plus run watch",
+    "watch:components": "yarn workspace @aurelia-toolbelt/components run watch",
+    "watch:core": "yarn workspace @aurelia-toolbelt/core run watch",
+    "watch:jquery": "yarn workspace @aurelia-toolbelt/jquery run watch",
+
+    "test:unit:all": "lerna exec --bail false --concurrency 1  -- yarn run test:unit"
+    
   },
   "workspaces": [
     "packages/*"
