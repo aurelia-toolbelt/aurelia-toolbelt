@@ -1,0 +1,23 @@
+<template bindable="router">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <span style="margin:5px">
+            <iframe src="https://ghbtns.com/github-btn.html?user=vegarringdal&repo=skeleton-plugin-typescript&type=star&count=true"
+                frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+        </span>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">${router.title}</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li repeat.for="row of router.navigation" class="nav-item ${row.isActive ? 'active' : ''}">
+                    <a class="nav-link" href.bind="row.href">${row.title}
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</template>

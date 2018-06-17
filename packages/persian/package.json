@@ -1,0 +1,94 @@
+{
+    "folder_name": "persian",
+    "name": "@aurelia-toolbelt/persian",
+    "version": "1.0.1-beta.2",
+    "description": "aurelia-toolbelt/persian",
+    "keywords": [
+        "aurelia",
+        "aurelia-toolbelt",
+        "aurelia toolbelt persian"
+    ],
+    "homepage": "https://github.com/aurelia-toolbelt/packages/persian",
+    "bugs": {
+        "url": "https://github.com/aurelia-toolbelt/issues"
+    },
+    "license": "MIT",
+    "author": "Saeed Ganji (shahabganji@gmail.com), Hamed Fathi (hamedfathi@outlook.com)",
+    "main": "dist/commonjs/index.js",
+    "typings": "dist/commonjs/index.d.ts",
+    "types": "dist/commonjs/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/aurelia-toolbelt/packages/persian"
+    },
+    "scripts": {
+        "build": "node ./scripts/build.js",
+        "setup": "node ./scripts/setup.js",
+        "watch": "node ./scripts/watch.js",
+        "eslint": "node ./node_modules/eslint/bin/eslint scripts",
+        "eslint:fix": "node ./node_modules/eslint/bin/eslint scripts --fix",
+        "test:unit": "./node_modules/.bin/jest --config=jest.unit.config.json",
+        "test:e2e": "./node_modules/.bin/jest --config=jest.e2e.config.json"
+    },
+    "devDependencies": {
+        "@types/highlight.js": "^9.12.3",
+        "@types/jest": "^23.0.2",
+        "@types/lodash": "^4.14.109",
+        "@types/node": "^10.3.2",
+        "@types/numeral": "^0.0.22",
+        "@types/puppeteer": "^1.3.3",
+        "aurelia-animator-css": "^1.0.4",
+        "aurelia-binding": "^2.0.0",
+        "aurelia-bootstrapper": "^2.2.0",
+        "aurelia-dependency-injection": "^1.3.2",
+        "aurelia-fetch-client": "^1.3.1",
+        "aurelia-framework": "^1.2.0",
+        "aurelia-loader": "^1.0.0",
+        "aurelia-loader-nodejs": "^1.0.1",
+        "aurelia-metadata": "^1.0.4",
+        "aurelia-pal": "^1.8.0",
+        "aurelia-pal-nodejs": "^1.1.1",
+        "aurelia-path": "^1.1.1",
+        "aurelia-polyfills": "^1.3.0",
+        "aurelia-task-queue": "^1.3.0",
+        "aurelia-templating": "^1.7.0",
+        "eslint": "^5.0.0-alpha.4",
+        "fuse-box": "^3.3.0-next.9",
+        "fuse-box-aurelia-loader": "^2.0.2",
+        "fuse-box-typechecker": "^2.9.0",
+        "jest": "^23.1.0",
+        "jest-puppeteer": "^3.0.1",
+        "jsdom": "^11.11.0",
+        "less": "^3.0.4",
+        "lodash": "^4.17.10",
+        "puppeteer": "^1.5.0",
+        "readline-sync": "^1.4.9",
+        "source-map": "^0.7.3",
+        "stylus": "^0.54.5",
+        "ts-jest": "^22.4.6",
+        "tslint": "^5.10.0",
+        "typescript": "2.9.1"
+    },
+    "jspm": {
+        "registry": "npm",
+        "main": "index",
+        "format": "cjs",
+        "directories": {
+            "dist": "dist/commonjs"
+        },
+        "devDependencies": {}
+    },
+    "dependencies": {
+    },
+    "aurelia": {
+        "usedBy": [],
+        "build": {
+            "resources": [
+                "@aurelia-toolbelt/persian",
+                "@aurelia-toolbelt/persian/index",
+                "@aurelia-toolbelt/persian/hello-world.css",
+                "@aurelia-toolbelt/persian/hello-world.html"
+            ]
+        }
+    }
+}

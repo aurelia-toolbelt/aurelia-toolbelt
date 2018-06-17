@@ -1,5 +1,5 @@
 {
-	"name": "aureliatoolbelt-polyfills",
+	"name": "@aurelia-toolbelt/polyfills",
 	"version": "1.0.0",
 	"description": "The collections of javascript 3rd party libraries used in AureliaToolbelt.",
 	"main": "index.js",

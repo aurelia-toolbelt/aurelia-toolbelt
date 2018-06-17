@@ -9,9 +9,10 @@
     "watch:components": "yarn workspace @aurelia-toolbelt/components run watch",
     "watch:core": "yarn workspace @aurelia-toolbelt/core run watch",
     "watch:jquery": "yarn workspace @aurelia-toolbelt/jquery run watch",
+    "watch:persian": "yarn workspace @aurelia-toolbelt/persian run watch",
 
     "test:unit:all": "lerna exec --bail false --concurrency 1  -- yarn run test:unit"
-    
+
   },
   "workspaces": [
     "packages/*"
