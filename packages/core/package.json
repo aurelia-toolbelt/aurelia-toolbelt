@@ -1,7 +1,7 @@
 {
     "folder_name": "core",
     "name": "@aurelia-toolbelt/core",
-    "version": "1.0.1-beta.2",
+    "version": "1.0.3",
     "description": "aurelia-toolbelt/core",
     "keywords": [
         "aurelia",

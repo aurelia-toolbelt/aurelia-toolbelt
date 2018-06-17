@@ -3,7 +3,7 @@
   "scripts": {
     "build-all": "lerna exec --bail false --concurrency 1  -- yarn run build",
 
-    "watch:admin-tmpl": "yarn workspace admin-template run watch",
+    "watch:admin-tmpl": "yarn workspace @aurelia-toolbelt/admin-template run watch",
     "watch:bootstrap": "yarn workspace @aurelia-toolbelt/bootstrap run watch",
     "watch:bootstrap+": "yarn workspace @aurelia-toolbelt/bootstrap-plus run watch",
     "watch:components": "yarn workspace @aurelia-toolbelt/components run watch",

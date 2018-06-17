@@ -65,6 +65,10 @@
   version "10.3.2"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.3.2.tgz#3840ec6c12556fdda6e0e6d036df853101d732a4"
 
+"@types/node@^8.0.7":
+  version "8.10.20"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.20.tgz#fe674ea52e13950ab10954433a7824438aabbcac"
+
 "@types/node@^9.4.7":
   version "9.6.22"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.22.tgz#05b55093faaadedea7a4b3f76e9a61346a6dd209"
@@ -433,6 +437,10 @@ ansi@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/ansi/-/ansi-0.3.1.tgz#0c42d4fb17160d5a9af1e484bace1c66922c1b21"
 
+ansicolor@^1.1.71:
+  version "1.1.72"
+  resolved "https://registry.yarnpkg.com/ansicolor/-/ansicolor-1.1.72.tgz#1cfa6ca05b3ee31bb90dc427300e1d6e529fcdb0"
+
 ansicolors@~0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/ansicolors/-/ansicolors-0.3.2.tgz#665597de86a9ffe3aa9bfbe6cae5c6ea426b4979"
@@ -642,6 +650,12 @@ array-unique@^0.3.2:
 arrify@^1.0.0, arrify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
+
+as-table@^1.0.31:
+  version "1.0.33"
+  resolved "https://registry.yarnpkg.com/as-table/-/as-table-1.0.33.tgz#f61c011d68ae9c71d0515885bfb2b45814a4e571"
+  dependencies:
+    printable-characters "^1.0.37"
 
 asap@^2.0.0, asap@~2.0.3:
   version "2.0.6"
@@ -885,7 +899,7 @@ aurelia-loader@^1.0.0:
     aurelia-metadata "^1.0.0"
     aurelia-path "^1.0.0"
 
-aurelia-logging-console@^1.0.0:
+aurelia-logging-console@1.0.0, aurelia-logging-console@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/aurelia-logging-console/-/aurelia-logging-console-1.0.0.tgz#edf7507a97fc68b40513a17c677d70414101adb4"
   dependencies:
@@ -2983,6 +2997,12 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
+data-uri-to-buffer@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/data-uri-to-buffer/-/data-uri-to-buffer-2.0.0.tgz#0ba23671727349828c32cfafddea411908d13d23"
+  dependencies:
+    "@types/node" "^8.0.7"
+
 data-urls@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/data-urls/-/data-urls-1.0.0.tgz#24802de4e81c298ea8a9388bb0d8e461c774684f"
@@ -4387,6 +4407,13 @@ gentle-fs@^2.0.0, gentle-fs@^2.0.1:
 get-caller-file@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.2.tgz#f702e63127e7e231c160a80c1554acb70d5047e5"
+
+get-source@^1.0.24:
+  version "1.0.25"
+  resolved "https://registry.yarnpkg.com/get-source/-/get-source-1.0.25.tgz#fa3e0612bc0c1b8e7a1ae4fc0d057752f6f3dfe0"
+  dependencies:
+    data-uri-to-buffer "^2.0.0"
+    source-map "^0.6.0"
 
 get-stdin@^4.0.1:
   version "4.0.1"
@@ -8162,6 +8189,17 @@ obuf@^1.0.0, obuf@^1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
 
+ololog@^1.1.103:
+  version "1.1.103"
+  resolved "https://registry.yarnpkg.com/ololog/-/ololog-1.1.103.tgz#c78cce1323e22ba309adac088e4920f023c65241"
+  dependencies:
+    ansicolor "^1.1.71"
+    pipez "^1.1.8"
+    printable-characters "^1.0.38"
+    stacktracey "^1.2.96"
+    string.bullet "^1.0.11"
+    string.ify "^1.0.43"
+
 on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
@@ -8615,6 +8653,10 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
+pipez@^1.1.8:
+  version "1.1.10"
+  resolved "https://registry.yarnpkg.com/pipez/-/pipez-1.1.10.tgz#0b4be9d45b82cbe5c4d91199608e5cd9463ae258"
+
 pkg-dir@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/pkg-dir/-/pkg-dir-2.0.0.tgz#f6d5d1109e19d63edf428e0bd57e12777615334b"
@@ -8968,6 +9010,10 @@ pretty-time@^0.2.0:
 prettysize@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/prettysize/-/prettysize-0.0.3.tgz#14afff6a645e591a4ddf1c72919c23b4146181a1"
+
+printable-characters@^1.0.26, printable-characters@^1.0.28, printable-characters@^1.0.37, printable-characters@^1.0.38:
+  version "1.0.39"
+  resolved "https://registry.yarnpkg.com/printable-characters/-/printable-characters-1.0.39.tgz#c1170cb76d858f1986aa607cafef45857403a0db"
 
 private@^0.1.6, private@^0.1.8, private@~0.1.5:
   version "0.1.8"
@@ -10432,6 +10478,13 @@ stack-utils@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/stack-utils/-/stack-utils-1.0.1.tgz#d4f33ab54e8e38778b0ca5cfd3b3afb12db68620"
 
+stacktracey@^1.2.96:
+  version "1.2.102"
+  resolved "https://registry.yarnpkg.com/stacktracey/-/stacktracey-1.2.102.tgz#3580ff6718b5f2866c3449871217a1178ec107a4"
+  dependencies:
+    as-table "^1.0.31"
+    get-source "^1.0.24"
+
 starts-with@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/starts-with/-/starts-with-1.0.2.tgz#16793a729d89d4cf3d4fb2eda2f908ae357f196f"
@@ -10539,6 +10592,19 @@ string-width@^1.0.1, string-width@^1.0.2:
   dependencies:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^4.0.0"
+
+string.bullet@^1.0.11:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/string.bullet/-/string.bullet-1.0.12.tgz#b41fc417850a57e4042bf3cf347b6eee257ee253"
+  dependencies:
+    printable-characters "^1.0.26"
+
+string.ify@^1.0.43:
+  version "1.0.45"
+  resolved "https://registry.yarnpkg.com/string.ify/-/string.ify-1.0.45.tgz#69042611d3144e7eeee06915eda84415e5f28f10"
+  dependencies:
+    printable-characters "^1.0.28"
+    string.bullet "^1.0.11"
 
 string.prototype.matchall@^2.0.0:
   version "2.0.0"
