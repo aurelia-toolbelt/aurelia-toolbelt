@@ -1,0 +1,546 @@
+<template>
+
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Buttons
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/button">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Use custom button for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+    <code>abt-button</code> in
+    <code>aurelia-toolbelt</code> are only buttons, for render
+    <code>a</code> tags as buttons use
+    <code>abt-link-button</code>.
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+
+    <aut-mark-down src="./docs/components/bootstrap/button/usage.md">
+    </aut-mark-down>
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Examples
+    </legend>
+
+    <p>
+      Contextual variations are
+      <code>primary</code> ,
+      <code>secondary</code> ,
+      <code>info</code> ,
+      <code>success</code> ,
+      <code>warning</code> ,
+      <code>danger</code> ,
+      <code>light</code> ,
+      <code>dark</code> , and
+      <code>link</code>.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+
+        <abt-button class="mr-2" bs-type="primary">Primary</abt-button>
+        <abt-button class="mr-2" bs-type="secondary">Secondary</abt-button>
+        <abt-button class="mr-2" bs-type="info">Info</abt-button>
+        <abt-button class="mr-2" bs-type="success">Success</abt-button>
+        <abt-button class="mr-2" bs-type="warning">Warning</abt-button>
+        <abt-button class="mr-2" bs-type="danger">Danger</abt-button>
+        <abt-button class="mr-2" bs-type="light">Light</abt-button>
+        <abt-button class="mr-2" bs-type="dark">Dark</abt-button>
+
+        <abt-button bs-type="link">Link</abt-button>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button/overview.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Outline buttons
+    </legend>
+
+    <abt-card>
+      <abt-card-body>
+
+        <abt-button class="mr-2" outline bs-type="primary">Primary</abt-button>
+        <abt-button class="mr-2" outline bs-type="secondary">Secondary</abt-button>
+        <abt-button class="mr-2" outline bs-type="info">Info</abt-button>
+        <abt-button class="mr-2" outline bs-type="success">Success</abt-button>
+        <abt-button class="mr-2" outline bs-type="warning">Warning</abt-button>
+        <abt-button class="mr-2" outline bs-type="danger">Danger</abt-button>
+        <abt-button class="mr-2 text-dark" outline bs-type="light">Light</abt-button>
+        <abt-button class="mr-2" outline bs-type="dark">Dark</abt-button>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button/outline.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Size, block, and disabled
+    </legend>
+
+    <abt-card>
+      <abt-card-body>
+
+        <abt-button class="mr-2" size="sm">small button</abt-button>
+        <abt-button class="mr-2">Normal button</abt-button>
+        <abt-button class="mr-5" size="lg">Large Button</abt-button>
+
+        <abt-button class="ml-5" disabled>Disabled</abt-button>
+        <abt-button class="ml-2" bs-type="secondary" disabled.bind="true">Another Disabled</abt-button>
+        <abt-button class="ml-2" bs-type="success" disabled="true">Yet Another Disabled</abt-button>
+
+        <hr />
+
+        <abt-button class="mr-2" block bs-type="secondary">Block Level</abt-button>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button/size-block.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Link buttons
+    </legend>
+
+    <abt-card>
+      <abt-card-body>
+
+        <abt-link-button href="https://aurelia-toolbelt.github.io" class="mr-2">Primary link</abt-link-button>
+        <abt-link-button type="secondary" href="https://github.com/aurelia-toolbelt" class="ml-5" disabled>Secondary link</abt-link-button>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button/link-button.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      A button meant to be
+      <code>clicked!</code>
+    </legend>
+
+    <p>
+      The
+      <code>click</code> event can be bound to functions with no return value, or those returning a
+      <code>promise</code>, when the latter they will have a busy/loading state, in which you can provide a loading template by
+      simply using slots in aurelia.
+      <code>slot="loading"</code>
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <abt-button class="mr-2" click.call="onClick()">Click me</abt-button>
+
+        <abt-button click.call="onClick()">Click me with loading indicator
+          <span slot="loading">
+            <i class="fa fa-spinner fa-spin" aria-hidden="true">
+            </i>
+          </span>
+        </abt-button>
+
+        <abt-button class="float-right" click.call="onClickWithoutPromise()">Click me, no promise returns</abt-button>
+
+      </abt-card-body>
+      <abt-card-footer>
+
+        <abt-navs tabs id="navs-button">
+          <abt-nav-item id="navs-button-view" title="View" active>
+            <aut-mark-down src="./docs/components/bootstrap/button/clicked.md">
+            </aut-mark-down>
+
+          </abt-nav-item>
+          <abt-nav-item id="navs-button-view-model" title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/button/clicked-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
+
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Properties and Events
+    </legend>
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-button
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">block</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">false</td>
+          <td>Expands the button to fill a whole block. You can use it both as a simple attribute (
+            <code>block</code> ) or binding aurelia way (
+            <code>block="true"</code> or block.bind="some_boolean_value" ).
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">bs-type</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">primary</td>
+          <td>The type bootstrap type of button, contextual values of bootstrap,
+            <code>primary</code>,
+            <code>secondary</code>,
+            <code>info</code>,
+            <code>success</code>,
+            <code>warning</code>,
+            <code>danger</code>,
+            <code>light</code>, and
+            <code>dark</code>
+            <hr />
+            <b>PS:</b> Only in the button element we had to name this property
+            <code>bs-type</code> owing to the existence of
+            <code>type</code> attribute for button element in html.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies the your custom css class on alert</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">disabled</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Setting this to true will disable the button. You can use it both as a simple attribute (
+            <code>disabled</code> ) or binding aurelia way (
+            <code>disabled="true"</code> or disabled.bind="some_boolean_value" ).
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Since the
+            <code>abt-button</code> is a
+            <code>containerless</code> component, we assign the
+            <code>id</code> to the actual
+            <code>button</code> underneath.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">outline</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">false</td>
+          <td>Renders the button as outlined. You can use it both as a simple attribute (
+            <code>outline</code> ) or binding aurelia way (
+            <code>outline="true"</code> or outline.bind="some_boolean_value" ).
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">size</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">md</td>
+          <td>Indicates the size for abt-button, values can be 'sm', 'md', and 'lg'</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attributes that you want to apply on the component.</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">type</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">button</td>
+          <td>The traditional
+            <code>type</code> attribute of html
+            <code>button</code> element,
+            <code>button</code>,
+            <code>submit</code>, and
+            <code>reset</code>, are the acceptable values.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">click</td>
+          <td class="text-nowrap">Promise</td>
+          <td class="text-nowrap">call (event, target)</td>
+          <td class="text-nowrap"></td>
+          <td>This event fires immediately when you click the
+            <code>abt-button</code>.
+            <hr />
+            <ul>
+              <li>
+                <b>PS:</b>
+                The
+                <code>abt-button</code> has an extra
+                <code>slot</code> named
+                <code>
+                  <em>
+                    <b>
+                      <i>loading</i>
+                    </b>
+                  </em>
+                </code>, if your
+                <code>click</code> event returns a promise, the
+                <code>loading slot</code> you've provided will be rendered until the promise resolves.
+              </li>
+              <li>
+                <b>PS:</b> The
+                <code>abt-button</code> will remain disabled also, until the promise resolves.
+              </li>
+            </ul>
+
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Extra Slots
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" colspan="2">
+            <b>
+              loading
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="3">
+            You can use this extra slot to show some loading indicator to visualize that some background work is in progress.
+          </td>
+        </tr>
+
+      </tbody>
+
+
+      <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <td class="text-nowrap" colspan="4">
+              <b>
+                abt-link-button
+              </b>
+            </td>
+            <td class="text-nowrap" colspan="1">
+              <b>
+                containerless
+              </b>
+            </td>
+          </tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-nowrap" colspan="5">
+              <b>
+                Properties
+              </b>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">block</td>
+            <td class="text-nowrap">boolean | string</td>
+            <td class="text-nowrap">oneTime</td>
+            <td class="text-nowrap">false</td>
+            <td>Expands the button to fill a whole block. You can use it both as a simple attribute (
+              <code>block</code> ) or binding aurelia way (
+              <code>block="true"</code> or block.bind="some_boolean_value" ).
+            </td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">class</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap"></td>
+            <td>Applies the your custom css class on alert</td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">disabled</td>
+            <td class="text-nowrap">boolean | string</td>
+            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap">false</td>
+            <td>Setting this to true will disable the button. You can use it both as a simple attribute (
+              <code>disabled</code> ) or binding aurelia way (
+              <code>disabled="true"</code> or disabled.bind="some_boolean_value" ).
+            </td>
+          </tr>
+          <tr>
+            <td scope="row">href</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap"></td>
+            <td>A url to link to another part of the page or web.
+              <hr />
+              <b>PS:</b>
+              <i>Bear in mind that you can use
+                <code>router-href</code> on
+                <code>abt-link-button</code> to benefit from aurelia route engine.</i>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">id</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneTime</td>
+            <td class="text-nowrap"></td>
+            <td>Since the
+              <code>abt-link-button</code> is a
+              <code>containerless</code> component, we assign the
+              <code>id</code> to the actual
+              <code>button</code> underneath.
+            </td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">outline</td>
+            <td class="text-nowrap">boolean | string</td>
+            <td class="text-nowrap">oneTime</td>
+            <td class="text-nowrap">false</td>
+            <td>Renders the button as outlined. You can use it both as a simple attribute (
+              <code>outline</code> ) or binding aurelia way (
+              <code>outline="true"</code> or outline.bind="some_boolean_value" ).
+            </td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">size</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneTime</td>
+            <td class="text-nowrap">md</td>
+            <td>Indicates the size for abt-link-button, values can be 'sm', 'md', and 'lg'</td>
+          </tr>
+
+          <tr>
+            <td class="text-nowrap" scope="row">style</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap"></td>
+            <td>Css style attributes that you want to apply on the component.</td>
+          </tr>
+
+          <tr>
+            <td class="text-nowrap" scope="row">type</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneTime</td>
+            <td class="text-nowrap">primary</td>
+            <td>The contextual values of bootstrap,
+              <code>primary</code>,
+              <code>secondary</code>,
+              <code>info</code>,
+              <code>success</code>,
+              <code>warning</code>,
+              <code>danger</code>,
+              <code>light</code>, and
+              <code>dark</code>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="text-nowrap" colspan="5">
+              <b>
+                Events
+              </b>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">click</td>
+            <td class="text-nowrap">Promise</td>
+            <td class="text-nowrap">call</td>
+            <td class="text-nowrap"></td>
+            <td>This event fires immediately when you click the
+              <code>abt-link-button</code>.
+              <hr />
+              <b>PS:</b> The
+              <code>abt-link-button</code> will remain disabled also, until the promise resolves.
+
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+  </fieldset>
+
+</template>

@@ -1,0 +1,157 @@
+<template>
+  <div class="row">
+    <div class="col-sm-3">
+
+      <abt-listgroup id="getStartedList" class="sticky-top" style="border-bottom-style: none !important;">
+        <abt-listgroup-item href="#General">General</abt-listgroup-item>
+        <abt-listgroup-item href="#Installation">Installation</abt-listgroup-item>
+        <abt-listgroup-item href="#Categories">Categories</abt-listgroup-item>
+        <!-- <abt-listgroup-item href="#Features">Features</abt-listgroup-item> -->
+        <abt-listgroup-item href="#License">License</abt-listgroup-item>
+        <abt-listgroup-item href="#Support">Support</abt-listgroup-item>
+        <abt-listgroup-item style="border-bottom-style: none !important; border-left-style:none !important;border-right-style:none !important">
+          <aut-clock font-size="40" show-text.bind="false" show-date.bind="false" be24-hours="true" date-format="YYYY MMMM DD" locale="fa"
+            style="left: 300px; top:200px; position: absolute">
+          </aut-clock>
+        </abt-listgroup-item>
+      </abt-listgroup>
+
+    </div>
+    <div class="col-sm-9">
+      <fieldset>
+        <legend>
+          <h2 class="text-info">
+            <i class="fa fa-handshake-o aurelia-color" aria-hidden="true"></i>
+            <span class="aurelia-color" style="font-weight: bold">Not started yet!</span>
+          </h2>
+        </legend>
+
+        <aut-mark-down src="./docs/introduction.md">
+        </aut-mark-down>
+      </fieldset>
+      <abt-scrollspy target="getStartedList" on-body="true">
+        <abt-scrollspy-item id="General">
+          <fieldset>
+            <legend>
+              <h2 class="text-info">
+                <i class="fa fa-info-circle aurelia-color" aria-hidden="true"></i>
+                <span class="aurelia-color" style="font-weight: bold">General</span>
+              </h2>
+            </legend>
+            <aut-mark-down src="./docs/general.md">
+            </aut-mark-down>
+          </fieldset>
+
+        </abt-scrollspy-item>
+
+        <!-- ************************************************************************************************ -->
+        <abt-scrollspy-item id="Installation">
+          <fieldset>
+            <legend>
+              <h2 class="text-info">
+                <i class="fa fa-download aurelia-color" aria-hidden="true"></i>
+                <span class="aurelia-color" style="font-weight: bold">Installation</span>
+              </h2>
+            </legend>
+            <aut-mark-down src="./docs/installation.md">
+            </aut-mark-down>
+          </fieldset>
+        </abt-scrollspy-item>
+
+        <!-- ************************************************************************************************ -->
+
+        <abt-scrollspy-item id="Categories">
+          <fieldset>
+            <legend>
+
+              <h2 class="text-info">
+                <i class="fa fa-th aurelia-color" aria-hidden="true"></i>
+                <span class="aurelia-color" style="font-weight: bold">Categories</span>
+              </h2>
+            </legend>
+
+            <aut-mark-down src="./docs/categories.md">
+            </aut-mark-down>
+
+          </fieldset>
+
+
+        </abt-scrollspy-item>
+
+        <!-- ************************************************************************************************ -->
+
+
+        <!-- <abt-scrollspy-item id="Features">
+
+          <fieldset>
+            <legend>
+
+              <h2 class="text-info">
+                <i class="fa fa-check-square-o aurelia-color" aria-hidden="true"></i>
+                <span class="aurelia-color" style="font-weight: bold">Features</span>
+
+              </h2>
+            </legend>
+
+            <aut-mark-down src="./docs/features.md">
+
+            </aut-mark-down>
+
+          </fieldset>
+        </abt-scrollspy-item> -->
+
+        <!-- ************************************************************************************************ -->
+
+        <abt-scrollspy-item id="License">
+          <fieldset>
+            <legend>
+              <h2 class="text-info">
+                <i class="fa fa-credit-card aurelia-color" aria-hidden="true"></i>
+                <span class="aurelia-color" style="font-weight: bold">License</span>
+              </h2>
+            </legend>
+            <aut-mark-down src="./docs/license.md">
+
+            </aut-mark-down>
+          </fieldset>
+        </abt-scrollspy-item>
+
+        <!-- ************************************************************************************************ -->
+
+        <abt-scrollspy-item id="Support">
+          <fieldset>
+            <legend>
+
+              <h2 class="text-info">
+                <i class="fa fa-user-circle-o aurelia-color" aria-hidden="true"></i>
+                <span class="aurelia-color" style="font-weight: bold">Support</span>
+              </h2>
+            </legend>
+
+            <aut-mark-down src="./docs/support.md">
+
+            </aut-mark-down>
+
+            <br />
+
+          </fieldset>
+        </abt-scrollspy-item>
+
+        <!-- ************************************************************************************************ -->
+
+      </abt-scrollspy>
+    </div>
+  </div>
+
+  <abt-alert type="info" class="text-left text-dark" size="sm">
+    Logo designed by
+    <abt-alert-link href="https://www.freepik.com/free-vector/elegant-banners-set-with-text-space_1189079.htm">
+      Freepik
+    </abt-alert-link>
+    <span class="float-right">
+      <a href="https://twitter.com/AureliaToolbelt?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @AureliaToolbelt</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </span>
+  </abt-alert>
+
+</template>

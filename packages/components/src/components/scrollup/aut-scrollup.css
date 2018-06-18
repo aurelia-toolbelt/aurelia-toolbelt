@@ -1,0 +1,27 @@
+.aut-scrollup {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  width:50px;
+  height:50px;
+  z-index: 9999999;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0px;
+  border-radius: 50%;
+}
+.aut-scrollup-noselect {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+.aut-scrollup-noselect:focus,
+.aut-scrollup-noselect:active {
+  outline: none !important;
+  box-shadow: none !important;
+}

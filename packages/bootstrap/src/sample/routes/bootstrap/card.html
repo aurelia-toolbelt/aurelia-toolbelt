@@ -1,0 +1,1641 @@
+<template>
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Cards
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/card">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/card/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Basic example
+    </legend>
+    <abt-card width='18rem'>
+      <abt-card-image top src="/images/card-pic1.jpg" alt="Card image cap">
+      </abt-card-image>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>
+            Card title
+          </h5>
+        </abt-card-title>
+        <abt-card-text>
+          Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/basic-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Content types
+    </legend>
+    <h5 class="mt-3">Body</h5>
+    <p>The building block of a card is the
+      <code>abt-card-body</code>. Use it whenever you need a padded section within a card.</p>
+    <abt-card>
+      <abt-card-body>This is some text within a card body.</abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/body-example.md">
+    </aut-mark-down>
+    <h5 class="mt-3">Titles, text, and links</h5>
+    <abt-card width='18rem'>
+      <abt-card-body>
+        <abt-card-title>
+          <h4>
+            Card Title
+          </h4>
+        </abt-card-title>
+        <abt-card-subtitle class="mb-2 text-muted">
+          <h6>Card subtitle</h6>
+        </abt-card-subtitle>
+        <abt-card-text>
+          Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+        <abt-card-link>Card link</abt-card-link>
+        <abt-card-link>Another link</abt-card-link>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/link-example.md">
+    </aut-mark-down>
+    <h5 class="mt-3">Images</h5>
+    <abt-card width='18rem'>
+      <abt-card-image top src="/images/card-pic2.jpg" alt="Card image cap">
+      </abt-card-image>
+      <abt-card-body>
+        <abt-card-text>
+          Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/images-example.md">
+    </aut-mark-down>
+    <h5 class="mt-3">List groups</h5>
+    <abt-card width='18rem'>
+      <abt-listgroup flush="true">
+        <abt-listgroup-item>Cras justo odio</abt-listgroup-item>
+        <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+        <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+      </abt-listgroup>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/list-groups-example.md">
+    </aut-mark-down>
+    <br>
+    <abt-card width='18rem'>
+      <abt-card-header>
+        Featured
+      </abt-card-header>
+      <abt-listgroup flush="true">
+        <abt-listgroup-item>Cras justo odio</abt-listgroup-item>
+        <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+        <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+      </abt-listgroup>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/list-groups-header-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Kitchen sink
+    </legend>
+    <abt-card width='18rem'>
+      <abt-card-image top src="/images/card-pic3.jpg" alt="Card image cap">
+      </abt-card-image>
+      <abt-card-body>
+        <abt-card-title>
+          <h4>
+            Card title
+          </h4>
+        </abt-card-title>
+        <abt-card-text>
+          Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+      <abt-listgroup flush="true">
+        <abt-listgroup-item>Cras justo odio</abt-listgroup-item>
+        <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+        <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+      </abt-listgroup>
+      <abt-card-body>
+        <abt-card-link>Card link</abt-card-link>
+        <abt-card-link>Another link</abt-card-link>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/kitchen-sink-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Header and footer
+    </legend>
+    <abt-card>
+      <abt-card-header>
+        Featured
+      </abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>
+            Special title treatment
+          </h5>
+        </abt-card-title>
+        <abt-card-text>
+          With supporting text below as a natural lead-in to additional content.
+        </abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/header-example.md">
+    </aut-mark-down>
+    <p class="mt-5">Card headers can be styled by adding
+      <code>h*</code> elements to
+      <code>abt-card-header</code>.
+    </p>
+    <abt-card>
+      <abt-card-header>
+        <h5>Featured</h5>
+      </abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>
+            Special title treatment
+          </h5>
+        </abt-card-title>
+        <abt-card-text>
+          With supporting text below as a natural lead-in to additional content. </abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/styled-header-example.md">
+    </aut-mark-down>
+    <br>
+    <abt-card>
+      <abt-card-header>
+        Quote
+      </abt-card-header>
+      <abt-card-body>
+        <blockquote class="blockquote mb-0">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <footer class="blockquote-footer">Someone famous in
+            <cite title="Source Title">Source Title</cite>
+          </footer>
+        </blockquote>
+      </abt-card-body>
+      <abt-card-footer>
+        Something in footer
+      </abt-card-footer>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/quote-example.md">
+    </aut-mark-down>
+    <br>
+    <abt-card class="text-center">
+      <abt-card-header>
+        Featured
+      </abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>
+            Special title treatment
+          </h5>
+        </abt-card-title>
+        <abt-card-text>
+          With supporting text below as a natural lead-in to additional content.
+        </abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+      <abt-card-footer class="text-muted">
+        Something in footer
+      </abt-card-footer>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/text-center-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Sizing
+    </legend>
+    <h5 class="mt-3">Using grid markup</h5>
+    <p>Using the grid, wrap cards in columns and rows as needed.</p>
+    <div class="row">
+      <div class="col-sm-6">
+        <abt-card>
+          <abt-card-body>
+            <abt-card-title>
+              <h4>Special title treatment</h4>
+            </abt-card-title>
+            <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+            <abt-button bs-type="primary">Go somewhere</abt-button>
+          </abt-card-body>
+        </abt-card>
+      </div>
+      <div class="col-sm-6">
+        <abt-card>
+          <abt-card-body>
+            <abt-card-title>
+              <h4>Special title treatment</h4>
+            </abt-card-title>
+            <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+            <abt-button bs-type="primary">Go somewhere</abt-button>
+          </abt-card-body>
+        </abt-card>
+      </div>
+    </div>
+    <aut-mark-down src="./docs/components/bootstrap/card/sizing-grid-example.md">
+    </aut-mark-down>
+    <h5 class="mt-3">Using utilities</h5>
+    <p>Use our handful of
+      <a href="http://getbootstrap.com/docs/4.0/utilities/sizing/">available sizing utilities</a> to quickly set a card’s width.</p>
+    <abt-card class="w-75">
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Card title</h5>
+        </abt-card-title>
+        <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <br>
+    <abt-card class="w-50">
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Card title</h5>
+        </abt-card-title>
+        <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/sizing-utilities-example.md">
+    </aut-mark-down>
+    <h5 class="mt-3">Using custom CSS </h5>
+    <p>Use custom CSS in your stylesheets or as inline styles to set a width.</p>
+    <abt-card style="width: 18rem;">
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Special title treatment</h5>
+        </abt-card-title>
+        <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/sizing-custom-css-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Text alignment
+    </legend>
+    <abt-card width="18rem;">
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Special title treatment</h5>
+        </abt-card-title>
+        <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <br>
+    <abt-card class="text-center" width="18rem;">
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Special title treatment</h5>
+        </abt-card-title>
+        <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <br>
+    <abt-card class="text-right" width="18rem;">
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Special title treatment</h5>
+        </abt-card-title>
+        <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+        <abt-button bs-type="primary">Go somewhere</abt-button>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/text-alignment-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Navigation
+    </legend>
+    <abt-card class="text-center">
+      <abt-card-header>
+        <abt-navs tabs>
+          <abt-nav-item active title="Active">
+            <abt-card-body class="text-center">
+              <abt-card-title>
+                <h5>Special title treatment (Active)</h5>
+              </abt-card-title>
+              <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+              <abt-button bs-type="primary">Go somewhere</abt-button>
+            </abt-card-body>
+          </abt-nav-item>
+          <abt-nav-item title="Link">
+            <abt-card-body class="text-center">
+              <abt-card-title>
+                <h5>Special title treatment (Link)</h5>
+              </abt-card-title>
+              <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+              <abt-button bs-type="primary">Go somewhere</abt-button>
+            </abt-card-body>
+          </abt-nav-item>
+          <abt-nav-item disabled title="Disabled"></abt-nav-item>
+        </abt-navs>
+      </abt-card-header>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/navigation-tab-example.md">
+    </aut-mark-down>
+    <br>
+    <abt-card class="text-center">
+      <abt-card-header>
+        <abt-navs pills>
+          <abt-nav-item active title="Active">
+            <abt-card-body class="text-center">
+              <abt-card-title>
+                <h5>Special title treatment (Active)</h5>
+              </abt-card-title>
+              <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+              <abt-button bs-type="primary">Go somewhere</abt-button>
+            </abt-card-body>
+          </abt-nav-item>
+          <abt-nav-item title="Link">
+            <abt-card-body class="text-center">
+              <abt-card-title>
+                <h5>Special title treatment (Link)</h5>
+              </abt-card-title>
+              <abt-card-text>With supporting text below as a natural lead-in to additional content.</abt-card-text>
+              <abt-button bs-type="primary">Go somewhere</abt-button>
+            </abt-card-body>
+          </abt-nav-item>
+          <abt-nav-item disabled title="Disabled">
+          </abt-nav-item>
+        </abt-navs>
+      </abt-card-header>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/navigation-pill-example.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Images
+    </legend>
+    <p>Cards include a few options for working with images. Choose from appending “image caps” at either end of a card, overlaying
+      images with card content, or simply embedding the image in a card. </p>
+    <h5 class="mt-3">Image caps </h5>
+    <p>Similar to headers and footers, cards can include top and bottom “image caps”—images at the top or bottom of a card.</p>
+    <abt-card class="mb-3">
+      <abt-card-image top src="/images/card-pic4.jpg" alt="Card image cap"></abt-card-image>
+      <abt-card-body>
+        <abt-card-title>
+          <h4>Card title</h4>
+        </abt-card-title>
+        <abt-card-text>
+          This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit
+          longer.
+        </abt-card-text>
+        <abt-card-text>
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <br>
+    <abt-card>
+      <abt-card-body>
+        <abt-card-title>
+          <h4>Card title</h4>
+        </abt-card-title>
+        <abt-card-text>
+          This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit
+          longer.
+        </abt-card-text>
+        <abt-card-text>
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </abt-card-text>
+      </abt-card-body>
+      <abt-card-image bottom src="/images/card-pic4.jpg" alt="Card image cap"></abt-card-image>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/image-caps-example.md">
+    </aut-mark-down>
+    <h5 class="mt-3">Image overlays</h5>
+    <p>Turn an image into a card background and overlay your card’s text. Depending on the image, you may or may not need additional
+      styles or utilities.</p>
+    <abt-card class="bg-dark text-white">
+      <abt-card-image src="/images/card-pic5.jpg" alt="Card image">
+      </abt-card-image>
+      <abt-card-image-overlay>
+        <abt-card-title>
+          <h4>Card title</h4>
+        </abt-card-title>
+        <abt-card-text>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little
+          bit longer.
+        </abt-card-text>
+        <abt-card-text>Last updated 3 mins ago</abt-card-text>
+      </abt-card-image-overlay>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/image-overlays-example.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Card styles
+    </legend>
+    <p>Cards include various options for customizing their backgrounds, borders, and color. </p>
+    <h5 class="mt-3">Background and color </h5>
+    <p>Use
+      <a href="http://getbootstrap.com/docs/4.0/utilities/colors/"> text and background utilities</a> to change the appearance of a card.</p>
+    <abt-card class="text-white bg-primary mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Primary card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="text-white bg-secondary mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Secondary card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="text-white bg-success mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Success card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="text-white bg-danger mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Danger card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="text-white bg-warning mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Warning card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="text-white bg-info mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Info card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="bg-light mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Light card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="text-white bg-dark mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Dark card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/card-styles-background-example.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Border
+    </legend>
+    <abt-card class="border-primary mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body class="text-primary">
+        <abt-card-title>
+          <h5>Primary card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="border-secondary mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body class="text-secondary">
+        <abt-card-title>
+          <h5>Secondary card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="border-success mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body class="text-success">
+        <abt-card-title>
+          <h5>Success card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="border-danger mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body class="text-danger">
+        <abt-card-title>
+          <h5>Danger card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="border-warning mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body class="text-warning">
+        <abt-card-title>
+          <h5>Warning card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="border-info mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body class="text-info">
+        <abt-card-title>
+          <h5>Info card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="border-light mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body>
+        <abt-card-title>
+          <h5>Light card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <div class="mt-1"></div>
+    <abt-card class="border-dark mb-3" style="max-width: 18rem;">
+      <abt-card-header>Header</abt-card-header>
+      <abt-card-body class="text-dark">
+        <abt-card-title>
+          <h5>Dark card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/card-styles-border-example.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Mixins utilities
+    </legend>
+    <p>You can also change the borders on the card header and footer as needed, and even remove their
+      <code>background-color</code> with
+      <code>.bg-transparent</code>.
+    </p>
+    <abt-card class="border-success mb-3" style="max-width: 18rem;">
+      <abt-card-header class="bg-transparent border-success">Header</abt-card-header>
+      <abt-card-body class="text-success">
+        <abt-card-title>
+          <h5>Success card title</h5>
+        </abt-card-title>
+        <abt-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.
+        </abt-card-text>
+      </abt-card-body>
+      <abt-card-footer class="bg-transparent border-success">Footer</abt-card-footer>
+    </abt-card>
+    <aut-mark-down src="./docs/components/bootstrap/card/mixin-example.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Card layout
+    </legend>
+    <p>In addition to styling the content within cards, Bootstrap includes a few options for laying out series of cards. For
+      the time being,
+      <b>these layout options are not yet responsive</b>.</p>
+    <h5 class="mt-3">Card groups</h5>
+    <p>Use card groups to render cards as a single, attached element with equal width and height columns. Card groups use
+      <code>display: flex;</code> to achieve their uniform sizing.</p>
+    <abt-card-group>
+      <abt-card class="mb-3">
+        <abt-card-image top src="/images/card-pic6.jpg" alt="Card image cap"></abt-card-image>
+        <abt-card-body>
+          <abt-card-title>
+            <h4>Card title</h4>
+          </abt-card-title>
+          <abt-card-text>
+            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit
+            longer.
+          </abt-card-text>
+          <abt-card-text>
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </abt-card-text>
+        </abt-card-body>
+      </abt-card>
+      <abt-card class="mb-3">
+        <abt-card-image top src="/images/card-pic6.jpg" alt="Card image cap"></abt-card-image>
+        <abt-card-body>
+          <abt-card-title>
+            <h4>Card title</h4>
+          </abt-card-title>
+          <abt-card-text>
+            This card has supporting text below as a natural lead-in to additional content.
+          </abt-card-text>
+          <abt-card-text>
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </abt-card-text>
+        </abt-card-body>
+      </abt-card>
+      <abt-card class="mb-3">
+        <abt-card-image top src="/images/card-pic6.jpg" alt="Card image cap"></abt-card-image>
+        <abt-card-body>
+          <abt-card-title>
+            <h4>Card title</h4>
+          </abt-card-title>
+          <abt-card-text>
+            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content
+            than the first to show that equal height action.
+          </abt-card-text>
+          <abt-card-text>
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </abt-card-text>
+        </abt-card-body>
+      </abt-card>
+    </abt-card-group>
+    <aut-mark-down src="./docs/components/bootstrap/card/card-groups-example.md">
+    </aut-mark-down>
+    <p class="mt-2">When using card groups with footers, their content will automatically line up.</p>
+    <abt-card-group>
+      <abt-card class="mb-3">
+        <abt-card-image top src="/images/card-pic6.jpg" alt="Card image cap"></abt-card-image>
+        <abt-card-body>
+          <abt-card-title>
+            <h4>Card title</h4>
+          </abt-card-title>
+          <abt-card-text>
+            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit
+            longer.
+          </abt-card-text>
+        </abt-card-body>
+        <abt-card-footer>
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </abt-card-footer>
+      </abt-card>
+      <abt-card class="mb-3">
+        <abt-card-image top src="/images/card-pic6.jpg" alt="Card image cap"></abt-card-image>
+        <abt-card-body>
+          <abt-card-title>
+            <h4>Card title</h4>
+          </abt-card-title>
+          <abt-card-text>
+            This card has supporting text below as a natural lead-in to additional content.
+          </abt-card-text>
+        </abt-card-body>
+        <abt-card-footer>
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </abt-card-footer>
+      </abt-card>
+      <abt-card class="mb-3">
+        <abt-card-image top src="/images/card-pic6.jpg" alt="Card image cap"></abt-card-image>
+        <abt-card-body>
+          <abt-card-title>
+            <h4>Card title</h4>
+          </abt-card-title>
+          <abt-card-text>
+            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content
+            than the first to show that equal height action.
+          </abt-card-text>
+        </abt-card-body>
+        <abt-card-footer>
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </abt-card-footer>
+      </abt-card>
+    </abt-card-group>
+    <aut-mark-down src="./docs/components/bootstrap/card/card-groups-line-up-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Card decks
+    </legend>
+    <p>Need a set of equal width and height cards that aren’t attached to one another? Use card decks. </p>
+    <abt-card-deck>
+      <abt-card class="mb-3">
+        <abt-card-image top src="/images/card-pic7.jpg" alt="Card image cap"></abt-card-image>
+        <abt-card-body>
+          <abt-card-title>
+            <h4>Card title</h4>
+          </abt-card-title>
+          <abt-card-text>
+            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit
+            longer.
+          </abt-card-text>
+          <abt-card-text>
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </abt-card-text>
+        </abt-card-body>
+      </abt-card>
+      <abt-card class="mb-3">
+        <abt-card-image top src="/images/card-pic7.jpg" alt="Card image cap"></abt-card-image>
+        <abt-card-body>
+          <abt-card-title>
+            <h4>Card title</h4>
+          </abt-card-title>
+          <abt-card-text>
+            This card has supporting text below as a natural lead-in to additional content.
+          </abt-card-text>
+          <abt-card-text>
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </abt-card-text>
+        </abt-card-body>
+      </abt-card>
+      <abt-card class="mb-3">
+        <abt-card-image top src="/images/card-pic7.jpg" alt="Card image cap"></abt-card-image>
+        <abt-card-body>
+          <abt-card-title>
+            <h4>Card title</h4>
+          </abt-card-title>
+          <abt-card-text>
+            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content
+            than the first to show that equal height action.
+          </abt-card-text>
+          <abt-card-text>
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </abt-card-text>
+        </abt-card-body>
+      </abt-card>
+    </abt-card-deck>
+    <aut-mark-down src="./docs/components/bootstrap/card/card-deck-example.md">
+    </aut-mark-down>
+    <p class="mt-2">Just like with card groups, card footers in decks will automatically line up.</p>
+    <abt-card-deck>
+      <abt-card class="mb-3">
+        <abt-card-image top src="/images/card-pic7.jpg" alt="Card image cap"></abt-card-image>
+        <abt-card-body>
+          <abt-card-title>
+            <h4>Card title</h4>
+          </abt-card-title>
+          <abt-card-text>
+            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit
+            longer.
+          </abt-card-text>
+        </abt-card-body>
+        <abt-card-footer>
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </abt-card-footer>
+      </abt-card>
+      <abt-card class="mb-3">
+        <abt-card-image top src="/images/card-pic7.jpg" alt="Card image cap"></abt-card-image>
+        <abt-card-body>
+          <abt-card-title>
+            <h4>Card title</h4>
+          </abt-card-title>
+          <abt-card-text>
+            This card has supporting text below as a natural lead-in to additional content.
+          </abt-card-text>
+        </abt-card-body>
+        <abt-card-footer>
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </abt-card-footer>
+      </abt-card>
+      <abt-card class="mb-3">
+        <abt-card-image top src="/images/card-pic7.jpg" alt="Card image cap"></abt-card-image>
+        <abt-card-body>
+          <abt-card-title>
+            <h4>Card title</h4>
+          </abt-card-title>
+          <abt-card-text>
+            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content
+            than the first to show that equal height action.
+          </abt-card-text>
+        </abt-card-body>
+        <abt-card-footer>
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </abt-card-footer>
+      </abt-card>
+    </abt-card-deck>
+    <aut-mark-down src="./docs/components/bootstrap/card/card-deck-line-up-example.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Card columns
+    </legend>
+    <p>Cards can be organized into
+      <a href="https://masonry.desandro.com/">Masonry</a>-like columns with just CSS by wrapping them in
+      <code>abt-card-columns</code>. Cards are built with CSS
+      <code>column</code> properties instead of flexbox for easier alignment. Cards are ordered from top to bottom and left to right.
+    </p>
+    <p>
+      <b>Heads up!</b> Your mileage with card columns may vary. To prevent cards breaking across columns, we must set them to
+      <code>display: inline-block
+      </code> as
+      <code>column-break-inside: avoid</code> isn’t a bulletproof solution yet.</p>
+    <abt-card-columns>
+      <abt-card>
+        <abt-card-image top src="/images/card-pic8.jpg" alt="Card image cap"></abt-card-image>
+        <abt-card-body>
+          <abt-card-title>
+            <h5>Card title that wraps to a new line</h5>
+          </abt-card-title>
+          <abt-card-text>This is a longer card with supporting text below as a natural lead-in to additional content. This content is a
+            little bit longer.</abt-card-text>
+        </abt-card-body>
+      </abt-card>
+      <abt-card class="p-3">
+        <abt-card-body>
+          <blockquote class="blockquote mb-0">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">
+              <small class="text-muted">
+                Someone famous in
+                <cite title="Source Title">Source Title</cite>
+              </small>
+            </footer>
+          </blockquote>
+        </abt-card-body>
+      </abt-card>
+      <abt-card>
+        <abt-card-image top src="/images/card-pic9.jpg" alt="Card image cap"></abt-card-image>
+        <abt-card-body class="card-body">
+          <abt-card-title>
+            <h5>Card title</h5>
+          </abt-card-title>
+          <abt-card-text>This card has supporting text below as a natural lead-in to additional content.</abt-card-text>
+          <abt-card-text>
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </abt-card-text>
+        </abt-card-body>
+      </abt-card>
+      <abt-card class="bg-primary text-white text-center p-3">
+        <blockquote class="blockquote mb-0">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+          <footer class="blockquote-footer">
+            <small>
+              Someone famous in
+              <cite title="Source Title">Source Title</cite>
+            </small>
+          </footer>
+        </blockquote>
+      </abt-card>
+      <abt-card class="text-center">
+        <abt-card-body class="card-body">
+          <abt-card-title>
+            <h5>Card title</h5>
+          </abt-card-title>
+          <abt-card-text>This card has supporting text below as a natural lead-in to additional content.</abt-card-text>
+          <abt-card-text>
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </abt-card-text>
+        </abt-card-body>
+      </abt-card>
+      <abt-card>
+        <abt-card-image src="/images/card-pic10.jpg" alt="Card image"></abt-card-image>
+      </abt-card>
+      <abt-card class="p-3 text-right">
+        <blockquote class="blockquote mb-0">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <footer class="blockquote-footer">
+            <small class="text-muted">
+              Someone famous in
+              <cite title="Source Title">Source Title</cite>
+            </small>
+          </footer>
+        </blockquote>
+      </abt-card>
+      <abt-card>
+        <abt-card-body class="card-body">
+          <abt-card-title>
+            <h5>Card title</h5>
+          </abt-card-title>
+          <abt-card-text>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even
+            longer content than the first to show that equal height action.</abt-card-text>
+          <abt-card-text>
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </abt-card-text>
+        </abt-card-body>
+      </abt-card>
+    </abt-card-columns>
+    <aut-mark-down src="./docs/components/bootstrap/card/card-columns-example.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      API Reference
+    </legend>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-card
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set class to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set style to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">width</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set width to the component. You should use your unit like too
+            <code>20px</code>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-card-body
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set class to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set style to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-card-header
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set class to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set style to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-card-footer
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set class to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set style to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-card-image
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set class to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set style to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">src</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Specifies the URL of the image.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">alt</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set an alternate text for an image, if the image cannot be displayed.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-card-image-overlay
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set class to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set style to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-card-link
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set class to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set style to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">href</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Specifies the destination address of the link.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">target</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Specifies where to open the linked document.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-card-text
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            Nothing
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-card-title
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set class to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set style to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-card-subtitle
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set class to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set style to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-card-group
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set class to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set style to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-card-deck
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set class to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set style to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-card-columns
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set class to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set style to the component</td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</template>

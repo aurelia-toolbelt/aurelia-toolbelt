@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-family: 'tahoma';
+  font-size: 13px;
+  overflow-x: hidden !important;
+
+}
+
+.container-fluid {
+  /* margin-top: 50px !important; */
+  padding: 50px;
+}
+
+
+/* 
+.aurelia-color {
+  color: #753B85;
+} */

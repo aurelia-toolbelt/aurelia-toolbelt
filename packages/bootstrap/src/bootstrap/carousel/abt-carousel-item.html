@@ -1,0 +1,9 @@
+<template ref="carouselItemTemplate">
+  <!-- <require from="../../../@aurelia-toolbelt/core/custom-attributes/uuid/aut-uuid"></require> -->
+  <div ref="carouselItem" class="carousel-item">
+    <slot></slot>
+    <div class="carousel-caption">
+      <slot name="caption"></slot>
+    </div>
+  </div>
+</template>

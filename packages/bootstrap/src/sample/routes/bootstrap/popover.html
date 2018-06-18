@@ -1,0 +1,288 @@
+<template>
+
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Popovers
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/popover">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Documentation and examples for adding Bootstrap popovers, like those found in iOS, to any element on your site.
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+
+    <aut-mark-down src="./docs/components/bootstrap/popover/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Basic example
+    </legend>
+    <p>If you want to use
+      <code>popover</code>, you must apply
+      <code>abt-popover</code> as the child inside the component that you want to enable the
+      <code>popover</code>.</p>
+    <abt-button class="mr-2" size="lg" bs-type="danger">Click to toggle popover
+      <abt-popover title="Popover title" placement='right'>
+        And here's some amazing content. It's very engaging. Right?
+      </abt-popover>
+    </abt-button>
+    <aut-mark-down src="./docs/components/bootstrap/popover/example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Four directions
+    </legend>
+    <p>Four options are available: top, right, bottom, and left aligned.</p>
+    <abt-button class="mr-2" bs-type="secondary">Popover on top
+      <abt-popover placement='top'>
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
+      </abt-popover>
+    </abt-button>
+    <abt-button class="mr-2" bs-type="secondary">Popover on right
+      <abt-popover placement='right'>
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
+      </abt-popover>
+    </abt-button>
+    <abt-button class="mr-2" bs-type="secondary">Popover on bottom
+      <abt-popover placement='bottom'>
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
+      </abt-popover>
+    </abt-button>
+    <abt-button class="mr-2" bs-type="secondary">Popover on left
+      <abt-popover placement='left'>
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
+      </abt-popover>
+    </abt-button>
+    <aut-mark-down src="./docs/components/bootstrap/popover/four-directions.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Dismiss on next click
+    </legend>
+    <p>Use the
+      <code>focus</code> trigger to dismiss popovers on the user’s next click of a different element than the toggle element.</p>
+    <abt-button class="mr-2" size="lg" bs-type="danger">Dismissible popover
+      <abt-popover trigger="focus" title="Dismissible popover" placement='right'>
+        And here's some amazing content. It's very engaging. Right?
+      </abt-popover>
+    </abt-button>
+    <aut-mark-down src="./docs/components/bootstrap/popover/dismiss.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      API Reference
+    </legend>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-popover
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">animation</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">true</td>
+          <td>Apply a CSS fade transition to the popover</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">container</td>
+          <td class="text-nowrap">boolean | string | Element</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Appends the popover to a specific element. Example: container:
+            <code>'body'</code>. This option is particularly useful in that it allows you to position the popover in the flow of
+            the document near the triggering element - which will prevent the popover from floating away from the triggering
+            element during a window resize.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">delay</td>
+          <td class="text-nowrap">number | object</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">0</td>
+          <td>Delay showing and hiding the popover (ms) - does not apply to manual trigger type If a number is supplied, delay
+            is applied to both hide/show Object structure is:
+            <code>delay: { "show": 500, "hide": 100 }</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">html</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Insert HTML into the popover. If false, jQuery's
+            <code>text</code> method will be used to insert content into the DOM. Use text if you're worried about XSS attacks.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">placement</td>
+          <td class="text-nowrap">string | Function</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">right</td>
+          <td>How to position the popover - auto | top | bottom | left | right. When
+            <code>auto</code> is specified, it will dynamically reorient the popover. When a function is used to determine the
+            placement, it is called with the popover DOM node as its first argument and the triggering element DOM node as
+            its second. The
+            <code>this</code> context is set to the popover instance.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">selector</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>If a selector is provided, popover objects will be delegated to the specified targets. In practice, this is used
+            to enable dynamic HTML content to have popovers added.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">template</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>
+            <code>
+              <aut-raw-html>
+                '<div class="popover" role="tooltip">
+                  <div class="arrow"></div>
+                  <h3 class="popover-header"></h3>
+                  <div class="popover-body"></div>
+                </div>'
+              </aut-raw-html>
+            </code>
+          </td>
+          <td>Base HTML to use when creating the popover. The popover's
+            <code>title</code> will be injected into the
+            <code>.popover-header</code>. The popover's
+            <code>content</code> will be injected into the
+            <code>.popover-body</code>.
+            <code>.arrow</code> will become the popover's arrow. The outermost wrapper element should have the
+            <code>.popover</code> class.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">title</td>
+          <td class="text-nowrap">string | Element | Function</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Default
+            <code>title</code> value if title attribute isn't present.If a function is given, it will be called with its
+            <code>this</code> reference set to the element that the popover is attached to.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">trigger</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">click</td>
+          <td>How popover is triggered - click | hover | focus | manual. You may pass multiple triggers; separate them with a
+            space. `manual` cannot be combined with any other trigger.</tr>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">offset</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">0</td>
+          <td>Offset of the popover relative to its target. For more information refer to Popper.js's offset docs.</td>
+          <tr>
+            <td class="text-nowrap" scope="row">fallback-placement</td>
+            <td class="text-nowrap">string | string[]</td>
+            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap">flip</td>
+            <td>Allow to specify which position Popper will use on fallback. For more information refer to Popper.js's behavior
+              docs
+            </td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">boundary</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap">scrollParent</td>
+            <td>Overflow constraint boundary of the popover. Accepts the values of
+              <code>'viewport'</code>,
+              <code>'window'</code>,
+              <code>'scrollParent'</code>, or an HTMLElement reference (JavaScript only). For more information refer to Popper.js's
+              preventOverflow docs.
+            </td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" colspan="5">
+              <b>
+                Events
+              </b>
+            </td>
+          </tr>
+          <tr>
+            <td scope="row">bs-show</td>
+            <td class="text-nowrap">Function</td>
+            <td class="text-nowrap">call</td>
+            <td class="text-nowrap"></td>
+            <td>This event fires immediately when the
+              <code>show</code> instance method is called.
+            </td>
+          </tr>
+          <tr>
+            <td scope="row">bs-shown</td>
+            <td class="text-nowrap">Function</td>
+            <td class="text-nowrap">call</td>
+            <td class="text-nowrap"></td>
+            <td>This event is fired when the popover has been made visible to the user (will wait for CSS transitions to complete).
+            </td>
+          </tr>
+          <tr>
+            <td scope="row">bs-hide</td>
+            <td class="text-nowrap">Function</td>
+            <td class="text-nowrap">call</td>
+            <td class="text-nowrap"></td>
+            <td>This event is fired immediately when the
+              <code>hide</code> instance method has been called.
+            </td>
+          </tr>
+          <tr>
+            <td scope="row">bs-hidden</td>
+            <td class="text-nowrap">Function</td>
+            <td class="text-nowrap">call</td>
+            <td class="text-nowrap"></td>
+            <td>This event is fired when the popover has finished being hidden from the user (will wait for CSS transitions to
+              complete).
+            </td>
+          </tr>
+          <tr>
+            <td scope="row">bs-inserted</td>
+            <td class="text-nowrap">Function</td>
+            <td class="text-nowrap">call</td>
+            <td class="text-nowrap"></td>
+            <td>This event is fired after the
+              <code>bs-shown</code> event when the popover template has been added to the DOM.</td>
+          </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</template>

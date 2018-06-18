@@ -1,0 +1,563 @@
+<template>
+
+
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Navs
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/navs">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    <p>
+      A mechanism to enable your site with navigation.
+    </p>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+
+    <aut-mark-down src="./docs/components/bootstrap/navs/usage.md">
+    </aut-mark-down>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Horizontal Styles
+    </legend>
+    <p>
+      Change the style of
+      <code>abt-navs</code> component with modifiers and utilities. Mix and match as needed.
+      <code>abt-navs</code> default style do not have tabs or pills unless you say so by adding,
+      <code>tabs</code> or
+      <code>pills</code> attribute to the
+      <code>abt-navs</code>, if
+      <b>both</b> specified it will give
+      <b>priority</b> to
+      <code>tabs</code>. You can change the alignment by using bootstrap
+      <code>justify-content-*</code> utilities. Also by adding
+      <code>active</code> and
+      <code>disabled</code> attributes you can select your active or disabled tabs respectively.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+
+        <abt-navs navs-class="mb-2">
+          <abt-nav-item href="#" title="Active" active></abt-nav-item>
+          <abt-nav-item href="#" title="Link"></abt-nav-item>
+          <abt-nav-item href="#" title="Link"></abt-nav-item>
+          <abt-nav-item href="#" title="Disabled" disabled></abt-nav-item>
+        </abt-navs>
+
+        <abt-navs navs-class="mb-2 justify-content-center" tabs>
+          <abt-nav-item href="#" active title="Active"></abt-nav-item>
+          <abt-nav-item href="#" title="Link"></abt-nav-item>
+          <abt-nav-item href="#" title="Link"></abt-nav-item>
+          <abt-nav-item href="#" disabled title="Disabled"></abt-nav-item>
+        </abt-navs>
+
+        <abt-navs navs-class="mb-2 justify-content-end" pills>
+          <abt-nav-item href="#" active title="Active"></abt-nav-item>
+          <abt-nav-item href="#" title="Link"></abt-nav-item>
+          <abt-nav-item href="#" title="Link"></abt-nav-item>
+          <abt-nav-item href="#" disabled title="Disabled"></abt-nav-item>
+        </abt-navs>
+
+      </abt-card-body>
+
+      <abt-card-footer>
+
+        <aut-mark-down src="./docs/components/bootstrap/navs/horizontal.md">
+        </aut-mark-down>
+
+      </abt-card-footer>
+
+    </abt-card>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Vertical
+    </legend>
+    <p>
+      Just simply add the
+      <code>vertical</code> attribute to the
+      <code>abt-navs</code> to change the appearance to vertical.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <abt-navs navs-class="flex-column" vertical>
+          <abt-nav-item title="Active" active></abt-nav-item>
+          <abt-nav-item title="Link"></abt-nav-item>
+          <abt-nav-item title="Link"></abt-nav-item>
+          <abt-nav-item title="Disabled" disabled></abt-nav-item>
+        </abt-navs>
+      </abt-card-body>
+
+      <abt-card-footer>
+
+        <aut-mark-down src="./docs/components/bootstrap/navs/vertical.md">
+        </aut-mark-down>
+
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Fill and justify
+    </legend>
+
+    <p class="mb-3">
+      Use
+      <code>fill</code> and
+      <code>justify</code> attributes to fill the whole space available.
+
+      <ul>
+        <li>
+          <b>PS:</b> Bear in mind they
+          <b>cannot</b> be used simultaneously.
+        </li>
+      </ul>
+    </p>
+
+    <abt-card>
+
+      <abt-card-body>
+        <abt-navs pills fill>
+          <abt-nav-item active title="Active"></abt-nav-item>
+          <abt-nav-item title="Longer nav link"></abt-nav-item>
+          <abt-nav-item title="Longer nav link"></abt-nav-item>
+          <abt-nav-item disabled title="Disabled"></abt-nav-item>
+        </abt-navs>
+        <br />
+        <abt-navs pills justify>
+          <abt-nav-item active title="Active"></abt-nav-item>
+          <abt-nav-item title="Longer nav link"></abt-nav-item>
+          <abt-nav-item title="Longer nav link"></abt-nav-item>
+          <abt-nav-item disabled title="Disabled"></abt-nav-item>
+        </abt-navs>
+      </abt-card-body>
+
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/navs/fills-justify.md">
+        </aut-mark-down>
+      </abt-card-footer>
+
+    </abt-card>
+
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Dynamic Tabs
+    </legend>
+
+    <p>
+      To achieve this you must specify contents for
+      <code>abt-nav-item</code> component.
+    </p>
+
+    <abt-card>
+
+      <abt-card-body>
+
+        <abt-navs bs-shown.call="testShown(activeTab,prevTab)" content-class="mt-3" fade tabs>
+          <abt-nav-item title="Home">
+            <div class="container">
+              Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia. Fugiat velit proident
+              aliquip nisi incididunt nostrud exercitation proident est nisi. Irure magna elit commodo anim ex veniam culpa
+              eiusmod id nostrud sit cupidatat in veniam ad. Eiusmod consequat eu adipisicing minim anim aliquip cupidatat
+              culpa excepteur quis. Occaecat sit eu exercitation irure Lorem incididunt nostrud.
+            </div>
+          </abt-nav-item>
+
+          <abt-nav-item title="Profile" active>
+            <div class="container">
+              Ad pariatur nostrud pariatur exercitation ipsum ipsum culpa mollit commodo mollit ex. Aute sunt incididunt amet commodo est
+              sint nisi deserunt pariatur do. Aliquip ex eiusmod voluptate exercitation cillum id incididunt elit sunt. Qui
+              minim sit magna Lorem id et dolore velit Lorem amet exercitation duis deserunt. Anim id labore elit adipisicing
+              ut in id occaecat pariatur ut ullamco ea tempor duis.
+            </div>
+          </abt-nav-item>
+
+          <abt-nav-item title="Contact">
+            <div class="container">
+              Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex. Nulla ut duis ipsum
+              nisi elit fugiat commodo sunt reprehenderit laborum veniam eu veniam. Eiusmod minim exercitation fugiat irure
+              ex labore incididunt do fugiat commodo aliquip sit id deserunt reprehenderit aliquip nostrud. Amet ex cupidatat
+              excepteur aute veniam incididunt mollit cupidatat esse irure officia elit do ipsum ullamco Lorem. Ullamco ut
+              ad minim do mollit labore ipsum laboris ipsum commodo sunt tempor enim incididunt. Commodo quis sunt dolore
+              aliquip aute tempor irure magna enim minim reprehenderit. Ullamco consectetur culpa veniam sint cillum aliqua
+              incididunt velit ullamco sunt ullamco quis quis commodo voluptate. Mollit nulla nostrud adipisicing aliqua
+              cupidatat aliqua pariatur mollit voluptate voluptate consequat non.
+            </div>
+          </abt-nav-item>
+
+        </abt-navs>
+
+        <br />
+        <hr />
+        <br />
+
+        <abt-navs pills vertical navs-class="flex-column" navs-style="font-size: large" content-style="color: #753B85">
+          <abt-nav-item title="Home" active>
+            <div class="container">
+              Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia. Fugiat velit proident
+              aliquip nisi incididunt nostrud exercitation proident est nisi. Irure magna elit commodo anim ex veniam culpa
+              eiusmod id nostrud sit cupidatat in veniam ad. Eiusmod consequat eu adipisicing minim anim aliquip cupidatat
+              culpa excepteur quis. Occaecat sit eu exercitation irure Lorem incididunt nostrud.
+            </div>
+          </abt-nav-item>
+
+          <abt-nav-item title="Profile">
+            <div class="container">
+              Ad pariatur nostrud pariatur exercitation ipsum ipsum culpa mollit commodo mollit ex. Aute sunt incididunt amet commodo est
+              sint nisi deserunt pariatur do. Aliquip ex eiusmod voluptate exercitation cillum id incididunt elit sunt. Qui
+              minim sit magna Lorem id et dolore velit Lorem amet exercitation duis deserunt. Anim id labore elit adipisicing
+              ut in id occaecat pariatur ut ullamco ea tempor duis.
+            </div>
+          </abt-nav-item>
+
+          <abt-nav-item title="Contact">
+            <div class="container">
+              Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex. Nulla ut duis ipsum
+              nisi elit fugiat commodo sunt reprehenderit laborum veniam eu veniam. Eiusmod minim exercitation fugiat irure
+              ex labore incididunt do fugiat commodo aliquip sit id deserunt reprehenderit aliquip nostrud. Amet ex cupidatat
+              excepteur aute veniam incididunt mollit cupidatat esse irure officia elit do ipsum ullamco Lorem. Ullamco ut
+              ad minim do mollit labore ipsum laboris ipsum commodo sunt tempor enim incididunt. Commodo quis sunt dolore
+              aliquip aute tempor irure magna enim minim reprehenderit. Ullamco consectetur culpa veniam sint cillum aliqua
+              incididunt velit ullamco sunt ullamco quis quis commodo voluptate. Mollit nulla nostrud adipisicing aliqua
+              cupidatat aliqua pariatur mollit voluptate voluptate consequat non.
+            </div>
+          </abt-nav-item>
+
+        </abt-navs>
+
+
+      </abt-card-body>
+
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/navs/dynamics.md">
+        </aut-mark-down>
+      </abt-card-footer>
+
+    </abt-card>
+
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Properties &amp; Events
+    </legend>
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              abt-navs
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">content-class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies your custom css class on
+            <b>all</b> tab contents of this element</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">content-style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attributes that you want to apply on
+            <b>all</b> tab contents of this element.</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">fill</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">false</td>
+          <td>
+            Makes the navigation menu items to fill the whole space available.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">justify</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">false</td>
+          <td>
+            Makes the navigation menu items to fill the whole space available, and all will have the same width.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">pills</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">false</td>
+          <td>
+            Show the navigation menu tems as
+            <code>pills</code>. It cannot be used with
+            <code>tabs</code> at the same time.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">tabs</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">false</td>
+          <td>
+            Show the navigation menu tems as
+            <code>tabs</code>. It cannot be used with
+            <code>pills</code> at the same time.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">navs-class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies your custom css class on
+            <b>all</b> navigation menu items of this element</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">navs-style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attributes that you want to apply on
+            <b>all</b> navigation menu items of this element.</td>
+        </tr>
+
+
+        <tr>
+          <td class="text-nowrap" scope="row">navs-vertical-class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">col-sm-3</td>
+          <td>Applies your custom css class on
+            <b>all</b> navigation menu items of this element, if and only if the
+            <code>vertical</code> attribute is on.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">content-vertical-class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">col-sm-9</td>
+          <td>Applies your custom css class on
+            <b>all</b> tab contents of this element, if and only if the
+            <code>vertical</code> attribute is on.</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">vertical</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">false</td>
+          <td>
+            Renderes the navigation items vertically, and if any content for
+            <code>abt-nav-item</code> provided they will be rendered next to them.
+
+            <hr />
+
+            <b>PS:</b> Set this value to
+            <code>true</code> and you should provide css classes for both
+            <code>navs-vertical-class</code> and
+            <code>content-vertical-class</code>, if not, they will default to
+            <code>col-sm-3</code> and
+            <code>col-sm-9</code> respectively.
+
+          </td>
+        </tr>
+
+        <!-- *************************************************** -->
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">bs-show</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call( activeTab, prevTab )</td>
+          <td class="text-nowrap"></td>
+          <td>
+            This event fires immediately when a tab is going to be shown.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">bs-shown</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call( activeTab, prevTab )</td>
+          <td class="text-nowrap"></td>
+          <td>
+            This event fires immediately when a tab is going to be shown and its css transition finished.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">bs-hide</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call( activeTab, prevTab )</td>
+          <td class="text-nowrap"></td>
+          <td>
+            This event fires immediately when a tab is going to be hidden.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">bs-hidden</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call( activeTab, prevTab )</td>
+          <td class="text-nowrap"></td>
+          <td>
+            This event fires immediately when a tab is going to be hidden and its css transition finished.
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <br />
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-nav-item
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">active</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>
+            At least one
+            <code>abt-nav-item</code> for each
+            <code>abt-navs</code>
+            <b>must</b> have this attributes. It indicates the initial active tab.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies the your custom css class on each
+            <b>individual</b> nav item menu</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">disabled</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Setting this to true will disable the navigation menu item. You can use it both as a simple attribute (
+            <code>disabled</code> ) or binding aurelia way (
+            <code>disabled="true"</code> or disabled.bind="some_boolean_value" ).
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">href</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>A url to link to another part of the page or web.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attributes that you want to apply on the component.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">title</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>The text/title of navigation menu item.</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <hr />
+
+    <ul>
+      <li>
+        <b>PS 1:</b> We guess it's far better to have a
+        <code>tab-changed</code> event instead of four bootstrap events above, what do you think?
+      </li>
+      <li>
+        <b>PS 2:</b> The
+        <code>active</code> attribute for
+        <code>abt-nav-item</code> is currently using
+        <code>one-time</code> binding, We are trying for a way to make it dynamic so that you can change the active tab programmatically.
+      </li>
+    </ul>
+
+
+  </fieldset>
+
+</template>

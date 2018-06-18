@@ -1,0 +1,6 @@
+<template>
+  <a id="${id}" css="${style}" href="${href}" role="button" click.trigger="onClick($event)" tabindex="${disabled===true ? -1 : tabIndex }" disabled.bind="disabled" class="btn btn-${outline? 'outline-' : ''}${type} btn-${size} ${block?'btn-block':''} ${class} abt-link-button">
+    <slot>
+    </slot>
+  </a>
+</template>

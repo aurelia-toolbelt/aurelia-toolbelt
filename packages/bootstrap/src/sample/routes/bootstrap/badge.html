@@ -1,0 +1,299 @@
+<template>
+
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Badges
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/badge">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Documentation and examples for badges, our small count and labeling component.
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+
+    <aut-mark-down src="./docs/components/bootstrap/badge/usage.md">
+    </aut-mark-down>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Examples
+    </legend>
+    <p>
+      Badges scale to match the size of the immediate parent element by using relative font sizing and em units, and also comes
+      in contextual variants throupgh
+      <code>type</code> attribute.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+
+        <h1>Example heading
+          <abt-badge>New</abt-badge>
+        </h1>
+        <h2>Example heading
+          <abt-badge type="secondary">New</abt-badge>
+        </h2>
+        <h3>Example heading
+          <abt-badge type="info">New</abt-badge>
+        </h3>
+        <h4>Example heading
+          <abt-badge type="success">New</abt-badge>
+        </h4>
+        <h5>Example heading
+          <abt-badge type="warning">New</abt-badge>
+        </h5>
+        <h6>Example heading
+          <abt-badge type="danger">New</abt-badge>
+        </h6>
+        <h6 class="bg-dark text-light">Example heading
+          <abt-badge type="light">New</abt-badge>
+        </h6>
+        <h6>Example heading
+          <abt-badge type="dark">New</abt-badge>
+        </h6>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/badge/basic.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+
+    </abt-card>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Using alongside with buttons
+    </legend>
+    <p>
+
+      Badges can be used as part of links or buttons to provide a counter.
+    </p>
+
+    <p>
+      Note that depending on how they are used, badges may be confusing for users of screen readers and similar assistive technologies.
+      While the styling of badges provides a visual cue as to their purpose, these users will simply be presented with the
+      content of the badge. Depending on the specific situation, these badges may seem like random additional words or numbers
+      at the end of a sentence, link, or button.
+    </p>
+    <p>
+      Unless the context is clear (as with the “Notifications” example, where it is understood that the “4” is the number of notifications),
+      consider including additional context with a visually hidden piece of additional text.
+    </p>
+
+
+    <abt-card>
+      <abt-card-body>
+        <abt-button class="mb-2">
+          Notifications
+          <abt-badge type="light">
+            4
+          </abt-badge>
+        </abt-button>
+        <br />
+        <br />
+        <abt-button>
+          Profile
+          <abt-badge type="light">
+            9
+            <span class="sr-only">unread messages</span>
+          </abt-badge>
+        </abt-button>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/badge/with-buttons.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+
+    </abt-card>
+
+
+
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Pill badges
+    </legend>
+
+    <abt-card>
+      <abt-card-body>
+
+        <abt-badge class="mr-1" type="primary">primary</abt-badge>
+        <abt-badge class="mr-1" type="secondary">secondary</abt-badge>
+        <abt-badge class="mr-1" type="info">info</abt-badge>
+        <abt-badge class="mr-1" type="success">success</abt-badge>
+        <abt-badge class="mr-1" type="warning">warning</abt-badge>
+        <abt-badge class="mr-1" type="danger">danger</abt-badge>
+        <abt-badge class="mr-1" type="light">light</abt-badge>
+        <abt-badge class="mr-1" type="dark">dark</abt-badge>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/badge/pill-badges.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Links
+    </legend>
+
+    <p>
+      We don't know how to support
+      <a href="http://getbootstrap.com/docs/4.0/components/badge/#links">link badges</a>, we'd like to consider the whol functionality in one component; however, you can still use it like
+      below with some tiny visual problems.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+
+        <a href="http://getbootstrap.com/docs/4.0/components/badge/#links">
+          <abt-badge type="primary">primary</abt-badge>
+        </a>
+
+        <a href="http://getbootstrap.com/docs/4.0/components/badge/#links">
+          <abt-badge type="secondary">secondary</abt-badge>
+        </a>
+
+        <a href="http://getbootstrap.com/docs/4.0/components/badge/#links">
+          <abt-badge type="info">info</abt-badge>
+        </a>
+
+        <a href="http://getbootstrap.com/docs/4.0/components/badge/#links">
+          <abt-badge type="success">success</abt-badge>
+        </a>
+
+        <a href="http://getbootstrap.com/docs/4.0/components/badge/#links">
+          <abt-badge type="warning">warning</abt-badge>
+        </a>
+
+        <a href="http://getbootstrap.com/docs/4.0/components/badge/#links">
+          <abt-badge type="danger">danger</abt-badge>
+        </a>
+
+        <a href="http://getbootstrap.com/docs/4.0/components/badge/#links">
+          <abt-badge type="light">light</abt-badge>
+        </a>
+
+        <a href="http://getbootstrap.com/docs/4.0/components/badge/#links">
+          <abt-badge type="dark">dark</abt-badge>
+        </a>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/badge/link.md">
+
+        </aut-mark-down>
+      </abt-card-footer>
+
+    </abt-card>
+
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Properties
+    </legend>
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-badge
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies the your custom css class on badge</td>
+        </tr>
+        <!-- <tr>
+          <td scope="row">href</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>A url to link to another part of the page or web.
+            <hr />
+            <b>PS:</b>
+            <i>Bear in mind that you can use
+              <code>router-href</code> on
+              <code>abt-badge</code> to benefit from aurelia route engine.</i>
+          </td>
+        </tr> -->
+        <tr>
+          <td class="text-nowrap" scope="row">is-pill</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Makes badges more rounded, it can be used as an attribute with no value
+            <code>is-pill</code>
+            or with aurelia binding system
+            <code>is-pill.bind="true"</code>, both do the same.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">type</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">primary</td>
+          <td>The type of badge, values are contextual values of bootstrap,
+            <code>primary</code>,
+            <code>secondary</code>,
+            <code>info</code>,
+            <code>success</code>,
+            <code>warning</code>,
+            <code>danger</code>,
+            <code>light</code>, and
+            <code>dark</code>
+          </td>
+        </tr>
+
+
+
+      </tbody>
+    </table>
+  </fieldset>
+
+
+
+</template>

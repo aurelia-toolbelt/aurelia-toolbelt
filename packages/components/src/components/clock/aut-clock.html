@@ -1,0 +1,19 @@
+<template>
+
+  <require from="./aut-clock.css"></require>
+  <require from="../../../value-converters/vanilla/datetime/moment-vc"></require>
+  <!-- text-shadow: 0 0 20px ${shadowColor}, 0 0 20px rgba(10, 175, 230, 0); -->
+
+  <div class="clock" css="color: ${color};">
+    <slot name="date">
+      <p if.bind="showDate" class="date" css="font-size: ${fontSize/2}px;">${value|date:dateFormat:locale}</p>
+    </slot>
+    <slot name="time">
+      <p if.bind="showTime" class="time" css="font-size: ${fontSize}px;">${value|time:be24Hours}</p>
+    </slot>
+    <slot name="text">
+      <p if.bind="showText" class="text" css="font-size: ${fontSize/3}px;">${text}</p>
+    </slot>
+  </div>
+
+</template>

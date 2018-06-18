@@ -1,0 +1,11 @@
+abt-button>button {
+  cursor: pointer;
+}
+
+.abt-button {
+  cursor: pointer;
+}
+
+.abt-button[disabled] {
+  cursor: auto;
+}

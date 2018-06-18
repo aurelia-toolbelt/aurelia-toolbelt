@@ -1,0 +1,9 @@
+<template ref="listGroupItemTemplate">
+  
+  <require from="./abt-listgroup-item.css"></require>
+  
+  <a id="${id}" href="${href}" ref="listGroupItem" click.trigger="onClick($event)" css="cursor: ${click || href ? 'pointer' :''}; ${style}"
+    class="list-group-item list-group-item-action ${class}">
+    <slot></slot>
+  </a>
+</template>

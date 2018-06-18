@@ -1,0 +1,376 @@
+<template>
+
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Buttons
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/button">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Group a series of
+    <code>buttons</code> together on a single line with the button group.
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+
+    <aut-mark-down src="./docs/components/bootstrap/button-group/usage.md">
+    </aut-mark-down>
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Basic, vertical and sizing
+    </legend>
+
+    <p>Simply group buttons via
+      <code>abt-button-group</code>, change their size, and make them vertical by adding
+      <code>vertical</code> attribute.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+
+        <abt-button-group label="Small Group" class="mr-2" size="sm">
+          <abt-button bs-type="secondary">Top</abt-button>
+          <abt-button bs-type="secondary">Middle</abt-button>
+          <abt-button bs-type="secondary">Bottom</abt-button>
+        </abt-button-group>
+
+        <abt-button-group class="mr-2" label="Normal group">
+          <abt-button bs-type="secondary">Left</abt-button>
+          <abt-button bs-type="secondary">Middle</abt-button>
+          <abt-button bs-type="secondary">Right</abt-button>
+        </abt-button-group>
+
+        <abt-button-group label="Large Group" class="mr-5" size="lg">
+          <abt-button bs-type="secondary">Top</abt-button>
+          <abt-button bs-type="secondary">Middle</abt-button>
+          <abt-button bs-type="secondary">Bottom</abt-button>
+        </abt-button-group>
+
+
+
+        <abt-button-group label="small Vertical" size="sm" class="ml-5 mr-2" vertical>
+          <abt-button bs-type="secondary">Top</abt-button>
+          <abt-button bs-type="secondary">Middle</abt-button>
+          <abt-button bs-type="secondary">Bottom</abt-button>
+        </abt-button-group>
+
+        <abt-button-group label="Normal Vertical" class="mr-2" vertical>
+          <abt-button bs-type="secondary">Top</abt-button>
+          <abt-button bs-type="secondary">Middle</abt-button>
+          <abt-button bs-type="secondary">Bottom</abt-button>
+        </abt-button-group>
+
+        <abt-button-group label="Large Vertical" size="lg" vertical>
+          <abt-button bs-type="secondary">Top</abt-button>
+          <abt-button bs-type="secondary">Middle</abt-button>
+          <abt-button bs-type="secondary">Bottom</abt-button>
+        </abt-button-group>
+
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button-group/basics.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+
+
+  </fieldset>
+
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Button toolbar
+    </legend>
+
+    <p>Use
+      <code>abt-toolbar</code> to combine sets of button groups into button toolbars for more complex components. Use utility classes
+      as needed to space out groups, buttons, and more.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <abt-toolbar label="Toolbar with button groups">
+          <abt-button-group label="First group" class="mr-2">
+            <abt-button>1</abt-button>
+            <abt-button>2</abt-button>
+            <abt-button>3</abt-button>
+            <abt-button>4</abt-button>
+          </abt-button-group>
+          <abt-button-group label="Second group" class="mr-2">
+            <abt-button bs-type="secondary">5</abt-button>
+            <abt-button bs-type="secondary">6</abt-button>
+            <abt-button bs-type="secondary">7</abt-button>
+          </abt-button-group>
+          <abt-button-group label="Third group">
+            <abt-button bs-type="warning">8</abt-button>
+          </abt-button-group>
+        </abt-toolbar>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button-group/toolbar.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+    <hr />
+
+
+    <p>
+      Feel free to mix input groups with button groups in your toolbars. Similar to the example above, you’ll likely need some
+      utilities though to space things properly.
+    </p>
+
+
+    <abt-card>
+      <abt-card-body>
+        <abt-toolbar class="mb-3" label="Toolbar with button groups">
+          <abt-button-group label="First group" class="mr-2">
+            <abt-button>1</abt-button>
+            <abt-button>2</abt-button>
+            <abt-button>3</abt-button>
+            <abt-button>4</abt-button>
+          </abt-button-group>
+
+          <abt-inputgroup>
+            <abt-inputgroup-prepend>
+              <abt-inputgroup-text>@</abt-inputgroup-text>
+            </abt-inputgroup-prepend>
+            <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
+          </abt-inputgroup>
+        </abt-toolbar>
+
+        <abt-toolbar class="justify-content-between" label="Toolbar with button groups">
+          <abt-button-group label="First group" class="mr-2">
+            <abt-button>1</abt-button>
+            <abt-button>2</abt-button>
+            <abt-button>3</abt-button>
+            <abt-button>4</abt-button>
+          </abt-button-group>
+          <abt-inputgroup>
+            <abt-inputgroup-prepend>
+              <abt-inputgroup-text>@</abt-inputgroup-text>
+            </abt-inputgroup-prepend>
+            <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
+          </abt-inputgroup>
+        </abt-toolbar>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button-group/toolbar-mix.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+
+  </fieldset>
+
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Dropdowns
+    </legend>
+
+    <p>
+      Use
+      <code>abt-dropdown</code> alongside with button groups.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <abt-toolbar label="Toolbar with button groups">
+          
+          <abt-button-group label="Button group with nested dropdown">
+
+            <abt-button type="button" class="btn btn-secondary">1</abt-button>
+            <abt-button type="button" class="btn btn-secondary">2</abt-button>
+
+            <abt-dropdown title="Dropdown" color="info">
+              <abt-dropdown-item>Dropdown link</abt-dropdown-item>
+              <abt-dropdown-item>Dropdown link</abt-dropdown-item>
+            </abt-dropdown>
+            
+          </abt-button-group>
+
+        </abt-toolbar>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/button-group/dropdowns.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+  </fieldset>
+
+
+
+  <fieldset class="mt-5">
+      <legend>
+        Properties and Events
+      </legend>
+  
+      <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <td class="text-nowrap" colspan="4">
+              <b>
+                abt-button-group
+              </b>
+            </td>
+            <td class="text-nowrap" colspan="1">
+              <b>
+                containerless
+              </b>
+            </td>
+          </tr>
+          <tr>
+            <th class="text-nowrap" scope="col">Name</th>
+            <th class="text-nowrap" scope="col">Type</th>
+            <th class="text-nowrap" scope="col">Binding type</th>
+            <th class="text-nowrap" scope="col">Default value</th>
+            <th class="text-nowrap" scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-nowrap" colspan="5">
+              <b>
+                Properties
+              </b>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">class</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap"></td>
+            <td>Applies the your custom css class on alert</td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">id</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneTime</td>
+            <td class="text-nowrap"></td>
+            <td>Since the
+              <code>abt-button-group</code> is a
+              <code>containerless</code> component, we assign the
+              <code>id</code> to the actual
+              <code>div</code> underneath.
+            </td>
+          </tr>
+          <tr>
+              <td class="text-nowrap" scope="row">label</td>
+              <td class="text-nowrap">string</td>
+              <td class="text-nowrap">oneTime</td>
+              <td class="text-nowrap"></td>
+              <td>Assigns the value to <code>aria-label</code> as bootstrap suggested</td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">size</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneTime</td>
+            <td class="text-nowrap">md</td>
+            <td>Indicates the size for button group, values can be 'sm', 'md', and 'lg'</td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">style</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap"></td>
+            <td>Css style attributes that you want to apply on the component.</td>
+          </tr>
+        </tbody>
+      </table>
+  
+  
+      <table class="table table-striped table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <td class="text-nowrap" colspan="4">
+                <b>
+                  abt-toolbar
+                </b>
+              </td>
+              <td class="text-nowrap" colspan="1">
+                <b>
+                  containerless
+                </b>
+              </td>
+            </tr>
+            <tr>
+              <th class="text-nowrap" scope="col">Name</th>
+              <th class="text-nowrap" scope="col">Type</th>
+              <th class="text-nowrap" scope="col">Binding type</th>
+              <th class="text-nowrap" scope="col">Default value</th>
+              <th class="text-nowrap" scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-nowrap" colspan="5">
+                <b>
+                  Properties
+                </b>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-nowrap" scope="row">class</td>
+              <td class="text-nowrap">string</td>
+              <td class="text-nowrap">oneWay</td>
+              <td class="text-nowrap"></td>
+              <td>Applies the your custom css class on alert</td>
+            </tr>
+            <tr>
+              <td class="text-nowrap" scope="row">id</td>
+              <td class="text-nowrap">string</td>
+              <td class="text-nowrap">oneTime</td>
+              <td class="text-nowrap"></td>
+              <td>Since the
+                <code>abt-toolbar</code> is a
+                <code>containerless</code> component, we assign the
+                <code>id</code> to the actual
+                <code>div</code> underneath.
+              </td>
+            </tr>
+            <tr>
+                <td class="text-nowrap" scope="row">label</td>
+                <td class="text-nowrap">string</td>
+                <td class="text-nowrap">oneTime</td>
+                <td class="text-nowrap"></td>
+                <td>Assigns the value to <code>aria-label</code> as bootstrap suggested</td>
+            </tr>
+            <tr>
+              <td class="text-nowrap" scope="row">size</td>
+              <td class="text-nowrap">string</td>
+              <td class="text-nowrap">oneTime</td>
+              <td class="text-nowrap">md</td>
+              <td>Indicates the size for toolbar, values can be 'sm', 'md', and 'lg'</td>
+            </tr>
+            <tr>
+              <td class="text-nowrap" scope="row">style</td>
+              <td class="text-nowrap">string</td>
+              <td class="text-nowrap">oneWay</td>
+              <td class="text-nowrap"></td>
+              <td>Css style attributes that you want to apply on the component.</td>
+            </tr>
+          </tbody>
+        </table>
+  
+    </fieldset>
+  
+
+
+
+
+</template>

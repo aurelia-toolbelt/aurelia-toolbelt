@@ -1,0 +1,7 @@
+<template ref="navbarBrandTemplate">
+  <require from="./abt-navbar-brand.css"></require>
+  <a id="${id}" ref="navbarBrand" class="navbar-brand ${class}" css="${style}" click.trigger="onClick($event)" href="${href}">
+    <slot></slot>
+  </a>
+
+</template>

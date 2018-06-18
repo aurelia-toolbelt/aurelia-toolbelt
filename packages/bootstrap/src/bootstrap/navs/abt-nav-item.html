@@ -1,0 +1,14 @@
+<template>
+
+  <a ref="tab_header" class="nav-link nav-item ${class} ${active ? 'active show' : '' } ${disabled? 'disabled':''}"
+    href="${href ? href : '#'}" css="${style}">
+    ${title}
+  </a>
+
+
+  <div ref="tab_body" class="tab-pane ${active ? 'active show' : ''} ${isFade ? 'fade' : ''}" role="tab-panel">
+    <slot></slot>
+  </div>
+
+
+</template>

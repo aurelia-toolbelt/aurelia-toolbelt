@@ -1,0 +1,21 @@
+<template role="tablist" >
+
+
+  <div class="${vertical ? 'row' : ''}">
+
+    
+    <div class="${vertical ? navsVerticalClass : ''}">
+      <nav class="nav ${bePills ? 'nav-pills' : ''} ${navsClass} ${vertical ? 'flex-column' : ''} ${beTab ? 'nav-tabs' : ''} ${fill ? 'nav-fill' : ''} ${justify ? 'nav-justified' : ''}"
+      aria-orientation="${vertical ? 'vertical' : 'horizontal'}" css="${navsStyle}">
+      <slot></slot>
+    </nav>
+  </div>
+  
+  
+  <div class="${vertical ? contentVerticalClass : ''}">
+    <div class="tab-content ${contentClass}" css="${contentStyle}">
+    </div>
+  </div>
+</div>
+  
+</template>

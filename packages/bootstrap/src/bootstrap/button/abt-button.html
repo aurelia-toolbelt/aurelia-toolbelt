@@ -1,0 +1,18 @@
+<template>
+
+  <require from="./abt-button.css"></require>
+
+  <button id="${id}" role="button" type="${type}" disabled.bind="disabled || isBusy" class="abt-button btn btn-${outline? 'outline-' : ''}${bsType} btn-${size} ${block?'btn-block':''} ${class}"
+    css="${style}" click.delegate="onClick($event)">
+    <span show.bind="isBusy">
+      <slot name="loading">
+        <!-- <i class="fa fa-spinner fa-spin" aria-hidden="true">
+        </i> -->
+      </slot>
+    </span>
+    <slot>
+    </slot>
+
+  </button>
+
+</template>

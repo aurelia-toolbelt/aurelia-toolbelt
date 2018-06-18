@@ -1,0 +1,1196 @@
+<template>
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Navbar
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/navbar">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Documentation and examples for Bootstrap’s powerful, responsive navigation header, the navbar. Includes support for branding,
+    navigation, and more, including support for our collapse plugin.
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/navbar/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Basic example
+    </legend>
+    <abt-navbar expand-size="lg" navbar-color-type="light" background-color-type="light">
+      <abt-navbar-brand>NavBar</abt-navbar-brand>
+      <abt-navbar-toggler></abt-navbar-toggler>
+      <abt-navbar-collapser>
+        <abt-navbar-nav class="mr-auto">
+          <abt-navbar-link active="true" href="#/bootstrap/navbar">Home</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Link</abt-navbar-link>
+          <abt-navbar-dropdown color="secondary" title="DropDown">
+            <abt-navbar-dropdown-item>Action</abt-navbar-dropdown-item>
+            <abt-navbar-dropdown-item>Another action</abt-navbar-dropdown-item>
+            <abt-navbar-dropdown-divider></abt-navbar-dropdown-divider>
+            <abt-navbar-dropdown-item>Something else here</abt-navbar-dropdown-item>
+          </abt-navbar-dropdown>
+          <abt-navbar-link disabled="true">Disabled</abt-navbar-link>
+        </abt-navbar-nav>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <abt-button outline bs-type="success" type="submit" class="my-2 my-sm-0">
+            Button
+          </abt-button>
+        </form>
+      </abt-navbar-collapser>
+    </abt-navbar>
+    <aut-mark-down src="./docs/components/bootstrap/navbar/example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Brand
+    </legend>
+    <abt-navbar expand-size="lg" navbar-color-type="light" background-color-type="light">
+      <abt-navbar-brand href="#/bootstrap/navbar">NavBar</abt-navbar-brand>
+    </abt-navbar>
+    <br>
+    <abt-navbar expand-size="lg" navbar-color-type="light" background-color-type="light">
+      <abt-navbar-brand class="mb-0 h1" heading="true">NavBar</abt-navbar-brand>
+    </abt-navbar>
+    <aut-mark-down src="./docs/components/bootstrap/navbar/brand.md">
+    </aut-mark-down>
+    <abt-navbar expand-size="lg" navbar-color-type="light" background-color-type="light">
+      <abt-navbar-brand>
+        <a class="navbar-brand" href="#/bootstrap/navbar">
+          <img src="../../../logo-navbar.png" alt="The image cannot be displayed">
+        </a>
+      </abt-navbar-brand>
+    </abt-navbar>
+    <br>
+    <abt-navbar expand-size="lg" navbar-color-type="light" background-color-type="light">
+      <abt-navbar-brand>
+        <a class="navbar-brand" href="#/bootstrap/navbar">
+          <img src="../../../logo-navbar.png" alt="The image cannot be displayed"> aurelia-toolbelt
+        </a>
+      </abt-navbar-brand>
+    </abt-navbar>
+    <aut-mark-down src="./docs/components/bootstrap/navbar/brand-logo.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Mega menu
+    </legend>
+    <p>We also support
+      <code>mega menu</code> in this component. To use it, just use the
+      <code>abt-navbar-dropdown-mega-item</code> tag. Obviously this accepts any HTML content. You may want to have a
+      <code>full width</code> mega menu. For this purpose, consider the
+      <code>full-width="true"</code> or
+      <code>full-width</code> value for the
+      <code>abt-navbar-dropdown</code> tag.
+    </p>
+    <br>
+    <abt-navbar>
+      <abt-navbar-brand heading="true">NavBar</abt-navbar-brand>
+      <abt-navbar-toggler></abt-navbar-toggler>
+      <abt-navbar-collapser>
+        <abt-navbar-nav class="mr-auto">
+          <abt-navbar-link active>Home</abt-navbar-link>
+          <abt-navbar-link>Features</abt-navbar-link>
+          <abt-navbar-link>Pricing</abt-navbar-link>
+          <abt-navbar-link disabled>Disabled</abt-navbar-link>
+          <abt-navbar-dropdown title="DropDown">
+            <abt-navbar-dropdown-item>Action</abt-navbar-dropdown-item>
+            <abt-navbar-dropdown-item>Another action</abt-navbar-dropdown-item>
+            <abt-navbar-dropdown-divider></abt-navbar-dropdown-divider>
+            <abt-navbar-dropdown-item>Something else here</abt-navbar-dropdown-item>
+          </abt-navbar-dropdown>
+          <abt-navbar-dropdown title="Mega menu">
+            <abt-navbar-dropdown-mega-item>
+              <ul class="col-sm-2 list-unstyled">
+                <li>
+                  <p>
+                    <strong>Section Title</strong>
+                  </p>
+                </li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+              </ul>
+              <ul class="col-sm-2 list-unstyled">
+                <li>
+                  <p>
+                    <strong>Links Title</strong>
+                  </p>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+              </ul>
+              <ul class="col-sm-2 list-unstyled">
+                <li>
+                  <p>
+                    <strong>Section Title</strong>
+                  </p>
+                </li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+              </ul>
+              <ul class="col-sm-2 list-unstyled">
+                <li>
+                  <p>
+                    <strong>Section Title</strong>
+                  </p>
+                </li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>
+                  <ul>
+                    <li>
+                      <a href="#"> Link Item </a>
+                    </li>
+                    <li>
+                      <a href="#"> Link Item </a>
+                    </li>
+                    <li>
+                      <a href="#"> Link Item </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </abt-navbar-dropdown-mega-item>
+          </abt-navbar-dropdown>
+          <abt-navbar-dropdown full-width="true" title="Mega menu with full width">
+            <abt-navbar-dropdown-mega-item>
+              <ul class="col-sm-2 list-unstyled">
+                <li>
+                  <p>
+                    <strong>Section Title</strong>
+                  </p>
+                </li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+              </ul>
+              <ul class="col-sm-2 list-unstyled">
+                <li>
+                  <p>
+                    <strong>Links Title</strong>
+                  </p>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+                <li>
+                  <a href="#"> Link Item </a>
+                </li>
+              </ul>
+              <ul class="col-sm-2 list-unstyled">
+                <li>
+                  <p>
+                    <strong>Section Title</strong>
+                  </p>
+                </li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+              </ul>
+              <ul class="col-sm-2 list-unstyled">
+                <li>
+                  <p>
+                    <strong>Section Title</strong>
+                  </p>
+                </li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>
+                  <ul>
+                    <li>
+                      <a href="#"> Link Item </a>
+                    </li>
+                    <li>
+                      <a href="#"> Link Item </a>
+                    </li>
+                    <li>
+                      <a href="#"> Link Item </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </abt-navbar-dropdown-mega-item>
+          </abt-navbar-dropdown>
+        </abt-navbar-nav>
+      </abt-navbar-collapser>
+    </abt-navbar>
+    <aut-mark-down src="./docs/components/bootstrap/navbar/mega-menu.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Text
+    </legend>
+    <abt-navbar expand-size="lg" navbar-color-type="light" background-color-type="light">
+      <abt-navbar-text>Navbar text with an inline element</abt-navbar-text>
+    </abt-navbar>
+    <br>
+    <abt-navbar expand-size="lg" navbar-color-type="light" background-color-type="light">
+      <abt-navbar-brand>Navbar w/ text</abt-navbar-brand>
+      <abt-navbar-toggler></abt-navbar-toggler>
+      <abt-navbar-collapser>
+        <abt-navbar-nav class="mr-auto">
+          <abt-navbar-link active="true" href="#/bootstrap/navbar">Home</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Features</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Pricing</abt-navbar-link>
+        </abt-navbar-nav>
+        <abt-navbar-text>Navbar text with an inline element</abt-navbar-text>
+      </abt-navbar-collapser>
+    </abt-navbar>
+    <aut-mark-down src="./docs/components/bootstrap/navbar/text.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Color schemes
+    </legend>
+    <abt-navbar expand-size="lg" navbar-color-type="dark" background-color-type="dark">
+      <abt-navbar-brand>NavBar</abt-navbar-brand>
+      <abt-navbar-toggler></abt-navbar-toggler>
+      <abt-navbar-collapser>
+        <abt-navbar-nav class="mr-auto">
+          <abt-navbar-link active="true" href="#/bootstrap/navbar">Home</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Features</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Pricing</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">About</abt-navbar-link>
+        </abt-navbar-nav>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <abt-button outline bs-type="success" type="submit" class="my-2 my-sm-0">
+            Button
+          </abt-button>
+        </form>
+      </abt-navbar-collapser>
+    </abt-navbar>
+    <br>
+    <abt-navbar expand-size="lg" navbar-color-type="dark" background-color-type="primary">
+      <abt-navbar-brand>NavBar</abt-navbar-brand>
+      <abt-navbar-toggler></abt-navbar-toggler>
+      <abt-navbar-collapser>
+        <abt-navbar-nav class="mr-auto">
+          <abt-navbar-link active="true" href="#/bootstrap/navbar">Home</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Features</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Pricing</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">About</abt-navbar-link>
+        </abt-navbar-nav>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <abt-button outline bs-type="success" type="submit" class="my-2 my-sm-0">
+            Button
+          </abt-button>
+        </form>
+      </abt-navbar-collapser>
+    </abt-navbar>
+    <br>
+    <abt-navbar expand-size="lg" navbar-color-type="light" style="background-color: #e3f2fd !important">
+      <abt-navbar-brand>NavBar</abt-navbar-brand>
+      <abt-navbar-toggler></abt-navbar-toggler>
+      <abt-navbar-collapser>
+        <abt-navbar-nav class="mr-auto">
+          <abt-navbar-link active="true" href="#/bootstrap/navbar">Home</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Features</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">Pricing</abt-navbar-link>
+          <abt-navbar-link href="#/bootstrap/navbar">About</abt-navbar-link>
+        </abt-navbar-nav>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <abt-button outline bs-type="success" type="submit" class="my-2 my-sm-0">
+            Button
+          </abt-button>
+        </form>
+      </abt-navbar-collapser>
+    </abt-navbar>
+    <aut-mark-down src="./docs/components/bootstrap/navbar/color-schemes.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Containers
+    </legend>
+    <div class="container">
+      <abt-navbar expand-size="lg" navbar-color-type="light" background-color-type="light">
+        <abt-navbar-brand href="#/bootstrap/navbar">NavBar</abt-navbar-brand>
+      </abt-navbar>
+    </div>
+    <aut-mark-down src="./docs/components/bootstrap/navbar/containers.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      API Reference
+    </legend>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-navbar
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">navbar-color-type</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">light</td>
+          <td>Use for chaning
+            <code>navbar</code> theme from
+            <code>light</code> or
+            <code>dark</code>.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">background-color-type</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">light</td>
+          <td>The type of color, contextual values of bootstrap,
+            <code>primary</code>,
+            <code>secondary</code>,
+            <code>info</code>,
+            <code>success</code>,
+            <code>warning</code>,
+            <code>danger</code>,
+            <code>light</code>, and
+            <code>dark</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">expand-size</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">lg</td>
+          <td>use for automatically collapses at the
+            <code>expand-size</code> breakpoint. The values can be
+            <code>sm</code>,
+            <code>md</code>,
+            <code>lg</code>, and
+            <code>xl</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">placement</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">down</td>
+          <td>Position of
+            <code>navbar</code>. You can set one of these values:
+            <code>''</code>,
+            <code>fixed-top</code>,
+            <code>fixed-bottom</code>, and
+            <code>sticky-top</code>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-navbar-nav
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-navbar-toggler
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">toggler-icon</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">navbar-toggler-icon</td>
+          <td>Set custom icon to the toggler</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-navbar-text
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-navbar-link
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">link-class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the
+            <code>anchor</code> tag inside component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">link-style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the
+            <code>anchor</code> tag inside component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">href</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Specifies the linked document, resource, or location
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">active</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>The
+            <code>active</code> attribute needs to active an item.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">disabled</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>The
+            <code>disabled</code> attribute needs to disable an item.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">click</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>You can handle
+            <code>click</code> on specific item.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-navbar-brand
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">href</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Specifies the linked document, resource, or location
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">heading</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>If you want to have a brand as a heading set it to
+            <code>true</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">click</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>You can handle
+            <code>click</code> on specific item.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-navbar-collapser
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-navbar-dropdown-divider
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-navbar-dropdown
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">full-width</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">false</td>
+          <td>Set when ypu need to have full width menu content.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">link-class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the
+            <code>anchor</code> tag inside component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">link-style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the
+            <code>anchor</code> tag inside component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">menu-class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the menu content.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">menu-style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the menu content.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">title</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set title to dropdown.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">placement</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">down</td>
+          <td>Position of dropdown menu. You can set one of these values:
+            <code>up</code>,
+            <code>down</code>,
+            <code>left</code>, and
+            <code>right</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">click</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>You can handle
+            <code>click</code> on specific item.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-navbar-dropdown-item
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">href</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Specifies the linked document, resource, or location
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">click</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>You can handle
+            <code>click</code> on specific item.</td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+  <br>
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <td class="text-nowrap" colspan="4">
+          <b>
+            abt-navbar-dropdown-mega-item
+          </b>
+        </td>
+        <td class="text-nowrap" colspan="1">
+          <b>
+            containerless
+          </b>
+        </td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="col">Name</th>
+        <th class="text-nowrap" scope="col">Type</th>
+        <th class="text-nowrap" scope="col">Binding type</th>
+        <th class="text-nowrap" scope="col">Default value</th>
+        <th class="text-nowrap" scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-nowrap" colspan="5">
+          <b>
+            Properties
+          </b>
+        </td>
+      </tr>
+      <tr>
+        <td class="text-nowrap" scope="row">id</td>
+        <td class="text-nowrap">string</td>
+        <td class="text-nowrap">oneTime</td>
+        <td class="text-nowrap"></td>
+        <td>Set id to the component</td>
+      </tr>
+      <tr>
+        <td class="text-nowrap" scope="row">class</td>
+        <td class="text-nowrap">string</td>
+        <td class="text-nowrap">oneWay</td>
+        <td class="text-nowrap"></td>
+        <td>Set custom classes to the component</td>
+      </tr>
+      <tr>
+        <td class="text-nowrap" scope="row">style</td>
+        <td class="text-nowrap">string</td>
+        <td class="text-nowrap">oneWay</td>
+        <td class="text-nowrap"></td>
+        <td>Set custom styles to the component</td>
+      </tr>
+    </tbody>
+  </table>
+  </fieldset>
+</template>

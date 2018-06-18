@@ -1,0 +1,372 @@
+<template>
+  <fieldset class="mb-5">
+    <legend>
+      <h2>List group
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/listgroup">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    List groups are a flexible and powerful component for displaying a series of content. Modify and extend them to support just
+    about any content within.
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Examples
+    </legend>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item>Cras justo odio</abt-listgroup-item>
+      <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+      <abt-listgroup-item>Morbi leo risus</abt-listgroup-item>
+      <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
+      <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/basic-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Active items
+    </legend>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item active="true">Cras justo odio</abt-listgroup-item>
+      <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+      <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
+      <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/active-items.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Disabled items
+    </legend>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item disabled="true">Cras justo odio</abt-listgroup-item>
+      <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+      <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
+      <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/disabled-items.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Links and buttons
+    </legend>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item active href="#/bootstrap/list-group">Cras justo odio</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/list-group">Dapibus ac facilisis in</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/list-group">Porta ac consectetur ac</abt-listgroup-item>
+      <abt-listgroup-item disabled href="#/bootstrap/list-group" disabled>Vestibulum at eros</abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/links-buttons.md">
+    </aut-mark-down>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item active="true">Cras justo odio</abt-listgroup-item>
+      <abt-listgroup-item click.call="itemClicked()">Anchor behaviour</abt-listgroup-item>
+      <abt-listgroup-item click.call="itemClicked()">Clickable Item</abt-listgroup-item>
+      <abt-listgroup-item click.call="itemClicked()">Porta ac consectetur ac</abt-listgroup-item>
+      <abt-listgroup-item disabled>Vestibulum at eros</abt-listgroup-item>
+    </abt-listgroup>
+    <br>
+    <abt-navs tabs id="navs-events">
+      <abt-nav-item id="tab-template-ebents" title="View" active>
+        <aut-mark-down src="./docs/components/bootstrap/listgroup/links-click-model.md">
+        </aut-mark-down>
+      </abt-nav-item>
+      <abt-nav-item id="tab-viewmodel-events" title="ViewModel">
+        <aut-mark-down src="./docs/components/bootstrap/listgroup/links-click-viewmodel.md">
+        </aut-mark-down>
+      </abt-nav-item>
+    </abt-navs>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Flush
+    </legend>
+    <br>
+    <abt-listgroup flush="true">
+      <abt-listgroup-item>Cras justo odio</abt-listgroup-item>
+      <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+      <abt-listgroup-item>Morbi leo risus</abt-listgroup-item>
+      <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
+      <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/flush.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Contextual classes
+    </legend>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+      <abt-listgroup-item type="primary">This is a primary list group item</abt-listgroup-item>
+      <abt-listgroup-item type="secondary">This is a secondary list group item</abt-listgroup-item>
+      <abt-listgroup-item type="success">This is a success list group item</abt-listgroup-item>
+      <abt-listgroup-item type="danger">This is a danger list group item</abt-listgroup-item>
+      <abt-listgroup-item type="warning">This is a warning list group item</abt-listgroup-item>
+      <abt-listgroup-item type="info">This is a info list group item</abt-listgroup-item>
+      <abt-listgroup-item type="light">This is a light list group item</abt-listgroup-item>
+      <abt-listgroup-item type="dark">This is a dark list group item</abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/contextual-classes.md">
+    </aut-mark-down>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item href="#/bootstrap/listgroup">Dapibus ac facilisis in</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/listgroup" type="primary">This is a primary list group item</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/listgroup" type="secondary">This is a secondary list group item</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/listgroup" type="success">This is a success list group item</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/listgroup" type="danger">This is a danger list group item</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/listgroup" type="warning">This is a warning list group item</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/listgroup" type="info">This is a info list group item</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/listgroup" type="light">This is a light list group item</abt-listgroup-item>
+      <abt-listgroup-item href="#/bootstrap/listgroup" type="dark">This is a dark list group item</abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/contextual-classes-links.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      With badges
+    </legend>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item class="d-flex justify-content-between align-items-center">Vestibulum at eros
+        <abt-badge color="primary">14</abt-badge>
+      </abt-listgroup-item>
+      <abt-listgroup-item class="d-flex justify-content-between align-items-center">Cras justo odio
+        <abt-badge pill color="primary">2</abt-badge>
+      </abt-listgroup-item>
+      <abt-listgroup-item class="d-flex justify-content-between align-items-center">Vestibulum at eros
+        <abt-badge color="primary">1</abt-badge>
+      </abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/with-badges.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Custom content
+    </legend>
+    <br>
+    <abt-listgroup>
+      <abt-listgroup-item class="flex-column align-items-start" active>
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">List group item heading</h5>
+          <small>3 days ago</small>
+        </div>
+        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+        <small>Donec id elit non mi porta.</small>
+      </abt-listgroup-item>
+      <abt-listgroup-item class="flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">List group item heading</h5>
+          <small class="text-muted">3 days ago</small>
+        </div>
+        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+        <small class="text-muted">Donec id elit non mi porta.</small>
+      </abt-listgroup-item>
+      <abt-listgroup-item class="flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">List group item heading</h5>
+          <small class="text-muted">3 days ago</small>
+        </div>
+        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+        <small class="text-muted">Donec id elit non mi porta.</small>
+      </abt-listgroup-item>
+    </abt-listgroup>
+    <aut-mark-down src="./docs/components/bootstrap/listgroup/custom-content.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      API Reference
+    </legend>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              abt-listgroup
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">flush</td>
+          <td class="text-nowrap">boolean, string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>to remove some borders and rounded corners to render list group items edge-to-edge in a parent container (e.g.,
+            cards).
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-listgroup-item
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+        <tr>
+          <td scope="row">active</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>The
+            <code>active</code> attribute needs to active an item.
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">disabled</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>The
+            <code>disabled</code> attribute needs to disable an item.
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">href</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Specifies the linked document, resource, or location</td>
+        </tr>
+        <tr>
+          <td scope="row">type</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>The type of color, contextual values of bootstrap,
+            <code>primary</code>,
+            <code>secondary</code>,
+            <code>info</code>,
+            <code>success</code>,
+            <code>warning</code>,
+            <code>danger</code>,
+            <code>light</code>, and
+            <code>dark</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">click</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>You can handle
+            <code>click</code> on specific item.</td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</template>

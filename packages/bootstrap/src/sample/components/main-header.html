@@ -1,0 +1,40 @@
+<template>
+
+  <abt-navbar style="z-index:1021" class="bg-light">
+    <abt-navbar-brand href="https://github.com/shahabganji/aurelia-toolbelt" class=" text-info">
+      <img src="./logo-navbar.png"> aurelia-toolbelt
+    </abt-navbar-brand>
+    <abt-navbar-toggler></abt-navbar-toggler>
+    <abt-navbar-collapser>
+      <abt-navbar-nav class="mr-auto">
+        <abt-navbar-link repeat.for="row of router.navigation" href.bind="row.href" class="${row.isActive ? 'active' : ''}" if.bind="row.settings.navigation.length===0">
+          ${row.title}
+        </abt-navbar-link>
+        <abt-navbar-dropdown full-width repeat.for="row of router.navigation" title="${row.title}" if.bind="row.settings.navigation.length> 0">
+          <abt-navbar-dropdown-mega-item>
+            <div class="col-sm-2" repeat.for="subRow of row.settings.navigation">
+              <abt-navbar-link href="${row.href}/${subRow.route}">
+                ${subRow.title}
+              </abt-navbar-link>
+            </div>
+          </abt-navbar-dropdown-mega-item>
+        </abt-navbar-dropdown>
+      </abt-navbar-nav>
+    </abt-navbar-collapser>
+
+    <form class="form-inline my-2 my-lg-0">
+      <label>
+        <a href="https://bootswatch.com/" class="text-dark">Bootswatch themes</a>
+        &nbsp;&nbsp;
+        <abt-dropdown value.bind="theme" class="mr-2" title="${theme.name}" align-right>
+          <abt-dropdown-item repeat.for="th of themes" model.bind="th">${th.name}</abt-dropdown-item>
+        </abt-dropdown>
+      </label>
+    </form>
+
+  </abt-navbar>
+
+
+
+
+</template>

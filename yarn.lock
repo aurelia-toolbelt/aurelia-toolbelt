@@ -37,6 +37,13 @@
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
+"@types/bootstrap@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@types/bootstrap/-/bootstrap-4.1.0.tgz#b6504125870c5fc96225d9d461f06e5545e6b827"
+  dependencies:
+    "@types/jquery" "*"
+    popper.js "^1.14.1"
+
 "@types/debug@^0.0.29":
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/debug/-/debug-0.0.29.tgz#a1e514adfbd92f03a224ba54d693111dbf1f3754"
@@ -57,6 +64,14 @@
   version "23.0.2"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.0.2.tgz#f03f9e6dd2206cc2a2e8fd033161b0b7cf905db6"
 
+"@types/jest@^23.1.0":
+  version "23.1.0"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.1.0.tgz#8054dd838ba23dc331794d26456b86c7e50bf0f6"
+
+"@types/jquery@*", "@types/jquery@^3.3.2":
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.2.tgz#8700226bdde24b6f98e3a60126dbaab3b2a3ab41"
+
 "@types/lodash@^4.14.105", "@types/lodash@^4.14.109":
   version "4.14.109"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.109.tgz#b1c4442239730bf35cabaf493c772b18c045886d"
@@ -64,6 +79,10 @@
 "@types/node@*", "@types/node@^10.3.0", "@types/node@^10.3.2":
   version "10.3.2"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.3.2.tgz#3840ec6c12556fdda6e0e6d036df853101d732a4"
+
+"@types/node@^10.3.3":
+  version "10.3.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.3.3.tgz#8798d9e39af2fa604f715ee6a6b19796528e46c3"
 
 "@types/node@^8.0.7":
   version "8.10.20"
@@ -73,6 +92,10 @@
   version "9.6.22"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.22.tgz#05b55093faaadedea7a4b3f76e9a61346a6dd209"
 
+"@types/nprogress@^0.0.29":
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/@types/nprogress/-/nprogress-0.0.29.tgz#060bd510022a005f1840234030d3132fb9195471"
+
 "@types/numeral@^0.0.22":
   version "0.0.22"
   resolved "https://registry.yarnpkg.com/@types/numeral/-/numeral-0.0.22.tgz#86bef1f0a2d743afdc2ef3168d45f2905e1a0b93"
@@ -80,6 +103,13 @@
 "@types/puppeteer@^1.3.3":
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/@types/puppeteer/-/puppeteer-1.3.3.tgz#d3b462263f496bff93c126cac14962f067bfbf22"
+  dependencies:
+    "@types/events" "*"
+    "@types/node" "*"
+
+"@types/puppeteer@^1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@types/puppeteer/-/puppeteer-1.3.4.tgz#6fff43968792924ac2b68744641566e6acefdc20"
   dependencies:
     "@types/events" "*"
     "@types/node" "*"
@@ -863,6 +893,13 @@ aurelia-hot-module-reload@^0.1.0:
     aurelia-metadata "^1.0.2"
     aurelia-pal "^1.0.0"
     aurelia-templating "^1.1.2"
+
+aurelia-http-client@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/aurelia-http-client/-/aurelia-http-client-1.3.0.tgz#0a109ac82403c459895c4f3daee5b8835f016079"
+  dependencies:
+    aurelia-pal "^1.0.0"
+    aurelia-path "^1.1.1"
 
 aurelia-loader-default@^1.0.0:
   version "1.0.4"
@@ -1834,7 +1871,7 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
-bootstrap@^4.1.1:
+bootstrap@4.1.1, bootstrap@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.1.1.tgz#3aec85000fa619085da8d2e4983dfd67cf2114cb"
 
@@ -8036,6 +8073,10 @@ npm@^5.6.0:
     gauge "~2.7.3"
     set-blocking "~2.0.0"
 
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+
 nps-utils@^1.5.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/nps-utils/-/nps-utils-1.6.0.tgz#d88badb94fdf002e037d9718df5bc6cbf4c58bcf"
@@ -8539,6 +8580,10 @@ pascalcase@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
 
+password-meter@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/password-meter/-/password-meter-3.1.0.tgz#797f9108fc68b246d4d29e1b6e1c96caa5365180"
+
 path-browserify@0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/path-browserify/-/path-browserify-0.0.0.tgz#a0b870729aae214005b7d5032ec2cbbb0fb4451a"
@@ -8680,6 +8725,10 @@ pluralize@^7.0.0:
 pn@^1.0.0, pn@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
+
+popper.js@^1.14.1:
+  version "1.14.3"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.3.tgz#1438f98d046acf7b4d78cd502bf418ac64d4f095"
 
 portfinder@^1.0.9:
   version "1.0.13"

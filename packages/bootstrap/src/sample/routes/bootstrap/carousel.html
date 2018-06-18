@@ -1,0 +1,429 @@
+<template>
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Carousel
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/carousel">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    A slideshow component for cycling through elements—images or slides of text—like a carousel.
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/carousel/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Examples
+    </legend>
+    <br>
+    <abt-carousel>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic1.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic2.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item active="true">
+        <img class="d-block w-100" src="/images/pic3.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic4.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic5.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+    </abt-carousel>
+    <aut-mark-down src="./docs/components/bootstrap/carousel/side-only.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      With controls
+    </legend>
+    <p>Adding in the previous and next controls:</p>
+    <abt-carousel navigator="true">
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic1.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic2.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item active="true">
+        <img class="d-block w-100" src="/images/pic3.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic4.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic5.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+    </abt-carousel>
+    <aut-mark-down src="./docs/components/bootstrap/carousel/with-controls.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+
+    <legend>
+      With indicators
+    </legend>
+    <p>You can also add the indicators to the carousel, alongside the controls, too.</p>
+    <abt-carousel navigator="true" indicator="true">
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic1.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic2.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item active="true">
+        <img class="d-block w-100" src="/images/pic3.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic4.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic5.jpg" alt="The image cannot be displayed" />
+      </abt-carousel-item>
+    </abt-carousel>
+    <aut-mark-down src="./docs/components/bootstrap/carousel/with-indicators.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      With captions
+    </legend>
+    <abt-carousel navigator="true" indicator="true">
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic1.jpg" alt="The image cannot be displayed" />
+        <div slot="caption">
+          <h5>The Godfather - 1972</h5>
+          <p>Director: Francis Ford Coppola</p>
+        </div>
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic2.jpg" alt="The image cannot be displayed" />
+        <div slot="caption">
+          <h5>The Dark Knight - 2008</h5>
+          <p>Director: Christopher Nolan</p>
+        </div>
+      </abt-carousel-item>
+      <abt-carousel-item active="true">
+        <img class="d-block w-100" src="/images/pic3.jpg" alt="The image cannot be displayed" />
+        <div slot="caption">
+          <h5>Inception - 2010</h5>
+          <p>Director: Christopher Nolan</p>
+        </div>
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic4.jpg" alt="The image cannot be displayed" />
+        <div slot="caption">
+          <h5>The Lord of the Rings: The Return of the King - 2003</h5>
+          <p>Director: Peter Jackson</p>
+        </div>
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <img class="d-block w-100" src="/images/pic5.jpg" alt="The image cannot be displayed" />
+        <div slot="caption">
+          <h5>The Matrix - 1999</h5>
+          <p>Directors: Lana Wachowski, Lilly Wachowski</p>
+        </div>
+      </abt-carousel-item>
+    </abt-carousel>
+    <aut-mark-down src="./docs/components/bootstrap/carousel/with-captions.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      With HTML content
+    </legend>
+    <abt-carousel interval="15000" navigator="true" indicator="true">
+      <abt-carousel-item>
+        <div class="container" style="height:445px; background-color:gray; padding:20px; color:whitesmoke">
+          <div class="row">
+            <div class="col-sm">
+              <img src="/images/ErnestHemingway.jpg" />
+            </div>
+            <div class="col-sm">
+              <h4 class="text-left">Ernest Hemingway</h4>
+              <p class="text-justify">
+                An American novelist, short story writer, and journalist. His economical and understated style had a strong influence on
+                20th-century fiction, while his life of adventure and his public image influenced later generations. Hemingway
+                produced most of his work between the mid-1920s and the mid-1950s, and won the Nobel Prize in Literature
+                in 1954.</p>
+            </div>
+            <div class="col-sm">
+              <ul>
+                <b>Novels</b>
+                <hr/>
+                <li>The Old Man and the Sea</li>
+                <li>A Farewell to Arms</li>
+                <li>The Sun Also Rises</li>
+                <li>Across the River and into the Trees</li>
+                <li>The Garden of Eden</li>
+                <li>Islands in the Stream</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div slot="caption">
+          Biography
+        </div>
+      </abt-carousel-item>
+      <abt-carousel-item active="true">
+        <div class="container" style="height:445px; background-color:gray; padding:20px; color:whitesmoke">
+          <div class="row">
+            <div class="col-sm">
+              <img src="/images/JulesVerne.jpg" />
+            </div>
+            <div class="col-sm">
+              <h4 class="text-left">Jules Verne</h4>
+              <p class="text-justify">
+                Verne was born in the seaport of Nantes, where he was trained to follow in his father's footsteps as a lawyer, but quit the
+                profession early in life to write for magazines and the stage. His collaboration with the publisher Pierre-Jules
+                Hetzel led to the creation of the Voyages extraordinaires, a widely popular series of scrupulously researched
+                adventure novels including Journey to the Center of the Earth (1864), Twenty Thousand Leagues Under the Sea
+                (1870), and Around the World in Eighty Days (1873).
+              </p>
+            </div>
+            <div class="col-sm">
+              <ul>
+                <b>Novels</b>
+                <hr/>
+                <li>Twenty Thousand Leagues Under the Sea</li>
+                <li>Journey to the Center of the Earth</li>
+                <li>Michael Strogoff</li>
+                <li>The Mysterious Island</li>
+                <li>Around the World in Eighty Days</li>
+                <li>From the Earth to the Moon</li>
+                <li>An Antarctic Mystery</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div slot="caption">
+          Biography
+        </div>
+      </abt-carousel-item>
+      <abt-carousel-item>
+        <div class="container" style="height:445px; background-color:gray; padding:20px; color:whitesmoke">
+          <div class="row">
+            <div class="col-sm">
+              <img src="/images/VirginiaWoolf.jpg" />
+            </div>
+            <div class="col-sm">
+              <h4 class="text-left">Virginia Woolf</h4>
+              <p class="text-justify">
+                She is considered one of the foremost modernists authors of the 20th-century and a pioneer in the use of stream of consciousness
+                as a narrative device. Born in an affluent household in Kensington, London, she attended the Ladies' Department
+                of King's College and was acquainted with the early reformers of women's higher education.
+              </p>
+            </div>
+            <div class="col-sm">
+              <ul>
+                <b>Novels</b>
+                <hr/>
+                <li>Mrs Dalloway</li>
+                <li>To the Lighthouse</li>
+                <li>The Waves</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div slot="caption">
+          Biography
+        </div>
+      </abt-carousel-item>
+    </abt-carousel>
+    <aut-mark-down src="./docs/components/bootstrap/carousel/with-html-content.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      API Reference
+    </legend>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              abt-carousel
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">prev-title</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">Previous</td>
+          <td>Title of prev button</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">next-title</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">Next</td>
+          <td>Title of next button</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">prev-icon</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">carousel-control-prev-icon</td>
+          <td>Icon class for prev button</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">next-icon</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">carousel-control-next-icon</td>
+          <td>Icon class for next button</td>
+        </tr>
+
+        <tr>
+          <td scope="row">interval</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">5000</td>
+          <td>The amount of time to delay between automatically cycling an item. If <code>0</code>, carousel will not automatically cycle.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">keyboard</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">true</td>
+          <td>Whether the carousel should react to keyboard events.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">pause</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">true</td>
+          <td>
+            <p>If set to <code>true</code>, pauses the cycling of the carousel on mouseenter and resumes the cycling of the carousel on mouseleave.
+              If set to <code>false</code>, hovering over the carousel won't pause it.</p>
+            <p>On touch-enabled devices, when set to <code>true</code>, cycling will pause on touchend (once the user finished interacting
+              with the carousel) for two intervals, before automatically resuming. Note that this is in addition to the above
+              mouse behavior.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">ride</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Autoplays the carousel after the user manually cycles the first item. If <code>true</code>, autoplays the carousel on
+            load.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">wrap</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">true</td>
+          <td>Whether the carousel should cycle continuously or have hard stops.
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">navigator</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Adding in the previous and next controls</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">indicator</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Adding in the indicators to the carousel.</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">bs-slide</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>This event fires immediately when the slide instance method is invoked.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">bs-slid</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>This event is fired when the carousel has completed its slide transition.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-carousel-item
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">active</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>The active attribute needs to be added to one of the <code>abt-carousel-items</code>. Otherwise, the carousel will not be visible.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</template>

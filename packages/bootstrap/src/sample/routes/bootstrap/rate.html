@@ -1,0 +1,304 @@
+<template>
+
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Star Rate
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/star-rate">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+
+    <abt-alert type="info">
+      Inspired by
+      <abt-alert-link href="https://css-tricks.com/star-ratings/">Css Tricks</abt-alert-link> &amp; used
+      <abt-alert-link href="http://fontawesome.io/icons/">Font-Awesome Stars</abt-alert-link>
+
+      <aut-micro-link class="mt-2" round="false" url="https://css-tricks.com/star-ratings/"></aut-micro-link>
+    </abt-alert>
+
+    <abt-alert type="success">
+      <i class="fa fa-credit-card" aria-hidden="true"></i>
+      &nbsp;
+      <b>License:</b> &nbsp;
+      <abt-alert-link href="https://css-tricks.com/star-ratings/">MIT</abt-alert-link>
+    </abt-alert>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/star-rate/usage.md">
+    </aut-mark-down>
+  </fieldset>
+
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Basic
+    </legend>
+
+    <p>
+      Simply add
+      <code>abt-star-rate</code>. You want to have decimal point values( only
+      <b>0.5</b> ) use
+      <code>half-star</code> attribute, either simple or with value and binding.
+    </p>
+
+    <abt-card>
+      <abt-card-body class="fa-2x">
+        <abt-star-rate class="mr-5"></abt-star-rate>
+        <abt-star-rate half-star></abt-star-rate>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/star-rate/basic.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+
+    <style>
+      .star-aurelia {
+        color: #753B85;
+      }
+
+    </style>
+
+    <legend>
+      Contextual types &amp; custom color
+    </legend>
+
+    <p>
+      You can set
+      <code>type</code> property with bootstrap contextual colors, or have your own by creating a css class
+      <code>star-*</code>,
+      <b>e.g.</b> &nbsp;
+      <code>.star-aurelia{ color: #753B85 }</code>, or just set the
+      <code>color</code> property.
+    </p>
+
+    <abt-card>
+      <abt-card-body class="fa-2x">
+
+        <abt-star-rate></abt-star-rate>
+        <abt-star-rate type="secondary"></abt-star-rate>
+        <abt-star-rate type="info"></abt-star-rate>
+        <abt-star-rate type="success"></abt-star-rate>
+
+        <br />
+
+        <abt-star-rate type="aurelia"></abt-star-rate>
+
+        <br />
+
+        <abt-star-rate color="maroon"></abt-star-rate>
+
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/star-rate/contextual.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+
+    <legend>
+      Dynamic behaviours
+    </legend>
+
+    <p>
+
+      You can set number of maximum stars via
+      <code>max-rate</code>, get or set its current rate via
+      <code>rate</code> and make it
+      <code>disable</code> or
+      <code>readonly</code> via
+      <code>disabled</code> attributes. The
+      <code>abt-star-rate</code> accepts a default
+      <code>slot</code>, it would be helpful in some cases like resetting the
+      <code>rate</code> to a specific value.
+
+    </p>
+
+    <abt-card>
+      <abt-card-body class="fa-2x">
+
+        <abt-star-rate max-rate="7" rate.bind="myRate" half-star disabled.bind="beDisable"></abt-star-rate>
+        <span class="fa fa-minus-circle" style="cursor:pointer; color:maroon" click.trigger="myRate=0"></span>
+        </abt-star-rate>
+
+        <span class="fa-1 ml-5">${myRate}</span>
+
+        <abt-toggle size="small" class="float-right" on="Disable" off="Enable" on-type="secondary" off-type="success" checked.bind="beDisable">
+        </abt-toggle>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/star-rate/dynamic.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Properties and Events
+    </legend>
+
+    <p>
+
+    </p>
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              abt-star-rate
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies your custom css class on rate component.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">color</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set the color of star rate element, if you do not interested via
+            <code>type</code> attribute.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">disabled</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>
+            Makes the
+            <code>abt-star-rate</code> readonly or disabled.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">half-star</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">false</td>
+          <td>
+            Enables the
+            <code>abt-star-rate</code> to accept and show X.5 values as well. It can be added as a single attribute or with value
+            and binding.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">max-rate</td>
+          <td class="text-nowrap">number</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">5</td>
+          <td>Maximum number of stars to be rendered</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">rate</td>
+          <td class="text-nowrap">number</td>
+          <td class="text-nowrap">twoWay</td>
+          <td class="text-nowrap">5</td>
+          <td>Current value of the component, changes in the value will trigger
+            <code>rate-changed</code>
+            event.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">rtl</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">false</td>
+          <td>
+            Renders the stars for right-to-left languages. It can be added as a single attribute or with value and binding.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attributes that you want to apply on the component.</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">type</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">primary</td>
+          <td>The type of star-rate, contextual values of bootstrap,
+            <code>primary</code>,
+            <code>secondary</code>,
+            <code>info</code>,
+            <code>success</code>,
+            <code>warning</code>,
+            <code>danger</code>,
+            <code>light</code>, and
+            <code>dark</code>. You can also create your own type via css classes to be like
+            <code>
+              star-*
+            </code>.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">rate-changed</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call (newRate, oldRate)</td>
+          <td class="text-nowrap"></td>
+          <td>
+            Triggers whenever a change in
+            <code>rate</code> detected.
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </fieldset>
+
+</template>

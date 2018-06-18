@@ -1,0 +1,548 @@
+<template>
+
+  <style>
+    .scrollable {
+      height: 300px;
+      overflow: scroll
+    }
+
+  </style>
+
+  <fieldset class="mb-5">
+    <legend>
+      <h2>ScrollSpy
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/scrollspy">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+
+    <p>
+      Automatically update Bootstrap navigation or list group components based on scroll position to indicate which link is currently
+      active in the viewport.
+    </p>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+
+    <aut-mark-down src="./docs/components/bootstrap/scrollspy/usage.md">
+    </aut-mark-down>
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Example with list-group (
+      <code>abt-listgroup</code>)
+    </legend>
+
+    <p>
+      Scroll the area next to the list group and watch the active class change.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+
+        <div class="row">
+          <div class="col-sm-3">
+            <abt-listgroup id="list-example">
+              <abt-listgroup-item href="#list-item-1">Item 1</abt-listgroup-item>
+              <abt-listgroup-item href="#list-item-2">Item 2</abt-listgroup-item>
+              <abt-listgroup-item href="#list-item-3">Item 3</abt-listgroup-item>
+              <abt-listgroup-item href="#list-item-4">Item 4</abt-listgroup-item>
+            </abt-listgroup>
+          </div>
+          <div class="col-sm-9">
+            <abt-scrollspy target="list-example" class="scrollable">
+              <abt-scrollspy-item id="list-item-1">
+                <h4>Item 1</h4>
+                <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr
+                  farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth
+                  3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard
+                  of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony
+                  biodiesel keffiyeh artisan ullamco consequat.Ad leggings keytar, brunch id art party dolor labore. Pitchfork
+                  yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles
+                  cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg
+                  hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson
+                  aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.Ad leggings
+                  keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table
+                  bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon
+                  irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them
+                  et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel
+                  keffiyeh artisan ullamco consequat.
+                </p>
+              </abt-scrollspy-item>
+              <abt-scrollspy-item id="list-item-2">
+                <h4>Item 2</h4>
+                <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr
+                  farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth
+                  3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard
+                  of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony
+                  biodiesel keffiyeh artisan ullamco consequat.Ad leggings keytar, brunch id art party dolor labore. Pitchfork
+                  yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles
+                  cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg
+                  hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson
+                  aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.Ad leggings
+                  keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table
+                  bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon
+                  irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them
+                  et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel
+                  keffiyeh artisan ullamco consequat.
+                </p>
+              </abt-scrollspy-item>
+              <abt-scrollspy-item id="list-item-3">
+                <h4>Item 3</h4>
+                <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr
+                  farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth
+                  3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard
+                  of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony
+                  biodiesel keffiyeh artisan ullamco consequat.Ad leggings keytar, brunch id art party dolor labore. Pitchfork
+                  yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles
+                  cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg
+                  hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson
+                  aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.Ad leggings
+                  keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table
+                  bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon
+                  irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them
+                  et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel
+                  keffiyeh artisan ullamco consequat.
+                </p>
+              </abt-scrollspy-item>
+              <abt-scrollspy-item id="list-item-4">
+                <h4>Item 4</h4>
+                <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr
+                  farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth
+                  3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard
+                  of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony
+                  biodiesel keffiyeh artisan ullamco consequat.Ad leggings keytar, brunch id art party dolor labore. Pitchfork
+                  yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles
+                  cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg
+                  hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson
+                  aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.Ad leggings
+                  keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table
+                  bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon
+                  irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them
+                  et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel
+                  keffiyeh artisan ullamco consequat.
+                </p>
+              </abt-scrollspy-item>
+            </abt-scrollspy>
+          </div>
+        </div>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/scrollspy/eg-list-group.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Example with nested navs
+    </legend>
+
+    <p>
+      Scroll the area next to the navbar and watch the active class change.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+
+        <div class="row">
+          <div class="col-sm-2">
+            <abt-navs id="navbar-example3" class="navbar-light bg-light">
+              <abt-navbar-brand href="#">Navbar</abt-navbar-brand>
+              <abt-navs pills class="flex-column">
+                <abt-navbar-link href="#item-1">Item 1</abt-navbar-link>
+                <abt-navs pills class="flex-column">
+                  <abt-navbar-link class="ml-3 my-1" href="#item-1-1">Item 1-1</abt-navbar-link>
+                  <abt-navbar-link class="ml-3 my-1" href="#item-1-2">Item 1-2</abt-navbar-link>
+                </abt-navs>
+                <abt-navbar-link href="#item-2">Item2</abt-navbar-link>
+                <abt-navbar-link class="nav-link" href="#item-3">Item3</abt-navbar-link>
+                <abt-navs pills class="flex-column">
+                  <abt-navbar-link class="ml-3 my-1" href="#item-3-1">Item 3-1</abt-navbar-link>
+                  <abt-navbar-link class="ml-3 my-1" href="#item-3-2">Item 3-2</abt-navbar-link>
+                </abt-navs>
+              </abt-navs>
+            </abt-navs>
+          </div>
+          <div class="col-sm-10">
+            <abt-scrollspy class="scrollable" target="navbar-example3">
+              <abt-scrollspy-item id="item-1">
+                <h4>Item 1</h4>
+                <p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco
+                  eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt
+                  tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur
+                  in. Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut
+                  consequat deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat
+                  commodo velit ut eiusmod cupidatat elit dolore.
+
+                </p>
+              </abt-scrollspy-item>
+              <abt-scrollspy-item id="item-1-1">
+                <h5>Item 1-1</h5>
+                <p>Amet tempor mollit aliquip pariatur excepteur commodo do ea cillum commodo Lorem et occaecat elit qui et.
+                  Aliquip labore ex ex esse voluptate occaecat Lorem ullamco deserunt. Aliqua cillum excepteur irure consequat
+                  id quis ea. Sit proident ullamco aute magna pariatur nostrud labore. Reprehenderit aliqua commodo eiusmod
+                  aliquip est do duis amet proident magna consectetur consequat eu commodo fugiat non quis. Enim aliquip
+                  exercitation ullamco adipisicing voluptate excepteur minim exercitation minim minim commodo adipisicing
+                  exercitation officia nisi adipisicing. Anim id duis qui consequat labore adipisicing sint dolor elit cillum
+                  anim et fugiat.</p>
+              </abt-scrollspy-item>
+              <abt-scrollspy-item id="item-1-2">
+                <h5>Item 1-2</h5>
+                <p>Cillum nisi deserunt magna eiusmod qui eiusmod velit voluptate pariatur laborum sunt enim. Irure laboris
+                  mollit consequat incididunt sint et culpa culpa incididunt adipisicing magna magna occaecat. Nulla ipsum
+                  cillum eiusmod sint elit excepteur ea labore enim consectetur in labore anim. Proident ullamco ipsum esse
+                  elit ut Lorem eiusmod dolor et eiusmod. Anim occaecat nulla in non consequat eiusmod velit incididunt.</p>
+              </abt-scrollspy-item>
+              <abt-scrollspy-item id="item-2">
+                <h4>Item 2</h4>
+                <p>Quis magna Lorem anim amet ipsum do mollit sit cillum voluptate ex nulla tempor. Laborum consequat non elit
+                  enim exercitation cillum aliqua consequat id aliqua. Esse ex consectetur mollit voluptate est in duis laboris
+                  ad sit ipsum anim Lorem. Incididunt veniam velit elit elit veniam Lorem aliqua quis ullamco deserunt sit
+                  enim elit aliqua esse irure. Laborum nisi sit est tempor laborum mollit labore officia laborum excepteur
+                  commodo non commodo dolor excepteur commodo. Ipsum fugiat ex est consectetur ipsum commodo tempor sunt
+                  in proident.</p>
+              </abt-scrollspy-item>
+              <abt-scrollspy-item id="item-3">
+                <h4>Item 3</h4>
+                <p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat
+                  minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit
+                  ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+              </abt-scrollspy-item>
+              <abt-scrollspy-item id="item-3-1">
+                <h5>Item 3-1</h5>
+                <p>Deserunt quis elit Lorem eiusmod amet enim enim amet minim Lorem proident nostrud. Ea id dolore anim exercitation
+                  aute fugiat labore voluptate cillum do laboris labore. Ex velit exercitation nisi enim labore reprehenderit
+                  labore nostrud ut ut. Esse officia sunt duis aliquip ullamco tempor eiusmod deserunt irure nostrud irure.
+                  Ullamco proident veniam laboris ea consectetur magna sunt ex exercitation aliquip minim enim culpa occaecat
+                  exercitation. Est tempor excepteur aliquip laborum consequat do deserunt laborum esse eiusmod irure proident
+                  ipsum esse qui.</p>
+              </abt-scrollspy-item>
+              <abt-scrollspy-item id="item-3-2">
+                <h5>Item 3-2</h5>
+                <p>Labore sit culpa commodo elit adipisicing sit aliquip elit proident voluptate minim mollit nostrud aute reprehenderit
+                  do. Mollit excepteur eu Lorem ipsum anim commodo sint labore Lorem in exercitation velit incididunt. Occaecat
+                  consectetur nisi in occaecat proident minim enim sunt reprehenderit exercitation cupidatat et do officia.
+                  Aliquip consequat ad labore labore mollit ut amet. Sit pariatur tempor proident in veniam culpa aliqua
+                  excepteur elit magna fugiat eiusmod amet officia.</p>
+              </abt-scrollspy-item>
+            </abt-scrollspy>
+          </div>
+        </div>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/scrollspy/eg-nested.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Example in navbar
+    </legend>
+
+    <p>
+      Scroll the area next to the navbar and watch the active class change.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <nav id="navbar-example2" class="navbar navbar-light bg-light">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link" href="#fatnav">@fat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#mdonav">@mdo</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#onenav">one</a>
+                <a class="dropdown-item" href="#twonav">two</a>
+                <div role="separator" class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#threenav">three</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <abt-scrollspy class="scrollable" target="#navbar-example2">
+          <abt-scrollspy-item id="fatnav">
+            <h4>@fat</h4>
+            <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr
+              farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth
+              3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard
+              of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony
+              biodiesel keffiyeh artisan ullamco consequat.
+            </p>
+          </abt-scrollspy-item>
+          <abt-scrollspy-item id="mdonav">
+            <h4>@mdo</h4>
+            <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's
+              vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis
+              non freegan vinyl. Lo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn
+              adipisicing craft beer vice keytar deserunt.</p>
+          </abt-scrollspy-item>
+          <abt-scrollspy-item id="onenav">
+            <h4>one</h4>
+            <p>Occaecat commodo aliqua delectus. Fap craft beer deserunt skateboard ea. Lomo bicycle rights adipisicing banh
+              mi, velit ea sunt next level locavore single-origin coffee in magna veniam. High life id vinyl, echo park consequat
+              quis aliquip banh mi pitchfork. Vero VHS est adipisicing. Consectetur nisi DIY minim messenger bag. Cred ex
+              in, sustainable delectus consectetur fanny pack iphone.</p>
+          </abt-scrollspy-item>
+          <abt-scrollspy-item id="twonav">
+            <h4>two</h4>
+            <p>In incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam. Excepteur
+              VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers irure four loko,
+              cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art party fanny pack,
+              tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi sustainable. Elit wolf
+              voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud mlkshk brooklyn nesciunt.</p>
+          </abt-scrollspy-item>
+          <abt-scrollspy-item id="threenav">
+            <h4>three</h4>
+            <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr
+              farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth
+              3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard
+              of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony
+              biodiesel keffiyeh artisan ullamco consequat. Keytar twee blog, culpa messenger bag marfa whatever delectus
+              food truck. Sapiente synth id assumenda.
+              <br /> Locavore sed helvetica cliche irony, thundercats you probably haven't heard of them consequat hoodie gluten-free
+              lo-fi fap aliquip. Labore elit placeat before they sold out, terry richardson proident brunch nesciunt quis
+              cosby sweater pariatur keffiyeh ut helvetica artisan. Cardigan craft beer seitan readymade velit. VHS chambray
+              laboris tempor veniam. Anim mollit minim commodo ullamco thundercats.</p>
+          </abt-scrollspy-item>
+        </abt-scrollspy>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/scrollspy/eg-navbar.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+  </fieldset>
+
+
+
+  <fieldset class="mt-5">
+    <legend>
+      On Body
+    </legend>
+
+    <p>
+      To spy on page scroll simply set the property
+      <code>on-body</code> of the
+      <code>abt-scrollspy</code>
+      to
+      <code> true</code>.
+      <a route-href="route:get-started">Here</a> is a live example.
+    </p>
+
+    <aut-mark-down src="./docs/components/bootstrap/scrollspy/eg-body.md">
+    </aut-mark-down>
+
+  </fieldset>
+
+  <hr />
+
+  <abt-card style="border-right: 3px maroon;">
+    <abt-card-header>
+      <abt-card-title class="text-danger fa-2x">
+        Resolvable ID targets required
+      </abt-card-title>
+    </abt-card-header>
+    <abt-card-body>
+      Navbar links must have resolvable id targets. For example, a
+      <code>
+        <aut-raw-html>
+          <a href="#home">home</a>
+        </aut-raw-html>
+      </code>
+      must correspond to something in the DOM like
+      <code>
+        <aut-raw-html>
+          <div id="home"></div>
+        </aut-raw-html>
+      </code>.
+    </abt-card-body>
+  </abt-card>
+
+  <hr />
+
+  <fieldset class="mt-5">
+    <legend>
+      Properties and Events
+    </legend>
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-scrollspy
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies the your custom css class on scrollspy container</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">offset</td>
+          <td class="text-nowrap">number</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">10</td>
+          <td>
+            Pixels to offset from top when calculating position of scroll.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">on-body</td>
+          <td class="text-nowrap">boolean</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">false</td>
+          <td>
+            Activates the spy on body/page scroll.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attributes that you want to apply on the component.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">target</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>
+            The target element's
+            <code>id</code> to activate scrollspy items via their id attribute.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">bs-scrollspy</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap"></td>
+          <td>
+            This event fires on the scroll element whenever a new item becomes activated by the scrollspy.
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <br />
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-scrollspy-item
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies your custom css class on scrollspy item container</td>
+        </tr>
+        <tr>
+          <td scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>The id of the element in the DOM.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attributes that you want to apply on the component.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </fieldset>
+
+
+</template>

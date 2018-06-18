@@ -1,0 +1,29 @@
+.abt-star-rate {
+    display: inline-block;
+    position: relative;
+    width: 1.0em;
+}
+
+
+.abt-empty-star:before,
+.abt-empty-star~.abt-empty-star:before {
+    content: "\2606";
+    /*full star : \2605 = &#9733;  *******  empty star : \2606 = &#9734;   ********  outlined star: \272E = &#10030; */
+    position: absolute;
+    display: block;
+}
+
+.abt-full-star:before,
+.abt-full-star~.abt-full-star:before {
+    content: "\2605";
+    /*full star : \2605 = &#9733;  *******  empty star : \2606 = &#9734;   ********  outlined star: \272E = &#10030; */
+    position: absolute;
+    display: block;
+}
+
+.abt-star-rtl {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+    -webkit-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}

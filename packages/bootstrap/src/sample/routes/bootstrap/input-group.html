@@ -1,0 +1,606 @@
+<template>
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Input group
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/inputgroup">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and
+    custom file inputs. </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Basic example
+    </legend>
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text>@</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+    </abt-inputgroup>
+
+    <abt-inputgroup class="mb-3">
+      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username">
+      <abt-inputgroup-append>
+        <abt-inputgroup-text>@example.com</abt-inputgroup-text>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+
+    <label for="basic-url">Your vanity URL</label>
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-append>
+        <abt-inputgroup-text>https://example.com/users/</abt-inputgroup-text>
+      </abt-inputgroup-append>
+      <input type="text" class="form-control" id="basic-url">
+    </abt-inputgroup>
+
+    <abt-inputgroup id="inputgroup" class="mb-3">
+      <abt-inputgroup-prepend id="inputgroup-prepend">
+        <abt-inputgroup-text id="inputgroup-text1">$</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+      <abt-inputgroup-append id="inputgroup-append">
+        <abt-inputgroup-text id="inputgroup-text2">.00</abt-inputgroup-text>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text style="height:62px">With textarea</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <textarea class="form-control" aria-label="With textarea"></textarea>
+    </abt-inputgroup>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/basic-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Sizing
+    </legend>
+
+    <abt-inputgroup size="sm" class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text>Small</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control">
+    </abt-inputgroup>
+
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text>Default</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control">
+    </abt-inputgroup>
+
+    <abt-inputgroup size="lg" class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text>Large</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control">
+    </abt-inputgroup>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/sizing.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Checkboxes and radios
+    </legend>
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text style="height:38px">
+          <input type="checkbox" aria-label="Checkbox for following text input">
+        </abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control" aria-label="Text input with checkbox">
+    </abt-inputgroup>
+
+    <abt-inputgroup>
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text style="height:38px">
+          <input type="radio" aria-label="Radio button for following text input">
+        </abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control" aria-label="Text input with radio button">
+    </abt-inputgroup>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/checkboxes-radios.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Multiple inputs
+    </legend>
+    <abt-inputgroup>
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text id="">First and last name</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control">
+      <input type="text" class="form-control">
+    </abt-inputgroup>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/multiple-inputs.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Multiple addons
+    </legend>
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text>$</abt-inputgroup-text>
+        <abt-inputgroup-text>0.00</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control">
+    </abt-inputgroup>
+
+    <abt-inputgroup size="sm" class="mb-3">
+      <input type="text" class="form-control">
+      <abt-inputgroup-append>
+        <abt-inputgroup-text>$</abt-inputgroup-text>
+        <abt-inputgroup-text>0.00</abt-inputgroup-text>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/multiple-addons.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Button addons
+    </legend>
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-button outline color="secondary">
+          Button
+        </abt-button>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control" placeholder="" aria-label="">
+    </abt-inputgroup>
+
+    <abt-inputgroup class="mb-3">
+      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username">
+      <abt-inputgroup-append>
+        <abt-button outline color="secondary">
+          Button
+        </abt-button>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+
+    <abt-inputgroup class="input-group mb-3">
+      <abt-inputgroup-prepend>
+        <abt-button outline color="secondary">
+          Button
+        </abt-button>
+        <abt-button outline color="secondary">
+          Button
+        </abt-button>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control" placeholder="" aria-label="">
+    </abt-inputgroup>
+
+    <abt-inputgroup>
+      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username">
+      <abt-inputgroup-append>
+        <abt-button outline color="secondary">
+          Button
+        </abt-button>
+        <abt-button outline color="secondary">
+          Button
+        </abt-button>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/button-addons.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Buttons with dropdowns
+    </legend>
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-dropdown color="secondary" title="Dropdown">
+          <abt-dropdown-item>Action</abt-dropdown-item>
+          <abt-dropdown-item>Another action</abt-dropdown-item>
+          <abt-dropdown-item>Something else here</abt-dropdown-item>
+          <abt-dropdown-divider></abt-dropdown-divider>
+          <abt-dropdown-item>Separated link</abt-dropdown-item>
+        </abt-dropdown>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control" aria-label="Text input with dropdown button">
+    </abt-inputgroup>
+
+    <abt-inputgroup>
+      <input type="text" class="form-control" aria-label="Text input with dropdown button">
+      <abt-inputgroup-append>
+        <abt-dropdown color="secondary" title="Dropdown">
+          <abt-dropdown-item>Action</abt-dropdown-item>
+          <abt-dropdown-item>Another action</abt-dropdown-item>
+          <abt-dropdown-item>Something else here</abt-dropdown-item>
+          <abt-dropdown-divider></abt-dropdown-divider>
+          <abt-dropdown-item>Separated link</abt-dropdown-item>
+        </abt-dropdown>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/button-dropdowns.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Segmented buttons
+    </legend>
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-dropdown split title="Action">
+          <abt-dropdown-item>Action</abt-dropdown-item>
+          <abt-dropdown-item>Another action</abt-dropdown-item>
+          <abt-dropdown-item>Something else here</abt-dropdown-item>
+          <abt-dropdown-divider></abt-dropdown-divider>
+          <abt-dropdown-item>Separated link</abt-dropdown-item>
+        </abt-dropdown>
+      </abt-inputgroup-prepend>
+      <input type="text" class="form-control" aria-label="Text input with dropdown button">
+    </abt-inputgroup>
+
+    <abt-inputgroup>
+      <input type="text" class="form-control" aria-label="Text input with dropdown button">
+      <abt-inputgroup-append>
+        <abt-dropdown split title="Action">
+          <abt-dropdown-item>Action</abt-dropdown-item>
+          <abt-dropdown-item>Another action</abt-dropdown-item>
+          <abt-dropdown-item>Something else here</abt-dropdown-item>
+          <abt-dropdown-divider></abt-dropdown-divider>
+          <abt-dropdown-item>Separated link</abt-dropdown-item>
+        </abt-dropdown>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/segmented-buttons.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Custom select
+    </legend>
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text for="inputGroupSelect01">Options</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <select class="custom-select" id="inputGroupSelect01">
+        <option selected>Choose...</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </abt-inputgroup>
+
+    <abt-inputgroup class="mb-3">
+      <select class="custom-select" id="inputGroupSelect02">
+        <option selected>Choose...</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      <abt-inputgroup-append>
+        <abt-inputgroup-text for="inputGroupSelect02">Options</abt-inputgroup-text>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-button outline color="secondary">
+          Button
+        </abt-button>
+      </abt-inputgroup-prepend>
+      <select class="custom-select" id="inputGroupSelect03">
+        <option selected>Choose...</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </abt-inputgroup>
+
+    <abt-inputgroup>
+      <select class="custom-select" id="inputGroupSelect04">
+        <option selected>Choose...</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      <abt-inputgroup-append>
+        <abt-button outline color="secondary">
+          Button
+        </abt-button>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/custom-select.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Custom file input
+    </legend>
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-inputgroup-text>Upload</abt-inputgroup-text>
+      </abt-inputgroup-prepend>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile01">
+        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+      </div>
+    </abt-inputgroup>
+
+    <abt-inputgroup class="mb-3">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile02">
+        <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+      </div>
+      <abt-inputgroup-append>
+        <abt-inputgroup-text id="">Upload</abt-inputgroup-text>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+
+    <abt-inputgroup class="mb-3">
+      <abt-inputgroup-prepend>
+        <abt-button outline color="secondary">
+          Button
+        </abt-button>
+      </abt-inputgroup-prepend>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile03">
+        <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+      </div>
+    </abt-inputgroup>
+
+    <abt-inputgroup>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile04">
+        <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+      </div>
+      <abt-inputgroup-append>
+        <abt-button outline color="secondary">
+          Button
+        </abt-button>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+    <aut-mark-down src="./docs/components/bootstrap/inputgroup/custom-file-input.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      API Reference
+    </legend>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-inputgroup
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">size</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">md</td>
+          <td>Set size to the component. Acceptable values : 'sm', 'md', 'lg'.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-inputgroup-text
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-inputgroup-prepend
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-inputgroup-append
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+
+</template>

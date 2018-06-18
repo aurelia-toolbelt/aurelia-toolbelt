@@ -1,0 +1,9 @@
+<template ref="navItem">
+  <require from="./abt-navbar-link.css"></require>
+  
+  <li id="${id}" class="nav-item ${class}" css="${style}">
+    <a ref="navItemLink" class="nav-link ${linkClass}" css="${linkStyle}" click.trigger="onClick($event)" href="${href}">
+      <slot></slot>
+    </a>
+  </li>
+</template>

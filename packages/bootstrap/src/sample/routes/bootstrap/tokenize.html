@@ -1,0 +1,733 @@
+<template>
+  <!-- <style>
+        .tokenize>.tokens-container>.token {
+            border-radius: 0px !important;
+            background-color: #1A6DCA !important;
+            color: white !important;
+        }
+
+        .tokenize>.tokens-container>.token>.dismiss {
+            color: white !important;
+        }
+    </style> -->
+
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Tokenize
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/tokenize">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    <abt-alert type="info">
+      Created on top of
+      <abt-alert-link href="https://github.com/zellerda/Tokenize2">Tokenize2</abt-alert-link>
+      <aut-micro-link class="mt-2" round="false" url="https://github.com/zellerda/Tokenize2"></aut-micro-link>
+    </abt-alert>
+    <abt-alert type="success">
+      <i class="fa fa-credit-card" aria-hidden="true"></i>
+      &nbsp;
+      <b>License:</b> &nbsp;
+      <abt-alert-link href="https://github.com/zellerda/Tokenize2/blob/master/LICENSE">BSD 3</abt-alert-link>
+    </abt-alert>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Data Source
+    </legend>
+    <p class="mt-2">3 types of value are allowed for this option,
+      <code>select</code> for local datas, an URL for
+      <code>remote</code> datas and a
+      <code>callable</code> if you want to make your own function. The default value is select.
+    </p>
+    <b>Usage with select
+    </b>
+    <abt-tokenize>
+      <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
+      <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
+      <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
+      <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
+      <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
+    </abt-tokenize>
+    <p>When you have
+      <code>abt-tokenize-item</code>(s) inside
+      <code>abt-tokenize</code> means you are using
+      <code>select</code> mode.</p>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/basic-example.md">
+    </aut-mark-down>
+    <br>
+    <b>Usage with remote datas
+    </b>
+    <abt-tokenize data-source='https://api.myjson.com/bins/10kint'>
+    </abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/remote-example.md">
+    </aut-mark-down>
+    <p>I used the following object on the server side to fill the data source.</p>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/remote-json-example.md">
+    </aut-mark-down>
+    <p>If you want to filter the data, you must limit your data source on the server side based on the following structure:
+      <code>url?search=keyword</code>.
+    </p>
+    <p>So search value is passed with
+      <code>search</code> post value in the request.</p>
+    <i>It is noteworthy that the above sample without any filter will only show all the values everytime.</i>
+    <br>
+    <br>
+    <b>Usage with callable datas
+    </b>
+    <abt-tokenize id='token' data-source.call='fill(term)'>
+    </abt-tokenize>
+    <p>Callable option allow you to create your own search function. Every keyword you type is sent to the function in the
+      <code>term</code> variable.</p>
+    <abt-navs tabs id="tokenize-callable">
+      <abt-nav-item id="tokenize-callable-view" title="View" active>
+        <aut-mark-down src="./docs/components/bootstrap/tokenize/callable-view-example.md">
+        </aut-mark-down>
+      </abt-nav-item>
+      <abt-nav-item id="tokenize-callable-viewmodel" title="ViewModel">
+        <aut-mark-down src="./docs/components/bootstrap/tokenize/callable-viewmodel-example.md">
+        </aut-mark-down>
+      </abt-nav-item>
+    </abt-navs>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Selected Tokens
+    </legend>
+    <p>Sometimes you want to add and remove tokens dynamically.so you should bind your object array to
+      <code>selected-tokens</code>.
+    </p>
+    <abt-inputgroup class="mb-2">
+      <input ref='addInput' type="text" class="form-control" placeholder="Add token" aria-label="Add token">
+      <abt-inputgroup-append>
+        <abt-button color="secondary" click.call="onAdd(addInput.value)">
+          Add
+        </abt-button>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+    <abt-inputgroup class="mb-2">
+      <input ref='removeInput' type="text" class="form-control" placeholder="Remove specific token" aria-label="Remove specific token">
+      <abt-inputgroup-append>
+        <abt-button color="secondary" click.call="onRemove(removeInput.value)">
+          Remove
+        </abt-button>
+        <abt-button color="secondary" click.call="onRemoveAll()">
+          Remove All
+        </abt-button>
+      </abt-inputgroup-append>
+    </abt-inputgroup>
+    <br>
+    <abt-tokenize selected-tokens.bind="tokens" data-source.call='fill(term)'>
+    </abt-tokenize>
+    <p>Clearly, you
+      <code>can not</code> enter a
+      <code>duplicate</code> value.</p>
+    <abt-navs tabs id="tokenize-selected-tokens">
+      <abt-nav-item id="tokenize-selected-tokens-view" title="View" active>
+        <aut-mark-down src="./docs/components/bootstrap/tokenize/selected-tokens-view-example.md">
+        </aut-mark-down>
+      </abt-nav-item>
+      <abt-nav-item id="tokenize-selected-tokens-viewmodel" title="ViewModel">
+        <aut-mark-down src="./docs/components/bootstrap/tokenize/selected-tokens-viewmodel-example.md">
+        </aut-mark-down>
+      </abt-nav-item>
+    </abt-navs>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Debounce
+    </legend>
+    <p>The debounce option allow you to set a waiting time between each search.This option in
+      <code>only available</code> in you use dataSource with an URL.</p>
+    <abt-tokenize data-source='https://api.myjson.com/bins/10kint' debounce='5000'></abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/debounce.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Delimiter
+    </legend>
+    <p>Delimiter option allow you to define which character will validate a token. You can define a single character or an array
+      of chars. The default value is the comma
+      <code>,</code>.</p>
+    <p>Note that the
+      <code>tab</code> and
+      <code>return</code> key validate the token too.</p>
+    <p> In the example below we will set both
+      <code>,</code> and
+      <code>-</code> for delimiter. For the purposes of demonstration we set
+      <code>tokens-allow-custom</code> to
+      <code>true</code>.</p>
+    <p>Type something in the box below an validate it with one of the delimiters.</p>
+    <abt-tokenize data-source='https://api.myjson.com/bins/10kint' tokens-allow-custom="true" delimiter.bind="[ ',', '-']"></abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/delimiter.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Placeholder
+    </legend>
+    <p>This placeholder option add a placeholder to the control. By default there is no placeholder.</p>
+    <abt-tokenize data-source='https://api.myjson.com/bins/10kint' placeholder='Type something to start...'></abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/placeholder.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Tokens Max Items
+    </legend>
+    <p>This option allow you to restrict the maximum number of tokens.</p>
+    <p>In the example below we have limited the number of tokens to
+      <code>3</code>.</p>
+    <abt-tokenize tokens-max-items='3'>
+      <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
+      <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
+      <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
+      <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
+      <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
+    </abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/tokens-max-items.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Tokens Allow Custom
+    </legend>
+    <p>The tokensAllowCustom option allow you to create custom tokens, type a text that is not in the search result and validate
+      it with the delimiter
+      <code>,</code>,
+      <code>return</code> or
+      <code>tab</code> key.</p>
+    <abt-tokenize tokens-allow-custom='true'>
+      <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
+      <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
+      <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
+      <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
+      <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
+    </abt-tokenize>
+    <p>In case of you type for example
+      <code>afri</code>, the default behavior in when you type a validation key (
+      <code>return</code> or
+      <code>tab</code>) the token
+      <code>Africa</code> will be added. If you really want to add
+      <code>afri</code>, just hold the
+      <code>control</code> key when pressing validation key.</p>
+    <p>Note that this behavior dosen't work with delimiters.</p>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/allow-custom-tokens.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Dropdown Max Items
+    </legend>
+    <p>This options allow you to change the maximum number of search result displayed in the dropdown. The default value is
+      <code>10</code>.
+    </p>
+    <abt-tokenize dropdown-max-items='2'>
+      <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
+      <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
+      <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
+      <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
+      <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
+    </abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/dropdown-max-items.md">
+    </aut-mark-down>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Search Min Length
+    </legend>
+    <p>The
+      <code>search-min-length</code> option allow you to specify the minimum of characters required to start searching.
+    </p>
+    <abt-tokenize search-min-length='3'>
+      <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
+      <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
+      <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
+      <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
+      <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
+    </abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/search-min-length.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Search From Start
+    </legend>
+    <p>This options allow you to specify if
+      <code>abt-tokenize</code> will search from the begining of a string, but default this option is set to
+      <code>true</code>.</p>
+    <p>If the example below we have set the option to
+      <code>false</code>.</p>
+    <abt-tokenize search-from-start='false'>
+      <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
+      <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
+      <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
+      <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
+      <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
+    </abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/search-from-start.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Search Highlight
+    </legend>
+    <p>The searchHighlight options allow you to choose if you want your search highlighted in the result dropdown. By default
+      this option is set to
+      <code>true</code>. If the example below we have set the option to
+      <code>false</code>.</p>
+    <abt-tokenize search-highlight='false'>
+      <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
+      <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
+      <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
+      <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
+      <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
+    </abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/search-highlight.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Show all items on click
+    </legend>
+    <abt-tokenize show-on-click='true'>
+      <abt-tokenize-item value="Africa">Africa</abt-tokenize-item>
+      <abt-tokenize-item value="Americas">Americas</abt-tokenize-item>
+      <abt-tokenize-item value="Asia">Asia</abt-tokenize-item>
+      <abt-tokenize-item value="Europe">Europe</abt-tokenize-item>
+      <abt-tokenize-item value="Oceania">Oceania</abt-tokenize-item>
+    </abt-tokenize>
+    <aut-mark-down src="./docs/components/bootstrap/tokenize/show-on-click.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      API Reference
+    </legend>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              abt-tokenize
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td></td>
+          <td>Set class to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td></td>
+          <td>Set style to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">debounce</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>0</td>
+          <td>Define the waiting time in
+            <code>milliseconds</code> between remote searches. Available only if dataSource is an
+            <code>URL</code>.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">delimiter</td>
+          <td class="text-nowrap">string[]</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>[',']</td>
+          <td>Define the tokens delimiter, you can use a string or an array of string if you want use multiple delimiters.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">placeholder</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td></td>
+          <td>Define the form control placeholder.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">tokens-max-items</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>0</td>
+          <td>Define the maximum number of tokens allowed in the control, unlimited if it's
+            <code>0</code>.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">tokens-allow-custom</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>false</td>
+          <td>Define if custom tokens are allowed.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dropdown-max-items</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>10</td>
+          <td>Define the maximum number of items displayed in the search dropdown.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">search-min-length</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>0</td>
+          <td>Define the minimum number of characters required to start searching.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">search-from-start</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>true</td>
+          <td>Define if search will find result from the begining of string. This option is only available for
+            <code>select</code> value in
+            <code>dataSource</code> option.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">search-highlight</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>true</td>
+          <td>Define if search will be highlighted in result items.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">show-on-click</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>false</td>
+          <td>Show all dropdown items on click.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">display-no-results-message</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>false</td>
+          <td>Define if no result message have to be display.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">no-results-message-text</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>No results matched "%s"</td>
+          <td>Define no results label.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">z-index-margin</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>500</td>
+          <td>Define the z-index positive margin from the parent z-index.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">tab-index</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>0</td>
+          <td>Define tab-index.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">data-source</td>
+          <td class="text-nowrap">string | Function</td>
+          <td class="text-nowrap">twoWay</td>
+          <td class="text-nowrap"></td>
+          <td>Define where the component will get values. You can use
+            <code>select</code>, an URL for
+            <code>remote data</code> or a
+            <code>callable</code>.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">selected-tokens</td>
+          <td class="text-nowrap">[ { text, value } ]
+          </td>
+          <td class="text-nowrap">twoWay</td>
+          <td></td>
+          <td>Define your selected tokens. The type is arrary of
+            <code>text</code> and
+            <code>value</code> objects.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">load</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired on initialization
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">clear</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when clear tokens
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">remap</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when match the select with tokens
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">select</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when focus
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">deselect</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when blur
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">search</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(e,value)</td>
+          <td></td>
+          <td>Fired when search
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">paste</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when paste a text in search input
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dropdown-up</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when type
+            <code>up</code> in dropdown
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dropdown-down</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when type
+            <code>down</code> in dropdown
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dropdown-clear</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when dropdown items are cleared
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dropdown-show</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when dropdown show
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dropdown-hide</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when dropdown hide
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dropdown-fill</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(e,items)</td>
+          <td></td>
+          <td>Fired when dropdown items are added
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dropdown-item-add</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(e,item)</td>
+          <td></td>
+          <td>Fired when dropdown item is added
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">keypress</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(e, routedEvent)</td>
+          <td></td>
+          <td>Fired when keypress
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">keydown</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(e, routedEvent)</td>
+          <td></td>
+          <td>Fired when keydown
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">keyup</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(e, routedEvent)</td>
+          <td></td>
+          <td>Fired when keyup
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">reorder</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td></td>
+          <td>Fired when tokens are reordered
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">add</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(e, value, text, force)</td>
+          <td></td>
+          <td>Fired when token is added
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">remove</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(e,value)</td>
+          <td></td>
+          <td>Fired when token is removed
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-tokenize-item
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set class to the component
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set style to the component
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">value</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set value to the component
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</template>

@@ -1,23 +1,33 @@
 <template bindable="router">
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-        <span style="margin:5px">
-            <iframe src="https://ghbtns.com/github-btn.html?user=vegarringdal&repo=skeleton-plugin-typescript&type=star&count=true"
-                frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
-        </span>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">${router.title}</a>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li repeat.for="row of router.navigation" class="nav-item ${row.isActive ? 'active' : ''}">
-                    <a class="nav-link" href.bind="row.href">${row.title}
-                        <span class="sr-only"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <require from="./nav-bar.css"></require>
+
+  <nav class="sidebar-nav">
+
+    <aut-metis-menu show-menu.call="showMenu()">
+
+      <aut-metis-menu-group active="true" icon-class="sidebar-nav-item-icon fa fa-github fa-lg" text="Components">
+        <aut-metis-menu-item repeat.for="r of router.navigation" if.bind="r.settings.isComponent" href="${r.href}">
+          <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+          ${r.title}
+        </aut-metis-menu-item>
+      </aut-metis-menu-group>
+
+
+      <aut-metis-menu-group text="Services">
+        <aut-metis-menu-item href="#">
+          <span class="sidebar-nav-item-icon fa fa-code-fork"></span> Fork
+        </aut-metis-menu-item>
+        <aut-metis-menu-item href="#">
+          <span class="sidebar-nav-item-icon fa fa-star"></span> Star
+        </aut-metis-menu-item>
+        <aut-metis-menu-item href="#">
+          <span class="sidebar-nav-item-icon fa fa-exclamation-triangle"></span> Issues
+        </aut-metis-menu-item>
+      </aut-metis-menu-group>
+
+    </aut-metis-menu>
+
+  </nav>
+
 </template>

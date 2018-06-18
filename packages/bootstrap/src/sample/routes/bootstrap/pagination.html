@@ -1,0 +1,416 @@
+<template>
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Pagination
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/pagination">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages. </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Basic example
+    </legend>
+    <abt-pagination total-pages="3" start-page="1" visible-pages="3"></abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/basic-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      With boundary links
+    </legend>
+    <abt-pagination total-pages="3" visible-pages="3" boundary-links="true"></abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/basic-example-boundary.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Working with icons
+    </legend>
+    <abt-pagination total-pages="3" start-page="1" visible-pages="3" prev-text='' next-text='' prev-icon='fa fa-chevron-left'
+      next-icon='fa fa-chevron-right'>
+    </abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/with-icons.md">
+    </aut-mark-down>
+    <abt-pagination total-pages="3" start-page="1" visible-pages="3" boundary-links="true" prev-text='' next-text='' first-text=''
+      last-text='' prev-icon='fa fa-chevron-left' next-icon='fa fa-chevron-right' first-icon='fa fa-backward' last-icon='fa fa-forward'>
+    </abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/with-icons-boundary.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Sizing
+    </legend>
+    <abt-pagination total-pages="3" start-page="1" size="sm" boundary-links="true" visible-pages="3">
+    </abt-pagination>
+    <abt-pagination total-pages="3" start-page="1" boundary-links="true" visible-pages="3">
+    </abt-pagination>
+    <abt-pagination total-pages="3" start-page="1" size="lg" boundary-links="true" visible-pages="3">
+    </abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/size.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Alignment
+    </legend>
+    <abt-pagination total-pages="3" start-page="1" boundary-links="true" visible-pages="3">
+    </abt-pagination>
+    <abt-pagination class="justify-content-center" total-pages="3" start-page="1" boundary-links="true" visible-pages="3">
+    </abt-pagination>
+    <abt-pagination class="justify-content-end" total-pages="3" start-page="1" boundary-links="true" visible-pages="3">
+    </abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/alignment.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Template
+    </legend>
+    <p>You can define a text as a template. You should use
+      <code>template</code> property but make sure to use
+      <code>%s</code> as a placehoder for number of pages.</p>
+    <abt-pagination total-pages="3" template="Page %s" start-page="1" boundary-links="true" visible-pages="3">
+    </abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/template.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Loop
+    </legend>
+    <p>If the
+      <code>loop</code> feature is enabled, you can use
+      <code>Next</code> and
+      <code>Perv</code> to return the first or last pages.</p>
+    <abt-pagination total-pages="6" start-page="4" boundary-links="true" loop="true" visible-pages="4">
+    </abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/loop.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Goto
+    </legend>
+    <p>This feature allows you to jump to a specific page when you have plenty of pages. Click on
+      <code>...</code> for this purpose.</p>
+    <abt-pagination total-pages="20" start-page="10" show-goto="true" boundary-links="true" visible-pages="9">
+    </abt-pagination>
+    <aut-mark-down src="./docs/components/bootstrap/pagination/goto.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Page change
+    </legend>
+    <div class="container" style="background-color:#F7F7F7;height:150px;border:solid 1px #D8D8D8;margin-bottom:15px">
+      <h3 id="page" class="text-center" style="color:#6B6B6B;margin-top:55px">Page 10</h3>
+    </div>
+    <abt-pagination total-pages="20" selected-page="10" show-goto="true" boundary-links="true" visible-pages="9" page-changed.call="pageChanged($event,selectedPageNumber)">
+    </abt-pagination>
+    <abt-navs tabs id="navs-events">
+      <abt-nav-item id="tab-template-ebents" title="View"  active>
+        <aut-mark-down src="./docs/components/bootstrap/pagination/page-change-model.md">
+        </aut-mark-down>
+      </abt-nav-item>
+      <abt-nav-item id="tab-viewmodel-events" title="ViewModel">
+        <aut-mark-down src="./docs/components/bootstrap/pagination/page-change-viewmodel.md">
+        </aut-mark-down>
+      </abt-nav-item>
+    </abt-navs>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      API Reference
+    </legend>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              abt-pagination
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom classes to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set custom styles to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">size</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">md</td>
+          <td>Set size to the component. Acceptable values : 'sm', 'md', 'lg'.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">total-pages</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">1</td>
+          <td>Set The number of pages.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">selected-page</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">1</td>
+          <td>The current page that show on start.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">visible-pages</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">1</td>
+          <td>visible pages.</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">hide-only-one-page</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">true</td>
+          <td>This hides all control buttons if it has one page.</td>
+        </tr>
+
+
+        <tr>
+          <td class="text-nowrap" scope="row">direction-links</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">true</td>
+          <td>if
+            <code>false</code> previous and next buttons will be hidden.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">boundary-links</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>if
+            <code>false</code> first and last buttons will be hidden.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">loop</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Carousel-style pagination.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">show-goto</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>This feature allows you to jump to a specific page when you have plenty of pages. This works if the
+            <code>visible-pages</code> is
+            <i>greater than or equal</i> to
+            <code>7</code>.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">template</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">%s</td>
+          <td>You can define a text as a template. Make sure to use
+            <code>%s</code> as a placehoder for number of pages.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">first-text</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">First</td>
+          <td>Text label for the
+            <code>First</code> button.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">last-text</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">Last</td>
+          <td>Text label for the
+            <code>Last</code> button.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">prev-text</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">Previous</td>
+          <td>Text label for the
+            <code>Previous</code> button.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">next-text</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">Next</td>
+          <td>Text label for the
+            <code>Next</code> button.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">first-icon</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Icon class for the
+            <code>First</code> button.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">last-icon</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Icon class for the
+            <code>Last</code> button.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">prev-icon</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Icon class for the
+            <code>Previous</code> button.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">next-icon</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Icon class for the
+            <code>Next</code> button.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Events
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">page-changed</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call(event, startPageNumber)</td>
+          <td class="text-nowrap"></td>
+          <td>This event fires when page changed.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Styling
+    </legend>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              abt-pagination
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Class name</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" scope="row">abt-pagination</td>
+          <td> CSS class for the component.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">abt-pagination-first</td>
+          <td>CSS class for the
+            <code>First</code> button.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">abt-pagination-link-first</td>
+          <td>CSS class for anchors inside
+            <code>First</code> button.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">abt-pagination-prev</td>
+          <td>CSS class for the
+            <code>Previous</code> button.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">abt-pagination-link-prev</td>
+          <td>CSS class for anchors inside
+            <code>Previous</code> button.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">abt-pagination-item</td>
+          <td>CSS class for the page buttons.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">abt-pagination-link-item</td>
+          <td>CSS class for anchors inside page buttons.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">abt-pagination-next</td>
+          <td>CSS class for the
+            <code>Next</code> button.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">abt-pagination-link-next</td>
+          <td>CSS class for anchors inside
+            <code>Next</code> button.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">abt-pagination-last</td>
+          <td>CSS class for the
+            <code>Last</code> button.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">abt-pagination-link-last</td>
+          <td>CSS class for anchors inside
+            <code>Last</code> button.</td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</template>

@@ -1,0 +1,259 @@
+<template>
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Tooltips
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/tooltip">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Documentation and examples for adding custom Bootstrap tooltips with CSS and JavaScript using CSS3 for animations and data-attributes
+    for local title storage.
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/tooltip/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Example
+    </legend>
+    <p>If you want to use
+      <code>tooltip</code>, you must apply
+      <code>abt-tooltip</code> as the child inside the component that you want to enable the
+      <code>tooltip</code>.</p>
+    <abt-button class="mr-2" bs-type="secondary">Tooltip on top
+      <abt-tooltip placement='top'>
+        Tooltip on top
+      </abt-tooltip>
+    </abt-button>
+    <abt-button class="mr-2" bs-type="secondary">Tooltip on right
+      <abt-tooltip placement='right'>
+        Tooltip on right
+      </abt-tooltip>
+    </abt-button>
+    <abt-button class="mr-2" bs-type="secondary">Tooltip on bottom
+      <abt-tooltip placement='bottom'>
+        Tooltip on bottom
+      </abt-tooltip>
+    </abt-button>
+    <abt-button class="mr-2" bs-type="secondary">Tooltip on left
+      <abt-tooltip placement='left'>
+        Tooltip on left
+      </abt-tooltip>
+    </abt-button>
+    <abt-button class="mr-2" bs-type="secondary">Tooltip with HTML
+      <abt-tooltip html="true" placement='top'>
+        Tooltip
+        <i>with</i>
+        <b> HTML</b>
+      </abt-tooltip>
+    </abt-button>
+    <aut-mark-down src="./docs/components/bootstrap/tooltip/example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      API Reference
+    </legend>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-tooltip
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">animation</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">true</td>
+          <td>Apply a CSS fade transition to the tooltip</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">container</td>
+          <td class="text-nowrap">boolean | string | Element</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Appends the tooltip to a specific element. Example: container:
+            <code>'body'</code>. This option is particularly useful in that it allows you to position the tooltip in the flow of
+            the document near the triggering element - which will prevent the tooltip from floating away from the triggering
+            element during a window resize.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">delay</td>
+          <td class="text-nowrap">number | object</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">0</td>
+          <td>Delay showing and hiding the tooltip (ms) - does not apply to manual trigger type If a number is supplied, delay
+            is applied to both hide/show Object structure is:
+            <code>delay: { "show": 500, "hide": 100 }</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">html</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Insert HTML into the tooltip. If false, jQuery's
+            <code>text</code> method will be used to insert content into the DOM. Use text if you're worried about XSS attacks.
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">placement</td>
+          <td class="text-nowrap">string | Function</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">right</td>
+          <td>How to position the tooltip - auto | top | bottom | left | right. When
+            <code>auto</code> is specified, it will dynamically reorient the tooltip. When a function is used to determine the
+            placement, it is called with the tooltip DOM node as its first argument and the triggering element DOM node as
+            its second. The
+            <code>this</code> context is set to the tooltip instance.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">selector</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>If a selector is provided, tooltip objects will be delegated to the specified targets. In practice, this is used
+            to enable dynamic HTML content to have tooltips added.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">template</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td>
+            <code>
+              <aut-raw-html>
+                '
+                <div class="tooltip" role="tooltip">
+                  <div class="arrow"></div>
+                  <div class="tooltip-inner"></div>
+                </div>'
+              </aut-raw-html>
+            </code>
+          </td>
+          <td>Base HTML to use when creating the tooltip. The tooltip's
+            <code>title</code> will be injected into the
+            <code>.tooltip-inner</code>.
+            <code>.arrow</code> will become the tooltip's arrow. The outermost wrapper element should have the
+            <code>.tooltip</code> class and
+            <code>role="tooltip"</code>.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">trigger</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">hover focus</td>
+          <td>How tooltip is triggered - click | hover | focus | manual. You may pass multiple triggers; separate them with a
+            space. this value cannot be combined with any other trigger.
+            <code>'hover'</code> on its own will result in tooltips that cannot be triggered via the keyboard, and should only
+            be used if alternative methods for conveying the same information for keyboard users is present.</tr>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">offset</td>
+          <td class="text-nowrap">number | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">0</td>
+          <td>Offset of the tooltip relative to its target. For more information refer to Popper.js's offset docs.</td>
+          <tr>
+            <td class="text-nowrap" scope="row">fallback-placement</td>
+            <td class="text-nowrap">string | string[]</td>
+            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap">flip</td>
+            <td>Allow to specify which position Popper will use on fallback. For more information refer to Popper.js's behavior
+              docs
+            </td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">boundary</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap">scrollParent</td>
+            <td>Overflow constraint boundary of the tooltip. Accepts the values of
+              <code>'viewport'</code>,
+              <code>'window'</code>,
+              <code>'scrollParent'</code>, or an HTMLElement reference (JavaScript only). For more information refer to Popper.js's
+              preventOverflow docs.
+            </td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" colspan="5">
+              <b>
+                Events
+              </b>
+            </td>
+          </tr>
+          <tr>
+            <td scope="row">bs-show</td>
+            <td class="text-nowrap">Function</td>
+            <td class="text-nowrap">call</td>
+            <td class="text-nowrap"></td>
+            <td>This event fires immediately when the
+              <code>show</code> instance method is called.
+            </td>
+          </tr>
+          <tr>
+            <td scope="row">bs-shown</td>
+            <td class="text-nowrap">Function</td>
+            <td class="text-nowrap">call</td>
+            <td class="text-nowrap"></td>
+            <td>This event is fired when the tooltip has been made visible to the user (will wait for CSS transitions to complete).
+            </td>
+          </tr>
+          <tr>
+            <td scope="row">bs-hide</td>
+            <td class="text-nowrap">Function</td>
+            <td class="text-nowrap">call</td>
+            <td class="text-nowrap"></td>
+            <td>This event is fired immediately when the
+              <code>hide</code> instance method has been called.
+            </td>
+          </tr>
+          <tr>
+            <td scope="row">bs-hidden</td>
+            <td class="text-nowrap">Function</td>
+            <td class="text-nowrap">call</td>
+            <td class="text-nowrap"></td>
+            <td>This event is fired when the tooltip has finished being hidden from the user (will wait for CSS transitions to
+              complete).
+            </td>
+          </tr>
+          <tr>
+            <td scope="row">bs-inserted</td>
+            <td class="text-nowrap">Function</td>
+            <td class="text-nowrap">call</td>
+            <td class="text-nowrap"></td>
+            <td>This event is fired after the
+              <code>bs-shown</code> event when the tooltip template has been added to the DOM.</td>
+          </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</template>

@@ -1,0 +1,20 @@
+<template class="text-${type} star-${type} ${class}" css="cursor:${disabled ? 'auto' : 'pointer'};  ${color ? 'color:' + color + ' !important;' : ''} ${style}" mouseleave.trigger="mouseLeft()">
+
+  <!-- <require from="../../../external-resources/css/font-awesome.css"></require> -->
+  <require from="./abt-star-rate.css"></require>
+
+
+  <i if.bind="!rtl" class="abt-star-rate ${$index > fixedPoint ? emptyStar : $index < fixedPoint ? fullStar : ( ( showHalfStar || hasFloatingPoint ) && halfStarClass && fixedPoint == $index ) ? halfStarClass : emptyStar}"
+    repeat.for="$index of maxRate" mousemove.delegate="mouseMove($event,$index)" click.delegate="setRate($index)">
+  </i>
+  <!-- <span mouseover.delegate="mouseLeft()"> -->
+    <slot></slot>
+  <!-- </span> -->
+  <i if.bind="rtl" class="abt-star-rate abt-star-rtl ${maxRate-$index-1 > fixedPoint ? emptyStar : maxRate-$index-1 < fixedPoint ? fullStar : ( ( showHalfStar || hasFloatingPoint ) && halfStarClass && fixedPoint == maxRate-$index-1 ) ? halfStarClass : emptyStar}"
+         repeat.for="$index of maxRate"
+          
+          mousemove.delegate="mouseMove($event,maxRate-$index-1)"
+        click.delegate="setRate(maxRate-$index-1)">
+  </i>
+
+</template>

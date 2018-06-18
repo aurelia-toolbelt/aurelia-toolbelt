@@ -1,0 +1,11 @@
+<template class="abt-toggle ${class}" css="${style}">
+  
+  <require from="aureliatoolbelt-thirdparty/bootstrap-toggle/bootstrap-toggle.css"></require>
+  <require from="./abt-toggle.css"></require>
+
+  <label click.delegate="onChanged()" class="checkbox-inline">
+    <input ref="checkbox" type="checkbox" data-toggle="toggle" data-on="${on}" data-off="${off}" data-onstyle="${onType}" data-offstyle="${offType}"
+      data-style="${css}" data-size="${size}" data-width="${width}" data-height="${height}" style="cursor: pointer">
+    <slot></slot>
+  </label>
+</template>

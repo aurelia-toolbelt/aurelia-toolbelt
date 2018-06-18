@@ -2,10 +2,15 @@
   "private": true,
   "scripts": {
     "build-all": "lerna exec --bail false --concurrency 1  -- yarn run build",
+    "build:bootstrap": "yarn workspace @aurelia-toolbelt/bootstrap run build",
+    "build:bootstrap-plus": "yarn workspace @aurelia-toolbelt/bootstrap-plus run build",
+    "build:components": "yarn workspace @aurelia-toolbelt/components run build",
+    "build:core": "yarn workspace @aurelia-toolbelt/core run build",
+    "build:jquery": "yarn workspace @aurelia-toolbelt/jquery run build",
 
     "watch:admin-tmpl": "yarn workspace @aurelia-toolbelt/admin-template run watch",
     "watch:bootstrap": "yarn workspace @aurelia-toolbelt/bootstrap run watch",
-    "watch:bootstrap+": "yarn workspace @aurelia-toolbelt/bootstrap-plus run watch",
+    "watch:bootstrap-plus": "yarn workspace @aurelia-toolbelt/bootstrap-plus run watch",
     "watch:components": "yarn workspace @aurelia-toolbelt/components run watch",
     "watch:core": "yarn workspace @aurelia-toolbelt/core run watch",
     "watch:jquery": "yarn workspace @aurelia-toolbelt/jquery run watch",

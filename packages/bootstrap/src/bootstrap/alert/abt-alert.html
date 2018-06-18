@@ -1,0 +1,10 @@
+<template>
+  <div ref="alert" class="alert alert-${type} ${dismissible == true ? 'alert-dismissible' : ''} ${animate ? 'fade show':''} ${class}" role="alert" css="${style}">
+    <slot>
+
+    </slot>
+    <button if.bind="dismissible == true" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</template>

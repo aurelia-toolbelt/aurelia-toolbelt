@@ -1,0 +1,45 @@
+/* @font-face {
+  font-family: 'Digital-7';
+  src: url('./digital-7/Digital-7.eot');
+  src: url('./digital-7/Digital-7.eot?#iefix') format('embedded-opentype'), url('./digital-7/Digital-7.woff2') format('woff2'), url('./digital-7/Digital-7.woff') format('woff'), url('./digital-7/Digital-7.ttf') format('truetype'), url('./digital-7/Digital-7.svg#Digital-7') format('svg');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+.clock {
+  font-family: Tahoma, monospace;
+  text-align: center;
+  /* -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently */
+}
+
+.clock>p {
+  margin: 0;
+  padding: 0;
+}
+
+.clock .time {
+  letter-spacing: 0.05em;
+}
+
+.clock .date {
+  letter-spacing: 0.1em;
+  padding-bottom: 3px;
+}
+
+.clock .text {
+  letter-spacing: 0.1em;
+  padding: 5px 0 0;
+}

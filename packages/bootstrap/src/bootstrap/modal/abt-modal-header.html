@@ -1,0 +1,9 @@
+<template>
+  <div class="modal-header abt-modal-header ${class}" css="${style}" ref="header">
+    <slot>
+    </slot>
+    <button show.bind="dismissible" type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</template>

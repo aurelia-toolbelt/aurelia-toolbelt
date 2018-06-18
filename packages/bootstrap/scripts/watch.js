@@ -10,6 +10,7 @@ const {
   Sparky,
   HTMLPlugin,
   CSSPlugin,
+  SassPlugin,
   RawPlugin
 } = require('fuse-box');
 // @ts-ignore
@@ -46,31 +47,36 @@ let instructions = `
     + aurelia-history-browser
     + aurelia-templating-router
     + fuse-box-aurelia-loader
-    + @aurelia-toolbelt/core
+    + bootstrap
+    + bootstrap/dist/js/bootstrap.bundle.js
+    + bootstrap/dist/css/bootstrap-reboot.css
+    + bootstrap/dist/css/bootstrap.css
     + fast-safe-stringify
     + inputmask
     + markdown-it
     + jalali-moment
     + humanize-duration
     + numeral
+    + @aurelia-toolbelt/core
     `;
 
 let webIndexTemplate =
   `<!DOCTYPE html>
     <html>
-        <head>
+      <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Welcome to Aurelia with FuseBox</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    </head>
-    <body aurelia-app="main"></body>
-    <script type="text/javascript" charset="utf-8" src="./vendor.js"></script>
-    <script type="text/javascript" charset="utf-8" src="./app.js"></script>
-    <script type="text/javascript" charset="utf-8" src="./${FOLDER_NAME}.js"></script>
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
+        <!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script> -->
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> -->
+      </head>
+      <body aurelia-app="main">
+      </body>
+      <script type="text/javascript" charset="utf-8" src="./vendor.js"></script>
+      <script type="text/javascript" charset="utf-8" src="./app.js"></script>
+      <script type="text/javascript" charset="utf-8" src="./${FOLDER_NAME}.js"></script>
     </html>`;
 
 
@@ -94,6 +100,7 @@ Sparky.task('config', () => {
     plugins: [
       bootstrapLoader(),
       CSSPlugin(),
+      SassPlugin(),
       HTMLPlugin(),
       RawPlugin(['.css', '.woff']),
       WebIndexPlugin({
@@ -110,12 +117,12 @@ Sparky.task('config', () => {
 
   fuse_sample.bundle(`vendor`)
     .cache(false)
-    // .shim({
-    //   jquery: {
-    //     source: "node_modules/jquery/dist/jquery.js",
-    //     exports: "$"
-    //   }
-    // })
+    .shim({
+      jquery: {
+        source: "../../../node_modules/jquery/dist/jquery.js",
+        exports: "$"
+      }
+    })
     .instructions(instructions);
 
 

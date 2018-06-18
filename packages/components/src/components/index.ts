@@ -1,8 +1,18 @@
-import { FrameworkConfiguration } from 'aurelia-framework';
+import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
-export * from './hello-world';
+
 
 
 export function configure(config: FrameworkConfiguration) {
-  config.globalResources('./hello-world');
+
+  config
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/vanilla/clock/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/vanilla/mark-down/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/vanilla/nprogress/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/vanilla/pretty/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/vanilla/microlink/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/vanilla/scrollup/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/vanilla/raw-html/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/vanilla/divider/index'));
+
 }

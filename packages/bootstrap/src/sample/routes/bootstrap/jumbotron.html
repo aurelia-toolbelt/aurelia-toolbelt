@@ -1,0 +1,151 @@
+<template>
+
+
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Jumbotron
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/jumbotron">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    Lightweight, flexible component for showcasing hero unit style content.
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+
+    <aut-mark-down src="./docs/components/bootstrap/jumbotron/usage.md">
+    </aut-mark-down>
+
+  </fieldset>
+
+
+
+
+  <fieldset>
+    <legend>
+      Examples
+    </legend>
+
+    <p>
+      A lightweight, flexible component that can optionally extend the entire viewport to showcase key marketing messages on your
+      site.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <abt-jumbotron>
+          <h1 class="display-4">Hello, world!</h1>
+          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content
+            or information.</p>
+          <hr class="my-4">
+          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          </p>
+        </abt-jumbotron>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/jumbotron/examples.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Fluid Jumbotron
+    </legend>
+
+    <p>
+      To make the jumbotron full width, and without rounded corners, add the
+      <code>fluid</code> or
+      <code>fluid="true"</code> or
+      <code>fluid.bind="some_boolean"</code> to the component.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <abt-jumbotron fluid>
+
+          <h1 class="display-4">Fluid jumbotron</h1>
+          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+
+        </abt-jumbotron>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/jumbotron/fluid.md">
+        </aut-mark-down>
+      </abt-card-footer>
+
+    </abt-card>
+  </fieldset>
+
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Properties and Events
+    </legend>
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              abt-jumbotron
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies the your custom css class on jumbotron</td>
+        </tr>
+        <tr>
+            <td class="text-nowrap" scope="row">fluid</td>
+            <td class="text-nowrap">boolean</td>
+            <td class="text-nowrap">oneTime</td>
+            <td class="text-nowrap">false</td>
+            <td>Makes the jumbotron to be rendered as fluid-jumbotron</td>
+          </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attributes that you want to apply on the component.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </fieldset>
+
+</template>

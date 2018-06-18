@@ -1,0 +1,11 @@
+<template>
+  <require from="@aurelia-toolbelt/core/custom-attributes/uuid/aut-uuid"></require>
+  <require from="./abt-float-input.css"></require>
+
+  <label aut-uuid ref="floatInputLabel">
+    <input id="${id}" ref="floatInput" class="${class}" css="${style}" type="${type}" placeholder="${placeholder}" />
+    <span>
+      <slot></slot>
+    </span>
+  </label>
+</template>
