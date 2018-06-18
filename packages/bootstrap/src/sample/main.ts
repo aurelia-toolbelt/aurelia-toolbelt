@@ -1,5 +1,11 @@
 import { Aurelia } from 'aurelia-framework';
 
+import 'bootstrap/dist/js/bootstrap.bundle.js';
+import 'bootstrap/dist/css/bootstrap-reboot.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
+
+
 export async function configure(aurelia: Aurelia) {
 
   aurelia.use

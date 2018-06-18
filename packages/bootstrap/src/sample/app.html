@@ -1,36 +1,18 @@
 <template>
 
-  <require from="./components/main-header"></require>
+  <require from="./components/main-footer.html"></require>
   <require from="./components/nav-bar"></require>
+
   <require from='bootstrap/dist/css/bootstrap-reboot.css'></require>
   <require from='bootstrap/dist/css/bootstrap.css'></require>
 
-  <require from="./app.css"></require>
+  <br />
 
-  <link href="${selectedTheme.path}.min.css" rel="stylesheet">
-
-  <aut-nprogress loading.bind="router.isNavigating" color="#753B85"></aut-nprogress>
-
-  <div class="row">
-    <div class="col-sm-12">
-      <main-header themes.bind="themes" theme.bind="selectedTheme" router.bind="router"></main-header>
-    </div>
+  
+  <div class="main container" style="font-size: 0.8rem">
+    <router-view></router-view>
   </div>
-  <div class="row">
 
-    <div class="container-fluid">
-      <router-view>
-
-      </router-view>
-    </div>
-
-    <!-- </div> -->
-
-
-
-    <aut-scrollup style="background-color: #753B85;" class="btn-info" threshold="1000">
-      <i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
-    </aut-scrollup>
-
-    <!-- <main-footer></main-footer> -->
+  <main-footer></main-footer>
+  
 </template>
