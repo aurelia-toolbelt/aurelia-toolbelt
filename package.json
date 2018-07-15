@@ -8,7 +8,7 @@
     "build:core": "yarn workspace @aurelia-toolbelt/core run build",
     "build:jquery": "yarn workspace @aurelia-toolbelt/jquery run build",
 
-    "watch:admin-tmpl": "yarn workspace @aurelia-toolbelt/admin-template run watch",
+    "watch:dashboard": "yarn workspace @aurelia-toolbelt/dashboard run watch",
     "watch:bootstrap": "yarn workspace @aurelia-toolbelt/bootstrap run watch",
     "watch:bootstrap-plus": "yarn workspace @aurelia-toolbelt/bootstrap-plus run watch",
     "watch:components": "yarn workspace @aurelia-toolbelt/components run watch",
