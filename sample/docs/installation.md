@@ -11,7 +11,7 @@ yarn add aurelia-toolbelt@1.0.0-beta.1
 then use it in your ```main.ts``` or ```boot.ts``` like the following:
 
 ```js
-aurelia.plugin(PLATFORM.moduleName('aurelia-toolbelt'));
+aurelia.use.plugin(PLATFORM.moduleName('aurelia-toolbelt'));
 ```
 
 

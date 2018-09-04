@@ -19,7 +19,7 @@ you already know how to enable the whole plugin features, you may want to enable
 
 **e.g.** _You need use only and only bootstrap components within the package:_
 ```js
-aurelia.plugin(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap'));
+aurelia.use.plugin(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap'));
 ```
 
 that's all. may I say as simple as possible? thanks.
