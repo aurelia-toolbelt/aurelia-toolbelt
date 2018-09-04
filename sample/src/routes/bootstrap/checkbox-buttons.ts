@@ -33,7 +33,6 @@ export class CheckboxButtons {
   ];
 
   private selectedProductsObject = [];
-  
 
 
   // array of objects with matcher
