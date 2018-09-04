@@ -1,5 +1,5 @@
 
-you should registered the plugin beforehand
+You should have registered the plugin beforehand
 
 ```js
 aurelia.use.plugin(PLATFORM.moduleName('aurelia-toolbelt'));
