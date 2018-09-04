@@ -1,0 +1,112 @@
+<template>
+  <div class="container">
+
+    <form>
+      
+      <h4>Booleans</h4>
+
+      <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
+
+        <abt-checkbox-button type="checkbox" checked.bind="motherboard"> Motherboard</abt-checkbox-button>
+        <abt-checkbox-button type="checkbox" checked.bind="cpu"> CPU</abt-checkbox-button>
+        <abt-checkbox-button type="checkbox" checked.bind="memory"> Memory</abt-checkbox-button>
+
+      </abt-button-group>
+
+      <br /> motherboard = ${motherboard}
+      <br/> cpu = ${cpu}
+      <br/> memory = ${memory}
+      <br/>
+    </form>
+
+    <hr />
+
+    <form>
+      <h4>Array of Strings</h4>
+
+      
+          <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
+
+            <abt-checkbox-button repeat.for="product of products" value.bind="product" checked.bind="selectedProducts"> ${product}
+          </abt-checkbox-button>
+
+        
+      </abt-button-group>
+      
+      <br /> Selected products: ${selectedProducts}
+
+    </form>
+
+
+    <hr />
+
+    <form>
+      <h4>Array of Numbers</h4>
+      
+          <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
+        
+          <abt-checkbox-button repeat.for="product of otherProducts"  model.bind="product.id" checked.bind="selectedProductIds">
+            ${product.name}
+          </abt-checkbox-button>
+        </abt-button-group>
+
+      <br /> Selected product IDs: ${selectedProductIds}
+    </form>
+    
+    
+    <hr />
+    
+    
+    <form>
+      <h4>Array Of objects</h4>
+       
+      <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
+          <abt-checkbox-button repeat.for="product of productsObject" model.bind="product" checked.bind="selectedProductsObject"> ${product.id} - ${product.name}
+          </abt-checkbox-button>
+        </abt-button-group>
+
+      Selected products:
+      <ul>
+        <li repeat.for="product of selectedProductsObject">${product.id} - ${product.name}</li>
+      </ul>
+    </form>
+    
+    
+    <hr />
+       
+    
+    <form>
+      <h4>Array of objects With Matcher</h4>
+      
+      <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
+      <abt-checkbox-button model.bind="mymotherBoard" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
+        Motherboard
+      </abt-checkbox-button>
+      
+      
+      <abt-checkbox-button model.bind="mycpu" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher"> CPU
+      </abt-checkbox-button>
+      
+      
+      <abt-checkbox-button model.bind="mymemory" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
+        Memory
+      </abt-checkbox-button>
+    </abt-button-group>
+
+      Selected products:
+      <ul>
+        <li repeat.for="product of selectedProductsMatcher">${product.id} - ${product.name}</li>
+      </ul>
+      
+      
+    </form>
+
+
+  </div>
+
+  <hr>
+  <br />
+  <br />
+  <br />
+
+</template>

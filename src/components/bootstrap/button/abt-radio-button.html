@@ -1,0 +1,14 @@
+<template>
+
+    
+      <label click.delegate="changed()" class="abt-radio-button btn 
+        ${state ? 'active' : ''}
+        btn-${bsType} 
+        ${class}"
+      css="${style}">
+      <!-- <input ref="radioButton" type="radio" name.bind="name" disabled.bind="disabled" change.delegate="changed()" /> -->
+        <input ref="radioButton"  id="${id}" type="radio" checked.bind="checked" name.bind="name" disabled.bind="disabled" autocomplete="off">
+        <slot></slot>
+      </label>
+
+</template>

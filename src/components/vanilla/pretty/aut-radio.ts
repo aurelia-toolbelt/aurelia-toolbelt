@@ -52,12 +52,13 @@ export class PrettyRadioButtonCustomElement {
       : this.value;
   }
 
-  private checkedChanged() { // public: Array|undefined, Array|undefined
-    // subscribe to the current array's mutation
+  // *********sounds useless  ************
+  // private checkedChanged() { // public: Array|undefined, Array|undefined
+  //   // subscribe to the current array's mutation
 
-    this.synchronizeView();
-  }
-
+  //   this.synchronizeView();
+  // }
+/***************************************** */
   private synchronizeView() { // private
     if (this.model !== undefined) {
       this.radioButton.checked = this.matcher

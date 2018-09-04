@@ -85,7 +85,17 @@ export class BootstrapRoute {
         nav: true,
         title: 'Carousel',
         settings: { auth: false, isComponent: true }
-      }, {
+      },
+      {
+        route: ['checkbox-buttons'],
+        name: 'bootstrap-checkbox-buttons',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/checkbox-buttons'),
+        nav: true,
+        title: 'Selectable Buttons',
+        settings: { auth: false, isComponent: true }
+      },
+      {
         route: ['collapse'],
         name: 'bootstrap-collapse',
 

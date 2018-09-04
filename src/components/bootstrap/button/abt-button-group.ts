@@ -14,15 +14,18 @@ export class BootstrapButtonGroup {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
 
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public toggle: boolean | string = false;
+
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public vertical: boolean | string = false;
 
-  constructor(private element: Element) {
-
-  }
+  constructor(private element: Element) { }
 
   private attached() {
     const onlyVerticalAttribute = (this.vertical === '' && this.element.hasAttribute('vertical'));
     this.vertical = onlyVerticalAttribute || this.vertical === 'true' || this.vertical === true;
+
+    const onlyisToggleAttribute = (this.toggle === '' && this.element.hasAttribute('toggle'));
+    this.toggle = onlyisToggleAttribute || this.toggle === 'true' || this.toggle === true;
   }
 
 }
