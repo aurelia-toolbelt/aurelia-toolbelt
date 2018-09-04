@@ -1,8 +1,265 @@
 <template>
-    <div class="container">
-  
-  
-      <h4>No Binding</h4>
+  <div class="container">
+
+    <fieldset class="mb-5">
+      <legend>
+        <h2>Radio Buttons
+          <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/button/abt-radio-button.ts">
+            <i class="fa fa-link"></i>
+          </a>
+        </h2>
+      </legend>
+
+      <p>
+        You can have Radio Buttons resembling a group of buttons.
+      </p>
+
+    </fieldset>
+
+    <fieldset class="mt-5">
+      <legend>
+        Usage
+      </legend>
+
+      <aut-mark-down src="./docs/components/bootstrap/radio-buttons/usage.md">
+      </aut-mark-down>
+
+    </fieldset>
+
+    <hr />
+
+    <h4>
+
+      <p>
+        Following samples are based on <a href="https://aurelia.io/docs/binding/radios">
+          samples
+        </a> on aurelia.io
+      </p>
+
+    </h4>
+
+
+
+    <fieldset class="mt-5">
+      <legend>
+        Numbers
+      </legend>
+
+      <abt-card>
+        <abt-card-body>
+
+          <div class="container">
+
+            <div class="row">
+              <div class="col-sm-6">
+                <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
+                  <abt-radio-button repeat.for="product of products" name="group1" model.bind="product.id" checked.bind="selectedProductId">
+                    ${product.id} - ${product.name}
+                  </abt-radio-button>
+                </abt-button-group>
+              </div>
+              <div class="col-sm-6">
+                Selected product: <b>${selectedProductId}</b>
+              </div>
+            </div>
+
+          </div>
+        </abt-card-body>
+        <abt-card-footer>
+          <abt-navs tabs>
+            <abt-nav-item title="View" active>
+              <aut-mark-down src="./docs/components/bootstrap/radio-buttons/dynamic-numbers.md">
+              </aut-mark-down>
+            </abt-nav-item>
+            <abt-nav-item title="ViewModel">
+              <aut-mark-down src="./docs/components/bootstrap/radio-buttons/dynamic-numbers-ts.md">
+              </aut-mark-down>
+            </abt-nav-item>
+          </abt-navs>
+        </abt-card-footer>
+      </abt-card>
+    </fieldset>
+
+    <fieldset class="mt-5">
+      <legend>
+        Objects
+      </legend>
+
+      <abt-card>
+        <abt-card-body>
+
+          <div class="container">
+
+            <div class="row">
+              <div class="col-sm-6">
+                <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
+                  <abt-radio-button color="danger-o" repeat.for="product of products" name="group2" model.bind="product"
+                    checked.bind="selectedProductObject">
+                    ${product.id} - ${product.name}
+                  </abt-radio-button>
+                </abt-button-group>
+              </div>
+              <div class="col-sm-6">
+                Selected product: <b>
+
+                  ${selectedProductObject.id} - ${selectedProductObject.name}
+                </b>
+              </div>
+            </div>
+
+          </div>
+        </abt-card-body>
+        <abt-card-footer>
+          <abt-navs tabs>
+            <abt-nav-item title="View" active>
+              <aut-mark-down src="./docs/components/bootstrap/radio-buttons/dynamic-objects.md">
+              </aut-mark-down>
+            </abt-nav-item>
+            <abt-nav-item title="ViewModel">
+              <aut-mark-down src="./docs/components/bootstrap/radio-buttons/dynamic-objects-ts.md">
+              </aut-mark-down>
+            </abt-nav-item>
+          </abt-navs>
+        </abt-card-footer>
+      </abt-card>
+    </fieldset>
+
+
+    <fieldset class="mt-5">
+      <legend>
+        Objects with Matchers
+      </legend>
+
+      <abt-card>
+        <abt-card-body>
+
+          <div class="container">
+
+            <div class="row">
+              <div class="col-sm-6">
+                <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
+                  <abt-radio-button switch name="group3" color="info" model.bind="products[0]" matcher.bind="productMatcher"
+                    checked.bind="selectedProductMatcher">
+                    Motherboard</abt-radio-button>
+                  <abt-radio-button switch color="warning" name="group3" model.bind="products[1]" matcher.bind="productMatcher"
+                    checked.bind="selectedProductMatcher">
+                    CPU</abt-radio-button>
+                  <abt-radio-button switch color="success" name="group3" model.bind="products[2]" matcher.bind="productMatcher"
+                    checked.bind="selectedProductMatcher">
+                    Memory</abt-radio-button>
+                </abt-button-group>
+              </div>
+              <div class="col-sm-6">
+                Selected product: <b>
+                  ${selectedProductMatcher.id} - ${selectedProductMatcher.name}
+                </b>
+              </div>
+            </div>
+
+          </div>
+        </abt-card-body>
+        <abt-card-footer>
+          <abt-navs tabs>
+            <abt-nav-item title="View" active>
+              <aut-mark-down src="./docs/components/bootstrap/radio-buttons/dynamic-matchers.md">
+              </aut-mark-down>
+            </abt-nav-item>
+            <abt-nav-item title="ViewModel">
+              <aut-mark-down src="./docs/components/bootstrap/radio-buttons/dynamic-matchers-ts.md">
+              </aut-mark-down>
+            </abt-nav-item>
+          </abt-navs>
+        </abt-card-footer>
+      </abt-card>
+    </fieldset>
+
+    <fieldset class="mt-5">
+      <legend>
+        Booleans
+      </legend>
+
+      <abt-card>
+        <abt-card-body>
+          <div class="container">
+            <h5>(boolean values ) &nbsp; Do you like cake?</h5>
+            <hr />
+            <div class="row">
+              <div class="col-sm-6">
+                <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
+                  <abt-radio-button name="group4" model.bind="null" checked.bind="likesCake"> Don't Know</abt-radio-button>
+                  <abt-radio-button name="group4" model.bind="true" checked.bind="likesCake" color="success-o"> Yes</abt-radio-button>
+                  <abt-radio-button name="group4" model.bind="false" checked.bind="likesCake" color="danger-o"> No</abt-radio-button>
+                </abt-button-group>
+              </div>
+              <div class="col-sm-6">
+                  likesCake = <b>${likesCake}</b>
+                </div>
+            </div>
+          </div>
+        </abt-card-body>
+        <abt-card-footer>
+          <abt-navs tabs>
+            <abt-nav-item title="View" active>
+              <aut-mark-down src="./docs/components/bootstrap/radio-buttons/dynamic-booleans.md">
+              </aut-mark-down>
+            </abt-nav-item>
+            <abt-nav-item title="ViewModel">
+              <aut-mark-down src="./docs/components/bootstrap/radio-buttons/dynamic-booleans-ts.md">
+              </aut-mark-down>
+            </abt-nav-item>
+          </abt-navs>
+        </abt-card-footer>
+      </abt-card>
+    </fieldset>
+
+    <fieldset class="mt-5">
+      <legend>
+        Array of Strings
+      </legend>
+
+      <abt-card>
+        <abt-card-body>
+
+          <div class="container">
+
+            <div class="row">
+              <div class="col-sm-6">
+                  <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
+                      <abt-radio-button switch slim color="info" repeat.for="product of productsString" name="group5" value.bind="product"
+                        checked.bind="selectedProductString">
+                        ${product}
+                      </abt-radio-button>
+                    </abt-button-group>
+              </div>
+              <div class="col-sm-6">
+                Selected product: <b> ${selectedProductString}</b>
+              </div>
+            </div>
+
+          </div>
+        </abt-card-body>
+        <abt-card-footer>
+          <abt-navs tabs>
+            <abt-nav-item title="View" active>
+              <aut-mark-down src="./docs/components/bootstrap/radio-buttons/dynamic-strings.md">
+              </aut-mark-down>
+            </abt-nav-item>
+            <abt-nav-item title="ViewModel">
+              <aut-mark-down src="./docs/components/bootstrap/radio-buttons/dynamic-strings-ts.md">
+              </aut-mark-down>
+            </abt-nav-item>
+          </abt-navs>
+        </abt-card-footer>
+      </abt-card>
+    </fieldset>
+
+  </div>
+
+</template>
+
+
+
+<!-- <h4>No Binding</h4>
       <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
 
       <abt-radio-button name="programmer">
@@ -13,80 +270,4 @@
         Hamed
       </abt-radio-button>
 
-    </abt-button-group>
-  
-      <hr />
-  
-      <form>
-        <h4>Numbers</h4>
-        <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
-        <abt-radio-button repeat.for="product of products" name="group1" model.bind="product.id" checked.bind="selectedProductId">
-          ${product.id} - ${product.name}
-        </abt-radio-button>
-      </abt-button-group>
-        <br /> Selected product ID: ${selectedProductId}
-      </form>
-  
-  
-      <hr />
-  
-      <form>
-        <h4>Objects</h4>
-        <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
-        <abt-radio-button color="danger-o" repeat.for="product of products" name="group2" model.bind="product" checked.bind="selectedProductObject">
-          ${product.id} - ${product.name}
-        </abt-radio-button>
-      </abt-button-group>
-  
-        Selected product: ${selectedProductObject.id} - ${selectedProductObject.name}
-      </form>
-  
-      <hr />
-  
-  
-      <form>
-        <h4>Matcher</h4>
-        <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
-        <abt-radio-button switch name="group3" color="info" model.bind="products[0]" matcher.bind="productMatcher" checked.bind="selectedProductMatcher">
-          Matcher - Motherboard</abt-radio-button>
-        <abt-radio-button switch color="warning" name="group3" model.bind="products[1]" matcher.bind="productMatcher" checked.bind="selectedProductMatcher">
-          Matcher - CPU</abt-radio-button>
-        <abt-radio-button switch color="success" name="group3" model.bind="products[2]" matcher.bind="productMatcher" checked.bind="selectedProductMatcher">
-          Matcher - Memory</abt-radio-button>
-        </abt-button-group>
-
-        Selected product: ${selectedProductMatcher.id} - ${selectedProductMatcher.name}
-      </form>
-  
-  
-      <hr />
-  
-      <form>
-        <h4>(boolean values )Do you like cake?</h4>
-        <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
-          <abt-radio-button name="group4" model.bind="null" checked.bind="likesCake"> Don't Know</abt-radio-button>
-          <abt-radio-button name="group4" model.bind="true" checked.bind="likesCake" color="success-o"> Yes</abt-radio-button>
-          <abt-radio-button name="group4" model.bind="false" checked.bind="likesCake" color="danger-o"> No</abt-radio-button>
-   </abt-button-group>
-        likesCake = ${likesCake}
-      </form>
-  
-      <hr />
-  
-      <form>
-        <h4>Strings</h4>
-        <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
-        <abt-radio-button switch slim color="info" repeat.for="product of productsString" name="group5" value.bind="product" checked.bind="selectedProductstring">
-          String - ${product}
-        </abt-radio-button>
-      </abt-button-group>
-        <br /> Selected product: ${selectedProductstring}
-      </form>
-  
-      <br />
-      <br />
-      <br />
-  
-  
-
-</template>
+    </abt-button-group> -->

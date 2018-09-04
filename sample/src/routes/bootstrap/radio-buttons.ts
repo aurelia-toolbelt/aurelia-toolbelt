@@ -1,6 +1,5 @@
 
-
-export class CheckboxButtons {
+export class RadioButtons {
 
 
   // booleans
@@ -25,7 +24,7 @@ export class CheckboxButtons {
   // strings
 
   private productsString = ['Motherboard', 'CPU', 'Memory'];
-  private selectedProductstring = null;
+  private selectedProductString = 'Memory';
 
   // matcher
 
