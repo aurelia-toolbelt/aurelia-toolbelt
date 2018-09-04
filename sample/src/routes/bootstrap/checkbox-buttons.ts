@@ -36,11 +36,9 @@ export class CheckboxButtons {
 
 
   // array of objects with matcher
-
-
-  private mymotherBoard: any = { id: 0, name: 'Motherboard' };
-  private mycpu = { id: 1, name: 'CPU' };
-  private mymemory: any = { id: 2, name: 'Memory' };
+  private myMotherBoard = { id: 0, name: 'Motherboard' };
+  private myCpu = { id: 1, name: 'CPU' };
+  private myMemory = { id: 2, name: 'Memory' };
 
   private selectedProductsMatcher = [
     { id: 1, name: 'CPU' },
