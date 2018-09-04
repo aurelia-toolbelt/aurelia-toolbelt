@@ -13,6 +13,8 @@ export function configure(config: FrameworkConfiguration) {
     , PLATFORM.moduleName('./abt-toolbar')
     , PLATFORM.moduleName('./abt-button-group')
     , PLATFORM.moduleName('./abt-link-button')
+    , PLATFORM.moduleName('./abt-checkbox-button')
+    , PLATFORM.moduleName('./abt-radio-button')
   ]);
 
 }

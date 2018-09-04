@@ -1,0 +1,281 @@
+<template>
+
+
+
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Checkbox Buttons
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/button/abt-checkbox-button.ts">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+
+    <p>
+      You can have checkboxes resembling a group of buttons.
+    </p>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+
+    <aut-mark-down src="./docs/components/bootstrap/checkbox-buttons/usage.md">
+    </aut-mark-down>
+
+  </fieldset>
+
+  <hr />
+
+  <h4>
+
+    <p>
+      Following samples are based on <a href="https://aurelia.io/docs/binding/checkboxes">
+        samples
+      </a> on aurelia.io
+    </p>
+
+  </h4>
+
+  <fieldset class="mt-5">
+    <legend>
+      Booleans
+    </legend>
+
+    <abt-card>
+
+      <abt-card-body>
+
+        <div class="container">
+
+          <abt-button-group toggle>
+            <abt-checkbox-button checked.bind="motherboard">Motherboard</abt-checkbox-button>
+            <abt-checkbox-button checked.bind="cpu"> CPU</abt-checkbox-button>
+            <abt-checkbox-button checked.bind="memory"> Memory</abt-checkbox-button>
+          </abt-button-group>
+
+          <br />
+          <hr />
+          <br />
+
+          <div class="row container">
+            <ul class="col-sm-3">
+              <li>Motherboard = ${motherboard}</li>
+              <li>CPU = ${cpu}</li>
+              <li>Memory = ${memory}</li>
+            </ul>
+            <div class="col-sm-3">
+              <ul>
+                <li>
+                  <label><input type="checkbox" checked.bind="motherboard"> Motherboard</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" checked.bind="cpu"> CPU</label>
+                </li>
+                <li>
+
+                  <label><input type="checkbox" checked.bind="memory"> Memory</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </abt-card-body>
+      <abt-card-footer>
+        <abt-navs tabs>
+          <abt-nav-item title="View" active>
+            <aut-mark-down src="./docs/components/bootstrap/checkbox-buttons/dynamic-booleans.md">
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/checkbox-buttons/dynamic-booleans-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
+      </abt-card-footer>
+    </abt-card>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Array of Strings
+    </legend>
+
+    <abt-card>
+      <abt-card-body>
+
+        <div class="container">
+
+          <div class="row">
+            <div class="col-sm-6">
+              <abt-button-group toggle>
+                <abt-checkbox-button repeat.for="product of products" value.bind="product" checked.bind="selectedProducts">
+                  ${product}
+                </abt-checkbox-button>
+              </abt-button-group>
+            </div>
+            <div class="col-sm-6">
+              Selected products: <b>${selectedProducts}</b>
+            </div>
+          </div>
+
+        </div>
+      </abt-card-body>
+      <abt-card-footer>
+        <abt-navs tabs>
+          <abt-nav-item title="View" active>
+            <aut-mark-down src="./docs/components/bootstrap/checkbox-buttons/dynamic-strings.md">
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/checkbox-buttons/dynamic-strings-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
+      </abt-card-footer>
+    </abt-card>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Array of Numbers
+    </legend>
+
+    <abt-card>
+      <abt-card-body>
+
+        <div class="container">
+
+          <div class="row">
+            <div class="col-sm-6">
+              <abt-button-group size="sm" toggle>
+                <abt-checkbox-button repeat.for="product of otherProducts" model.bind="product.id" checked.bind="selectedProductIds">
+                  ${product.name}
+                </abt-checkbox-button>
+              </abt-button-group>
+            </div>
+            <div class="col-sm-6">
+              Selected products: <b>${selectedProductIds}</b>
+            </div>
+          </div>
+
+        </div>
+      </abt-card-body>
+      <abt-card-footer>
+        <abt-navs tabs>
+          <abt-nav-item title="View" active>
+            <aut-mark-down src="./docs/components/bootstrap/checkbox-buttons/dynamic-numbers.md">
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/checkbox-buttons/dynamic-numbers-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
+      </abt-card-footer>
+    </abt-card>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Array Of Objects
+    </legend>
+
+    <abt-card>
+      <abt-card-body>
+
+        <div class="container">
+
+          <div class="row">
+            <div class="col-sm-6">
+              <abt-button-group class="mr-2" size="sm" toggle>
+                <abt-checkbox-button repeat.for="product of productsObject" model.bind="product" checked.bind="selectedProductsObject">
+                  ${product.id} - ${product.name}
+                </abt-checkbox-button>
+              </abt-button-group>
+            </div>
+            <div class="col-sm-6">
+              Selected products:
+              <ul>
+                <li repeat.for="product of selectedProductsObject">${product.id} - ${product.name}</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </abt-card-body>
+      <abt-card-footer>
+        <abt-navs tabs>
+          <abt-nav-item title="View" active>
+            <aut-mark-down src="./docs/components/bootstrap/checkbox-buttons/dynamic-objects.md">
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/checkbox-buttons/dynamic-objects-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
+      </abt-card-footer>
+    </abt-card>
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Array Of Objects with Matchers
+    </legend>
+
+    <abt-card>
+      <abt-card-body>
+
+        <div class="container">
+
+          <div class="row">
+            <div class="col-sm-6">
+              <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
+
+                <abt-checkbox-button model.bind="myMotherBoard" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
+                  Motherboard
+                </abt-checkbox-button>
+
+                <abt-checkbox-button model.bind="myCpu" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
+                  CPU
+                </abt-checkbox-button>
+
+                <abt-checkbox-button model.bind="myMemory" matcher.bind="productMatcher" checked.bind="selectedProductsMatcher">
+                  Memory
+                </abt-checkbox-button>
+              </abt-button-group>
+            </div>
+            <div class="col-sm-6">
+              Selected products:
+              <ul>
+                <li repeat.for="product of selectedProductsMatcher">${product.id} - ${product.name}</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </abt-card-body>
+      <abt-card-footer>
+        <abt-navs tabs>
+          <abt-nav-item title="View" active>
+            <aut-mark-down src="./docs/components/bootstrap/checkbox-buttons/dynamic-matchers.md">
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/checkbox-buttons/dynamic-matchers-ts.md">
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
+      </abt-card-footer>
+    </abt-card>
+  </fieldset>
+
+
+
+  </div>
+
+</template>

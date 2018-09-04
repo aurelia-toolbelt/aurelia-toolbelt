@@ -1,0 +1,13 @@
+<template>
+
+    
+      <label  click.delegate="changed()" class="abt-checkbox-button btn 
+        ${state ? 'active' : ''}
+        btn-${bsType} 
+        ${class}"
+      css="${style}">
+        <input id="${id}" type="checkbox" checked.bind="state" disabled.bind="disabled"   autocomplete="off">
+        <slot></slot>
+      </label>
+
+</template>

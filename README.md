@@ -26,7 +26,7 @@ or
 2. use the plugin:
 
 ```js
-aurelia.use(PLATFORM.moduleName('aurelia-toolbelt'));
+aurelia.use.plugin(PLATFORM.moduleName('aurelia-toolbelt'));
 ```
 
 * Checkout the [documentation](https://aurelia-toolbelt.github.io) for more detail.

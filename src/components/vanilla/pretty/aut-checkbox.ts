@@ -10,7 +10,6 @@ import {
 @customElement('aut-checkbox')
 export class PrettyCheckboxCustomElement {
 
-
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public model: any;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public checked: any;

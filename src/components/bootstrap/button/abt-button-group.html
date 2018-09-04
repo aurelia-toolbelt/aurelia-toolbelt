@@ -1,6 +1,6 @@
 <template>
-  <div id="${id}" class="btn-group ${class} btn-group-${size} ${vertical?'btn-group-vertical':''} abt-button-group" role="group" css="${style}"
-    aria-label="${label}">
+  <div id="${id}" class="btn-group ${class} btn-group-${size} ${toggle ? 'btn-group-toggle':''} ${vertical?'btn-group-vertical':''} abt-button-group" role="group" css="${style}"
+    aria-label="${label}" data-toggle="${toggle ? 'buttons' : ''}">
 
     <slot>
 

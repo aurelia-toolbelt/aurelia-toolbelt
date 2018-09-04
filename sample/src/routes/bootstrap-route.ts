@@ -85,7 +85,17 @@ export class BootstrapRoute {
         nav: true,
         title: 'Carousel',
         settings: { auth: false, isComponent: true }
-      }, {
+      },
+      {
+        route: ['checkbox-buttons'],
+        name: 'bootstrap-checkbox-buttons',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/checkbox-buttons'),
+        nav: true,
+        title: 'Selectable Buttons',
+        settings: { auth: false, isComponent: true }
+      },
+      {
         route: ['collapse'],
         name: 'bootstrap-collapse',
 
@@ -187,7 +197,18 @@ export class BootstrapRoute {
         nav: true,
         title: 'Progressbar',
         settings: { auth: false, isComponent: true }
+      }
+      ,
+      {
+        route: ['radio-buttons'],
+        name: 'bootstrap-radio-buttons',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/radio-buttons'),
+        nav: true,
+        title: 'Selectable Buttons',
+        settings: { auth: false, isComponent: true }
       },
+
       {
         route: ['star-rate'],
         name: 'bootstrap-star-rate',

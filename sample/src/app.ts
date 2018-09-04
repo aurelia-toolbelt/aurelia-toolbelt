@@ -93,6 +93,10 @@ export class App {
             {
               route: 'card',
               title: 'Card'
+            },
+            {
+              route: 'checkbox-buttons',
+              title: 'Checkbox Buttons'
             }
             ,
             {
@@ -137,6 +141,10 @@ export class App {
             },
             {
               route: 'progress', title: 'Progressbar'
+            },
+            {
+              route: 'radio-buttons',
+              title: 'Radio Buttons'
             },
             {
               route: 'star-rate', title: 'Star Rate'
