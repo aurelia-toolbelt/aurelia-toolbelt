@@ -17,11 +17,11 @@
 
 1. run
 
-```npm install aurelia-toolbelt@1.0.0```
+```npm install aurelia-toolbelt```
 
 or
 
-```yarn add aurelia-toolbelt@1.0.0```
+```yarn add aurelia-toolbelt```
 
 2. use the plugin:
 
