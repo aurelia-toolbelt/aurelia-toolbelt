@@ -1,3 +1,7 @@
 jspm_packages
 bower_components
 .idea
+sample
+.vscode
+
+logo*.png
