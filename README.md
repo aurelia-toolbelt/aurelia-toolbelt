@@ -3,7 +3,7 @@
 * You can find documentation and demo [here](https://aurelia-toolbelt.github.io/)
 
 * We tried not to invent the wheel, but to utilise the existing libraries out there in js world, for [Aurelia](http://aurelia.io). What ever we used or inspired from will definitely have a reference to the original repository or website.
-* [Bootstrap](http://getbootstrap.com/docs/4.0/getting-started/introduction/) **v 4.0.0** components,are almost ready for production, however we are still reviewing all of them and there is an alpha npm package [here](https://www.npmjs.com/package/aurelia-toolbelt).
+* [Bootstrap](http://getbootstrap.com/docs/4.0/getting-started/introduction/) **v 4.0.0** components,are almost ready for production, however we are always reviewing them and there is an npm package [here](https://www.npmjs.com/package/aurelia-toolbelt).
 
 ## A bunch of tools for creating rich aurelia applications. :wink:
 
