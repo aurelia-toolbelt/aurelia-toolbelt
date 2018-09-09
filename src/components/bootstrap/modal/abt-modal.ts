@@ -1,8 +1,8 @@
-import { bindingMode, bindable, containerless, customElement, inject } from 'aurelia-framework';
+import { bindingMode, bindable, containerless, customElement, inject, TaskQueue } from 'aurelia-framework';
 
 import * as $ from 'jquery';
 
-@inject(Element)
+@inject(Element, TaskQueue)
 // @containerless()
 @customElement('abt-modal')
 export class BootstrapModal {
@@ -29,13 +29,11 @@ export class BootstrapModal {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsHidden: Function;
 
 
-
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public data: any;
 
   private modal: HTMLDivElement;
 
-  constructor(private element: Element) {
-
-  }
+  constructor(private element: Element, private taskQueue: TaskQueue) { }
 
   private setOpenerProperties(open: any) {
 
@@ -90,6 +88,13 @@ export class BootstrapModal {
 
   }
 
+  private dismiss() {
+    this.element.dispatchEvent(new CustomEvent(`dismiss`, {
+      bubbles: true,
+      detail: this.data // or dismissReason
+    }));
+  }
+
   private visibleChanged(newValue: string | boolean) {
     let nv = Boolean(newValue);
 
@@ -136,6 +141,18 @@ export class BootstrapModal {
       show: false // this.show
     });
 
+    // we want to make sure that the modal is completely hidden ,before firing the dismiss event
+    // the bs-hidden event of the user will be called before dismiss
+    $(this.modal).on('hidden.bs.modal', () =>
+      this.dismiss()
+    );
+
+    this.taskQueue.queueTask(() => this.afterAttached());
+
+  }
+
+  private afterAttached() {
+    console.log(this.data);
   }
 
   private detached() {

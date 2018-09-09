@@ -7,6 +7,51 @@
 
   </style>
 
+  <hr />
+
+  <!-- <label>
+    First Name:
+  </label>
+  <input value.bind="author.firstName" />
+  <label>
+    Last Name:
+  </label>
+  <input value.bind="author.lastName" /> -->
+  <br /><br />
+
+  <ul>
+    <li repeat.for="usr of users">
+      ${usr.firstName} - ${usr.lastName}
+    </li>
+  </ul>
+
+  <abt-button id="btnPersonModal">
+    Show Person Modal
+  </abt-button>
+
+  <abt-modal dismiss.delegate="dismiss($event.detail)" open-by="btnPersonModal" data.bind="user">
+    <abt-modal-header>
+      A modal with dismiss event handled
+    </abt-modal-header>
+    <abt-modal-body>
+      <div>
+        <label>
+          First Name:
+        </label>
+        <input value.bind="user.firstName" />
+        <label>
+          Last Name:
+        </label>
+        <input value.bind="user.lastName" />
+      </div>
+    </abt-modal-body>
+  </abt-modal>
+
+  <hr />
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <!--
+
+
   <fieldset class="mb-5">
     <legend>
       <h2>Modals
@@ -33,7 +78,8 @@
       Live demo
     </legend>
     <p>
-      Toggle a working modal demo by clicking the button below. It will slide down and fade in from the top of the page.
+      Toggle a working modal demo by clicking the button below. It will slide down and fade in from the top of the
+      page.
     </p>
 
     <abt-card>
@@ -74,7 +120,8 @@
       Scrolling long content
     </legend>
     <p>
-      When modals become too long for the user’s viewport or device, they scroll independent of the page itself. Try the demo below
+      When modals become too long for the user’s viewport or device, they scroll independent of the page itself. Try
+      the demo below
       to see what we mean.
     </p>
 
@@ -93,33 +140,60 @@
           </abt-modal-header>
           <abt-modal-body>
             <div>
-              Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
-              risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur
-              et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed
-              consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
-              ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo
-              odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet
-              rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna,
-              vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
-              Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-              Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque
-              nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia
-              bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed
-              odio dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum.
-              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum
-              at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
-              laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
-              magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
-              Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-              Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque
-              nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia
-              bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed
-              odio dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum.
-              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum
-              at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
-              laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
-              magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+              Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget
+              quam. Morbi leo
+              risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl
+              consectetur
+              et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla
+              sed
+              consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui.
+              Donec
+              ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras
+              justo
+              odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at
+              eros.
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
+              laoreet
+              rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
+              magna,
+              vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor
+              fringilla.
+              Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget
+              quam.
+              Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel
+              scelerisque
+              nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean
+              lacinia
+              bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec
+              sed
+              odio dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet
+              fermentum.
+              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac,
+              vestibulum
+              at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel
+              augue
+              laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
+              cursus
+              magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor
+              fringilla.
+              Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget
+              quam.
+              Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel
+              scelerisque
+              nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean
+              lacinia
+              bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec
+              sed
+              odio dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet
+              fermentum.
+              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac,
+              vestibulum
+              at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel
+              augue
+              laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
+              cursus
+              magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor
+              fringilla.
 
             </div>
           </abt-modal-body>
@@ -162,9 +236,12 @@
           </abt-modal-header>
           <abt-modal-body>
             <div>
-              Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
-              risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur
-              et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed
+              Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget
+              quam. Morbi leo
+              risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl
+              consectetur
+              et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla
+              sed
               consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
 
             </div>
@@ -214,7 +291,8 @@
           <abt-modal-body>
             <h5>Popover in a modal</h5>
             <p>This
-              <a href="#/bootstrap/modal" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button
+              <a href="#/bootstrap/modal" role="button" class="btn btn-secondary popover-test" title="Popover title"
+                data-content="Popover body content is set in this attribute.">button
                 <abt-popover title="Popover title" placement='right'>
                   And here's some amazing content. It's very engaging. Right?
                 </abt-popover>
@@ -560,7 +638,8 @@
           </td>
           <td class="text-nowrap">oneTime</td>
           <td class="text-nowrap">true</td>
-          <td>Includes a modal-backdrop element. Alternatively, specify static for a backdrop which doesn't close the modal on
+          <td>Includes a modal-backdrop element. Alternatively, specify static for a backdrop which doesn't close the
+            modal on
             click.
           </td>
         </tr>
@@ -610,7 +689,8 @@
           <td class="text-nowrap"></td>
           <td>
             Attached the
-            <code>abt-modal</code> to a HTML element on the screen which can pop up the modal. This cannot be used in conjuction
+            <code>abt-modal</code> to a HTML element on the screen which can pop up the modal. This cannot be used in
+            conjuction
             with
             <code>visible</code> attribute.
           </td>
@@ -675,7 +755,8 @@
           <td class="text-nowrap">Function</td>
           <td class="text-nowrap">call ( relatedTarget )</td>
           <td class="text-nowrap"></td>
-          <td>This event is fired when the modal has been made visible to the user (will wait for CSS transitions to complete).
+          <td>This event is fired when the modal has been made visible to the user (will wait for CSS transitions to
+            complete).
             If caused by a click, the clicked element is available as the
             <code>relatedTarget</code> property of the event.
 
@@ -699,7 +780,8 @@
           <td class="text-nowrap">Function</td>
           <td class="text-nowrap">call</td>
           <td class="text-nowrap"></td>
-          <td>This event is fired when the modal has finished being hidden from the user (will wait for CSS transitions to complete).
+          <td>This event is fired when the modal has finished being hidden from the user (will wait for CSS transitions
+            to complete).
           </td>
         </tr>
 
@@ -906,6 +988,6 @@
     </table>
 
   </fieldset>
-
+-->
 
 </template>

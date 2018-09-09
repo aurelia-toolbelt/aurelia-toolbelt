@@ -2,12 +2,30 @@
 
 import { inject } from 'aurelia-framework';
 
+interface IUser {
+  firstName: String;
+  lastName: String;
+}
+
 // @inject(DialogService)
 export class BootstrapModalDemo {
 
 
   private showModal = false;
 
+  private user: IUser = { firstName: '', lastName: '' };
+  private users: Array<IUser> = [
+    { firstName: 'Saeed', lastName: 'Ganji' },
+    { firstName: 'Hamed', lastName: 'Fathi' }
+  ];
+
+  private dismiss(data: IUser) {
+    this.user = data;
+
+    let u = {};
+    Object.assign(u, data);
+    this.users.push(<IUser>u);
+  }
 
   // constructor(private ds: DialogService) {
 
@@ -34,5 +52,7 @@ export class BootstrapModalDemo {
   private hideEvent() {
     console.log('Modal hide');
   }
+
+
 
 }
