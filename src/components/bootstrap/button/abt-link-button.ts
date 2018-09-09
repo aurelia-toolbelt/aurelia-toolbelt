@@ -1,4 +1,5 @@
 import { customElement, inject, containerless, bindable, bindingMode } from 'aurelia-framework';
+import { relativeTimeThreshold } from 'moment';
 
 
 @inject(Element)
@@ -55,8 +56,8 @@ export class BootstrapLinkButton {
 
     this.task = Promise.resolve(this.click({ event: event, target: event.target }))
       .then(
-      () => this.clickCompleted(),
-      () => this.clickCompleted()
+        () => this.clickCompleted(),
+        () => this.clickCompleted()
       );
 
     return false;
