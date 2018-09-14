@@ -37,7 +37,7 @@
     "dependencies": {
         "aurelia-after-attached-plugin": "github:aurelia-ui-toolkits/aurelia-after-attached-plugin",
         "aurelia-bootstrapper": "2.1.1",
-        "aurelia-dialog": "^1.0.0-rc.2.0.0",
+        "aurelia-dialog": "2.0.0-rc.3",
         "aurelia-event-aggregator": "1.0.1",
         "aurelia-framework": "^1.1.5",
         "aurelia-http-client": "^1.2.1",

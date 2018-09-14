@@ -2,7 +2,7 @@ import { bindingMode, bindable, containerless, customElement, inject, TaskQueue 
 
 import * as $ from 'jquery';
 
-@inject(Element, TaskQueue)
+@inject(Element)
 // @containerless()
 @customElement('abt-modal')
 export class BootstrapModal {
@@ -29,11 +29,13 @@ export class BootstrapModal {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsHidden: Function;
 
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public data: any;
+  // @bindable({ defaultBindingMode: bindingMode.oneWay }) public data: any;
 
   private modal: HTMLDivElement;
 
-  constructor(private element: Element, private taskQueue: TaskQueue) { }
+  public jqModal: JQuery;
+
+  constructor(private element: Element) { }
 
   private setOpenerProperties(open: any) {
 
@@ -88,13 +90,6 @@ export class BootstrapModal {
 
   }
 
-  private dismiss() {
-    this.element.dispatchEvent(new CustomEvent(`dismiss`, {
-      bubbles: true,
-      detail: this.data // or dismissReason
-    }));
-  }
-
   private visibleChanged(newValue: string | boolean) {
     let nv = Boolean(newValue);
 
@@ -108,7 +103,7 @@ export class BootstrapModal {
   }
 
 
-  private attached() {
+  private attached(options: any) {
 
     this.animate = this.animate === true || this.animate === 'true';
     this.centered = this.centered === true || this.centered === 'true';
@@ -130,32 +125,24 @@ export class BootstrapModal {
         this.visible = false;
       });
     } else {
-      throw Error(`The 'abt-modal' should have either 'open-by' or 'visible' attribute`);
+      //  do not throw any more, since the modal can be called via DialogService
+      // throw Error(`The 'abt-modal' should have either 'open-by' or 'visible' attribute`);
     }
-
+    if (!options) {
+      options = {
+        backdrop: this.backdrop,
+        keyboard: this.keyboard,
+        focus: this.focus,
+        show: false // this.show
+      };
+    }
     // @ts-ignore
-    $(this.modal).modal({
-      backdrop: this.backdrop,
-      keyboard: this.keyboard,
-      focus: this.focus,
-      show: false // this.show
-    });
+    this.jqModal = $(this.modal).modal(options);
 
-    // we want to make sure that the modal is completely hidden ,before firing the dismiss event
-    // the bs-hidden event of the user will be called before dismiss
-    $(this.modal).on('hidden.bs.modal', () =>
-      this.dismiss()
-    );
-
-    this.taskQueue.queueTask(() => this.afterAttached());
-
-  }
-
-  private afterAttached() {
-    console.log(this.data);
   }
 
   private detached() {
+    console.log('SHG: detached called');
     $(this.modal).off('show.bs.modal');
     $(this.modal).off('shown.bs.modal');
     $(this.modal).off('hide.bs.modal');

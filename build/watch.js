@@ -23,8 +23,8 @@ var TypeHelper = require('../sample/node_modules/fuse-box-typechecker').TypeHelp
 
 // code we want injected so aurelia loads
 var injectBoostrapAndLoader = function () {
-  var loader = function () { }
-  loader.prototype.init = function (context) { }
+  var loader = function () {}
+  loader.prototype.init = function (context) {}
   loader.prototype.bundleEnd = function (context) {
     context.source.addContent(`FuseBox.import("fuse-box-aurelia-loader")`);
     context.source.addContent(`FuseBox.import("aurelia-bootstrapper")`);
@@ -116,15 +116,15 @@ gulp.task('fuse-sample', function () {
         + aurelia-fetch-client
         + aurelia-pal-browser
         + aurelia-animator-css
-        + aurelia-logging-console 
-        + aurelia-templating-binding 
-        + aurelia-templating-resources 
-        + aurelia-event-aggregator 
-        + aurelia-history-browser 
+        + aurelia-logging-console
+        + aurelia-templating-binding
+        + aurelia-templating-resources
+        + aurelia-event-aggregator
+        + aurelia-history-browser
         + aurelia-templating-router
         + aurelia-fetch-client
         + aurelia-http-client
-        + aurelia-after-attached-plugin
+        + aurelia-dialog
         + jalali-moment
         + moment-timezone
         + humanize-duration
@@ -169,7 +169,7 @@ gulp.task('fuse-sample', function () {
 
   // web server    
   fuse.dev({
-    open :false ,
+    open: false,
     root: './',
   });
 

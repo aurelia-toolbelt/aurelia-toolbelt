@@ -9,48 +9,6 @@
 
   <hr />
 
-  <!-- <label>
-    First Name:
-  </label>
-  <input value.bind="author.firstName" />
-  <label>
-    Last Name:
-  </label>
-  <input value.bind="author.lastName" /> -->
-  <br /><br />
-
-  <ul>
-    <li repeat.for="usr of users">
-      ${usr.firstName} - ${usr.lastName}
-    </li>
-  </ul>
-
-  <abt-button id="btnPersonModal">
-    Show Person Modal
-  </abt-button>
-
-  <abt-modal dismiss.delegate="dismiss($event.detail)" open-by="btnPersonModal" data.bind="user">
-    <abt-modal-header>
-      A modal with dismiss event handled
-    </abt-modal-header>
-    <abt-modal-body>
-      <div>
-        <label>
-          First Name:
-        </label>
-        <input value.bind="user.firstName" />
-        <label>
-          Last Name:
-        </label>
-        <input value.bind="user.lastName" />
-      </div>
-    </abt-modal-body>
-  </abt-modal>
-
-  <hr />
-  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-  <!--
-
 
   <fieldset class="mb-5">
     <legend>
@@ -539,6 +497,88 @@
   </fieldset>
 
 
+  <hr />
+
+
+  <fieldset class="mt-5">
+    <legend id="DialogServiceIntegration">
+      Integrate with <code>aurelia-dialog</code> plugin.
+    </legend>
+
+    <p>
+      Use <code>DialogService</code> and <code>DialogController</code> fro more complex scenarios.
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <abt-button id="btnPersonModal" click.call="openModal()">
+          Add New Developer
+        </abt-button>
+        <!-- <abt-listgroup class="sticky-top col-sm-6" style="border-bottom-style: none !important;">
+          <abt-listgroup-item repeat.for="dev of developers">
+            <span>
+              ${dev.firstName} - ${dev.lastName}
+            </span>
+            <button class="pull-right" click.delegate="deleteDeveloper(dev)">
+              Remove
+            </button>
+          </abt-listgroup-item>
+        </abt-listgroup> -->
+
+        <ul class="list-group col-sm-5">
+          <li class="list-group-item" repeat.for="dev of developers">
+            <span>
+              ${dev.firstName} - ${dev.lastName}
+            </span>
+            <button class="pull-right" click.delegate="deleteDeveloper(dev)">
+              Remove
+            </button>
+          </li>
+        </ul>
+
+      </abt-card-body>
+      <abt-card-footer>
+
+        <abt-navs tabs>
+          <abt-nav-item title="Parent" active>
+            <br />
+            <abt-navs pills vertical>
+              <abt-nav-item title="View" active>
+                <aut-mark-down src="./docs/components/bootstrap/modal/modal-parent.md">
+                </aut-mark-down>
+              </abt-nav-item>
+              <abt-nav-item title="ViewModel">
+                <aut-mark-down src="./docs/components/bootstrap/modal/modal-parent-ts.md">
+                </aut-mark-down>
+              </abt-nav-item>
+            </abt-navs>
+
+
+          </abt-nav-item>
+          <abt-nav-item title="Create Developer Modal">
+            <br />
+            <abt-navs pills vertical>
+              <abt-nav-item title="View" active>
+                <aut-mark-down src="./docs/components/bootstrap/modal/modal-create-user.md">
+                </aut-mark-down>
+              </abt-nav-item>
+              <abt-nav-item title="ViewModel">
+                <aut-mark-down src="./docs/components/bootstrap/modal/modal-create-user-ts.md">
+                </aut-mark-down>
+              </abt-nav-item>
+            </abt-navs>
+
+          </abt-nav-item>
+        </abt-navs>
+
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+
+
+
   <fieldset class="mt-5">
     <legend>
       Properties and Events
@@ -988,6 +1028,5 @@
     </table>
 
   </fieldset>
--->
 
 </template>

@@ -1,0 +1,33 @@
+<template>
+
+  <abt-modal centered.bind="true" size="lg">
+    <abt-modal-body>
+      <abt-alert type="danger">
+        <abt-alert-heading>
+          <h4>
+            <span class="fa fa-trash">
+            </span> Delete
+          </h4>
+        </abt-alert-heading>
+        <p>
+            &nbsp;&nbsp;
+            Are you sure you want to remove developer: ${dev.lastName}, ${dev.firstName}
+        </p>
+        <hr>
+
+      </abt-alert>
+    </abt-modal-body>
+
+    <abt-modal-footer>
+      <div class="pull-right">
+        <abt-button bs-type="primary" click.call="confirm()">Yes, sure</abt-button>
+        <abt-button bs-type="danger" click.call="cancel()">Hmm, No</abt-button>
+      </div>
+    </abt-modal-footer>
+
+  </abt-modal>
+
+
+  </abt-modal>
+
+</template>

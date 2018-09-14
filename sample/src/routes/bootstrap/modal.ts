@@ -1,49 +1,59 @@
-// import { DialogService, DialogController } from 'aurelia-dialog';
-
+import { DialogService, DialogController } from 'aurelia-dialog';
 import { inject } from 'aurelia-framework';
 
-interface IUser {
+export interface IDeveloper {
   firstName: String;
   lastName: String;
 }
-
-// @inject(DialogService)
+@inject(DialogService)
 export class BootstrapModalDemo {
-
 
   private showModal = false;
 
-  private user: IUser = { firstName: '', lastName: '' };
-  private users: Array<IUser> = [
+  private developers: Array<IDeveloper> = [
     { firstName: 'Saeed', lastName: 'Ganji' },
     { firstName: 'Hamed', lastName: 'Fathi' }
   ];
 
-  private dismiss(data: IUser) {
-    this.user = data;
+  constructor(private ds: DialogService) { }
 
-    let u = {};
-    Object.assign(u, data);
-    this.users.push(<IUser>u);
+  private openModal() {
+
+    this.ds.open({
+      viewModel: 'routes/bootstrap/modal-user-create.js',
+      view: 'routes/bootstrap/modal-user-create.html',
+      model: null
+    }).whenClosed(res => {
+      if (!res.wasCancelled) {
+        console.log(res.output);
+        this.developers.push(res.output);
+      }
+      return res;
+    }).then(x => {
+      console.log('Inside then: ' + x.wasCancelled);
+      // console.log(x.firstName);
+    });
   }
 
-  // constructor(private ds: DialogService) {
+  private deleteDeveloper(developer) {
+    let index = this.developers.findIndex(d => d.firstName === developer.firstName && d.lastName === developer.lastName);
 
-  // }
+    if (index >= -1) {
 
-  // private openModal() {
+      this.ds.open({
+        viewModel: 'routes/bootstrap/modal-prompt.js',
+        view: 'routes/bootstrap/modal-prompt.html',
+        model: developer
+      }).whenClosed(res => {
 
-  //   return new Promise((resolve, reject) => {
+        if (!res.wasCancelled) {
+          this.developers.splice(index, 1);
+        }
 
-  //     this.ds.open({
-  //       viewModel: 'routes/bootstrap/test-dialog.js',
-  //       view: 'routes/bootstrap/test-dialog.html',
-  //       model: { message: 'Hello Modal Integration' }
-  //     }).whenClosed(res => {
-  //       alert(res.wasCancelled);
-  //     });
-  //   });
-  // }
+      });
+
+    }
+  }
 
   private showEvent() {
     console.log('Modal show');
