@@ -10,7 +10,7 @@ import { injectCss } from '../../../decorators/inject-css';
 
 
 @singleton()
-@injectCss('aurelia-toolbelt/external-resources/css/toastr.css')
+// @injectCss('aurelia-toolbelt/external-resources/css/toastr.css')
 // @injectCss('../../../external-resources/css/toastr.css')
 export class ToastrService {
 
