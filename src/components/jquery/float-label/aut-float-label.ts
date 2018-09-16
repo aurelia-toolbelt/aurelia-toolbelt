@@ -3,7 +3,6 @@ import { inject, customElement, bindable, bindingMode, containerless, PLATFORM, 
 export type FloatInputDirection = 'rtl' | 'ltr';
 export type FloatInputSize = 'sm' | 'md' | 'lg';
 
-@useShadowDOM()
 @containerless()
 @customElement('aut-float-label')
 export class BootstrapFloatLabel {
@@ -17,6 +16,8 @@ export class BootstrapFloatLabel {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public direction: FloatInputDirection = 'ltr';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: FloatInputSize = 'md';
   private sizeClass: string = '';
+  private labelDirection: string = '';
+
   private floatInput: HTMLInputElement;
   private floatLabelTemplate: Element;
   private attached() {
@@ -24,7 +25,7 @@ export class BootstrapFloatLabel {
     let rtl = `.aut-float-label>.float-label { right: 10px; !important }`;
 
     this.sizeClass = this.size === 'sm' ? 'form-control-sm' : (this.size === 'lg' ? 'form-control-lg' : '');
-
+this.labelDirection = this.direction === 'ltr' ? 'aut-float-label-ltr':'aut-float-label-rtl';
     if ($('.aut-float-label input').length) {
       let aut_float_on_class = 'on';
       let aut_float_show_class = 'show';
@@ -46,8 +47,6 @@ export class BootstrapFloatLabel {
       .on('blur', function() {
           $(this).closest('.aut-float-label').find('.float-label').removeClass(aut_float_on_class);
       }).trigger('aut-check-value');
-
-      DOM.injectStyles(this.direction === 'rtl' ? rtl : ltr, null, null, 'aut-float-label-' + this.id || '' );
   }
   }
 }

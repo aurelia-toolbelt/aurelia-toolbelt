@@ -3,6 +3,13 @@
     padding: 10px;
 }
 
+.aut-float-label-rtl {right: 10px;
+}
+
+
+.aut-float-label-ltr {left: 10px;
+}
+
 .aut-float-label>.float-input {
     margin-top: 10px;
 }
@@ -19,6 +26,7 @@
     /* For Safari 3.1 to 6.0 */
     transition: top .5s ease-in-out, opacity .5s ease-in-out;
     opacity: 0;
+    font-size: 13px;
 }
 
 .aut-float-label>.float-label.show {
