@@ -1,0 +1,32 @@
+.aut-float-label {
+    position: relative;
+    padding: 10px;
+}
+
+.aut-float-label>.float-input {
+    margin-top: 10px;
+}
+
+.aut-float-label>.float-input:focus {
+    /*border-color: #f06d06;*/
+}
+
+.aut-float-label>.float-label {
+    position: absolute;
+    top: 3px;
+    background: rgba(255, 255, 255, .32);
+    -webkit-transition: top .5s ease-in-out, opacity .5s ease-in-out;
+    /* For Safari 3.1 to 6.0 */
+    transition: top .5s ease-in-out, opacity .5s ease-in-out;
+    opacity: 0;
+}
+
+.aut-float-label>.float-label.show {
+    color: #333;
+    top: -3px;
+    opacity: 1;
+}
+
+.aut-float-label>.float-label.on {
+    color: blue;
+}

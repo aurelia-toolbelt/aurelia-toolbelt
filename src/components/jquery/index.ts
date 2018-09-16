@@ -6,6 +6,7 @@ export function configure(config: FrameworkConfiguration) {
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/jquery/lazy-image/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/jquery/metis-menu/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/jquery/news-ticker/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/jquery/float-label/index'))
 
     ;
 }

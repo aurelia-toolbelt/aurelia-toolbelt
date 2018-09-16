@@ -207,11 +207,7 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
 
-"aurelia-after-attached-plugin@github:aurelia-ui-toolkits/aurelia-after-attached-plugin":
-  version "0.1.3"
-  resolved "https://codeload.github.com/aurelia-ui-toolkits/aurelia-after-attached-plugin/tar.gz/5eb11c72c502d22f35d76a7377855b6a606710e0"
-
-aurelia-binding@^2.0.0:
+aurelia-binding@^2.0.0, aurelia-binding@^2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/aurelia-binding/-/aurelia-binding-2.1.4.tgz#15c3cdfa94dddfa05505ca32ab0ab0e12ab7bdd9"
   dependencies:
@@ -246,15 +242,16 @@ aurelia-dependency-injection@^1.0.0:
     aurelia-metadata "^1.0.0"
     aurelia-pal "^1.0.0"
 
-aurelia-dialog@^1.0.0-rc.2.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/aurelia-dialog/-/aurelia-dialog-1.0.0.tgz#d28b9bb87539ba8f8ebcc299ce88a51cc4c07d1f"
+aurelia-dialog@^2.0.0-rc.3:
+  version "2.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/aurelia-dialog/-/aurelia-dialog-2.0.0-rc.3.tgz#1c1a911f2c91ed9c8d8c8c2f3f5acaa93683498d"
   dependencies:
+    aurelia-binding "^2.1.4"
     aurelia-dependency-injection "^1.0.0"
     aurelia-framework "^1.0.0"
     aurelia-metadata "^1.0.0"
     aurelia-pal "^1.0.0"
-    aurelia-templating "^1.0.0"
+    aurelia-templating "^1.8.2"
 
 aurelia-event-aggregator@1.0.1, aurelia-event-aggregator@^1.0.0:
   version "1.0.1"
@@ -406,6 +403,19 @@ aurelia-templating-router@^1.0.0:
 aurelia-templating@^1.0.0, aurelia-templating@^1.3.0, aurelia-templating@^1.8.1:
   version "1.8.2"
   resolved "https://registry.yarnpkg.com/aurelia-templating/-/aurelia-templating-1.8.2.tgz#8365c2a96dcbdbd60375f99d8ceded5b649d7ee1"
+  dependencies:
+    aurelia-binding "^2.0.0"
+    aurelia-dependency-injection "^1.0.0"
+    aurelia-loader "^1.0.0"
+    aurelia-logging "^1.0.0"
+    aurelia-metadata "^1.0.0"
+    aurelia-pal "^1.0.0"
+    aurelia-path "^1.0.0"
+    aurelia-task-queue "^1.1.0"
+
+aurelia-templating@^1.8.2:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/aurelia-templating/-/aurelia-templating-1.8.3.tgz#8c336cb5dc5cb26f23f2b3fd0fe8f56479f4ee0f"
   dependencies:
     aurelia-binding "^2.0.0"
     aurelia-dependency-injection "^1.0.0"
