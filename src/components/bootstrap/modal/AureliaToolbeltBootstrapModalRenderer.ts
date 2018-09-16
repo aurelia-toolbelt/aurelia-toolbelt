@@ -7,7 +7,7 @@ export class AureliaToolbeltBootstrapModalRenderer {
   private dialogs: Array<any> = [];
 
   constructor() {
-    console.log('Renderer created');
+    // console.log('Renderer created');
   }
 
   public getDialogContainer() {
