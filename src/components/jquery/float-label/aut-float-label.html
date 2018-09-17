@@ -1,10 +1,28 @@
 <template ref="floatLabelTemplate">
-  
-<require from="../../../custom-attributes/vanilla/uuid/aut-uuid"></require>
-<require from="./aut-float-label.css"></require>
 
-<div aut-uuid class="aut-float-label">
-    <input id="${id}"  ref="floatInput" type="${type}" class="form-control float-input ${class} ${sizeClass}" css="${style}" placeholder="${placeholder}"/>
-    <label for="${id}" ref="floatLabel" class="float-label ${labelDirection} ${labelClass}" css="${labelStyle}" ><slot></slot></label>
-</div>
+    <require from="../../../custom-attributes/vanilla/uuid/aut-uuid"></require>
+    <require from="./aut-float-label.css"></require>
+
+    <div
+        aut-uuid
+        css="${labelPaddingStyle}"
+        class="aut-float-label"
+    >
+        <input
+            id="${id}"
+            ref="floatInput"
+            type="${type}"
+            class="form-control float-input ${class} ${sizeClass}"
+            css="${style}"
+            placeholder="${placeholder}"
+        >
+        <label
+            for="${id}"
+            ref="floatLabel"
+            class="float-label ${labelDirection} ${labelClass}"
+            css="${labelStyle}"
+        >
+            <slot></slot>
+        </label>
+    </div>
 </template>
