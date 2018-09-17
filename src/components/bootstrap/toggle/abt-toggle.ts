@@ -43,10 +43,34 @@ export class BootstrapToggleCustomElement {
 
   private disabledChanged(newValue: boolean | string) {
     if (newValue) {
+
       this.checkbox.setAttribute('disabled', 'disabled');
+
+      if (this.checkbox.parentElement.children[1]) {
+
+        this.checkbox.parentElement.classList.add('disabled');
+        this.checkbox.parentElement.classList.add('disabled-cursor');
+
+        this.checkbox.parentElement.children[1].children[0].classList.add('disabled-cursor');
+        this.checkbox.parentElement.children[1].children[1].classList.add('disabled-cursor');
+        this.checkbox.parentElement.children[1].children[2].classList.add('disabled-cursor');
+      }
+
     } else {
       if (this.checkbox.hasAttribute('disabled')) {
+
         this.checkbox.removeAttribute('disabled');
+
+        if (this.checkbox.parentElement.children[1]) {
+
+          this.checkbox.parentElement.classList.remove('disabled');
+          this.checkbox.parentElement.classList.remove('disabled-cursor');
+
+          this.checkbox.parentElement.children[1].children[0].classList.remove('disabled-cursor');
+          this.checkbox.parentElement.children[1].children[1].classList.remove('disabled-cursor');
+          this.checkbox.parentElement.children[1].children[2].classList.remove('disabled-cursor');
+        }
+
       }
     }
   }
@@ -139,6 +163,16 @@ export class BootstrapToggleCustomElement {
       width: this.width,
       height: this.height
     });
+
+    if (this.disabled) {
+      this.checkbox.parentElement.classList.add('disabled');
+      this.checkbox.parentElement.classList.add('disabled-cursor');
+
+      this.checkbox.parentElement.children[1].children[0].classList.add('disabled-cursor');
+      this.checkbox.parentElement.children[1].children[1].classList.add('disabled-cursor');
+      this.checkbox.parentElement.children[1].children[2].classList.add('disabled-cursor');
+
+    }
   }
 
   private bind() {
