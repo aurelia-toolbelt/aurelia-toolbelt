@@ -8,11 +8,25 @@ import { ToastrService } from 'aurelia-toolbelt';
 @inject(ToastrService)
 export class Alert {
 
+  private show_countdown_alert = false;
+  private secondsRemained: Number = 10;
+
   private showDismissible = true;
 
   private show_hide = true;
 
   constructor(private ts2: ToastrService) {
+  }
+
+  private showAlert() {
+    this.show_countdown_alert = true;
+  }
+
+  private countDownHasChanged(currentCounter: number) {
+    this.secondsRemained = currentCounter;
+    if (this.secondsRemained === 0) {
+      this.secondsRemained = 10;
+    }
   }
 
   private toggleAlert() {

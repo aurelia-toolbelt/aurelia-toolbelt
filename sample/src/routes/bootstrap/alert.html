@@ -14,7 +14,8 @@
         </a>
       </h2>
     </legend>
-    Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+    Provide contextual feedback messages for typical user actions with the handful of available and flexible alert
+    messages.
   </fieldset>
 
   <fieldset class="mt-5">
@@ -34,7 +35,8 @@
     </legend>
     <p>
 
-      Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the
+      Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one
+      of the
       <b>eight required
       </b> contextual types (e.g., success)
     </p>
@@ -57,16 +59,40 @@
           <strong>Attention!</strong> Wanna show a warning, use this one.
         </abt-alert>
 
-
         <abt-alert type="danger">
           <strong>Oh no!</strong> Something is going wrong.
         </abt-alert>
 
+        <br />
+        <hr />
+        <br />
+
+        <abt-alert type="info" countdown="10" countdown-changed.call="countDownHasChanged(current)" show-alert.bind="show_countdown_alert">
+          This alert will be disappeared after <strong>${secondsRemained}</strong> seconds...
+        </abt-alert>
+
+        <br /><br />
+
+        <abt-button click.call="showAlert()">
+          Click here to show an alert with countdown
+        </abt-button>
+
       </abt-card-body>
       <abt-card-footer>
-        <aut-mark-down src="./docs/components/bootstrap/alert/basic.md">
 
-        </aut-mark-down>
+        <abt-navs tabs id="navs-dismissing">
+
+          <abt-nav-item title="View" active>
+            <aut-mark-down src="./docs/components/bootstrap/alert/basic.md">
+            </aut-mark-down>
+          </abt-nav-item>
+          <abt-nav-item title="ViewModel">
+            <aut-mark-down src="./docs/components/bootstrap/alert/basic-ts.md">
+
+            </aut-mark-down>
+          </abt-nav-item>
+        </abt-navs>
+
       </abt-card-footer>
 
     </abt-card>
@@ -82,27 +108,32 @@
       <abt-card-body>
         <abt-alert>
           <strong>Hello there!</strong> I am the default alert with a
-          <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/alert">great link</abt-alert-link>to alert repository.
+          <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/alert">great
+            link</abt-alert-link>to alert repository.
         </abt-alert>
 
         <abt-alert type="success">
           <strong>Well done!</strong> This is a success alert for you with a
-          <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/alert">great link</abt-alert-link>to alert repository..
+          <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/alert">great
+            link</abt-alert-link>to alert repository..
         </abt-alert>
 
         <abt-alert type="secondary">
           <strong>Take care!</strong> This is a secondary alert which need your attention and with a
-          <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/alert">great link</abt-alert-link>to alert repository.
+          <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/alert">great
+            link</abt-alert-link>to alert repository.
         </abt-alert>
 
         <abt-alert type="warning">
           <strong>Attention!</strong> Wanna show a warning, use this one with a
-          <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/alert">great link</abt-alert-link>to alert repository.
+          <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/alert">great
+            link</abt-alert-link>to alert repository.
         </abt-alert>
 
         <abt-alert type="danger">
           <strong>Oh no!</strong> Something is going wrong with a
-          <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/alert">great link</abt-alert-link>to alert repository.
+          <abt-alert-link href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/alert">great
+            link</abt-alert-link>to alert repository.
         </abt-alert>
 
       </abt-card-body>
@@ -128,7 +159,8 @@
           <abt-alert-heading>
             <h4>Well done!</h4>
           </abt-alert-heading>
-          <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so
+          <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit
+            longer so
             that you can see how spacing within an alert works with this kind of content.</p>
           <hr>
           <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
@@ -193,7 +225,8 @@
     <p>
       <a href="http://getbootstrap.com/docs/4.0/components/alerts/#events">
         Alters in bootstrap
-      </a> provide two kinds of events, here we provide an experimental four additional events, in which you can return a
+      </a> provide two kinds of events, here we provide an experimental four additional events, in which you can return
+      a
       boolean or a promise which resolves a boolean, if the boolean is false it will ignore triggering the event.
     </p>
 
@@ -216,7 +249,7 @@
       <abt-card-footer>
 
         <abt-navs tabs id="navs-events">
-          <abt-nav-item id="tab-template-ebents" title="View" active>
+          <abt-nav-item id="tab-template-events" title="View" active>
             <aut-mark-down src="./docs/components/bootstrap/alert/events-properties.md">
 
             </aut-mark-down>
@@ -268,7 +301,14 @@
           <td class="text-nowrap">string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap"></td>
-          <td>Applies the your custom css class on alert</td>
+          <td>Applies your custom css classes on alert</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">countdown</td>
+          <td class="text-nowrap">number</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>A value indicating that after how many <b>seconds</b> this alert should be dismissed</td>
         </tr>
         <tr>
           <td class="text-nowrap" scope="row">dismissible</td>
@@ -282,7 +322,7 @@
         <tr>
           <td class="text-nowrap" scope="row">show-alert</td>
           <td class="text-nowrap">boolean</td>
-          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">twoWay</td>
           <td class="text-nowrap"></td>
           <td>
             Changes in the value of this property will enable you to handle four extra events for alert,
@@ -296,11 +336,14 @@
               <code>
                 <b>false</b>
               </code>
-            </i> or resolves a proise that returns so.
+            </i> or resolves a promise that returns <code>
+              <b>false</b>
+            </code>.
 
             <hr />
             <b>PS:</b>
-            <i>Bear in mind that such a behaviour does not exist in bootstrap; however, we would be grateful, if you send us
+            <i>Bear in mind that such a behaviour does not exist in bootstrap; however, we would be grateful, if you
+              send us
               your feedback.</i>
 
           </td>
@@ -346,55 +389,6 @@
             </b>
           </td>
         </tr>
-        <tr>
-          <td class="text-nowrap" scope="row">bs-show</td>
-          <td class="text-nowrap">Promise</td>
-          <td class="text-nowrap">call</td>
-          <td class="text-nowrap"></td>
-          <td>This event fires immediately when
-            <code>show-alert</code> changes to
-            <code>true</code>. if this event returns
-            <code>false</code>, or resolve a
-            <b>promise</b> that returns
-            <code>false</code>, the rest of the chain will be escaped.
-          </td>
-        </tr>
-
-        <tr>
-          <td class="text-nowrap" scope="row">bs-shown</td>
-          <td class="text-nowrap">Promise</td>
-          <td class="text-nowrap">call</td>
-          <td class="text-nowrap"></td>
-          <td>This event fires immediately after
-            <code>bs-show</code> resolved or returned
-            <code>true</code>.
-          </td>
-        </tr>
-
-        <tr>
-          <td class="text-nowrap" scope="row">bs-hide</td>
-          <td class="text-nowrap">Promise</td>
-          <td class="text-nowrap">call</td>
-          <td class="text-nowrap"></td>
-          <td>
-            <code>show-alert</code> changes to
-            <code>false</code>. if this event returns
-            <code>false</code>, or resolve a
-            <b>promise</b> that returns
-            <code>false</code>, the rest of the chain will be escaped.
-          </td>
-        </tr>
-
-        <tr>
-          <td class="text-nowrap" scope="row">bs-hidden</td>
-          <td class="text-nowrap">Promise</td>
-          <td class="text-nowrap">call</td>
-          <td class="text-nowrap"></td>
-          <td>This event fires immediately after
-            <code>bs-hide</code> resolved or returned
-            <code>true</code>.
-          </td>
-        </tr>
 
 
         <tr>
@@ -408,11 +402,71 @@
         </tr>
 
         <tr>
-          <td class="text-nowrap" scope="row">bs-close</td>
+          <td class="text-nowrap" scope="row">bs-closed</td>
           <td class="text-nowrap">Function</td>
           <td class="text-nowrap">call</td>
           <td class="text-nowrap"></td>
           <td>This event is fired when the alert has been closed (will wait for CSS transitions to complete).
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">countdown-changed</td>
+          <td class="text-nowrap">Function</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap">current: number</td>
+          <td>This event fires each time a timer tick counts down the timer.
+          </td>
+        </tr>
+
+
+        <tr>
+          <td class="text-nowrap" scope="row">bs-hide</td>
+          <td class="text-nowrap">Promise</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap">target: HtmlDivElement</td>
+          <td>
+            <code>show-alert</code> changes to
+            <code>false</code>. if this event returns
+            <code>false</code>, or resolve a
+            <b>promise</b> that returns
+            <code>false</code>, the rest of the chain will be escaped.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">bs-hidden</td>
+          <td class="text-nowrap">Promise</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap">target: HtmlDivElement</td>
+          <td>This event fires immediately after
+            <code>bs-hide</code> resolved or returned
+            <code>true</code>.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">bs-show</td>
+          <td class="text-nowrap">Promise</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap">target: HtmlDivElement</td>
+          <td>This event fires immediately when
+            <code>show-alert</code> changes to
+            <code>true</code>. if this event returns
+            <code>false</code>, or resolve a
+            <b>promise</b> that returns
+            <code>false</code>, the rest of the chain will be escaped.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">bs-shown</td>
+          <td class="text-nowrap">Promise</td>
+          <td class="text-nowrap">call</td>
+          <td class="text-nowrap">target: HtmlDivElement</td>
+          <td>This event fires immediately after
+            <code>bs-show</code> resolved or returned
+            <code>true</code>.
           </td>
         </tr>
 
