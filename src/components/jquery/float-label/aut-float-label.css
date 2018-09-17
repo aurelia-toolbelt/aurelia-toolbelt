@@ -3,38 +3,34 @@
     padding: 10px;
 }
 
-.aut-float-label-rtl {right: 10px;
+.aut-float-label-rtl {
+    right: 10px;
 }
 
-
-.aut-float-label-ltr {left: 10px;
+.aut-float-label-ltr {
+    left: 10px;
 }
 
 .aut-float-label>.float-input {
     margin-top: 10px;
 }
 
-.aut-float-label>.float-input:focus {
-    /*border-color: #f06d06;*/
-}
+.aut-float-label>.float-input:focus {}
 
 .aut-float-label>.float-label {
     position: absolute;
     top: 3px;
-    background: rgba(255, 255, 255, .32);
-    -webkit-transition: top .5s ease-in-out, opacity .5s ease-in-out;
-    /* For Safari 3.1 to 6.0 */
-    transition: top .5s ease-in-out, opacity .5s ease-in-out;
+    -webkit-transition: top .3s ease-in-out, opacity .3s ease-in-out;
+    transition: top .3s ease-in-out, opacity .3s ease-in-out;
     opacity: 0;
     font-size: 13px;
 }
 
 .aut-float-label>.float-label.show {
-    color: #333;
-    top: -3px;
+   /* color: black;*/
+    top: -2px;
     opacity: 1;
 }
 
-.aut-float-label>.float-label.on {
-    color: blue;
-}
+ .aut-float-label>.float-label.on {} 
+
