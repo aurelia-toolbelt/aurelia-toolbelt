@@ -1,24 +1,17 @@
 import { customElement, bindingMode, bindable, inject } from 'aurelia-framework';
-// import 'qrcodejs/qrcode.js';
 import { QR8BitByte, QRAlphaNum, QRCode, QRKanji, QRNumber, ErrorCorrectLevel } from 'qrcode-generator-ts';
 
-@inject(Element)
 @customElement('at-qrcode')
 export class AureliaToolbeltQrCode {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public value: string;
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: number = 128;
 
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: number = 128;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public darkColor: string = '#000000';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public lightColor: string = '#ffffff';
 
-  // private qr_img: HTMLImageElement;
-
   private canvas: HTMLCanvasElement;
-
-  constructor(private element: Element) {
-  }
 
   private attached() {
     this.size = Number(this.size);
@@ -27,7 +20,6 @@ export class AureliaToolbeltQrCode {
   private createCanvas(qr: QRCode) { // }, cellSize = 2, margin = cellSize * 4) {
 
     // let canvas = document.createElement('canvas');
-    // let mconst = qr.getModuleCount();
     // let size = qr.getModuleCount() * cellSize + margin * 2;
 
     let cellSize = Math.floor(this.size / qr.getModuleCount());
@@ -74,16 +66,7 @@ export class AureliaToolbeltQrCode {
       qr.make();
 
       // canvas
-      // this.element.appendChild(this.createCanvas(qr, 2));
       this.createCanvas(qr); // , 2);
-
-      // img
-      // let img = document.createElement('img');
-      // this.qr_img.width = this.size;
-      // this.qr_img.height = this.size;
-      // this.qr_img.setAttribute('src', qr.toDataURL());
-      // document.body.appendChild(img);
-
     }
   }
 }
