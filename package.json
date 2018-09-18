@@ -117,6 +117,8 @@
         "persianjs": "^0.3.0",
         "popper.js": "1.12.9",
         "pretty-checkbox": "^3.0.3",
+        "qrcode-generator-ts": "0.0.4",
+        "qrcodejs": "^1.0.0",
         "toastr": "^2.1.4",
         "uuid": "^3.2.1",
         "written-number": "^0.8.1",

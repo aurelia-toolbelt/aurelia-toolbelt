@@ -2,6 +2,7 @@ import * as fuse from 'fuse.js';
 const hl = require('highlight.js');
 // const popperjs = require('popper.js');
 
+import 'qrcodejs/qrcode.js';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import 'bootstrap/dist/css/bootstrap.css';
 

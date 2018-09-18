@@ -60,6 +60,14 @@ export class Purejs {
         nav: true,
         title: 'Divider',
         settings: { auth: false, isComponent: true }
+      },
+      {
+        route: ['qrcode'],
+        name: 'pure-qrcode',
+        moduleId: PLATFORM.moduleName('./vanilla/qrcode'),
+        nav: true,
+        title: 'QR Code',
+        settings: { auth: false, isComponent: true }
       }
       /*,{
           route: ['microlink'],
