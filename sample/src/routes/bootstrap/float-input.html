@@ -1,9 +1,15 @@
 <template>
-  <aut-float-label label-style='font-size:13px' type='email' size="sm" direction='rtl' placeholder='email@example.com'>پست الکترونیک</aut-float-label>
-  <aut-float-label type='email' direction='rtl' placeholder='email@example.com'>پست الکترونیک</aut-float-label>
-  <aut-float-label type='email' size="sm" direction='ltr' placeholder='email@example.com'>Email</aut-float-label>
-  <aut-float-label type='email' direction='ltr' placeholder='email@example.com'>Email</aut-float-label>
-  <aut-float-label type='email' size="lg" direction='ltr' placeholder='email@example.com'>Email</aut-float-label>
+
+
+
+  <input aut-float-label type="text" class="form-control float-input" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">@</span>
+    </div>
+    <input aut-float-label type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
 
   <fieldset class="mb-5">
     <legend>
