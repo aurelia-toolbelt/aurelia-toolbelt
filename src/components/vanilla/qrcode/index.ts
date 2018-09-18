@@ -1,10 +1,10 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
-export * from './aut-qrcode';
+export * from './at-qrcode';
 
 export function configure(config: FrameworkConfiguration) {
 
     config.globalResources([
-        PLATFORM.moduleName('./aut-qrcode')
+        PLATFORM.moduleName('./at-qrcode')
     ]);
 }

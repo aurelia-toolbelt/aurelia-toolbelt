@@ -2755,10 +2755,6 @@ qrcode-generator-ts@0.0.4:
   dependencies:
     webpack-dev-server "^1.16.2"
 
-qrcodejs@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/qrcodejs/-/qrcodejs-1.0.0.tgz#afab5e9e858521f859ae336d2ed0f9fd2e76cca7"
-
 qs@6.5.1:
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.1.tgz#349cdf6eef89ec45c12d7d5eb3fc0c870343a6d8"
