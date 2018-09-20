@@ -1,21 +1,16 @@
+
 import { customElement, bindingMode, bindable, inject } from 'aurelia-framework';
 import { QR8BitByte, QRAlphaNum, QRCode, QRKanji, QRNumber, ErrorCorrectLevel } from 'qrcode-generator-ts';
 
-import {createStringToBytes} from 'qrcode-generator-ts/dist/js/text/createStringToBytes';
-
-export enum QrMode {
-  Numeric = 'Numeric', AlphaNumeric = 'Alphanumeric', Byte = 'Byte', Kanji = 'Kanji'
-}
+// import { createStringToBytes } from 'qrcode-generator-ts/dist/js/text/createStringToBytes';
 
 @customElement('at-qrcode')
 export class AureliaToolbeltQrCode {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public value: string;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public errorCorrectionLevel: ErrorCorrectLevel | number = ErrorCorrectLevel.H;
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public typeNumber: number = 5;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public errorCorrectionLevel: ErrorCorrectLevel = ErrorCorrectLevel.H;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public mode: QrMode;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public isUnicode: boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public typeNumber: number = 8;
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: number = 128;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public darkColor: string = '#000000';
@@ -24,6 +19,7 @@ export class AureliaToolbeltQrCode {
   private canvas: HTMLCanvasElement;
 
   private attached() {
+
     this.size = Number(this.size);
 
     this.typeNumber = Number(this.typeNumber);
@@ -32,25 +28,23 @@ export class AureliaToolbeltQrCode {
       Error('TypeNumber should be between 1 and 40');
     }
 
-    this.isUnicode = Boolean(this.isUnicode);
-
+    this.errorCorrectionLevel = Number(this.errorCorrectionLevel);
   }
 
   private drawBarCodeOnCanvas(qr: QRCode) { // }, cellSize = 2, margin = cellSize * 4) {
 
-    // let canvas = document.createElement('canvas');
-    // let size = qr.getModuleCount() * cellSize + margin * 2;
-
     let cellSize = Math.floor(this.size / qr.getModuleCount());
     let margin = cellSize * 4;
 
-    this.canvas.width = this.size;
-    this.canvas.height = this.size;
+    let size = qr.getModuleCount() * cellSize + margin * 2;
+
+    this.canvas.width = size;
+    this.canvas.height = size;
     let ctx = this.canvas.getContext('2d');
 
     // fill background
     ctx.fillStyle = this.lightColor;
-    ctx.fillRect(0, 0, this.size, this.size);
+    ctx.fillRect(0, 0, size, size);
 
     // draw cells
     ctx.fillStyle = this.darkColor;
@@ -72,29 +66,29 @@ export class AureliaToolbeltQrCode {
     if (newValue) {
 
       // uncomment if UTF-8 support is required.
-      QRCode.stringToBytes =  AureliaToolbeltQrCode.stringToBytes_UTF8; // com.d_project.text.stringToBytes_UTF8;
+      QRCode.stringToBytes = AureliaToolbeltQrCode.stringToBytes_UTF8; // com.d_project.text.stringToBytes_UTF8;
 
       let qr = new QRCode();
 
       qr.setTypeNumber(this.typeNumber);
       qr.setErrorCorrectLevel(this.errorCorrectionLevel);
 
-      switch (this.mode) {
-        case QrMode.Kanji:
-          qr.addData(new QRKanji(newValue)); // Kanji(SJIS) only
-          break;
-        case QrMode.Numeric:
-          qr.addData(new QRNumber(newValue)); // Number only
-          break;
-        case QrMode.AlphaNumeric:
-          qr.addData(new QRAlphaNum(newValue)); // Alphabet and Number
-          break;
-        default:
-          qr.addData(new QR8BitByte(newValue)); // most useful for usual purpose.
-          break;
-      }
+      // switch (this.mode) {
+      //   case QrMode.Kanji:
+      //     qr.addData(new QRKanji(newValue)); // Kanji( SJIS ) only
+      //     break;
+      //   case QrMode.Numeric:
+      //     qr.addData(new QRNumber(newValue)); // Number only
+      //     break;
+      //   case QrMode.AlphaNumeric:
+      //     qr.addData(new QRAlphaNum(newValue)); // Alphabet and Number
+      //     break;
+      //   default:
+      qr.addData(new QR8BitByte(newValue)); // most useful for usual purpose.
+      //     break;
+      // }
 
-      //  geneartes the data
+      //  generates the data
       qr.make();
 
       // canvas
