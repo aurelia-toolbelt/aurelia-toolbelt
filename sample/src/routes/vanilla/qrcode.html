@@ -52,144 +52,45 @@
         </p>
       </abt-card-header>
       <abt-card-body>
-        <form>
-          <div class="form-group col-4">
-            <label for="exampleCorrectionLevel">Correction Level</label>
-            <select class="form-control" id="exampleCorrectionLevel" value.bind="correctionLevel">
-              <option model.bind="1">L (7%)</option>
-              <option model.bind="0">M (15%)</option>
-              <option model.bind="3">Q (25%)</option>
-              <option model.bind="2">H (30%)</option>
-            </select>
+        <div class="row">
+          <div class="col-4">
+            <form>
+              <div class="form-group">
+                <label for="exampleCorrectionLevel">Correction Level</label>
+                <select class="form-control" id="exampleCorrectionLevel" value.bind="correctionLevel">
+                  <option model.bind="1">L (7%)</option>
+                  <option model.bind="0">M (15%)</option>
+                  <option model.bind="3">Q (25%)</option>
+                  <option model.bind="2">H (30%)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleCorrectionLevel">Type Number</label>
+                <select class="form-control" id="exampleCorrectionLevel" value.bind="selectedTypeNumber">
+                  <option model.bind="m" repeat.for="m of maxTypeNumber">
+                    ${m + 1}
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleCorrectionLevel">Value</label>
+                <input class="form-control" type=text value.bind="text2QRCode" />
+              </div>
+            </form>
           </div>
-          <div class="form-group col-4">
-            <label for="exampleCorrectionLevel">Type Number</label>
-            <select class="form-control" id="exampleCorrectionLevel" value.bind="selectedTypeNumber">
-              <option model.bind="m" repeat.for="m of maxTypeNumber">
-                ${m + 1}
-              </option>
-            </select>
+          <div class="col-4">
+            <div class="form-group">
+              <label>QR Code</label>
+              <hr />
+              <at-qrcode value.bind="text2QRCode" dark-color="black" light-color="white" size="170" type-number.bind="selectedTypeNumber"
+                error-correction-level.bind="correctionLevel">
+              </at-qrcode>
+            </div>
           </div>
-          <div class="form-group col-4">
-            <label for="exampleCorrectionLevel">Value</label>
-            <input class="form-control" type=text value.bind="text2QRCode" />
-          </div>
-          <div class="form-group col-4">
-            <label>QR Code</label>
-            <hr />
-            <at-qrcode value.bind="text2QRCode" dark-color="black" light-color="white" size="256" type-number.bind="selectedTypeNumber"
-              error-correction-level.bind="correctionLevel">
-            </at-qrcode>
-          </div>
-        </form>
-
+        </div>
       </abt-card-body>
       <abt-card-footer>
         <aut-mark-down src="./docs/components/vanilla/qrcode/basic.md">
-        </aut-mark-down>
-      </abt-card-footer>
-    </abt-card>
-
-  </fieldset>
-
-</template>
-
-
-<template>
-
-
-
-
-
-
-
-
-
-  <fieldset class="mt-5">
-
-    <style>
-      .star-aurelia {
-          color: #753B85;
-        }
-  
-      </style>
-
-    <legend>
-      Contextual types &amp; custom color
-    </legend>
-
-    <p>
-      You can set
-      <code>type</code> property with bootstrap contextual colors, or have your own by creating a css class
-      <code>star-*</code>,
-      <b>e.g.</b> &nbsp;
-      <code>.star-aurelia{ color: #753B85 }</code>, or just set the
-      <code>color</code> property.
-    </p>
-
-    <abt-card>
-      <abt-card-body class="fa-2x">
-
-        <abt-star-rate></abt-star-rate>
-        <abt-star-rate type="secondary"></abt-star-rate>
-        <abt-star-rate type="info"></abt-star-rate>
-        <abt-star-rate type="success"></abt-star-rate>
-
-        <br />
-
-        <abt-star-rate type="aurelia"></abt-star-rate>
-
-        <br />
-
-        <abt-star-rate color="maroon"></abt-star-rate>
-
-
-      </abt-card-body>
-      <abt-card-footer>
-        <aut-mark-down src="./docs/components/bootstrap/star-rate/contextual.md">
-        </aut-mark-down>
-      </abt-card-footer>
-    </abt-card>
-
-  </fieldset>
-
-
-  <fieldset class="mt-5">
-
-    <legend>
-      Dynamic behaviours
-    </legend>
-
-    <p>
-
-      You can set number of maximum stars via
-      <code>max-rate</code>, get or set its current rate via
-      <code>rate</code> and make it
-      <code>disable</code> or
-      <code>readonly</code> via
-      <code>disabled</code> attributes. The
-      <code>abt-star-rate</code> accepts a default
-      <code>slot</code>, it would be helpful in some cases like resetting the
-      <code>rate</code> to a specific value.
-
-    </p>
-
-    <abt-card>
-      <abt-card-body class="fa-2x">
-
-        <abt-star-rate max-rate="7" rate.bind="myRate" half-star disabled.bind="beDisable"></abt-star-rate>
-        <span class="fa fa-minus-circle" style="cursor:pointer; color:maroon" click.trigger="myRate=0"></span>
-        </abt-star-rate>
-
-        <span class="fa-1 ml-5">${myRate}</span>
-
-        <abt-toggle size="small" class="float-right" on="Disable" off="Enable" on-type="secondary" off-type="success"
-          checked.bind="beDisable">
-        </abt-toggle>
-
-      </abt-card-body>
-      <abt-card-footer>
-        <aut-mark-down src="./docs/components/bootstrap/star-rate/dynamic.md">
         </aut-mark-down>
       </abt-card-footer>
     </abt-card>
@@ -210,7 +111,7 @@
         <tr>
           <td class="text-nowrap" colspan="5">
             <b>
-              abt-star-rate
+              at-qrcode
             </b>
           </td>
         </tr>
@@ -231,115 +132,62 @@
           </td>
         </tr>
         <tr>
-          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap" scope="row">error-correction-level</td>
+          <td class="text-nowrap">ErrorCorrectLevel | number</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">H: 30%&nbsp;: &nbsp;<code>2</code></td>
+          <td>This value indicates the percentage of error correction, values are:
+            <ul>
+              <li>L: 7% &nbsp;&nbsp;: &nbsp;<code>0</code></li>
+              <li>M: 15%&nbsp;: &nbsp;<code>1</code></li>
+              <li>Q: 25%&nbsp;: &nbsp;<code>3</code></li>
+              <li>H: 30%&nbsp;: &nbsp;<code>2</code></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dark-color</td>
           <td class="text-nowrap">string</td>
-          <td class="text-nowrap">oneWay</td>
-          <td class="text-nowrap"></td>
-          <td>Applies your custom css class on rate component.</td>
-        </tr>
-        <tr>
-          <td class="text-nowrap" scope="row">color</td>
-          <td class="text-nowrap">boolean | string</td>
-          <td class="text-nowrap">oneWay</td>
-          <td class="text-nowrap"></td>
-          <td>Set the color of star rate element, if you do not interested via
-            <code>type</code> attribute.</td>
-        </tr>
-        <tr>
-          <td class="text-nowrap" scope="row">disabled</td>
-          <td class="text-nowrap">boolean | string</td>
-          <td class="text-nowrap">oneWay</td>
-          <td class="text-nowrap">false</td>
-          <td>
-            Makes the
-            <code>abt-star-rate</code> readonly or disabled.
-          </td>
-        </tr>
-        <tr>
-          <td class="text-nowrap" scope="row">half-star</td>
-          <td class="text-nowrap">boolean | string</td>
           <td class="text-nowrap">oneTime</td>
-          <td class="text-nowrap">false</td>
-          <td>
-            Enables the
-            <code>abt-star-rate</code> to accept and show X.5 values as well. It can be added as a single attribute or
-            with value
-            and binding.
-          </td>
+          <td class="text-nowrap">#000000</td>
+          <td>The color of dark squares in the QR code</td>
         </tr>
-
         <tr>
-          <td class="text-nowrap" scope="row">max-rate</td>
+        <tr>
+          <td class="text-nowrap" scope="row">light-color</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">#ffffff</td>
+          <td>The color of light squares in the QR code</td>
+        </tr>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">size</td>
           <td class="text-nowrap">number</td>
-          <td class="text-nowrap">oneWay</td>
-          <td class="text-nowrap">5</td>
-          <td>Maximum number of stars to be rendered</td>
-        </tr>
-        <tr>
-          <td class="text-nowrap" scope="row">rate</td>
-          <td class="text-nowrap">number</td>
-          <td class="text-nowrap">twoWay</td>
-          <td class="text-nowrap">5</td>
-          <td>Current value of the component, changes in the value will trigger
-            <code>rate-changed</code>
-            event.
-          </td>
-        </tr>
-
-        <tr>
-          <td class="text-nowrap" scope="row">rtl</td>
-          <td class="text-nowrap">boolean | string</td>
           <td class="text-nowrap">oneTime</td>
-          <td class="text-nowrap">false</td>
+          <td class="text-nowrap">128</td>
           <td>
-            Renders the stars for right-to-left languages. It can be added as a single attribute or with value and
-            binding.
+            The width and height of the generated QR code.
           </td>
         </tr>
 
         <tr>
-          <td class="text-nowrap" scope="row">style</td>
+            <td class="text-nowrap" scope="row">type-number</td>
+            <td class="text-nowrap">number</td>
+            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap">5</td>
+            <td>The type number of the qr code generator, this must be between 0 and 40
+            </td>
+          </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">value</td>
           <td class="text-nowrap">string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap"></td>
-          <td>Css style attributes that you want to apply on the component.</td>
-        </tr>
-
-        <tr>
-          <td class="text-nowrap" scope="row">type</td>
-          <td class="text-nowrap">string</td>
-          <td class="text-nowrap">oneTime</td>
-          <td class="text-nowrap">primary</td>
-          <td>The type of star-rate, contextual values of bootstrap,
-            <code>primary</code>,
-            <code>secondary</code>,
-            <code>info</code>,
-            <code>success</code>,
-            <code>warning</code>,
-            <code>danger</code>,
-            <code>light</code>, and
-            <code>dark</code>. You can also create your own type via css classes to be like
-            <code>
-              star-*
-            </code>.
-          </td>
-        </tr>
-
-        <tr>
-          <td class="text-nowrap" colspan="5">
-            <b>
-              Events
-            </b>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-nowrap" scope="row">rate-changed</td>
-          <td class="text-nowrap">Function</td>
-          <td class="text-nowrap">call (newRate, oldRate)</td>
-          <td class="text-nowrap"></td>
-          <td>
-            Triggers whenever a change in
-            <code>rate</code> detected.
+          <td>The string value that its QR code will be generated.
+            <hr />
+            <b>PS:</b> The QR code will be generated on value change
           </td>
         </tr>
 

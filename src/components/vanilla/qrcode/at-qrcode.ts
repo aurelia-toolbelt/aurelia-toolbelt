@@ -9,8 +9,8 @@ export class AureliaToolbeltQrCode {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public value: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public errorCorrectionLevel: ErrorCorrectLevel | number = ErrorCorrectLevel.H;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public typeNumber: number = 5;
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public typeNumber: number = 8;
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public size: number = 128;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public darkColor: string = '#000000';
