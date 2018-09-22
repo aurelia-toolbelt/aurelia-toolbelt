@@ -8,7 +8,7 @@ import { QR8BitByte, QRAlphaNum, QRCode, QRKanji, QRNumber, ErrorCorrectLevel } 
 export class AureliaToolbeltQrCode {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public value: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public errorCorrectionLevel: ErrorCorrectLevel | number = ErrorCorrectLevel.H;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public errorCorrectionLevel: ErrorCorrectLevel | number = ErrorCorrectLevel.L;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public typeNumber: number = 5;
 
 
