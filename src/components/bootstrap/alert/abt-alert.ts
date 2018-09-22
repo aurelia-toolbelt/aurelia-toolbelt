@@ -19,7 +19,7 @@ export class BootstrapAlert {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public dismissible: boolean | string = false;
 
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) public showAlert: boolean = true;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public showAlert: boolean = true;
 
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsShow: Function;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public bsShown: Function;

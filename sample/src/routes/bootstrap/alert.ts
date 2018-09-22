@@ -26,6 +26,7 @@ export class Alert {
     this.secondsRemained = currentCounter;
     if (this.secondsRemained === 0) {
       this.secondsRemained = 10;
+      this.show_countdown_alert = false;
     }
   }
 
