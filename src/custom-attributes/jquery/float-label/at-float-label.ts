@@ -1,7 +1,6 @@
 import { inject, customElement, bindable, bindingMode, containerless, PLATFORM, noView, DOM, useShadowDOM, customAttribute } from 'aurelia-framework';
 
-export type FloatInputDirection = 'rtl' | 'ltr';
-export type FloatInputSize = 'sm' | 'md' | 'lg';
+export type FloatInputDirection = 'auto' | 'rtl' | 'ltr';
 
 const fl = require('aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.js');
 import 'aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.css';
@@ -9,35 +8,22 @@ import 'aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.css';
 @containerless()
 @customAttribute('at-float-label')
 @inject(Element)
-export class FloatLabelCustomAttribute {
-  constructor(private element: Element) {
-    //   DOM.injectStyles(`.at-float-label {
-    //     position: relative;
-    //     padding-top: 18px;
-    // }
-    // .at-float-label-rtl {
-    //     right: 0;
-    // }
-    // .at-float-label-ltr {
-    //     left: 0;
-    // }
-    // .at-float-label>.float-input {}
-    // .at-float-label>.float-input:focus {}
-    // .at-float-label>.float-label {
-    //     position: absolute;
-    //     top: 3px;
-    //     -webkit-transition: top .3s ease-in-out, opacity .3s ease-in-out;
-    //     transition: top .3s ease-in-out, opacity .3s ease-in-out;
-    //     opacity: 0;
-    //     font-size: 13px;
-    // }
-    // .at-float-label>.float-label.show {
-    //     /* color: black;*/
-    //     top: -3px;
-    //     opacity: 1;
-    // }
-    // .at-float-label>.float-label.on {}
-    // `, null, null, 'at-float-label-style');
+export class AureliaToolbeltFloatLabel {
+
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public direction: FloatInputDirection = 'auto';
+  @bindable({ defaultBindingMode: bindingMode.oneWay, primaryProperty: true }) public text: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public right: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public left: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public paddingTop: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public color: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public fontSize: string = '';
+
+  private label: HTMLLabelElement;
+  private div: HTMLDivElement;
+
+  constructor(private element: HTMLInputElement) {
   }
 
   private isTextBox(element: Element) {
@@ -83,31 +69,81 @@ export class FloatLabelCustomAttribute {
     document.getElementsByTagName('head')[0].appendChild(script);
   }
 
+  private isNullOrEmpty(text: string): boolean {
+    if (text === undefined || text === null || text === '') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+
   private attached() {
 
     if (!this.isTextBox(this.element)) {
       Error('at-float-label works on `input` elements.');
     }
 
+    let textContent = this.text === '' ? this.element.getAttribute('placeholder') : this.text;
+    if (this.isNullOrEmpty(textContent)) {
+      return;
+    }
     this.element.classList.add('float-input');
+    let dir = getComputedStyle(this.element).direction;
+    let textAlign = this.element.style.textAlign;
 
-    let label = <HTMLLabelElement>document.createElement('LABEL');
-    label.textContent = 'Hamed Khan';
-    label.htmlFor = this.element.id;
-    label.classList.add('float-label');
+    this.label = <HTMLLabelElement>document.createElement('LABEL');
+    this.label.textContent = textContent;
+    this.label.htmlFor = this.element.id;
+    this.label.classList.add('float-label', this.color === '' ? 'text-primary' : 'text-' + this.color);
+
+    if (this.direction === 'auto') {
+      if (dir === 'rtl' || textAlign === 'right') {
+        this.label.classList.add('at-float-label-rtl');
+      } else {
+        this.label.classList.add('at-float-label-ltr');
+      }
+    } else {
+      this.label.classList.add(this.direction === 'ltr' ? 'at-float-label-ltr' : 'at-float-label-rtl');
+    }
 
     let parent = this.element.parentElement;
     if (parent instanceof HTMLDivElement) {
+      this.div = parent;
       parent.classList.add('at-float-label');
-      this.insertAfter(label, this.element);
+      this.insertAfter(this.label, this.element);
     } else {
-      let div = <HTMLDivElement>document.createElement('DIV');
-      div.setAttribute('class', 'at-float-label');
-      div.appendChild(label);
-      this.insertAfter(div, this.element);
-      div.appendChild(this.element);
+      this.div = <HTMLDivElement>document.createElement('DIV');
+      this.div.setAttribute('class', 'at-float-label');
+      this.div.appendChild(this.label);
+      this.insertAfter(this.div, this.element);
+      this.div.appendChild(this.element);
+    }
+
+    if (!this.isNullOrEmpty(this.class)) {
+      this.class.split(' ').forEach((x) => this.label.classList.add(x));
+    }
+    if (!this.isNullOrEmpty(this.style)) {
+      this.label.setAttribute('style', this.style);
+    }
+
+
+    if (!this.isNullOrEmpty(this.paddingTop)) {
+      this.div.style.paddingTop = this.paddingTop;
+    }
+    if (!this.isNullOrEmpty(this.right)) {
+      if (this.label.classList.contains('at-float-label-rtl')) {
+        this.label.style.right = this.right;
+      }
+    }
+    if (!this.isNullOrEmpty(this.left)) {
+      if (this.label.classList.contains('at-float-label-ltr')) {
+        this.label.style.left = this.left;
+      }
+    }
+    if (!this.isNullOrEmpty(this.fontSize)) {
+      this.label.style.fontSize = this.fontSize;
     }
   }
-
 }
 
