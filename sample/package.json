@@ -37,7 +37,7 @@
     "dependencies": {
         "aurelia-after-attached-plugin": "github:aurelia-ui-toolkits/aurelia-after-attached-plugin",
         "aurelia-bootstrapper": "2.1.1",
-        "aurelia-dialog": "2.0.0-rc.3",
+        "aurelia-dialog": "^2.0.0-rc.3",
         "aurelia-event-aggregator": "1.0.1",
         "aurelia-framework": "^1.1.5",
         "aurelia-http-client": "^1.2.1",
@@ -70,6 +70,7 @@
         "persianjs": "^0.3.0",
         "popper.js": "1.12.9",
         "pretty-checkbox": "^3.0.3",
+        "qrcode-generator-ts": "0.0.4",
         "toastr": "^2.1.4",
         "uuid": "^3.2.1",
         "written-number": "^0.8.1",

@@ -1,0 +1,198 @@
+<template>
+
+  <fieldset class="mb-5">
+    <legend>
+      <h2>QRCode Generator
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/vanilla/qrcode">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+
+    <abt-alert type="info">
+      A wrapper on top of:
+      <abt-alert-link href="https://github.com/kazuhikoarase/qrcode-generator/">QR Code Generator</abt-alert-link>
+    </abt-alert>
+
+    <abt-alert type="success">
+      <i class="fa fa-credit-card" aria-hidden="true"></i>
+      &nbsp;
+      <b>License:</b> &nbsp;
+      <abt-alert-link href="https://github.com/kazuhikoarase/qrcode-generator/blob/master/LICENSE">MIT</abt-alert-link>
+    </abt-alert>
+
+    <abt-alert>
+      <b><i class="fa fa-trademark" aria-hidden="true"></i></b>
+      :&nbsp;
+      The word <b><em>QR Code</em></b> is registered trademark of
+      <abt-alert-link href="http://www.denso-wave.com/qrcode/faqpatent-e.html">DENSO WAVE INCORPORATED</abt-alert-link>
+    </abt-alert>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/vanilla/qrcode/usage.md">
+    </aut-mark-down>
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Sample
+    </legend>
+
+    <abt-card>
+      <abt-card-header>
+        <p>
+          Add <code>at-qrcode</code> on your page and bind its <code>value</code> to your string value. you can set
+          other properties as well.
+        </p>
+      </abt-card-header>
+      <abt-card-body>
+        <div class="row">
+          <div class="col-4">
+            <form>
+              <div class="form-group">
+                <label for="exampleCorrectionLevel">Correction Level</label>
+                <select class="form-control" id="exampleCorrectionLevel" value.bind="correctionLevel">
+                  <option model.bind="1">L (7%)</option>
+                  <option model.bind="0">M (15%)</option>
+                  <option model.bind="3">Q (25%)</option>
+                  <option model.bind="2">H (30%)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleCorrectionLevel">Type Number</label>
+                <select class="form-control" id="exampleCorrectionLevel" value.bind="selectedTypeNumber">
+                  <option model.bind="m" repeat.for="m of maxTypeNumber">
+                    ${m + 1}
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleCorrectionLevel">Value</label>
+                <input class="form-control" type=text value.bind="text2QRCode" />
+              </div>
+            </form>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label>QR Code</label>
+              <hr />
+              <at-qrcode value.bind="text2QRCode" dark-color="black" light-color="white" size="170" type-number.bind="selectedTypeNumber"
+                error-correction-level.bind="correctionLevel">
+              </at-qrcode>
+            </div>
+          </div>
+        </div>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/vanilla/qrcode/basic.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Properties and Events
+    </legend>
+
+    <p>
+
+    </p>
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              at-qrcode
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">error-correction-level</td>
+          <td class="text-nowrap">ErrorCorrectLevel | number</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">L: 30%&nbsp;: &nbsp;<code>0</code></td>
+          <td>This value indicates the percentage of error correction, values are:
+            <ul>
+              <li>L: 7% &nbsp;&nbsp;: &nbsp;<code>0</code></li>
+              <li>M: 15%&nbsp;: &nbsp;<code>1</code></li>
+              <li>Q: 25%&nbsp;: &nbsp;<code>3</code></li>
+              <li>H: 30%&nbsp;: &nbsp;<code>2</code></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">dark-color</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">#000000</td>
+          <td>The color of dark squares in the QR code</td>
+        </tr>
+        <tr>
+        <tr>
+          <td class="text-nowrap" scope="row">light-color</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">#ffffff</td>
+          <td>The color of light squares in the QR code</td>
+        </tr>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">size</td>
+          <td class="text-nowrap">number</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">128</td>
+          <td>
+            The width and height of the generated QR code.
+          </td>
+        </tr>
+
+        <tr>
+            <td class="text-nowrap" scope="row">type-number</td>
+            <td class="text-nowrap">number</td>
+            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap">5</td>
+            <td>The type number of the qr code generator, this must be between 0 and 40
+            </td>
+          </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">value</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>The string value that its QR code will be generated.
+            <hr />
+            <b>PS:</b> The QR code will be generated on value change
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </fieldset>
+
+</template>

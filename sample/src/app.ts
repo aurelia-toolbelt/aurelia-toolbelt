@@ -196,6 +196,9 @@ export class App {
             },
             {
               route: 'divider', title: 'Divider'
+            },
+            {
+              route: 'qrcode', title: 'QR Code'
             }
           /*,{
             route: 'microlink', title: 'Microlink'
