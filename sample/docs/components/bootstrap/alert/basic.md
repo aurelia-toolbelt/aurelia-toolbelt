@@ -10,16 +10,12 @@ Contextual variations are: ```primary```, ```secondary```, ```info```, ```succes
   <strong>Well done!</strong> This is a success alert for you.
 </abt-alert>
 
-<abt-alert type="secondary">
-  <strong>Take care!</strong> This is a secondary alert which need your attention.
+<abt-alert type="info" countdown="10" countdown-changed.call="countDownHasChanged(current)" show-alert.bind="show_countdown_alert">
+  This alert will be disappeared after <strong>${secondsRemained}</strong> seconds...
 </abt-alert>
 
-<abt-alert type="warning">
-  <strong>Attention!</strong> Wanna show a warning, use this one.
-</abt-alert>
+<abt-button click.call="showAlert()">
+  Click here to show an alert with countdown
+</abt-button>
 
-
-<abt-alert type="danger">
-  <strong>Oh no!</strong> Something is going wrong.
-</abt-alert>
 ```

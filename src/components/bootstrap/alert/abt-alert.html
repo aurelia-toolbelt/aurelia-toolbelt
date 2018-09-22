@@ -1,10 +1,15 @@
 <template>
-  <div ref="alert" class="alert alert-${type} ${dismissible == true ? 'alert-dismissible' : ''} ${animate ? 'fade show':''} ${class}" role="alert" css="${style}">
+  <div show.bind="showAlert" ref="alert" class="alert alert-${type} ${dismissible == true ? 'alert-dismissible' : ''} ${animate ? 'fade show':''} ${class}" role="alert" css="${style}">
     <slot>
 
     </slot>
     <button if.bind="dismissible == true" type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
+
+    <abt-progress class="mt-3" show.bind="local_countdown" height="3px">
+        <abt-progress-bar type="${type}" value.bind="local_countdown" min="0" max="${countdown}"></abt-progress-bar>
+    </abt-progress>
+
   </div>
 </template>

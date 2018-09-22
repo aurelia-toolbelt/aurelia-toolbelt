@@ -11,7 +11,6 @@ export class BootstrapProgressBar {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: number | string = 0;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public min: number | string = 0;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public max: number | string = 100;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public animated: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public striped: boolean | string = false;
@@ -21,17 +20,30 @@ export class BootstrapProgressBar {
   private progressbar: Element;
   private progressbarTemplate: Element;
 
+  private min: number = 0;
+  private progressBarValue: number;
+
   private attached() {
     let animated = (this.animated === '' && this.progressbarTemplate.hasAttribute('animated')) || this.animated.toString() === 'true';
     let striped = (this.striped === '' && this.progressbarTemplate.hasAttribute('striped')) || this.striped.toString() === 'true';
 
     this.value = Number(this.value);
-    this.min = Number(this.min);
     this.max = Number(this.max);
+
+    if (this.min >= this.max) {
+      Error(`Min value (${this.min}) should be less than max value ( ${this.max} )`);
+      return;
+    }
+
 
     if (this.color && this.gradientColor) {
       this.gradientColorChanged(this.gradientColor);
     }
+  }
+
+  private valueChanged(newValue: number | string) {
+    newValue = Number(newValue);
+    this.progressBarValue = ( newValue * 100 ) / Number(this.max);
   }
 
   private gradientColorChanged(newValue: string) {
