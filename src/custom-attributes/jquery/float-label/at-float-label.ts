@@ -3,38 +3,41 @@ import { inject, customElement, bindable, bindingMode, containerless, PLATFORM, 
 export type FloatInputDirection = 'rtl' | 'ltr';
 export type FloatInputSize = 'sm' | 'md' | 'lg';
 
+const fl = require('aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.js');
+import 'aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.css';
+
 @containerless()
-@customAttribute('aut-float-label')
+@customAttribute('at-float-label')
 @inject(Element)
 export class FloatLabelCustomAttribute {
   constructor(private element: Element) {
-    DOM.injectStyles(`.aut-float-label {
-      position: relative;
-      padding-top: 18px;
-  }
-  .aut-float-label-rtl {
-      right: 0;
-  }
-  .aut-float-label-ltr {
-      left: 0;
-  }
-  .aut-float-label>.float-input {}
-  .aut-float-label>.float-input:focus {}
-  .aut-float-label>.float-label {
-      position: absolute;
-      top: 3px;
-      -webkit-transition: top .3s ease-in-out, opacity .3s ease-in-out;
-      transition: top .3s ease-in-out, opacity .3s ease-in-out;
-      opacity: 0;
-      font-size: 13px;
-  }
-  .aut-float-label>.float-label.show {
-      /* color: black;*/
-      top: -3px;
-      opacity: 1;
-  }
-  .aut-float-label>.float-label.on {}
-  `, null, null, 'aut-float-label-style');
+    //   DOM.injectStyles(`.at-float-label {
+    //     position: relative;
+    //     padding-top: 18px;
+    // }
+    // .at-float-label-rtl {
+    //     right: 0;
+    // }
+    // .at-float-label-ltr {
+    //     left: 0;
+    // }
+    // .at-float-label>.float-input {}
+    // .at-float-label>.float-input:focus {}
+    // .at-float-label>.float-label {
+    //     position: absolute;
+    //     top: 3px;
+    //     -webkit-transition: top .3s ease-in-out, opacity .3s ease-in-out;
+    //     transition: top .3s ease-in-out, opacity .3s ease-in-out;
+    //     opacity: 0;
+    //     font-size: 13px;
+    // }
+    // .at-float-label>.float-label.show {
+    //     /* color: black;*/
+    //     top: -3px;
+    //     opacity: 1;
+    // }
+    // .at-float-label>.float-label.on {}
+    // `, null, null, 'at-float-label-style');
   }
 
   private isTextBox(element: Element) {
@@ -83,7 +86,7 @@ export class FloatLabelCustomAttribute {
   private attached() {
 
     if (!this.isTextBox(this.element)) {
-      Error('aut-float-label works on `input` elements.');
+      Error('at-float-label works on `input` elements.');
     }
 
     this.element.classList.add('float-input');
@@ -95,36 +98,14 @@ export class FloatLabelCustomAttribute {
 
     let parent = this.element.parentElement;
     if (parent instanceof HTMLDivElement) {
-      parent.classList.add('aut-float-label');
+      parent.classList.add('at-float-label');
       this.insertAfter(label, this.element);
     } else {
       let div = <HTMLDivElement>document.createElement('DIV');
-      div.setAttribute('class', 'aut-float-label');
-      // div.appendChild(this.element);
+      div.setAttribute('class', 'at-float-label');
       div.appendChild(label);
       this.insertAfter(div, this.element);
       div.appendChild(this.element);
-    }
-    if ($('.aut-float-label input').length) {
-      let aut_float_on_class = 'on';
-      let aut_float_show_class = 'show';
-      $('.float-input').on('aut-check-value', function () {
-        let _aut_label = $(this).closest('.aut-float-label').find('.float-label');
-        if ((<HTMLInputElement>this).value !== '') {
-          _aut_label.addClass(aut_float_show_class);
-        } else {
-          _aut_label.removeClass(aut_float_show_class);
-        }
-      })
-        .on('keyup', function () {
-          $(this).trigger('aut-check-value');
-        })
-        .on('focus', function () {
-          $(this).closest('.aut-float-label').find('.float-label').addClass(aut_float_on_class);
-        })
-        .on('blur', function () {
-          $(this).closest('.aut-float-label').find('.float-label').removeClass(aut_float_on_class);
-        }).trigger('aut-check-value');
     }
   }
 

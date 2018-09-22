@@ -1,7 +1,7 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
-export * from './aut-float-label';
+export * from './at-float-label';
 
 export function configure(config: FrameworkConfiguration) {
-  config.globalResources([PLATFORM.moduleName('./aut-float-label')]);
+  config.globalResources([PLATFORM.moduleName('./at-float-label')]);
 }

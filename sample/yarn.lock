@@ -426,9 +426,9 @@ aurelia-templating@^1.8.2:
     aurelia-path "^1.0.0"
     aurelia-task-queue "^1.1.0"
 
-aureliatoolbelt-thirdparty@^1.0.4:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/aureliatoolbelt-thirdparty/-/aureliatoolbelt-thirdparty-1.0.6.tgz#3b9df69ab631c6f6f0712c7bc5e18f4f9f06ce85"
+aureliatoolbelt-thirdparty@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/aureliatoolbelt-thirdparty/-/aureliatoolbelt-thirdparty-1.0.9.tgz#108462f475d74fbbfd66b82a01321cc7cda6c8cc"
 
 aws-sign2@~0.6.0:
   version "0.6.0"

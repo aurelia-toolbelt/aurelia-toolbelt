@@ -43,7 +43,7 @@
         "aurelia-pal": "^1.5.0",
         "aurelia-pal-browser": "^1.4.0",
         "aurelia-router": "^1.4.0",
-        "aureliatoolbelt-thirdparty": "^1.0.4",
+        "aureliatoolbelt-thirdparty": "^1.0.9",
         "bluebird": "^3.5.1",
         "bootstrap": "^4.0.0",
         "bootstrap-float-label": "^3.0.1",
