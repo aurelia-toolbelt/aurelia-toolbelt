@@ -1,5 +1,7 @@
 export class BootstrapToggleDemo {
 
+private bedisable = true;
+
   private cpu = true;
 
     // array of strings

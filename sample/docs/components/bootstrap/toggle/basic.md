@@ -1,6 +1,9 @@
 ```html
 <abt-toggle checked class="mr-5"></abt-toggle>
 
+<abt-toggle checked disabled class="mr-1"></abt-toggle>
+<abt-toggle disabled class="mr-5"></abt-toggle>
+
 <abt-toggle size="small"></abt-toggle>
 <abt-toggle size="normal"></abt-toggle>
 <abt-toggle size="large"></abt-toggle>
