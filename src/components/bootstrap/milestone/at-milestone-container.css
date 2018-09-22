@@ -1,0 +1,82 @@
+.milestones {
+  list-style-type: none;
+  padding-left: 14.5px;
+}
+.milestones.milestones-bordered-top {
+  border-top: 2px solid var(--gray);
+}
+.milestones.milestones-bordered-bottom {
+  border-bottom: 2px solid var(--gray);
+}
+.milestones > li {
+  border-left: 1px dotted var(--gray);
+  border-bottom: 1px dotted var(--gray);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  min-height: 50px;
+}
+.milestones > li h1,
+.milestones > li h2,
+.milestones > li h3,
+.milestones > li h4,
+.milestones > li h5,
+.milestones > li h6 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.milestones > li .list-group:last-child,
+.milestones > li .panel:last-child,
+.milestones > li .well:last-child,
+.milestones > li .table:last-child,
+.milestones > li .alert:last-child,
+.milestones > li .progress:last-child,
+.milestones > li pre:last-child {
+  margin-bottom: 5px;
+}
+.milestones > li:last-child {
+  border-bottom: none;
+}
+.milestones > li > .fa:first-child,
+.milestones > li .glyphicon:first-child {
+  margin-left: -39.5px;
+  margin-top: -5px;
+  float: left;
+  position: relative;
+  border-radius: 14.5px;
+  padding: 7.5px;
+  font-size: 12px;
+  min-width: 29px;
+  text-align: center;
+}
+.milestone-secondary {
+  background-color: var(--secondary);
+  color: var(--light);
+  border: 1px solid var(--light);
+}
+.milestone-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  border: 1px solid var(--primary);
+}
+.milestone-success {
+  background-color: var(--success);
+  color: var(--white);
+  border: 1px solid var(--success);
+}
+.milestone-info {
+  background-color: var(--info);
+  color: var(--white);
+  border: 1px solid var(--info);
+}
+.milestone-warning {
+  background-color: var(--warning);
+  color: var(--white);
+  border: 1px solid var(--warning);
+}
+.milestone-danger,
+.milestone-error {
+  background-color: var(--danger);
+  color: var(--white);
+  border: 1px solid var(--danger);
+}
