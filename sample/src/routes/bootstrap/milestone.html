@@ -1,11 +1,9 @@
 <template>
 
-  Milestone Sample
-
   <style>
     .milestone-aurelia {
             background-color: #753B85;
-            color: goldenrod;
+            color: white;
             border: 1px solid darkgoldenrod;
           }
     
@@ -16,17 +14,20 @@
   <br />
 
   <at-milestone-container top-border="false" bottom-border="false">
-    
+
     <at-milestone type="success" icon="fa fa-check">
       <abt-card>
         <abt-card-header class="bg-success">
           Starting tests
         </abt-card-header>
-        <ul class="list-group">
-          <li class="list-group-item">Spawning container</li>
-          <li class="list-group-item">Allocating resources</li>
-          <li class="list-group-item">Obtaining an IP address</li>
-        </ul>
+        <abt-card-body>
+          <abt-listgroup flush="true">
+            <abt-listgroup-item>Spawning container</abt-listgroup-item>
+            <abt-listgroup-item>Allocating resources</abt-listgroup-item>
+            <abt-listgroup-item>Obtaining an IP address</abt-listgroup-item>
+          </abt-listgroup>
+        </abt-card-body>
+
       </abt-card>
     </at-milestone>
     <at-milestone type="danger" icon="fa fa-remove">
@@ -34,14 +35,16 @@
         <abt-card-header class="bg-danger">
           Preparing tests
         </abt-card-header>
-        <ul class="list-group">
-          <li class="list-group-item">Restoring form cache</li>
-          <li class="list-group-item">Building project</li>
-        </ul>
+        <abt-card-body>
+          <abt-listgroup>
+            <abt-listgroup-item>Restoring form cache</abt-listgroup-item>
+            <abt-listgroup-item>Building project</abt-listgroup-item>
+        </abt-card-body>
+
       </abt-card>
       <br />
       <abt-card>
-        <abt-card-header  class="bg-warning">
+        <abt-card-header class="bg-warning">
           Running tests
         </abt-card-header>
         <abt-card-body>
@@ -54,13 +57,13 @@
 
   <at-milestone-container top-border="true" bottom-border="true">
 
-    <at-milestone icon="fa fa-paperclip">
+    <at-milestone type="aurelia" icon="fa fa-paperclip">
       <strong>Alice</strong> uploaded <a href="#">a file</a> to the project <span style="color: grey">5 min ago</span>
     </at-milestone>
     <at-milestone icon="fa fa-comment">
       <abt-card>
         <abt-card-header>
-          <strong>Alice</strong> started <a href="#">a conversation</a> <span style="color: grey">5 min ago</span>
+          <strong>Alice</strong> started <a href="#">a conversation</a> <span style="color: grey">&nbsp;5 min ago</span>
         </abt-card-header>
         <abt-card-body>
           <abt-listgroup flush="true">
@@ -78,9 +81,6 @@
 
       <strong>Bob</strong> started to watch <a href="#">a suspicious case</a> <span style="color: grey">&nbsp;2 min ago</span>
     </at-milestone>
-
   </at-milestone-container>
-
-
 
 </template>
