@@ -1,0 +1,307 @@
+<template>
+
+
+  <fieldset class="mb-5">
+    <legend>
+      <h2>Star Rate
+        <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/milestone">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+
+    <abt-alert type="info">
+      A wrapper/bridge for
+      <abt-alert-link href="https://jablon.me/bootstrap-milestones/">Bootstrap Milestones</abt-alert-link>
+    </abt-alert>
+    <abt-alert type="success">
+      <i class="fa fa-credit-card" aria-hidden="true"></i>
+      &nbsp;
+      <b>License:</b> &nbsp;
+      <abt-alert-link href="https://css-tricks.com/star-ratings/">MIT</abt-alert-link>
+    </abt-alert>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/bootstrap/milestone/usage.md">
+    </aut-mark-down>
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Basic Sample
+    </legend>
+
+    <p>
+      Use <code>at-milestone</code> component within its container <code>at-milestone-container</code>
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+        <at-milestone-container top-border="false" bottom-border="false">
+
+          <at-milestone type="success" icon="fa fa-check">
+            <abt-card>
+              <abt-card-header class="bg-success">
+                Starting tests
+              </abt-card-header>
+              <abt-card-body>
+                <abt-listgroup flush="true">
+                  <abt-listgroup-item>Spawning container</abt-listgroup-item>
+                  <abt-listgroup-item>Allocating resources</abt-listgroup-item>
+                  <abt-listgroup-item>Obtaining an IP address</abt-listgroup-item>
+                </abt-listgroup>
+              </abt-card-body>
+
+            </abt-card>
+          </at-milestone>
+          <at-milestone type="danger" icon="fa fa-remove">
+            <abt-card>
+              <abt-card-header class="bg-danger">
+                Preparing tests
+              </abt-card-header>
+              <abt-card-body>
+                <abt-listgroup>
+                  <abt-listgroup-item>Restoring form cache</abt-listgroup-item>
+                  <abt-listgroup-item>Building project</abt-listgroup-item>
+              </abt-card-body>
+
+            </abt-card>
+            <br />
+            <abt-card>
+              <abt-card-header class="bg-warning">
+                Running tests
+              </abt-card-header>
+              <abt-card-body>
+                Running custom tests
+              </abt-card-body>
+            </abt-card>
+          </at-milestone>
+
+        </at-milestone-container>
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/milestone/basic.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+
+  <fieldset class="mt-5">
+    <legend>
+      Bordered and Customized Milestones
+    </legend>
+
+    <p>
+      Add <code>top-border</code> or <code>top-bottom</code> attributes to the <code>at-milestone-container</code>
+      component.
+      <br />
+      For custom <b>types</b> create a CSS class and name it
+      <code>milestone-*</code> which <b>*</b> will be your type.
+      <br />
+      <code>at-milestone</code> has contextual types:
+      <code>primary</code>,
+      <code>secondary</code> which is the default,
+      <code>success</code>,
+      <code>info</code>,
+      <code>warning</code> and
+      <code>danger</code>
+
+    </p>
+
+    <abt-card>
+      <abt-card-body>
+
+        <style>
+          .milestone-aurelia {
+              background-color: #753B85;
+              color: white;
+              border: 1px solid darkgoldenrod;
+          }
+        </style>
+
+        <at-milestone-container top-border bottom-border>
+          <at-milestone type="aurelia" icon="fa fa-paperclip">
+            <strong>Alice</strong> uploaded <a href="#">a file</a> to the project <span style="color: grey">5 min ago</span>
+          </at-milestone>
+          <at-milestone icon="fa fa-comment">
+            <abt-card>
+              <abt-card-header>
+                <strong>Alice</strong> started <a href="#">a conversation</a> <span style="color: grey">&nbsp;5 min ago</span>
+              </abt-card-header>
+              <abt-card-body>
+                <abt-listgroup flush="true">
+                  <abt-listgroup-item>Cras justo odio</abt-listgroup-item>
+                  <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
+                  <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+                </abt-listgroup>
+              </abt-card-body>
+            </abt-card>
+          </at-milestone>
+          <at-milestone type="success" icon="fa fa-check">
+            <strong>Bob</strong> solved <a href="#">an issue</a> <span style="color: grey"> &nbsp;4 min ago</span>
+          </at-milestone>
+          <at-milestone type="warning" icon="fa fa-eye">
+
+            <strong>Bob</strong> started to watch <a href="#">a suspicious case</a> <span style="color: grey">&nbsp;2
+              min ago</span>
+          </at-milestone>
+        </at-milestone-container>
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/bootstrap/milestone/bordered.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      Properties and Events
+    </legend>
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              at-milestone-container
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">bottom-border</td>
+          <td class="text-nowrap">boolean</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">false</td>
+          <td>Applies a bottom border for the whole milestone container</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies your custom css class on <code>at-milestone</code> component.</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attributes that you want to apply on the component.</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">top-border</td>
+          <td class="text-nowrap">boolean</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">false</td>
+          <td>Applies a top border for the whole milestone container</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              at-milestone
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Applies your custom css class on <code>at-milestone</code> component.</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">icon</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>A css class for the icon you wish to be shown on the milestone border
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">style</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Css style attributes that you want to apply on the component.</td>
+        </tr>
+
+        <tr>
+          <td class="text-nowrap" scope="row">type</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap">secondary</td>
+          <td>The type of milestone, six contextual values provided,
+            <code>primary</code>,
+            <code>secondary</code>,
+            <code>info</code>,
+            <code>success</code>,
+            <code>warning</code>, and
+            <code>danger</code>,
+            . You can also create your own type via css classes to be like
+            <code>
+              milestone-*
+            </code>, in which * is your custom type.
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+  </fieldset>
+
+
+</template>

@@ -10,6 +10,7 @@ export function configure(config: FrameworkConfiguration) {
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/collapse/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/dropdown/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/inputgroup/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/milestone/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/modal/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/navbar/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/navs/index'))

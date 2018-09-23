@@ -151,6 +151,16 @@ export class BootstrapRoute {
         settings: { auth: false, isComponent: true }
       },
       {
+        route: ['milestone'],
+        name: 'bootstrap-milestone',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/milestone'),
+        nav: true,
+        title: 'Milestones',
+        settings: { auth: false, isComponent: true }
+
+      },
+      {
         route: ['modal'],
         name: 'bootstrap-modal',
 

@@ -126,6 +126,10 @@ export class App {
               route: 'list-group', title: 'List Group'
             },
             {
+              route: 'milestone', title: 'Milestones'
+
+            },
+            {
               route: 'modal', title: 'Modals'
 
             },

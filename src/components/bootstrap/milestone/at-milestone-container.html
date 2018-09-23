@@ -1,0 +1,10 @@
+<template>
+
+  <require from="./at-milestone-container.css"></require>
+
+  <ul class="milestones ${topBorder ? 'milestones-bordered-top' : '' } ${ bottomBorder ? 'milestones-bordered-bottom' : '' } ${class}" css="${style}">
+    <slot>
+    </slot>
+  </ul>
+
+</template>
