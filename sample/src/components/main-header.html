@@ -22,11 +22,11 @@
       </abt-navbar-nav>
     </abt-navbar-collapser>
 
-    <form class="form-inline my-2 my-lg-0">
+    <form class="form-inline my-2 my-lg-0 mr-5">
       <label>
         <a href="https://bootswatch.com/" class="text-dark">Bootswatch themes</a>
         &nbsp;&nbsp;
-        <abt-dropdown value.bind="theme" class="mr-2" title="${theme.name}" align-right>
+        <abt-dropdown value.bind="theme" class="mr-5" title="${theme.name}" align-right>
           <abt-dropdown-item repeat.for="th of themes" model.bind="th">${th.name}</abt-dropdown-item>
         </abt-dropdown>
       </label>
