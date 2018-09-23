@@ -6,8 +6,8 @@ import { useShadowDOM, customElement, containerless, bindable, bindingMode, inje
 @customElement('at-milestone-container')
 export class AureliaToolbeltMilestoneContainer {
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public topBorder: boolean | string = true;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public bottomBorder: boolean | string = true;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public topBorder: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public bottomBorder: boolean | string = false;
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
