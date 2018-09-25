@@ -18,6 +18,14 @@ export class Purejs {
         settings: { auth: false, isComponent: true }
       },
       {
+        route: ['', 'loading-indicator'],
+        name: 'loading-indicator',
+        moduleId: PLATFORM.moduleName('./vanilla/loading-indicator'),
+        nav: true,
+        title: 'Loading Indicator',
+        settings: { auth: false, isComponent: true }
+      },
+      {
         route: ['radio'],
         name: 'pure-radio',
         moduleId: PLATFORM.moduleName('./vanilla/radio'),

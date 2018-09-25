@@ -1,0 +1,10 @@
+<template>
+
+  <abt-alert ref="test">
+
+  </abt-alert>
+
+  <at-nanobar type="info" percent.bind="percentage" parent.bind="test"></at-nanobar>
+
+  <input type="range" min="0"  max="100" style="width: 80%;" value.bind="percentage" />
+</template>

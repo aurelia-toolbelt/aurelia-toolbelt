@@ -196,6 +196,9 @@ export class App {
               route: 'masked-input', title: 'Masked Input'
             },
             {
+              route: 'loading-indicator', title: 'Loading Indicator'
+            },
+            {
               route: 'scrollup', title: 'ScrollUp'
             },
             {
