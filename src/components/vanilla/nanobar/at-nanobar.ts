@@ -18,9 +18,9 @@ export class AtNanobar {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public percent: number = null;
 
 
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public increment: number = 0.5;
 
 
-  private incrementBy = 0.2;
   private trickle = true;
   private trickleSpeed = 200;
 
@@ -30,15 +30,22 @@ export class AtNanobar {
   private intervalHandlerId: any = null;
 
 
-  constructor(idGenerator: Uuid) {
+  constructor(idGenerator: Uuid, private element: Element) {
     this.id = idGenerator.Uuidv4ForId();
   }
 
   private bind() {
+
+    const onlyCentralAttribute = (this.central === '' && this.element.hasAttribute('central'));
+    this.central = onlyCentralAttribute || this.central.toString() === 'true';
+
+
+    // let target = (typeof this.parent === 'string') ? document.getElementById(this.parent) : this.parent;
+
     this.options = {
       id: this.id,
       classname: this.class,
-      target:  (  typeof this.parent === 'string' ) ? document.getElementById(this.parent) : this.parent
+      target: this.parent
     };
 
     let style = `#${this.id}>.bar {
@@ -61,8 +68,8 @@ export class AtNanobar {
     if (this.trickle) {
       this.intervalHandlerId = setInterval(() => {
         this.nanobar.go(current);
-        current += this.incrementBy;
-        if (current >= (100 /*+ incrementBy*/)) {
+        current += this.increment;
+        if (current >= (100 /*+ increment*/)) {
           clearInterval(this.intervalHandlerId);
         }
       }, this.trickleSpeed);

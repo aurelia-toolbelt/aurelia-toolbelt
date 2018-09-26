@@ -9,128 +9,153 @@
   </style>
 
   <fieldset class="mb-5">
-      <legend>
-        <h2>Divider
-          <a href="https://github.com/aurelia-toolbelt/aurelia-toolbelt/tree/master/src/components/vanilla/nanobar">
-            <i class="fa fa-link"></i>
-          </a>
-        </h2>
-      </legend>
-      <p class="mb-2">Display loading indicators at top f the page or any other container you wish.</p>
-    </fieldset>
-    <fieldset class="mt-5">
-      <legend>
-        Usage
-      </legend>
-      <aut-mark-down src="./docs/components/vanilla/nanobar/usage.md">
-      </aut-mark-down>
-    </fieldset>
-    <fieldset class="mt-5">
-      <legend>
-        Sample
-      </legend>
-      
-      <abt-card>
-        <abt-card-body>
+    <legend>
+      <h2>Divider
+        <a href="https://github.com/aurelia-toolbelt/aurelia-toolbelt/tree/master/src/components/vanilla/nanobar">
+          <i class="fa fa-link"></i>
+        </a>
+      </h2>
+    </legend>
+    <p class="mb-2">Display loading indicators at top f the page or any other container you wish.</p>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Usage
+    </legend>
+    <aut-mark-down src="./docs/components/vanilla/nanobar/usage.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Sample
+    </legend>
 
-            <abt-alert id="test">
+    <abt-card>
+      <abt-card-body>
 
-              </abt-alert>
+        <div class="container" ref="test">
+
+          <table class="table table-striped">
+            <thead class="table-secondary">
+              <tr>
+                <td>#</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>
+                  <abt-button size="sm" click.call="loadDevelopers()" class="float-right">
+                        Refresh
+                  </abt-button>
+                </td>
+              </tr>
+            </thead>
+            <tbody class="table-dark">
+              <tr repeat.for="dev of developers">
+                <td>${dev.id}</td>
+                <td>${dev.firstName}</td>
+                <td>${dev.lastName}</td>
+                <td></td>
+              </tr>
+            </tbody>
             
-              <at-nanobar type="info" percent.bind="percentage" parent="test" central="true" class="custom-nanobar">
-              </at-nanobar>
-            
-              <input type="range" min="0" max="100" style="width: 80%; z-index: 1020px !important;" value.bind="percentage" />
-                      
+          </table>
+        </div>
+          
+        <hr />
 
-        </abt-card-body>
-        <abt-card-footer>
-            <aut-mark-down src="./docs/components/vanilla/divider/sample.md">
-            </aut-mark-down>
-        </abt-card-footer>
-      </abt-card>
-    </fieldset>
-    
-    <fieldset class="mt-5">
-      <legend>
-        API Reference
-      </legend>
-      <table class="table table-striped table-bordered">
-        <thead class="thead-dark">
-          <tr>
-            <td class="text-nowrap" colspan="4">
-              <b>
-                aut-divider
-              </b>
-            </td>
-            <td class="text-nowrap" colspan="1">
-              <b>
-                containerless
-              </b>
-            </td>
-          </tr>
-          <tr>
-            <th class="text-nowrap" scope="col">Name</th>
-            <th class="text-nowrap" scope="col">Type</th>
-            <th class="text-nowrap" scope="col">Binding type</th>
-            <th class="text-nowrap" scope="col">Default value</th>
-            <th class="text-nowrap" scope="col">Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="text-nowrap" colspan="5">
-              <b>
-                Properties
-              </b>
-            </td>
-          </tr>
-          <tr>
-            <td class="text-nowrap" scope="row">id</td>
-            <td class="text-nowrap">string</td>
-            <td class="text-nowrap">oneTime</td>
-            <td class="text-nowrap"></td>
-            <td>Set id to the component</td>
-          </tr>
-          <tr>
-            <td class="text-nowrap" scope="row">class</td>
-            <td class="text-nowrap">string</td>
-            <td class="text-nowrap">oneWay</td>
-            <td class="text-nowrap"></td>
-            <td>Set class to the component</td>
-          </tr>
-          <tr>
-            <td class="text-nowrap" scope="row">vertical</td>
-            <td class="text-nowrap">boolean | string</td>
-            <td class="text-nowrap">oneWay</td>
-            <td class="text-nowrap">false</td>
-            <td>Set
-              <code>true</code> if you want the component to be
-              <code>vertical</code>.</td>
-          </tr>
-          <tr>
-            <td class="text-nowrap" scope="row">color</td>
-            <td class="text-nowrap">string</td>
-            <td class="text-nowrap">oneWay</td>
-            <td class="text-nowrap">#b5b5b5</td>
-            <td>Set color to the component text.</td>
-          </tr>
-          <tr>
-            <td class="text-nowrap" scope="row">line-color</td>
-            <td class="text-nowrap">string</td>
-            <td class="text-nowrap">oneWay</td>
-            <td class="text-nowrap">#dbdbdb</td>
-            <td>Set color to the component lines.</td>
-          </tr>
-          <tr>
-            <td class="text-nowrap" scope="row">background-color</td>
-            <td class="text-nowrap">string</td>
-            <td class="text-nowrap">oneWay</td>
-            <td class="text-nowrap">#fff</td>
-            <td>Set color to the component background.</td>
-          </tr>
-        </tbody>
-      </table>
-    </fieldset>
+        <at-nanobar type="info" increment.bind="10" loading.bind="isLoading" parent.bind="test" central="false" class="custom-nanobar">
+        </at-nanobar>
+
+        <input type="range" min="0" max="100" style="width: 80%; z-index: 1020px !important;" value.bind="percentage" />
+
+
+      </abt-card-body>
+      <abt-card-footer>
+        <aut-mark-down src="./docs/components/vanilla/divider/sample.md">
+        </aut-mark-down>
+      </abt-card-footer>
+    </abt-card>
+  </fieldset>
+
+  <fieldset class="mt-5">
+    <legend>
+      API Reference
+    </legend>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <td class="text-nowrap" colspan="4">
+            <b>
+              aut-divider
+            </b>
+          </td>
+          <td class="text-nowrap" colspan="1">
+            <b>
+              containerless
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="col">Name</th>
+          <th class="text-nowrap" scope="col">Type</th>
+          <th class="text-nowrap" scope="col">Binding type</th>
+          <th class="text-nowrap" scope="col">Default value</th>
+          <th class="text-nowrap" scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap" colspan="5">
+            <b>
+              Properties
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">id</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneTime</td>
+          <td class="text-nowrap"></td>
+          <td>Set id to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">class</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap"></td>
+          <td>Set class to the component</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">vertical</td>
+          <td class="text-nowrap">boolean | string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">false</td>
+          <td>Set
+            <code>true</code> if you want the component to be
+            <code>vertical</code>.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">color</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">#b5b5b5</td>
+          <td>Set color to the component text.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">line-color</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">#dbdbdb</td>
+          <td>Set color to the component lines.</td>
+        </tr>
+        <tr>
+          <td class="text-nowrap" scope="row">background-color</td>
+          <td class="text-nowrap">string</td>
+          <td class="text-nowrap">oneWay</td>
+          <td class="text-nowrap">#fff</td>
+          <td>Set color to the component background.</td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
 
 </template>
