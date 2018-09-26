@@ -1,23 +1,24 @@
-import { bindable, noView, customElement, bindingMode, DOM, inject, containerless, PLATFORM } from 'aurelia-framework';
+import { bindable, noView, customElement, bindingMode, DOM, inject, PLATFORM } from 'aurelia-framework';
 import { Uuid } from '../../../utilities/vanilla/uuid';
 
 const Nanobar = require('nanobar');
 
-// import * as Nanobar from 'nanobar';
-
-
-@noView([PLATFORM.moduleName('./at-nanobar.css')])
 @inject(Uuid)
 @customElement('at-nanobar')
+@noView([PLATFORM.moduleName('./at-nanobar.css')])
 export class AtNanobar {
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public parent: HTMLElement | string;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public central: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public shadow: boolean | string = true;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public class: string = 'at-nanobar';
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public loading = false;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public type = 'primary';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public percent: number = null;
+
+
+
 
   private incrementBy = 0.2;
   private trickle = true;
@@ -35,8 +36,9 @@ export class AtNanobar {
 
   private bind() {
     this.options = {
-      id: this.id, classname: 'at-nanobar',
-      target: this.parent
+      id: this.id,
+      classname: this.class,
+      target:  (  typeof this.parent === 'string' ) ? document.getElementById(this.parent) : this.parent
     };
 
     let style = `#${this.id}>.bar {
