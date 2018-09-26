@@ -12,7 +12,7 @@ const Nanobar = require('nanobar');
 export class AtNanobar {
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public parent: HTMLElement | string;
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) public central: boolean | string = true;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) public central: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public shadow: boolean | string = true;
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public loading = false;

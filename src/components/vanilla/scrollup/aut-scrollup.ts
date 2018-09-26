@@ -65,6 +65,8 @@ export class ScrollUpCustomElement {
     }
     */
     this.threshold = Number(this.threshold);
-    window.onscroll = () => this.checkScrollTop();
+    if ((window.onscroll === undefined || window.onscroll === null) ) {
+      window.onscroll = () => this.checkScrollTop();
+    }
   }
 }

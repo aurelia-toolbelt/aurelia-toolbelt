@@ -130,7 +130,7 @@ export class BootstrapCollapse {
     $(this.collapse).off('shown.bs.collapse');
     $(this.collapse).off('hide.bs.collapse');
     $(this.collapse).off('hidden.bs.collapse');
-    $(this.collapse).collapse('dispose');
+    //$(this.collapse).collapse('dispose');
   }
 
 }
