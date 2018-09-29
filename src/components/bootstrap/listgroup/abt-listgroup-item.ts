@@ -31,12 +31,13 @@ export class ListGroupItemCustomElement {
     }
     if (isDisabled) {
       this.listGroupItem.classList.add('disabled');
-    }
-    if ((this.href || this.click) && !this.listGroupItem.classList.contains('disabled')) {
-      $(this.listGroupItem).removeClass('abt-listgroup-item-disabled');
-    } else {
       $(this.listGroupItem).addClass('abt-listgroup-item-disabled');
     }
+    if ((this.href || this.click) && !isDisabled) {
+      this.listGroupItem.setAttribute('href', this.href);
+    }/* else {
+      $(this.listGroupItem).addClass('abt-listgroup-item-disabled');
+    }*/
 
     if (this.type) {
       this.listGroupItem.classList.add(`list-group-item-${this.type}`);

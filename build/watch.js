@@ -157,6 +157,7 @@ gulp.task('fuse-sample', function () {
         + aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.js
         + clean-css
         + qrcode-generator-ts
+        + nanobar
 `)
 
 

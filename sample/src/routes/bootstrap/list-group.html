@@ -7,7 +7,8 @@
         </a>
       </h2>
     </legend>
-    List groups are a flexible and powerful component for displaying a series of content. Modify and extend them to support just
+    List groups are a flexible and powerful component for displaying a series of content. Modify and extend them to
+    support just
     about any content within.
   </fieldset>
   <fieldset class="mt-5">
@@ -27,7 +28,10 @@
       <abt-listgroup-item>Dapibus ac facilisis in</abt-listgroup-item>
       <abt-listgroup-item>Morbi leo risus</abt-listgroup-item>
       <abt-listgroup-item>Porta ac consectetur ac</abt-listgroup-item>
-      <abt-listgroup-item>Vestibulum at eros</abt-listgroup-item>
+      <abt-listgroup-item>
+        <button click.delegate='itemClicked()'>Submit</button>
+      </abt-listgroup-item>
+
     </abt-listgroup>
     <aut-mark-down src="./docs/components/bootstrap/listgroup/basic-example.md">
     </aut-mark-down>
@@ -251,7 +255,8 @@
           <td class="text-nowrap">boolean, string</td>
           <td class="text-nowrap">oneWay</td>
           <td class="text-nowrap">false</td>
-          <td>to remove some borders and rounded corners to render list group items edge-to-edge in a parent container (e.g.,
+          <td>to remove some borders and rounded corners to render list group items edge-to-edge in a parent container
+            (e.g.,
             cards).
           </td>
         </tr>
