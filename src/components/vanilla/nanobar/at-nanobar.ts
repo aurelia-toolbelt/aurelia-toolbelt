@@ -5,7 +5,7 @@ const Nanobar = require('nanobar');
 
 @inject(Uuid, Element)
 @customElement('at-nanobar')
-@noView([PLATFORM.moduleName('./at-nanobar.css')])
+@noView()
 export class AtNanobar {
 
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public type = 'secondary';
