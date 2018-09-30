@@ -1,6 +1,6 @@
 {
     "name": "aurelia-toolbelt",
-    "version": "1.2.2",
+    "version": "1.2.1",
     "description": "A bunch of components, value converters, services and so, to have rich client applications.",
     "keywords": [
         "aurelia-toolbelt",
