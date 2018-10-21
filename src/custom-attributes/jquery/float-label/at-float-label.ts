@@ -1,38 +1,69 @@
-import { inject, customElement, bindable, bindingMode, containerless, PLATFORM, noView, DOM, useShadowDOM, customAttribute } from 'aurelia-framework';
+import {
+  inject,
+  bindable,
+  bindingMode,
+  containerless,
+  customAttribute
+} from 'aurelia-framework';
 
 export type FloatInputDirection = 'auto' | 'rtl' | 'ltr';
 
-const fl = require('aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.js');
+const jfl = require('aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.js');
 import 'aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.css';
 
 @containerless()
 @customAttribute('at-float-label')
 @inject(Element)
 export class AureliaToolbeltFloatLabel {
-
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public direction: FloatInputDirection = 'auto';
-  @bindable({ defaultBindingMode: bindingMode.oneWay, primaryProperty: true }) public text: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public right: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public left: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public paddingTop: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public color: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public fontSize: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay })
+  public class: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay })
+  public style: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay })
+  public direction: FloatInputDirection = 'auto';
+  @bindable({ defaultBindingMode: bindingMode.oneWay, primaryProperty: true })
+  public text: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay })
+  public right: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay })
+  public left: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay })
+  public paddingTop: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay })
+  public color: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay })
+  public fontSize: string = '';
 
   private label: HTMLLabelElement;
   private div: HTMLDivElement;
 
-  constructor(private element: HTMLInputElement) {
-  }
+  constructor(private element: HTMLInputElement) {}
 
   private isTextBox(element: Element) {
     let tagName = element.tagName.toLowerCase();
-    if (tagName === 'textarea') { return true; }
-    if (tagName !== 'input') { return false; }
+    if (tagName === 'textarea') {
+      return true;
+    }
+    if (tagName !== 'input') {
+      return false;
+    }
     let type = element.getAttribute('type').toLowerCase(),
       // if any of these input types is not supported by a browser, it will behave as input type text.
-      inputTypes = ['text', 'password', 'number', 'email', 'tel', 'url', 'search', 'date', 'datetime', 'datetime-local', 'time', 'month', 'week'];
+      inputTypes = [
+        'text',
+        'password',
+        'number',
+        'email',
+        'tel',
+        'url',
+        'search',
+        'date',
+        'datetime',
+        'datetime-local',
+        'time',
+        'month',
+        'week'
+      ];
     return inputTypes.indexOf(type) >= 0;
   }
 
@@ -40,7 +71,7 @@ export class AureliaToolbeltFloatLabel {
     refChild.parentNode.insertBefore(newChild, refChild.nextSibling);
   }
 
-  private injectJavascriptText(text: string, id?: string) {
+  /*private injectJavascriptText(text: string, id?: string) {
     if (id) {
       if (document.getElementById(id)) {
         return;
@@ -67,7 +98,7 @@ export class AureliaToolbeltFloatLabel {
       script.id = id;
     }
     document.getElementsByTagName('head')[0].appendChild(script);
-  }
+  }*/
 
   private isNullOrEmpty(text: string): boolean {
     if (text === undefined || text === null || text === '') {
@@ -77,14 +108,13 @@ export class AureliaToolbeltFloatLabel {
     }
   }
 
-
   private attached() {
-
     if (!this.isTextBox(this.element)) {
       Error('at-float-label works on `input` elements.');
     }
 
-    let textContent = this.text === '' ? this.element.getAttribute('placeholder') : this.text;
+    let textContent =
+      this.text === '' ? this.element.getAttribute('placeholder') : this.text;
     if (this.isNullOrEmpty(textContent)) {
       return;
     }
@@ -95,7 +125,10 @@ export class AureliaToolbeltFloatLabel {
     this.label = <HTMLLabelElement>document.createElement('LABEL');
     this.label.textContent = textContent;
     this.label.htmlFor = this.element.id;
-    this.label.classList.add('float-label', this.color === '' ? 'text-primary' : 'text-' + this.color);
+    this.label.classList.add(
+      'float-label',
+      this.color === '' ? 'text-black' : 'text-' + this.color
+    );
 
     if (this.direction === 'auto') {
       if (dir === 'rtl' || textAlign === 'right') {
@@ -104,7 +137,9 @@ export class AureliaToolbeltFloatLabel {
         this.label.classList.add('at-float-label-ltr');
       }
     } else {
-      this.label.classList.add(this.direction === 'ltr' ? 'at-float-label-ltr' : 'at-float-label-rtl');
+      this.label.classList.add(
+        this.direction === 'ltr' ? 'at-float-label-ltr' : 'at-float-label-rtl'
+      );
     }
 
     let parent = this.element.parentElement;
@@ -121,12 +156,11 @@ export class AureliaToolbeltFloatLabel {
     }
 
     if (!this.isNullOrEmpty(this.class)) {
-      this.class.split(' ').forEach((x) => this.label.classList.add(x));
+      this.class.split(' ').forEach(x => this.label.classList.add(x));
     }
     if (!this.isNullOrEmpty(this.style)) {
       this.label.setAttribute('style', this.style);
     }
-
 
     if (!this.isNullOrEmpty(this.paddingTop)) {
       this.div.style.paddingTop = this.paddingTop;
@@ -146,4 +180,3 @@ export class AureliaToolbeltFloatLabel {
     }
   }
 }
-
