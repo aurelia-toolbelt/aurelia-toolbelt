@@ -10,9 +10,6 @@ export * from './services/jquery/toastr/toastr-service';
 
 export * from './services/misc/common-css-service';
 
-// export * from './services/vanilla/zenscroll/zenscroll-service';
-
-
 export function configure(config: FrameworkConfiguration) {
 
   config
@@ -23,23 +20,4 @@ export function configure(config: FrameworkConfiguration) {
     .feature(PLATFORM.moduleName('aurelia-toolbelt/utilities/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/value-converters/index'))
     ;
-
-  // let taskQueue = config.aurelia.container.get(TaskQueue);
-
-  // // intercept attached() calls of the View so we can call afterAttached() afterwards
-  // let attached = Controller.prototype.attached;
-  // Controller.prototype.attached = () => {
-  //   // attached() gets called twice but only does things when isAttached is false
-  //   let isAttached = this.isAttached;
-  //   attached.call(this);
-
-  //   // call afterAttached() only if the View has not been attached before
-  //   if (!isAttached) {
-  //     if (this.viewModel && this.viewModel.afterAttached) {
-  //       // call afterAttached() via the taskqueue, so any two-way bindings have been completed
-  //       taskQueue.queueTask(() => this.viewModel.afterAttached());
-  //     }
-  //   }
-  // };
-
 }
