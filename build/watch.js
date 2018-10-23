@@ -155,6 +155,8 @@ gulp.task('fuse-sample', function () {
         + aureliatoolbelt-thirdparty/microlink/microlink.js
         + aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.css
         + aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.js
+        + aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.js
+        + aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.css
         + clean-css
         + qrcode-generator-ts
         + nanobar

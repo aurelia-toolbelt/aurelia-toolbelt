@@ -63,7 +63,7 @@ export class BootstrapNavs {
     }
 
     let children = this.element.children.item(0).children.item(0).getElementsByTagName('a');
-    $(children).tab();
+    $(children).tab('show');
     this.handle_events();
 
   }

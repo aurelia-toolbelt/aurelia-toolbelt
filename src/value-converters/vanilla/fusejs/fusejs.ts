@@ -7,7 +7,7 @@ import * as Fuse from 'fuse.js';
 export class FuseValueConverter {
 
 
-    public toView(value: Array<any>, options: FuseOptions, criteria: string) {
+    public toView(value: Array<any>, options: FuseOptions<any>, criteria: string) {
 
         if (options === null || options === undefined) { return value || []; }
 
