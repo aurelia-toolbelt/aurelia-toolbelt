@@ -1,5 +1,5 @@
 <template>
-    <style>
+    <!-- <style>
         .aut-scrollup {
             background: url('/images/top.png') no-repeat;
             cursor: pointer;
@@ -8,7 +8,7 @@
             width: 64px;
             height: 64px;
         }
-    </style>
+    </style> -->
     <fieldset class="mb-5">
         <legend>
             <h2>ScrollUp
@@ -30,15 +30,15 @@
             <legend>
                 Example
             </legend>
-            <p>Enter your desired <code>threshold</code>. This sets the <i>distance</i> from the <i>top</i> of the page to display the component.</p>
-            <abt-inputgroup class="mb-3">
+            <!--<p>Enter your desired <code>threshold</code>. This sets the <i>distance</i> from the <i>top</i> of the page to display the component.</p>
+             <abt-inputgroup class="mb-3">
                 <abt-inputgroup-prepend>
                     <abt-inputgroup-text>Threshold</abt-inputgroup-text>
                 </abt-inputgroup-prepend>
                 <input type="number" value.bind="thresholdValue" min='0' max='1800' class="form-control" placeholder="Threshold" aria-label="Threshold">
             </abt-inputgroup>
             <aut-scrollup threshold.bind="thresholdValue" before-scroll-up.call="onBeforeScrollUp()" after-scroll-up.call="onAfterScrollup()">
-            </aut-scrollup>
+            </aut-scrollup> -->
             <abt-navs tabs>
                 <abt-nav-item title="View" active>
                     <aut-mark-down src="./docs/components/vanilla/scrollup/example-view.md">
@@ -171,5 +171,4 @@
                 </tbody>
             </table>
         </fieldset>
-        <div style="height:500px"></div>
 </template>

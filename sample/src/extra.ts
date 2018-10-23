@@ -24,6 +24,9 @@ import 'aureliatoolbelt-thirdparty/bootstrap-toggle/bootstrap-toggle.css';
 import 'aureliatoolbelt-thirdparty/jquery.blockUI/jquery.blockUI.js';
 const ml = require('aureliatoolbelt-thirdparty/microlink/microlink.js');
 
+const fl = require('aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.js');
+import 'aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.css';
+
 let x = fuse;
 let hljs = hl;
 // let Popper = popperjs;
