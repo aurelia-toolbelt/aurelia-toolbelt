@@ -27,6 +27,9 @@ const ml = require('aureliatoolbelt-thirdparty/microlink/microlink.js');
 const fl = require('aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.js');
 import 'aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.css';
 
+import "aureliatoolbelt-thirdparty/bootstrap-maxlength.js/bootstrap-maxlength.js";
+
+
 let x = fuse;
 let hljs = hl;
 // let Popper = popperjs;
