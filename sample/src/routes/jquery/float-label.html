@@ -41,7 +41,9 @@
         Sizing
       </legend>
       <input at-float-label type="text" class="form-control form-control-sm" placeholder="User Name">
+      <div style="margin-top: 7px"></div>
       <input at-float-label type="text" class="form-control" placeholder="User Name">
+      <div style="margin-top: 7px"></div>
       <input at-float-label type="text" class="form-control form-control-lg" placeholder="User Name">
       <aut-mark-down src="./docs/components/jquery/float-label/sizing.md">
       </aut-mark-down>
@@ -51,7 +53,9 @@
         Color
       </legend>
       <input at-float-label="color.bind:'success'" type="text" class="form-control form-control-sm" placeholder="User Name">
+      <div style="margin-top: 7px"></div>
       <input at-float-label="color.bind:'DeepPink'" type="text" class="form-control form-control-sm" placeholder="User Name">
+      <div style="margin-top: 7px"></div>
       <input at-float-label="color.bind:'#3AE2CE'" type="text" class="form-control form-control-sm" placeholder="User Name">
       <aut-mark-down src="./docs/components/jquery/float-label/color.md">
       </aut-mark-down>
@@ -89,7 +93,9 @@
         <li>You can choose your setting by <code>direction</code> property.</li>
       </ul>
       <input at-float-label style="text-align:right" type="text" class="form-control" placeholder="نام کاربری">
+      <div style="margin-top: 7px"></div>
       <input at-float-label style="direction:rtl" type="text" class="form-control" placeholder="نام کاربری">
+      <div style="margin-top: 7px"></div>
       <input at-float-label="direction.bind:'rtl';text.bind:'نام کاربری'" type="text" class="form-control" placeholder="User Name">
       <aut-mark-down src="./docs/components/jquery/float-label/rtl.md">
       </aut-mark-down>
@@ -108,7 +114,7 @@
             </td>
             <td class="text-nowrap" colspan="1">
               <b>
-                containerless
+                custom attribute
               </b>
             </td>
           </tr>
@@ -131,63 +137,72 @@
           <tr>
             <td class="text-nowrap" scope="row">class</td>
             <td class="text-nowrap">string</td>
-            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap">oneTime</td>
             <td class="text-nowrap"></td>
             <td>Set custom classes to the <code>label</code> component</td>
           </tr>
           <tr>
             <td class="text-nowrap" scope="row">style</td>
             <td class="text-nowrap">string</td>
-            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap">oneTime</td>
             <td class="text-nowrap"></td>
             <td>Set custom styles to the <code>label</code> component</td>
           </tr>
           <tr>
             <td class="text-nowrap" scope="row">padding-top</td>
             <td class="text-nowrap">string</td>
-            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap">oneTime</td>
             <td class="text-nowrap"></td>
             <td>Set custom padding-top to the <code>label</code> component</td>
           </tr>
           <tr>
             <td class="text-nowrap" scope="row">right</td>
             <td class="text-nowrap">string</td>
-            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap">oneTime</td>
             <td class="text-nowrap"></td>
             <td>The right property sets or returns the right position of a positioned element.</td>
           </tr>
           <tr>
             <td class="text-nowrap" scope="row">left</td>
             <td class="text-nowrap">string</td>
-            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap">oneTime</td>
             <td class="text-nowrap"></td>
             <td>The left property sets or returns the left position of a positioned element.</td>
           </tr>
           <tr>
             <td class="text-nowrap" scope="row">color</td>
             <td class="text-nowrap">string</td>
-            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap">oneTime</td>
             <td class="text-nowrap">black</td>
             <td>You can set any kind of colors to the <code>label</code> component</td>
           </tr>
           <tr>
             <td class="text-nowrap" scope="row">font-size</td>
             <td class="text-nowrap">string</td>
-            <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap">oneTime</td>
             <td class="text-nowrap"></td>
             <td>Set <code>font-size</code> to the <code>label</code> component</td>
             </td>
           </tr>
           <tr>
-            <td class="text-nowrap" scope="row">direction</td>
+            <td class="text-nowrap" scope="row">text</td>
             <td class="text-nowrap">string</td>
             <td class="text-nowrap">oneWay</td>
+            <td class="text-nowrap"></td>
+            <td>Set <code>text</code> to the <code>label</code> component. this is <code>primary</code> property.</td>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-nowrap" scope="row">direction</td>
+            <td class="text-nowrap">string</td>
+            <td class="text-nowrap">oneTime</td>
             <td class="text-nowrap">auto</td>
             <td>Set the <code>direction</code> to the <code>label</code> component. The default value is <code>auto</code>
-            and the component decides based on <code>text align</code> and <code>html direction</code>. You can set it
-            to <code>ltr</code> and <code>rtl</code> too.
+              and the component decides based on <code>text align</code> and <code>html direction</code>. You can set
+              it
+              to <code>ltr</code> and <code>rtl</code> too.
             </td>
-          </tr>      
+          </tr>
         </tbody>
       </table>
     </fieldset>
