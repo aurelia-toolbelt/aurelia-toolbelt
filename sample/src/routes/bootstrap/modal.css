@@ -1,0 +1,36 @@
+.au-stagger {
+  -webkit-animation-delay: 50ms;
+  animation-delay: 50ms;
+}
+
+li .le-item.au-enter-active {
+  animation: blindDown 1s;
+  overflow: hidden;
+  -webkit-animation: blindDown 1s;
+}
+
+@keyframes blindDown {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+li .le-item.au-leave-active {
+  animation: blindUp 1s;
+  overflow: hidden;
+  -webkit-animation: blindUp 1s;
+}
+
+@keyframes blindUp {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
