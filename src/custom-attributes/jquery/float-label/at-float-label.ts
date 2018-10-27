@@ -15,23 +15,23 @@ import 'aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.css';
 @customAttribute('at-float-label')
 @inject(Element)
 export class AureliaToolbeltFloatLabel {
-  @bindable({ defaultBindingMode: bindingMode.oneWay })
+  @bindable({ defaultBindingMode: bindingMode.oneTime })
   public class: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay })
+  @bindable({ defaultBindingMode: bindingMode.oneTime })
   public style: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay })
+  @bindable({ defaultBindingMode: bindingMode.oneTime })
   public direction: FloatInputDirection = 'auto';
   @bindable({ defaultBindingMode: bindingMode.oneWay, primaryProperty: true })
   public text: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay })
+  @bindable({ defaultBindingMode: bindingMode.oneTime })
   public right: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay })
+  @bindable({ defaultBindingMode: bindingMode.oneTime })
   public left: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay })
+  @bindable({ defaultBindingMode: bindingMode.oneTime })
   public paddingTop: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay })
+  @bindable({ defaultBindingMode: bindingMode.oneTime })
   public color: string = '';
-  @bindable({ defaultBindingMode: bindingMode.oneWay })
+  @bindable({ defaultBindingMode: bindingMode.oneTime })
   public fontSize: string = '';
 
   private label: HTMLLabelElement;

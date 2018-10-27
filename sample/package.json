@@ -34,6 +34,7 @@
         "whatwg-fetch": "^2.0.3"
     },
     "dependencies": {
+        "aurelia-animator-css": "^1.0.4",
         "aurelia-bootstrapper": "2.1.1",
         "aurelia-dialog": "^2.0.0-rc.3",
         "aurelia-event-aggregator": "1.0.1",
