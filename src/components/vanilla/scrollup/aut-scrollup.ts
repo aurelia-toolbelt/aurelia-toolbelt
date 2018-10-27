@@ -58,14 +58,14 @@ export class ScrollUpCustomElement {
   }
 
   private attached() {
-    /*
+
     let isMultipleInstanceAvailable = document.getElementsByClassName('aut-scrollup').length > 1;
     if (isMultipleInstanceAvailable) {
       throw Error('You cannot have multiple instances of [aut-scrollup] component, please check your DOM');
     }
-    */
+
     this.threshold = Number(this.threshold);
-    if ((window.onscroll === undefined || window.onscroll === null) ) {
+    if ((window.onscroll === undefined || window.onscroll === null)) {
       window.onscroll = () => this.checkScrollTop();
     }
   }
