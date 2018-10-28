@@ -191,6 +191,16 @@ export class BootstrapRoute {
         settings: { auth: false, isComponent: true }
       },
       {
+        route: ['news-ticker'],
+        name: 'bootstrap-news-ticker',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/news-ticker'),
+
+        nav: true,
+        title: 'News Ticker',
+        settings: { auth: false, isComponent: true }
+      },
+      {
         route: ['password'],
         name: 'bootstrap-password',
 

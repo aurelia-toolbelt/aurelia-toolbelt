@@ -1,0 +1,33 @@
+<template>
+
+  <require from="./at-news.css"></require>
+
+  <div show.bind="visible > 1">
+
+    <abt-card>
+      <abt-card-header class="alert-{type}">
+        <strong>
+          ${title}
+        </strong>
+      </abt-card-header>
+      <abt-card-body style="padding: 0 !important;">
+        <ul class="list-group list-group-flush at-news-animators au-stagger" style="width:100%">
+          <li class="list-group-item list-group-item-action au-animate" repeat.for="news of visibleItems">
+            <img if.bind="news.image" data-src="holder.js/20x20" class="rounded float-left mr-3" alt="50x50" src="${news.image}"
+              data-holder-rendered="true" style="width: 50px; height: 50px;">
+            <h5 class="small"><b>${news.title}</b></h5>
+            <p class="card-text small">${news.description}</p>
+          </li>
+        </ul>
+      </abt-card-body>
+    </abt-card>
+  </div>
+
+  <div class="input-group mb-3" show.bind="visible === 1">
+    <div class="input-group-prepend">
+      <span class="input-group-text alert-${type}" id="basic-addon3">${title}</span>
+    </div>
+    <input type="text" class="form-control" aria-describedby="basic-addon3">
+  </div>
+
+</template>

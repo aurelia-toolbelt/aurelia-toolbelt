@@ -1,0 +1,63 @@
+.at-news-animators.au-stagger {
+  animation-delay: 500ms;
+  -webkit-animation-delay: 500ms;
+}
+
+.at-news-animators {
+  padding: 0 !important;
+}
+
+.at-news-animators>li.au-enter {
+  opacity: 0 !important;
+}
+
+.at-news-animators>li.au-enter-active {
+  animation: fadeIn 500ms;
+  -webkit-animation: fadeIn 500ms;
+}
+
+.at-news-animators>li.au-leave-active {
+  animation: fadeOut 500ms;
+  -webkit-animation: fadeOut 500ms;
+}
+
+/* CSS3-Animations */
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

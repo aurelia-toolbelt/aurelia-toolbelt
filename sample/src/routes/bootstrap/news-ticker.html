@@ -1,0 +1,20 @@
+<template>
+
+  <abt-toggle checked.bind="pause" on="Paused" on-type="warning" off="Running" off-type="primary">
+  </abt-toggle>
+
+  <!-- <abt-button-group label="Small Group" class="mr-2" size="sm" toggle>
+    <abt-radio-button switch slim color="info" name="directionGRP" value="up" checked.bind="direction">
+      Upward
+    </abt-radio-button>
+    <abt-radio-button switch slim color="info" name="directionGRP" value="down" checked.bind="direction">
+      Downward
+    </abt-radio-button>
+  </abt-button-group> -->
+
+  <at-news title="Latest News" news.bind="news" pause.bind="pause" tick.bind="5" type="danger" visible.bind="3"
+    direction.bind='direction'>
+
+  </at-news>
+
+</template>

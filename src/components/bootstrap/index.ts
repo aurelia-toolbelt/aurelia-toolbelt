@@ -14,6 +14,7 @@ export function configure(config: FrameworkConfiguration) {
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/modal/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/navbar/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/navs/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/news-ticker/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/password/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/pagination/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/components/bootstrap/progressbar/index'))

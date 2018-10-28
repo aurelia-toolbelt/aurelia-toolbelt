@@ -141,6 +141,9 @@ export class App {
               route: 'navs', title: 'Navs'
             },
             {
+              route: 'news-ticker', title: 'News Ticker'
+            },
+            {
               route: 'password', title: 'Password'
             },
             {
