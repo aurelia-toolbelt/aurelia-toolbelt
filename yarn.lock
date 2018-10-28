@@ -76,6 +76,11 @@
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.117.tgz#695a7f514182771a1e0f4345d189052ee33c8778"
   integrity sha512-xyf2m6tRbz8qQKcxYZa7PA4SllYcay+eh25DN3jmNYY6gSTL7Htc/bttVdkqj2wfJGbeWlQiX8pIyJpKU+tubw==
 
+"@types/lozad@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@types/lozad/-/lozad-1.1.0.tgz#02e2fc668ef3fffd224fdb225e2fc03c1d275457"
+  integrity sha512-khaetl6fKmGiUB/+UtZMZ0Q8S9ZS1lUenVrIyiBVSeQkFeJoAzFYmLb4duKPhJWYTUo2ctGtKV3b4G0FhN1TdA==
+
 "@types/markdown-it@0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@types/markdown-it/-/markdown-it-0.0.4.tgz#c5f67365916044b342dae8d702724788ba0b5b74"
@@ -3875,6 +3880,11 @@ loose-envify@^1.0.0:
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
+
+lozad@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/lozad/-/lozad-1.6.0.tgz#e96c37c2e334bf626138aaac547a7230773d6647"
+  integrity sha512-CKhW0A4dyFqoy91KWCNZKjEupWCIOwPDFvkQajfRPpsO5iP3SySMG+IE3wvbT211Su101Rv69iWCG1/W5bJcLw==
 
 lru-cache@2:
   version "2.7.3"
