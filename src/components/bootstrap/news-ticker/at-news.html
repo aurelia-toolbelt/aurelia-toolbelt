@@ -1,6 +1,9 @@
 <template>
 
   <require from="./at-news.css"></require>
+  <require from="./at-news-animation.css"></require>
+
+  <require from="./after-render"></require>
 
   <div show.bind="visible > 1">
 
@@ -23,11 +26,14 @@
     </abt-card>
   </div>
 
-  <div class="input-group mb-3" show.bind="visible === 1">
-    <div class="input-group-prepend">
-      <span class="input-group-text alert-${type}" id="basic-addon3">${title}</span>
+  <div class="at-news-panel ${rtl ? 'rtl' : ''}" show.bind="visible === 1">
+    <div class="at-latest-news at-latest-news-${rtl ? 'rtl' : 'ltr'}">
+      <span>
+        ${title}
+      </span>
     </div>
-    <input type="text" class="form-control" aria-describedby="basic-addon3">
+    <div class="at-news-box${rtl ? '-rtl' : ''}" ref="newsDescription">
+    </div>
   </div>
 
 </template>

@@ -1,6 +1,7 @@
 
-import { customElement, inject, bindable, bindingMode } from 'aurelia-framework';
+import { customElement, inject, bindable, bindingMode, DOM, TaskQueue } from 'aurelia-framework';
 
+import shave from './shave';
 export interface INewsTickerItem {
   title: string;
   description: string;
@@ -8,37 +9,60 @@ export interface INewsTickerItem {
   url?: string;
 }
 
-@inject(Element)
+@inject(Element, TaskQueue)
 @customElement('at-news')
 export class AtNewsTicker {
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) private type: string = 'secondary';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) private title: string = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) private type = 'secondary';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) private title = '';
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) private rtl = false;
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) private visible: number = 3;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) private pause: boolean = false;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) private visible = 3;
   @bindable({ defaultBindingMode: bindingMode.oneTime }) private direction: 'up' | 'down' = 'up';
-  @bindable({ defaultBindingMode: bindingMode.oneTime }) private tick: number = 1; // in seconds
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) private tick = 1; // in seconds
   @bindable({ defaultBindingMode: bindingMode.oneWay }) private news: Array<INewsTickerItem> = null;
 
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) private visibleItems: Array<INewsTickerItem> = null;
-
-  private timerHandlerId: any;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) private pause = false;
 
   private next: number;
+  private timerHandlerId: any;
+  private newsDescription: HTMLDivElement;
+  private visibleItems: Array<INewsTickerItem> = null;
 
-  constructor(private element: Element) {
+  constructor(private element: Element, private taskQueue: TaskQueue) {
+
   }
 
   private attached() {
+
     this.visibleItems = this.news.slice(0, this.visible);
 
     this.next = this.direction === 'up' ? this.visible : this.news.length - 1;
 
-    console.log(this.direction);
-    console.log(this.next);
-
     this.tick = this.tick * 1000;
+
+    DOM.injectStyles(`:root {
+      --at-latest-news: var(--${this.type})
+    }`, null, null, 'at-latest-news-variables');
+
+    this.taskQueue.queueTask(() => { this.afterAttached(); });
+    // this.afterAttached();
+  }
+
+  private afterAttached() {
+    if (this.visible === 1) {
+
+      // check to make sure only one handler is assigned to this event
+      window.onresize = () => {
+        console.log('windows: shaving ... ');
+        shave(this.newsDescription, 34, { character: ' ...' });
+      };
+
+      console.log('after attached: shaving ... ');
+      // this should be then replaced with the unique id of the news-box
+      this.newsDescription.innerText = this.visibleItems[0].description;
+      shave(this.newsDescription, 34, { character: ' ...' });
+    }
   }
 
   private rotateNews(): void {
@@ -64,7 +88,6 @@ export class AtNewsTicker {
 
     }
   }
-
 
   private pauseChanged(new_value: boolean) {
 
