@@ -2,6 +2,10 @@
 import { customElement, inject, bindable, bindingMode, DOM, TaskQueue } from 'aurelia-framework';
 
 import shave from './shave';
+import ResizeObserver from 'resize-observer-polyfill';
+
+
+
 export interface INewsTickerItem {
   title: string;
   description: string;
@@ -27,11 +31,10 @@ export class AtNewsTicker {
   private next: number;
   private timerHandlerId: any;
   private newsDescription: HTMLDivElement;
+  private x: HTMLDivElement;
   private visibleItems: Array<INewsTickerItem> = null;
 
-  constructor(private element: Element, private taskQueue: TaskQueue) {
-
-  }
+  constructor(private element: Element, private taskQueue: TaskQueue) { }
 
   private attached() {
 
@@ -45,24 +48,35 @@ export class AtNewsTicker {
       --at-latest-news: var(--${this.type})
     }`, null, null, 'at-latest-news-variables');
 
-    this.taskQueue.queueTask(() => { this.afterAttached(); });
-    // this.afterAttached();
+    this.taskQueue.queueTask(() => this.afterAttached());
   }
 
   private afterAttached() {
+
+    let topWidth = Number(window.getComputedStyle(this.x, ':after').getPropertyValue('border-top-width').replace('px', ''));
+    let BottomWidth = Number(window.getComputedStyle(this.x, ':after').getPropertyValue('border-bottom-width').replace('px', ''));
+
     if (this.visible === 1) {
 
       // check to make sure only one handler is assigned to this event
       window.onresize = () => {
         console.log('windows: shaving ... ');
-        shave(this.newsDescription, 34, { character: ' ...' });
+        shave(this.newsDescription, topWidth + BottomWidth, { character: ' ...' });
       };
 
       console.log('after attached: shaving ... ');
       // this should be then replaced with the unique id of the news-box
-      this.newsDescription.innerText = this.visibleItems[0].description;
-      shave(this.newsDescription, 34, { character: ' ...' });
+      // this.newsDescription.innerText = this.visibleItems[0].description;
+      shave(this.newsDescription, topWidth + BottomWidth, { character: ' ...' });
     }
+
+
+    // const ro = new ResizeObserver((entries, observer) => {
+    // shave(this.newsDescription, topWidth + BottomWidth, { character: ' ...' });
+    // });
+
+    // ro.observe(this.newsDescription);
+
   }
 
   private rotateNews(): void {

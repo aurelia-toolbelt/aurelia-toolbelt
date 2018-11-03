@@ -8,7 +8,7 @@
   <div show.bind="visible > 1">
 
     <abt-card>
-      <abt-card-header class="alert-{type}">
+      <abt-card-header class="alert-${type}">
         <strong>
           ${title}
         </strong>
@@ -27,12 +27,13 @@
   </div>
 
   <div class="at-news-panel ${rtl ? 'rtl' : ''}" show.bind="visible === 1">
-    <div class="at-latest-news at-latest-news-${rtl ? 'rtl' : 'ltr'}">
+    <div ref="x" class="at-latest-news at-latest-news-${rtl ? 'rtl' : 'ltr'}">
       <span>
         ${title}
       </span>
     </div>
-    <div class="at-news-box${rtl ? '-rtl' : ''}" ref="newsDescription">
+    <div class="at-news-box${rtl ? '-rtl' : ''}" ref="newsDescription">      
+        ${visibleItems[0].description}
     </div>
   </div>
 
