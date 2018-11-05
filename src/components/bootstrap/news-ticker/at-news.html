@@ -3,7 +3,8 @@
   <require from="./at-news.css"></require>
   <require from="./at-news-animation.css"></require>
 
-  <require from="./after-render"></require>
+  <!-- <require from="./after-render"></require> -->
+  <!-- <require from="./animate-on-change-custom-attribute"></require> -->
 
   <div show.bind="visible > 1">
 
@@ -27,13 +28,12 @@
   </div>
 
   <div class="at-news-panel ${rtl ? 'rtl' : ''}" show.bind="visible === 1">
-    <div ref="x" class="at-latest-news at-latest-news-${rtl ? 'rtl' : 'ltr'}">
+    <div ref="newsPanel" class="at-latest-news at-latest-news-${rtl ? 'rtl' : 'ltr'}">
       <span>
         ${title}
       </span>
     </div>
-    <div class="at-news-box${rtl ? '-rtl' : ''}" ref="newsDescription">      
-        ${visibleItems[0].description}
+    <div class="at-news-box${rtl ? '-rtl' : ''}" ref="newsDescription" >
     </div>
   </div>
 

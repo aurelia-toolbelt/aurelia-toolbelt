@@ -61,3 +61,16 @@
     opacity: 0;
   }
 }
+
+
+/* News Description animations */
+
+.background-animation-add {
+  animation: slideIn 500ms;
+  -webkit-animation: slideIn 500ms;
+}
+
+.background-animation-remove {
+  animation: slideOut 0.5s;
+  -webkit-animation: slideOut 0.5s;
+}

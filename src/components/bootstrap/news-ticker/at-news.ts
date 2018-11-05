@@ -2,9 +2,8 @@
 import { customElement, inject, bindable, bindingMode, DOM, TaskQueue } from 'aurelia-framework';
 
 import shave from './shave';
-import ResizeObserver from 'resize-observer-polyfill';
-
-
+import { CssAnimator } from 'aurelia-animator-css';
+// import ResizeObserver from 'resize-observer-polyfill';
 
 export interface INewsTickerItem {
   title: string;
@@ -13,7 +12,7 @@ export interface INewsTickerItem {
   url?: string;
 }
 
-@inject(Element, TaskQueue)
+@inject(Element, TaskQueue, CssAnimator)
 @customElement('at-news')
 export class AtNewsTicker {
 
@@ -31,14 +30,15 @@ export class AtNewsTicker {
   private next: number;
   private timerHandlerId: any;
   private newsDescription: HTMLDivElement;
-  private x: HTMLDivElement;
+  private newsPanel: HTMLDivElement;
   private visibleItems: Array<INewsTickerItem> = null;
 
-  constructor(private element: Element, private taskQueue: TaskQueue) { }
+  constructor(private element: Element, private taskQueue: TaskQueue, private animator: CssAnimator) { }
 
   private attached() {
 
     this.visibleItems = this.news.slice(0, this.visible);
+    this.newsDescription.innerText = this.visibleItems[0].description;
 
     this.next = this.direction === 'up' ? this.visible : this.news.length - 1;
 
@@ -53,30 +53,17 @@ export class AtNewsTicker {
 
   private afterAttached() {
 
-    let topWidth = Number(window.getComputedStyle(this.x, ':after').getPropertyValue('border-top-width').replace('px', ''));
-    let BottomWidth = Number(window.getComputedStyle(this.x, ':after').getPropertyValue('border-bottom-width').replace('px', ''));
-
     if (this.visible === 1) {
-
-      // check to make sure only one handler is assigned to this event
       window.onresize = () => {
         console.log('windows: shaving ... ');
-        shave(this.newsDescription, topWidth + BottomWidth, { character: ' ...' });
+        shave(this.newsDescription, this.arrowHeight, { character: ' ...' });
       };
-
-      console.log('after attached: shaving ... ');
-      // this should be then replaced with the unique id of the news-box
-      // this.newsDescription.innerText = this.visibleItems[0].description;
-      shave(this.newsDescription, topWidth + BottomWidth, { character: ' ...' });
+      shave(this.newsDescription, this.arrowHeight, { character: ' ...' });
     }
-
-
     // const ro = new ResizeObserver((entries, observer) => {
     // shave(this.newsDescription, topWidth + BottomWidth, { character: ' ...' });
     // });
-
     // ro.observe(this.newsDescription);
-
   }
 
   private rotateNews(): void {
@@ -92,15 +79,27 @@ export class AtNewsTicker {
       console.log(`next is: ${this.next}`);
 
     } else {
-
       console.log(this.next);
 
       this.visibleItems.pop();
       this.visibleItems.unshift(this.news[this.next]);
 
       this.next = this.next > 0 ? this.next - 1 : this.news.length - 1;
-
     }
+
+    // for single item visible
+    this.newsDescription.innerText = this.visibleItems[0].description;
+    this.animator.addClass(this.newsDescription, 'background-animation').then(() => {
+      this.animator.removeClass(this.newsDescription, 'background-animation');
+    });
+    shave(this.newsDescription, this.arrowHeight, { character: ' ...' });
+  }
+
+  private get arrowHeight() {
+    let height = Number(window.getComputedStyle(this.newsPanel, ':after').getPropertyValue('border-top-width').replace('px', ''))
+      + Number(window.getComputedStyle(this.newsPanel, ':after').getPropertyValue('border-bottom-width').replace('px', ''));
+
+    return height || 34;
   }
 
   private pauseChanged(new_value: boolean) {
