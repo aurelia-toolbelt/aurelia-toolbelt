@@ -7,5 +7,6 @@ export function configure(config: FrameworkConfiguration) {
     .feature(PLATFORM.moduleName('aurelia-toolbelt/custom-attributes/vanilla/masked/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/custom-attributes/vanilla/uuid/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/custom-attributes/vanilla/id/index'))
+    .feature(PLATFORM.moduleName('aurelia-toolbelt/custom-attributes/vanilla/lazy/index'))
     ;
 }
