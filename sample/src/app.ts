@@ -172,6 +172,10 @@ export class App {
             {
               route: 'pagination', title: 'Pagination'
             }
+            ,
+            {
+              route: 'price-table', title: 'Price table'
+            }
           ]
         }
       },

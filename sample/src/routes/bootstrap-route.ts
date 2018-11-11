@@ -283,6 +283,16 @@ export class BootstrapRoute {
         title: 'Pagination',
         settings: { auth: false, isComponent: true }
 
+      },
+      {
+        route: ['price-table'],
+        name: 'bootstrap-price-table',
+
+        moduleId: PLATFORM.moduleName('./bootstrap/price-table'),
+        nav: true,
+        title: 'Price table',
+        settings: { auth: false, isComponent: true }
+
       }
     ];
 

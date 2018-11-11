@@ -4,6 +4,6 @@ export * from './at-price-table';
 
 export function configure(config: FrameworkConfiguration) {
   config.globalResources([
-    PLATFORM.moduleName('./at-price-table'),
+    PLATFORM.moduleName('./at-price-table')
   ]);
 }
