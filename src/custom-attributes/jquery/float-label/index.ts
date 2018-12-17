@@ -1,10 +1,7 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
 
-
+export * from './at-float-label';
 
 export function configure(config: FrameworkConfiguration) {
-  config
-    .feature(PLATFORM.moduleName('aurelia-toolbelt/custom-attributes/jquery/float-label/index'))
-
-    ;
+  config.globalResources([PLATFORM.moduleName('./at-float-label')]);
 }

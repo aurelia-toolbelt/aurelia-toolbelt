@@ -1,5 +1,7 @@
 <template>
 
+  <require from='./modal.css'></require>
+
   <style>
     .modal-title-aurelia {
       color: #753B85;
@@ -8,7 +10,7 @@
   </style>
 
   <hr />
-
+<!-- 
 
   <fieldset class="mb-5">
     <legend>
@@ -434,7 +436,7 @@
     </abt-card>
 
   </fieldset>
-
+ -->
 
   <hr />
 
@@ -464,8 +466,8 @@
           </abt-listgroup-item>
         </abt-listgroup> -->
 
-        <ul class="list-group col-sm-5">
-          <li class="list-group-item" repeat.for="dev of developers">
+        <ul class="list-group col-sm-5 au-stagger">
+          <li class="list-group-item le-item au-animate" repeat.for="dev of developers">
             <span>
               ${dev.firstName} - ${dev.lastName}
             </span>
@@ -514,7 +516,7 @@
 
   </fieldset>
 
-
+<!-- 
 
 
   <fieldset class="mt-5">
@@ -965,6 +967,6 @@
       </tbody>
     </table>
 
-  </fieldset>
+  </fieldset> -->
 
 </template>

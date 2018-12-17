@@ -19,7 +19,18 @@ export class JqueryRoute {
                 nav: true,
                 title: 'Block UI',
                 settings: { auth: false, isComponent: true }
-            }
+            },
+            {
+              route: ['', 'float-label'],
+              name: 'jq-float-label',
+
+              moduleId: PLATFORM.moduleName('./jquery/float-label'),
+
+
+              nav: true,
+              title: 'Float Label',
+              settings: { auth: false, isComponent: true }
+          }
             /*,{
                 route: ['lazyimage'],
                 name: 'jq-lazyimage',

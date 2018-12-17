@@ -1,9 +1,9 @@
-import { containerless, inject, bindable, bindingMode } from 'aurelia-framework';
+import { containerless, inject, bindable, bindingMode, TaskQueue } from 'aurelia-framework';
 import { customElement } from 'aurelia-templating';
 
 import * as $ from 'jquery';
 
-@inject(Element)
+@inject(Element, TaskQueue)
 @customElement('abt-navs')
 export class BootstrapNavs {
 
@@ -33,7 +33,7 @@ export class BootstrapNavs {
   private beTab: boolean = true;
   private bePills: boolean = false;
 
-  constructor(private element: Element) { }
+  constructor(private element: Element, private taskQueue: TaskQueue) { }
 
   private attached() {
 
@@ -62,10 +62,16 @@ export class BootstrapNavs {
       throw error;
     }
 
-    let children = this.element.children.item(0).children.item(0).getElementsByTagName('a');
-    $(children).tab();
-    this.handle_events();
 
+    this.taskQueue.queueTask(() => this.afterAttached());
+
+  }
+
+  private afterAttached() {
+    // let children = this.element.children.item(0).children.item(0).getElementsByTagName('a[active]');
+    // console.log( children.length );
+    // $(children).tab('show');
+    this.handle_events();
   }
 
 
