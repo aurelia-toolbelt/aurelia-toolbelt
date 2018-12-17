@@ -142,7 +142,6 @@ gulp.task('fuse-sample', function () {
         + highlight.js/styles/atom-one-dark.css
         + fast-safe-stringify
         + jquery-lazy
-        + nprogress
         + bootstrap/dist/js/bootstrap.bundle.js
         + bootstrap/dist/css/bootstrap.css
         + toastr

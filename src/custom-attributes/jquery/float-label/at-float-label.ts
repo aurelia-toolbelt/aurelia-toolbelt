@@ -3,13 +3,14 @@ import {
   bindable,
   bindingMode,
   containerless,
-  customAttribute
+  customAttribute,
+  DOM
 } from 'aurelia-framework';
 
 export type FloatInputDirection = 'auto' | 'rtl' | 'ltr';
 
 const jfl = require('aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.js');
-import 'aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.css';
+// import 'aureliatoolbelt-thirdparty/jquery.float-label/jquery.float-label.css';
 
 @containerless()
 @customAttribute('at-float-label')
@@ -37,7 +38,10 @@ export class AureliaToolbeltFloatLabel {
   private label: HTMLLabelElement;
   private div: HTMLDivElement;
 
-  constructor(private element: HTMLInputElement) {}
+  constructor(private element: HTMLInputElement) {
+    // tslint:disable-next-line:max-line-length
+    DOM.injectStyles(`.at-float-label{position:relative;padding-top:18px}.at-float-label-rtl{right:0}.at-float-label-ltr{left:0}.at-float-label>.float-label{position:absolute;top:3px;-webkit-transition:top .3s ease-in-out,opacity .3s ease-in-out;transition:top .3s ease-in-out,opacity .3s ease-in-out;opacity:0;font-size:13px}.at-float-label>.float-label.show{top:-3px;opacity:1}` , null , null , 'float-label');
+  }
 
   private isTextBox(element: Element) {
     let tagName = element.tagName.toLowerCase();
@@ -129,6 +133,10 @@ export class AureliaToolbeltFloatLabel {
   }
 
   private attached() {
+    console.log(' ############  attache of at-float-label');
+    console.log(this.element);
+    console.log('############ attache of at-float-label');
+
     if (!this.isTextBox(this.element)) {
       Error('at-float-label works on `input` elements.');
     }

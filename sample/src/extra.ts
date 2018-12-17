@@ -7,14 +7,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import 'metismenu/dist/metisMenu.css';
 
-import 'nprogress/nprogress.css';
 import 'toastr/build/toastr.css';
 import 'font-awesome/css/font-awesome.css';
 import 'highlight.js/styles/atom-one-dark.css';
 import 'pretty-checkbox/dist/pretty-checkbox.css';
 
-
-// import * as zenscroll from 'zenscroll';
 
 import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.css';
 import 'aureliatoolbelt-thirdparty/bootstrap-tokenize2/tokenize2.js';
