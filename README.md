@@ -1,4 +1,4 @@
-# aurelia-toolbelt ( v1.2.0 )
+# aurelia-toolbelt ( v1.2.2 )
 
 * You can find documentation and demo [here](https://aurelia-toolbelt.github.io/)
 
