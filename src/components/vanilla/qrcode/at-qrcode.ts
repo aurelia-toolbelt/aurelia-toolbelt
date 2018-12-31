@@ -4,7 +4,9 @@ import { QR8BitByte, QRAlphaNum, QRCode, QRKanji, QRNumber, ErrorCorrectLevel } 
 
 // import { createStringToBytes } from 'qrcode-generator-ts/dist/js/text/createStringToBytes';
 
+@inject(Element)
 @customElement('at-qrcode')
+
 export class AureliaToolbeltQrCode {
 
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public value: string;
@@ -16,9 +18,13 @@ export class AureliaToolbeltQrCode {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public darkColor: string = '#000000';
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public lightColor: string = '#ffffff';
 
-  private canvas: HTMLCanvasElement;
+  private canvas: HTMLCanvasElement = document.createElement('canvas');
+
+  constructor(private element: Element) { }
 
   private attached() {
+
+    this.element.appendChild(this.canvas);
 
     this.size = Number(this.size);
 

@@ -8,13 +8,28 @@ npm install aurelia-toolbelt
 yarn add aurelia-toolbelt
 ```
 
-then use it in your ```main.ts``` or ```boot.ts``` like the following:
+* If you are using  built-in bundler with Requirejs add the following in your `aurelia.json` file `dependencies` part:
+
+```json
+...
+  ,
+  {
+    "name": "aurelia-toolbelt",
+    "deps": [
+      "jquery"
+    ]
+  },
+...
+```
+
+then add the following if you are suing `webpack` in your ```main.ts```:
 
 ```js
 aurelia.use.plugin(PLATFORM.moduleName('aurelia-toolbelt'));
 ```
 
+if not use:
 
-this way you've enabled all the features and services within the plugin.
-
-* We don't go through the painful details of how you should configure your  ```aurelia-cli```, ```webpack``` or ```fusebox```. The plugin will work with all of them based on the basic configurations that you should know when using each.
+```js
+aurelia.use.plugin('aurelia-toolbelt');
+```
