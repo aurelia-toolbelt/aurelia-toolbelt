@@ -1,6 +1,6 @@
 {
   "name": "aurelia-toolbelt",
-  "version": "1.2.1-Hotfix-6",
+  "version": "1.2.2",
   "description": "A bunch of components, value converters, services and so, to have rich client applications.",
   "keywords": [
     "aurelia-toolbelt",
@@ -138,14 +138,7 @@
       ]
     },
     "import": {
-      "dependencies": [{
-          "name": "fuse.js/dist/fuse",
-          "path": "../node_modules/fuse.js/dist/fuse.min.js"
-        },
-        {
-          "name": "numeral",
-          "path": "../node_modules/numeral/min/numeral.min.js"
-        },
+      "dependencies": [
         {
           "name": "aurelia-toolbelt",
           "deps": [

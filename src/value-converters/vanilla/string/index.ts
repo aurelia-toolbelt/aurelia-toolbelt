@@ -5,6 +5,6 @@ export function configure(config: FrameworkConfiguration) {
     .feature(PLATFORM.moduleName('aurelia-toolbelt/value-converters/vanilla/string/latin/index'))
     .feature(PLATFORM.moduleName('aurelia-toolbelt/value-converters/vanilla/string/persian/index'))
     // .feature(PLATFORM.moduleName('aurelia-toolbelt/value-converters/vanilla/string/strman/index'))
-    .feature(PLATFORM.moduleName('aurelia-toolbelt/value-converters/vanilla/string/numeral/index'))
+    // .feature(PLATFORM.moduleName('aurelia-toolbelt/value-converters/vanilla/string/numeral/index'))
     ;
 }
