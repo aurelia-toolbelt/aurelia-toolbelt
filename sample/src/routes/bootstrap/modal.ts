@@ -9,6 +9,7 @@ export interface IDeveloper {
 export class BootstrapModalDemo {
 
   private showModal = false;
+  private animated = false;
 
   private developers: Array<IDeveloper> = [
     { firstName: 'Saeed', lastName: 'Ganji' },
@@ -16,6 +17,10 @@ export class BootstrapModalDemo {
   ];
 
   constructor(private ds: DialogService) { }
+
+  private attached() {
+    setTimeout(() => { this.animated = true; });
+  }
 
   private openModal() {
 

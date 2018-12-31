@@ -4,7 +4,6 @@ node_modules
 
 .idea
 .vscode
-.idea
 .DS_STORE
 ._.DS_Store
 
@@ -16,7 +15,6 @@ npm-debug.log
 coverage
 
 sample/
-
 
 desktop.ini
 

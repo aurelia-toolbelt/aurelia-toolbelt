@@ -221,8 +221,12 @@ export class App {
         settings: {
           auth: false, navigation: [{
             route: 'blockui', title: 'Block UI'
+          }/*,
+          {
+            route: 'float-label',
+            title: 'Float Label'
           }
-            /*,{
+            ,{
               route: 'lazyimage', title: 'Lazy Image'
             }*/
           ]
