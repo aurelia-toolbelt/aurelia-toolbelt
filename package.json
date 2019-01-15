@@ -1,25 +1,127 @@
 {
-  "private": true,
-  "scripts": {
-    "build-all": "lerna exec --bail false --concurrency 1  -- yarn run build",
-    "build:bootstrap": "yarn workspace @aurelia-toolbelt/bootstrap run build",
-    "build:bootstrap-plus": "yarn workspace @aurelia-toolbelt/bootstrap-plus run build",
-    "build:components": "yarn workspace @aurelia-toolbelt/components run build",
-    "build:core": "yarn workspace @aurelia-toolbelt/core run build",
-    "build:jquery": "yarn workspace @aurelia-toolbelt/jquery run build",
-
-    "watch:dashboard": "yarn workspace @aurelia-toolbelt/dashboard run watch",
-    "watch:bootstrap": "yarn workspace @aurelia-toolbelt/bootstrap run watch",
-    "watch:bootstrap-plus": "yarn workspace @aurelia-toolbelt/bootstrap-plus run watch",
-    "watch:components": "yarn workspace @aurelia-toolbelt/components run watch",
-    "watch:core": "yarn workspace @aurelia-toolbelt/core run watch",
-    "watch:jquery": "yarn workspace @aurelia-toolbelt/jquery run watch",
-    "watch:persian": "yarn workspace @aurelia-toolbelt/persian run watch",
-
-    "test:unit:all": "lerna exec --bail false --concurrency 1  -- yarn run test:unit"
-
+  "name": "auplugin",
+  "description": "An Aurelia client application.",
+  "version": "0.1.0",
+  "repository": {
+    "type": "???",
+    "url": "???"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.6"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "@types/bluebird": "^3.5.24",
+    "@types/jest": "^23.3.10",
+    "@types/lodash": "^4.14.119",
+    "@types/node": "^10.12.12",
+    "@types/webpack": "^4.4.21",
+    "aurelia-animator-css": "^1.0.4",
+    "aurelia-bootstrapper": "^2.3.1",
+    "aurelia-cli": "^1.0.0-beta.7",
+    "aurelia-html-import-template-loader": "^1.0.0",
+    "aurelia-loader-nodejs": "^1.0.1",
+    "aurelia-pal-nodejs": "^1.2.0",
+    "aurelia-polyfills": "^1.3.0",
+    "aurelia-testing": "^1.0.0",
+    "aurelia-tools": "^2.0.0",
+    "aurelia-webpack-plugin": "^3.0.0",
+    "bluebird": "^3.5.3",
+    "browser-sync": "^2.26.3",
+    "connect-history-api-fallback": "^1.5.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^2.0.0",
+    "debounce": "^1.2.0",
+    "del": "^3.0.0",
+    "duplicate-package-checker-webpack-plugin": "^3.0.0",
+    "expose-loader": "^0.7.5",
+    "file-loader": "^2.0.0",
+    "gulp": "^4.0.0",
+    "gulp-changed-in-place": "^2.3.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-tslint": "^8.1.3",
+    "gulp-typescript": "^5.0.0",
+    "gulp-watch": "^5.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "istanbul-instrumenter-loader": "^3.0.1",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
+    "json-loader": "^0.5.7",
+    "mini-css-extract-plugin": "^0.5.0",
+    "minimatch": "^3.0.4",
+    "node-sass": "^4.11.0",
+    "nps": "^5.9.3",
+    "nps-utils": "^1.7.0",
+    "opn": "^5.4.0",
+    "plugin-error": "^1.0.1",
+    "requirejs": "^2.3.6",
+    "sass-loader": "^7.1.0",
+    "standard-changelog": "^2.0.6",
+    "style-loader": "^0.23.1",
+    "text": "github:requirejs/text#latest",
+    "through2": "^3.0.0",
+    "ts-jest": "^23.10.5",
+    "ts-loader": "^5.3.1",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2",
+    "url-loader": "^1.1.2",
+    "vinyl-fs": "^3.0.3",
+    "webpack": "^4.27.1",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "jest": {
+    "modulePaths": [
+      "<rootDir>/src",
+      "<rootDir>/node_modules"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "\\.spec\\.(ts|js)$",
+    "setupFiles": [
+      "<rootDir>/test/jest-pretest.ts"
+    ],
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,ts}",
+      "!**/*.spec.{js,ts}",
+      "!**/node_modules/**",
+      "!**/test/**"
+    ],
+    "coverageDirectory": "<rootDir>/test/coverage-jest",
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "html"
+    ]
+  },
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "scripts": {
+    "start": "nps",
+    "test": "nps test",
+    "preversion": "npm test",
+    "version": "standard-changelog && git add CHANGELOG.md",
+    "prepare": "au build-plugin",
+    "postversion": "git push && git push --tags"
+  },
+  "main": "dist/app.bundle.js"
 }

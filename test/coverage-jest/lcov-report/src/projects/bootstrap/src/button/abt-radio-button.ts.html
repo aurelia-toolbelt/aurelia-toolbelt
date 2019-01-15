@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/projects/bootstrap/src/button/abt-radio-button.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\..\..\index.html">All files</a> / <a href="index.html">src/projects/bootstrap/src/button</a> abt-radio-button.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/31</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { inject, bindable, bindingMode, Disposable, BindingEngine, customElement, containerless } from 'aurelia-framework';</span>
+&nbsp;
+&nbsp;
+&nbsp;
+@inject(Element, BindingEngine)
+@customElement('at-radio-button')
+@containerless()
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export class <span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >AtRadioButton </span>{</span></span></span>
+&nbsp;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) <span class="cstat-no" title="statement not covered" >public value: any;</span>
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) <span class="cstat-no" title="statement not covered" >public model: any;</span>
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) <span class="cstat-no" title="statement not covered" >public checked: any;</span>
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) <span class="cstat-no" title="statement not covered" >public matcher: any;</span>
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) <span class="cstat-no" title="statement not covered" >public <span class="cstat-no" title="statement not covered" >disabled: boolean | string = false;</span></span>
+&nbsp;
+&nbsp;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) <span class="cstat-no" title="statement not covered" >public id: string;</span>
+&nbsp;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) <span class="cstat-no" title="statement not covered" >public <span class="cstat-no" title="statement not covered" >style: string = '';</span></span>
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) <span class="cstat-no" title="statement not covered" >public <span class="cstat-no" title="statement not covered" >class: string = '';</span></span>
+&nbsp;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) <span class="cstat-no" title="statement not covered" >public <span class="cstat-no" title="statement not covered" >bsType: string = 'primary';</span></span>
+&nbsp;
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) <span class="cstat-no" title="statement not covered" >public <span class="cstat-no" title="statement not covered" >name: string = '';</span></span>
+&nbsp;
+  private state: boolean;
+  private <span class="cstat-no" title="statement not covered" >subscription: Disposable | null = null;</span>
+&nbsp;
+  private radioButton: HTMLInputElement;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(private <span class="cstat-no" title="statement not covered" ></span>element: Element,</span> private <span class="cstat-no" title="statement not covered" >bindingEngine: BindingEngine)</span> {
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private <span class="cstat-no" title="statement not covered" >changed() {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (this.disabled) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.synchronizeModel();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private <span class="cstat-no" title="statement not covered" >synchronizeModel() {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.checked = (this.model !== undefined)</span>
+      ? this.model
+      : this.value;
+&nbsp;
+      // to change the active class on labels on model change
+<span class="cstat-no" title="statement not covered" >      this.state = this.radioButton.checked;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private <span class="cstat-no" title="statement not covered" >synchronizeView() { // private</span></span>
+<span class="cstat-no" title="statement not covered" >    if (this.model !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >      this.radioButton.checked = this.matcher</span>
+        ? this.matcher(this.checked, this.model)
+        : this.checked === this.model;
+    } else <span class="cstat-no" title="statement not covered" >if (this.value) {</span>
+<span class="cstat-no" title="statement not covered" >      this.radioButton.checked = this.matcher</span>
+        ? this.matcher(this.checked, this.value)
+        : this.checked === this.value;
+    }
+&nbsp;
+    // to change the active class on labels on model change at init time
+<span class="cstat-no" title="statement not covered" >    this.state = this.radioButton.checked;</span>
+&nbsp;
+  }
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private <span class="cstat-no" title="statement not covered" >bind() {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.disabled = this.disabled === true || this.disabled === 'true' || this.disabled === 'disabled'; </span>// || this.element.hasAttribute('disabled');
+<span class="cstat-no" title="statement not covered" >    this.synchronizeView();</span>
+  }
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >}</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jan 15 2019 12:12:51 GMT+0330 (Iran Standard Time)
+</div>
+</div>
+<script src="..\..\..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\..\..\sorter.js"></script>
+</body>
+</html>

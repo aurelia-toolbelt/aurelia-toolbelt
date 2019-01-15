@@ -1,0 +1,11 @@
+{
+  "name": "@aurelia-toolbelt/bootstrap-plus",
+  "version": "0.0.1",
+  "description": "This ia a bootstrap package",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
