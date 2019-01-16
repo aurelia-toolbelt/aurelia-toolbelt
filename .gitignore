@@ -32,3 +32,4 @@ node_modules
 /dist
 
 /test/coverage-jest/
+/cypress/videos/

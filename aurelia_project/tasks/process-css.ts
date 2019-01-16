@@ -3,52 +3,71 @@ import * as gulp from 'gulp';
 import * as changedInPlace from 'gulp-changed-in-place';
 // @ts-ignore
 import * as project from '../aurelia.json';
-import {build} from 'aurelia-cli';
+import { build } from 'aurelia-cli';
 const sass = require('gulp-sass');
+const path = require('path');
+const fs = require('fs');
 
-
+function getDirectories(path) {
+  var dirs: Array<string> = [];
+  fs.readdirSync(path).forEach(file => {
+    dirs.push(file);
+  });
+  return dirs;
+}
 export default function processCSS() {
-  return gulp.src(project.cssProcessor.source)
-    .pipe(changedInPlace({firstPass:true}))
+  return gulp
+    .src(project.cssProcessor.source)
+    .pipe(changedInPlace({ firstPass: true }))
     .pipe(build.bundle());
-};
-
-export function pluginCSSCommon() {
-  return gulp.src(project.plugin.source.css)
-    .pipe(gulp.dest(project.plugin.output + "/commonjs"));
 }
 
-export function pluginCSSAMD() {
-  return gulp.src(project.plugin.source.css)
-    .pipe(gulp.dest(project.plugin.output + "/amd"));
-}
-export function pluginCSSSystem() {
-  return gulp.src(project.plugin.source.css)
-    .pipe(gulp.dest(project.plugin.output + "/system"));
-}
-export function pluginCSSES2015() {
-  return gulp.src(project.plugin.source.css)
-    .pipe(gulp.dest(project.plugin.output + "/es2015"));
+export function pluginCSS() {
+  return createCSS();
 }
 
-export function pluginScssCommon() {
-  return gulp.src(project.plugin.source.scss)
-    .pipe(sass.sync().on('error', sass.logError))
-    .pipe(gulp.dest(project.plugin.output + "/commonjs"));
+export function pluginScss() {
+  return createSCSS();
 }
 
-export function pluginScssAMD() {
-  return gulp.src(project.plugin.source.scss)
-    .pipe(sass.sync().on('error', sass.logError))
-    .pipe(gulp.dest(project.plugin.output + "/amd"));
+function createCSS() {
+  var arr = [];
+  let dirs = getDirectories(project.plugin.projects);
+  let compileTypes = project.plugin.compileTypes;
+  for (let i = 0; i < dirs.length; i++) {
+    for (let j = 0; j < compileTypes.length; j++) {
+      arr.push(
+        gulp
+          .src('src/projects/' + dirs[i] + '/**/*.css')
+          .pipe(sass.sync().on('error', sass.logError))
+          .pipe(
+            gulp.dest(
+                path.join(project.plugin.output, dirs[i], compileTypes[j])            
+            )
+          )
+      );
+    }
+  }
+  return arr;
 }
-export function pluginScssSystem() {
-  return gulp.src(project.plugin.source.scss)
-    .pipe(sass.sync().on('error', sass.logError))
-    .pipe(gulp.dest(project.plugin.output + "/system"));
-}
-export function pluginScssES2015() {
-  return gulp.src(project.plugin.source.scss)
-    .pipe(sass.sync().on('error', sass.logError))
-    .pipe(gulp.dest(project.plugin.output + "/es2015"));
+
+function createSCSS() {
+  var arr = [];
+  let dirs = getDirectories(project.plugin.projects);
+  let compileTypes = project.plugin.compileTypes;
+  for (let i = 0; i < dirs.length; i++) {
+    for (let j = 0; j < compileTypes.length; j++) {
+      arr.push(
+        gulp
+          .src('src/projects/' + dirs[i] + '/**/*.scss')
+          .pipe(sass.sync().on('error', sass.logError))
+          .pipe(
+            gulp.dest(
+              path.join(project.plugin.output, dirs[i], compileTypes[j])
+            )
+          )
+      );
+    }
+  }
+  return arr;
 }

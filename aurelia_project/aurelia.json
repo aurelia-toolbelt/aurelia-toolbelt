@@ -6,11 +6,13 @@
     "displayName": "Aurelia-CLI"
   },
   "plugin": {
+    "compileTypes": ["amd", "commonjs", "system", "es2015"],
+    "projects": "src/projects",
     "source": {
-      "js": "src/resources/**/*.ts",
-      "html": "src/resources/**/*.html",
-      "css": "src/resources/**/*.css",
-      "scss": "src/resources/**/*.scss"
+      "ts": "lib/**/*.ts",
+      "html": "lib/**/*.html",
+      "css": "lib/**/*.css",
+      "scss": "lib/**/*.scss"
     },
     "output": "dist"
   },
@@ -34,9 +36,7 @@
     "bundles": [
       {
         "name": "app-bundle.js",
-        "source": [
-          "**/*.{js,json,css,html}"
-        ]
+        "source": ["**/*.{js,json,css,html}"]
       },
       {
         "name": "vendor-bundle.js",
@@ -72,10 +72,7 @@
       "plugins": [
         {
           "name": "text",
-          "extensions": [
-            ".html",
-            ".css"
-          ],
+          "extensions": [".html", ".css"],
           "stub": true
         }
       ]
@@ -93,9 +90,7 @@
     "id": "typescript",
     "displayName": "TypeScript",
     "fileExtension": ".ts",
-    "dtsSource": [
-      "./custom_typings/**/*.d.ts"
-    ],
+    "dtsSource": ["./custom_typings/**/*.d.ts"],
     "source": "src/**/*.ts"
   },
   "markupProcessor": {
