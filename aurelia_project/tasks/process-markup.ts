@@ -31,10 +31,11 @@ function createMarkup() {
   let dirs = getDirectories(project.plugin.projects);
   let compileTypes = project.plugin.compileTypes;
   for (let i = 0; i < dirs.length; i++) {
+    let dir = project.plugin.projects + '/' + dirs[i] + '/**/*.html';
     for (let j = 0; j < compileTypes.length; j++) {
       arr.push(
         gulp
-          .src('src/projects/' + dirs[i] + '/**/*.html')
+          .src(dir)
           .pipe(
             gulp.dest(
               path.join(project.plugin.output, dirs[i], compileTypes[j])

@@ -72,6 +72,7 @@ function createScripts() {
   let dirs = getDirectories(project.plugin.projects);
   let compileTypes = project.plugin.compileTypes;
   for (let i = 0; i < dirs.length; i++) {
+    let dir = project.plugin.projects + '/' + dirs[i] + '/**/*.ts';
     for (let j = 0; j < compileTypes.length; j++) {
       const typescriptCompiler = ts.createProject('tsconfig.json', {
         typescript: require('typescript'),
@@ -81,7 +82,7 @@ function createScripts() {
       });
 
       let dts = gulp.src(project.transpiler.dtsSource);
-      let src = gulp.src('src/projects/' + dirs[i] + '/**/*.ts');
+      let src = gulp.src(dir));
 
       arr.push(
         eventStream
