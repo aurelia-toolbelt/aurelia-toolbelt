@@ -1,3 +1,4 @@
 {
-  "integrationFolder" : "test/e2e"
+  "integrationFolder" : "test/e2e",
+  "video" : false
 }
