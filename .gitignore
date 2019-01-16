@@ -30,3 +30,5 @@ node_modules
 # Compiled files
 /scripts
 /dist
+
+/test/coverage-jest/
