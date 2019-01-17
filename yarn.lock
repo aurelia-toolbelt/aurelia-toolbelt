@@ -1643,16 +1643,14 @@ aurelia-loader@^1.0.0:
     aurelia-path "^1.0.0"
 
 aurelia-logging-console@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/aurelia-logging-console/-/aurelia-logging-console-1.0.0.tgz#edf7507a97fc68b40513a17c677d70414101adb4"
-  integrity sha1-7fdQepf8aLQFE6F8Z31wQUEBrbQ=
-  dependencies:
-    aurelia-logging "^1.0.0"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/aurelia-logging-console/-/aurelia-logging-console-1.1.0.tgz#d43507ef14642ae8294bddd30b4b1c9f5e4bb677"
+  integrity sha512-gv6Wf+xkHzv6izP6V9HquFUf0WNMUfhO6i5JkcZEBkSC2Jc3JM5Fkr0OPUwPu2M0FIG/90a5PNuEpvjjJamQ6Q==
 
 aurelia-logging@^1.0.0, aurelia-logging@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/aurelia-logging/-/aurelia-logging-1.5.0.tgz#4eab204fbb9beae698f6e79a7a8641f4f60ce6ea"
-  integrity sha512-u9Hhoj3yDHthKgTyj2svr7PaO41e2WFM2dSITxzOMzW8dC9hGVsIo9Hl6cereTP4+GMfMMQF5ZFp6Kfg87Ov0Q==
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/aurelia-logging/-/aurelia-logging-1.5.1.tgz#d9f2f3da8c10bc9385578c86ee49829d75c603c0"
+  integrity sha512-HRycP+LrzAOsKN4bOQftP9aVztvVhsuvVZqHV9uuunK9peQCx38sTnC1mdC/qxoF+qFa7xVSVJh1xg8Whj1jrg==
 
 aurelia-metadata@^1.0.0, aurelia-metadata@^1.0.2:
   version "1.0.4"
@@ -1677,9 +1675,9 @@ aurelia-pal-nodejs@^1.2.0:
     jsdom "~11.5.1"
 
 aurelia-pal@^1.0.0, aurelia-pal@^1.1.0, aurelia-pal@^1.1.1, aurelia-pal@^1.3.0, aurelia-pal@^1.4.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/aurelia-pal/-/aurelia-pal-1.8.0.tgz#b6496fae8b335b8cecb1f8b98434ea4125fd2333"
-  integrity sha512-Nc9S/JTUh1ErSUwg4INhgwBTe99ef8gYXZLjBnP4JJBmLcc/ChhOvj/dSRwluPkosggQgyj2pjla/9VAYHAXPg==
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/aurelia-pal/-/aurelia-pal-1.8.1.tgz#a7e9eceda17e546960f0a0bfc236a53d0f214fbd"
+  integrity sha512-8QwwS/gHdxRh0+a6pKnyVA1/xHcZV1P1nH7Vai3k+HjVLwj1cnsF/TCDx9SGedhEQxDzIryL41k6OcjwZR94Ig==
 
 aurelia-path@^1.0.0, aurelia-path@^1.1.1:
   version "1.1.1"
