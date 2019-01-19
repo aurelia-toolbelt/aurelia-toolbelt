@@ -1,7 +1,7 @@
 {
-  "name": "@aurelia-toolbelt/bootstrap-plus",
+  "name": "@aurelia-toolbelt/binding-behaviours",
   "version": "0.0.1",
-  "description": "This ia a bootstrap-plus package",
+  "description": "This ia a binding-behaviours package",
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

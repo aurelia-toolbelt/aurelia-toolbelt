@@ -8,12 +8,7 @@
   "plugin": {
     "compileTypes": [
       "AMD",
-      "CommonJS",
-      "System",
-      "ES2015",
-      "UMD",
-      "ES6",
-      "ESNext"
+      "CommonJS"
     ],
     "copyTypes": ["json"],
     "copyFiles": ["README.md", "LICENCE.md"],
