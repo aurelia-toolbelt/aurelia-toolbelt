@@ -2,16 +2,10 @@ import * as gulp from "gulp";
 // @ts-ignore
 import * as project from "../aurelia.json";
 
-import {
-  pluginMarkup,
-} from "./process-markup";
-import {
-  pluginCSS,
-  pluginScss,
-} from "./process-css";
-import {
-  transpilePlugin
-} from "./transpile";
+import { pluginMarkup } from "./process-markup";
+import { pluginCSS, pluginScss } from "./process-css";
+import { transpilePlugin } from "./transpile";
+import { processContentTypes, processContentFiles } from "./copy-content";
 import * as del from "del";
 // @ts-ignore
 import * as project from "../aurelia.json";
@@ -26,6 +20,8 @@ export default gulp.series(
     pluginMarkup,
     transpilePlugin,
     pluginCSS,
-    pluginScss
+    pluginScss,
+    processContentTypes,
+    processContentFiles
   )
-)
+);

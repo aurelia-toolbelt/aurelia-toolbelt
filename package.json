@@ -43,6 +43,7 @@
     "file-loader": "^3.0.1",
     "gulp": "^4.0.0",
     "gulp-changed-in-place": "^2.3.0",
+    "gulp-copy": "^4.0.1",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4.0",
@@ -82,11 +83,10 @@
     "webpack-dev-server": "^3.1.14"
   },
   "jest": {
-    "globals": { 
-      "navigator": 
-        { 
-          "userAgent": "node.js" 
-        }
+    "globals": {
+      "navigator": {
+        "userAgent": "node.js"
+      }
     },
     "modulePaths": [
       "<rootDir>/src",

@@ -82,7 +82,7 @@ function createScripts() {
       });
 
       let dts = gulp.src(project.transpiler.dtsSource);
-      let src = gulp.src(dir));
+      let src = gulp.src(dir);
 
       arr.push(
         eventStream
