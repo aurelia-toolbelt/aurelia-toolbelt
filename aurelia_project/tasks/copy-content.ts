@@ -1,40 +1,19 @@
 var gulpCopy = require("gulp-copy");
-var sourceFiles = ["source1/*", "source2/*.txt"];
-var destination = "dest/";
-var outputPath = "some-other-dest/";
 // @ts-ignore
 import * as project from "../aurelia.json";
 import * as gulp from "gulp";
-const path = require("path");
-const fs = require("fs");
+import {default as projects} from './get-projects';
 
 const reducer = function(a, b) {
-  
-if(a && !b)
-return a;
-
-
-if(!a && b)
-return b;
-
-
-if(!a && !b)
-return "";
-
+  if(a && !b)
+    return a;
+  if(!a && b)
+    return b;
+  if(!a && !b)
+    return "";
  return a + "," + b;
-
 } 
 
-
-
-
-function getDirectories(path) {
-  var dirs: Array<string> = [];
-  fs.readdirSync(path).forEach(file => {
-    dirs.push(file);
-  });
-  return dirs;
-}
 export function processContentTypes() {
   return createContentTypes();
 }
@@ -44,7 +23,7 @@ export function processContentFiles() {
 
 function createContentTypes() {
   var arr = [];
-  let dirs = getDirectories(project.plugin.projects);
+  let dirs = projects();
   // let compileTypes = project.plugin.compileTypes;
   for (let i = 0; i < dirs.length; i++) {
     var len = project.plugin.copyTypes.length;
@@ -63,7 +42,7 @@ function createContentTypes() {
 }
 function createContentFiles() {
   var arr = [];
-  let dirs = getDirectories(project.plugin.projects);
+  let dirs = projects();
   // let compileTypes = project.plugin.compileTypes;
   for (let i = 0; i < dirs.length; i++) {
     var len = project.plugin.copyFiles.length;

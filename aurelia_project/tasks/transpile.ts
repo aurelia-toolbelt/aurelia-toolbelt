@@ -17,7 +17,7 @@ import { CLIOptions, build } from 'aurelia-cli';
 import * as eventStream from 'event-stream';
 const fs = require('fs');
 const path = require('path');
-let dirs = getDirectories(project.plugin.projects);
+import {default as projects} from './get-projects';
 
 function getDirectories(path) {
   var dirs: Array<string> = [];
@@ -69,7 +69,7 @@ export function transpilePlugin() {
 
 function createScripts() {
   var arr = [];
-  let dirs = getDirectories(project.plugin.projects);
+  let dirs = projects();
   let compileTypes = project.plugin.compileTypes;
   for (let i = 0; i < dirs.length; i++) {
     let dir = project.plugin.projects + '/' + dirs[i] + '/**/*.ts';
