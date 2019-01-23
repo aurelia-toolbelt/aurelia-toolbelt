@@ -83,11 +83,6 @@
     "webpack-dev-server": "^3.1.14"
   },
   "jest": {
-    "globals": {
-      "navigator": {
-        "userAgent": "node.js"
-      }
-    },
     "modulePaths": [
       "<rootDir>/src",
       "<rootDir>/node_modules"
@@ -104,7 +99,6 @@
     "setupFiles": [
       "<rootDir>/test/jest-pretest.ts"
     ],
-    "testEnvironment": "node",
     "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.{js,ts}",
