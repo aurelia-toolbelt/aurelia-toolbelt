@@ -7,41 +7,43 @@ assignees: ''
 
 ---
 
-# Component Name
+# :bell: Component Name
 
 The suggested tag name for the component, all names should start with "at-"
 
-**e.g.:** at-input-group
+**e.g.** at-input-group
 
 
-# Purpose
+# :information_source: Purpose
 
 A clear description of what this component is intended for.
 
-**e.g.:** Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs.
+**e.g.** Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs.
 
-
-# Inspired from
+# :link: Inspired from
 
 Add any related resources here, where you inspired from and any other samples 
 
-**e.g.:** https://getbootstrap.com/docs/4.2/components/input-group/
+**e.g.** https://getbootstrap.com/docs/4.2/components/input-group/
 
 
-# Attributes
+# :mag_right: Attributes
 
 What attributes or bindable properties are suggested for this component.
 
-**e.g.:** prepend, append, ...
+* prepend: Adds a custom text before the main component
+* append: Adds a custom text after the main component.
 
-# APIs
+# :sparkles: Events & APIs
 
 What APIs should be public as the View Model of this component.
 
-**e.g.:** focus(), blur(), ...
+* focus(): To be able to set the focus
+*  blur(): Force losing focus
 
-# Related Tag(s)
+# :family: Related Tag(s)
 
 What custom html tags this component depends on.
 
-**e.g.:** at-input-group-prepend, at-input-group-append
+* at-input-group-prepend: Adds a set of html tags before the main component
+* at-input-group-append: Adds a set of html tags after the main component
