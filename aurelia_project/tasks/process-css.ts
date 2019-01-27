@@ -7,6 +7,7 @@ import { build } from 'aurelia-cli';
 const sass = require('gulp-sass');
 const path = require('path');
 const fs = require('fs');
+import {default as projects} from './get-projects';
 
 function getDirectories(path) {
   var dirs: Array<string> = [];
@@ -32,7 +33,7 @@ export function pluginScss() {
 
 function createCSS() {
   var arr = [];
-  let dirs = getDirectories(project.plugin.projects);
+  let dirs = projects();
   let compileTypes = project.plugin.compileTypes;
   for (let i = 0; i < dirs.length; i++) {
     let dir = project.plugin.projects + '/' + dirs[i] + '/**/*.css';
@@ -54,7 +55,7 @@ function createCSS() {
 
 function createSCSS() {
   var arr = [];
-  let dirs = getDirectories(project.plugin.projects);
+  let dirs = projects();
   let compileTypes = project.plugin.compileTypes;
   for (let i = 0; i < dirs.length; i++) {
     let dir = project.plugin.projects + '/' + dirs[i] + '/**/*.scss';
