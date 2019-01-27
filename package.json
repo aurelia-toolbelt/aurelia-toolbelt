@@ -82,11 +82,10 @@
     "webpack-dev-server": "^3.1.14"
   },
   "jest": {
-    "globals": { 
-      "navigator": 
-        { 
-          "userAgent": "node.js" 
-        }
+    "globals": {
+      "navigator": {
+        "userAgent": "node.js"
+      }
     },
     "modulePaths": [
       "<rootDir>/src",
