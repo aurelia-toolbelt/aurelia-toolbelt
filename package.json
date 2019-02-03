@@ -80,7 +80,11 @@
     "webpack": "^4.28.4",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.1.14",
+    "@microsoft/tsdoc": "^0.12.5",
+    "jsdoc3-parser": "^2.0.0",
+    "comment-parser": "^0.5.4",
+    "htmlparser2": "^3.10.0"
   },
   "jest": {
     "globals": {
