@@ -8,6 +8,7 @@ const htmlparser = require("htmlparser2");
 const commentparser = require("comment-parser");
 const doctrine = require("doctrine");
 const jsdocapi = require("jsdoc-api");
+const jsdocx = require("jsdoc-x");
 
 const htmlTagRegex = /<((?=!\-\-)!\-\-[\s\S]*\-\-|((?=\?)\?[\s\S]*\?|((?=\/)\/[^.\-\d][^\/\]'"[!#$%&()*+,;<=>?@^`{|}~ ]*|[^.\-\d][^\/\]'"[!#$%&()*+,;<=>?@^`{|}~ ]*(?:\s[^.\-\d][^\/\]'"[!#$%&()*+,;<=>?@^`{|}~ ]*(?:=(?:"[^"]*"|'[^']*'|[^'"<\s]*))?)*)\s?\/?))>/;
 
@@ -26,7 +27,7 @@ gulp.task("default", async function() {
   // });
   let root = path.join(__dirname, "src", "projects", "bootstrap", "lib");
   let components = getDirectories(root);
-  console.log("-------------------------------");
+  //console.log("-------------------------------");
   for (let index = 0; index < components.length; index++) {
     let element = path.join(root, components[index]);
     glob(path.join(element, "**/*.html"), {}, function(er, files) {
@@ -36,22 +37,46 @@ gulp.task("default", async function() {
           var parser = new htmlparser.Parser(
             {
               oncomment: function(params) {
-                console.log(path.basename(files[index]));
-                console.log(params);
+                //console.log(path.basename(files[index]));
+                //console.log(params);
                 //console.log(commentparser(params));
-                var ast = doctrine.parse(params.trim(), { unwrap: true });
+                var options = {
+                  source: `
+                /**
+                 * Represents a book.
+                 * @slot    
+                 * @param {string} name - The title of the book.    
+                 * @bindable {string} state - Represents the state of the component 
+                 */
+               function Book(title, author) {
+               }`,
+                  hierarchy: true
+                };
+                jsdocx.parse(options, function(err, docs) {
+                  if (err) {
+                    console.log(err.stack);
+                    return;
+                  }
+                  console.log(docs);
+                });
+
+                var ast = doctrine.parse(params.trim(), {
+                  unwrap: true,
+                  sloppy: true,
+                  lineNumbers: true
+                });
                 //let ast = jsdocapi.explainSync({ source: params.trim() });
-                console.log(htmlTagRegex.test(params.trim()));
+                //console.log(htmlTagRegex.test(params.trim()));
                 if (!htmlTagRegex.test(params.trim())) {
-                  console.log(ast);
+                  //console.log(ast);
                 }
                 hasComment = true;
               },
               onopentag: function(name, attribs) {
                 if (hasComment) {
-                  console.log(name);
+                  //console.log(name);
                   hasComment = false;
-                  console.log("-------------------------------");
+                  //console.log("-------------------------------");
                 }
               },
               ontext: function(text) {
