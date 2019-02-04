@@ -53,10 +53,12 @@ function buildTypeScript() {
   return eventStream
     .merge(dts, src)
     .pipe(
+      //@ts-ignore
       plumber({ errorHandler: notify.onError('Error: <%= error.message %>') })
     )
     .pipe(sourcemaps.init())
     .pipe(typescriptCompiler())
+     //@ts-ignore
     .pipe(sourcemaps.write({ sourceRoot: 'src' }))
     .pipe(build.bundle());
 }
@@ -89,11 +91,13 @@ function createScripts() {
           .merge(dts, src)
           .pipe(
             plumber({
+              //@ts-ignore
               errorHandler: notify.onError('Error: <%= error.message %>')
             })
           )
           .pipe(sourcemaps.init())
           .pipe(typescriptCompiler())
+          //@ts-ignore
           .pipe(sourcemaps.write({ sourceRoot: 'src' }))
           .pipe(
             gulp.dest(
