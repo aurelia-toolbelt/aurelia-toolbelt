@@ -1,4 +1,4 @@
-import { inject, customElement, bindable, bindingMode, containerless, PLATFORM, noView, DOM } from 'aurelia-framework';
+import { customElement, bindable, bindingMode, containerless, DOM } from 'aurelia-framework';
 
 export type FloatInputPlacement = 'sm' | 'md' | 'lg';
 @containerless()
@@ -16,11 +16,21 @@ export class BootstrapFloatInput {
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public type: string = 'text';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public labelColor: string = null;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderColor: string = null;
-
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public required: boolean = null;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public readonly: boolean = null;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: string;
   private floatInput: HTMLInputElement;
   private floatInputLabel: HTMLLabelElement;
 
   private attached() {
+
+    this.floatInput.value = this.value;    
+
+    const isRequired = (this.required === null  && this.floatInputLabel.hasAttribute('required'));
+    const isReadOnly = (this.required === null  && this.floatInputLabel.hasAttribute('readonly'));
+
+    this.floatInput.required = this.required || isRequired;    
+    this.floatInput.readOnly = this.required || isReadOnly;    
 
     let id = this.floatInputLabel.id;
     let fontSize = '';
