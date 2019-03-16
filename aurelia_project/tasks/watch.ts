@@ -66,7 +66,7 @@ let processChange = vinyl => {
     refresh();
   }
 };
-
+// @ts-ignore
 let refresh = debounce(() => {
   if (isBuilding) {
     log(
