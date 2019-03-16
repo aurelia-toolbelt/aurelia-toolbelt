@@ -7,8 +7,11 @@
   },
   "plugin": {
     "compileTypes": [
-      "AMD",
-      "CommonJS"
+      "amd",
+      "commonjs",
+      "system",
+      "es2015",
+      "umd"
     ],
     "copyTypes": ["json"],
     "copyFiles": ["README.md", "LICENCE.md"],

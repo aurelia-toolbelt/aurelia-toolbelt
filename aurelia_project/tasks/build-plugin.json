@@ -1,0 +1,10 @@
+{
+  "name": "build-plugin",
+  "description": "Builds and processes all application assets.",
+  "parameters": [
+    {
+      "name": "max-old-space-size",
+      "description": "a description of this parameter"
+    }
+  ]
+}

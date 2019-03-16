@@ -128,7 +128,7 @@
     "preversion": "npm test",
     "version": "standard-changelog && git add CHANGELOG.md",
     "prepare": "au build-plugin",
-    "build:plugins": "au build-plugin",
+    "build:plugins": "NODE_OPTIONS=--max-old-space-size=4096 au build-plugin",
     "build:binding-behaviours": "au build-plugin --projects binding-behaviours",
     "build:bootstrap": "au build-plugin --projects bootstrap",
     "build:bootstrap-plus": "au build-plugin --projects bootstrap-plus",
