@@ -1,6 +1,5 @@
-<template>
-
-  <fieldset class="mb-5">
+ <template>
+<fieldset class="mb-5">
     <legend>
       <h2>Float Inputs
         <a href="https://github.com/shahabganji/aurelia-toolbelt/tree/master/src/components/bootstrap/float-input">
@@ -21,8 +20,16 @@
     <legend>
       Basic example
     </legend>
-    <abt-float-input type='email' placeholder='email@example.com'>Email</abt-float-input>
+        <abt-float-input type='email' placeholder='email@example.com' value.bind="'email@example.com'">Email</abt-float-input>
     <aut-mark-down src="./docs/components/bootstrap/float-input/basic-example.md">
+    </aut-mark-down>
+  </fieldset>
+  <fieldset class="mt-5">
+    <legend>
+      Readonly
+    </legend>
+        <abt-float-input type='email' placeholder='email@example.com' readonly value.bind="'email@example.com'">Email</abt-float-input>
+    <aut-mark-down src="./docs/components/bootstrap/float-input/readonly.md">
     </aut-mark-down>
   </fieldset>
   <fieldset class="mt-5">
@@ -210,4 +217,4 @@
       </tbody>
     </table>
   </fieldset>
-</template>
+</template> 

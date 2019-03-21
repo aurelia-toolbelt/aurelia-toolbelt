@@ -7,30 +7,39 @@ export class BootstrapFloatInput {
   @bindable({ defaultBindingMode: bindingMode.oneTime }) public id: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public style: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public class: string;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholder: string = null;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderFontSize: string = null;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public labelFontSize: string = null;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderOpacity: string = null;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderTop: string = null;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholder: string ;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderFontSize: string ;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public labelFontSize: string ;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderOpacity: string ;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderTop: string;
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public size: FloatInputPlacement = 'md';
   @bindable({ defaultBindingMode: bindingMode.oneWay }) public type: string = 'text';
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public labelColor: string = null;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderColor: string = null;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public required: boolean = null;
-  @bindable({ defaultBindingMode: bindingMode.oneWay }) public readonly: boolean = null;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public labelColor: string ;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public placeholderColor: string ;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public required: boolean | string = false;
+  @bindable({ defaultBindingMode: bindingMode.oneWay }) public readonly: boolean | string = false;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: string;
   private floatInput: HTMLInputElement;
   private floatInputLabel: HTMLLabelElement;
+  private floatInputTemplate: Element;
 
   private attached() {
 
-    this.floatInput.value = this.value;    
+    if (this.value) {
+    this.floatInput.value = this.value;
+    }
 
-    const isRequired = (this.required === null  && this.floatInputLabel.hasAttribute('required'));
-    const isReadOnly = (this.required === null  && this.floatInputLabel.hasAttribute('readonly'));
+  let t =  this.floatInputTemplate.hasAttribute('required');
+  let tt =  this.floatInputTemplate.hasAttribute('readonly');
 
-    this.floatInput.required = this.required || isRequired;    
-    this.floatInput.readOnly = this.required || isReadOnly;    
+
+
+     const isRequired = (this.required === '' && this.floatInputTemplate.hasAttribute('required')) || this.required.toString() === 'true';
+     const isReadOnly = (this.readonly === '' && this.floatInputTemplate.hasAttribute('readonly')) || this.readonly.toString() === 'true';
+
+     this.floatInput.required = isRequired;
+     this.floatInput.readOnly = isReadOnly;
+
 
     let id = this.floatInputLabel.id;
     let fontSize = '';
