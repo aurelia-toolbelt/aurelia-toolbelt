@@ -1,9 +1,9 @@
-# aurelia-toolbelt ( v1.2.2 )
+# aurelia-toolbelt ( v1.2.3 )
 
 * You can find documentation and demo [here](https://aurelia-toolbelt.github.io/)
 
 * We tried not to invent the wheel, but to utilise the existing libraries out there in js world, for [Aurelia](http://aurelia.io). What ever we used or inspired from will definitely have a reference to the original repository or website.
-* [Bootstrap](http://getbootstrap.com/docs/4.0/getting-started/introduction/) **v 4.0.0** components,are almost ready for production, however we are always reviewing them and there is an npm package [here](https://www.npmjs.com/package/aurelia-toolbelt).
+* [Bootstrap](http://getbootstrap.com/docs/4.0/getting-started/introduction/) __v 4.*__ components,are  ready for production, however we are always reviewing them and there is an [npm package](https://www.npmjs.com/package/aurelia-toolbelt) available.
 
 ## A bunch of tools for creating rich aurelia applications. :wink:
 
@@ -11,7 +11,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/01bgrcnljgephg80?svg=true)](https://ci.appveyor.com/project/shahabganji/aurelia-toolbelt)
 [![npm version](https://badge.fury.io/js/aurelia-toolbelt.svg)](https://badge.fury.io/js/aurelia-toolbelt)
 
-* It is worthy to note that this plugin is written with the skeleton provided [here](https://github.com/vegarringdal/skeleton-plugin-typescript), which is highly recommended, thanks to [Vegar Ringdal](https://github.com/vegarringdal).
+* It is worthy to note that this plugin is written with the skeleton provided by [Vegar Ringdal](https://github.com/vegarringdal). Many thanks to him :smile:
 
 ### How to use the plugin
 
